@@ -13,8 +13,11 @@ db.init_app(app)
 CORS(app)
 
 from classes.siret import Siret
+from classes.effectif import Effectif
 
 columns_siret = ['siren', 'nic', 'siret', 'statutdiffusionetablissement', 'datecreationetablissement', 'trancheeffectifsetablissement', 'anneeeffectifsetablissement', 'activiteprincipaleregistremetiersetablissement', 'datederniertraitementetablissement', 'etablissementsiege', 'nombreperiodesetablissement', 'complementadresseetablissement', 'numerovoieetablissement', 'indicerepetitionetablissement', 'typevoieetablissement', 'libellevoieetablissement', 'codepostaletablissement', 'libellecommuneetablissement', 'libellecommuneetrangeretablissement', 'distributionspecialeetablissement', 'codecommuneetablissement', 'codecedexetablissement', 'libellecedexetablissement', 'codepaysetrangeretablissement', 'libellepaysetrangeretablissement', 'complementadresse2etablissement', 'numerovoie2etablissement', 'indicerepetition2etablissement', 'typevoie2etablissement', 'libellevoie2etablissement', 'codepostal2etablissement', 'libellecommune2etablissement', 'libellecommuneetranger2etablissement', 'distributionspeciale2etablissement', 'codecommune2etablissement', 'codecedex2etablissement', 'libellecedex2etablissement', 'codepaysetranger2etablissement', 'libellepaysetranger2etablissement', 'datedebut', 'etatadministratifetablissement', 'enseigne1etablissement', 'enseigne2etablissement', 'enseigne3etablissement', 'denominationusuelleetablissement', 'activiteprincipaleetablissement', 'nomenclatureactiviteprincipaleetablissement', 'caractereemployeuretablissement', 'longitude', 'latitude', 'geo_score', 'geo_type', 'geo_adresse', 'geo_id', 'geo_ligne', 'geo_l4', 'geo_l5', 'codecommuneetablissementstring', 'typecom', 'reg', 'dep', 'arr', 'tncc', 'ncc', 'nccenr', 'libelle', 'can', 'comparent']
+
+columns_effectif = ['siret', 'daterecuperationeffectif', 'effectif']
 
 
 @app.route('/')
@@ -25,12 +28,23 @@ def index():
 ################### SIRET ##############
 
 @app.route('/siret/<string:siret_id>', methods=['GET'])
-def oneuser(siret_id):
+def onesiret(siret_id):
     # GET a specific data by id
     if request.method == 'GET':
         data = Siret.query.filter(Siret.siret == siret_id).all()
         siret = getobjectsjson(data, columns_siret)
         return jsonify(siret)
+
+
+################### EFFECTIF ##############
+
+@app.route('/effectif/<string:siret_id>', methods=['GET'])
+def geteffectif(siret_id):
+    # GET a specific data by id
+    if request.method == 'GET':
+        data = Effectif.query.filter(Effectif.siret == siret_id).all()
+        effectif = getobjectsjson(data, columns_effectif)
+        return jsonify(effectif)
 
 ####### GENERIC FUNCTIONS #######
 
