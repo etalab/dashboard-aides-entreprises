@@ -2,7 +2,7 @@ sudo -u postgres psql -c "DROP DATABASE IF EXISTS sirene;"
 echo "DROP DB OK"
 sudo -u postgres psql -c "CREATE DATABASE sirene ENCODING = 'UTF-8' TEMPLATE=TEMPLATE0;"
 echo "CREATE DB OK"
-sudo -u postgres psql -d sirene -f "create_table.sql"
+sudo -u postgres psql -d sirene -f "sql/create_table.sql"
 echo "CREATE TABLES OK"
 
 

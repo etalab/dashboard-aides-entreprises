@@ -2,10 +2,6 @@ import pandas as pd
 import os, sys
 import random
 
-path = "../data/0-brut/"
-input_folder = os.listdir(path)
-
-
 def addEffectif(row):
     cat = random.choices(['0', '1', '2', '3'], [10, 10, 79, 1], k=1)
     if(cat[0] == '0'):
@@ -38,19 +34,17 @@ def modulateEffectif(row):
         return row['effectif']-cat2[0] 
 
 
-for file in input_folder:
-   print(file)
-   df = pd.read_csv("../data/0-brut/"+file)
-   df = df[['siret']]
-   df['dateRecuperationEffectif'] = "2020-03-01"
-   df["effectif"]= df.apply(addEffectif, axis=1)   
-   print("addeffectif ok")
+df = pd.read_csv("../data/downloads/extract-siren.csv")
+print("load ok")
+df = df[['siret']]
+df['dateRecuperationEffectif'] = "2020-03-01"
+df["effectif"]= df.apply(addEffectif, axis=1)   
+print("addeffectif ok")
 
-   df['dateRecuperationEffectif2'] = "2020-04-01"
-   df["effectif2"]= df.apply(modulateEffectif, axis=1)
-   #df2.drop(columns=['dateRecuperationEffectif', 'effectif'])
-   #df2.rename(columns={'dateRecuperationEffectif2':'dateRecuperationEffectif','effectif2':'effectif'},inplace=True)
-   print("modulateeffectif ok")
-   df.to_csv("../data/simu-effectifs/"+file,index=False)
-   #df2.to_csv("../data/simu-effectifs/2020-04-01-"+file,index=False)
+df['dateRecuperationEffectif2'] = "2020-04-01"
+df["effectif2"]= df.apply(modulateEffectif, axis=1)
+
+print("modulateeffectif ok")
+df.to_csv("../data/simu-effectifs/effectif.csv", index=False)
+
 

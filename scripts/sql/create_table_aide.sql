@@ -13,10 +13,14 @@ CREATE TABLE aide
     date_dp date default NULL,
     date_paiement date default NULL,
     siret CHARACTER VARYING,
-    reg DECIMAL(9,2),
+    reg CHARACTER VARYING,
     dep CHARACTER VARYING,
     codecommuneetablissementstring CHARACTER VARYING,
+    activiteprincipaleetablissement CHARACTER VARYING,
     count_siren_nb DECIMAL(9,2),
-    montant_modifie DECIMAL(9,2)
+    montant_modifie DECIMAL(9,2),
+    delta_effectif DECIMAL(9,2),
+    delta_effectif_percent DECIMAL(9,2),
+    classe_effectif DECIMAL(9,2)
 )
 TABLESPACE pg_default;

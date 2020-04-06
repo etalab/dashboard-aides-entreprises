@@ -1,0 +1,2 @@
+sudo -u postgres psql -d sirene -c "\copy (select siren, siret, reg, dep, codecommuneetablissementstring, activiteprincipaleetablissement from siret where etatadministratifetablissement = 'A') TO '/tmp/extract-siren.csv' DELIMITER ',' CSV HEADER;"
+sudo mv /tmp/extract-siren.csv ../data/downloads/
