@@ -1,17 +1,15 @@
 # Dashboard Aides aux Entreprises
 
-Les scripts du dossier scripts permettent :
-- de télécharger les données siren
-- de les enrichir avec des données de département et de région
-- de les charger dans une base postgres
+## Scripts
 
-Le backend propose pour le moment une API minimaliste permettant de requêter un numéro de SIRET.
-Pour lancer le backend :
-```
-cd backend
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python app.py
-```
+Un certain nombre d'opérations sont nécessaires pour faire fonctionner l'application. Ces opérations sont décrites [ici](scripts/README.md)
 
+## Backend (Flask)
+
+Pour faire fonctionner le backend, rendez-vous [ici](backend/README.md)
+
+## Architecture technique
+
+Le schéma ci-dessous représente l'architecture cible à date de l'application :
+
+![Architecture](screenshots/architecture.png)
