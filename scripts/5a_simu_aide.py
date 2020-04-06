@@ -1,7 +1,7 @@
 import pandas as pd
 print("Load effectif + siren data")
 dfeff = pd.read_csv("../data/simu-effectifs/extract-effectif.csv")
-dfsiren = pd.read_csv("../data/downloads/extract-siren.csv")
+dfsiren = pd.read_csv("../data/extracts/extract-siren.csv")
 print("merging effectif and siren based on siret")
 dfmerge = pd.merge(dfsiren, dfeff, on='siret', how='left')
 print("group by unique siren and get sum of effectif")

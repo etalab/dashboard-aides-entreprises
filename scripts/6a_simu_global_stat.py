@@ -1,7 +1,7 @@
 import pandas as pd
 # Load SIREN + Effectif
 print("Load SIREN + Effectif")
-df = pd.read_csv("../data/downloads/extract-siren.csv")
+df = pd.read_csv("../data/extracts/extract-siren.csv")
 dfeff = pd.read_csv("../data/simu-effectifs/extract-effectif.csv")
 # Calculate delta effectif (nb + %)
 print("Calculate delta effectif (nb + %)");

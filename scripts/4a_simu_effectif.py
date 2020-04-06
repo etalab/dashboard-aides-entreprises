@@ -34,7 +34,7 @@ def modulateEffectif(row):
         return row['effectif']-cat2[0] 
 
 
-df = pd.read_csv("../data/downloads/extract-siren.csv")
+df = pd.read_csv("../data/extracts/extract-siren.csv")
 print("load ok")
 df = df[['siret']]
 df['dateRecuperationEffectif'] = "2020-03-01"
