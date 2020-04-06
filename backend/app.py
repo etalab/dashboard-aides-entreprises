@@ -67,9 +67,8 @@ def getaidefromsiren(siren_id):
     if request.method == 'GET':
         app.logger.info(siren_id)
         data = Aide.query.filter(Aide.siren == siren_id).all()
-        #aide = getobjectsjson(data, columns_aide)
-        return "toto"
-        #return jsonify(aide)
+        aide = getobjectsjson(data, columns_aide)
+        return jsonify(aide)
         
 @app.route('/aide/siret/<string:siret_id>', methods=['GET'])
 def getaidefromsiret(siret_id):
