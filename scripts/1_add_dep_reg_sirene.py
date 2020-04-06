@@ -12,16 +12,6 @@ dfcom.rename(columns={'com':'codeCommuneEtablissement'},inplace=True)
 
 for file in input_folder:
    print(file)
-   lf = []
-   for i in range(10):
-      val = "geo_siret_0"+str(i)+".csv"
-      lf.append(val)
-   for i in range(45):
-      val = "geo_siret_"+str(i+10)+".csv"
-      lf.append(val)
-   lf.append("geo_siret_.csv")
-   lf.append("geo_siret_2A.csv")
-   lf.append("geo_siret_2B.csv")
    if file not in lf:
        df = pd.read_csv("../data/0-brut/"+file, dtype={'codeCommuneEtablissement':str})
        dfmerge = pd.merge(df, dfcom, on='codeCommuneEtablissement', how='left')
