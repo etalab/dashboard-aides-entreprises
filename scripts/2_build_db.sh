@@ -50,3 +50,10 @@ echo "CREATE TABLE OK"
 datafolder="$(dirname "$(pwd)")"/utils/
 sudo -u postgres psql -d sirene -c "\copy region(reg, cheflieu, tncc, ncc, nccenr, libelle) FROM '"$datafolder"region2019.csv' delimiter ',' csv header encoding 'UTF8';"
 sudo -u postgres psql -d sirene -c "\copy departement(dep, reg, cheflieu, tncc, ncc, nccenr, libelle) FROM '"$datafolder"departement2019.csv' delimiter ',' csv header encoding 'UTF8';"
+
+echo "CREATE TABLE NAF"
+sudo -u postgres psql -d sirene -c "DROP TABLE IF EXISTS naf;"
+echo "DROP TABLE OK"
+sudo -u postgres psql -d sirene -f "sql/create_table_naf.sql"
+echo "CREATE TABLE OK"
+sudo -u postgres psql -d sirene -c "\copy naf(code_naf, intitule_naf, intitule_naf_65, intitule_naf_40) FROM '"$datafolder"naf.csv' delimiter ';' csv header encoding 'UTF8';"
