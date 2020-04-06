@@ -37,6 +37,26 @@ def index():
     app.logger.info("yes")
     return render_template('home.html')
 
+
+
+################## API V1 ##############
+
+@app.route('/stat/aide', methods=['GET'])
+def getstataide():
+    # GET a specific data by id
+    if request.method == 'GET':
+        data = db.session.query(db.func.sum(Aide.montant_modifie), db.func.count(Aide.siren), db.func.sum(Aide.delta_effectif), db.func.avg(Aide.delta_effectif_percent)).all()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['montant'] = data[i][0] 
+            dataDict['nombre'] = data[i][1] 
+            dataDict['delta_effectif'] = data[i][2] 
+            dataDict['delta_effectif_percent'] = str(data[i][3]) 
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
 ################### SIRET ##############
 
 @app.route('/siret/<string:siret_id>', methods=['GET'])

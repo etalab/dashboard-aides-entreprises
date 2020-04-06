@@ -1,0 +1,12 @@
+CREATE TABLE departement
+(
+	id_departement SERIAL PRIMARY KEY NOT NULL,
+    dep CHARACTER VARYING,
+    reg CHARACTER VARYING,
+    cheflieu CHARACTER VARYING,
+    tncc CHARACTER VARYING,
+    ncc CHARACTER VARYING,
+    nccenr CHARACTER VARYING,
+    libelle CHARACTER VARYING
+)
+TABLESPACE pg_default;
