@@ -18,6 +18,7 @@ CORS(app)
 from classes.siret import Siret
 from classes.effectif import Effectif
 from classes.aide import Aide
+from classes.stat import Stat
 
 
 logging.basicConfig()
@@ -193,6 +194,88 @@ def getclasseeffectifstat():
 ######## GLOBAL STAT ############
 
 
+@app.route('/stat/global/reg', methods=['GET'])
+def getglobalregstat():
+    # GET a specific data by id
+    if request.method == 'GET':
+        data = db.session.query(Stat.valeur_sous_dimension, Stat.total_siret, Stat.delta_effectif_total, Stat.delta_effectif_percent_mean).filter(Stat.dimension == "geo", Stat.sous_dimension == "reg").all()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['reg'] = data[i][0] 
+            dataDict['total_siret'] = data[i][1] 
+            dataDict['delta_effectif_total'] = data[i][2] 
+            dataDict['delta_effectif_percent_mean'] = data[i][3] 
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+@app.route('/stat/global/dep', methods=['GET'])
+def getglobaldepstat():
+    # GET a specific data by id
+    if request.method == 'GET':
+        data = db.session.query(Stat.valeur_sous_dimension, Stat.total_siret, Stat.delta_effectif_total, Stat.delta_effectif_percent_mean).filter(Stat.dimension == "geo", Stat.sous_dimension == "dep").all()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['dep'] = data[i][0] 
+            dataDict['total_siret'] = data[i][1] 
+            dataDict['delta_effectif_total'] = data[i][2] 
+            dataDict['delta_effectif_percent_mean'] = data[i][3] 
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+@app.route('/stat/global/dep/<string:codeinsee>', methods=['GET'])
+def getglobalcodeinseestat(codeinsee):
+    # GET a specific data by id
+    if request.method == 'GET':
+        data = db.session.query(Stat.valeur_sous_dimension, Stat.total_siret, Stat.delta_effectif_total, Stat.delta_effectif_percent_mean).filter(Stat.dimension == "geo", Stat.sous_dimension == "codecommuneetablissementstring", Stat.valeur_sous_dimension == codeinsee).all()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['codeinsee'] = data[i][0] 
+            dataDict['total_siret'] = data[i][1] 
+            dataDict['delta_effectif_total'] = data[i][2] 
+            dataDict['delta_effectif_percent_mean'] = data[i][3] 
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+@app.route('/stat/global/classeeffectif', methods=['GET'])
+def getglobalclasseeffectifstat():
+    # GET a specific data by id
+    if request.method == 'GET':
+        data = db.session.query(Stat.valeur_sous_dimension, Stat.total_siret, Stat.delta_effectif_total, Stat.delta_effectif_percent_mean).filter(Stat.dimension == "classe_effectif").all()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['classe_effectif'] = data[i][0] 
+            dataDict['total_siret'] = data[i][1] 
+            dataDict['delta_effectif_total'] = data[i][2] 
+            dataDict['delta_effectif_percent_mean'] = data[i][3] 
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+@app.route('/stat/global/ape', methods=['GET'])
+def getglobalapestat():
+    # GET a specific data by id
+    if request.method == 'GET':
+        data = db.session.query(Stat.valeur_sous_dimension, Stat.total_siret, Stat.delta_effectif_total, Stat.delta_effectif_percent_mean).filter(Stat.dimension == "ape").all()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['ape'] = data[i][0] 
+            dataDict['total_siret'] = data[i][1] 
+            dataDict['delta_effectif_total'] = data[i][2] 
+            dataDict['delta_effectif_percent_mean'] = data[i][3] 
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
 
 ####### GENERIC FUNCTIONS #######
 
