@@ -2,7 +2,7 @@ import pandas as pd
 # Load SIREN + Effectif
 print("Load SIREN + Effectif")
 df = pd.read_csv("../data/extracts/extract-siren.csv")
-dfeff = pd.read_csv("../data/simu-effectifs/extract-effectif.csv")
+dfeff = pd.read_csv("../data/simu-effectifs/effectif.csv")
 # Calculate delta effectif (nb + %)
 print("Calculate delta effectif (nb + %)");
 dfeff['delta_effectif'] = dfeff['effectif2'] - dfeff['effectif']
@@ -21,8 +21,8 @@ dffinal = pd.merge(df, dfeff, on='siret', how='left')
 dfstatfinal = pd.DataFrame({"dimension": [], "sous_dimension": [], "valeur_sous_dimension": [], "total_siret": [], "delta_effectif_total": [], "delta_effectif_percent_mean": []})
 
 # Calculate Global Stat
-Print("Calculate Global Stat")
-for dim in "reg","dep","codeCommuneEtablissement", "activiteprincipaleetablissement", "classe_effectif":
+print("Calculate Global Stat")
+for dim in "reg","dep","codecommuneetablissement", "activiteprincipaleetablissement", "classe_effectif":
     print("For "+dim)
     dfstatcount = dffinal[[dim,'siret']].groupby([dim], as_index = False).count()
     dfstatcount = dfstatcount.rename(columns={"siret": "total_siret"})
@@ -33,7 +33,7 @@ for dim in "reg","dep","codeCommuneEtablissement", "activiteprincipaleetablissem
     dfstat = pd.merge(dfstatcount,dfstatsum,on=dim,how='left')
     dfstat = pd.merge(dfstat, dfstatmean,on=dim,how='left')
     dfstat = dfstat.rename(columns={dim: "valeur_sous_dimension"})
-    if((dim == "reg") | (dim == "dep") | (dim == "codeCommuneEtablissement")):
+    if((dim == "reg") | (dim == "dep") | (dim == "codecommuneetablissement")):
         dfstat['dimension'] = "geo"
     else:
         dfstat['dimension'] = dim
