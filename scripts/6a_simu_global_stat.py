@@ -22,7 +22,7 @@ dfstatfinal = pd.DataFrame({"dimension": [], "sous_dimension": [], "valeur_sous_
 
 # Calculate Global Stat
 Print("Calculate Global Stat")
-for dim in "reg","dep","codecommuneetablissementstring", "activiteprincipaleetablissement", "classe_effectif":
+for dim in "reg","dep","codeCommuneEtablissement", "activiteprincipaleetablissement", "classe_effectif":
     print("For "+dim)
     dfstatcount = dffinal[[dim,'siret']].groupby([dim], as_index = False).count()
     dfstatcount = dfstatcount.rename(columns={"siret": "total_siret"})
@@ -33,7 +33,7 @@ for dim in "reg","dep","codecommuneetablissementstring", "activiteprincipaleetab
     dfstat = pd.merge(dfstatcount,dfstatsum,on=dim,how='left')
     dfstat = pd.merge(dfstat, dfstatmean,on=dim,how='left')
     dfstat = dfstat.rename(columns={dim: "valeur_sous_dimension"})
-    if((dim == "reg") | (dim == "dep") | (dim == "codecommuneetablissementstring")):
+    if((dim == "reg") | (dim == "dep") | (dim == "codeCommuneEtablissement")):
         dfstat['dimension'] = "geo"
     else:
         dfstat['dimension'] = dim

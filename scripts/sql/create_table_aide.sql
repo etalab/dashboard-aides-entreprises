@@ -15,7 +15,7 @@ CREATE TABLE aide
     siret CHARACTER VARYING,
     reg CHARACTER VARYING,
     dep CHARACTER VARYING,
-    codecommuneetablissementstring CHARACTER VARYING,
+    codeCommuneEtablissement CHARACTER VARYING,
     activiteprincipaleetablissement CHARACTER VARYING,
     count_siren_nb DECIMAL(9,2),
     montant_modifie DECIMAL(9,2),

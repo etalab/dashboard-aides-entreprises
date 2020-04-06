@@ -24,11 +24,11 @@ from classes.stat import Stat
 logging.basicConfig()
 logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 
-columns_siret = ['siren', 'nic', 'siret', 'statutdiffusionetablissement', 'datecreationetablissement', 'trancheeffectifsetablissement', 'anneeeffectifsetablissement', 'activiteprincipaleregistremetiersetablissement', 'datederniertraitementetablissement', 'etablissementsiege', 'nombreperiodesetablissement', 'complementadresseetablissement', 'numerovoieetablissement', 'indicerepetitionetablissement', 'typevoieetablissement', 'libellevoieetablissement', 'codepostaletablissement', 'libellecommuneetablissement', 'libellecommuneetrangeretablissement', 'distributionspecialeetablissement', 'codecommuneetablissement', 'codecedexetablissement', 'libellecedexetablissement', 'codepaysetrangeretablissement', 'libellepaysetrangeretablissement', 'complementadresse2etablissement', 'numerovoie2etablissement', 'indicerepetition2etablissement', 'typevoie2etablissement', 'libellevoie2etablissement', 'codepostal2etablissement', 'libellecommune2etablissement', 'libellecommuneetranger2etablissement', 'distributionspeciale2etablissement', 'codecommune2etablissement', 'codecedex2etablissement', 'libellecedex2etablissement', 'codepaysetranger2etablissement', 'libellepaysetranger2etablissement', 'datedebut', 'etatadministratifetablissement', 'enseigne1etablissement', 'enseigne2etablissement', 'enseigne3etablissement', 'denominationusuelleetablissement', 'activiteprincipaleetablissement', 'nomenclatureactiviteprincipaleetablissement', 'caractereemployeuretablissement', 'longitude', 'latitude', 'geo_score', 'geo_type', 'geo_adresse', 'geo_id', 'geo_ligne', 'geo_l4', 'geo_l5', 'codecommuneetablissementstring', 'typecom', 'reg', 'dep', 'arr', 'tncc', 'ncc', 'nccenr', 'libelle', 'can', 'comparent']
+columns_siret = ['siren', 'nic', 'siret', 'statutdiffusionetablissement', 'datecreationetablissement', 'trancheeffectifsetablissement', 'anneeeffectifsetablissement', 'activiteprincipaleregistremetiersetablissement', 'datederniertraitementetablissement', 'etablissementsiege', 'nombreperiodesetablissement', 'complementadresseetablissement', 'numerovoieetablissement', 'indicerepetitionetablissement', 'typevoieetablissement', 'libellevoieetablissement', 'codepostaletablissement', 'libellecommuneetablissement', 'libellecommuneetrangeretablissement', 'distributionspecialeetablissement', 'codecommuneetablissement', 'codecedexetablissement', 'libellecedexetablissement', 'codepaysetrangeretablissement', 'libellepaysetrangeretablissement', 'complementadresse2etablissement', 'numerovoie2etablissement', 'indicerepetition2etablissement', 'typevoie2etablissement', 'libellevoie2etablissement', 'codepostal2etablissement', 'libellecommune2etablissement', 'libellecommuneetranger2etablissement', 'distributionspeciale2etablissement', 'codecommune2etablissement', 'codecedex2etablissement', 'libellecedex2etablissement', 'codepaysetranger2etablissement', 'libellepaysetranger2etablissement', 'datedebut', 'etatadministratifetablissement', 'enseigne1etablissement', 'enseigne2etablissement', 'enseigne3etablissement', 'denominationusuelleetablissement', 'activiteprincipaleetablissement', 'nomenclatureactiviteprincipaleetablissement', 'caractereemployeuretablissement', 'longitude', 'latitude', 'geo_score', 'geo_type', 'geo_adresse', 'geo_id', 'geo_ligne', 'geo_l4', 'geo_l5', 'typecom', 'reg', 'dep', 'arr', 'tncc', 'ncc', 'nccenr', 'libelle', 'can', 'comparent']
 
 columns_effectif = ['siret', 'daterecuperationeffectif', 'effectif']
 
-columns_aide = ['code_application', 'numero_sequentiel', 'mois', 'siren', 'nom1', 'nom2', 'effectif', 'montant', 'devise', 'date_dp', 'date_paiement', 'siret', 'reg', 'dep', 'codecommuneetablissementstring', 'activiteprincipaleetablissement', 'count_siren_nb', 'montant_modifie', 'delta_effectif', 'delta_effectif_global','classe_effectif']
+columns_aide = ['code_application', 'numero_sequentiel', 'mois', 'siren', 'nom1', 'nom2', 'effectif', 'montant', 'devise', 'date_dp', 'date_paiement', 'siret', 'reg', 'dep', 'codeCommuneEtablissement', 'activiteprincipaleetablissement', 'count_siren_nb', 'montant_modifie', 'delta_effectif', 'delta_effectif_global','classe_effectif']
 
 columns_stat = ['id_stat', 'dimension', 'sous_dimension', 'valeur_sous_dimension', 'total_siret', 'delta_effectif_total', 'delta_effectif_percent_mean']
 
@@ -114,11 +114,11 @@ def getaidefromdep(dep):
         aide = getobjectsjson(data, columns_aide)
         return jsonify(aide)
 
-@app.route('/aide/codeinsee/<string:codecommuneetablissementstring>', methods=['GET'])
-def getaidefromcodeinsee(codecommuneetablissementstring):
+@app.route('/aide/codeinsee/<string:codeCommuneEtablissement>', methods=['GET'])
+def getaidefromcodeinsee(codeCommuneEtablissement):
     # GET a specific data by id
     if request.method == 'GET':
-        data = Aide.query.filter(Aide.codecommuneetablissementstring == codecommuneetablissementstring).all()
+        data = Aide.query.filter(Aide.codeCommuneEtablissement == codeCommuneEtablissement).all()
         aide = getobjectsjson(data, columns_aide)
         return jsonify(aide)
 
@@ -160,7 +160,7 @@ def getdepstat():
 def getcodeinseestat(dep):
     # GET a specific data by id
     if request.method == 'GET':
-        data = db.session.query(Aide.codecommuneetablissementstring, db.func.sum(Aide.montant_modifie), db.func.count(Aide.siren), db.func.sum(Aide.delta_effectif), db.func.avg(Aide.delta_effectif_percent)).filter(Aide.dep == dep).group_by(Aide.codecommuneetablissementstring).all()
+        data = db.session.query(Aide.codeCommuneEtablissement, db.func.sum(Aide.montant_modifie), db.func.count(Aide.siren), db.func.sum(Aide.delta_effectif), db.func.avg(Aide.delta_effectif_percent)).filter(Aide.dep == dep).group_by(Aide.codeCommuneEtablissement).all()
         app.logger.info(data)
         dataJson = []
         for i in range(len(data)):
@@ -250,7 +250,7 @@ def getglobaldepstat():
 def getglobalcodeinseestat(codeinsee):
     # GET a specific data by id
     if request.method == 'GET':
-        data = db.session.query(Stat.valeur_sous_dimension, Stat.total_siret, Stat.delta_effectif_total, Stat.delta_effectif_percent_mean).filter(Stat.dimension == "geo", Stat.sous_dimension == "codecommuneetablissementstring", Stat.valeur_sous_dimension == codeinsee).all()
+        data = db.session.query(Stat.valeur_sous_dimension, Stat.total_siret, Stat.delta_effectif_total, Stat.delta_effectif_percent_mean).filter(Stat.dimension == "geo", Stat.sous_dimension == "codeCommuneEtablissement", Stat.valeur_sous_dimension == codeinsee).all()
         app.logger.info(data)
         dataJson = []
         for i in range(len(data)):
