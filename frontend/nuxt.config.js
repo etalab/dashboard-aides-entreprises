@@ -1,5 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
-
+// import colors from 'vuetify/es5/util/colors'
 
 
 const dotenv = require('dotenv')
@@ -7,10 +6,11 @@ dotenv.config()
 console.log('>>> nuxt.config.js (start) / process.env.NUXT_ENV_APP_TITLE : ', process.env.NUXT_ENV_APP_TITLE)
 
 
-const configAppFileRaw = require('./config/appConfigUIUX.json')
-console.log('>>> nuxt.config.js / configAppFileRaw : \n', configAppFileRaw)
+const configAppFileUxUi = require('./config/appConfigUIUX.json')
+console.log('>>> nuxt.config.js / configAppFileUxUi : \n', configAppFileUxUi)
 
-
+const configAppFileData = require('./config/appConfigData.json')
+console.log('>>> nuxt.config.js / configAppFileData : \n', configAppFileData)
 
 const trueStrings = ['yes', 'Yes', 'YES', 'y', 'Y', 'true', 'True', 'TRUE', 't', 'T']
 const falseStrings = ['no', 'No', 'NO', 'n', 'N', 'false', 'False', 'FALSE', 'f', 'F']
@@ -39,65 +39,41 @@ const choosePort = (ENVPROD) => {
 }
 
 const chooseBackend = (ENVPROD) => {
-  if (ENVPROD === 'dev') {
-    return process.env.NUXT_BACKEND_API_DEV
-  } else if (ENVPROD === 'preprod') {
-    return process.env.NUXT_BACKEND_API_PREPROD
-  } else if (ENVPROD === 'prod') {
-    return process.env.NUXT_BACKEND_API_PROD
-  }
+  return configAppFileData.dataSource.sources[ ENVPROD ]
 }
-
-// const buildLocales = () => {
-//   let locales = [] 
-//   for ( const locale of process.env.NUXT_ENV_LOCALES.split(',') ) {
-//     let localeData = locale.split(':')
-//     let localeObj = {
-//       name: localeData[0],
-//       code: localeData[1],
-//       iso: localeData[2],
-//       file: localeData[2] + '.json'
-//     }
-//     locales.push(localeObj)
-//   }
-//   return locales
-// }
 
 const configApp = {
 
   /// APP INFOS
-  // appTitle: process.env.NUXT_ENV_APP_TITLE,
-  appTitle: configAppFileRaw.appTitle,
+  appTitle: configAppFileUxUi.appTitle,
 
   // DEV MODE - PORT - HOST ...
   mode: process.env.NUXT_ENV_RUN_MODE,
   host: process.env.NUXT_ENV_HOST,
   port: choosePort(process.env.NUXT_ENV_RUN_MODE),
 
-  // isProtected: chooseBooleanMode(process.env.NUXT_ENV_IS_PROTECTED),
-
   // INTERNATIONALIZATION
-  // defaultLocale: process.env.NUXT_ENV_LOCALE_DEFAULT,
-  defaultLocale: configAppFileRaw.lang.defaultLocale,
-  localesBuild: configAppFileRaw.lang.locales, //buildLocales(),
+  defaultLocale: configAppFileUxUi.lang.defaultLocale,
+  localesBuild: configAppFileUxUi.lang.locales,
 
   // DATA : 
   backendApi : chooseBackend(process.env.NUXT_ENV_RUN_MODE),
+  filters: configAppFileData.filters, 
 
   // UX
-  navbar : configAppFileRaw.navbar,
+  navbar : configAppFileUxUi.navbar,
 
   // UI
   UI_config : {
-    dark : configAppFileRaw.UI_config.darkTheme,
+    dark : configAppFileUxUi.UI_config.darkTheme,
     colors : {
-      primary   : configAppFileRaw.UI_config.mainColors.primary, // process.env.VUETIFY_primary,
-      accent    : configAppFileRaw.UI_config.mainColors.accent, // process.env.VUETIFY_accent,
-      secondary : configAppFileRaw.UI_config.mainColors.secondary, // process.env.VUETIFY_secondary,
-      info      : configAppFileRaw.UI_config.mainColors.info, // process.env.VUETIFY_info,
-      warning   : configAppFileRaw.UI_config.mainColors.warning, // process.env.VUETIFY_warning,
-      error     : configAppFileRaw.UI_config.mainColors.error, // process.env.VUETIFY_error,
-      success   : configAppFileRaw.UI_config.mainColors.success, // process.env.VUETIFY_success
+      primary   : configAppFileUxUi.UI_config.mainColors.primary, 
+      accent    : configAppFileUxUi.UI_config.mainColors.accent, 
+      secondary : configAppFileUxUi.UI_config.mainColors.secondary, 
+      info      : configAppFileUxUi.UI_config.mainColors.info, 
+      warning   : configAppFileUxUi.UI_config.mainColors.warning, 
+      error     : configAppFileUxUi.UI_config.mainColors.error, 
+      success   : configAppFileUxUi.UI_config.mainColors.success, 
     },
     typos : {
 
@@ -107,19 +83,19 @@ const configApp = {
 }
 
 
-
-
 console.log('>>> nuxt.config.js / configApp : \n', configApp)
 
 
 export default {
+
   mode: 'spa',
+
   /*
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    titleTemplate: process.env.npm_package_name,
+    title: '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -151,7 +127,7 @@ export default {
   router : {
     middleware: [
       'setLocales',
-      // 'i18n',
+      'initDataSetup',
       'getData',
     ],
   },
@@ -191,17 +167,10 @@ export default {
   
   i18n: {
 
-    defaultLocale: configAppFileRaw.lang.defaultLocale, //'fr',
-    locales : configAppFileRaw.lang.locales,
-    // locales: [
-    //    {
-    //      code: 'fr',
-    //      name: 'Français',
-    //      file: 'fr-FR.js' 
-    //    },
-    //  ],
+    defaultLocale: configAppFileUxUi.lang.defaultLocale, //'fr',
+    locales : configAppFileUxUi.lang.locales,
     vueI18n: {
-      fallbackLocale: configAppFileRaw.lang.defaultLocale, //'fr',
+      fallbackLocale: configAppFileUxUi.lang.defaultLocale, //'fr',
     },
     lazy: true,
     langDir : "locales/",
@@ -214,6 +183,7 @@ export default {
   */
   axios: {
   },
+
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
@@ -224,17 +194,18 @@ export default {
       dark: configApp.UI_config.dark,
       themes: {
         dark: {
-          primary   : configApp.UI_config.colors.primary ,  // colors.blue.darken2,
-          accent    : configApp.UI_config.colors.accent ,  // colors.grey.darken3,
-          secondary : configApp.UI_config.colors.secondary ,  // colors.amber.darken3,
-          info      : configApp.UI_config.colors.info ,  // colors.teal.lighten1,
-          warning   : configApp.UI_config.colors.warning ,  // colors.amber.base,
-          error     : configApp.UI_config.colors.error ,  // colors.deepOrange.accent4,
-          success   : configApp.UI_config.colors.success ,  // colors.green.accent3
+          primary   : configApp.UI_config.colors.primary ,  
+          accent    : configApp.UI_config.colors.accent ,  
+          secondary : configApp.UI_config.colors.secondary ,  
+          info      : configApp.UI_config.colors.info , 
+          warning   : configApp.UI_config.colors.warning , 
+          error     : configApp.UI_config.colors.error , 
+          success   : configApp.UI_config.colors.success , 
         }
       }
     }
   },
+
   /*
   ** Build configuration
   */

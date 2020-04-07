@@ -13,8 +13,15 @@ export const state = () => ({
   backendApi : process.env.CONFIG_APP.backendApi, 
 
 
+  // FILTERS
+  filters : undefined,
+  activatedFilters : undefined,
+
+
   // DATASETS
   // ... 
+
+  displayedData : undefined,
 
 
 })
@@ -36,6 +43,14 @@ export const mutations = {
   setValue(state, value){
     state.value = value
   },
+
+  setFilters (state, filters){
+    state.filters = filters
+  },
+
+  setDisplayedData (state, data){
+    state.displayedData = data
+  }
 
 }
 

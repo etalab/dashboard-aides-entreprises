@@ -1,0 +1,101 @@
+{
+
+  "help" : "this file contains the setup for the api",
+
+  "dataSource" : {
+    "docs" : "https://github.com/etalab/dashboard-aides-entreprises/tree/j_front/frontend",
+    "dataType" : "api",
+    "sources" : {
+      "dev" : "http://pad-01.infra.data.gouv.fr:5000/",
+      "prod" : "http://pad-01.infra.data.gouv.fr:5000/",
+      "preprod" : "http://pad-01.infra.data.gouv.fr:5000/"
+    },
+    "dimensions" : [
+      {
+        "arg" : "naf",
+        "help" : "Liste de tous les codes APE/NAF ",
+        "return" : "list",
+        "subArgs" : null
+      },
+      {
+        "arg" : "departement",
+        "help" : "Liste de tous les départements",
+        "return" : "list",
+        "subArgs" : null
+      },
+      {
+        "arg" : "region",
+        "help" : "Liste de toutes les régions",
+        "return" : "list",
+        "subArgs" : null
+      },
+      {
+        "arg" : "stat",
+        "help" : "statistiques",
+        "return" : "list",
+        "subArgs" : [
+          {
+            "arg" : "aide",
+            "help" : "Liste de toutes les aides",
+            "return" : "list",
+            "subArgs" : [
+
+            ]
+          }
+        ]
+        
+      }
+    
+    ]
+  },
+
+  "filters" : [
+    
+    { 
+      "name" : {
+        "fr" : "naf"
+      },
+      "options" : [
+        { "value" : "", "label" : "" },
+        { "value" : "", "label" : "" }
+      ],
+      "filterType" : "checkbox",
+      "arg" : "naf",
+      "isActivated" : true
+    },
+
+    { 
+      "name" : {
+        "fr" : "departement"
+      },
+      "options" : [
+        { "value" : "", "label" : "" },
+        { "value" : "", "label" : "" }
+      ],
+      "filterType" : "checkbox",
+      "arg" : "departement",
+      "isActivated" : true
+    },
+
+    { 
+      "name" : {
+        "fr" : "effectifs"
+      },
+      "options" : [
+        { "value" : "", "label" : "" },
+        { "value" : "", "label" : "" }
+      ],
+      "filterType" : "checkbox",
+      "arg" : "effectif",
+      "isActivated" : true
+    }
+
+  ],
+
+  "defaultSetup" : {
+
+  }
+
+
+
+}

@@ -1,57 +1,60 @@
 <template>
 
-  <v-layout
-    column
-    justify-center
-    align-center
-    >
+  <div id="homepage">
 
+    <!-- <Filters/> -->
 
-    <v-flex
-      xs12
-      sm8
-      md6
+    <v-layout
+      column
+      justify-center
+      align-center
       >
 
-      <div class="text-center">
+      <!-- <Table/> -->
 
-      </div>
+      <v-flex
+        xs12
+        sm8
+        md6
+        >
 
-      <v-card>
+        <v-card>
 
-        <v-card-title class="headline">
-          {{ $t('home.title') }} 
-        </v-card-title>
+          <v-card-title class="headline">
+            {{ $t('home.title') }} 
+          </v-card-title>
 
-        <v-card-text>
+          <v-card-text>
 
+            <hr class="my-3">
 
-          <hr class="my-3">
+            <p>
+              {{ backendApi }}
+            </p>
 
-          <p>
-            {{ backendApi }}
-          </p>
-
-        </v-card-text>
-
-
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-            >
-            {{ $t('navigation.continue') }}
-          </v-btn>
-        </v-card-actions>
+          </v-card-text>
 
 
-      </v-card>
-    </v-flex>
+          <v-card-actions>
+            <v-spacer />
+            <v-btn
+              color="primary"
+              nuxt
+              to="/inspire"
+              >
+              {{ $t('navigation.continue') }}
+            </v-btn>
+          </v-card-actions>
 
 
-  </v-layout>
+        </v-card>
+
+      </v-flex>
+
+
+    </v-layout>
+
+  </div>
 
 </template>
 
@@ -63,11 +66,16 @@
 
   import { mapState, mapGetters } from 'vuex'
 
+  import Filters from '~/components/DataViews/Filters.vue'
+  import Table from '~/components/DataViews/Table.vue'
+
   export default {
     
     name: 'Homepage',
 
     components: {
+      Filters,
+      Table,
     },
     
     props : [
@@ -93,6 +101,8 @@
         locale : state => state.locale,
 
         backendApi : state => state.data.backendApi,
+
+        data : state => state.data.displayedData,
       }),
 
       ...mapGetters({

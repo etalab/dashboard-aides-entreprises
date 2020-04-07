@@ -17,6 +17,20 @@
     ]
   },
 
+  "UX_config" : {
+
+    "views" : [
+      { 
+        "name" : "map", 
+        "component" : "map",
+        "n_line" : 1,
+        "n_column" : 2, 
+        "size_column" : 8
+      }
+    ]
+  
+  },
+
   "UI_config" : {
 
     "darkTheme" : false,
@@ -32,7 +46,7 @@
     },
 
     "typos" : {
-      
+
     }
 
   },
@@ -43,7 +57,7 @@
 
     "drawer": true,
     "fixed": false,
-    "miniVariant": true,
+    "miniVariant": false,
 
     "right": true,
     "rightDrawer": false,
@@ -62,6 +76,12 @@
     ]
 
   },
+
+  "dataSetup" :{
+
+  },
+
+
 
 
 
