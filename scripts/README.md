@@ -1,5 +1,13 @@
 # Scripts
 
+Pour faire fonctionner ces scripts, il faut d'abord activer un nouvel environnement python :
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cd scripts/
+```
+
 Ces scripts permettent de construire la base de données Postgres afin que le backend de l'application soit opérationnel.
 
 Prérequis : 

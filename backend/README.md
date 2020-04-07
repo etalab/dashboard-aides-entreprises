@@ -5,10 +5,10 @@
 Pour faire fonctionner le backend, il suffit d'effectuer les commandes ci-dessous :
 
 ```
-cd backend
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+cd backend/
 python app.py
 ```
 
