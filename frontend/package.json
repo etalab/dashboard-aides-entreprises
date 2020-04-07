@@ -1,0 +1,23 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "dashboard covid-aides",
+  "author": "Julien_P",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "apexcharts": "^3.18.1",
+    "nuxt": "^2.0.0",
+    "nuxt-i18n": "^6.8.1",
+    "vue-apexcharts": "^1.5.3"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.0.0"
+  }
+}
