@@ -190,3 +190,106 @@ Un certain nombre d'API sont disponibles :
   }, 
 ```
 
+- Liste de toutes les régions :
+
+``` 
+/region
+```
+```
+[
+  {
+    "cheflieu": "97105", 
+    "libelle": "Guadeloupe", 
+    "ncc": "GUADELOUPE", 
+    "nccenr": "Guadeloupe", 
+    "reg": "01", 
+    "tncc": "3"
+  }, 
+  {
+    "cheflieu": "97209", 
+    "libelle": "Martinique", 
+    "ncc": "MARTINIQUE", 
+    "nccenr": "Martinique", 
+    "reg": "02", 
+    "tncc": "3"
+  }, 
+  {
+    "cheflieu": "97302", 
+    "libelle": "Guyane", 
+    "ncc": "GUYANE", 
+    "nccenr": "Guyane", 
+    "reg": "03", 
+    "tncc": "3"
+  },
+  ...
+]
+```
+
+- Liste de tous les départements :
+
+``` 
+/departement
+```
+```
+[
+  {
+    "cheflieu": "01053", 
+    "dep": "01", 
+    "libelle": "Ain", 
+    "ncc": "AIN", 
+    "nccenr": "Ain", 
+    "reg": "84", 
+    "tncc": "5"
+  }, 
+  {
+    "cheflieu": "02408", 
+    "dep": "02", 
+    "libelle": "Aisne", 
+    "ncc": "AISNE", 
+    "nccenr": "Aisne", 
+    "reg": "32", 
+    "tncc": "5"
+  }, 
+  {
+    "cheflieu": "03190", 
+    "dep": "03", 
+    "libelle": "Allier", 
+    "ncc": "ALLIER", 
+    "nccenr": "Allier", 
+    "reg": "84", 
+    "tncc": "5"
+  }, 
+ ...
+]
+```
+
+- Liste de tous les codes APE/NAF :
+
+``` 
+/naf
+```
+```
+[
+[
+  {
+    "code_naf": "1020Z", 
+    "intitule_naf": "Transformation et conservation de poisson, de crustac\u00e9s et de mollusques", 
+    "intitule_naf_40": "Transf. & conserv. poisson, crust., etc.", 
+    "intitule_naf_65": "Transform. & conserv. poisson, crustac\u00e9s & mollusques"
+  }, 
+  {
+    "code_naf": "812", 
+    "intitule_naf": "Exploitation de gravi\u00e8res et sabli\u00e8res, extraction d\u2019argiles et de kaolin", 
+    "intitule_naf_40": "Exploit. gravi\u00e8re & sabl., extr. argile", 
+    "intitule_naf_65": "Exploit gravieres & sablieres, extraction argiles & kaolin"
+  }, 
+  {
+    "code_naf": "1610B", 
+    "intitule_naf": "Impr\u00e9gnation du bois", 
+    "intitule_naf_40": "Impr\u00e9gnation du bois", 
+    "intitule_naf_65": "Impr\u00e9gnation du bois"
+  }, 
+ ...
+]
+```
+
