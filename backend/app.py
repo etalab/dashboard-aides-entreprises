@@ -19,6 +19,9 @@ from classes.siret import Siret
 from classes.effectif import Effectif
 from classes.aide import Aide
 from classes.stat import Stat
+from classes.region import Region
+from classes.departement import Departement
+from classes.naf import Naf
 
 
 logging.basicConfig()
@@ -31,6 +34,13 @@ columns_effectif = ['siret', 'daterecuperationeffectif', 'effectif']
 columns_aide = ['code_application', 'numero_sequentiel', 'mois', 'siren', 'nom1', 'nom2', 'effectif', 'montant', 'devise', 'date_dp', 'date_paiement', 'siret', 'reg', 'dep', 'codeCommuneEtablissement', 'activiteprincipaleetablissement', 'count_siren_nb', 'montant_modifie', 'delta_effectif', 'delta_effectif_global','classe_effectif']
 
 columns_stat = ['id_stat', 'dimension', 'sous_dimension', 'valeur_sous_dimension', 'total_siret', 'delta_effectif_total', 'delta_effectif_percent_mean']
+
+columns_region = ['reg', 'cheflieu', 'tncc', 'ncc', 'nccenr', 'libelle']
+
+columns_departement = ['dep', 'reg', 'cheflieu', 'tncc', 'ncc', 'nccenr', 'libelle']
+
+columns_naf = ['code_naf', 'intitule_naf', 'intitule_naf_65', 'intitule_naf_40']
+
 
 @app.route('/')
 def index():
@@ -56,6 +66,8 @@ def getstataide():
             dataDict['delta_effectif_percent'] = str(data[i][3]) 
             dataJson.append(dataDict)
         return jsonify(dataJson)
+
+
 
 ################### SIRET ##############
 
@@ -126,6 +138,7 @@ def getaidefromcodeinsee(codeCommuneEtablissement):
 def getregstat():
     # GET a specific data by id
     if request.method == 'GET':
+
         data = db.session.query(Aide.reg, db.func.sum(Aide.montant_modifie), db.func.count(Aide.siren), db.func.sum(Aide.delta_effectif), db.func.avg(Aide.delta_effectif_percent)).group_by(Aide.reg).all()
         app.logger.info(data)
         dataJson = []
