@@ -11,36 +11,32 @@ export const state = () => ({
   locales: undefined,
 
   appTitle: process.env.CONFIG_APP.appTitle,
-  // title: 'Vuetify.js',
 
   value : undefined, 
 
-  // NAVBAR
+  // NAVBAR - on basis vuetify create-nuxt-app
   navbar : {
-
-    clipped: true,
-
-    drawer: true,
-    fixed: false,
-    miniVariant: false,
-
-    right: true,
-    rightDrawer: false,
-
-    items: [
-      {
-        icon: 'mdi-apps',
-        title: 'Welcome',
-        i18nTitle: 'menu.welcome',
-        to: '/'
-      },
-      {
-        icon: 'mdi-chart-bubble',
-        title: 'Inspire',
-        i18nTitle: 'menu.inspire',
-        to: '/inspire'
-      }
-    ],
+    clipped     :  process.env.CONFIG_APP.navbar.clipped, //true,
+    drawer      :  process.env.CONFIG_APP.navbar.drawer, //true,
+    fixed       :  process.env.CONFIG_APP.navbar.fixed, //false,
+    miniVariant :  process.env.CONFIG_APP.navbar.miniVariant, //false,
+    right       :  process.env.CONFIG_APP.navbar.right, //true,
+    rightDrawer :  process.env.CONFIG_APP.navbar.rightDrawer, //false,
+    items       : process.env.CONFIG_APP.navbar.items, // ,
+    // items: [
+    //   {
+    //     icon: 'mdi-apps',
+    //     title: 'Welcome',
+    //     i18nTitle: 'menu.welcome',
+    //     to: '/'
+    //   },
+    //   {
+    //     icon: 'mdi-chart-bubble',
+    //     title: 'Inspire',
+    //     i18nTitle: 'menu.inspire',
+    //     to: '/inspire'
+    //   }
+    // ],
 
   }
 

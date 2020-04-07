@@ -84,6 +84,9 @@ const configApp = {
   // DATA : 
   backendApi : chooseBackend(process.env.NUXT_ENV_RUN_MODE),
 
+  // UX
+  navbar : configAppFileRaw.navbar,
+
   // UI
   UI_config : {
     dark : configAppFileRaw.UI_config.darkTheme,

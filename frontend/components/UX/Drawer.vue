@@ -1,7 +1,7 @@
 <template>
   
   <v-navigation-drawer
-    v-model="drawer"
+    v-model="drawerLocal"
     :mini-variant="miniVariant"
     :clipped="clipped"
     fixed
@@ -24,7 +24,7 @@
         <v-list-item-content>
           <v-list-item-title v-text="$t(item.i18nTitle)" />
         </v-list-item-content>
-        
+
       </v-list-item>
 
     </v-list>
@@ -49,13 +49,18 @@
 
     mounted(){
       this.log && console.log('C-Drawer / mounted ...')
+      this.drawerLocal = this.drawer
     },
 
     watch: {
+      drawer(next, prev) {
+        this.drawerLocal = next
+      }
     },
 
     data(){
       return {
+        drawerLocal : undefined
       }
     },
 

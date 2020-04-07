@@ -29,8 +29,12 @@
       "warning"   : "#FFC107",
       "error"     : "#FF5252",
       "success"   : "#00BCD4"
+    },
+
+    "typos" : {
+      
     }
-    
+
   },
 
   "navbar" : {
@@ -47,13 +51,11 @@
     "items": [
       {
         "icon": "mdi-apps",
-        "title": "Welcome",
         "i18nTitle": "menu.welcome",
         "to": "/"
       },
       {
         "icon": "mdi-chart-bubble",
-        "title": "Inspire",
         "i18nTitle": "menu.inspire",
         "to": "/inspire"
       }
