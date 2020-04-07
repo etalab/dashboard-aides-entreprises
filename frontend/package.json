@@ -13,6 +13,9 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "apexcharts": "^3.18.1",
+    "dotenv": "^8.2.0",
+    "mapbox-gl": "^1.9.1",
+    "mapbox-gl-vue": "^2.0.4",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.8.1",
     "vue-apexcharts": "^1.5.3"
