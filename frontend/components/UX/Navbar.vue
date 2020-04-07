@@ -41,6 +41,7 @@
       </v-btn>
 
       <!-- NAVBAR TITLE -->
+      <v-spacer/>
       <v-toolbar-title v-text="appTitle[locale]" />
 
 

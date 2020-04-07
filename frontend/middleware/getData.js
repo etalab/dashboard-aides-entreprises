@@ -10,11 +10,12 @@ export default function ({ req, store, app, redirect }) {
     console.log('\n-MW- getData...')
   
     let baseUrl = store.state.data.backendApi
-    let testUrl = baseUrl + "/stat/aide"
+    let testUrl = baseUrl + "/region"
   
-    let resp = getDataFromUrl( testUrl )
-  
-    store.commit('data/setDisplayedData', resp.data)
+    let response = getDataFromUrl( testUrl )
+    response.then( resp =>
+      store.commit('data/setDisplayedData', resp.data)
+    )
 
   }
 

@@ -16,7 +16,10 @@
       
       <Filters/>
       
-      <v-container id="layout-container">
+      <v-container 
+        id="layout-container"
+        fluid
+        >
         <nuxt />
       </v-container>
     

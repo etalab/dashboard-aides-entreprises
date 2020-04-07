@@ -21,7 +21,7 @@
             text
             v-on="on"
             >
-            Dropdown
+            Filter 1
             <v-icon> mdi-menu-down </v-icon>
           </v-btn>
         </template>

@@ -4,6 +4,17 @@
 
     <!-- <Filters/> -->
 
+    <div>
+      filters : 
+      <code>{{ filters }}</code>
+    </div>
+
+    <div>
+       data : 
+      <code>{{ data }}</code>
+    </div>
+
+
     <v-layout
       column
       justify-center
@@ -101,7 +112,7 @@
         locale : state => state.locale,
 
         backendApi : state => state.data.backendApi,
-
+        filters : state => state.data.filters,
         data : state => state.data.displayedData,
       }),
 
