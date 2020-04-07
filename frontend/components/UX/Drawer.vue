@@ -7,7 +7,7 @@
     fixed
     app
     >
-
+    
     <v-list>
       <v-list-item
         v-for="(item, i) in items"
@@ -15,14 +15,18 @@
         :to="item.to"
         router
         exact
-      >
+        >
+
         <v-list-item-action>
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-item-action>
+
         <v-list-item-content>
           <v-list-item-title v-text="$t(item.i18nTitle)" />
         </v-list-item-content>
+        
       </v-list-item>
+
     </v-list>
   </v-navigation-drawer>
 

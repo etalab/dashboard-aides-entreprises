@@ -22,7 +22,7 @@ export const state = () => ({
 
     drawer: true,
     fixed: false,
-    miniVariant: true,
+    miniVariant: false,
 
     right: true,
     rightDrawer: false,

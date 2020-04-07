@@ -6,9 +6,16 @@ const dotenv = require('dotenv')
 dotenv.config()
 console.log('>>> nuxt.config.js (start) / process.env.NUXT_ENV_APP_TITLE : ', process.env.NUXT_ENV_APP_TITLE)
 
+
+const configAppFileRaw = require('./config/appConfigUIUX.json')
+console.log('>>> nuxt.config.js / configAppFileRaw : \n', configAppFileRaw)
+
+
+
 const trueStrings = ['yes', 'Yes', 'YES', 'y', 'Y', 'true', 'True', 'TRUE', 't', 'T']
 const falseStrings = ['no', 'No', 'NO', 'n', 'N', 'false', 'False', 'FALSE', 'f', 'F']
 const logAllowed = ['preprod', 'dev', 'mockup']
+
 
 // SELECTOR FUNCTIONS FROM ENV VAR
 const chooseBooleanMode = (ARG) => {
@@ -41,25 +48,26 @@ const chooseBackend = (ENVPROD) => {
   }
 }
 
-const buildLocales = () => {
-  let locales = [] 
-  for ( const locale of process.env.NUXT_ENV_LOCALES.split(',') ) {
-    let localeData = locale.split(':')
-    let localeObj = {
-      name: localeData[0],
-      code: localeData[1],
-      iso: localeData[2],
-      file: localeData[2] + '.json'
-    }
-    locales.push(localeObj)
-  }
-  return locales
-}
+// const buildLocales = () => {
+//   let locales = [] 
+//   for ( const locale of process.env.NUXT_ENV_LOCALES.split(',') ) {
+//     let localeData = locale.split(':')
+//     let localeObj = {
+//       name: localeData[0],
+//       code: localeData[1],
+//       iso: localeData[2],
+//       file: localeData[2] + '.json'
+//     }
+//     locales.push(localeObj)
+//   }
+//   return locales
+// }
 
 const configApp = {
 
   /// APP INFOS
-  appTitle: process.env.NUXT_ENV_APP_TITLE,
+  // appTitle: process.env.NUXT_ENV_APP_TITLE,
+  appTitle: configAppFileRaw.appTitle,
 
   // DEV MODE - PORT - HOST ...
   mode: process.env.NUXT_ENV_RUN_MODE,
@@ -69,22 +77,24 @@ const configApp = {
   // isProtected: chooseBooleanMode(process.env.NUXT_ENV_IS_PROTECTED),
 
   // INTERNATIONALIZATION
-  defaultLocale: process.env.NUXT_ENV_LOCALE_DEFAULT,
-  localesBuild: buildLocales(),
+  // defaultLocale: process.env.NUXT_ENV_LOCALE_DEFAULT,
+  defaultLocale: configAppFileRaw.lang.defaultLocale,
+  localesBuild: configAppFileRaw.lang.locales, //buildLocales(),
 
   // DATA : 
   backendApi : chooseBackend(process.env.NUXT_ENV_RUN_MODE),
 
   // UI
   UI_config : {
+    dark : configAppFileRaw.UI_config.darkTheme,
     colors : {
-      primary: process.env.VUETIFY_primary,
-      accent: process.env.VUETIFY_accent,
-      secondary: process.env.VUETIFY_secondary,
-      info: process.env.VUETIFY_info,
-      warning: process.env.VUETIFY_warning,
-      error: process.env.VUETIFY_error,
-      success: process.env.VUETIFY_success
+      primary   : configAppFileRaw.UI_config.mainColors.primary, // process.env.VUETIFY_primary,
+      accent    : configAppFileRaw.UI_config.mainColors.accent, // process.env.VUETIFY_accent,
+      secondary : configAppFileRaw.UI_config.mainColors.secondary, // process.env.VUETIFY_secondary,
+      info      : configAppFileRaw.UI_config.mainColors.info, // process.env.VUETIFY_info,
+      warning   : configAppFileRaw.UI_config.mainColors.warning, // process.env.VUETIFY_warning,
+      error     : configAppFileRaw.UI_config.mainColors.error, // process.env.VUETIFY_error,
+      success   : configAppFileRaw.UI_config.mainColors.success, // process.env.VUETIFY_success
     },
     typos : {
 
@@ -147,22 +157,26 @@ export default {
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
+
   /*
   ** Global CSS
   */
   css: [
   ],
+
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
   ],
+
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
     '@nuxtjs/vuetify',
   ],
+
   /*
   ** Nuxt.js modules
   */
@@ -173,19 +187,21 @@ export default {
   ],
   
   i18n: {
-    locales: [
-       {
-         code: 'fr',
-         name: 'Français',
-         file: 'fr-FR.js' 
-       },
-     ],
-    defaultLocale: 'fr',
+
+    defaultLocale: configAppFileRaw.lang.defaultLocale, //'fr',
+    locales : configAppFileRaw.lang.locales,
+    // locales: [
+    //    {
+    //      code: 'fr',
+    //      name: 'Français',
+    //      file: 'fr-FR.js' 
+    //    },
+    //  ],
+    vueI18n: {
+      fallbackLocale: configAppFileRaw.lang.defaultLocale, //'fr',
+    },
     lazy: true,
     langDir : "locales/",
-    vueI18n: {
-      fallbackLocale: 'fr',
-    }
   },
 
 
@@ -202,16 +218,16 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: configApp.UI_config.dark,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          primary   : configApp.UI_config.colors.primary ,  // colors.blue.darken2,
+          accent    : configApp.UI_config.colors.accent ,  // colors.grey.darken3,
+          secondary : configApp.UI_config.colors.secondary ,  // colors.amber.darken3,
+          info      : configApp.UI_config.colors.info ,  // colors.teal.lighten1,
+          warning   : configApp.UI_config.colors.warning ,  // colors.amber.base,
+          error     : configApp.UI_config.colors.error ,  // colors.deepOrange.accent4,
+          success   : configApp.UI_config.colors.success ,  // colors.green.accent3
         }
       }
     }

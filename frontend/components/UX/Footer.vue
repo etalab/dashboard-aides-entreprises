@@ -45,7 +45,6 @@
 
     data(){
       return {
-        fixed: false,
       }
     },
 
