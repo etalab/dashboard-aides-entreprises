@@ -12,7 +12,6 @@ dfcom.rename(columns={'com':'codeCommuneEtablissement'},inplace=True)
 
 for file in input_folder:
    print(file)
-   if file not in lf:
-       df = pd.read_csv("../data/0-brut/"+file, dtype={'codeCommuneEtablissement':str})
-       dfmerge = pd.merge(df, dfcom, on='codeCommuneEtablissement', how='left')
-       dfmerge.to_csv("../data/1-enrich/"+file,index=False)
+   df = pd.read_csv("../data/0-brut/"+file, dtype={'codeCommuneEtablissement':str})
+   dfmerge = pd.merge(df, dfcom, on='codeCommuneEtablissement', how='left')
+   dfmerge.to_csv("../data/1-enrich/"+file,index=False)
