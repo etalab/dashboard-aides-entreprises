@@ -62,6 +62,7 @@ export default {
   },
   
   props : [
+    'settings',
   ],
 
   data(){

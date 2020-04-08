@@ -3,30 +3,62 @@
   <div id="homepage">
 
 
-    <v-layout
-      column
-      justify-center
-      align-center
+    <!-- {{ routeConfig }} -->
+
+    <v-row
+      no-gutters
+      v-for="(row, index) in routeConfig.pageRows"
+      :key="'R'+index"
+      :id="'R'+index"
       >
+      
+      <v-col
+        v-for="(col, i) in row.columns"
+        :key="'R'+index+'-C'+i"
+        :id="'R'+index+'-C'+i"
+        :class="col.classColumn"
+        :cols="col.cols"
+        :sm="col.sm"
+        :md="col.md"
+        :lg="col.lg"
+        :xl="col.xl"
+        >
 
-      <!-- <Table/> -->
-      <MapboxGL/>
-      <!-- <Table/> -->
+        <v-row
+          no-gutters
+          v-for="(colRow, iRow) in col.colRows"
+          :key="'R'+index+'-C'+i+'-CR'+iRow"
+          :id="'R'+index+'-C'+i+'-CR'+iRow"
+          :justify="colRow.justify"
+          :align="colRow.align"
+          :class="colRow.class"
+          >
+            
+          <ApexChart
+            v-if="colRow.component == 'chart' "
+            :settings="colRow.settings"
+          />
 
-    </v-layout>
+          <Numbers
+            v-if="colRow.component == 'numbers' "
+            :settings="colRow.settings"
+          />
 
+          <Table
+            v-if="colRow.component == 'table' "
+            :settings="colRow.settings"
+          />
 
-    <!-- <div>
-      filters : 
-      <code>{{ filters }}</code>
-    </div> -->
+          <MapboxGL
+            v-if="colRow.component == 'map' "
+            :settings="colRow.settings"
+          />
 
-    <!-- <div>
-       data : <br>
-      <code>{{ data }}</code>
-    </div> -->
+        </v-row>
 
+      </v-col>
 
+    </v-row>
 
   </div>
 
@@ -41,9 +73,11 @@
   import { mapState, mapGetters } from 'vuex'
 
   import Filters from '~/components/DataViews/Filters.vue'
+
   import Table from '~/components/DataViews/Table.vue'
   import MapboxGL from '~/components/DataViews/MapboxGL.vue'
   import ApexChart from '~/components/DataViews/ApexChart.vue'
+  // import Numbers from '~/components/DataViews/Numbers.vue'
 
   export default {
     
@@ -87,7 +121,10 @@
       }),
 
       ...mapGetters({
-        getCurrentLocale : 'getCurrentLocale'
+
+        getCurrentLocale : 'getCurrentLocale',
+        routeConfig : 'getLocalRouteConfig',
+
       }),
 
     },

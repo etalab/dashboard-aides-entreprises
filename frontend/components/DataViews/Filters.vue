@@ -10,6 +10,7 @@
   <v-toolbar 
     :elevation="filtersUI.elevation"
     dense
+    :fixed="true"
     >
 
     <v-spacer></v-spacer>
@@ -23,6 +24,7 @@
         :key="index"
         >
 
+        <!-- DROPDOWN MENU -->
         <template v-slot:activator="{ on }">
           <v-btn
             color="primary"
@@ -34,14 +36,15 @@
           </v-btn>
         </template>
 
+        <!-- MENU OPTIONS -->
         <v-list>
           <v-list-item
-            v-for="(item, i) in filter.options"
+            v-for="(filterItem, i) in filter.options"
             :key="i"
-            @click=""
+            @click="updateActivatedFilters(filter, filterItem)"
             >
             <v-list-item-title>
-              {{ item.label[ locale ] }}
+              {{ filterItem.label[ locale ] }}
             </v-list-item-title>
           </v-list-item>
         </v-list>
@@ -80,12 +83,6 @@
 
     data(){
       return {
-        items: [
-          { title: 'Click Me' },
-          { title: 'Click Me' },
-          { title: 'Click Me' },
-          { title: 'Click Me 2' },
-        ],
       }
     },
 
@@ -107,6 +104,17 @@
     },
     
     methods : {
+
+      updateActivatedFilters( filter, filterItem ) {
+        // this.log && console.log('C-Filters / updateActivatedFilters / filterItem : ', filterItem)
+
+        let filterTag = {
+          filterCode : filter.filterCode,
+          optionValue : filterItem.value
+        }
+
+        this.$store.dispatch( 'data/toggleFilters', filterTag )
+      }
 
     },
 

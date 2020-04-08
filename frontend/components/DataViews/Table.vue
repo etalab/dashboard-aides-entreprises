@@ -41,6 +41,7 @@
     },
     
     props : [
+      'settings',
     ],
 
     mounted(){

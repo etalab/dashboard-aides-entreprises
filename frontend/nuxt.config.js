@@ -69,12 +69,14 @@ const configApp = {
 
   // UX
   UX_config : configAppUIUX.UX_config,
+  routes_config : configAppUIUX.routes,
 
   // UI
   UI_config : configAppUIUX.UI_config,
 
   // MAP SETTINGS
   MAP_config : configAppMap,
+
 
 }
 
@@ -123,8 +125,8 @@ export default {
   router : {
     middleware: [
       'setLocales',
-      'initDataSetup',
-      'getData',
+      'getDataInit',
+      'getRouteConfig',
     ],
   },
 

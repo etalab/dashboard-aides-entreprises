@@ -31,7 +31,7 @@ export const configAppUIUX = {
       clipped: true,
       drawer: false,
       fixed: false,
-      miniVariant: false,
+      miniVariant: true,
       right: true,
       rightDrawer: false,
       
@@ -68,6 +68,11 @@ export const configAppUIUX = {
           icon: "fas fa-table",
           i18nTitle: "menu.table",
           to: "/table"
+        },
+        {
+          icon: "fas fa-database",
+          i18nTitle: "menu.data",
+          to: "/rawData"
         },
       ]
   
@@ -123,19 +128,167 @@ export const configAppUIUX = {
 
   // ROUTES / PAGES
   routes : [
+
     { 
       name : "home",
-      rawHtml : "",
-      dataViews : [
-        { 
-          name : "map", 
-          component : "map",
-          n_line : 1,
-          n_column : 2, 
-          size_column : 8,
-        }
+      urls : [ "/"],
+      rawHtml : undefined,
+      pageRows : [
+        { rowNumber: 1,
+          columns : [
+            {
+              colName : "table", 
+              colClass : "",
+              cols : 4,
+              md : 4,
+              sm : 12,
+              lg : null,
+              xl : null,
+              colRows : [
+                {
+                  component : "table",
+                  justify : "center",
+                  align : "center",
+                  settings : {},
+                },
+                {
+                  component : "table",
+                  justify : "center",
+                  align : "center",
+                  settings : {},
+                },
+              ],
+            },
+            { 
+              colName : "map", 
+              colClass : "",
+              cols : 8,
+              md : 8,
+              sm : 12,
+              lg : null,
+              xl : null,
+              colRows : [
+                {
+                  component : "map",
+                  justify : "center",
+                  align : "center",
+                  settings : {},
+                },
+              ],
+            },
+          ],
+        },
+        { rowNumber: 2,
+          columns : [
+            { 
+              colName : "text", 
+              colClass : "",
+              cols : 12,
+              md : 12,
+              sm : 12,
+              lg : null,
+              xl : null,
+              colRows : [
+                {
+                  component : "text",
+                  justify : "center",
+                  align : "center",
+                  settings : {},
+                },
+              ],
+            },
+          ],
+        },
       ],
-    }
+    },
+
+    {
+      name : "map",
+      urls : ["/map"],
+      rawHtml : undefined,
+      pageRows : [
+        { rowNumber: 1,
+          columns : [
+            { 
+              colName : "map", 
+              colClass : "",
+              cols : 12,
+              md : 12,
+              sm : 12,
+              lg : null,
+              xl : null,
+              colRows : [
+                {
+                  component : "map",
+                  justify : "center",
+                  align : "center",
+                  settings : {},
+                },
+              ],
+            },
+          ]
+        },
+      ],
+    },
+
+    {
+      name : "charts",
+      urls : ["/charts"],
+      rawHtml : undefined,
+      pageRows : [
+        { rowNumber: 1,
+          columns : [
+            { 
+              colName : "chart", 
+              colClass : "",
+              cols : 12,
+              md : 12,
+              sm : 12,
+              lg : null,
+              xl : null,
+              colRows : [
+                {
+                  component : "chart",
+                  justify : "center",
+                  align : "center",
+                  settings : {},
+                },
+              ],
+            },
+          ]
+        },
+      ],
+    },
+
+    {
+      name : "table",
+      urls : ["/table"],
+      rawHtml : undefined,
+      pageRows : [
+        { rowNumber: 1,
+          columns : [
+            { 
+              colName : "table", 
+              colClass : "",
+              cols : 12,
+              md : 12,
+              sm : 12,
+              lg : null,
+              xl : null,
+              colRows : [
+                {
+                  component : "table",
+                  justify : "center",
+                  align : "center",
+                  settings : {},
+                },
+              ],
+            },
+          ]
+        },
+      ],
+    },
+
   ]
 
 

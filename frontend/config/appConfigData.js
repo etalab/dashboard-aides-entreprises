@@ -9,9 +9,14 @@ export const configAppData = {
     docs : "https://github.com/etalab/dashboard-aides-entreprises/tree/j_front/frontend",
     dataType : "api", // either API or JSON ?
     sources : {
-      dev : "http://pad-01.infra.data.gouv.fr:5000/",
-      prod : "http://pad-01.infra.data.gouv.fr:5000/",
+      dev :     "http://pad-01.infra.data.gouv.fr:5000/",
+      prod :    "http://pad-01.infra.data.gouv.fr:5000/",
       preprod : "http://pad-01.infra.data.gouv.fr:5000/"
+    },
+    sourcesJson : {
+      dev :     "~/dataJson/data.json",
+      prod :    "~/dataJson/data.json",
+      preprod : "~/dataJson/data.json"
     },
 
     dimensions : [
@@ -64,6 +69,7 @@ export const configAppData = {
       }
 
     ]
+
   },
 
 
@@ -72,6 +78,7 @@ export const configAppData = {
     
     { 
       arg : "departement",
+      filterCode : "DEP",
       filterType : "checkbox",
       isActivated : true,
       name : {
@@ -86,6 +93,7 @@ export const configAppData = {
     
     { 
       arg : "effectif",
+      filterCode : "EFF",
       filterType : "checkbox",
       isActivated : true,
       name : {
@@ -100,6 +108,7 @@ export const configAppData = {
     
     { 
       arg : "naf",
+      filterCode : "NAF",
       filterType : "checkbox",
       isActivated : true,
       name : {
@@ -121,16 +130,17 @@ export const configAppData = {
     initData : {
       help : "populate store.data.state.storedData " ,
       store : [
-        { field: "naf" ,         url_suffix : "naf" },
-        { field: "region" ,      url_suffix : "region" },
-        { field: "departement" , url_suffix : "departement" }
+        { field: "naf" ,            url_suffix : "naf" },
+        { field: "region" ,         url_suffix : "region" },
+        { field: "departement" ,    url_suffix : "departement" },
+        { field: "classeeffectif" , url_suffix : "classeeffectif" },
       ]
     },
 
     displayedData : {
       help : "populate store.data.state.displayedData " ,
       store : [
-        { field: "aides-reg" , url_suffix : "stat/aide/reg" }
+        { field: "aides-reg" , url_suffix : "stat/aide/reg" },
       ]
     },
 

@@ -29,6 +29,9 @@ export const state = () => ({
   configUI : process.env.CONFIG_APP.UI_config,
   configMap : process.env.CONFIG_APP.MAP_config,
 
+  configRoutes : process.env.CONFIG_APP.routes_config,
+  localRouteConfig : undefined,
+
 })
 
 
@@ -44,6 +47,24 @@ export const getters = {
     // state.log && console.log("S-index-G-getCurrentLocale / state.locale : ", state.locale)
     return state.locale ? state.locale : getters.getDefaultLocale
   },
+
+
+  // ROUTES
+  getLocalRouteConfig : (state) => {
+    return state.localRouteConfig
+  },
+
+  getCurrentRouteConfig : (state) => (currentRoute) => {
+    try {
+      return state.configRoutes.find(function(r) {
+        return r.urls.indexOf(currentRoute) !== -1;
+      });
+    } catch (e) {
+      state.log && console.log('err',e);
+      return undefined
+    }
+  },
+
 }
 
 
@@ -51,18 +72,32 @@ export const mutations = {
 
   // NAVBAR
   setFromNavbar(state, value){
-    state.log && console.log("S-index-M-setFromNavbar / value : ", value)
+    // state.log && console.log("S-index-M-setFromNavbar / value : ", value)
     state.navbar[value] = !state.navbar[value]
   },
+
+  // ROUTES CONFIG
+  setLocalRouteConfig(state, routeConfig) {
+    // state.log && console.log("S-index-M-setLocalRouteConfig...")
+    state.localRouteConfig = routeConfig
+    state.log && console.log("S-index-M-setLocalRouteConfig / state.localRouteConfig : ", state.localRouteConfig)
+  },
+
+
+  // INTERNATIONALIZATION
   switchLocale(state , localeObject) {
-    state.log && console.log("S-index-M-switchLocale / localeObject : ", localeObject)
+    // state.log && console.log("S-index-M-switchLocale / localeObject : ", localeObject)
     state.locale = localeObject.code
   },
-  
-  // INTERNATIONALIZATION
+
+  setLocale(state, loc){
+    // state.log && console.log("S-index-M-setLocale / loc :", loc )
+    state.locale = loc
+  },
+
   initLocales(state) {
     
-    state.log && console.log("S-index-M-initLocales ... ")
+    // state.log && console.log("S-index-M-initLocales ... ")
 
     let localesBuild = process.env.CONFIG_APP.localesBuild
     state.locales = localesBuild

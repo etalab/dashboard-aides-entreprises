@@ -33,13 +33,13 @@ Vue.prototype.$mapbox = Mapbox;
 
 import axios from 'axios'
 
+
 // - - - SOURCES - - - // 
 
 // GEOJSON DATA
 export function getStyleJSON (styleURL) {
 
   console.log("+ + + getStyleJSON ... styleURL : ", styleURL)
-
 
   let head = { 
     headers: {
@@ -55,7 +55,6 @@ export function getStyleJSON (styleURL) {
     .catch( (error) => {
       console.log("+ + + getStyleJSON / AXIOS / error : ", error)
     } )
-
 
 }
 
@@ -74,6 +73,8 @@ export function createGeoJSONSource (geoJSON, vars) {
   }
   return geoJsonSource
 }
+
+
 
 // - - - LAYERS - - - // 
 

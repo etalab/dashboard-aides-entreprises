@@ -15,10 +15,13 @@
     <v-content id="layout-content">
       
       <Filters/>
+
+      <!-- <FiltersFeedback/> -->
       
       <v-container 
         id="layout-container"
         fluid
+        pa-0
         >
         <nuxt />
       </v-container>
@@ -64,6 +67,7 @@
   import Navbar from '~/components/UX/Navbar.vue'
   import Drawer from '~/components/UX/Drawer.vue'
   import Filters from '~/components/DataViews/Filters.vue'
+  import FiltersFeedback from '~/components/DataViews/FiltersFeedback.vue'
   import Footer from '~/components/UX/Footer.vue'
 
 
@@ -89,6 +93,7 @@
       Navbar,
       Drawer,
       Filters,
+      FiltersFeedback,
       Footer,
     },
 
@@ -103,12 +108,15 @@
 
         log : state => state.log, 
         locale : state => state.locale,
+        
         title : state => state.appTitle, 
 
       }),
 
       ...mapGetters({
-        getCurrentLocale : 'getCurrentLocale'
+
+        getCurrentLocale : 'getCurrentLocale',
+
       }),
 
     },
