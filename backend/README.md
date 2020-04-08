@@ -41,6 +41,15 @@ Un certain nombre d'API sont disponibles :
         "nombre": "59631"
       }, 
       ...
+    ]
+    "kpi_all_naf": [
+      {
+        "division_naf": "68", 
+        "libelle_division_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "89446500.00", 
+        "nombre": "59631"
+      }, 
+      ...
     ], 
     "montant": "379774500.00", 
     "nombre": "253183"
@@ -73,6 +82,15 @@ Un certain nombre d'API sont disponibles :
         "nombre": "250"
       }, 
       ...
+    ]
+    "kpi_all_naf": [
+      {
+        "division_naf": "68", 
+        "libelle_division_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "89446500.00", 
+        "nombre": "59631"
+      }, 
+      ...
     ], 
     "libelle": "Corse", 
     "montant": "1587000.00", 
@@ -97,6 +115,15 @@ Un certain nombre d'API sont disponibles :
         "nombre": "118"
       }, 
       ...
+    ]
+    "kpi_all_naf": [
+      {
+        "division_naf": "68", 
+        "libelle_division_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "89446500.00", 
+        "nombre": "59631"
+      }, 
+      ...
     ], 
     "libelle": "Mayotte", 
     "montant": "642000.00", 
@@ -111,7 +138,7 @@ Un certain nombre d'API sont disponibles :
 - Obtenir des informations départementales :
 
 ``` 
-/stat/aide/reg/<REG-ID>/dep
+/stat/aide/dep
 ```
 ```
 [
@@ -132,6 +159,15 @@ Un certain nombre d'API sont disponibles :
         "libelle_division_naf": "Activit\u00e9s immobili\u00e8res", 
         "montant": "1629000.00", 
         "nombre": "1086"
+      }, 
+      ...
+    ]
+    "kpi_all_naf": [
+      {
+        "division_naf": "68", 
+        "libelle_division_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "89446500.00", 
+        "nombre": "59631"
       }, 
       ...
     ], 
@@ -156,6 +192,15 @@ Un certain nombre d'API sont disponibles :
         "libelle_division_naf": "Activit\u00e9s immobili\u00e8res", 
         "montant": "1396500.00", 
         "nombre": "931"
+      }, 
+      ...
+    ]
+    "kpi_all_naf": [
+      {
+        "division_naf": "68", 
+        "libelle_division_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "89446500.00", 
+        "nombre": "59631"
       }, 
       ...
     ], 
