@@ -7,22 +7,21 @@ export const state = () => ({
   // GLOABAL APP ENV
   log : process.env.LOG,
 
-  value: undefined,
-
   // API BACKEND
   backendApi : process.env.CONFIG_APP.backendApi, 
-
+  dataSource : process.env.CONFIG_APP.dataSource,
+  defaultDataSetup : process.env.CONFIG_APP.defaultDataSetup,
 
   // FILTERS
-  filters : undefined,
-  activatedFilters : undefined,
-
+  filters : process.env.CONFIG_APP.filters,
+  activatedFilters : [],
 
   // DATASETS
-  // ... 
-
+  initData : undefined,
   displayedData : undefined,
 
+  query: undefined,
+  response : undefined,
 
 })
 
@@ -40,16 +39,18 @@ export const getters = {
 
 export const mutations = {
 
-  setValue(state, value){
-    state.value = value
+  setElement (state, ElObject ){
+    state[ElObject.field] = ElObject.value
+  },
+  
+  setInitData (state, value){
+    if ( !state.initData ){ state.initData = {} }
+    state.initData[ value.field ] = value.data
   },
 
-  setFilters (state, filters){
-    state.filters = filters
-  },
-
-  setDisplayedData (state, data){
-    state.displayedData = data
+  setDisplayedData (state, value){
+    if ( !state.displayedData ){ state.displayedData = {} }
+    state.displayedData[ value.field ] = value.data
   }
 
 }
@@ -59,9 +60,9 @@ export const mutations = {
 
 export const actions = {
 
-  setSpecValue({state, commit}, value){
-    commit('setValue', value)
-  },
+  // setSpecValue({state, commit}, value){
+  //   commit('setValue', value)
+  // },
 
 
 }

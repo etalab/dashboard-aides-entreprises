@@ -11,6 +11,7 @@
       :clipped-left="clipped"
       fixed
       app
+      :elevation="navbarUI.elevation"
       >
 
       <!-- DRAWER -->
@@ -96,6 +97,8 @@
         locale : state => state.locale,
         appTitle : state => state.appTitle, 
 
+        navbarUI : state => state.configUI.navbar,
+
         clipped : state => state.navbar.clipped, 
         drawer : state => state.navbar.drawer, 
         fixed : state => state.navbar.fixed, 
@@ -114,6 +117,7 @@
     methods : {
 
       toogleNavbarItem( fieldName ) {
+        // this.log && console.log('C-Navbar / toogleNavbarItem : ', fieldName)
         this.$store.commit('setFromNavbar', fieldName )
       },
 

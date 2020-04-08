@@ -6,11 +6,16 @@ dotenv.config()
 console.log('>>> nuxt.config.js (start) / process.env.NUXT_ENV_APP_TITLE : ', process.env.NUXT_ENV_APP_TITLE)
 
 
-const configAppFileUxUi = require('./config/appConfigUIUX.json')
-console.log('>>> nuxt.config.js / configAppFileUxUi : \n', configAppFileUxUi)
+import { configAppUIUX } from './config/appConfigUIUX.js'
+// console.log('>>> nuxt.config.js / configAppUIUX : \n', configAppUIUX)
 
-const configAppFileData = require('./config/appConfigData.json')
-console.log('>>> nuxt.config.js / configAppFileData : \n', configAppFileData)
+import { configAppData } from './config/appConfigData.js'
+// console.log('>>> nuxt.config.js / configAppData : \n', configAppData)
+
+import { configAppMap } from './config/appConfigMap.js'
+// console.log('>>> nuxt.config.js / configAppMap : \n', configAppMap)
+
+
 
 const trueStrings = ['yes', 'Yes', 'YES', 'y', 'Y', 'true', 'True', 'TRUE', 't', 'T']
 const falseStrings = ['no', 'No', 'NO', 'n', 'N', 'false', 'False', 'FALSE', 'f', 'F']
@@ -39,13 +44,13 @@ const choosePort = (ENVPROD) => {
 }
 
 const chooseBackend = (ENVPROD) => {
-  return configAppFileData.dataSource.sources[ ENVPROD ]
+  return configAppData.dataSource.sources[ ENVPROD ]
 }
 
 const configApp = {
 
   /// APP INFOS
-  appTitle: configAppFileUxUi.appTitle,
+  appTitle: configAppUIUX.appTitle,
 
   // DEV MODE - PORT - HOST ...
   mode: process.env.NUXT_ENV_RUN_MODE,
@@ -53,32 +58,23 @@ const configApp = {
   port: choosePort(process.env.NUXT_ENV_RUN_MODE),
 
   // INTERNATIONALIZATION
-  defaultLocale: configAppFileUxUi.lang.defaultLocale,
-  localesBuild: configAppFileUxUi.lang.locales,
+  defaultLocale: configAppUIUX.lang.defaultLocale,
+  localesBuild: configAppUIUX.lang.locales,
 
   // DATA : 
   backendApi : chooseBackend(process.env.NUXT_ENV_RUN_MODE),
-  filters: configAppFileData.filters, 
+  dataSource: configAppData.dataSource, 
+  filters: configAppData.filters, 
+  defaultDataSetup: configAppData.defaultDataSetup, 
 
   // UX
-  navbar : configAppFileUxUi.navbar,
+  UX_config : configAppUIUX.UX_config,
 
   // UI
-  UI_config : {
-    dark : configAppFileUxUi.UI_config.darkTheme,
-    colors : {
-      primary   : configAppFileUxUi.UI_config.mainColors.primary, 
-      accent    : configAppFileUxUi.UI_config.mainColors.accent, 
-      secondary : configAppFileUxUi.UI_config.mainColors.secondary, 
-      info      : configAppFileUxUi.UI_config.mainColors.info, 
-      warning   : configAppFileUxUi.UI_config.mainColors.warning, 
-      error     : configAppFileUxUi.UI_config.mainColors.error, 
-      success   : configAppFileUxUi.UI_config.mainColors.success, 
-    },
-    typos : {
+  UI_config : configAppUIUX.UI_config,
 
-    }
-  }
+  // MAP SETTINGS
+  MAP_config : configAppMap,
 
 }
 
@@ -147,6 +143,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/mapbox', mode: 'client' },
+    { src: '~/plugins/apexCharts', mode: 'client' },
   ],
 
   /*
@@ -167,10 +165,10 @@ export default {
   
   i18n: {
 
-    defaultLocale: configAppFileUxUi.lang.defaultLocale, //'fr',
-    locales : configAppFileUxUi.lang.locales,
+    defaultLocale: configAppUIUX.lang.defaultLocale, //'fr',
+    locales : configAppUIUX.lang.locales,
     vueI18n: {
-      fallbackLocale: configAppFileUxUi.lang.defaultLocale, //'fr',
+      fallbackLocale: configAppUIUX.lang.defaultLocale, //'fr',
     },
     lazy: true,
     langDir : "locales/",
@@ -191,18 +189,8 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: configApp.UI_config.dark,
-      themes: {
-        dark: {
-          primary   : configApp.UI_config.colors.primary ,  
-          accent    : configApp.UI_config.colors.accent ,  
-          secondary : configApp.UI_config.colors.secondary ,  
-          info      : configApp.UI_config.colors.info , 
-          warning   : configApp.UI_config.colors.warning , 
-          error     : configApp.UI_config.colors.error , 
-          success   : configApp.UI_config.colors.success , 
-        }
-      }
+      dark: configApp.UI_config.isDarkTheme,
+      themes: configApp.UI_config.theme,
     }
   },
 

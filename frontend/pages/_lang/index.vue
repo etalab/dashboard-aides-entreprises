@@ -2,18 +2,6 @@
 
   <div id="homepage">
 
-    <!-- <Filters/> -->
-
-    <div>
-      filters : 
-      <code>{{ filters }}</code>
-    </div>
-
-    <div>
-       data : 
-      <code>{{ data }}</code>
-    </div>
-
 
     <v-layout
       column
@@ -22,48 +10,23 @@
       >
 
       <!-- <Table/> -->
-
-      <v-flex
-        xs12
-        sm8
-        md6
-        >
-
-        <v-card>
-
-          <v-card-title class="headline">
-            {{ $t('home.title') }} 
-          </v-card-title>
-
-          <v-card-text>
-
-            <hr class="my-3">
-
-            <p>
-              {{ backendApi }}
-            </p>
-
-          </v-card-text>
-
-
-          <v-card-actions>
-            <v-spacer />
-            <v-btn
-              color="primary"
-              nuxt
-              to="/inspire"
-              >
-              {{ $t('navigation.continue') }}
-            </v-btn>
-          </v-card-actions>
-
-
-        </v-card>
-
-      </v-flex>
-
+      <MapboxGL/>
+      <!-- <Table/> -->
 
     </v-layout>
+
+
+    <!-- <div>
+      filters : 
+      <code>{{ filters }}</code>
+    </div> -->
+
+    <!-- <div>
+       data : <br>
+      <code>{{ data }}</code>
+    </div> -->
+
+
 
   </div>
 
@@ -79,6 +42,8 @@
 
   import Filters from '~/components/DataViews/Filters.vue'
   import Table from '~/components/DataViews/Table.vue'
+  import MapboxGL from '~/components/DataViews/MapboxGL.vue'
+  import ApexChart from '~/components/DataViews/ApexChart.vue'
 
   export default {
     
@@ -87,6 +52,8 @@
     components: {
       Filters,
       Table,
+      MapboxGL,
+      ApexChart,
     },
     
     props : [
@@ -113,7 +80,10 @@
 
         backendApi : state => state.data.backendApi,
         filters : state => state.data.filters,
+
+        initData : state => state.data.initData,
         data : state => state.data.displayedData,
+
       }),
 
       ...mapGetters({

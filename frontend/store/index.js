@@ -12,33 +12,22 @@ export const state = () => ({
 
   appTitle: process.env.CONFIG_APP.appTitle,
 
-  value : undefined, 
-
   // NAVBAR - on basis vuetify create-nuxt-app
-  navbar : {
-    clipped     :  process.env.CONFIG_APP.navbar.clipped, //true,
-    drawer      :  process.env.CONFIG_APP.navbar.drawer, //true,
-    fixed       :  process.env.CONFIG_APP.navbar.fixed, //false,
-    miniVariant :  process.env.CONFIG_APP.navbar.miniVariant, //false,
-    right       :  process.env.CONFIG_APP.navbar.right, //true,
-    rightDrawer :  process.env.CONFIG_APP.navbar.rightDrawer, //false,
-    items       : process.env.CONFIG_APP.navbar.items, // ,
-    // items: [
-    //   {
-    //     icon: 'mdi-apps',
-    //     title: 'Welcome',
-    //     i18nTitle: 'menu.welcome',
-    //     to: '/'
-    //   },
-    //   {
-    //     icon: 'mdi-chart-bubble',
-    //     title: 'Inspire',
-    //     i18nTitle: 'menu.inspire',
-    //     to: '/inspire'
-    //   }
-    // ],
+  navbar : process.env.CONFIG_APP.UX_config.navbar,
+  // navbar : {
+  //   clipped     :  process.env.CONFIG_APP.navbar.clipped, 
+  //   drawer      :  process.env.CONFIG_APP.navbar.drawer, 
+  //   fixed       :  process.env.CONFIG_APP.navbar.fixed, 
+  //   miniVariant :  process.env.CONFIG_APP.navbar.miniVariant, 
+  //   right       :  process.env.CONFIG_APP.navbar.right, 
+  //   rightDrawer :  process.env.CONFIG_APP.navbar.rightDrawer, 
+  //   items       : process.env.CONFIG_APP.navbar.items, 
 
-  }
+  // },
+
+  configUX : process.env.CONFIG_APP.UX_config,
+  configUI : process.env.CONFIG_APP.UI_config,
+  configMap : process.env.CONFIG_APP.MAP_config,
 
 })
 
@@ -60,9 +49,14 @@ export const getters = {
 
 export const mutations = {
 
+  // NAVBAR
   setFromNavbar(state, value){
     state.log && console.log("S-index-M-setFromNavbar / value : ", value)
     state.navbar[value] = !state.navbar[value]
+  },
+  switchLocale(state , localeObject) {
+    state.log && console.log("S-index-M-switchLocale / localeObject : ", localeObject)
+    state.locale = localeObject.code
   },
   
   // INTERNATIONALIZATION
@@ -79,10 +73,6 @@ export const mutations = {
 
   },
 
-  switchLocale(state , localeObject) {
-    state.log && console.log("S-index-M-switchLocale / localeObject : ", localeObject)
-    state.locale = localeObject.code
-  },
 
 }
 

@@ -50,7 +50,7 @@
 
 
     <!-- FOOTER -->
-    <Footer/>>
+    <Footer/>
 
 
 
@@ -103,15 +103,7 @@
 
         log : state => state.log, 
         locale : state => state.locale,
-        title : state => state.title, 
-
-        clipped : state => state.navbar.clipped, 
-        drawer : state => state.navbar.drawer, 
-        fixed : state => state.navbar.fixed, 
-        items : state => state.navbar.items, 
-        miniVariant : state => state.navbar.miniVariant, 
-        right : state => state.navbar.right, 
-        rightDrawer : state => state.navbar.rightDrawer, 
+        title : state => state.appTitle, 
 
       }),
 

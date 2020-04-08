@@ -7,13 +7,21 @@
 
 <template>
 
-  <v-toolbar dense>
+  <v-toolbar 
+    :elevation="filtersUI.elevation"
+    dense
+    >
 
     <v-spacer></v-spacer>
     
     <div class="text-center">
-
-      <v-menu offset-y>
+      
+      <!-- LOOP FILTERS -->
+      <v-menu 
+        offset-y
+        v-for="(filter, index) in filters"
+        :key="index"
+        >
 
         <template v-slot:activator="{ on }">
           <v-btn
@@ -21,18 +29,20 @@
             text
             v-on="on"
             >
-            Filter 1
+            {{ filter.name[ locale ] }}
             <v-icon> mdi-menu-down </v-icon>
           </v-btn>
         </template>
 
         <v-list>
           <v-list-item
-            v-for="(item, index) in items"
-            :key="index"
+            v-for="(item, i) in filter.options"
+            :key="i"
             @click=""
-          >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            >
+            <v-list-item-title>
+              {{ item.label[ locale ] }}
+            </v-list-item-title>
           </v-list-item>
         </v-list>
 
@@ -86,6 +96,7 @@
         locale : state => state.locale,
 
         filters : state => state.data.filters,
+        filtersUI : state => state.configUI.filters,
 
       }),
 

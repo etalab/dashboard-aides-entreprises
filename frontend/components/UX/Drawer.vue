@@ -47,8 +47,8 @@
     props : [
     ],
 
-    mounted(){
-      this.log && console.log('C-Drawer / mounted ...')
+    beforeMount(){
+      this.log && console.log('C-Drawer / beforeMount ...')
       this.drawerLocal = this.drawer
     },
 

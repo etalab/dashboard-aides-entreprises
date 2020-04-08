@@ -31,7 +31,7 @@ catch(e){
 
 export default async function getDataFromUrl( fetchUrl, fetchMethod='get' ){
 
-  console.log("+ + + getDataFromUrl / fetchUrl : ", fetchUrl)
+  // console.log("+ + + getDataFromUrl / fetchUrl : ", fetchUrl)
 
   let methodsWithPayload = [ "post", "put", "patch" ]
 
@@ -41,7 +41,7 @@ export default async function getDataFromUrl( fetchUrl, fetchMethod='get' ){
   })
 
   .then( resp => {
-    console.log("+ + + getDataFromUrl / resp :", resp);
+    // console.log("+ + + getDataFromUrl / resp :", resp);
     return resp
   })
   
