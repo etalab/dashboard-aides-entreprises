@@ -14,10 +14,11 @@ export const state = () => ({
   // FILTERS
   filters : process.env.CONFIG_APP.filters,
   activatedFilters : [ 
-    { 
-      filterCode  : 'test', 
-      optionValue : '0'
-    } 
+    // { 
+    //   filterIndex : 'c-test/o-0',
+    //   filterCode  : 'test', 
+    //   optionValue : '0'
+    // } 
   ],
 
   // DATASETS
@@ -70,9 +71,9 @@ export const mutations = {
     state.activatedFilters = [ ]
   },
 
-  setSelectedFilters (state, {selectedFilters}) {
-    // trigger re-render
-    state.search.question.selectedFilters = new Map(selectedFilters)
+  setActivatedFilters (state, selectedFilters) {
+    state.log && console.log("S-data-M-setActivatedFilters / selectedFilters :", selectedFilters)
+    state.activatedFilters = selectedFilters
   },
 
 
@@ -85,23 +86,31 @@ export const mutations = {
 export const actions = {
 
   search({state, commit}) {
+    // TO DO 
     state.log && console.log("S-data-A-search / ... ")
   },
 
-  toggleFilters({state, commit, dispatch}, {filterCode, optionValue}){
+  // FILTERS
+  toggleFilters({state, commit, dispatch, getters}, filterTag ){
 
-    // state.log && console.log("S-data-A-getActivatedFilters / filterItem :", filterItem)
-    const selectedFilters = new Map(state.activatedFilters)
-    state.log && console.log("S-data-M-updateActivatedFilters / selectedFilters :", selectedFilters)
+    state.log && console.log("\nS-data-A-getActivatedFilters / filterTag :", filterTag)
 
-    const selectedValues = selectedFilters.get(filterCode)
-    if(selectedValues.has(optionValue))
-      selectedValues.delete(optionValue)
-    else
-      selectedValues.add(optionValue)
+    const currentFilters = getters.getActivatedFilters.map( a => a )
+    state.log && console.log("S-data-A-toggleFilters / currentFilters A :", currentFilters)
 
-    state.log && console.log("S-data-M-updateActivatedFilters / selectedFilters :", selectedFilters)
-    commit('setSelectedFilters', {selectedFilters})
+    // find item by FilterCode + 
+    var removeIndex = currentFilters.map(function(item) { return item.filterIdx }).indexOf(filterTag.filterIdx);
+    state.log && console.log("S-data-A-toggleFilters / removeIndex :", removeIndex)
+
+    if (removeIndex != -1 ){ 
+      currentFilters.splice(removeIndex, 1) 
+    }
+    else { 
+      currentFilters.push( filterTag ) 
+    }
+
+    state.log && console.log("S-data-A-toggleFilters / currentFilters B :", currentFilters)
+    commit('setActivatedFilters', currentFilters )
 
     // update query and search
     dispatch('search')
@@ -109,11 +118,12 @@ export const actions = {
   },
 
   emptyOneFilter({state, commit, dispatch}, {filter}){
-    // state.log && console.log("S-data-A-emptyOneFilter / filterItem :", filterItem)
-    const selectedFilters = new Map(getters.getSelectedFilters)
-    selectedFilters.set(filter, new Set())
 
-    commit('setSelectedFilters', {selectedFilters})
+    // state.log && console.log("S-data-A-emptyOneFilter / filterItem :", filterItem)
+    // const selectedFilters = new Map(getters.getSelectedFilters)
+    // selectedFilters.set(filter, new Set())
+
+    commit('setActivatedFilters', selectedFilters )
     dispatch('search')
   },
 

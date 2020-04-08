@@ -106,11 +106,13 @@
     methods : {
 
       updateActivatedFilters( filter, filterItem ) {
+
         // this.log && console.log('C-Filters / updateActivatedFilters / filterItem : ', filterItem)
 
         let filterTag = {
           filterCode : filter.filterCode,
-          optionValue : filterItem.value
+          optionValue : filterItem.value,
+          filterIdx : "c-" + filter.filterCode + "/o-" + filterItem.value,
         }
 
         this.$store.dispatch( 'data/toggleFilters', filterTag )

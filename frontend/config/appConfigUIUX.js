@@ -289,6 +289,35 @@ export const configAppUIUX = {
       ],
     },
 
+    {
+      name : "rawData",
+      urls : ["/rawData"],
+      rawHtml : undefined,
+      pageRows : [
+        { rowNumber: 1,
+          columns : [
+            { 
+              colName : "rawData", 
+              colClass : "",
+              cols : 12,
+              md : 12,
+              sm : 12,
+              lg : null,
+              xl : null,
+              colRows : [
+                {
+                  component : "rawData",
+                  justify : "center",
+                  align : "center",
+                  settings : {},
+                },
+              ],
+            },
+          ]
+        },
+      ],
+    },
+
   ]
 
 
