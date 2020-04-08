@@ -10,11 +10,10 @@
     <v-footer
       :fixed="fixed"
       app
+      class="text-center"
       >
 
       <span>&copy; {{ new Date().getFullYear() }}</span>
-
-      -{{ locale }}
 
     </v-footer>
 

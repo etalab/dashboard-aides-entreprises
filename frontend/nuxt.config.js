@@ -137,6 +137,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/css/main.scss',
   ],
 
   /*

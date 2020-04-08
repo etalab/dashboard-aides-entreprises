@@ -48,15 +48,27 @@ export const configAppUIUX = {
       // ITEEMS IN RIIGHT DRAWER
       items: [
         {
-          icon: "mdi-apps",
+          // icon: "mdi-apps",
+          // icon: "fas fa-home",
+          icon: "fas fa-th",
           i18nTitle: "menu.welcome",
           to: "/"
         },
         {
-          icon: "mdi-chart-bubble",
-          i18nTitle: "menu.inspire",
-          to: "/inspire"
-        }
+          icon: "fas fa-map",
+          i18nTitle: "menu.map",
+          to: "/map"
+        },
+        {
+          icon: "fas fa-chart-bar",
+          i18nTitle: "menu.charts",
+          to: "/charts"
+        },
+        {
+          icon: "fas fa-table",
+          i18nTitle: "menu.table",
+          to: "/table"
+        },
       ]
   
     },

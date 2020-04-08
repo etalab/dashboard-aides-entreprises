@@ -17,12 +17,18 @@
         exact
         >
 
+        <!-- ICON -->
         <v-list-item-action>
-          <v-icon>{{ item.icon }}</v-icon>
+          <v-icon>
+            {{ item.icon }}
+          </v-icon>
         </v-list-item-action>
 
+        <!-- TEXTE -->
         <v-list-item-content>
-          <v-list-item-title v-text="$t(item.i18nTitle)" />
+          <v-list-item-title 
+            v-text="$t(item.i18nTitle)" 
+          />
         </v-list-item-content>
 
       </v-list-item>
