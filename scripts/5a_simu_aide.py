@@ -51,7 +51,7 @@ print("merging with aide dataframe")
 
 dfaide = pd.merge(dfaide, dfeff, on='siret', how='left')
 print("create a category for each type of effectif")
-dfaide['classe_effectif'] = dfaide['effectif'].apply(lambda x: 0 if x == 0 else 1 if x <= 5 else 2 if x <= 10 else 3 if x <= 20 else 4 if x <= 40 else 5)
+dfaide['classe_effectif'] = dfaide['effectif'].apply(lambda x: '00' if x == 0 else '01' if x <= 2 else '02' if x <= 5 else '03' if x <= 9 else '11' if x <= 19 else '12' if x <= 49 else '21' if x <= 99 else '22' if x <= 199 else '31' if x <= 249 else '32' if x <= 499 else '41' if x <= 999 else '42' if x <= 1999 else '51' if x <= 4999 else '52' if x <= 9999 else '53')
 
 #A vérifier
 dfaide['reg'] = dfaide['reg'].apply(lambda x: x.split(".0")[0])

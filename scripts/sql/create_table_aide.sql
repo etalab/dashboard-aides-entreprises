@@ -21,6 +21,6 @@ CREATE TABLE aide
     montant_modifie DECIMAL(9,2),
     delta_effectif DECIMAL(9,2),
     delta_effectif_percent DECIMAL(9,2),
-    classe_effectif DECIMAL(9,2)
+    classe_effectif CHARACTER VARYING
 )
 TABLESPACE pg_default;
