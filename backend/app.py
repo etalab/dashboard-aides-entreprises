@@ -64,9 +64,12 @@ def getStatAideNational():
 
         my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A INNER JOIN classeeffectif AS C ON A.classe_effectif = C.denomination GROUP BY classe_effectif, C.libelle;"
         
+        my_query_4 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC;"
+
         data = db.session.execute(my_query).fetchall()
         data2 = db.session.execute(my_query_2).fetchall()
         data3 = db.session.execute(my_query_3).fetchall()
+        data4 = db.session.execute(my_query_4).fetchall()
         app.logger.info(data)
         dataJson = []
         for i in range(len(data)):
@@ -75,6 +78,7 @@ def getStatAideNational():
             dataDict['nombre'] = str(data[i][1]) 
             dataDict['kpi_top_10_naf'] = []
             dataDict['kpi_classe_effectif'] = []
+            dataDict['kpi_all_naf'] = []
             for j in range(len(data2)):
                 dataDict2 = {}
                 dataDict2['division_naf'] = str(data2[j][0]) 
@@ -89,6 +93,13 @@ def getStatAideNational():
                 dataDict3['nombre'] = str(data3[k][2])
                 dataDict3['libelle_classe_effectif'] = str(data3[k][3])
                 dataDict['kpi_classe_effectif'].append(dataDict3)
+            for l in range(len(data4)):
+                dataDict4 = {}
+                dataDict4['division_naf'] = str(data4[l][0]) 
+                dataDict4['montant'] = str(data4[l][1]) 
+                dataDict4['nombre'] = str(data4[l][2])
+                dataDict4['libelle_division_naf'] = str(data4[l][3]) 
+                dataDict['kpi_all_naf'].append(dataDict4)
             dataJson.append(dataDict)
         return jsonify(dataJson)
 
@@ -111,13 +122,17 @@ def getStatAideRegional():
             my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
 
             my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A INNER JOIN classeeffectif AS C ON A.classe_effectif = C.denomination WHERE A.reg = '"+str(data[i][0])+"' GROUP BY classe_effectif, C.libelle;"
+
+            my_query_4 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC;"
             
             data2 = db.session.execute(my_query_2).fetchall()
             data3 = db.session.execute(my_query_3).fetchall()
+            data4 = db.session.execute(my_query_4).fetchall()
 
 
             dataDict['kpi_top_10_naf'] = []
             dataDict['kpi_classe_effectif'] = []
+            dataDict['kpi_all_naf'] = []
             for j in range(len(data2)):
                 dataDict2 = {}
                 dataDict2['division_naf'] = str(data2[j][0]) 
@@ -132,17 +147,23 @@ def getStatAideRegional():
                 dataDict3['nombre'] = str(data3[k][2])
                 dataDict3['libelle_classe_effectif'] = str(data3[k][3])
                 dataDict['kpi_classe_effectif'].append(dataDict3)
+            for l in range(len(data4)):
+                dataDict4 = {}
+                dataDict4['division_naf'] = str(data4[l][0]) 
+                dataDict4['montant'] = str(data4[l][1]) 
+                dataDict4['nombre'] = str(data4[l][2])
+                dataDict4['libelle_division_naf'] = str(data4[l][3]) 
+                dataDict['kpi_all_naf'].append(dataDict4)
 
             dataJson.append(dataDict)
         return jsonify(dataJson)
 
 
-
-@app.route('/stat/aide/reg/<string:reg>/dep', methods=['GET'])
-def getStatAideDepartemental(reg):
+@app.route('/stat/aide/dep', methods=['GET'])
+def getStatAideDepartemental():
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, D.libelle FROM aide AS A INNER JOIN departement AS D ON A.dep = D.dep WHERE A.reg = '"+reg+"' GROUP BY A.dep, D.libelle;"
+        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, D.libelle FROM aide AS A INNER JOIN departement AS D ON A.dep = D.dep GROUP BY A.dep, D.libelle;"
         data = db.session.execute(my_query).fetchall()
         app.logger.info(data)
         dataJson = []
@@ -153,16 +174,20 @@ def getStatAideDepartemental(reg):
             dataDict['nombre'] = str(data[i][2])
             dataDict['libelle'] = str(data[i][3]) 
 
-            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+reg+"' AND a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
+            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
 
-            my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A INNER JOIN classeeffectif AS C ON A.classe_effectif = C.denomination WHERE A.reg = '"+reg+"' AND A.dep = '"+str(data[i][0])+"' GROUP BY classe_effectif, C.libelle;"
+            my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A INNER JOIN classeeffectif AS C ON A.classe_effectif = C.denomination WHERE A.dep = '"+str(data[i][0])+"' GROUP BY classe_effectif, C.libelle;"
+
+            my_query_4 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC;"
+
 
             data2 = db.session.execute(my_query_2).fetchall()
             data3 = db.session.execute(my_query_3).fetchall()
-
+            data4 = db.session.execute(my_query_4).fetchall()
 
             dataDict['kpi_top_10_naf'] = []
             dataDict['kpi_classe_effectif'] = []
+            dataDict['kpi_all_naf'] = []
             for j in range(len(data2)):
                 dataDict2 = {}
                 dataDict2['division_naf'] = str(data2[j][0]) 
@@ -177,9 +202,17 @@ def getStatAideDepartemental(reg):
                 dataDict3['nombre'] = str(data3[k][2])
                 dataDict3['libelle_classe_effectif'] = str(data3[k][3])
                 dataDict['kpi_classe_effectif'].append(dataDict3)
+            for l in range(len(data2)):
+                dataDict4 = {}
+                dataDict4['division_naf'] = str(data4[l][0]) 
+                dataDict4['montant'] = str(data4[l][1]) 
+                dataDict4['nombre'] = str(data4[l][2])
+                dataDict4['libelle_division_naf'] = str(data4[l][3]) 
+                dataDict['kpi_all_naf'].append(dataDict4)
 
             dataJson.append(dataDict)
         return jsonify(dataJson)
+
 
 
 @app.route('/region', methods=['GET'])
@@ -221,6 +254,50 @@ def getClasseEffectifs():
 '''
 
 ################## API V1 ##############
+
+@app.route('/stat/aide/reg/<string:reg>/dep', methods=['GET'])
+def getStatAideDepartementalWithRegID(reg):
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, D.libelle FROM aide AS A INNER JOIN departement AS D ON A.dep = D.dep WHERE A.reg = '"+reg+"' GROUP BY A.dep, D.libelle;"
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['dep'] = str(data[i][0]) 
+            dataDict['montant'] = str(data[i][1]) 
+            dataDict['nombre'] = str(data[i][2])
+            dataDict['libelle'] = str(data[i][3]) 
+
+            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+reg+"' AND a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
+
+            my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A INNER JOIN classeeffectif AS C ON A.classe_effectif = C.denomination WHERE A.reg = '"+reg+"' AND A.dep = '"+str(data[i][0])+"' GROUP BY classe_effectif, C.libelle;"
+
+            data2 = db.session.execute(my_query_2).fetchall()
+            data3 = db.session.execute(my_query_3).fetchall()
+
+
+            dataDict['kpi_top_10_naf'] = []
+            dataDict['kpi_classe_effectif'] = []
+            for j in range(len(data2)):
+                dataDict2 = {}
+                dataDict2['division_naf'] = str(data2[j][0]) 
+                dataDict2['montant'] = str(data2[j][1]) 
+                dataDict2['nombre'] = str(data2[j][2])
+                dataDict2['libelle_division_naf'] = str(data2[j][3]) 
+                dataDict['kpi_top_10_naf'].append(dataDict2)
+            for k in range(len(data3)):
+                dataDict3 = {}
+                dataDict3['classe_effectif'] = str(data3[k][0]) 
+                dataDict3['montant'] = str(data3[k][1]) 
+                dataDict3['nombre'] = str(data3[k][2])
+                dataDict3['libelle_classe_effectif'] = str(data3[k][3])
+                dataDict['kpi_classe_effectif'].append(dataDict3)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
 
 @app.route('/stat/aide', methods=['GET'])
 def getStatAideNational():
