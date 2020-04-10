@@ -87,7 +87,9 @@
         >
 
         <!-- CONTROLS -->
-        <MglNavigationControl position="bottom-right" />
+        <MglNavigationControl 
+          position="bottom-right" 
+        />
 
       </MglMap>
 

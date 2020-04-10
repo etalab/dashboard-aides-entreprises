@@ -13,6 +13,7 @@ export const configAppRoutes = {
       pageRows : [
         { rowNumber: 1,
           columns : [
+            
             {
               colName : "Numbers and tables", 
               colClass : "",
@@ -52,6 +53,7 @@ export const configAppRoutes = {
                 },
               ],
             },
+
             { 
               colName : "main map", 
               colClass : "",
@@ -73,6 +75,7 @@ export const configAppRoutes = {
                 },
               ],
             },
+
           ],
         },
         { rowNumber: 2,
