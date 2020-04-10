@@ -119,7 +119,9 @@ export const configAppRoutes = {
                   component : "map",
                   justify : "center",
                   align : "center",
-                  settings : {},
+                  settings : {
+                    id : "map-01",
+                  },
                 },
               ],
             },
@@ -149,7 +151,9 @@ export const configAppRoutes = {
                   component : "chart",
                   justify : "center",
                   align : "center",
-                  settings : {},
+                  settings : { 
+                    id : "chart-01",
+                  },
                 },
               ],
             },
@@ -179,7 +183,9 @@ export const configAppRoutes = {
                   component : "table",
                   justify : "center",
                   align : "center",
-                  settings : {},
+                  settings : { 
+                    id : "table-01",
+                  },
                 },
               ],
             },
@@ -209,7 +215,9 @@ export const configAppRoutes = {
                   component : "rawData",
                   justify : "center",
                   align : "center",
-                  settings : {},
+                  settings : { 
+                    id : "chart-01",
+                  },
                 },
               ],
             },
