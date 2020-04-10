@@ -25,6 +25,7 @@ export const configAppRoutes = {
               colRows : [
                 {
                   component : "numbers",
+                  activated : true,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -33,6 +34,7 @@ export const configAppRoutes = {
                 },
                 {
                   component : "chart",
+                  activated : true,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -41,6 +43,7 @@ export const configAppRoutes = {
                 },
                 {
                   component : "chart",
+                  activated : true,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -61,10 +64,11 @@ export const configAppRoutes = {
               colRows : [
                 {
                   component : "map",
+                  activated : true,
                   justify : "center",
                   align : "center",
                   settings : {
-                    id : "map-01",
+                    id : "map-france-metro",
                   },
                 },
               ],
@@ -85,6 +89,7 @@ export const configAppRoutes = {
               colRows : [
                 {
                   component : "text",
+                  activated : true,
                   justify : "center",
                   align : "center",
                   settings : {
@@ -117,10 +122,11 @@ export const configAppRoutes = {
               colRows : [
                 {
                   component : "map",
+                  activated : true,
                   justify : "center",
                   align : "center",
                   settings : {
-                    id : "map-01",
+                    id : "map-france-metro",
                   },
                 },
               ],
@@ -149,6 +155,7 @@ export const configAppRoutes = {
               colRows : [
                 {
                   component : "chart",
+                  activated : true,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -181,6 +188,7 @@ export const configAppRoutes = {
               colRows : [
                 {
                   component : "table",
+                  activated : true,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -213,6 +221,7 @@ export const configAppRoutes = {
               colRows : [
                 {
                   component : "rawData",
+                  activated : true,
                   justify : "center",
                   align : "center",
                   settings : { 

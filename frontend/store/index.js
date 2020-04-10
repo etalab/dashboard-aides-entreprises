@@ -82,13 +82,30 @@ export const getters = {
 
   // CONFIGS
   getDataViewConfig : (state) => ({ dataViewType, id }) => {
+
     state.log && console.log("S-index-G-getDataViewConfig / dataViewType : ", dataViewType)
     state.log && console.log("S-index-G-getDataViewConfig / id : ", id)
    
     let dataTypeConfigs = state.configsData[ dataViewType ]
     state.log && console.log("S-index-G-getDataViewConfig / dataTypeConfigs : ", dataTypeConfigs)
    
-    return findElementFromArrayAndId ( id, dataTypeConfigs )
+    // let result = findElementFromArrayAndId ( id, dataTypeConfigs )
+    let result = dataTypeConfigs.find( d => d.id === id )
+
+    if ( typeof result.copySettingsFrom !== 'undefined' ){
+      for ( let refSetting of result.copySettingsFrom ){
+        let settingsToCopy = dataTypeConfigs.find( r => r.id === refSetting.copyFromId )
+        for ( let field of refSetting.fieldsToCopy ){
+          result[ field ] = settingsToCopy[ field ]
+        }
+      }
+    }
+
+    state.log && console.log("S-index-G-getDataViewConfig / result : ", result)
+
+    return result
+
+
   },
 
 

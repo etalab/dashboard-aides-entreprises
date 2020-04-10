@@ -10,7 +10,9 @@ export const configAppNumbers = {
   settingsIds : [
 
     { 
-      id : "Numbers-01",
+      id : "numbers-01",
+      titleI18n : "numbers.numbers01.title",
+
     },
 
   ]

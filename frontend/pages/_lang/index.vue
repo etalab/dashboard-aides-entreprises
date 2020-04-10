@@ -42,27 +42,27 @@
           >
 
           <TextFrame
-            v-if="colRow.component == 'text' "
+            v-if="colRow.activated && colRow.component == 'text' "
             :settings="colRow.settings"
           />
 
           <ApexChart
-            v-if="colRow.component == 'chart' "
+            v-if="colRow.activated && colRow.component == 'chart' "
             :settings="colRow.settings"
           />
 
           <Numbers
-            v-if="colRow.component == 'numbers' "
+            v-if="colRow.activated && colRow.component == 'numbers' "
             :settings="colRow.settings"
           />
 
           <Table
-            v-if="colRow.component == 'table' "
+            v-if="colRow.activated && colRow.component == 'table' "
             :settings="colRow.settings"
           />
 
           <MapboxGL
-            v-if="colRow.component == 'map' "
+            v-if="colRow.activated && colRow.component == 'map' "
             :settings="colRow.settings"
           />
 

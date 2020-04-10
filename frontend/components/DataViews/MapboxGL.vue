@@ -41,7 +41,7 @@
           class=""
           @click="switchMapsDrawer()"
           >
-          switchMapsDrawer
+          {{ mapsVisibility.title[ locale ] }}
         </button>
 
         <div 
@@ -334,7 +334,7 @@ export default {
       
       let mapSelected = this.maps.find( m => m.id === MapVisibilityConfig.mapId )
       
-      for (let layerId of mapselected.layer ){
+      for (let layerId of mapSelected.layers ){
         let visibility = mapbox.getLayoutProperty( layerId, 'visibility');
         if (visibility === 'visible') {
           mapbox.setLayoutProperty(layerId, 'visibility', 'none');

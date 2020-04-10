@@ -8,7 +8,8 @@ export const configAppTables = {
   settingsIds : [
 
     { 
-      id : "Table-01",
+      id : "table-01",
+      titleI18n : "tables.table01.title",
     },
 
   ]

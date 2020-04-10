@@ -50,5 +50,6 @@ export default async function getDataFromUrl( fetchUrl, fetchMethod='get' ){
     console.log("+ + + getDataFromUrl / (axios) err :", err);
     return { data : "error" }
   })
+  
 }
 

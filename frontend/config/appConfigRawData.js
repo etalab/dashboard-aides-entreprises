@@ -11,6 +11,7 @@ export const configAppRawData = {
 
     { 
       id : "rawdata-01",
+      titleI18n : "rawdatas.text01.title",
     },
 
   ]

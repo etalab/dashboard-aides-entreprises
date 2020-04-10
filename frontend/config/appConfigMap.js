@@ -9,7 +9,8 @@ export const configAppMap = {
 
     // FRANCE METRO
     { 
-      id : "map-01",
+      id : "map-base",
+      isActivated : true,
       titleI18n : "maps.map01.title",
 
       map_options   : {
@@ -147,7 +148,8 @@ export const configAppMap = {
       ],
       
       // VISIBILITY
-      maps_visibility :{
+      maps_visibility : {
+        title : { fr : "calques" },
         is_activated : true,
         is_drawer_open : true,
         map_switches : [ 
@@ -168,10 +170,10 @@ export const configAppMap = {
 
     },
 
-
-    // DOM TOM
+    // FRANCE METRO
     { 
-      id : 'map-Guyane',
+      id : 'map-france-metro',
+      isActivated : true,
       titleI18n : "maps.map01.title",
 
       map_options   : {
@@ -188,18 +190,120 @@ export const configAppMap = {
 
       copySettingsFrom : [
         { 
-          copyFromId : 'map-01',
+          copyFromId : 'map-base',
           fieldsToCopy : [
             'sources', 
             'maps', 
             'layers', 
-            'layers_visibility'
+            'maps_visibility'
           ],
         }
       ]
 
-    }
+    },
 
+    // DOM TOM
+    { 
+      id : 'map-guyane',
+      isActivated : true,
+      titleI18n : "maps.map01.title",
+
+      map_options   : {
+    
+        // ADAPT TO MAPBOX-GL-JS OPTIONS
+        mapStyle         : "testRasterVoyager", // Etalab
+        center           : [46.2276, 2.2137],
+        currentCenter    : [46.2276, 2.2137],
+        zoom             : 5,
+        maxZoom          : 18,
+        minZoom          : 2,
+
+      },
+
+      maps_visibility :{
+        is_activated : false,
+      },
+
+      copySettingsFrom : [
+        { 
+          copyFromId : 'map-base',
+          fieldsToCopy : [
+            'sources', 
+            'maps', 
+            'layers', 
+          ],
+        }
+      ]
+
+    },
+
+    { 
+      id : 'map-reunion',
+      isActivated : true,
+      titleI18n : "maps.map01.title",
+
+      map_options   : {
+    
+        // ADAPT TO MAPBOX-GL-JS OPTIONS
+        mapStyle         : "testRasterVoyager", // Etalab
+        center           : [46.2276, 2.2137],
+        currentCenter    : [46.2276, 2.2137],
+        zoom             : 5,
+        maxZoom          : 18,
+        minZoom          : 2,
+
+      },
+
+      maps_visibility :{
+        is_activated : false,
+      },
+
+      copySettingsFrom : [
+        { 
+          copyFromId : 'map-base',
+          fieldsToCopy : [
+            'sources', 
+            'maps', 
+            'layers', 
+          ],
+        }
+      ]
+
+    },
+
+    { 
+      id : 'map-autre',
+      isActivated : true,
+      titleI18n : "maps.map01.title",
+
+      map_options   : {
+    
+        // ADAPT TO MAPBOX-GL-JS OPTIONS
+        mapStyle         : "testRasterVoyager", // Etalab
+        center           : [46.2276, 2.2137],
+        currentCenter    : [46.2276, 2.2137],
+        zoom             : 5,
+        maxZoom          : 18,
+        minZoom          : 2,
+
+      },
+
+      maps_visibility :{
+        is_activated : false,
+      },
+
+      copySettingsFrom : [
+        { 
+          copyFromId : 'map-base',
+          fieldsToCopy : [
+            'sources', 
+            'maps', 
+            'layers', 
+          ],
+        }
+      ]
+
+    },
   ]
 
 

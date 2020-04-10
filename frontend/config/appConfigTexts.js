@@ -10,8 +10,15 @@ export const configAppTexts = {
   settingsIds : [
 
     { 
-      id : "Text-01",
+      id : "text-01",
+      titleI18n : "texts.text01.title",
     },
+
+    { 
+      id : "text-02",
+      titleI18n : "texts.text01.title",
+    },
+
 
   ]
 
