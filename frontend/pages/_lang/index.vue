@@ -29,7 +29,6 @@
         :md="col.md"
         :lg="col.lg"
         :xl="col.xl"
-
         >
 
         <v-row

@@ -31,6 +31,7 @@ Vue.component('MglGeojsonLayer', MglGeojsonLayer);
 Vue.prototype.$mapbox = Mapbox;
 
 
+import getDataFromUrl from "~/utils/getData.js"
 import axios from 'axios'
 
 

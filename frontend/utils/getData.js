@@ -31,7 +31,7 @@ catch(e){
 
 export default async function getDataFromUrl( fetchUrl, fetchMethod='get' ){
 
-  // console.log("+ + + getDataFromUrl / fetchUrl : ", fetchUrl)
+  console.log("+ + + getDataFromUrl / fetchUrl : ", fetchUrl)
 
   let methodsWithPayload = [ "post", "put", "patch" ]
 
@@ -46,7 +46,8 @@ export default async function getDataFromUrl( fetchUrl, fetchMethod='get' ){
   })
   
   .catch( err => {
-    console.log("+ + + getDataFromUrl / (axios)  err :", err);
+    console.log("+ + + getDataFromUrl / (axios) err / fetchUrl :", fetchUrl);
+    console.log("+ + + getDataFromUrl / (axios) err :", err);
     return { data : "error" }
   })
 }

@@ -1,9 +1,7 @@
-
-
 <style src="mapbox-gl/dist/mapbox-gl.css"></style>
 <style lang="scss" scoped>
    .spot__map {
-    margin: 0 20px;
+    margin: 0;
     width: auto;
     .mgl-map-wrapper {
       position: absolute;
@@ -17,26 +15,83 @@
 
   <div class="map">
 
-      <!-- MAP WITH MAPBOX GL -->
-      <no-ssr>
-        
-        <MglMap
-          :access-token="'noToken'"
-          :mapStyle.sync="mapStyle"
-          :center="center"
-          :zoom="zoom"
-          :maxZoom="maxZoom"
-          :minZoom="minZoom"
-          @load="onMapLoaded"
-          ref='mapboxDiv'
+    <!-- LOADER -->
+    <div 
+      id="loader-map"
+      v-show="showLoader"
+      class="lds-roller floating"
+      >
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+
+    <!-- LAYERS & LEGEND -->
+    <div 
+      v-if="map"
+      id='legend' 
+      :class='`legend-block legend-bottom-right`'
+      >
+
+      <!-- LAYERS SWITCH -->
+      <div 
+        v-if="mapsVisibility && mapsVisibility.is_activated"
+        class="legend layer-switch" 
+        >
+
+        <button 
+          class=""
+          @click="switchMapsDrawer()"
           >
+          switchMapsDrawer
+        </button>
 
-          <!-- CONTROLS -->
-          <MglNavigationControl position="bottom-right" />
+        <div 
+          v-show="drawerMapsOpen"
+          class="legend-content"
+          >
+          <div 
+            v-for="(mapRef, index) in mapsVisibility.map_switches"
+            :key="index"
+            class="field"
+            >
+            <input 
+              class="is-checkradio" 
+              :id="mapRef.id" 
+              :name="mapRef.id" 
+              :checked=" mapRef.default_visible ? 'checked' : false"
+              type="checkbox" 
+              @click="switchMapVisibility( mapRef.id )"
+              >
+            <label 
+              :for="mapRef.id">
+              {{ mapRef.label[ locale ] }}
+            </label>
+          </div>
+        </div>
+      </div>
 
-        </MglMap>
-  
-      </no-ssr>
+
+    </div>
+
+    <!-- MAP WITH MAPBOX GL -->
+    <no-ssr>
+      
+      <MglMap
+        :access-token="'noToken'"
+        :mapStyle.sync="mapOptions.mapStyle"
+        :center="mapOptions.center"
+        :zoom="mapOptions.zoom"
+        :maxZoom="mapOptions.maxZoom"
+        :minZoom="mapOptions.minZoom"
+        @load="onMapLoaded"
+        ref='mapboxDiv'
+        >
+
+        <!-- CONTROLS -->
+        <MglNavigationControl position="bottom-right" />
+
+      </MglMap>
+
+    </no-ssr>
 
   </div>
 
@@ -47,9 +102,11 @@
 
 import { mapState, mapGetters, mapActions } from 'vuex'
 
-import Mapbox from "mapbox-gl";
+import {Mapbox , mapboxgl} from "mapbox-gl";
 import { MglMap } from "vue-mapbox";
-import mapboxgl from 'mapbox-gl'
+// import mapboxgl from 'mapbox-gl'
+
+import getDataFromUrl from "~/utils/getData.js"
 
 import { StylesOSM } from '~/config/mapboxVectorStyles.js'
 
@@ -71,25 +128,30 @@ export default {
       dataViewType : 'maps',
       viewConfig : undefined,
 
+      showLoader : true, 
+
       // MAPBOX MAP OBJECT
       map : undefined,
-      mapStyle : undefined, 
 
-      contentFields : undefined,
-      mapOptionsRoute : undefined,
+      mapOptions : {
+        mapStyle : undefined, 
+        zoom : undefined,
+        maxZoom : undefined,
+        minZoom : undefined,
+        currentZoom : undefined,
+        center : undefined,
+        currentCenter : undefined,
+      }, 
 
-      fieldLat : undefined,
-      fieldLong : undefined,
+      mapsVisibility : undefined,
+      drawerMapsOpen : undefined,
 
-      zoom : undefined,
-      maxZoom : undefined,
-      minZoom : undefined,
-      currentZoom : undefined,
-      center : undefined,
-      currentCenter : undefined,
+      // LAYERS & SOURCES
+      sources : undefined,
+      sourcesRaw : {},
 
-      layersVisibility : undefined,
-      drawerLayersOpen : undefined,
+      maps : undefined,
+      layers : undefined,
 
     }
 
@@ -103,31 +165,34 @@ export default {
     // set up view config
     this.viewConfig = this.getLocalConfig
 
-    // set up fields mapper
-    this.contentFields = this.viewConfig.contents_fields
-    this.log && console.log("C-SearchResultsMapbox / contentFields : \n", this.contentFields)
-
     // set up MAPBOX options
     const mapOptionsRoute = this.viewConfig.map_options
     this.log && console.log("C-SearchResultsMapbox / mapOptionsRoute : \n", mapOptionsRoute)
 
-    this.mapStyle    = StylesOSM[ mapOptionsRoute.mapStyle ]
+    let mapOptions = {
+      mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ],
+      zoom          : mapOptionsRoute.zoom,
+      maxZoom       : mapOptionsRoute.maxZoom,
+      minZoom       : mapOptionsRoute.minZoom,
+      currentZoom   : mapOptionsRoute.currentZoom,
+      center        : [ mapOptionsRoute.center[1], mapOptionsRoute.center[0] ],
+      currentCenter : mapOptionsRoute.currentCenter,
+    }
+    this.mapOptions = mapOptions
 
-    this.fieldLat    = this.viewConfig.lat_long_fields.latitude
-    this.fieldLong   = this.viewConfig.lat_long_fields.longitude
+    // setup sources
+    this.sources = this.viewConfig.sources
 
-    this.zoom        = mapOptionsRoute.zoom
-    this.maxZoom     = mapOptionsRoute.maxZoom
-    this.minZoom     = mapOptionsRoute.minZoom
-    this.currentZoom = mapOptionsRoute.currentZoom
+    // setup maps
+    this.maps = this.viewConfig.maps
 
-    this.center      = [ mapOptionsRoute.center[1], mapOptionsRoute.center[0] ]
+    // setup layers
+    this.layers = this.viewConfig.layers
 
-    this.currentCenter = mapOptionsRoute.currentCenter
-
-    this.layersVisibility = mapOptionsRoute.layers_visibility
-    this.drawerLayersOpen = this.layersVisibility && this.layersVisibility.is_drawer_open
-
+    // setup drawers
+    this.mapsVisibility = this.viewConfig.maps_visibility
+    this.drawerMapsOpen = this.mapsVisibility && this.mapsVisibility.is_drawer_open
+   
   },
 
   mounted(){
@@ -135,6 +200,19 @@ export default {
   },
 
   watch: {
+
+    map (next, prev){
+
+      
+      if (next && !prev) {
+        this.log && console.log('C-MapboxGL / watch - map is created ')
+        this.loadSources( this.sources )
+        this.loadLayers( this.layers )
+        this.showLoader = false 
+      }
+
+    },
+
   },
 
 
@@ -164,20 +242,116 @@ export default {
   
   methods : {
 
+    // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
 
-    // - - - - - - - - - - - - - - - - - - //
     onMapLoaded(event) {
-
-      this.log && console.log("\nC-MapboxGL / onMapLoaded ... ")
-      
+      this.log && console.log("C-MapboxGL / onMapLoaded ... ")
       // store in component
-      this.map = event.map;
-
+      this.map = event.map
       // in store => WARNING : object too complex to be stored/mutated in vuex so far
       // check : https://ypereirareis.github.io/blog/2017/04/25/vuejs-two-way-data-binding-state-management-vuex-strict-mode/
     },
 
 
+    // LOADERS - - - - - - - - - - - - - - - - - - //
+
+    loadSources( sourcesArray ){
+
+      let mapbox = this.map
+      let sourcesRaw = this.sourcesRaw
+
+      for ( let source of sourcesArray ){
+
+        // this.log && console.log("\nC-MapboxGL / loadSources ... source : ", source)
+
+        if ( source.from == 'url' ){
+          
+          if ( source.canChange ) {
+            let resp = getDataFromUrl( source.url )
+            resp.then( r => {
+              let data = r.data
+              sourcesRaw[ source.id ] = data
+              mapbox.addSource( source.id,
+                {
+                  type : source.type,
+                  data : data,
+                }
+              )
+            })
+          }
+
+          else {
+            mapbox.addSource( source.id,
+              {
+                type : source.type,
+                data : source.url,
+              }
+            )
+          }
+
+        } 
+
+
+
+      }
+    },
+
+    loadLayers( layersArray ){
+
+      let mapbox = this.map
+      
+      for (let layer of layersArray ){
+
+        mapbox.addLayer( layer )
+
+        mapbox.on('click', layer.id, function(e) {
+          let featuresItem = mapbox.queryRenderedFeatures(e.point, { layers: [ layer.id ] })
+        })
+
+        mapbox.on('mouseenter', layer.id, function () {
+          mapbox.getCanvas().style.cursor = 'pointer'
+        })
+
+        mapbox.on('mouseleave', layer.id, function () {
+          mapbox.getCanvas().style.cursor = ''
+        })
+
+      }
+
+    },
+
+
+    // INTERACTIONS - - - - - - - - - - - - - - - - - - //
+
+
+
+    // UX FUNCTIONS
+    switchMapVisibility( mapSelectedId ){
+
+      let mapbox = this.map 
+
+      let MapVisibilityConfig = this.mapsVisibility.map_switches.find( item => item.id === mapSelectedId ) 
+      
+      let mapSelected = this.maps.find( m => m.id === MapVisibilityConfig.mapId )
+      
+      for (let layerId of mapselected.layer ){
+        let visibility = mapbox.getLayoutProperty( layerId, 'visibility');
+        if (visibility === 'visible') {
+          mapbox.setLayoutProperty(layerId, 'visibility', 'none');
+        } else {
+          mapbox.setLayoutProperty(layerId, 'visibility', 'visible');
+        }
+      }
+
+    },
+
+    switchMapsDrawer(){
+      this.drawerMapsOpen = !this.drawerMapsOpen
+    },
+
+    // switchLegendDrawer(){
+    //   this.drawerScalesOpen = !this.drawerScalesOpen
+    // },
 
   },
 

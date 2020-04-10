@@ -53,7 +53,7 @@
 
 
     <!-- FOOTER -->
-    <Footer/>
+    <!-- <Footer/> -->
 
 
 
