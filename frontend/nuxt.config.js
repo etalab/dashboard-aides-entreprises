@@ -30,6 +30,8 @@ import { configAppTexts } from './config/appConfigTexts.js'
 import { configAppTables } from './config/appConfigTables.js'
 // console.log('>>> nuxt.config.js / configAppTables : \n', configAppTables)
 
+import { configAppRawData } from './config/appConfigRawData.js'
+// console.log('>>> nuxt.config.js / configAppRawData : \n', configAppRawData)
 
 const trueStrings = ['yes', 'Yes', 'YES', 'y', 'Y', 'true', 'True', 'TRUE', 't', 'T']
 const falseStrings = ['no', 'No', 'NO', 'n', 'N', 'false', 'False', 'FALSE', 'f', 'F']
@@ -102,6 +104,9 @@ const configApp = {
 
   // TEXTS SETTINGS
   TEXTS_config : configAppTexts,
+
+  // TEXTS SETTINGS
+  RAWDATA_config : configAppRawData,
 
 }
 

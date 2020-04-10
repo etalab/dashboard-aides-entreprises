@@ -9,14 +9,24 @@
 
   <div>
 
-    <div>
-      ApexCharts - settings.id : {{ settings.id  }}
+    <div 
+      class="text-center"
+      >
+      {{ $t( viewConfig.titleI18n ) }}
     </div>
+    <!-- <div justify-center>
+      <code>
+        {{ viewConfig }}
+      </code>
+    </div> -->
 
     <apexchart 
-      :type="chartOptions.chart.type" 
-      :options="chartOptions" 
       :series="series"
+      
+      :options="chartOptions" 
+      
+      :type="chartOptions.chart.type" 
+
       :height="chartOptions.chart.height" 
       :width="chartOptions.chart.width" 
       >

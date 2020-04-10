@@ -26,12 +26,15 @@ export const state = () => ({
 
   // },
 
-  configRoutes : process.env.CONFIG_APP.ROUTES_config,
+  // ROUTES
   localRouteConfig : undefined,
+  configRoutes : process.env.CONFIG_APP.ROUTES_config,
 
+  // UX-UI
   configUX : process.env.CONFIG_APP.UX_config,
   configUI : process.env.CONFIG_APP.UI_config,
 
+  // DATA VIEWS COMPONENTS SETTINGS
   configsData : {
 
     maps     : process.env.CONFIG_APP.MAP_config.settingsIds,
@@ -39,7 +42,7 @@ export const state = () => ({
     numbers  : process.env.CONFIG_APP.NUMBERS_config.settingsIds,
     tables   : process.env.CONFIG_APP.TABLES_config.settingsIds,
     texts    : process.env.CONFIG_APP.TEXTS_config.settingsIds,
-    rawdatas : undefined,
+    rawdatas : process.env.CONFIG_APP.RAWDATA_config.settingsIds,
     
   },
   
@@ -87,10 +90,6 @@ export const getters = {
    
     return findElementFromArrayAndId ( id, dataTypeConfigs )
   },
-  // getLocalMapConfig : (state, getters) => ( id ) => {
-  //   state.log && console.log("S-index-G-getLocalMapConfig / id : ", id)
-  //   return getters.getDataViewConfig( { dataType : 'maps', id : id } )
-  // },
 
 
 }

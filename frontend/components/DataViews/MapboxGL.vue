@@ -97,7 +97,6 @@ export default {
 
   beforeMount() {
 
-    
     this.log && console.log("\n- + - SearchResultsMapbox - + - + - + - + - + - + ")
     this.log && console.log("C-SearchResultsMapbox / beforeMount ... ")
     
@@ -123,14 +122,8 @@ export default {
     this.currentZoom = mapOptionsRoute.currentZoom
 
     this.center      = [ mapOptionsRoute.center[1], mapOptionsRoute.center[0] ]
-    // this.center = [0,0]
 
     this.currentCenter = mapOptionsRoute.currentCenter
-
-    // LEGACTY LEAFLET
-    // this.url = mapOptions.url
-    // this.attribution = mapOptions.attribution
-    // this.subdomains = mapOptions.subdomains
 
     this.layersVisibility = mapOptionsRoute.layers_visibility
     this.drawerLayersOpen = this.layersVisibility && this.layersVisibility.is_drawer_open

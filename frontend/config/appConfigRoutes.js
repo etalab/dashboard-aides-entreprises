@@ -21,6 +21,7 @@ export const configAppRoutes = {
               sm : 12,
               lg : null,
               xl : null,
+              positionFixed : true,
               colRows : [
                 {
                   component : "numbers",
@@ -38,14 +39,14 @@ export const configAppRoutes = {
                     id : "chart-01",
                   },
                 },
-                // {
-                //   component : "table",
-                //   justify : "center",
-                //   align : "center",
-                //   settings : { 
-                //     id : "Table-01",
-                //   },
-                // },
+                {
+                  component : "chart",
+                  justify : "center",
+                  align : "center",
+                  settings : { 
+                    id : "chart-02",
+                  },
+                },
               ],
             },
             { 
@@ -56,6 +57,7 @@ export const configAppRoutes = {
               sm : 12,
               lg : null,
               xl : null,
+              positionFixed : false,
               colRows : [
                 {
                   component : "map",
@@ -79,6 +81,7 @@ export const configAppRoutes = {
               sm : 12,
               lg : null,
               xl : null,
+              positionFixed : false,
               colRows : [
                 {
                   component : "text",

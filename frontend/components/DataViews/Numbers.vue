@@ -29,6 +29,11 @@
       'settings',
     ],
 
+    beforeMount() {
+      // set up view config
+      this.viewConfig = this.getLocalConfig
+    },
+    
     mounted(){
       this.log && console.log('C-Numbers / mounted ...')
     },
@@ -52,7 +57,18 @@
 
       ...mapGetters({
         getCurrentLocale : 'getCurrentLocale',
+        getDataViewConfig : 'getDataViewConfig'
       }),
+
+      // config
+      getLocalConfig(){
+        let viewId = {
+          dataViewType : this.dataViewType,
+          id : this.settings.id,
+        }
+        let localConfig = this.getDataViewConfig( viewId )
+        return localConfig
+      },
 
     },
     

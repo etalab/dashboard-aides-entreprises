@@ -1,3 +1,10 @@
+<style scoped>
+  .scrollable{
+    position: fixed;
+  }
+
+</style>
+
 <template>
 
   <div id="homepage">
@@ -16,12 +23,13 @@
         v-for="(col, i) in row.columns"
         :key="'R'+index+'-C'+i"
         :id="'R'+index+'-C'+i"
-        :class="col.classColumn"
+        :class="`${col.colClass} ${ col.positionFixed ? '' : '' }`"
         :cols="col.cols"
         :sm="col.sm"
         :md="col.md"
         :lg="col.lg"
         :xl="col.xl"
+
         >
 
         <v-row
@@ -58,6 +66,10 @@
             v-if="colRow.component == 'map' "
             :settings="colRow.settings"
           />
+
+          <br>
+          <hr>
+          <br>
 
         </v-row>
 
