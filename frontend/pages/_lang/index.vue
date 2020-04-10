@@ -33,7 +33,12 @@
           :align="colRow.align"
           :class="colRow.class"
           >
-            
+
+          <TextFrame
+            v-if="colRow.component == 'text' "
+            :settings="colRow.settings"
+          />
+
           <ApexChart
             v-if="colRow.component == 'chart' "
             :settings="colRow.settings"
@@ -77,7 +82,8 @@
   import Table from '~/components/DataViews/Table.vue'
   import MapboxGL from '~/components/DataViews/MapboxGL.vue'
   import ApexChart from '~/components/DataViews/ApexChart.vue'
-  // import Numbers from '~/components/DataViews/Numbers.vue'
+  import Numbers from '~/components/DataViews/Numbers.vue'
+  import TextFrame from '~/components/DataViews/TextFrame.vue'
 
   export default {
     
@@ -88,6 +94,8 @@
       Table,
       MapboxGL,
       ApexChart,
+      Numbers,
+      TextFrame,
     },
     
     props : [

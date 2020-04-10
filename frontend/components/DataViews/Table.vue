@@ -54,6 +54,9 @@
     data(){
       return {
 
+        dataViewType : 'tables',
+        viewConfig : undefined,
+
         search: '',
         headers: [
           {
@@ -162,7 +165,7 @@
       }),
 
       ...mapGetters({
-        getCurrentLocale : 'getCurrentLocale'
+        getCurrentLocale : 'getCurrentLocale',
       }),
 
     },

@@ -4,18 +4,17 @@ console.log('+ + + plugins/utils... ')
 // PURE UTILS
 // - - - - - - - - - - - - - - - - - - - //
 
-// export function addOrRemove(array, value) {
 
-//   var index = array.indexOf(value);
-//   if (index === -1) {
-//       array.push(value);
-//   } else {
-//       array.splice(index, 1);
-//   }
-// }
+export function findElementFromArrayAndId( id, targetArray, idField='id') {
+  
+  console.log("+ + + findElementFromArrayAndId / id : ", id)
 
+  let filteredOut = targetArray.find( item => 
+    item[idField] === id
+  )
+  return filteredOut
 
-
+}
 
 export default function objectFromPath( obj, path, separator='/'){
 

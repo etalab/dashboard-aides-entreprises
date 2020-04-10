@@ -68,6 +68,9 @@ export default {
   data(){
     return {
 
+      dataViewType : 'maps',
+      viewConfig : undefined,
+
       // MAPBOX MAP OBJECT
       map : undefined,
       mapStyle : undefined, 
@@ -93,21 +96,26 @@ export default {
   },
 
   beforeMount() {
+
+    
     this.log && console.log("\n- + - SearchResultsMapbox - + - + - + - + - + - + ")
     this.log && console.log("C-SearchResultsMapbox / beforeMount ... ")
+    
+    // set up view config
+    this.viewConfig = this.getLocalConfig
 
     // set up fields mapper
-    this.contentFields = this.mapConfig.contents_fields
+    this.contentFields = this.viewConfig.contents_fields
     this.log && console.log("C-SearchResultsMapbox / contentFields : \n", this.contentFields)
 
     // set up MAPBOX options
-    const mapOptionsRoute = this.mapConfig.map_options
+    const mapOptionsRoute = this.viewConfig.map_options
     this.log && console.log("C-SearchResultsMapbox / mapOptionsRoute : \n", mapOptionsRoute)
 
     this.mapStyle    = StylesOSM[ mapOptionsRoute.mapStyle ]
 
-    this.fieldLat    = this.mapConfig.lat_long_fields.latitude
-    this.fieldLong   = this.mapConfig.lat_long_fields.longitude
+    this.fieldLat    = this.viewConfig.lat_long_fields.latitude
+    this.fieldLong   = this.viewConfig.lat_long_fields.longitude
 
     this.zoom        = mapOptionsRoute.zoom
     this.maxZoom     = mapOptionsRoute.maxZoom
@@ -140,21 +148,29 @@ export default {
   computed: {
 
     ...mapState({
-
       log : state => state.log, 
       locale : state => state.locale,
-
-      mapConfig : state => state.configMap
-
     }),
 
     ...mapGetters({
-      getCurrentLocale : 'getCurrentLocale'
+      getCurrentLocale : 'getCurrentLocale',
+      getDataViewConfig : 'getDataViewConfig'
     }),
+
+    // config
+    getLocalConfig(){
+      let viewId = {
+        dataViewType : this.dataViewType,
+        id : this.settings.id,
+      }
+      let localConfig = this.getDataViewConfig( viewId )
+      return localConfig
+    },
 
   },
   
   methods : {
+
 
     // - - - - - - - - - - - - - - - - - - //
     onMapLoaded(event) {

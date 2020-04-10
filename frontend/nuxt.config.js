@@ -9,12 +9,26 @@ console.log('>>> nuxt.config.js (start) / process.env.NUXT_ENV_APP_TITLE : ', pr
 import { configAppUIUX } from './config/appConfigUIUX.js'
 // console.log('>>> nuxt.config.js / configAppUIUX : \n', configAppUIUX)
 
+import { configAppRoutes } from './config/appConfigRoutes.js'
+// console.log('>>> nuxt.config.js / configAppRoutes : \n', configAppRoutes)
+
 import { configAppData } from './config/appConfigData.js'
 // console.log('>>> nuxt.config.js / configAppData : \n', configAppData)
 
 import { configAppMap } from './config/appConfigMap.js'
 // console.log('>>> nuxt.config.js / configAppMap : \n', configAppMap)
 
+import { configAppCharts } from './config/appConfigCharts.js'
+// console.log('>>> nuxt.config.js / configAppCharts : \n', configAppCharts)
+
+import { configAppNumbers } from './config/appConfigNumbers.js'
+// console.log('>>> nuxt.config.js / configAppNumbers : \n', configAppNumbers)
+
+import { configAppTexts } from './config/appConfigTexts.js'
+// console.log('>>> nuxt.config.js / configAppTexts : \n', configAppTexts)
+
+import { configAppTables } from './config/appConfigTables.js'
+// console.log('>>> nuxt.config.js / configAppTables : \n', configAppTables)
 
 
 const trueStrings = ['yes', 'Yes', 'YES', 'y', 'Y', 'true', 'True', 'TRUE', 't', 'T']
@@ -61,15 +75,15 @@ const configApp = {
   defaultLocale: configAppUIUX.lang.defaultLocale,
   localesBuild: configAppUIUX.lang.locales,
 
-  // DATA : 
+  // DATA :init and backends
   backendApi : chooseBackend(process.env.NUXT_ENV_RUN_MODE),
   dataSource: configAppData.dataSource, 
-  filters: configAppData.filters, 
   defaultDataSetup: configAppData.defaultDataSetup, 
+  filters: configAppData.filters, 
 
-  // UX
+  // UX - ROUTES
   UX_config : configAppUIUX.UX_config,
-  routes_config : configAppUIUX.routes,
+  ROUTES_config : configAppRoutes.routes,
 
   // UI
   UI_config : configAppUIUX.UI_config,
@@ -77,6 +91,17 @@ const configApp = {
   // MAP SETTINGS
   MAP_config : configAppMap,
 
+  // CHARTS SETTINGS
+  CHARTS_config : configAppCharts,
+
+  // NUMBERS SETTINGS
+  NUMBERS_config : configAppNumbers,
+
+  // TABLES SETTINGS
+  TABLES_config : configAppTables,
+
+  // TEXTS SETTINGS
+  TEXTS_config : configAppTexts,
 
 }
 
@@ -192,8 +217,8 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: configApp.UI_config.isDarkTheme,
-      themes: configApp.UI_config.theme,
+      dark:   configApp.UI_config.isDarkTheme,
+      themes: configApp.UI_config.themes,
     }
   },
 
@@ -205,6 +230,12 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-    }
+    },
+
+    vendors : [
+      'axios',
+      'mapbox-gl',
+    ],
+
   }
 }

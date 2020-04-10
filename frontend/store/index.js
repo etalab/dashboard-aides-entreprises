@@ -1,4 +1,5 @@
 // import { ... } from '~/utils/'
+import { findElementFromArrayAndId } from '~/utils/utils'
 
 
 
@@ -25,12 +26,23 @@ export const state = () => ({
 
   // },
 
+  configRoutes : process.env.CONFIG_APP.ROUTES_config,
+  localRouteConfig : undefined,
+
   configUX : process.env.CONFIG_APP.UX_config,
   configUI : process.env.CONFIG_APP.UI_config,
-  configMap : process.env.CONFIG_APP.MAP_config,
 
-  configRoutes : process.env.CONFIG_APP.routes_config,
-  localRouteConfig : undefined,
+  configsData : {
+
+    maps     : process.env.CONFIG_APP.MAP_config.settingsIds,
+    charts   : process.env.CONFIG_APP.CHARTS_config.settingsIds,
+    numbers  : process.env.CONFIG_APP.NUMBERS_config.settingsIds,
+    tables   : process.env.CONFIG_APP.TABLES_config.settingsIds,
+    texts    : process.env.CONFIG_APP.TEXTS_config.settingsIds,
+    rawdatas : undefined,
+    
+  },
+  
 
 })
 
@@ -64,6 +76,22 @@ export const getters = {
       return undefined
     }
   },
+
+  // CONFIGS
+  getDataViewConfig : (state) => ({ dataViewType, id }) => {
+    state.log && console.log("S-index-G-getDataViewConfig / dataViewType : ", dataViewType)
+    state.log && console.log("S-index-G-getDataViewConfig / id : ", id)
+   
+    let dataTypeConfigs = state.configsData[ dataViewType ]
+    state.log && console.log("S-index-G-getDataViewConfig / dataTypeConfigs : ", dataTypeConfigs)
+   
+    return findElementFromArrayAndId ( id, dataTypeConfigs )
+  },
+  // getLocalMapConfig : (state, getters) => ( id ) => {
+  //   state.log && console.log("S-index-G-getLocalMapConfig / id : ", id)
+  //   return getters.getDataViewConfig( { dataType : 'maps', id : id } )
+  // },
+
 
 }
 
