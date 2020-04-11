@@ -13,59 +13,82 @@ export const state = () => ({
 
   // FILTERS
   filters : process.env.CONFIG_APP.filters,
-  activatedFilters : [ 
-    // { 
-    //   filterIndex : 'c-test/o-0',
-    //   filterCode  : 'test', 
-    //   optionValue : '0'
-    // } 
-  ],
+  activatedFilters : [ ],
 
   // DATASETS
   initData : undefined,
-  displayedData : undefined,
-
+  isInitDataSet : false,
+  
+  // QUERY
   query: undefined,
   response : undefined,
+
+  // DISPLAYED DATA
+  displayedData : undefined,
 
 })
 
 
 export const getters = {
 
-  // INTERNATIONALIZATION
+  // BACKEND
+
   getBackendApi : (state, getters) => {
     // state.log && console.log("S-data-G-getBackendApi ...")
     return state.backendApi
   },
 
   // FILTERS
+
   getActivatedFilters : (state) => {
     // state.log && console.log("S-data-G-getActivatedFilters ...")
     return state.activatedFilters
   },
 
+
+  // DATA
+  
+  getFromInitData : (state) => ( id ) => {
+    return state.initData.find( dataset => dataset.id == id )
+  },
+
+  getFromDisplayedData : (state) => ( id ) => {
+    return state.displayedData.find( dataset => dataset.id == id )
+  }
+
+
 }
 
 
 export const mutations = {
-
-  setElement (state, ElObject ){
-    state[ElObject.field] = ElObject.value
+  
+  setInitDataAsSet (state) {
+    state.isInitDataSet = !state.isInitDataSet
   },
   
-  // DATTA
-  setInitData (state, value){
-    if ( !state.initData ){ state.initData = {} }
-    state.initData[ value.field ] = value.data
+  // DATASETS 
+
+  pushToInitData (state, dataset){
+    state.log && console.log("S-data-M-pushToInitData / dataset : ", dataset)
+    if ( !state.initData ){ state.initData = [] }
+    state.initData.push( dataset )
   },
 
-  setDisplayedData (state, value){
-    if ( !state.displayedData ){ state.displayedData = {} }
-    state.displayedData[ value.field ] = value.data
+  pushToDisplayedData (state, dataset){
+    state.log && console.log("S-data-M-pushToDisplayedData / dataset.id  : ", dataset.id )
+    if ( !state.displayedData ){ state.displayedData = [] }
+    state.displayedData.push( dataset )
   },
+
+  setDisplayedDataset (state, dataset ){
+    state.log && console.log("S-data-M-setDisplayedDataset / dataset.id  : ", dataset.id )
+    let foundIndex = state.displayedData.findIndex( x => x.id == dataset.id)
+    state.displayedData[ foundIndex ] = dataset.data 
+  },
+
 
   // FILTERS
+
   resetFilters(state) {
     state.log && console.log("S-data-M-resetFilters ...")
     state.activatedFilters = [ ]
@@ -85,10 +108,35 @@ export const mutations = {
 
 export const actions = {
 
+  // DATASETS
+
+  setDisplayedDataset({state, getters, commit}, updatedDataset ) {
+
+    // state.log && console.log("S-data-A-setDisplayedDataset / updatedDataset.id  : ", updatedDataset.id )
+   
+    // check if dataset exists in displayedData
+    let dataset = getters.getFromDisplayedData( updatedDataset.id )
+    // state.log && console.log("S-data-A-setDisplayedDataset / dataset : ", dataset)
+
+    if ( typeof dataset !== 'undefined' ){
+      commit('setDisplayedDataset', updatedDataset )
+    } else {
+      commit('pushToDisplayedData', updatedDataset )
+    }
+    
+  },
+
+
+
+  // QUERIES
+
   search({state, commit}) {
     // TO DO 
     state.log && console.log("S-data-A-search / ... ")
+
   },
+
+
 
   // FILTERS
   toggleFilters({state, commit, dispatch, getters}, filterTag ){

@@ -4,18 +4,28 @@ console.log('+ + + plugins/utils... ')
 // PURE UTILS
 // - - - - - - - - - - - - - - - - - - - //
 
+// SELECTOR FUNCTIONS FROM ENV VAR
+const trueStrings = ['yes', 'Yes', 'YES', 'y', 'Y', 'true', 'True', 'TRUE', 't', 'T']
+const falseStrings = ['no', 'No', 'NO', 'n', 'N', 'false', 'False', 'FALSE', 'f', 'F']
+const chooseBooleanMode = (ARG) => {
+  if (trueStrings.includes(ARG)) {
+    return true
+  } else {
+    return false
+  }
+}
 
+// FIND FROM ARRAY
 export function findElementFromArrayAndId( id, targetArray, idField='id') {
-  
-  console.log("+ + + findElementFromArrayAndId / id : ", id)
-
+  // console.log("+ + + findElementFromArrayAndId / id : ", id)
   let filteredOut = targetArray.find( item => 
     item[idField] === id
   )
   return filteredOut
-
 }
 
+
+// RETRIEVE OBJECT FROM PATH
 export default function objectFromPath( obj, path, separator='/'){
 
   console.log("+ + + objectFromPath / path : ", path)

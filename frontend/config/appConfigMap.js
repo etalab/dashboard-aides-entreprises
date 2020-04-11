@@ -1,3 +1,26 @@
+const fillPaint = {
+  'fill-color': '#2a4ba9',
+  'fill-outline-color': '#627BC1',
+  'fill-opacity': ['case',
+    ['boolean', ['feature-state', 'hover'], false],
+    0.2,
+    0
+  ]
+}
+
+const circlePaintAides = {
+  'circle-opacity': 0.6,
+  'circle-color': '#8393A7',
+  'circle-radius': [
+    'interpolate', ['linear'],
+    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 8],
+    0, 10,
+    100, 70
+  ]
+}
+
+
+
 export const configAppMap = {
 
   help : "this file contains the setup for the MapboxGL layout",
@@ -29,35 +52,97 @@ export const configAppMap = {
       sources : [
 
         // http://etalab-datasets.geo.data.gouv.fr/contours-administratifs/latest/geojson/
+        // from : url | store
+
+        // {
+        //   id   : 'centers',
+        //   help : 'geojson des centres',
+        //   from : 'url',   
+        //   url  : '/datasets/geodata/centers.json',
+        //   type : 'geojson',
+        //   needTransform : true,
+        //   licence : 'open licence',
+        //   canChange : false,
+        // },
 
         {
           id   : 'regions',
           help : 'geojson des contours des régions',
-          from : 'url', // url | file 
-          url  : 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions-version-simplifiee.geojson',
+          from : 'url',   
+          url  : '/datasets/geodata/regions-100m.geojson',
+          // url  : 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions-version-simplifiee.geojson',
+          // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/j_front/frontend/datasets/geodata/regions-100m.geojson',
           type : 'geojson',
           licence : 'open licence',
           canChange      : false,
-          hasPopup       : true,
-          cluster        : false,
-          clusterMaxZoom : 14,
-          clusterRadius  : 75,
+          popupSettings  : true,
+        },
+
+        {
+          id   : 'regions-aides',
+          help : 'montants des aides au niveau regional - as geojson from raw',
+          from : 'store',
+          fromId : 'regions-aides-raw',
+          type : 'geojson',
+          needTransform : true,
+          transformTo : {
+            srcKey : 'reg',
+            geoCanvasId : 'centers',
+            canvasKey : { 
+              keyIsFieldName : true,
+              field : undefined, 
+              canvasKeyPrefix : 'REG-',
+              canvasKeySuffix : '' 
+            },
+            properties : {
+              // montantMillions: parseFloat((parseFloat(dep.montant) / 1000 / 1000).toFixed(2)),
+              // montant: parseFloat(dep.montant),
+              // nombre: dep.nombre
+            },
+            geometry : {
+              type : 'Point'
+            },
+          },
+          licence : '',
         },
 
         {
           id   : 'departements',
           help : 'geojson des contours des départements',
           from : 'url',
-          url  : 'https://raw.githubusercontent.com/etalab/DVF-app/master/static/donneesgeo/departements-100m.geojson',
+          url  : '/datasets/geodata/departements-100m.geojson',
+          // url  : 'https://raw.githubusercontent.com/etalab/DVF-app/master/static/donneesgeo/departements-100m.geojson',
+          // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/j_front/frontend/datasets/geodata/departements-100m.geojson',
           type : 'geojson',
           licence : '',
           canChange      : false,
-          hasPopup       : false,
-          cluster        : false,
-          clusterMaxZoom : 14,
-          clusterRadius  : 75,
+          popupSettings  : undefined,
         },
 
+        {
+          id   : 'departements-aides',
+          help : 'montants des aides au niveau départemental - as geojson from raw',
+          from : 'store',
+          fromId : 'departements-aides-raw',
+          type : 'geojson',
+          transformTo : {
+            srcKey : 'dep',
+            geoCanvasId : 'centers',
+            canvasKey : { 
+              keyIsFieldName : true,
+              field : undefined, 
+              canvasKeyPrefix : 'DEP-',
+              canvasKeySuffix : '' 
+            },
+            properties : {
+
+            },
+            geometry : {
+              type : 'Point'
+            },
+          },
+          licence : '',
+        },
       ],
       
       // MAPS
@@ -71,7 +156,26 @@ export const configAppMap = {
           data: "aides",
           layers: [
             "regions-fill", 
-            "regions-lines"
+            "regions-lines",
+            "regions-aides",
+            "regions-aides-montants",
+          ],
+          clicEvents : [
+            { 
+              event : 'click',
+              layer : "regions-fill",
+              functions : [ 
+                { 
+                  funcName    : "fitTo",
+                  propertyKey : "code",
+                  targetLayer : "departement",
+                }, 
+                { 
+                  funcName : "updateQuery",
+                  propertyKey : "code",
+                }
+              ],
+            },
           ]
         },
 
@@ -83,7 +187,28 @@ export const configAppMap = {
           data: "aides",
           layers: [
             "departements-fill", 
-            "departements-lines"
+            "departements-lines",
+            "departements-aides",
+            "departements-aides-montants",
+          ],
+          clicEvents : [
+            { 
+              event : 'click',
+              layer : "departements-fill",
+              functions : [ 
+                { 
+                  funcName    : "fitTo",
+                  propertyKey : "code",
+                  targetLayer : "departement",
+                }, 
+                { 
+                  funcName : "updateQuery",
+                  propertyKey : "code",
+                }
+              ],
+              
+              targetLayer : null,
+            },
           ]
         },
 
@@ -100,11 +225,7 @@ export const configAppMap = {
           layout: {
             visibility: 'visible' ,
           },
-          paint: {
-            'fill-color': '#2a4ba9',
-            'fill-outline-color': '#627BC1',
-            'fill-opacity': 0.2
-          }
+          paint: fillPaint
         },
         {
           id: 'regions-lines',
@@ -118,6 +239,28 @@ export const configAppMap = {
             'line-width': 1
           }
         },
+        {
+          id: 'regions-aides',
+          type: 'circle',
+          source: 'regions-aides',
+          layout: {
+            visibility: 'visible' ,
+          },
+          paint: circlePaintAides
+        },
+        {
+          id: 'regions-aides-montants',
+          type: 'symbol',
+          source: 'regions-aides',
+          layout: {
+            visibility: 'visible' ,
+            'text-field': '{montantMillions} M€',
+            'text-size': 14
+          }
+        },
+
+
+
 
         // DEPARTEMENTS
         {
@@ -127,11 +270,7 @@ export const configAppMap = {
           layout: {
             visibility: 'none' ,
           },
-          paint: {
-            'fill-color': '#2a4ba9',
-            'fill-outline-color': '#627BC1',
-            'fill-opacity': 0.2
-          }
+          paint: fillPaint
         },
         {
           id: 'departements-lines',
@@ -145,6 +284,27 @@ export const configAppMap = {
             'line-width': 1
           }
         },
+        {
+          id: 'departements-aides',
+          type: 'circle',
+          source: 'departements-aides',
+          layout: {
+            visibility: 'none'
+          },
+          paint: circlePaintAides
+        },
+        {
+          id: 'departements-aides-montants',
+          type: 'symbol',
+          source: 'departements-aides',
+          layout: {
+            'text-field': '{montantMillions} M€',
+            'text-size': 14,
+            visibility: 'none'
+          }
+        },
+
+
       ],
       
       // VISIBILITY

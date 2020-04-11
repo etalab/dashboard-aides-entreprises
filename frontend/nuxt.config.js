@@ -33,19 +33,11 @@ import { configAppTables } from './config/appConfigTables.js'
 import { configAppRawData } from './config/appConfigRawData.js'
 // console.log('>>> nuxt.config.js / configAppRawData : \n', configAppRawData)
 
-const trueStrings = ['yes', 'Yes', 'YES', 'y', 'Y', 'true', 'True', 'TRUE', 't', 'T']
-const falseStrings = ['no', 'No', 'NO', 'n', 'N', 'false', 'False', 'FALSE', 'f', 'F']
+
 const logAllowed = ['preprod', 'dev', 'mockup']
 
 
-// SELECTOR FUNCTIONS FROM ENV VAR
-const chooseBooleanMode = (ARG) => {
-  if (trueStrings.includes(ARG)) {
-    return true
-  } else {
-    return false
-  }
-}
+
 const choosePort = (ENVPROD) => {
   const NUXT_ENV_PORT_DEV     = parseInt(process.env.NUXT_ENV_PORT_DEV) || 50050
   const NUXT_ENV_PORT_PREPROD = parseInt(process.env.NUXT_ENV_PORT_PREPROD) || 50051
@@ -60,7 +52,7 @@ const choosePort = (ENVPROD) => {
 }
 
 const chooseBackend = (ENVPROD) => {
-  return configAppData.dataSource.sources[ ENVPROD ]
+  return configAppData.dataSource.apiBackendUrl[ ENVPROD ]
 }
 
 const configApp = {

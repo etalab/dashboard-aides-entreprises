@@ -107,8 +107,10 @@ import { mapState, mapGetters, mapActions } from 'vuex'
 import {Mapbox , mapboxgl} from "mapbox-gl";
 import { MglMap } from "vue-mapbox";
 // import mapboxgl from 'mapbox-gl'
+import bbox from '@turf/bbox'
 
 import getDataFromUrl from "~/utils/getData.js"
+import axios from 'axios'
 
 import { StylesOSM } from '~/config/mapboxVectorStyles.js'
 
@@ -150,10 +152,12 @@ export default {
 
       // LAYERS & SOURCES
       sources : undefined,
-      sourcesRaw : {},
 
       maps : undefined,
       layers : undefined,
+
+      // UX
+      hoveredIds: {}
 
     }
 
@@ -161,15 +165,15 @@ export default {
 
   beforeMount() {
 
-    this.log && console.log("\n- + - SearchResultsMapbox - + - + - + - + - + - + ")
-    this.log && console.log("C-SearchResultsMapbox / beforeMount ... ")
+    this.log && console.log("\n- + - MapboxGL - + - + - + - + - + - + ")
+    this.log && console.log("C-MapboxGL / beforeMount ... ")
     
     // set up view config
     this.viewConfig = this.getLocalConfig
 
     // set up MAPBOX options
     const mapOptionsRoute = this.viewConfig.map_options
-    this.log && console.log("C-SearchResultsMapbox / mapOptionsRoute : \n", mapOptionsRoute)
+    // this.log && console.log("C-MapboxGL / dataset / mapOptionsRoute : ", mapOptionsRoute)
 
     let mapOptions = {
       mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ],
@@ -205,18 +209,18 @@ export default {
 
     map (next, prev){
 
-      
       if (next && !prev) {
         this.log && console.log('C-MapboxGL / watch - map is created ')
         this.loadSources( this.sources )
+        // this.loadStateData()
         this.loadLayers( this.layers )
+        this.loadClicEvents( this.maps )
         this.showLoader = false 
       }
 
     },
 
   },
-
 
   computed: {
 
@@ -227,7 +231,11 @@ export default {
 
     ...mapGetters({
       getCurrentLocale : 'getCurrentLocale',
-      getDataViewConfig : 'getDataViewConfig'
+      getDataViewConfig : 'getDataViewConfig',
+    }),
+
+    ...mapActions({
+      // setDisplayedDataset : 'data/setDisplayedDataset',
     }),
 
     // config
@@ -259,75 +267,176 @@ export default {
 
     loadSources( sourcesArray ){
 
+      this.log && console.log("\nC-MapboxGL / loadSources ... ") 
       let mapbox = this.map
-      let sourcesRaw = this.sourcesRaw
+      let store = this.$store
 
-      for ( let source of sourcesArray ){
+      let urlSourcesArray = sourcesArray.filter( s => s.from === 'url')
+      let storeSourcesArray = sourcesArray.filter( s => s.from === 'store')
 
-        // this.log && console.log("\nC-MapboxGL / loadSources ... source : ", source)
+      // STORE SOURCES (loaded as initData @ middleware GetInitData.js )
+      for ( let source of storeSourcesArray ){
+        
+        this.log && console.log("C-MapboxGL / loadSources - store ... source.id : ", source.id)
+        
+        // retrieve source from store 'state.data.initData'
+        let dataset = store.getters['data/getFromInitData']( source.fromId )
+        this.log && console.log("C-MapboxGL / loadSources - store ... dataset : ", dataset)
 
-        if ( source.from == 'url' ){
-          
-          if ( source.canChange ) {
-            let resp = getDataFromUrl( source.url )
-            resp.then( r => {
-              let data = r.data
-              sourcesRaw[ source.id ] = data
-              mapbox.addSource( source.id,
-                {
-                  type : source.type,
-                  data : data,
-                }
-              )
-            })
+        // transform to source.type if necessary
+        if ( source.needTransform ){
+          let transformedData = {
+            type : 'FeatureCollection',
+            features : []
           }
+          let transformTo = source.transformTo
+          transformedData.features = dataset.data.map( item => {
+            let geoCanvas = store.getters['data/getFromInitData']( transformTo.geoCanvasId ).data
+            // this.log && console.log("C-MapboxGL / loadSources - store ... geoCanvas : ", geoCanvas)
+            let canvasKey = transformTo.canvasKey
+            let key = canvasKey.canvasKeyPrefix + item[ transformTo.srcKey ] + canvasKey.canvasKeySuffix
+            // this.log && console.log("C-MapboxGL / loadSources - store ... key : ", key)
+            let itemPoint = canvasKey.keyIsFieldName ? geoCanvas[ `${key}` ] : geoCanvas.find( g => g[ canvasKey.field ] == key )
+            // this.log && console.log("C-MapboxGL / loadSources - store ... itemPoint : ", itemPoint)
+            return {
+              type: 'Feature',
+              properties: {
+          //       montantMillions: parseFloat((parseFloat(item.montant) / 1000 / 1000).toFixed(2)),
+          //       montant: parseFloat(item.montant),
+          //       nombre: item.nombre
+                  key : key,
+              },
+              geometry: {
+                type: transformTo.geometry.type,
+                coordinates: itemPoint
+              }
+            }
+          })
+          dataset = transformedData
+        }
 
-          else {
+        // add source to map
+        mapbox.addSource( source.id,
+          {
+            type : source.type,
+            data : dataset,
+          }
+        )
+
+        // add source to store 
+        store.dispatch('data/setDisplayedDataset', {
+          id : source.id,
+          data : dataset,
+        })
+
+      }
+
+      // URL SOURCES
+      let promisesArray = []
+      for ( let source of urlSourcesArray ){
+        
+        this.log && console.log("C-MapboxGL / loadSources - url ... source.id : ", source.id)
+        
+        if ( source.canChange ) {
+          let resp = axios.get( source.url )
+          resp.then( r => {
+            let dataset = r.data
+
+            // add source to map
             mapbox.addSource( source.id,
               {
                 type : source.type,
-                data : source.url,
+                data : dataset,
               }
             )
-          }
-
-        } 
-
-
-
+            // add source to store - displayedData
+            store.dipatch('data/setDisplayedDataset', {
+              id : source.id,
+              data : dataset,
+            })
+          })
+          promisesArray.push(resp)
+        } else {
+          // add source to map
+          mapbox.addSource( source.id,
+            {
+              type : source.type,
+              data : source.url,
+            }
+          )
+        }
       }
+      Promise.all( promisesArray )
+
     },
 
     loadLayers( layersArray ){
 
       let mapbox = this.map
-      
+      this.log && console.log("\nC-MapboxGL / loadLayers ... " )
+
       for (let layer of layersArray ){
-
+        this.log && console.log("C-MapboxGL / loadLayers ... layer.id : ", layer.id)
         mapbox.addLayer( layer )
-
-        mapbox.on('click', layer.id, function(e) {
-          let featuresItem = mapbox.queryRenderedFeatures(e.point, { layers: [ layer.id ] })
-        })
-
         mapbox.on('mouseenter', layer.id, function () {
           mapbox.getCanvas().style.cursor = 'pointer'
         })
-
         mapbox.on('mouseleave', layer.id, function () {
           mapbox.getCanvas().style.cursor = ''
         })
+      }
+    },
+
+    loadClicEvents( mapsArray ){
+
+      let mapbox = this.map
+      
+      for (let mapRef of mapsArray ){
+
+        if ( mapRef.clicEvents ){
+
+          for (let clicEvent of mapRef.clicEvents ){
+            
+            this.log && console.log("\nC-MapboxGL / loadClicEvents ... clicEvent.layer : ", clicEvent.layer)
+            this.log && console.log("C-MapboxGL / loadClicEvents ... clicEvent : ", clicEvent)
+  
+            mapbox.on( clicEvent.event, clicEvent.layer, function(e) {
+              
+              let featuresItem = mapbox.queryRenderedFeatures( e.point, { layers: [ clicEvent.layer ] } )
+              let itemProps = featuresItem[0].properties
+
+              console.log( "... ", clicEvent.event, " ... itemProps : ", itemProps)
+              // let itemKey = itemProps[ clicEvent.propertyKey ]
+              // console.log( "... ", clicEvent.event, " ... propertyKey : ", clicEvent.propertyKey, " ... itemKey : ", itemKey)
+
+            })
+  
+          }
+          
+        }
 
       }
 
     },
 
-
     // INTERACTIONS - - - - - - - - - - - - - - - - - - //
 
+    fitTo( layerDescription ){
+
+    },
+
+    goToLayer( layerDescription ){
+
+    },
 
 
-    // UX FUNCTIONS
+    updateQuery( layerDescription ){
+
+    },
+
+
+    // UX FUNCTIONS - - - - - - - - - - - - - - - - - - //
+
     switchMapVisibility( mapSelectedId ){
 
       let mapbox = this.map 

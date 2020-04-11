@@ -7,21 +7,15 @@ export const configAppData = {
   dataSource : {
 
     docs : "https://github.com/etalab/dashboard-aides-entreprises/tree/j_front/frontend",
-    
-    dataType : "api", // either API or JSON ?
-    
-    sources : {
+        
+    apiBackendUrl : {
       dev :     "http://pad-01.infra.data.gouv.fr:5000/",
       prod :    "http://pad-01.infra.data.gouv.fr:5000/",
       preprod : "http://pad-01.infra.data.gouv.fr:5000/"
     },
-    sourcesJson : {
-      dev :     "~/datasets/json",
-      prod :    "~/datasets/json",
-      preprod : "~/datasets/json"
-    },
 
-    dimensions : [
+    // TO DO ... INTEGRATE TO getDataInit etc...
+    apiBackendSchema : [
       {
         arg : "naf",
         id : "list_nafs",
@@ -142,19 +136,101 @@ export const configAppData = {
   defaultDataSetup : {
 
     initData : {
-      help : "populate store.data.state.storedData " ,
-      store : [
-        { field: "naf" ,            from : "api" , url_suffix : "naf" },
-        { field: "region" ,         from : "api" , url_suffix : "region" },
-        { field: "departement" ,    from : "api" , url_suffix : "departement" },
-        { field: "classeeffectif" , from : "api" , url_suffix : "classeeffectif" },
-      ]
-    },
 
-    displayedData : {
-      help : "populate store.data.state.displayedData " ,
+      help : "populate 'store.data.state.initData' @ middleware getIniitData.js / from : url | localFile" ,
+      
       store : [
-        { field: "aides-reg",       from : "api" , url_suffix : "stat/aide/reg" },
+
+        // TAXONOMIES 
+
+        // { 
+        //   id   : "naf" ,
+        //   from : "url" ,
+        //   help : "",
+        //   url  : "http://pad-01.infra.data.gouv.fr:5000/naf" 
+        // },
+        // { 
+        //   id   : "region" ,
+        //   from : "url" ,
+        //   help : "",
+        //   url  : "http://pad-01.infra.data.gouv.fr:5000/region" 
+        // },
+        // { 
+        //   id   : "departement" ,
+        //   from : "url" ,
+        //   help : "",
+        //   url  : "http://pad-01.infra.data.gouv.fr:5000/departement" 
+        // },
+        // { 
+        //   id   : "classeeffectif" ,
+        //   from : "url" ,
+        //   help : "",
+        //   url  : "http://pad-01.infra.data.gouv.fr:5000/classeeffectif" 
+        // },
+
+        { 
+          id    : "taxo-nafs" ,
+          help  : "",
+          from  : "static" , 
+          url   : "/datasets/taxonomies/nafs.json",
+          displayed : false,
+        },
+        { 
+          id    : "taxo-regions" ,
+          help  : "",
+          from  : "static" , 
+          url   : "/datasets/taxonomies/regions.json",
+          displayed : false,
+        },
+        { 
+          id    : "taxo-departements" ,
+          help  : "",
+          from  : "static" , 
+          url   : "/datasets/taxonomies/departements.json",
+          displayed : false,
+        },
+        { 
+          id    : "taxo-classes-effectifs" ,
+          help  : "",
+          from  : "static" , 
+          url   : "/datasets/taxonomies/classes-effectifs.json",
+          displayed : false,
+        },
+
+
+        // CONTOURS ? (NO NEED EXCEPT CENTERS : SOURCES LOADED IN MAPBOX COMPONENT )
+        {
+          id    : "centers" ,
+          help  : "geo centres régions et départements",
+          from  : "static" , 
+          url   : "/datasets/geodata/centers.json",
+          displayed : true,
+        },
+
+
+        // AIDES
+        {
+          id    : "national-aides-raw" ,
+          help  : "serie chiffres aides à la maille nationale",
+          from  : "static" , 
+          url   : "/datasets/aides/aides-maille-national.json",
+          displayed : true,
+        },
+        {
+          id    : "regions-aides-raw" ,
+          help  : "serie chiffres aides à la maille regionale",
+          from  : "static" , 
+          url   : "/datasets/aides/aides-maille-regional.json",
+          displayed : true,
+        },
+        {
+          id    : "departements-aides-raw" ,
+          help  : "serie chiffres aides à la maille departementale",
+          from  : "static" , 
+          url   : "/datasets/aides/aides-maille-departemental.json",
+          displayed : false,
+        },
+
       ]
     },
 

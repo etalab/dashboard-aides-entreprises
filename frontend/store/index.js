@@ -1,6 +1,5 @@
 // import { ... } from '~/utils/'
-import { findElementFromArrayAndId } from '~/utils/utils'
-
+// import { findElementFromArrayAndId } from '~/utils/utils'
 
 
 export const state = () => ({
@@ -83,11 +82,11 @@ export const getters = {
   // CONFIGS
   getDataViewConfig : (state) => ({ dataViewType, id }) => {
 
-    state.log && console.log("S-index-G-getDataViewConfig / dataViewType : ", dataViewType)
-    state.log && console.log("S-index-G-getDataViewConfig / id : ", id)
+    // state.log && console.log("S-index-G-getDataViewConfig / dataViewType : ", dataViewType)
+    // state.log && console.log("S-index-G-getDataViewConfig / id : ", id)
    
     let dataTypeConfigs = state.configsData[ dataViewType ]
-    state.log && console.log("S-index-G-getDataViewConfig / dataTypeConfigs : ", dataTypeConfigs)
+    // state.log && console.log("S-index-G-getDataViewConfig / dataTypeConfigs : ", dataTypeConfigs)
    
     // let result = findElementFromArrayAndId ( id, dataTypeConfigs )
     let result = dataTypeConfigs.find( d => d.id === id )
@@ -101,7 +100,7 @@ export const getters = {
       }
     }
 
-    state.log && console.log("S-index-G-getDataViewConfig / result : ", result)
+    // state.log && console.log("S-index-G-getDataViewConfig / result : ", result)
 
     return result
 
@@ -124,7 +123,7 @@ export const mutations = {
   setLocalRouteConfig(state, routeConfig) {
     // state.log && console.log("S-index-M-setLocalRouteConfig...")
     state.localRouteConfig = routeConfig
-    state.log && console.log("S-index-M-setLocalRouteConfig / state.localRouteConfig : ", state.localRouteConfig)
+    // state.log && console.log("S-index-M-setLocalRouteConfig / state.localRouteConfig : ", state.localRouteConfig)
   },
 
 

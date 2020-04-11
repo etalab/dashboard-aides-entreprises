@@ -1,62 +1,55 @@
 import getDataFromUrl from "~/utils/getData.js"
 
+import axios from 'axios'
 
-export default function ({ req, store, app, redirect }) {
+export default function ({ store, app, redirect }) {
 
   let log = store.state.log
   let baseUrl = store.state.data.backendApi
+  let promisesArray = []
 
+  log && console.log('\n-MW- getDataInit / app : ', app)
+
+  // STORE DATASETS - 
   let hasInitdData = store.state.data.initData 
+
   if (!hasInitdData) {
 
-    log && console.log('\n-MW- getData / !hasInitdData ...')
+    log && console.log('-MW- getDataInit / !hasInitdData ...')
 
     let urlsListInit = store.state.data.defaultDataSetup.initData.store
-    log && console.log('-MW- getData / !hasInitdData / urlsListInit :', urlsListInit)
+    
+    // log && console.log('-MW- getDataInit / !hasInitdData / urlsListInit :', urlsListInit)
 
-    for (let urlObj of urlsListInit ){
+    for (let dataRef of urlsListInit ){
 
-      log && console.log('-MW- getData / !hasInitdData / urlObj :', urlObj)
-      let url = baseUrl + "/" + urlObj.url_suffix
-  
-      let response = getDataFromUrl( url )
-
-      response.then( resp => {
-        let value = { 
-          field: urlObj.field,
-          data : resp.data
-        }
-        log && console.log('-MW- getData / !hasInitdData / value :', value)
-        store.commit('data/setInitData', value)
-      })
-
-    }
+      log && console.log('-MW- getDataInit / dataRef.id :', dataRef.id)
       
-  }
-    
-  let hasDisplayedData = store.state.data.displayedData 
-  if (!hasDisplayedData) {
+      let dataset = {
+        id : dataRef.id,
+      } 
 
-    log && console.log('\n-MW- getData / !hasDisplayedData ...')
-  
-    let urlsListData = store.state.data.defaultDataSetup.displayedData.store
-    log && console.log('-MW- getData / !hasDisplayedData / urlsListData :', urlsListData)
+      // GET DATA AND STORE TO data/initData
+      let initDataPromise = axios.get( dataRef.url )
+      initDataPromise.then( resp => {
+        // log && console.log('-MW- getDataInit / res :' , resp )
+        dataset.data = resp.data
+        store.commit('data/pushToInitData', dataset)
 
-    for (let urlObj of urlsListData ){
-
-      let url = baseUrl + "/" + urlObj.url_suffix
-    
-      let response = getDataFromUrl( url )
-      response.then( resp => {
-        let value = { 
-          field: urlObj.field,
-          data : resp.data
+        // COPY IT TO data/displayedData
+        if ( dataRef.displayed ){
+          store.commit('data/pushToDisplayedData', dataset)
         }
-        store.commit('data/setDisplayedData', value)
       })
+
+      promisesArray.push( initDataPromise )
 
     }
 
+    return Promise.all( promisesArray )
+
   }
+  
+  log && console.log('-MW- getDataInit / finished ...')
 
 }

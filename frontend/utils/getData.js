@@ -1,8 +1,11 @@
-console.log('+ + + plugins/utils... ')
+console.log('+ + + plugins/getData.js... ')
 
 import axios from 'axios'
 
 
+// - - - - - - - - - - - - - - - - - - - //
+// API UTILS 
+// - - - - - - - - - - - - - - - - - - - //
 
 // feature test for AbortController that works in Safari 12
 let abortableFetchSupported = false;
@@ -41,7 +44,7 @@ export default async function getDataFromUrl( fetchUrl, fetchMethod='get' ){
   })
 
   .then( resp => {
-    // console.log("+ + + getDataFromUrl / resp :", resp);
+    console.log("+ + + getDataFromUrl / resp :", resp);
     return resp
   })
   

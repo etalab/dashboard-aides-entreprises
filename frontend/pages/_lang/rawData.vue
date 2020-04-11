@@ -30,24 +30,30 @@
         >
 
         <div class="text-center">
-          loop in <code>initData</code>
+          loop in <code>state.data.initData</code>
         </div><br>
 
-        <div 
-          v-for="(val, property, index) in initData"
-          :key="index">
-          <hr><br>
-          <p>field : 
-            <code>{{ property }}</code>
-          </p>
-          <div>
-            <code>
-              {{ val.slice(0,1) }}
-              [ ... ]
-            </code>
-          </div>
-          <br>
+        <!-- {{ initData }} -->
+        <div
+          v-if=" initData"
+          >
+          <div 
+            v-for="(val, index) in initData"
+            :key="index">
+            <hr><br>
+            <p>id : 
+              <code>{{ val.id }}</code>
+            </p>
+            <div>
+              <code>
+                {{ val.data.slice(0,1) }}
+                [ ... ]
+              </code>
+            </div>
+            <br>
+          </div> 
         </div>
+       
 
       </v-col>
 
@@ -57,23 +63,28 @@
         >
 
         <div class="text-center">
-          loop in <code>displayedData</code>
+          loop in <code>state.data.displayedData</code>
         </div><br>
 
-        <div 
-          v-for="(val, property, index) in displayedData"
-          :key="index">
-          <hr><br>
-          <p>field : 
-            <code>{{ property }}</code>
-          </p>
-          <div>
-            <code>
-              {{ val.slice(0,1) }}
-              [ ... ]
-            </code>
+        <!-- {{ displayedData }} -->
+        <div
+          v-if="displayedData"
+          >
+          <div 
+            v-for="(val, index) in displayedData"
+            :key="index">
+            <hr><br>
+            <p>id : 
+              <code>{{ val.id }}</code>
+            </p>
+            <div>
+              <code>
+                {{ val.data.slice(0,1) }}
+                [ ... ]
+              </code>
+            </div>
+            <br>
           </div>
-          <br>
         </div>
 
       </v-col>
