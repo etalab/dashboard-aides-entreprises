@@ -56,7 +56,7 @@ sudo -u postgres psql -d dashboard -c "DROP TABLE IF EXISTS naf;"
 echo "DROP TABLE OK"
 sudo -u postgres psql -d dashboard -f "sql/create_table_naf.sql"
 echo "CREATE TABLE OK"
-sudo -u postgres psql -d dashboard -c "\copy naf(code_naf, intitule_naf, intitule_naf_65, intitule_naf_40) FROM '"$datafolder"naf.csv' delimiter ';' csv header encoding 'UTF8';"
+sudo -u postgres psql -d dashboard -c "\copy naf(code_naf, intitule_naf) FROM '"$datafolder"naf.csv' delimiter ',' csv header encoding 'UTF8';"
 
 
 echo "CREATE TABLE CLASSEEFFECTIF"
