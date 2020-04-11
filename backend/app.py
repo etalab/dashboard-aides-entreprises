@@ -60,11 +60,11 @@ def getStatAideNational():
     if request.method == 'GET':
         my_query = "SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren FROM aide A;"
         
-        my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
+        my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A LEFT JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
 
-        my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A INNER JOIN classeeffectif AS C ON A.classe_effectif = C.denomination GROUP BY classe_effectif, C.libelle;"
+        my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif AS C ON A.classe_effectif = C.denomination GROUP BY classe_effectif, C.libelle;"
         
-        my_query_4 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC;"
+        my_query_4 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A LEFT JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC;"
 
         data = db.session.execute(my_query).fetchall()
         data2 = db.session.execute(my_query_2).fetchall()
@@ -108,7 +108,7 @@ def getStatAideNational():
 def getStatAideRegional():
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, R.libelle FROM aide AS A INNER JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;"
+        my_query = "SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;"
         data = db.session.execute(my_query).fetchall()
         app.logger.info(data)
         dataJson = []
@@ -119,11 +119,11 @@ def getStatAideRegional():
             dataDict['nombre'] = str(data[i][2])
             dataDict['libelle'] = str(data[i][3]) 
 
-            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
+            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A LEFT JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
 
-            my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A INNER JOIN classeeffectif AS C ON A.classe_effectif = C.denomination WHERE A.reg = '"+str(data[i][0])+"' GROUP BY classe_effectif, C.libelle;"
+            my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif AS C ON A.classe_effectif = C.denomination WHERE A.reg = '"+str(data[i][0])+"' GROUP BY classe_effectif, C.libelle;"
 
-            my_query_4 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC;"
+            my_query_4 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A LEFT JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC;"
             
             data2 = db.session.execute(my_query_2).fetchall()
             data3 = db.session.execute(my_query_3).fetchall()
@@ -163,7 +163,7 @@ def getStatAideRegional():
 def getStatAideDepartemental():
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, D.libelle FROM aide AS A INNER JOIN departement AS D ON A.dep = D.dep GROUP BY A.dep, D.libelle;"
+        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, D.libelle FROM aide AS A LEFT JOIN departement AS D ON A.dep = D.dep GROUP BY A.dep, D.libelle;"
         data = db.session.execute(my_query).fetchall()
         app.logger.info(data)
         dataJson = []
@@ -174,11 +174,11 @@ def getStatAideDepartemental():
             dataDict['nombre'] = str(data[i][2])
             dataDict['libelle'] = str(data[i][3]) 
 
-            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
+            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A LEFT JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
 
-            my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A INNER JOIN classeeffectif AS C ON A.classe_effectif = C.denomination WHERE A.dep = '"+str(data[i][0])+"' GROUP BY classe_effectif, C.libelle;"
+            my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif AS C ON A.classe_effectif = C.denomination WHERE A.dep = '"+str(data[i][0])+"' GROUP BY classe_effectif, C.libelle;"
 
-            my_query_4 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC;"
+            my_query_4 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A LEFT JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC;"
 
 
             data2 = db.session.execute(my_query_2).fetchall()
@@ -259,7 +259,7 @@ def getClasseEffectifs():
 def getStatAideDepartementalWithRegID(reg):
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, D.libelle FROM aide AS A INNER JOIN departement AS D ON A.dep = D.dep WHERE A.reg = '"+reg+"' GROUP BY A.dep, D.libelle;"
+        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, D.libelle FROM aide AS A LEFT JOIN departement AS D ON A.dep = D.dep WHERE A.reg = '"+reg+"' GROUP BY A.dep, D.libelle;"
         data = db.session.execute(my_query).fetchall()
         app.logger.info(data)
         dataJson = []
@@ -270,9 +270,9 @@ def getStatAideDepartementalWithRegID(reg):
             dataDict['nombre'] = str(data[i][2])
             dataDict['libelle'] = str(data[i][3]) 
 
-            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+reg+"' AND a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
+            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.intitule_naf FROM aide AS A LEFT JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+reg+"' AND a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
 
-            my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A INNER JOIN classeeffectif AS C ON A.classe_effectif = C.denomination WHERE A.reg = '"+reg+"' AND A.dep = '"+str(data[i][0])+"' GROUP BY classe_effectif, C.libelle;"
+            my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif AS C ON A.classe_effectif = C.denomination WHERE A.reg = '"+reg+"' AND A.dep = '"+str(data[i][0])+"' GROUP BY classe_effectif, C.libelle;"
 
             data2 = db.session.execute(my_query_2).fetchall()
             data3 = db.session.execute(my_query_3).fetchall()
@@ -305,7 +305,7 @@ def getStatAideNational():
     if request.method == 'GET':
         my_query = "SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent FROM aide A;"
         
-        my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
+        my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent, N.intitule_naf FROM aide AS A LEFT JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
 
         my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent FROM aide AS A GROUP BY classe_effectif;"
         
@@ -347,7 +347,7 @@ def getStatAideNational():
 def getStatAideRegional():
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent, R.libelle FROM aide AS A INNER JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;"
+        my_query = "SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;"
         data = db.session.execute(my_query).fetchall()
         app.logger.info(data)
         dataJson = []
@@ -360,7 +360,7 @@ def getStatAideRegional():
             dataDict['delta_effectif_percent'] = str(data[i][4]) 
             dataDict['libelle'] = str(data[i][5]) 
 
-            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
+            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent, N.intitule_naf FROM aide AS A LEFT JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
 
             my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent FROM aide AS A WHERE A.reg = '"+str(data[i][0])+"' GROUP BY classe_effectif;"
             
@@ -397,7 +397,7 @@ def getStatAideRegional():
 def getStatAideDepartemental(reg):
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent, D.libelle FROM aide AS A INNER JOIN departement AS D ON A.dep = D.dep WHERE A.reg = '"+reg+"' GROUP BY A.dep, D.libelle;"
+        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent, D.libelle FROM aide AS A LEFT JOIN departement AS D ON A.dep = D.dep WHERE A.reg = '"+reg+"' GROUP BY A.dep, D.libelle;"
         data = db.session.execute(my_query).fetchall()
         app.logger.info(data)
         dataJson = []
@@ -410,7 +410,7 @@ def getStatAideDepartemental(reg):
             dataDict['delta_effectif_percent'] = str(data[i][4]) 
             dataDict['libelle'] = str(data[i][5]) 
 
-            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent, N.intitule_naf FROM aide AS A INNER JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+reg+"' AND a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
+            my_query_2 = "SELECT SUBSTR(A.activiteprincipaleetablissement,1,2) AS divisionape, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent, N.intitule_naf FROM aide AS A LEFT JOIN naf AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_naf WHERE A.reg = '"+reg+"' AND a.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.intitule_naf ORDER BY TotalSiren DESC LIMIT 10;"
 
             my_query_3 = "SELECT classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, SUM(A.delta_effectif) AS TotalDeltaEffectif, AVG(A.delta_effectif_percent) AS AVGDeltaEffectifPercent FROM aide AS A WHERE A.reg = '"+reg+"' AND A.dep = '"+str(data[i][0])+"' GROUP BY classe_effectif;"
 
