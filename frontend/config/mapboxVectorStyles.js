@@ -12,7 +12,7 @@ export const StylesOSM = {
     "version": 8,
 
     // cf : http://jsfiddle.net/brianssheldon/wm18a33d/27/
-    // cf :  http://glfonts.lukasmartinelli.ch
+    // cf : http://glfonts.lukasmartinelli.ch
     // cf : https://github.com/openmaptiles/fonts
     "glyphs": "https://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
     "sources": {

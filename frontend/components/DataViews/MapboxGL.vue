@@ -106,9 +106,6 @@
     </no-ssr>
 
 
-
-
-
   </div>
 
 </template>
@@ -304,6 +301,7 @@ export default {
         for ( let source of sourcesArray ){
           
           this.log && console.log("\nC-MapboxGL / loadSources - store ... source.id : ", source.id)
+          this.log && console.log("C-MapboxGL / loadSources - store ... source.help : ", source.help)
           let mapBoxSrcObj = {
             type : source.type,
           }
@@ -318,10 +316,10 @@ export default {
             dataset = transformDataset( source, dataset, geoCanvas )
           }
 
-          this.log && console.log("C-MapboxGL / loadSources - store ... dataset : ", dataset)
+          // this.log && console.log("C-MapboxGL / loadSources - store ... dataset : ", dataset)
 
           // add source to map
-          this.log && console.log("C-MapboxGL / loadSources - store ... addSource ...")
+          // this.log && console.log("C-MapboxGL / loadSources - store ... addSource ...")
           mapBoxSrcObj.data = {...dataset}
           if (source.generateId) mapBoxSrcObj.generateId = source.generateId 
           mapbox.addSource( source.id, mapBoxSrcObj )
@@ -347,6 +345,7 @@ export default {
         for ( let source of sourcesArray ){
           
           this.log && console.log("\nC-MapboxGL / loadSources - url ... source.id : ", source.id)
+          this.log && console.log("C-MapboxGL / loadSources - url ... source.help : ", source.help)
           let mapBoxSrcObj = {
             type : source.type,
           }
@@ -355,10 +354,10 @@ export default {
             let resp = axios.get( source.url )
             resp.then( r => {
               let dataset = r.data
-              this.log && console.log("C-MapboxGL / loadSources - url ... dataset : ", dataset)
+              // this.log && console.log("C-MapboxGL / loadSources - url ... dataset : ", dataset)
 
               // add source to map
-              this.log && console.log("C-MapboxGL / loadSources - url ... addSource ...")
+              // this.log && console.log("C-MapboxGL / loadSources - url ... addSource ...")
               mapBoxSrcObj.data = {...dataset}
               if (source.generateId) mapBoxSrcObj.generateId = source.generateId 
               mapbox.addSource( source.id, mapBoxSrcObj )
@@ -373,7 +372,7 @@ export default {
           } 
           else {
             // add source to map
-            this.log && console.log("C-MapboxGL / loadSources - url (!loadInStore) ... addSource ...")
+            // this.log && console.log("C-MapboxGL / loadSources - url (!loadInStore) ... addSource ...")
             mapBoxSrcObj.data = source.url
             if (source.generateId) mapBoxSrcObj.generateId = source.generateId 
             mapbox.addSource( source.id, mapBoxSrcObj )
@@ -387,20 +386,13 @@ export default {
 
         let mapbox = this.map
         this.log && console.log("\nC-MapboxGL / loadLayers ", "... ".repeat(10))
+        this.log && console.log("\n")
 
         // ADDING LAYERS TO MAP
         for (let layer of layersArray ){
-          let layer_ = { ...layer }
-          this.log && console.log("\nC-MapboxGL / loadLayers ... layer_.id : ", layer_.id)
-          this.log && console.log("C-MapboxGL / loadLayers ... layer_ : ", layer_)
-          mapbox.addLayer( layer_ )
-
-          mapbox.on('mouseenter', layer_.id, function () {
-            mapbox.getCanvas().style.cursor = 'pointer'
-          })
-          mapbox.on('mouseleave', layer_.id, function () {
-            mapbox.getCanvas().style.cursor = ''
-          })
+          // let layer_ = { ...layer }
+          this.log && console.log("C-MapboxGL / loadLayers ... layer.id : ", layer.id)
+          mapbox.addLayer( layer )
 
         }
 
@@ -411,11 +403,11 @@ export default {
         let mapbox = this.map
         this.log && console.log("\nC-MapboxGL / loadClicEvents ", "... ".repeat(10))
 
-        let sourcesList = mapbox.getStyle().sources
-        this.log && console.log("\nC-MapboxGL / loadClicEvents ... sourcesList : ", sourcesList)
+        // let sourcesList = mapbox.getStyle().sources
+        // this.log && console.log("\nC-MapboxGL / loadClicEvents ... sourcesList : ", sourcesList)
 
-        let layersList = mapbox.getStyle().layers
-        this.log && console.log("C-MapboxGL / loadClicEvents ... layersList : ", layersList, "\n\n")
+        // let layersList = mapbox.getStyle().layers
+        // this.log && console.log("C-MapboxGL / loadClicEvents ... layersList : ", layersList, "\n\n")
 
         for (let mapRef of mapsArray ){
 
@@ -423,17 +415,64 @@ export default {
 
             for (let clicEvent of mapRef.clicEvents ){
               
-              this.log && console.log("\nC-MapboxGL / loadClicEvents ... clicEvent.layer : ", clicEvent.layer)
+              this.log && console.log("\nC-MapboxGL / loadClicEvents ... clicEvent.layer : ", clicEvent.layer, " / event :", clicEvent.event )
               this.log && console.log("C-MapboxGL / loadClicEvents ... clicEvent : ", clicEvent)
-    
-              mapbox.on( clicEvent.event, clicEvent.layer, function(e) {
+              
+              let clicFunctions = clicEvent.functions
+
+              mapbox.on( clicEvent.event, clicEvent.layer, e => {
                 
                 let featuresItem = mapbox.queryRenderedFeatures( e.point, { layers: [ clicEvent.layer ] } )
-                let itemProps = featuresItem[0].properties
+                
+                if ( typeof featuresItem !== 'undefined' ){
 
-                console.log( "... ", clicEvent.event, " ... itemProps : ", itemProps)
-                // let itemKey = itemProps[ clicEvent.propertyKey ]
-                // console.log( "... ", clicEvent.event, " ... propertyKey : ", clicEvent.propertyKey, " ... itemKey : ", itemKey)
+                  let item       = featuresItem[0]
+                  let itemSource = item.source
+                  let itemLayer  = item.layer
+                  let itemProps  = item.properties
+  
+                  if( clicEvent.event == 'click' ) {
+                    this.log && console.log( "... clicEvent.event : ", clicEvent.event )
+                    this.log && console.log( "... featuresItem : ", featuresItem )
+                    this.log && console.log( "... itemSource : ", itemSource )
+                    this.log && console.log( "... itemProps : ", itemProps )
+                  }
+  
+                  let itemKey = itemProps[ clicEvent.propertyKey ]
+                  // console.log( "... ", clicEvent.event, " ... propertyKey : ", clicEvent.propertyKey, " ... itemKey : ", itemKey)
+                
+                  for ( let fn of clicFunctions ){
+
+                    switch( fn.funcName ){
+
+                      // case 'goToPolygon' : 
+                      //   this.goToPolygon() ;
+                      //   break ; 
+
+                      // case 'updateDisplayedData' : 
+                      //   this.updateDisplayedData() ;
+                      //   break ; 
+
+                      // case 'updateQuery' : 
+                      //   this.updateQuery() ;
+                      //   break ; 
+
+                      case 'toggleHighlightOn' : 
+                        this.toggleHighlightOn(e, itemSource ) ; 
+                        break ;
+
+                      case 'toggleHighlightOff' : 
+                        this.toggleHighlightOff(e, itemSource ) ; 
+                        break ;
+                    }
+                  }
+
+
+                }
+
+
+
+
 
               })
     
@@ -447,25 +486,18 @@ export default {
 
     // INTERACTIONS - - - - - - - - - - - - - - - - - - //
 
-      fitTo( layerDescription ){
-
-      },
-      fit (geojson) {
-        let mapbox =this.map
-        var _bbox = bbox(geojson)
-        mapbox.fitBounds(_bbox, { padding: 20, animate: true })
-      },
-
-      goToLayer( layerDescription ){
-
-      },
-
 
       updateQuery( layerDescription ){
 
       },
-      onMouseMove (event, source) {
-        let mapbox =this.map
+
+
+    // UX FUNCTIONS - - - - - - - - - - - - - - - - - - //
+
+
+      // HIGHLIGHTS FUNCTIONS
+      toggleHighlightOn (event, source) {
+        let mapbox = this.map
         const canvas = mapbox.getCanvas()
         canvas.style.cursor = 'pointer'
         if (event.features.length > 0) {
@@ -476,17 +508,34 @@ export default {
           mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: true })
         }
       },
-      onMouseLeave (event, source) {
-        let mapbox =this.map
+
+      toggleHighlightOff (event, source) {
+        let mapbox = this.map
         const canvas = mapbox.getCanvas()
         canvas.style.cursor = ''
         if (this.hoveredStateId[source] !== null) {
-          map.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: false })
+          mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: false })
         }
       },
 
-    // UX FUNCTIONS - - - - - - - - - - - - - - - - - - //
+      // ZOOM FUNCTIONS
+      goToPolygon (code) {
+        const departements = this.departements.features.filter(dpt => {
+          return dpt.properties.region === code
+        })
+        // this.addDepartementsLayer(departements)
+      },
+      fit (geojson) {
+        let mapbox =this.map
+        var _bbox = bbox(geojson)
+        mapbox.fitBounds(_bbox, { padding: 20, animate: true })
+      },
+      goToLayer( layerDescription ){
+      },
 
+
+
+      // VISIBILITY FUNCTIONS
       switchMapVisibility( mapSelectedId ){
 
         let mapbox = this.map 
