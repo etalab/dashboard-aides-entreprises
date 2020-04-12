@@ -442,24 +442,32 @@ export default {
                 
                   for ( let fn of clicFunctions ){
                     
+                    let funcParams = fn.funcParams 
+
+                    let params = funcParams && {
+                      source   : itemSource,
+                      propName : funcParams.propName ,
+                      prop     : itemProps[ funcParams.propName ],
+                    }
+
                     switch( fn.funcName ){
 
                       case 'goToPolygon' : 
-                        let funcParams = fn.funcParams ;
-                        let params = {
-                          source : itemSource,
-                          propName : funcParams.propName ,
-                          prop : itemProps[ funcParams.propName ],
-                        } ;
                         this.goToPolygon( params ) ;
                         break ; 
 
+                      case 'getChildrenPolygons' : 
+                        // params.targetSource   = funcParams.targetSource ;
+                        // params.targetPropName = funcParams.targetPropName ;
+                        // this.getChildrenPolygons( params) ;
+                        break ; 
+
                       case 'updateDisplayedData' : 
-                        // this.updateDisplayedData() ;
+                        // this.updateDisplayedData( params ) ;
                         break ; 
 
                       case 'updateQuery' : 
-                        // this.updateQuery() ;
+                        // this.updateQuery( params ) ;
                         break ; 
 
                       case 'toggleHighlightOn' : 
@@ -488,16 +496,46 @@ export default {
 
     // INTERACTIONS - - - - - - - - - - - - - - - - - - //
 
+      getChildrenPolygons( params ){
+        this.log && console.log("\nC-MapboxGL / getChildrenPolygons ... params : ", params )
 
-      updateQuery( layerDescription ){
+      },
+
+      updateQuery( params ){
+        this.log && console.log("\nC-MapboxGL / updateQuery ... params : ", params )
 
       },
 
 
     // UX FUNCTIONS - - - - - - - - - - - - - - - - - - //
 
+      // ZOOM FUNCTIONS
+
+      goToPolygon ( params ) {
+        this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
+        
+        let sourcesList = this.map.getStyle().sources
+        // this.log && console.log("C-MapboxGL / goToPolygon ... sourcesList : ", sourcesList)
+
+        let source = sourcesList && sourcesList[ params.source ]
+        // this.log && console.log("C-MapboxGL / goToPolygon ... source : ", source)
+
+        let geodata = source && source.data.features.find( feat => feat.properties[ params.propName ] == params.prop )
+        // this.log && console.log("C-MapboxGL / goToPolygon ... geodata : ", geodata)
+        
+        let data = {
+          type: 'FeatureCollection',
+          features: [ geodata ]
+        }
+        this.fit(data)
+      },
+      fit (geojson) {
+        var _bbox = bbox(geojson)
+        this.map.fitBounds(_bbox, { padding: 20, animate: true })
+      },
 
       // HIGHLIGHTS FUNCTIONS
+
       toggleHighlightOn (event, source) {
         let mapbox = this.map
         const canvas = mapbox.getCanvas()
@@ -520,34 +558,13 @@ export default {
         }
       },
 
-      // ZOOM FUNCTIONS
-      goToPolygon ( params ) {
-        this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
-        
-        let sourcesList = this.map.getStyle().sources
-        this.log && console.log("C-MapboxGL / goToPolygon ... sourcesList : ", sourcesList)
 
-        let source = sourcesList && sourcesList[ params.source ]
-        this.log && console.log("C-MapboxGL / goToPolygon ... source : ", source)
-
-        let geodata = source && source.data.features.find( feat => feat.properties[ params.propName ] == params.prop )
-        this.log && console.log("C-MapboxGL / goToPolygon ... geodata : ", geodata)
-        
-        let data = {
-          type: 'FeatureCollection',
-          features: [ geodata ]
-        }
-        this.fit(data)
-      },
-      fit (geojson) {
-        var _bbox = bbox(geojson)
-        this.map.fitBounds(_bbox, { padding: 20, animate: true })
-      },
 
 
 
 
       // VISIBILITY FUNCTIONS
+
       switchMapVisibility( mapSelectedId ){
 
         let mapbox = this.map 

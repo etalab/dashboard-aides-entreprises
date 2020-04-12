@@ -205,18 +205,18 @@ export const configAppMap = {
                   funcName    : "goToPolygon",
                   funcParams  : { propName : 'code' },
                 }, 
-                // { 
-                //   funcName : 'getChildrenPolygons',
-                //   funcParams  : { propName : 'code', targetSource : 'departement', targetPropName : 'region' },
-                // },
-                // { 
-                //   funcName : 'updateDisplayedData',
-                //   funcParams  : { propName : 'code' },
-                // },
-                // { 
-                //   funcName : 'updateQuery',
-                //   funcParams  : { propName : 'code' },
-                // },
+                { 
+                  funcName : 'getChildrenPolygons',
+                  funcParams  : { propName : 'code', targetSource : 'departement', targetPropName : 'region' },
+                },
+                { 
+                  funcName : 'updateDisplayedData',
+                  funcParams  : { propName : 'code' },
+                },
+                { 
+                  funcName : 'updateQuery',
+                  funcParams  : { propName : 'code' },
+                },
               ],
             },
             { 
@@ -224,7 +224,7 @@ export const configAppMap = {
               layer : "regions-fill",
               functions : [ 
                 { 
-                  funcName    : "toggleHighlightOn",
+                  funcName : "toggleHighlightOn",
                 }, 
               ],
             },
@@ -233,7 +233,7 @@ export const configAppMap = {
               layer : "regions-fill",
               functions : [ 
                 { 
-                  funcName    : "toggleHighlightOff",
+                  funcName : "toggleHighlightOff",
                 }, 
               ],
             },
