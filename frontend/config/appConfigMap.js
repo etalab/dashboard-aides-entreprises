@@ -13,21 +13,12 @@ const circlePaintAides = {
   'circle-color': '#8393A7',
   'circle-radius': [
     'interpolate', ['linear'],
-    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 8],
+    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
     0, 10,
     100, 70
   ]
 }
 
-
-// function toMillion (x) { 
-//   console.log( "=== toMillion / x ", x )
-//   return parseFloat( (parseFloat(x)/1000/1000).toFixed(2) ) 
-// }
-// function toFloat (x) { 
-//   console.log( "=== toFloat / x ", x )
-//   return parseFloat(x) 
-// }
 
 const aidesProperties = [
   { 
@@ -120,7 +111,7 @@ export const configAppMap = {
           from : 'store',
           fromId : 'regions-aides-raw',
           type : 'geojson',
-          generateId: false,
+          generateId: true,
           needTransform : true,
           transformTo : {
             srcKey : 'reg',
@@ -252,7 +243,7 @@ export const configAppMap = {
           type: 'fill',
           source: 'regions',
           layout: {
-            // visibility: 'visible' ,
+            visibility: 'visible' ,
           },
           paint: fillPaint
         },
@@ -260,7 +251,7 @@ export const configAppMap = {
           type: 'line',
           source: 'regions',
           layout: {
-            // visibility: 'visible' ,
+            visibility: 'visible' ,
           },
           paint: {
             'line-color': '#627BC1',
@@ -271,7 +262,7 @@ export const configAppMap = {
           type: 'circle',
           source: 'regions-aides',
           layout: {
-            // visibility: 'visible' ,
+            visibility: 'visible' ,
           },
           paint: circlePaintAides
         },
@@ -281,6 +272,7 @@ export const configAppMap = {
           layout: {
             // visibility: 'visible' ,
             'text-field': '{montantMillions} M€',
+            "text-font": ["Open Sans Regular"], // OK
             'text-size': 14
           }
         },

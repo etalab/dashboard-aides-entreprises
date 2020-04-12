@@ -105,6 +105,8 @@ const configApp = {
 
 console.log('>>> nuxt.config.js / configApp : \n', configApp)
 
+import webpack from 'webpack'
+
 
 export default {
 
@@ -168,7 +170,11 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+
     { src: '~/plugins/mapbox', mode: 'client' },
+    // { src: '~/plugins/mapboxgl', mode: 'client' },
+    // { src: '~/plugins/mapboxgl', ssr: false },
+
     { src: '~/plugins/apexCharts', mode: 'client' },
   ],
 
@@ -223,6 +229,13 @@ export default {
   ** Build configuration
   */
   build: {
+
+    // plugins: [
+    //   new webpack.ProvidePlugin({
+    //     mapboxgl: 'mapbox-gl'
+    //   })
+    // ],
+
     /*
     ** You can extend webpack config here
     */

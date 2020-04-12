@@ -93,21 +93,7 @@
 
       </MglMap>
 
-      <!-- <mapbox
-        accessToken=""
-        :map-options="{
-          style: 'https://etalab-tiles.fr/styles/osm-bright/style.json' ,
-          center: mapOptions.center,
-          zoom : mapOptions.zoom
-        }"
-        @map-load="loaded"
-      /> -->
-
     </no-ssr>
-
-
-
-
 
   </div>
 
@@ -121,14 +107,12 @@ import { mapState, mapGetters, mapActions } from 'vuex'
 import {Mapbox , mapboxgl} from "mapbox-gl";
 import { MglMap } from "vue-mapbox";
 
-// let map
-
 import bbox from '@turf/bbox'
 
-import axios from 'axios'
 import { getDataFromUrl } from "~/utils/getData.js"
-import { transformDataset, buildProperties } from "~/utils/mapbox.js"
+import axios from 'axios'
 
+import { transformDataset, buildProperties } from "~/plugins/mapbox.js"
 import { StylesOSM } from '~/config/mapboxVectorStyles.js'
 
 export default {
@@ -136,6 +120,7 @@ export default {
   name: 'MapboxGL',
 
   components: {
+
   },
   
   props : [
@@ -278,11 +263,6 @@ export default {
 
     // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
 
-      // loaded (_map) {
-      //   map =_map 
-      //   this.map = _map
-      // },
-
       onMapLoaded(event) {
         this.log && console.log("C-MapboxGL / onMapLoaded ... ")
         // store in component
@@ -388,20 +368,58 @@ export default {
         let mapbox = this.map
         this.log && console.log("\nC-MapboxGL / loadLayers ", "... ".repeat(10))
 
-        // ADDING LAYERS TO MAP
+
+        // DEBUGGING
+        let regionsAidesLayer = {
+          id: 'regions-aides-test',
+          type: 'circle',
+          source: 'regions-aides',
+          layout : { visibility: 'visible'},
+          // filter: ['>', 'montantMillions', 0],
+          paint: {
+            'circle-opacity': 0.6,
+            'circle-color': '#8393A7',
+            'circle-radius': [
+              'interpolate',
+              ['linear'],
+              ['sqrt', ['number', ['get', 'montantMillions']]],
+              0,
+              10,
+              100,
+              70
+            ]
+          }
+        }
+        this.log && console.log("\nC-MapboxGL / loadLayers ... regionsAidesLayer.id : ", regionsAidesLayer.id)
+        this.log && console.log("C-MapboxGL / loadLayers ... regionsAidesLayer : ", regionsAidesLayer)
+        // mapbox.addLayer( regionsAidesLayer )
+
+        let regionAidesMontants = {
+          id: 'regions-aides-montants',
+          type: 'symbol',
+          source: 'regions-aides',
+          layout: {
+            'text-field': '{montantMillions} M€',
+            'text-size': 14
+          }
+        }
+        this.log && console.log("\nC-MapboxGL / loadLayers ... regionAidesMontants.id : ", regionAidesMontants.id)
+        this.log && console.log("C-MapboxGL / loadLayers ... regionAidesMontants : ", regionAidesMontants)
+        mapbox.addLayer( regionAidesMontants )
+
+        
         for (let layer of layersArray ){
           let layer_ = { ...layer }
           this.log && console.log("\nC-MapboxGL / loadLayers ... layer_.id : ", layer_.id)
           this.log && console.log("C-MapboxGL / loadLayers ... layer_ : ", layer_)
-          mapbox.addLayer( layer_ )
+          // mapbox.addLayer( layer_ )
 
-          mapbox.on('mouseenter', layer_.id, function () {
-            mapbox.getCanvas().style.cursor = 'pointer'
-          })
-          mapbox.on('mouseleave', layer_.id, function () {
-            mapbox.getCanvas().style.cursor = ''
-          })
-
+        //   mapbox.on('mouseenter', layer_.id, function () {
+        //     mapbox.getCanvas().style.cursor = 'pointer'
+        //   })
+        //   mapbox.on('mouseleave', layer_.id, function () {
+        //     mapbox.getCanvas().style.cursor = ''
+        //   })
         }
 
       },
