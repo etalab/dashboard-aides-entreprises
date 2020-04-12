@@ -20,6 +20,44 @@ const circlePaintAides = {
 }
 
 
+// function toMillion (x) { 
+//   console.log( "=== toMillion / x ", x )
+//   return parseFloat( (parseFloat(x)/1000/1000).toFixed(2) ) 
+// }
+// function toFloat (x) { 
+//   console.log( "=== toFloat / x ", x )
+//   return parseFloat(x) 
+// }
+
+const aidesProperties = [
+  { 
+    propName : "montantMillions",  
+    itemField : "montant",
+    needFormatting : true,
+    format : [
+      { 
+        utilsFnName : 'toMillionsOrElse',
+        params : { divider:1000000, fixed:2 },
+      },
+    ]
+  },
+  { 
+    propName : "montant",
+    itemField : "montant",
+    needFormatting : true,
+    format : [
+      { 
+        utilsFnName : 'toFloat',
+        params : undefined,
+      },
+    ]
+  },
+  { 
+    propName : "nombre",
+    itemField : "nombre",
+  },
+]
+
 
 export const configAppMap = {
 
@@ -31,8 +69,7 @@ export const configAppMap = {
 
 
     // FRANCE METRO
-    { 
-      id : "map-base",
+    { id : "map-base",
       isActivated : true,
       titleI18n : "maps.map01.title",
 
@@ -65,25 +102,25 @@ export const configAppMap = {
         //   canChange : false,
         // },
 
-        {
-          id   : 'regions',
+        { id   : 'regions',
           help : 'geojson des contours des régions',
           from : 'url',   
           url  : '/datasets/geodata/regions-100m.geojson',
           // url  : 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions-version-simplifiee.geojson',
           // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/j_front/frontend/datasets/geodata/regions-100m.geojson',
           type : 'geojson',
+          generateId: true,
           licence : 'open licence',
-          canChange      : false,
+          loadInStore    : true,
           popupSettings  : true,
         },
 
-        {
-          id   : 'regions-aides',
+        { id   : 'regions-aides',
           help : 'montants des aides au niveau regional - as geojson from raw',
           from : 'store',
           fromId : 'regions-aides-raw',
           type : 'geojson',
+          generateId: false,
           needTransform : true,
           transformTo : {
             srcKey : 'reg',
@@ -94,11 +131,7 @@ export const configAppMap = {
               canvasKeyPrefix : 'REG-',
               canvasKeySuffix : '' 
             },
-            properties : {
-              // montantMillions: parseFloat((parseFloat(dep.montant) / 1000 / 1000).toFixed(2)),
-              // montant: parseFloat(dep.montant),
-              // nombre: dep.nombre
-            },
+            properties : aidesProperties,
             geometry : {
               type : 'Point'
             },
@@ -106,50 +139,48 @@ export const configAppMap = {
           licence : '',
         },
 
-        {
-          id   : 'departements',
-          help : 'geojson des contours des départements',
-          from : 'url',
-          url  : '/datasets/geodata/departements-100m.geojson',
-          // url  : 'https://raw.githubusercontent.com/etalab/DVF-app/master/static/donneesgeo/departements-100m.geojson',
-          // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/j_front/frontend/datasets/geodata/departements-100m.geojson',
-          type : 'geojson',
-          licence : '',
-          canChange      : false,
-          popupSettings  : undefined,
-        },
+        // { id   : 'departements',
+        //   help : 'geojson des contours des départements',
+        //   from : 'url',
+        //   url  : '/datasets/geodata/departements-100m.geojson',
+        //   // url  : 'https://raw.githubusercontent.com/etalab/DVF-app/master/static/donneesgeo/departements-100m.geojson',
+        //   // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/j_front/frontend/datasets/geodata/departements-100m.geojson',
+        //   type : 'geojson',
+        //   generateId: true,
+        //   licence : '',
+        //   loadInStore    : false,
+        //   popupSettings  : undefined,
+        // },
 
-        {
-          id   : 'departements-aides',
-          help : 'montants des aides au niveau départemental - as geojson from raw',
-          from : 'store',
-          fromId : 'departements-aides-raw',
-          type : 'geojson',
-          transformTo : {
-            srcKey : 'dep',
-            geoCanvasId : 'centers',
-            canvasKey : { 
-              keyIsFieldName : true,
-              field : undefined, 
-              canvasKeyPrefix : 'DEP-',
-              canvasKeySuffix : '' 
-            },
-            properties : {
-
-            },
-            geometry : {
-              type : 'Point'
-            },
-          },
-          licence : '',
-        },
+        // { id   : 'departementaidess',
+        //   help : 'montants des aides au niveau départemental - as geojson from raw',
+        //   from : 'store',
+        //   fromId : 'departements-aides-raw',
+        //   type : 'geojson',
+        //   generateId: false,
+        //   needTransform : true,
+        //   transformTo : {
+        //     srcKey : 'dep',
+        //     geoCanvasId : 'centers',
+        //     canvasKey : { 
+        //       keyIsFieldName : true,
+        //       field : undefined, 
+        //       canvasKeyPrefix : 'DEP-',
+        //       canvasKeySuffix : '' 
+        //     },
+        //     properties : aidesProperties,
+        //     geometry : {
+        //       type : 'Point'
+        //     },
+        //   },
+        //   licence : '',
+        // },
       ],
       
       // MAPS
       maps : [
     
-        {
-          id : "map-aides-reg",
+        { id : "map-aides-reg",
           name: 'Carte aides par région',
           category: 'regional',
           properties: 'aides',
@@ -179,38 +210,37 @@ export const configAppMap = {
           ]
         },
 
-        {
-          id : "map-aides-dep",
-          name: 'Carte aides par departement',
-          category: 'departemental',
-          properties: 'aides',
-          data: "aides",
-          layers: [
-            "departements-fill", 
-            "departements-lines",
-            "departements-aides",
-            "departements-aides-montants",
-          ],
-          clicEvents : [
-            { 
-              event : 'click',
-              layer : "departements-fill",
-              functions : [ 
-                { 
-                  funcName    : "fitTo",
-                  propertyKey : "code",
-                  targetLayer : "departement",
-                }, 
-                { 
-                  funcName : "updateQuery",
-                  propertyKey : "code",
-                }
-              ],
+        // { id : "map-aides-dep",
+        //   name: 'Carte aides par departement',
+        //   category: 'departemental',
+        //   properties: 'aides',
+        //   data: "aides",
+        //   layers: [
+        //     "departements-fill", 
+        //     "departements-lines",
+        //     "departements-aides",
+        //     "departements-aides-montants",
+        //   ],
+        //   clicEvents : [
+        //     { 
+        //       event : 'click',
+        //       layer : "departements-fill",
+        //       functions : [ 
+        //         { 
+        //           funcName    : "fitTo",
+        //           propertyKey : "code",
+        //           targetLayer : "departement",
+        //         }, 
+        //         { 
+        //           funcName : "updateQuery",
+        //           propertyKey : "code",
+        //         }
+        //       ],
               
-              targetLayer : null,
-            },
-          ]
-        },
+        //       targetLayer : null,
+        //     },
+        //   ]
+        // },
 
       ],
 
@@ -218,42 +248,38 @@ export const configAppMap = {
       layers : [
 
         // REGIONS
-        {
-          id: 'regions-fill',
+        { id: 'regions-fill',
           type: 'fill',
           source: 'regions',
           layout: {
-            visibility: 'visible' ,
+            // visibility: 'visible' ,
           },
           paint: fillPaint
         },
-        {
-          id: 'regions-lines',
+        { id: 'regions-lines',
           type: 'line',
           source: 'regions',
           layout: {
-            visibility: 'visible' ,
+            // visibility: 'visible' ,
           },
           paint: {
             'line-color': '#627BC1',
             'line-width': 1
           }
         },
-        {
-          id: 'regions-aides',
+        { id: 'regions-aides',
           type: 'circle',
           source: 'regions-aides',
           layout: {
-            visibility: 'visible' ,
+            // visibility: 'visible' ,
           },
           paint: circlePaintAides
         },
-        {
-          id: 'regions-aides-montants',
+        { id: 'regions-aides-montants',
           type: 'symbol',
           source: 'regions-aides',
           layout: {
-            visibility: 'visible' ,
+            // visibility: 'visible' ,
             'text-field': '{montantMillions} M€',
             'text-size': 14
           }
@@ -263,46 +289,42 @@ export const configAppMap = {
 
 
         // DEPARTEMENTS
-        {
-          id: 'departements-fill',
-          type: 'fill',
-          source: 'departements',
-          layout: {
-            visibility: 'none' ,
-          },
-          paint: fillPaint
-        },
-        {
-          id: 'departements-lines',
-          type: 'line',
-          source: 'departements',
-          layout: {
-            visibility: 'none' ,
-          },
-          paint: {
-            'line-color': '#627BC1',
-            'line-width': 1
-          }
-        },
-        {
-          id: 'departements-aides',
-          type: 'circle',
-          source: 'departements-aides',
-          layout: {
-            visibility: 'none'
-          },
-          paint: circlePaintAides
-        },
-        {
-          id: 'departements-aides-montants',
-          type: 'symbol',
-          source: 'departements-aides',
-          layout: {
-            'text-field': '{montantMillions} M€',
-            'text-size': 14,
-            visibility: 'none'
-          }
-        },
+        // { id: 'departements-fill',
+        //   type: 'fill',
+        //   source: 'departements',
+        //   layout: {
+        //     visibility: 'none' ,
+        //   },
+        //   paint: fillPaint
+        // },
+        // { id: 'departements-lines',
+        //   type: 'line',
+        //   source: 'departements',
+        //   layout: {
+        //     visibility: 'none' ,
+        //   },
+        //   paint: {
+        //     'line-color': '#627BC1',
+        //     'line-width': 1
+        //   }
+        // },
+        // { id: 'departements-aides',
+        //   type: 'circle',
+        //   source: 'departements-aides',
+        //   layout: {
+        //     visibility: 'none'
+        //   },
+        //   paint: circlePaintAides
+        // },
+        // { id: 'departements-aides-montants',
+        //   type: 'symbol',
+        //   source: 'departements-aides',
+        //   layout: {
+        //     'text-field': '{montantMillions} M€',
+        //     'text-size': 14,
+        //     visibility: 'none'
+        //   }
+        // },
 
 
       ],
@@ -319,12 +341,12 @@ export const configAppMap = {
             mapId : "map-aides-reg",
             default_visible : true 
           }, 
-          { 
-            id : "departements",
-            label : { fr : "départements"  }, 
-            mapId : "map-aides-dep",
-            default_visible : false 
-          }, 
+          // { 
+          //   id : "departements",
+          //   label : { fr : "départements"  }, 
+          //   mapId : "map-aides-dep",
+          //   default_visible : false 
+          // }, 
         ],
       },
 

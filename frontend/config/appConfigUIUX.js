@@ -29,11 +29,23 @@ export const configAppUIUX = {
     navbar : {
 
       clipped: true,
+      clippedBtn : false, 
+
       drawer: false,
+      drawerBtn : true, 
+
       fixed: false,
+      fixedBtn : false, 
+
       miniVariant: true,
+      miniVariantBtn : false, 
+
       right: true,
+      rightBtn : false, 
+
       rightDrawer: false,
+      rightDrawerBtn : false, 
+
       
       // HORIZ BUTTONS
       buttons : [
@@ -52,32 +64,40 @@ export const configAppUIUX = {
           // icon: "fas fa-home",
           icon: "fas fa-th",
           i18nTitle: "menu.welcome",
+          isVisible : true,
           to: "/"
         },
         {
           icon: "fas fa-map",
           i18nTitle: "menu.map",
+          isVisible : true,
           to: "/map"
         },
         {
           icon: "fas fa-chart-bar",
           i18nTitle: "menu.charts",
+          isVisible : true,
           to: "/charts"
         },
-        {
-          icon: "fas fa-table",
-          i18nTitle: "menu.table",
-          to: "/table"
-        },
+        // {
+        //   icon: "fas fa-table",
+        //   i18nTitle: "menu.table",
+        //   isVisible : false,
+        //   to: "/table"
+        // },
         {
           icon: "fas fa-database",
           i18nTitle: "menu.data",
+          isVisible : true,
           to: "/rawData"
         },
       ]
   
     },
 
+    filters : {
+      isVisible : true, 
+    },
 
   },
 

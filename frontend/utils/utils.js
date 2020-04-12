@@ -45,3 +45,14 @@ export default function objectFromPath( obj, path, separator='/'){
 
   return object
 }
+
+
+
+export function toMillionsOrElse (x, params={ divider:1000000, fixed:2 } ) { 
+  // console.log( "=== toMillions / x ", x )
+  return parseFloat( (parseFloat(x)/params.divider).toFixed( params.fixed ) ) 
+}
+export function toFloat (x, params=undefined) { 
+  // console.log( "=== toFloat / x ", x )
+  return parseFloat(x) 
+}

@@ -8,6 +8,7 @@
 <template>
 
   <v-toolbar 
+    v-if="filtersUX.isVisible"
     :elevation="filtersUI.elevation"
     dense
     :fixed="true"
@@ -93,6 +94,7 @@
         locale : state => state.locale,
 
         filters : state => state.data.filters,
+        filtersUX : state => state.configUX.filters, 
         filtersUI : state => state.configUI.filters,
 
       }),

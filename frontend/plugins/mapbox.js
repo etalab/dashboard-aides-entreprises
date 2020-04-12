@@ -34,6 +34,8 @@ Vue.prototype.$mapbox = Mapbox;
 import getDataFromUrl from "~/utils/getData.js"
 import axios from 'axios'
 
+import { toMillionsOrElse, toFloat  } from "~/utils/utils.js"
+
 
 // - - - SOURCES - - - // 
 
@@ -75,7 +77,27 @@ export function createGeoJSONSource (geoJSON, vars) {
   return geoJsonSource
 }
 
-
+// GEOJSON PROPERTIES
+export function buildProperties( propertiesArray, item ){
+  let properties = {} 
+  propertiesArray.forEach( prop => {
+    // console.log("+ + + buildProperties ... prop : ", prop, '... '.repeat(5))
+    let value = item[ prop.itemField ]
+    if ( prop.needFormatting ){ 
+      // console.log("+ + + buildProperties ... prop.propName : ", prop.propName)
+      // console.log("+ + + buildProperties ... value : ", value)
+      // console.log("+ + + buildProperties ... prop.format : ", prop.format)
+      prop.format.forEach( fn => {
+        switch( fn.utilsFnName ){
+          case 'toMillionsOrElse' : value = toMillionsOrElse( value, fn.params  ); break; 
+          case 'toFloat'          : value = toFloat( value, fn.params  ); break; 
+        }
+      })
+    } 
+    properties[ prop.propName ] = value
+  })
+  return properties
+}
 
 // - - - LAYERS - - - // 
 
