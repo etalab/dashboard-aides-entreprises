@@ -1,58 +1,71 @@
-const fillPaint = {
-  'fill-color': '#2a4ba9',
-  'fill-outline-color': '#627BC1',
-  'fill-opacity': ['case',
-    ['boolean', ['feature-state', 'hover'], false],
-    0.2,
-    0
-  ]
-}
 
-const circlePaintAides = {
-  'circle-opacity': 0.6,
-  'circle-color': '#8393A7',
-  'circle-radius': [
-    'interpolate', ['linear'],
-    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
-    0, 10,
-    100, 70
-  ]
-}
+// - - - - - - - - - - - - - - - - - - - - - //
+// COMMON PAINT SETTINGS
+// - - - - - - - - - - - - - - - - - - - - - //
 
-
-const aidesProperties = [
-  { 
-    propName : "montantMillions",  
-    itemField : "montant",
-    needFormatting : true,
-    format : [
-      { 
-        utilsFnName : 'toMillionsOrElse',
-        params : { divider:1000000, fixed:2 },
-      },
+  const fillPaint = {
+    'fill-color': '#2a4ba9',
+    'fill-outline-color': '#627BC1',
+    'fill-opacity': ['case',
+      ['boolean', ['feature-state', 'hover'], false],
+      0.2,
+      0
     ]
-  },
-  { 
-    propName : "montant",
-    itemField : "montant",
-    needFormatting : true,
-    format : [
-      { 
-        utilsFnName : 'toFloat',
-        params : undefined,
-      },
-    ]
-  },
-  { 
-    propName : "nombre",
-    itemField : "nombre",
-  },
-]
+  }
 
+  const circlePaintAides = {
+    'circle-opacity': 0.6,
+    'circle-color': '#8393A7',
+    'circle-radius': [
+      'interpolate', ['linear'],
+      ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
+      0, 10,
+      100, 70
+    ]
+  }
+
+
+// - - - - - - - - - - - - - - - - - - - - - //
+// COMMON PROPERTIES SETTINGS
+// - - - - - - - - - - - - - - - - - - - - - //
+
+  const aidesProperties = [
+    { 
+      propName : "montantMillions",  
+      itemField : "montant",
+      needFormatting : true,
+      format : [
+        { 
+          utilsFnName : 'toMillionsOrElse',
+          params : { divider:1000000, fixed:2 },
+        },
+      ]
+    },
+    { 
+      propName : "montant",
+      itemField : "montant",
+      needFormatting : true,
+      format : [
+        { 
+          utilsFnName : 'toFloat',
+          params : undefined,
+        },
+      ]
+    },
+    { 
+      propName : "nombre",
+      itemField : "nombre",
+    },
+  ]
+
+
+// - - - - - - - - - - - - - - - - - - - - - //
+// MAPBOX COMPONENT SETTINGS 
+// - - - - - - - - - - - - - - - - - - - - - //
 
 export const configAppMap = {
 
-  help : "this file contains the setup for the MapboxGL layout",
+  help : "this file contains the setup for the MapboxGL layout / component",
 
   // MAPS 
 
@@ -96,7 +109,7 @@ export const configAppMap = {
         { id   : 'regions',
           help : 'geojson des contours des régions',
           from : 'url',   
-          url  : '/datasets/geodata/regions-100m.geojson',
+          url  : '/datasets/geodata/regions-100m.geojson', // local file in `/static` folder
           // url  : 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions-version-simplifiee.geojson',
           // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/j_front/frontend/datasets/geodata/regions-100m.geojson',
           type : 'geojson',
@@ -186,20 +199,24 @@ export const configAppMap = {
           clicEvents : [
             { 
               event : 'click',
-              layer : "regions-fill",
+              layer : 'regions-fill',
               functions : [ 
                 { 
                   funcName    : "goToPolygon",
-                  propertyKey : "code",
+                  funcParams  : { propName : 'code' },
                 }, 
-                { 
-                  funcName : "updateDisplayedData",
-                  propertyKey : "code",
-                },
-                { 
-                  funcName : "updateQuery",
-                  propertyKey : "code",
-                },
+                // { 
+                //   funcName : 'getChildrenPolygons',
+                //   funcParams  : { propName : 'code', targetSource : 'departement', targetPropName : 'region' },
+                // },
+                // { 
+                //   funcName : 'updateDisplayedData',
+                //   funcParams  : { propName : 'code' },
+                // },
+                // { 
+                //   funcName : 'updateQuery',
+                //   funcParams  : { propName : 'code' },
+                // },
               ],
             },
             { 
@@ -208,7 +225,6 @@ export const configAppMap = {
               functions : [ 
                 { 
                   funcName    : "toggleHighlightOn",
-                  propertyKey : "code",
                 }, 
               ],
             },
@@ -218,7 +234,6 @@ export const configAppMap = {
               functions : [ 
                 { 
                   funcName    : "toggleHighlightOff",
-                  propertyKey : "code",
                 }, 
               ],
             },
@@ -241,18 +256,26 @@ export const configAppMap = {
               event : 'click',
               layer : "departements-fill",
               functions : [ 
-                { 
-                  funcName    : "fitTo",
-                  propertyKey : "code",
-                  targetLayer : "departement",
-                }, 
-                { 
-                  funcName : "updateQuery",
-                  propertyKey : "code",
-                }
+
               ],
-              
-              targetLayer : null,
+            },
+            { 
+              event : 'mousemove',
+              layer : "departements-fill",
+              functions : [ 
+                { 
+                  funcName    : "toggleHighlightOn",
+                }, 
+              ],
+            },
+            { 
+              event : 'mouseleave',
+              layer : "departements-fill",
+              functions : [ 
+                { 
+                  funcName    : "toggleHighlightOff",
+                }, 
+              ],
             },
           ]
         },
@@ -370,8 +393,7 @@ export const configAppMap = {
     },
 
     // FRANCE METRO
-    { 
-      id : 'map-france-metro',
+    { id : 'map-france-metro',
       isActivated : true,
       titleI18n : "maps.map01.title",
 
@@ -401,9 +423,8 @@ export const configAppMap = {
 
     },
 
-    // DOM TOM
-    { 
-      id : 'map-guyane',
+    // GUYANE
+    { id : 'map-guyane',
       isActivated : true,
       titleI18n : "maps.map01.title",
 
@@ -436,8 +457,8 @@ export const configAppMap = {
 
     },
 
-    { 
-      id : 'map-reunion',
+    // REUNION
+    { id : 'map-reunion',
       isActivated : true,
       titleI18n : "maps.map01.title",
 
@@ -470,8 +491,8 @@ export const configAppMap = {
 
     },
 
-    { 
-      id : 'map-autre',
+    // AUTRES... 
+    { id : 'map-autre',
       isActivated : true,
       titleI18n : "maps.map01.title",
 
@@ -503,6 +524,7 @@ export const configAppMap = {
       ]
 
     },
+
   ]
 
 

@@ -438,24 +438,29 @@ export default {
                     this.log && console.log( "... itemProps : ", itemProps )
                   }
   
-                  let itemKey = itemProps[ clicEvent.propertyKey ]
                   // console.log( "... ", clicEvent.event, " ... propertyKey : ", clicEvent.propertyKey, " ... itemKey : ", itemKey)
                 
                   for ( let fn of clicFunctions ){
-
+                    
                     switch( fn.funcName ){
 
-                      // case 'goToPolygon' : 
-                      //   this.goToPolygon() ;
-                      //   break ; 
+                      case 'goToPolygon' : 
+                        let funcParams = fn.funcParams ;
+                        let params = {
+                          source : itemSource,
+                          propName : funcParams.propName ,
+                          prop : itemProps[ funcParams.propName ],
+                        } ;
+                        this.goToPolygon( params ) ;
+                        break ; 
 
-                      // case 'updateDisplayedData' : 
-                      //   this.updateDisplayedData() ;
-                      //   break ; 
+                      case 'updateDisplayedData' : 
+                        // this.updateDisplayedData() ;
+                        break ; 
 
-                      // case 'updateQuery' : 
-                      //   this.updateQuery() ;
-                      //   break ; 
+                      case 'updateQuery' : 
+                        // this.updateQuery() ;
+                        break ; 
 
                       case 'toggleHighlightOn' : 
                         this.toggleHighlightOn(e, itemSource ) ; 
@@ -469,9 +474,6 @@ export default {
 
 
                 }
-
-
-
 
 
               })
@@ -519,19 +521,29 @@ export default {
       },
 
       // ZOOM FUNCTIONS
-      goToPolygon (code) {
-        const departements = this.departements.features.filter(dpt => {
-          return dpt.properties.region === code
-        })
-        // this.addDepartementsLayer(departements)
+      goToPolygon ( params ) {
+        this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
+        
+        let sourcesList = this.map.getStyle().sources
+        this.log && console.log("C-MapboxGL / goToPolygon ... sourcesList : ", sourcesList)
+
+        let source = sourcesList && sourcesList[ params.source ]
+        this.log && console.log("C-MapboxGL / goToPolygon ... source : ", source)
+
+        let geodata = source && source.data.features.find( feat => feat.properties[ params.propName ] == params.prop )
+        this.log && console.log("C-MapboxGL / goToPolygon ... geodata : ", geodata)
+        
+        let data = {
+          type: 'FeatureCollection',
+          features: [ geodata ]
+        }
+        this.fit(data)
       },
       fit (geojson) {
-        let mapbox =this.map
         var _bbox = bbox(geojson)
-        mapbox.fitBounds(_bbox, { padding: 20, animate: true })
+        this.map.fitBounds(_bbox, { padding: 20, animate: true })
       },
-      goToLayer( layerDescription ){
-      },
+
 
 
 
