@@ -201,20 +201,16 @@ export const configAppMap = {
               event : 'click',
               layer : 'regions-fill',
               functions : [ 
-                { 
-                  funcName    : "goToPolygon",
+                { funcName    : "goToPolygon",
                   funcParams  : { propName : 'code' },
                 }, 
-                { 
-                  funcName : 'getChildrenPolygons',
+                { funcName : 'getChildrenPolygons',
                   funcParams  : { propName : 'code', targetSource : 'departement', targetPropName : 'region' },
                 },
-                { 
-                  funcName : 'updateDisplayedData',
+                { funcName : 'updateDisplayedData',
                   funcParams  : { propName : 'code' },
                 },
-                { 
-                  funcName : 'updateQuery',
+                { funcName : 'updateQuery',
                   funcParams  : { propName : 'code' },
                 },
               ],
@@ -223,8 +219,7 @@ export const configAppMap = {
               event : 'mousemove',
               layer : "regions-fill",
               functions : [ 
-                { 
-                  funcName : "toggleHighlightOn",
+                { funcName : "toggleHighlightOn",
                 }, 
               ],
             },
@@ -232,8 +227,7 @@ export const configAppMap = {
               event : 'mouseleave',
               layer : "regions-fill",
               functions : [ 
-                { 
-                  funcName : "toggleHighlightOff",
+                { funcName : "toggleHighlightOff",
                 }, 
               ],
             },
@@ -256,15 +250,16 @@ export const configAppMap = {
               event : 'click',
               layer : "departements-fill",
               functions : [ 
-
+                { funcName    : "goToPolygon",
+                  funcParams  : { propName : 'code' },
+                },
               ],
             },
             { 
               event : 'mousemove',
               layer : "departements-fill",
               functions : [ 
-                { 
-                  funcName    : "toggleHighlightOn",
+                { funcName    : "toggleHighlightOn",
                 }, 
               ],
             },
@@ -272,8 +267,7 @@ export const configAppMap = {
               event : 'mouseleave',
               layer : "departements-fill",
               functions : [ 
-                { 
-                  funcName    : "toggleHighlightOff",
+                { funcName    : "toggleHighlightOff",
                 }, 
               ],
             },

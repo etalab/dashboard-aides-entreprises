@@ -15,6 +15,19 @@
 
   <div class="map">
 
+    <style type="text/css">
+      .lds-roller div:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        width: {{ mapUI.loader.width }};
+        height: {{ mapUI.loader.height }};
+        border-radius: 50%;
+        background:  {{ mapUI.loader.color }};
+        margin: -3px 0 0 -3px;
+      }
+    </style>
+
     <!-- LOADER -->
     <div 
       id="loader-map"
@@ -248,6 +261,7 @@ export default {
     ...mapState({
       log : state => state.log, 
       locale : state => state.locale,
+      mapUI : state => state.configUI.map,
     }),
 
     ...mapGetters({
@@ -431,15 +445,14 @@ export default {
                   let itemLayer  = item.layer
                   let itemProps  = item.properties
   
+                  // DEBUGGING
                   if( clicEvent.event == 'click' ) {
                     this.log && console.log( "... clicEvent.event : ", clicEvent.event )
                     this.log && console.log( "... featuresItem : ", featuresItem )
                     this.log && console.log( "... itemSource : ", itemSource )
                     this.log && console.log( "... itemProps : ", itemProps )
                   }
-  
-                  // console.log( "... ", clicEvent.event, " ... propertyKey : ", clicEvent.propertyKey, " ... itemKey : ", itemKey)
-                
+                  
                   for ( let fn of clicFunctions ){
                     
                     let funcParams = fn.funcParams 
@@ -457,17 +470,17 @@ export default {
                         break ; 
 
                       case 'getChildrenPolygons' : 
-                        // params.targetSource   = funcParams.targetSource ;
-                        // params.targetPropName = funcParams.targetPropName ;
-                        // this.getChildrenPolygons( params) ;
+                        params.targetSource   = funcParams.targetSource ;
+                        params.targetPropName = funcParams.targetPropName ;
+                        this.getChildrenPolygons( params) ;
                         break ; 
 
                       case 'updateDisplayedData' : 
-                        // this.updateDisplayedData( params ) ;
+                        this.updateDisplayedData( params ) ;
                         break ; 
 
                       case 'updateQuery' : 
-                        // this.updateQuery( params ) ;
+                        this.updateQuery( params ) ;
                         break ; 
 
                       case 'toggleHighlightOn' : 
@@ -500,7 +513,10 @@ export default {
         this.log && console.log("\nC-MapboxGL / getChildrenPolygons ... params : ", params )
 
       },
+      updateDisplayedData( params ){
+        this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
 
+      },
       updateQuery( params ){
         this.log && console.log("\nC-MapboxGL / updateQuery ... params : ", params )
 
@@ -674,16 +690,7 @@ export default {
     animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     transform-origin: 32px 32px;
   }
-  .lds-roller div:after {
-    content: " ";
-    display: block;
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background:  #513085;
-    margin: -3px 0 0 -3px;
-  }
+
   .lds-roller div:nth-child(1) {
     animation-delay: -0.036s;
   }

@@ -138,6 +138,13 @@ export const configAppUIUX = {
 
     },
 
+    map : {
+      loader : {
+        color : '#de4a5b',
+        width: '6px',
+        height: '6px',
+      },
+    },
 
     typos : {
     }
