@@ -45,10 +45,10 @@
               <code>{{ val.id }}</code>
             </p>
             <div>
-              <code>
-                {{ val.data.slice(0,1) }}
-                [ ... ]
-              </code>
+              <!-- <code> -->
+                <!-- {{ val.data.slice(0,1) }} -->
+                <!-- [ ... ] -->
+              <!-- </code> -->
             </div>
             <br>
           </div> 
@@ -74,14 +74,14 @@
             v-for="(val, index) in displayedData"
             :key="index">
             <hr><br>
-            <p>id : 
+            <p>id : <br>
               <code>{{ val.id }}</code>
             </p>
             <div>
-              <code>
-                {{ val.data.slice(0,1) }}
-                [ ... ]
-              </code>
+              <!-- <code> -->
+                <!-- {{ val.data.slice(0,1) }} -->
+                <!-- [ ... ] -->
+              <!-- </code> -->
             </div>
             <br>
           </div>

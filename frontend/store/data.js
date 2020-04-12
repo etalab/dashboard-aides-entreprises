@@ -82,8 +82,8 @@ export const mutations = {
 
   setDisplayedDataset (state, dataset ){
     state.log && console.log("S-data-M-setDisplayedDataset / dataset.id  : ", dataset.id )
-    let foundIndex = state.displayedData.findIndex( x => x.id == dataset.id)
-    state.displayedData[ foundIndex ] = dataset.data 
+    let foundIndex = state.displayedData.findIndex( x => x.id == dataset.id )
+    state.displayedData[ foundIndex ] = dataset 
   },
 
 
@@ -123,7 +123,7 @@ export const actions = {
     } else {
       commit('pushToDisplayedData', updatedDataset )
     }
-    
+
   },
 
 
