@@ -26,7 +26,7 @@ export const configAppTexts = {
             { colName : '',
               colTitle : { fr : '' },
               colClass : '',
-              cols : 6,
+              cols : 12,
               numberClass : '',
               legendClass : '',
               textPrefix : { fr : 'Aides versées - ' },

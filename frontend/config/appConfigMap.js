@@ -35,9 +35,8 @@
       itemField : "montant",
       needFormatting : true,
       format : [
-        { 
-          utilsFnName : 'toMillionsOrElse',
-          params : { divider:1000000, fixed:2 },
+        { utilsFnName : 'toMillionsOrElse',
+          params : { divider: 1000000, fixed: 2 },
         },
       ]
     },
@@ -46,8 +45,7 @@
       itemField : "montant",
       needFormatting : true,
       format : [
-        { 
-          utilsFnName : 'toFloat',
+        { utilsFnName : 'toFloat',
           params : undefined,
         },
       ]

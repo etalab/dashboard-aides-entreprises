@@ -49,8 +49,8 @@ export const getters = {
   // DATASETS
   
   getFromInitData : (state) => ( id ) => {
-    state.log && console.log("S-data-G-getFromInitData / id : ", id )
-    state.log && console.log("S-data-G-getFromInitData / state.initData : ", state.initData )
+    // state.log && console.log("S-data-G-getFromInitData / id : ", id )
+    // state.log && console.log("S-data-G-getFromInitData / state.initData : ", state.initData )
     return state.initData.find( dataset => dataset.id == id )
   },
 
@@ -64,7 +64,7 @@ export const getters = {
     for ( let params of paramsArray){
       let dataset = getters.getFromDisplayedData( params.id )
       state.log && console.log("S-data-A-selectFromDisplayedData / dataset  : ", dataset )
-      let result = dataset && objectFromPath( dataset, params.field )
+      let result = dataset && objectFromPath( dataset.data, params.field )
       resultsArray.push( result )
     }
     return resultsArray
@@ -83,15 +83,15 @@ export const mutations = {
   // DATASETS 
 
   pushToInitData (state, dataset){
-    state.log && console.log("... S-data-M-pushToInitData / dataset.id : ", dataset.id)
-    state.log && console.log("... S-data-M-pushToInitData / dataset : ", dataset)
-    state.log && console.log("... S-data-M-pushToInitData / state.initData : ", state.initData)
+    // state.log && console.log("... S-data-M-pushToInitData / dataset.id : ", dataset.id)
+    // state.log && console.log("... S-data-M-pushToInitData / dataset : ", dataset)
+    // state.log && console.log("... S-data-M-pushToInitData / state.initData : ", state.initData)
     if ( !state.initData ){ state.initData = [] }
     state.initData.push( dataset )
   },
 
   pushToDisplayedData (state, dataset){
-    state.log && console.log("... S-data-M-pushToDisplayedData / dataset.id  : ", dataset.id )
+    // state.log && console.log("... S-data-M-pushToDisplayedData / dataset.id  : ", dataset.id )
     if ( !state.displayedData ){ state.displayedData = [] }
     state.displayedData.push( dataset )
   },
@@ -102,6 +102,10 @@ export const mutations = {
     let foundIndex = state.displayedData.findIndex( x => x.id == dataset.id )
     state.displayedData[ foundIndex ] = dataset 
   },
+
+  // setData (state, data) {
+
+  // },
 
 
   // FILTERS
@@ -156,6 +160,7 @@ export const actions = {
 
 
   // FILTERS
+  
   toggleFilters({state, commit, dispatch, getters}, filterTag ){
 
     state.log && console.log("\nS-data-A-getActivatedFilters / filterTag :", filterTag)

@@ -512,18 +512,23 @@ export default {
 
       },
 
-    // INTERACTIONS - - - - - - - - - - - - - - - - - - //
+    // DATA INTERACTIONS - - - - - - - - - - - - - - - - - - //
 
-      getChildrenPolygons( params ){
-        this.log && console.log("\nC-MapboxGL / getChildrenPolygons ... params : ", params )
-      },
       updateDisplayedData( params ){
         this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
+
+        
+
+
+
       },
       updateQuery( params ){
         this.log && console.log("\nC-MapboxGL / updateQuery ... params : ", params )
       },
 
+      getChildrenPolygons( params ){
+        this.log && console.log("\nC-MapboxGL / getChildrenPolygons ... params : ", params )
+      },
 
     // UX FUNCTIONS - - - - - - - - - - - - - - - - - - //
 

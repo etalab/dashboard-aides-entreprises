@@ -5,7 +5,7 @@ console.log('+ + + utils/mapbox... ')
 import getDataFromUrl from "~/utils/getData.js"
 import axios from 'axios'
 
-import { toMillionsOrElse, toFloat  } from "~/utils/utils.js"
+import { toMillionsOrElse, toFloat, switchFormatFunctions  } from "~/utils/utils.js"
 
 
 
@@ -57,15 +57,7 @@ export function buildProperties( propertiesArray, item ){
     // console.log("+ + + buildProperties ... prop : ", prop, '... '.repeat(5))
     let value = item[ prop.itemField ]
     if ( prop.needFormatting ){ 
-      // console.log("+ + + buildProperties ... prop.propName : ", prop.propName)
-      // console.log("+ + + buildProperties ... value : ", value)
-      // console.log("+ + + buildProperties ... prop.format : ", prop.format)
-      prop.format.forEach( fn => {
-        switch( fn.utilsFnName ){
-          case 'toMillionsOrElse' : value = toMillionsOrElse( value, fn.params  ); break; 
-          case 'toFloat'          : value = toFloat( value, fn.params  ); break; 
-        }
-      })
+      value = switchFormatFunctions( value, prop.format )
     } 
     properties[ prop.propName ] = value
   })

@@ -8,7 +8,7 @@
 <template>
 
 
-  <div 
+  <v-container 
     :id="`text-${ settings.id }`" 
     :class="``"
     >
@@ -44,8 +44,8 @@
         :cols="col.cols"
         >
 
-        <div 
-          :class="`text-center`"
+        <v-layout 
+          :class="`justify-center`"
           >
 
           <!-- TEXT TITLE -->
@@ -60,13 +60,12 @@
             :class="``"
             >
             {{ col.textPrefix[ locale ] }}
-            {{ getDisplayedData( col.displayedData ) }}
+            {{ getDisplayedData( col.displayedData ).join( ' ' ) }}
             {{ col.textSuffix[ locale ] }}
             
           </p> 
 
-
-        </div>
+        </v-layout>
 
       </v-col>
 
@@ -78,9 +77,7 @@
       >
     </v-divider>
 
-    <br>
-
-  </div>
+  </v-container>
 
 
 </template>

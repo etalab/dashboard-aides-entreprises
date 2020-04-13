@@ -149,7 +149,15 @@ export const configAppData = {
               nombre : undefined 
             },
             texts : { 
-              levels : undefined 
+              levels : {
+                name : 'échelle nationale',
+                code : undefined,
+              } 
+            },
+            switchers : {
+              nationale : 'échelle nationale',
+              regions : 'échelle régionale',
+              departement : 'échelle départementale',
             },
           },
           displayed : true,
@@ -205,6 +213,28 @@ export const configAppData = {
           from  : "static" , 
           url   : "/datasets/aides/aides-maille-national.json",
           displayed : true,
+          copyTo : [
+            { fieldToCopy : 'montant',
+              from : { objectRef : 0 },
+              help : 'copy to another dataset (id) in displayedData | initData',
+              toDataStore : 'displayedData',
+              toId : 'infos',
+              toDataPath : 'numbers.montant',
+              format : [
+                { utilsFnName : 'toMillionsOrElse',
+                  params : { divider: 1000000, fixed:2 },
+                },
+              ],
+            },
+            { fieldToCopy : 'nombre',
+              from : { objectRef : 0 },
+              help : 'copy to another dataset (id) in displayedData | initData',
+              toDataStore : 'displayedData',
+              toId : 'infos',
+              toDataPath : 'numbers.nombre',
+              format : undefined ,
+            },
+          ]
         },
         { id    : "regions-aides-raw" ,
           help  : "serie chiffres aides à la maille regionale",

@@ -7,7 +7,7 @@
 
 <template>
 
-  <div 
+  <v-container
     :id="`numbers-${ settings.id }`"
     :class="``"
     >
@@ -43,8 +43,8 @@
         :cols="col.cols"
         >
 
-        <div 
-          :class="`text-center`"
+        <v-layout
+          :class="`d-flex justify-center`"
           >
 
           <!-- NUMBER TITLE -->
@@ -59,9 +59,7 @@
             :class="``"
             >
             <!-- <code> -->
-            {{ getDisplayedData( col.displayedData) }}
-            
-            <br><br>
+            {{ getDisplayedData( col.displayedData).join(' ') }}
             {{ col.unit[ locale ] }}
             <!-- </code> -->
           </p> 
@@ -73,7 +71,7 @@
             {{ col.legend[ locale ] }}
           </h4>
 
-        </div>
+        </v-layout>
 
       </v-col>
 
@@ -85,9 +83,7 @@
       >
     </v-divider>
 
-    <br>
-
-  </div>
+  </v-container>
 
 </template>
 
