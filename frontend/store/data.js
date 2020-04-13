@@ -54,7 +54,7 @@ export const getters = {
 
   getFromDisplayedData : (state) => ( id ) => {
     return state.displayedData.find( dataset => dataset.id == id )
-  }
+  },
 
 
 }
@@ -69,7 +69,8 @@ export const mutations = {
   // DATASETS 
 
   pushToInitData (state, dataset){
-    state.log && console.log("S-data-M-pushToInitData / dataset : ", dataset)
+    state.log && console.log("S-data-M-pushToInitData / dataset.id : ", dataset.id)
+    // state.log && console.log("S-data-M-pushToInitData / dataset : ", dataset)
     if ( !state.initData ){ state.initData = [] }
     state.initData.push( dataset )
   },
@@ -109,6 +110,13 @@ export const mutations = {
 export const actions = {
 
   // DATASETS
+
+  selectFromDisplayedData({state, getters}, { id, field } ){
+    state.log && console.log("S-data-A-selectFromDisplayedData / id  : ", id )
+    let dataset = getters.getFromDisplayedData( id )
+    let result = dataset && dataset[ field ]
+    return result
+  },
 
   setDisplayedDataset({state, getters, commit}, updatedDataset ) {
 

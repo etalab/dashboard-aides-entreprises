@@ -13,7 +13,9 @@
 
 <template>
 
-  <div class="map">
+  <div 
+    :class="`map`"
+    >
 
     <style type="text/css">
       .lds-roller div:after {
@@ -269,10 +271,6 @@ export default {
       getDataViewConfig : 'getDataViewConfig',
     }),
 
-    ...mapActions({
-      // setDisplayedDataset : 'data/setDisplayedDataset',
-    }),
-
     // config
     getLocalConfig(){
       let viewId = {
@@ -286,6 +284,10 @@ export default {
   },
   
   methods : {
+
+    ...mapActions({
+      // setDisplayedDataset : 'data/setDisplayedDataset',
+    }),
 
     // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
 
@@ -470,16 +472,17 @@ export default {
                         break ; 
 
                       case 'getChildrenPolygons' : 
-                        params.targetSource   = funcParams.targetSource ;
-                        params.targetPropName = funcParams.targetPropName ;
+                        params.targets = funcParams.targets ;
                         this.getChildrenPolygons( params) ;
                         break ; 
 
                       case 'updateDisplayedData' : 
+                        params.targets = funcParams.targets ;
                         this.updateDisplayedData( params ) ;
                         break ; 
 
                       case 'updateQuery' : 
+                        params.targets = funcParams.targets ;
                         this.updateQuery( params ) ;
                         break ; 
 
@@ -511,15 +514,12 @@ export default {
 
       getChildrenPolygons( params ){
         this.log && console.log("\nC-MapboxGL / getChildrenPolygons ... params : ", params )
-
       },
       updateDisplayedData( params ){
         this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
-
       },
       updateQuery( params ){
         this.log && console.log("\nC-MapboxGL / updateQuery ... params : ", params )
-
       },
 
 

@@ -6,16 +6,18 @@ export const configAppRoutes = {
   // ROUTES / PAGES
   routes : [
 
-    { 
-      name : "home",
+    { name : "home",
+      help : 'route home viewfor ',
+      title : { fr : '' },
+      titleI18n : 'routes.home.title',
       urls : [ "/"],
       rawHtml : undefined,
       pageRows : [
         { rowNumber: 1,
+          help : '',
           columns : [
             
-            {
-              colName : "Numbers and tables", 
+            { colName : "Numbers and tables", 
               colClass : "",
               cols : 4,
               md : 5,
@@ -24,6 +26,15 @@ export const configAppRoutes = {
               xl : null,
               positionFixed : true,
               colRows : [
+                {
+                  component : "text",
+                  activated : true,
+                  justify : "center",
+                  align : "center",
+                  settings : { 
+                    id : "text-01",
+                  },
+                },
                 {
                   component : "numbers",
                   activated : true,
@@ -42,20 +53,19 @@ export const configAppRoutes = {
                     id : "chart-01",
                   },
                 },
-                {
-                  component : "chart",
-                  activated : true,
-                  justify : "center",
-                  align : "center",
-                  settings : { 
-                    id : "chart-02",
-                  },
-                },
+                // {
+                //   component : "chart",
+                //   activated : true,
+                //   justify : "center",
+                //   align : "center",
+                //   settings : { 
+                //     id : "chart-02",
+                //   },
+                // },
               ],
             },
 
-            { 
-              colName : "main map", 
+            { colName : "main map", 
               colClass : "",
               cols : 8,
               md : 7,
@@ -79,9 +89,9 @@ export const configAppRoutes = {
           ],
         },
         { rowNumber: 2,
+          help : '',
           columns : [
-            { 
-              colName : "text", 
+            { colName : "text", 
               colClass : "",
               cols : 12,
               md : 12,
@@ -107,15 +117,17 @@ export const configAppRoutes = {
     },
 
     // ONLY MAP
-    {
-      name : "map",
+    { name : "map",
+      help : 'route map viewfor ',
+      title : { fr : '' },
+      titleI18n : 'routes.map.title',
       urls : ["/map"],
       rawHtml : undefined,
       pageRows : [
         { rowNumber: 1,
+          help : '',
           columns : [
-            { 
-              colName : "map", 
+            { colName : "map", 
               colClass : "",
               cols : 12,
               md : 12,
@@ -123,8 +135,7 @@ export const configAppRoutes = {
               lg : null,
               xl : null,
               colRows : [
-                {
-                  component : "map",
+                { component : "map",
                   activated : true,
                   justify : "center",
                   align : "center",
@@ -140,15 +151,17 @@ export const configAppRoutes = {
     },
 
     // ONLY CHARTS
-    {
-      name : "charts",
+    { name : "charts",
+      help : 'route for charts view',
+      title : { fr : '' },
+      titleI18n : 'routes.charts.title',
       urls : ["/charts"],
       rawHtml : undefined,
       pageRows : [
         { rowNumber: 1,
+          help : '',
           columns : [
-            { 
-              colName : "chart", 
+            { colName : "chart", 
               colClass : "",
               cols : 12,
               md : 12,
@@ -156,8 +169,7 @@ export const configAppRoutes = {
               lg : null,
               xl : null,
               colRows : [
-                {
-                  component : "chart",
+                { component : "chart",
                   activated : true,
                   justify : "center",
                   align : "center",
@@ -173,15 +185,17 @@ export const configAppRoutes = {
     },
 
     // ONLY TABLE
-    {
-      name : "table",
+    { name : "table",
+      help : 'route for table view',
+      title : { fr : '' },
+      titleI18n : 'routes.table.title',
       urls : ["/table"],
       rawHtml : undefined,
       pageRows : [
         { rowNumber: 1,
+          help : '',
           columns : [
-            { 
-              colName : "table", 
+            { colName : "table", 
               colClass : "",
               cols : 12,
               md : 12,
@@ -189,8 +203,7 @@ export const configAppRoutes = {
               lg : null,
               xl : null,
               colRows : [
-                {
-                  component : "table",
+                { component : "table",
                   activated : true,
                   justify : "center",
                   align : "center",
@@ -206,15 +219,17 @@ export const configAppRoutes = {
     },
 
     // ONLY RAW DATA
-    {
-      name : "rawData",
+    { name : "rawData",
+      help : 'route for rawData view',
+      title : { fr : '' },
+      titleI18n : 'routes.rawData.title',
       urls : ["/rawData"],
       rawHtml : undefined,
       pageRows : [
         { rowNumber: 1,
+          help : '',
           columns : [
-            { 
-              colName : "rawData", 
+            { colName : "rawData", 
               colClass : "",
               cols : 12,
               md : 12,
@@ -222,8 +237,7 @@ export const configAppRoutes = {
               lg : null,
               xl : null,
               colRows : [
-                {
-                  component : "rawData",
+                { component : "rawData",
                   activated : true,
                   justify : "center",
                   align : "center",

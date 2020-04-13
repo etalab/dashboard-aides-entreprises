@@ -202,17 +202,34 @@ export const configAppMap = {
               layer : 'regions-fill',
               functions : [ 
                 { funcName    : "goToPolygon",
-                  funcParams  : { propName : 'code' },
+                  funcParams  : { 
+                    propName : 'code' 
+                  },
                 }, 
                 { funcName : 'getChildrenPolygons',
-                  funcParams  : { propName : 'code', targetSource : 'departement', targetPropName : 'region' },
+                  funcParams  : { 
+                    propName : 'code', 
+                    targets : [ 
+                      { targetSource : 'departement', targetPropName : 'region' },
+                    ],
+                  }
                 },
                 { funcName : 'updateDisplayedData',
-                  funcParams  : { propName : 'code' },
+                  funcParams  : { 
+                    propName : 'code', 
+                    targets : [
+                      { dataFromSource : 'departement', targetPropName : 'region' },
+                    ]
+                  },
                 },
-                { funcName : 'updateQuery',
-                  funcParams  : { propName : 'code' },
-                },
+                // { funcName : 'updateQuery',
+                //   funcParams  : { 
+                //     propName : 'code',
+                //     targets : [
+                //       { dataFromSource : 'departement', targetPropName : 'region' },
+                //     ]
+                //   },
+                // },
               ],
             },
             { 

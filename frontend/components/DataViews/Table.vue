@@ -7,6 +7,8 @@
 
 <template>
 
+
+
   <v-card>
     <v-card-title>
       Nutrition
@@ -25,6 +27,8 @@
       :search="search"
     ></v-data-table>
   </v-card>
+
+
 
 </template>
 

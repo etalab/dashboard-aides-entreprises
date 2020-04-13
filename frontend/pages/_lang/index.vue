@@ -46,13 +46,18 @@
             :settings="colRow.settings"
           />
 
-          <ApexChart
-            v-if="colRow.activated && colRow.component == 'chart' "
+          <Numbers
+            v-if="colRow.activated && colRow.component == 'numbers' "
             :settings="colRow.settings"
           />
 
-          <Numbers
-            v-if="colRow.activated && colRow.component == 'numbers' "
+          <MapboxGL
+            v-if="colRow.activated && colRow.component == 'map' "
+            :settings="colRow.settings"
+          />
+          
+          <ApexChart
+            v-if="colRow.activated && colRow.component == 'chart' "
             :settings="colRow.settings"
           />
 
@@ -61,10 +66,6 @@
             :settings="colRow.settings"
           />
 
-          <MapboxGL
-            v-if="colRow.activated && colRow.component == 'map' "
-            :settings="colRow.settings"
-          />
 
           <br>
           <hr>
@@ -90,11 +91,11 @@
 
   import Filters from '~/components/DataViews/Filters.vue'
 
-  import Table from '~/components/DataViews/Table.vue'
   import MapboxGL from '~/components/DataViews/MapboxGL.vue'
-  import ApexChart from '~/components/DataViews/ApexChart.vue'
   import Numbers from '~/components/DataViews/Numbers.vue'
+  import ApexChart from '~/components/DataViews/ApexChart.vue'
   import TextFrame from '~/components/DataViews/TextFrame.vue'
+  import Table from '~/components/DataViews/Table.vue'
 
   export default {
     
@@ -102,11 +103,11 @@
 
     components: {
       Filters,
-      Table,
       MapboxGL,
-      ApexChart,
       Numbers,
+      ApexChart,
       TextFrame,
+      Table,
     },
     
     props : [

@@ -11,6 +11,7 @@
     :elevation="filtersUI.elevation"
     dense
     :fixed="true"
+    :class="``"
     >
 
     <v-spacer></v-spacer>

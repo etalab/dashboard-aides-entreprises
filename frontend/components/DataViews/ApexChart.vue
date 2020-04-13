@@ -7,7 +7,10 @@
 
 <template>
 
-  <div>
+  <div
+    :id="`apexcharts-${ settings.id }`"
+    :class="``"
+    >
 
     <div 
       class="text-center"

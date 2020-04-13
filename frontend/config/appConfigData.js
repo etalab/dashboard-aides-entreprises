@@ -1,7 +1,7 @@
 
 export const configAppData = {
 
-  help : "this file contains the setup for the api",
+  help : "this file contains the data setup for the app",
 
   // DESCRIBE THE BACKEND API
   dataSource : {

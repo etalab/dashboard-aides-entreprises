@@ -9,9 +9,64 @@ export const configAppNumbers = {
 
   settingsIds : [
 
-    { 
-      id : "numbers-01",
+    { id : "numbers-01",
+      help : '',
+      title : { fr : '' },
       titleI18n : "numbers.numbers01.title",
+      dividers : {
+        before : false,
+        after : true,
+      },
+      componentRows : [
+
+        { rowNumber : 1,
+          help : '',
+          columns : [
+
+            { colName : '',
+              colTitle : { fr : '' },
+              colClass : '',
+              cols : 6,
+              numberClass : '',
+              legendCalss : '',
+              displayedData : { 
+                name : 'displayed data : numbers.montant', 
+                title : { fr : "total montant des aides"},
+                titleI18n : 'numbers.numbers01.amount',
+                id : 'numbers',
+                field : 'montant',
+                unit : { fr : 'M€' },
+                legend : { fr : '' },
+                textPrefix : { fr : '' },
+                textSuffix : { fr : '' },
+              },
+            },
+
+            { colName : '',
+              colTitle : { fr : '' },
+              colClass : '',
+              cols : 6,
+              numberClass : '',
+              legendCalss : '',
+              displayedData : { 
+                name : 'displayed data : numbers.aides',
+                title : { fr : "nombre d'aides demandées"},
+                titleI18n : 'numbers.numbers01.total',
+                id : 'numbers',
+                field : 'nombre',
+                unit : { fr : 'aides' },
+                legend : { fr : '' },
+                textPrefix : { fr : '' },
+                textSuffix : { fr : '' },
+              },
+            },
+
+          ],
+
+
+        }
+      ],
+
 
     },
 

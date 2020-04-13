@@ -243,9 +243,6 @@ export default {
       getDataViewConfig : 'getDataViewConfig',
     }),
 
-    ...mapActions({
-      // setDisplayedDataset : 'data/setDisplayedDataset',
-    }),
 
     // config
     getLocalConfig(){
@@ -260,7 +257,11 @@ export default {
   },
   
   methods : {
-
+    
+    ...mapActions({
+      // setDisplayedDataset : 'data/setDisplayedDataset',
+    }),
+    
     // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
 
       onMapLoaded(event) {
