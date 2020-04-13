@@ -20,17 +20,17 @@
 
     <!-- 
     <code>
-      {{ getLocalConfig }}
+      {{ viewConfig }}
     </code> 
     -->
 
     <v-divider
-      v-if="getLocalConfig.dividers.before"
+      v-if="viewConfig.dividers.before"
       >
     </v-divider>
 
     <v-row
-      v-for="(row, index) in getLocalConfig.componentRows"
+      v-for="(row, index) in viewConfig.componentRows"
       :key="'R'+index"
       :id="'R'+index"
       >

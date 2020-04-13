@@ -19,61 +19,74 @@
       :id="'R'+index"
       >
       
-      <v-col
-        v-for="(col, i) in row.columns"
-        :key="'R'+index+'-C'+i"
-        :id="'R'+index+'-C'+i"
-        :class="`${col.colClass} ${ col.positionFixed ? '' : '' }`"
-        :cols="col.cols"
-        :sm="col.sm"
-        :md="col.md"
-        :lg="col.lg"
-        :xl="col.xl"
+      <template
+        v-if="row.activated"
         >
 
-        <v-row
-          no-gutters
-          v-for="(colRow, iRow) in col.colRows"
-          :key="'R'+index+'-C'+i+'-CR'+iRow"
-          :id="'R'+index+'-C'+i+'-CR'+iRow"
-          :justify="colRow.justify"
-          :align="colRow.align"
-          :class="colRow.class"
+        <v-col
+          v-for="(col, i) in row.columns"
+          :key="'R'+index+'-C'+i"
+          :id="'R'+index+'-C'+i"
+          :class="`${col.colClass} ${ col.positionFixed ? '' : '' }`"
           >
+          <!-- :cols="col.cols" -->
+          <!-- :xs="col.xs"
+          :sm="col.sm"
+          :md="col.md"
+          :lg="col.lg"
+          :xl="col.xl" -->
 
-          <TextFrame
-            v-if="colRow.activated && colRow.component == 'text' "
-            :settings="colRow.settings"
-          />
+          <template
+            v-if="col.activated"
+            >
 
-          <Numbers
-            v-if="colRow.activated && colRow.component == 'numbers' "
-            :settings="colRow.settings"
-          />
+            <v-row
+              no-gutters
+              v-for="(colRow, iRow) in col.colRows"
+              :key="'R'+index+'-C'+i+'-CR'+iRow"
+              :id="'R'+index+'-C'+i+'-CR'+iRow"
+              :justify="colRow.justify"
+              :align="colRow.align"
+              :class="colRow.class"
+              >
 
-          <MapboxGL
-            v-if="colRow.activated && colRow.component == 'map' "
-            :settings="colRow.settings"
-          />
-          
-          <ApexChart
-            v-if="colRow.activated && colRow.component == 'chart' "
-            :settings="colRow.settings"
-          />
+              <TextFrame
+                v-if="colRow.activated && colRow.component == 'text' "
+                :settings="colRow.settings"
+              />
 
-          <Table
-            v-if="colRow.activated && colRow.component == 'table' "
-            :settings="colRow.settings"
-          />
+              <Numbers
+                v-if="colRow.activated && colRow.component == 'numbers' "
+                :settings="colRow.settings"
+              />
+
+              <MapboxGL
+                v-if="colRow.activated && colRow.component == 'map' "
+                :settings="colRow.settings"
+              />
+              
+              <ApexChart
+                v-if="colRow.activated && colRow.component == 'chart' "
+                :settings="colRow.settings"
+              />
+
+              <Table
+                v-if="colRow.activated && colRow.component == 'table' "
+                :settings="colRow.settings"
+              />
 
 
-          <br>
-          <hr>
-          <br>
+              <br>
+              <hr>
+              <br>
 
-        </v-row>
+            </v-row>
+            
+          </template>
 
-      </v-col>
+        </v-col>
+
+      </template>
 
     </v-row>
 

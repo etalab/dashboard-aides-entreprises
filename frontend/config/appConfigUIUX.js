@@ -49,54 +49,48 @@ export const configAppUIUX = {
       
       // HORIZ BUTTONS
       buttons : [
-        {
+        { to: "/about",
           icon: "mdi-apps",
           i18nTitle: "menu.about",
           switch: false,
-          to: "/about"
         },
       ],
 
       // ITEEMS IN RIIGHT DRAWER
       items: [
-        {
+        { to: "/",
           // icon: "mdi-apps",
           // icon: "fas fa-home",
           icon: "fas fa-th",
           i18nTitle: "menu.welcome",
           isVisible : true,
-          to: "/"
         },
-        {
+        { to: "/map",
           icon: "fas fa-map",
           i18nTitle: "menu.map",
           isVisible : true,
-          to: "/map"
         },
-        {
+        { to: "/charts",
           icon: "fas fa-chart-bar",
           i18nTitle: "menu.charts",
           isVisible : true,
-          to: "/charts"
         },
-        // {
+        // { to: "/table",
         //   icon: "fas fa-table",
         //   i18nTitle: "menu.table",
         //   isVisible : false,
-        //   to: "/table"
         // },
-        {
+        { to: "/rawData",
           icon: "fas fa-database",
           i18nTitle: "menu.data",
           isVisible : true,
-          to: "/rawData"
         },
       ]
   
     },
 
     filters : {
-      isVisible : true, 
+      isVisible : false, 
     },
 
   },

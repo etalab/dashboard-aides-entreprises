@@ -135,18 +135,19 @@ export const configAppData = {
     initData : {
 
       help : "populate 'store.data.state.initData' @ middleware getIniitData.js / from : url | localFile" ,
-      
+
       store : [
         
         // INFOS 
 
         { id    : "infos" ,
           help  : "",
-          from  : "rawObject" , 
+          from  : "rawObject" ,
           rawObject : {
             numbers : { 
               montant : undefined, 
-              nombre : undefined 
+              nombre : undefined,
+              effectifs : undefined,
             },
             texts : { 
               levels : {

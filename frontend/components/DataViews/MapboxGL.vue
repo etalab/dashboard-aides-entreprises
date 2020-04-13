@@ -40,7 +40,7 @@
     </div>
 
     <!-- LAYERS & LEGEND -->
-    <div 
+    <v-layout 
       v-if="map"
       id='legend' 
       :class='`legend-block legend-bottom-right`'
@@ -49,19 +49,20 @@
       <!-- LAYERS SWITCH -->
       <div 
         v-if="mapsVisibility && mapsVisibility.is_activated"
-        class="legend layer-switch" 
+        class="legend layer-switch justify-center" 
         >
 
-        <button 
-          class=""
+        <v-btn 
+          class="justify-center"
+          outlined
           @click="switchMapsDrawer()"
           >
           {{ mapsVisibility.title[ locale ] }}
-        </button>
+        </v-btn>
 
         <div 
           v-show="drawerMapsOpen"
-          class="legend-content"
+          class="legend-content justify-left"
           >
           <div 
             v-for="(mapRef, index) in mapsVisibility.map_switches"
@@ -85,7 +86,7 @@
       </div>
 
 
-    </div>
+    </v-layout>
 
     <!-- MAP WITH MAPBOX GL -->
     <no-ssr>
@@ -204,7 +205,12 @@ export default {
     // this.log && console.log("C-MapboxGL / dataset / mapOptionsRoute : ", mapOptionsRoute)
 
     let mapOptions = {
-      mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ],
+
+      // mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
+      mapStyle      : StylesOSM[ 'testRasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
+      // mapStyle      : StylesOSM[ 'RasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
+      // mapStyle      : StylesOSM[ 'EtalabUrl' ], // EtalabFile | testRasterVoyager | RasterVoyager
+      
       zoom          : mapOptionsRoute.zoom,
       maxZoom       : mapOptionsRoute.maxZoom,
       minZoom       : mapOptionsRoute.minZoom,
@@ -432,7 +438,7 @@ export default {
           if ( mapRef.clicEvents ){
 
             for (let clicEvent of mapRef.clicEvents ){
-              
+
               this.log && console.log("\nC-MapboxGL / loadClicEvents ... clicEvent.layer : ", clicEvent.layer, " / event :", clicEvent.event )
               this.log && console.log("C-MapboxGL / loadClicEvents ... clicEvent : ", clicEvent)
               
@@ -448,7 +454,7 @@ export default {
                   let itemSource = item.source
                   let itemLayer  = item.layer
                   let itemProps  = item.properties
-  
+
                   // DEBUGGING
                   if( clicEvent.event == 'click' ) {
                     this.log && console.log( "... clicEvent.event : ", clicEvent.event )
@@ -470,11 +476,13 @@ export default {
                     switch( fn.funcName ){
 
                       case 'goToPolygon' : 
+                        params.dataFrom = 'map' ;
                         this.goToPolygon( params ) ;
                         break ; 
 
                       case 'getChildrenPolygons' : 
                         params.targets = funcParams.targets ;
+                        params.dataFrom = 'map' ;
                         this.getChildrenPolygons( params) ;
                         break ; 
 
@@ -498,14 +506,12 @@ export default {
                     }
                   }
 
-
                 }
 
-
               })
-    
+
             }
-            
+
           }
 
         }
@@ -514,12 +520,29 @@ export default {
 
     // DATA INTERACTIONS - - - - - - - - - - - - - - - - - - //
 
+      getSourceData( params ){
+        
+        let data
+
+        if ( params.dataFrom == 'map' ){
+          let sourcesList = this.map.getStyle().sources
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... sourcesList : ", sourcesList)
+          let source = sourcesList && sourcesList[ params.source ]
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... source : ", source)
+          data = source && source.data.features.find( feat => feat.properties[ params.propName ] == params.prop )
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... geodata : ", geodata)
+        } 
+        if ( params.dataFrom == 'store' ){
+
+        }
+        
+        return data
+      },
+
       updateDisplayedData( params ){
         this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
-
-        
-
-
+        let geodata = this.getSourceData( params )
+        this.log && console.log("C-MapboxGL / updateDisplayedData ... geodata : ", geodata )
 
       },
       updateQuery( params ){
@@ -530,22 +553,14 @@ export default {
         this.log && console.log("\nC-MapboxGL / getChildrenPolygons ... params : ", params )
       },
 
+
     // UX FUNCTIONS - - - - - - - - - - - - - - - - - - //
 
       // ZOOM FUNCTIONS
 
       goToPolygon ( params ) {
-        this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
-        
-        let sourcesList = this.map.getStyle().sources
-        // this.log && console.log("C-MapboxGL / goToPolygon ... sourcesList : ", sourcesList)
-
-        let source = sourcesList && sourcesList[ params.source ]
-        // this.log && console.log("C-MapboxGL / goToPolygon ... source : ", source)
-
-        let geodata = source && source.data.features.find( feat => feat.properties[ params.propName ] == params.prop )
-        // this.log && console.log("C-MapboxGL / goToPolygon ... geodata : ", geodata)
-        
+        // this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
+        let geodata = this.getSourceData( params )
         let data = {
           type: 'FeatureCollection',
           features: [ geodata ]

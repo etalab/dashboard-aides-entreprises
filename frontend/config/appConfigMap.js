@@ -30,8 +30,7 @@
 // - - - - - - - - - - - - - - - - - - - - - //
 
   const aidesProperties = [
-    { 
-      propName : "montantMillions",  
+    { propName : "montantMillions",  
       itemField : "montant",
       needFormatting : true,
       format : [
@@ -40,8 +39,7 @@
         },
       ]
     },
-    { 
-      propName : "montant",
+    { propName : "montant",
       itemField : "montant",
       needFormatting : true,
       format : [
@@ -50,8 +48,7 @@
         },
       ]
     },
-    { 
-      propName : "nombre",
+    { propName : "nombre",
       itemField : "nombre",
     },
   ]
@@ -78,7 +75,7 @@ export const configAppMap = {
       map_options   : {
     
         // ADAPT TO MAPBOX-GL-JS OPTIONS
-        mapStyle         : "testRasterVoyager", // Etalab
+        mapStyle         : "testRasterVoyager", // EtalabFile | testRasterVoyager (ok) | RasterVoyager
         center           : [46.2276, 2.2137],
         currentCenter    : [46.2276, 2.2137],
         zoom             : 5,
@@ -201,9 +198,21 @@ export const configAppMap = {
               functions : [ 
                 { funcName    : "goToPolygon",
                   funcParams  : { 
-                    propName : 'code' 
+                    propName : 'code',
                   },
                 }, 
+                { funcName : 'updateDisplayedData',
+                  funcParams  : { 
+                    propName : 'code', 
+                    targets : [
+                      { from : 'store' , targetDatasetId : 'infos', targetValuePath : 'texts.level.name' },
+                      // { from : 'map' , targetDatasetId : 'infos', targetValuePath : 'texts.level.name' },
+                      // { from : 'store' , targetDatasetId : 'infos', targetValuePath : 'texts.level.name' },
+                      // { from : 'store' , targetDatasetId : 'infos', targetValuePath : 'texts.level.name' },
+                      // { from : 'store' , targetDatasetId : 'infos', targetValuePath : 'texts.level.name' },
+                    ]
+                  },
+                },
                 { funcName : 'getChildrenPolygons',
                   funcParams  : { 
                     propName : 'code', 
@@ -211,17 +220,6 @@ export const configAppMap = {
                       { targetSource : 'departement', targetPropName : 'region' },
                     ],
                   }
-                },
-                { funcName : 'updateDisplayedData',
-                  funcParams  : { 
-                    propName : 'code', 
-                    targets : [
-                      { dataFromSource : 'region', targetPropName : 'region' },
-                      { dataFromSource : 'departement', targetPropName : 'region' },
-                      { dataFromSource : 'departement', targetPropName : 'region' },
-                      { dataFromSource : 'departement', targetPropName : 'region' },
-                    ]
-                  },
                 },
                 // { funcName : 'updateQuery',
                 //   funcParams  : { 

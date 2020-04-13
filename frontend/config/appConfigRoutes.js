@@ -13,21 +13,24 @@ export const configAppRoutes = {
       urls : [ "/"],
       rawHtml : undefined,
       pageRows : [
+
         { rowNumber: 1,
+          activated: true,
           help : '',
           columns : [
             
             { colName : "Numbers and tables", 
-              colClass : "",
+              activated: true,
+              colClass : "col-12 col-sm-6 col-md-5 col-lg-4 col-xl-4",
               cols : 4,
               md : 5,
               sm : 12,
+              xs : 12,
               lg : null,
               xl : null,
               positionFixed : true,
               colRows : [
-                {
-                  component : "text",
+                { component : "text",
                   activated : true,
                   justify : "center",
                   align : "center",
@@ -35,8 +38,7 @@ export const configAppRoutes = {
                     id : "text-01",
                   },
                 },
-                {
-                  component : "numbers",
+                { component : "numbers",
                   activated : true,
                   justify : "center",
                   align : "center",
@@ -44,8 +46,7 @@ export const configAppRoutes = {
                     id : "numbers-01",
                   },
                 },
-                {
-                  component : "chart",
+                { component : "chart",
                   activated : true,
                   justify : "center",
                   align : "center",
@@ -53,8 +54,7 @@ export const configAppRoutes = {
                     id : "chart-01",
                   },
                 },
-                // {
-                //   component : "chart",
+                // { component : "chart",
                 //   activated : true,
                 //   justify : "center",
                 //   align : "center",
@@ -66,16 +66,17 @@ export const configAppRoutes = {
             },
 
             { colName : "main map", 
-              colClass : "",
+              activated: true,
+              colClass : "col-12 col-sm-6 col-md-7 col-lg-8 col-xl-8",
               cols : 8,
               md : 7,
               sm : 12,
+              xs : 12,
               lg : null,
               xl : null,
               positionFixed : false,
               colRows : [
-                {
-                  component : "map",
+                { component : "map",
                   activated : true,
                   justify : "center",
                   align : "center",
@@ -89,19 +90,21 @@ export const configAppRoutes = {
           ],
         },
         { rowNumber: 2,
+          activated: false,
           help : '',
           columns : [
             { colName : "text", 
+              activated: true,
               colClass : "",
               cols : 12,
               md : 12,
               sm : 12,
+              xs : 12,
               lg : null,
               xl : null,
               positionFixed : false,
               colRows : [
-                {
-                  component : "text",
+                { component : "text",
                   activated : true,
                   justify : "center",
                   align : "center",
@@ -125,13 +128,16 @@ export const configAppRoutes = {
       rawHtml : undefined,
       pageRows : [
         { rowNumber: 1,
+          activated: true,
           help : '',
           columns : [
             { colName : "map", 
+              activated: true,
               colClass : "",
               cols : 12,
               md : 12,
               sm : 12,
+              xs : 12,
               lg : null,
               xl : null,
               colRows : [
@@ -159,13 +165,16 @@ export const configAppRoutes = {
       rawHtml : undefined,
       pageRows : [
         { rowNumber: 1,
+          activated: true,
           help : '',
           columns : [
             { colName : "chart", 
+              activated: true,
               colClass : "",
               cols : 12,
               md : 12,
               sm : 12,
+              xs : 12,
               lg : null,
               xl : null,
               colRows : [
@@ -193,13 +202,16 @@ export const configAppRoutes = {
       rawHtml : undefined,
       pageRows : [
         { rowNumber: 1,
+          activated: true,
           help : '',
           columns : [
             { colName : "table", 
+              activated: true,
               colClass : "",
               cols : 12,
               md : 12,
               sm : 12,
+              xs : 12,
               lg : null,
               xl : null,
               colRows : [
@@ -227,13 +239,16 @@ export const configAppRoutes = {
       rawHtml : undefined,
       pageRows : [
         { rowNumber: 1,
+          activated: true,
           help : '',
           columns : [
             { colName : "rawData", 
+              activated: true,
               colClass : "",
               cols : 12,
               md : 12,
               sm : 12,
+              xs : 12,
               lg : null,
               xl : null,
               colRows : [

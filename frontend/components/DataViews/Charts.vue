@@ -8,7 +8,7 @@
 <template>
 
   <v-container
-    :id="`apexcharts-${ settings.id }`"
+    :id="`charts-${ settings.id }`"
     :class="``"
     >
 
@@ -33,17 +33,6 @@
       justify-center
       >
 
-      <apexchart 
-        :series="series"
-        
-        :options="chartOptions" 
-        
-        :type="chartOptions.chart.type" 
-
-        :height="chartOptions.chart.height" 
-        :width="chartOptions.chart.width" 
-        >
-      </apexChart>
 
     </v-layout>
 
@@ -59,7 +48,7 @@
 
   export default {
     
-    name: 'ApexChart',
+    name: 'Chartjs',
 
     components: {
     },
