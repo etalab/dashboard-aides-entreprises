@@ -218,6 +218,9 @@ export const configAppMap = {
                   funcParams  : { 
                     propName : 'code', 
                     targets : [
+                      { dataFromSource : 'region', targetPropName : 'region' },
+                      { dataFromSource : 'departement', targetPropName : 'region' },
+                      { dataFromSource : 'departement', targetPropName : 'region' },
                       { dataFromSource : 'departement', targetPropName : 'region' },
                     ]
                   },

@@ -1,10 +1,12 @@
-console.log('+ + + plugins/utils... ')
+console.log('+ + + utils/utils... ')
 
-// - - - - - - - - - - - - - - - - - - - //
 // PURE UTILS
+
+
+// - - - - - - - - - - - - - - - - - - - //
+// SELECTOR FUNCTIONS FROM ENV VAR
 // - - - - - - - - - - - - - - - - - - - //
 
-// SELECTOR FUNCTIONS FROM ENV VAR
 const trueStrings = ['yes', 'Yes', 'YES', 'y', 'Y', 'true', 'True', 'TRUE', 't', 'T']
 const falseStrings = ['no', 'No', 'NO', 'n', 'N', 'false', 'False', 'FALSE', 'f', 'F']
 const chooseBooleanMode = (ARG) => {
@@ -15,7 +17,10 @@ const chooseBooleanMode = (ARG) => {
   }
 }
 
+// - - - - - - - - - - - - - - - - - - - //
 // FIND FROM ARRAY
+// - - - - - - - - - - - - - - - - - - - //
+
 export function findElementFromArrayAndId( id, targetArray, idField='id') {
   // console.log("+ + + findElementFromArrayAndId / id : ", id)
   let filteredOut = targetArray.find( item => 
@@ -25,8 +30,11 @@ export function findElementFromArrayAndId( id, targetArray, idField='id') {
 }
 
 
+// - - - - - - - - - - - - - - - - - - - //
 // RETRIEVE OBJECT FROM PATH
-export default function objectFromPath( obj, path, separator='/'){
+// - - - - - - - - - - - - - - - - - - - //
+
+export function objectFromPath( obj, path, separator='.'){
 
   console.log("+ + + objectFromPath / path : ", path)
   let object
@@ -47,11 +55,15 @@ export default function objectFromPath( obj, path, separator='/'){
 }
 
 
+// - - - - - - - - - - - - - - - - - - - //
+// FORMAT VALUES
+// - - - - - - - - - - - - - - - - - - - //
 
 export function toMillionsOrElse (x, params={ divider:1000000, fixed:2 } ) { 
   // console.log( "=== toMillions / x ", x )
   return parseFloat( (parseFloat(x)/params.divider).toFixed( params.fixed ) ) 
 }
+
 export function toFloat (x, params=undefined) { 
   // console.log( "=== toFloat / x ", x )
   return parseFloat(x) 

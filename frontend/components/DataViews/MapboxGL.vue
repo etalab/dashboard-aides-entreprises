@@ -328,8 +328,10 @@ export default {
 
           // transform to source.type if necessary
           if ( source.needTransform ) {
-            let geoCanvas = store.getters['data/getFromInitData']( source.transformTo.geoCanvasId ).data
-            dataset = transformDataset( source, dataset, geoCanvas )
+            let geoCanvas = store.getters['data/getFromInitData']( source.transformTo.geoCanvasId )
+            // this.log && console.log("C-MapboxGL / loadSources - store ... geoCanvas : ", geoCanvas)
+            let geoCanvasData = geoCanvas.data
+            dataset = transformDataset( source, dataset, geoCanvasData )
           }
 
           // this.log && console.log("C-MapboxGL / loadSources - store ... dataset : ", dataset)

@@ -1,4 +1,4 @@
-// import { addOrRemove } from '~/utils/utils'
+import { objectFromPath } from '~/utils/utils.js'
 
 
 export const state = () => ({
@@ -46,14 +46,28 @@ export const getters = {
   },
 
 
-  // DATA
+  // DATASETS
   
   getFromInitData : (state) => ( id ) => {
+    state.log && console.log("S-data-G-getFromInitData / id : ", id )
+    state.log && console.log("S-data-G-getFromInitData / state.initData : ", state.initData )
     return state.initData.find( dataset => dataset.id == id )
   },
 
   getFromDisplayedData : (state) => ( id ) => {
-    return state.displayedData.find( dataset => dataset.id == id )
+    return state.displayedData && state.displayedData.find( dataset => dataset.id == id )
+  },
+
+  selectFromDisplayedData : ( state, getters ) => ( paramsArray ) => {
+    state.log && console.log("S-data-A-selectFromDisplayedData / paramsArray  : ", paramsArray )
+    let resultsArray = [ ]
+    for ( let params of paramsArray){
+      let dataset = getters.getFromDisplayedData( params.id )
+      state.log && console.log("S-data-A-selectFromDisplayedData / dataset  : ", dataset )
+      let result = dataset && objectFromPath( dataset, params.field )
+      resultsArray.push( result )
+    }
+    return resultsArray
   },
 
 
@@ -69,18 +83,20 @@ export const mutations = {
   // DATASETS 
 
   pushToInitData (state, dataset){
-    state.log && console.log("S-data-M-pushToInitData / dataset.id : ", dataset.id)
-    // state.log && console.log("S-data-M-pushToInitData / dataset : ", dataset)
+    state.log && console.log("... S-data-M-pushToInitData / dataset.id : ", dataset.id)
+    state.log && console.log("... S-data-M-pushToInitData / dataset : ", dataset)
+    state.log && console.log("... S-data-M-pushToInitData / state.initData : ", state.initData)
     if ( !state.initData ){ state.initData = [] }
     state.initData.push( dataset )
   },
 
   pushToDisplayedData (state, dataset){
-    state.log && console.log("S-data-M-pushToDisplayedData / dataset.id  : ", dataset.id )
+    state.log && console.log("... S-data-M-pushToDisplayedData / dataset.id  : ", dataset.id )
     if ( !state.displayedData ){ state.displayedData = [] }
     state.displayedData.push( dataset )
   },
 
+  
   setDisplayedDataset (state, dataset ){
     state.log && console.log("S-data-M-setDisplayedDataset / dataset.id  : ", dataset.id )
     let foundIndex = state.displayedData.findIndex( x => x.id == dataset.id )
@@ -110,13 +126,6 @@ export const mutations = {
 export const actions = {
 
   // DATASETS
-
-  selectFromDisplayedData({state, getters}, { id, field } ){
-    state.log && console.log("S-data-A-selectFromDisplayedData / id  : ", id )
-    let dataset = getters.getFromDisplayedData( id )
-    let result = dataset && dataset[ field ]
-    return result
-  },
 
   setDisplayedDataset({state, getters, commit}, updatedDataset ) {
 

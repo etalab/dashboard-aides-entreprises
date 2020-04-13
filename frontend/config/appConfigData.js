@@ -84,8 +84,7 @@ export const configAppData = {
   // FILTERS 
   filters : [
     
-    { 
-      arg : "departement",
+    { arg : "departement",
       filterCode : "DEP",
       filterType : "checkbox",
       isActivated : true,
@@ -99,8 +98,7 @@ export const configAppData = {
       ],
     },
     
-    { 
-      arg : "effectif",
+    { arg : "effectif",
       filterCode : "EFF",
       filterType : "checkbox",
       isActivated : true,
@@ -114,8 +112,7 @@ export const configAppData = {
       ],
     },
     
-    { 
-      arg : "naf",
+    { arg : "naf",
       filterCode : "NAF",
       filterType : "checkbox",
       isActivated : true,
@@ -140,67 +137,60 @@ export const configAppData = {
       help : "populate 'store.data.state.initData' @ middleware getIniitData.js / from : url | localFile" ,
       
       store : [
+        
+        // INFOS 
+
+        { id    : "infos" ,
+          help  : "",
+          from  : "rawObject" , 
+          rawObject : {
+            numbers : { 
+              montant : undefined, 
+              nombre : undefined 
+            },
+            texts : { 
+              levels : undefined 
+            },
+          },
+          displayed : true,
+        },
+
 
         // TAXONOMIES 
 
-        // { 
-        //   id   : "naf" ,
-        //   from : "url" ,
-        //   help : "",
-        //   url  : "http://pad-01.infra.data.gouv.fr:5000/naf" 
-        // },
-        // { 
-        //   id   : "region" ,
-        //   from : "url" ,
-        //   help : "",
-        //   url  : "http://pad-01.infra.data.gouv.fr:5000/region" 
-        // },
-        // { 
-        //   id   : "departement" ,
-        //   from : "url" ,
-        //   help : "",
-        //   url  : "http://pad-01.infra.data.gouv.fr:5000/departement" 
-        // },
-        // { 
-        //   id   : "classeeffectif" ,
-        //   from : "url" ,
-        //   help : "",
-        //   url  : "http://pad-01.infra.data.gouv.fr:5000/classeeffectif" 
-        // },
-
-        { 
-          id    : "taxo-nafs" ,
+        { id    : "taxo-nafs" ,
           help  : "",
           from  : "static" , 
           url   : "/datasets/taxonomies/nafs.json",
+          //   url  : "http://pad-01.infra.data.gouv.fr:5000/naf" 
           displayed : false,
         },
-        { 
-          id    : "taxo-regions" ,
+        {  id    : "taxo-regions" ,
           help  : "",
           from  : "static" , 
           url   : "/datasets/taxonomies/regions.json",
+          //   url  : "http://pad-01.infra.data.gouv.fr:5000/region" 
           displayed : false,
         },
-        { 
-          id    : "taxo-departements" ,
+        {  id    : "taxo-departements" ,
           help  : "",
           from  : "static" , 
           url   : "/datasets/taxonomies/departements.json",
+          //   url  : "http://pad-01.infra.data.gouv.fr:5000/departement" 
           displayed : false,
         },
-        { 
-          id    : "taxo-classes-effectifs" ,
+        {  id    : "taxo-classes-effectifs" ,
           help  : "",
           from  : "static" , 
           url   : "/datasets/taxonomies/classes-effectifs.json",
+          //   url  : "http://pad-01.infra.data.gouv.fr:5000/classeeffectif" 
           displayed : false,
         },
 
 
-        // CONTOURS ? (NO NEED EXCEPT CENTERS : SOURCES LOADED IN MAPBOX COMPONENT )
-        {
-          id    : "centers" ,
+        // GEOJSON (NO NEED EXCEPT CENTERS : SOURCES LOADED IN MAPBOX COMPONENT )
+
+        { id    : "centers" ,
           help  : "geo centres régions et départements",
           from  : "static" , 
           url   : "/datasets/geodata/centers.json",
@@ -209,22 +199,20 @@ export const configAppData = {
 
 
         // AIDES
-        {
-          id    : "national-aides-raw" ,
+
+        { id    : "national-aides-raw" ,
           help  : "serie chiffres aides à la maille nationale",
           from  : "static" , 
           url   : "/datasets/aides/aides-maille-national.json",
           displayed : true,
         },
-        {
-          id    : "regions-aides-raw" ,
+        { id    : "regions-aides-raw" ,
           help  : "serie chiffres aides à la maille regionale",
           from  : "static" , 
           url   : "/datasets/aides/aides-maille-regional.json",
           displayed : true,
         },
-        {
-          id    : "departements-aides-raw" ,
+        { id    : "departements-aides-raw" ,
           help  : "serie chiffres aides à la maille departementale",
           from  : "static" , 
           url   : "/datasets/aides/aides-maille-departemental.json",

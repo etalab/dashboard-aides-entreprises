@@ -171,9 +171,10 @@ export default {
   */
   plugins: [
 
+    // '~/plugins/utils',
+
     { src: '~/plugins/mapbox', mode: 'client' },
     // { src: '~/plugins/mapboxgl', mode: 'client' },
-    // { src: '~/plugins/mapboxgl', ssr: false },
 
     { src: '~/plugins/apexCharts', mode: 'client' },
   ],
@@ -192,6 +193,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'nuxt-i18n',
+    // '~/modules/objectFromPath',
   ],
   
   i18n: {

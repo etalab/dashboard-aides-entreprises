@@ -28,16 +28,17 @@ export const configAppTexts = {
               colClass : '',
               cols : 6,
               numberClass : '',
-              legendCalss : '',
-              displayedData : { 
-                name : 'displayed data : level.montant', 
-                title : { fr : "texte"},
-                titleI18n : 'texts.text01.titre',
-                id : 'level',
-                field : 'text',
-                textPrefix : { fr : 'Aides versées - ' },
-                textSuffix : { fr : '' },
-              },
+              legendClass : '',
+              textPrefix : { fr : 'Aides versées - ' },
+              textSuffix : { fr : '' },
+              displayedData : [
+                { name : 'displayed data : level.montant', 
+                  title : { fr : "texte"},
+                  titleI18n : 'texts.text01.titre',
+                  id : 'infos',
+                  field : 'texts.levels.name',
+                }
+              ],
             },
           
           ]

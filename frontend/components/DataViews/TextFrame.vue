@@ -59,9 +59,9 @@
           <p 
             :class="``"
             >
-            {{ col.displayedData.textPrefix[ locale ] }}
-            {{ getDisplayedData( col.displayedData) }}
-            {{ col.displayedData.textSuffix[ locale ] }}
+            {{ col.textPrefix[ locale ] }}
+            {{ getDisplayedData( col.displayedData ) }}
+            {{ col.textSuffix[ locale ] }}
             
           </p> 
 
@@ -129,7 +129,8 @@
 
       ...mapGetters({
         getCurrentLocale : 'getCurrentLocale',
-        getDataViewConfig : 'getDataViewConfig'
+        getDataViewConfig : 'getDataViewConfig',
+        selectFromDisplayedData : 'data/selectFromDisplayedData',
       }),
 
       // config
@@ -147,12 +148,12 @@
     methods : {
 
       ...mapActions({
-        selectFromDisplayedData : 'data/selectFromDisplayedData',
+        // selectFromDisplayedData : 'data/selectFromDisplayedData',
       }),
 
-      getDisplayedData( params ){
+      getDisplayedData( paramsArray ){
         this.log && console.log('C-Numbers / getDisplayedData ...')
-        let dataFromDisplayedData = this.selectFromDisplayedData( params ) 
+        let dataFromDisplayedData = this.selectFromDisplayedData( paramsArray ) 
         return dataFromDisplayedData
       },
 

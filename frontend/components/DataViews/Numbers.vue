@@ -62,7 +62,7 @@
             {{ getDisplayedData( col.displayedData) }}
             
             <br><br>
-            {{ col.displayedData.unit[ locale ] }}
+            {{ col.unit[ locale ] }}
             <!-- </code> -->
           </p> 
 
@@ -70,7 +70,7 @@
           <h4
             :class="``"
             >
-            {{ col.displayedData.legend[ locale ] }}
+            {{ col.legend[ locale ] }}
           </h4>
 
         </div>
@@ -135,7 +135,8 @@
 
       ...mapGetters({
         getCurrentLocale : 'getCurrentLocale',
-        getDataViewConfig : 'getDataViewConfig'
+        getDataViewConfig : 'getDataViewConfig',
+        selectFromDisplayedData : 'data/selectFromDisplayedData',
       }),
 
       // config
@@ -153,12 +154,12 @@
     methods : {
       
       ...mapActions({
-        selectFromDisplayedData : 'data/selectFromDisplayedData',
+        // selectFromDisplayedData : 'data/selectFromDisplayedData',
       }),
 
-      getDisplayedData( params ){
+      getDisplayedData( paramsArray ){
         this.log && console.log('C-Numbers / getDisplayedData ...')
-        let dataFromDisplayedData = this.selectFromDisplayedData( params ) 
+        let dataFromDisplayedData = this.selectFromDisplayedData( paramsArray ) 
         return dataFromDisplayedData
       },
 
