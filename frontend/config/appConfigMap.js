@@ -206,16 +206,28 @@ export const configAppMap = {
                     propName : 'code', 
                     targets : [
 
+
+                      // { from : 'store', 
+                      //   fromPropKey : undefined,
+                      //   propValue : 'regional',
+                      //   fromStoreData : 'initData',
+                      //   fromDatasetId : 'infos',
+                      //   fromDatasetKey : 'switchers',
+                      //   fromDatasetField : undefined,
+                      //   targetSpecialStoreId : 'levelname', 
+                      // },
+
                       { from : 'store', 
-                        fromPropKey : undefined,
-                        propValue : 'regional',
+                        fromPropKey : 'code',
                         fromStoreData : 'initData',
-                        fromDatasetId : 'infos',
-                        fromDatasetKey : 'switchers',
-                        fromDatasetField : undefined,
+                        fromDatasetId : 'taxo-regions',
+                        fromDatasetKey : 'reg',
+                        fromDatasetField : 'libelle',
                         targetSpecialStoreId : 'levelname', 
                       },
 
+
+                      
                       { from : 'store',
                         fromPropKey : 'code', // use props region code
                         fromStoreData : 'initData',
