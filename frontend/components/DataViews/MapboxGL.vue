@@ -13,7 +13,7 @@
 
 <template>
 
-  <div 
+  <div
     :class="`map`"
     :trigger="`${trigger}`"
     >
@@ -32,7 +32,7 @@
     </style>
 
     <!-- LOADER -->
-    <div 
+    <div
       id="loader-map"
       v-show="showLoader"
       class="lds-roller floating"
@@ -41,19 +41,19 @@
     </div>
 
     <!-- LAYERS & LEGEND -->
-    <v-layout 
+    <v-layout
       v-if="map"
-      id='legend' 
+      id='legend'
       :class='`legend-block legend-bottom-right`'
       >
 
       <!-- LAYERS SWITCH -->
-      <div 
+      <div
         v-if="mapsVisibility && mapsVisibility.is_activated"
-        class="legend layer-switch justify-center" 
+        class="legend layer-switch justify-center"
         >
 
-        <v-btn 
+        <v-btn
           class="justify-center"
           outlined
           @click="switchMapsDrawer()"
@@ -61,24 +61,24 @@
           {{ mapsVisibility.title[ locale ] }}
         </v-btn>
 
-        <div 
+        <div
           v-show="drawerMapsOpen"
           class="legend-content justify-left"
           >
-          <div 
+          <div
             v-for="(mapRef, index) in mapsVisibility.map_switches"
             :key="index"
             class="field"
             >
-            <input 
-              class="is-checkradio" 
-              :id="mapRef.id" 
-              :name="mapRef.id" 
+            <input
+              class="is-checkradio"
+              :id="mapRef.id"
+              :name="mapRef.id"
               :checked=" mapRef.default_visible ? 'checked' : false"
-              type="checkbox" 
+              type="checkbox"
               @click="switchMapVisibility( mapRef.id )"
               >
-            <label 
+            <label
               :for="mapRef.id">
               {{ mapRef.label[ locale ] }}
             </label>
@@ -91,7 +91,7 @@
 
     <!-- MAP WITH MAPBOX GL -->
     <no-ssr>
-      
+
       <MglMap
         access-token=""
         :mapStyle.sync="mapOptions.mapStyle"
@@ -104,8 +104,8 @@
         >
 
         <!-- CONTROLS -->
-        <MglNavigationControl 
-          position="bottom-right" 
+        <MglNavigationControl
+          position="bottom-right"
         />
 
       </MglMap>
@@ -147,13 +147,15 @@ import { objectFromPath, switchFormatFunctions } from '~/utils/utils.js'
 
 import { StylesOSM } from '~/config/mapboxVectorStyles.js'
 
+let _map
+
 export default {
-  
+
   name: 'MapboxGL',
 
   components: {
   },
-  
+
   props : [
     'settings',
   ],
@@ -164,20 +166,20 @@ export default {
       dataViewType : 'maps',
       viewConfig : undefined,
 
-      showLoader : true, 
+      showLoader : true,
 
       // MAPBOX MAP OBJECT
       map : undefined,
 
       mapOptions : {
-        mapStyle : undefined, 
+        mapStyle : undefined,
         zoom : undefined,
         maxZoom : undefined,
         minZoom : undefined,
         currentZoom : undefined,
         center : undefined,
         currentCenter : undefined,
-      }, 
+      },
 
       mapsVisibility : undefined,
       drawerMapsOpen : undefined,
@@ -199,7 +201,7 @@ export default {
 
     this.log && console.log("\n- + - MapboxGL component - + - + - + - + - + - + ")
     this.log && console.log("C-MapboxGL / beforeMount ... ")
-    
+
     // set up view config
     this.viewConfig = this.getLocalConfig
 
@@ -212,9 +214,9 @@ export default {
       // mapStyle      : StylesOSM[ 'testRasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'EtalabRaw' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'RasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
-      // mapStyle      : StylesOSM[ 'EtalabUrl' ], // EtalabFile | testRasterVoyager | RasterVoyager
-      
-      mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
+      mapStyle      : StylesOSM[ 'EtalabUrl' ], // EtalabFile | testRasterVoyager | RasterVoyager
+
+      // mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
       zoom          : mapOptionsRoute.zoom,
       maxZoom       : mapOptionsRoute.maxZoom,
       minZoom       : mapOptionsRoute.minZoom,
@@ -236,7 +238,7 @@ export default {
     // setup drawers
     this.mapsVisibility = this.viewConfig.maps_visibility
     this.drawerMapsOpen = this.mapsVisibility && this.mapsVisibility.is_drawer_open
-   
+
   },
 
   mounted(){
@@ -259,7 +261,7 @@ export default {
         .then(() => {
           this.loadLayers( this.layers )
           this.loadClicEvents( this.maps )
-          this.showLoader = false 
+          this.showLoader = false
         })
 
       }
@@ -271,7 +273,7 @@ export default {
   computed: {
 
     ...mapState({
-      log : state => state.log, 
+      log : state => state.log,
       locale : state => state.locale,
       mapUI : state => state.configUI.map,
       trigger : state => state.data.triggerChange,
@@ -295,7 +297,7 @@ export default {
     },
 
   },
-  
+
   methods : {
 
     ...mapActions({
@@ -305,14 +307,14 @@ export default {
     // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
 
       // loaded (_map) {
-      //   map =_map 
+      //   map =_map
       //   this.map = _map
       // },
 
       onMapLoaded(event) {
         this.log && console.log("C-MapboxGL / onMapLoaded ... ")
         // store in component
-        this.map = event.map
+        _map = event.map
         // in store => WARNING : object too complex to be stored/mutated in vuex so far
         // check : https://ypereirareis.github.io/blog/2017/04/25/vuejs-two-way-data-binding-state-management-vuex-strict-mode/
       },
@@ -322,13 +324,13 @@ export default {
 
       loadStoreSources( sourcesArray ){
 
-        this.log && console.log("\nC-MapboxGL / loadSources ", "... ".repeat(10)) 
-        let mapbox = this.map
+        this.log && console.log("\nC-MapboxGL / loadSources ", "... ".repeat(10))
+        let mapbox = _map
         let store = this.$store
 
         // STORE SOURCES (loaded as initData @ middleware GetInitData.js )
         for ( let source of sourcesArray ){
-          
+
           this.log && console.log("\nC-MapboxGL / loadSources - store ... source.id : ", source.id)
           this.log && console.log("C-MapboxGL / loadSources - store ... source.help : ", source.help)
           let mapBoxSrcObj = {
@@ -352,10 +354,10 @@ export default {
           // add source to map
           // this.log && console.log("C-MapboxGL / loadSources - store ... addSource ...")
           mapBoxSrcObj.data = {...dataset}
-          if (source.generateId) mapBoxSrcObj.generateId = source.generateId 
+          if (source.generateId) mapBoxSrcObj.generateId = source.generateId
           mapbox.addSource( source.id, mapBoxSrcObj )
 
-          // add source to store 
+          // add source to store
           store.dispatch('data/setDisplayedDataset', {
             id : source.id,
             data : dataset,
@@ -367,14 +369,14 @@ export default {
 
       loadUrlSources( sourcesArray ){
 
-        this.log && console.log("\nC-MapboxGL / loadSources ", "... ".repeat(10)) 
-        let mapbox = this.map
+        this.log && console.log("\nC-MapboxGL / loadSources ", "... ".repeat(10))
+        let mapbox = _map
         let store = this.$store
 
         // URL SOURCES
         let promisesArray = []
         for ( let source of sourcesArray ){
-          
+
           this.log && console.log("\nC-MapboxGL / loadSources - url ... source.id : ", source.id)
           this.log && console.log("C-MapboxGL / loadSources - url ... source.help : ", source.help)
           let mapBoxSrcObj = {
@@ -390,7 +392,7 @@ export default {
               // add source to map
               // this.log && console.log("C-MapboxGL / loadSources - url ... addSource ...")
               mapBoxSrcObj.data = {...dataset}
-              if (source.generateId) mapBoxSrcObj.generateId = source.generateId 
+              if (source.generateId) mapBoxSrcObj.generateId = source.generateId
               mapbox.addSource( source.id, mapBoxSrcObj )
 
               // add source to store - displayedData
@@ -400,12 +402,12 @@ export default {
               })
             })
             promisesArray.push(resp)
-          } 
+          }
           else {
             // add source to map
             // this.log && console.log("C-MapboxGL / loadSources - url (!loadInStore) ... addSource ...")
             mapBoxSrcObj.data = source.url
-            if (source.generateId) mapBoxSrcObj.generateId = source.generateId 
+            if (source.generateId) mapBoxSrcObj.generateId = source.generateId
             mapbox.addSource( source.id, mapBoxSrcObj )
           }
         }
@@ -415,7 +417,7 @@ export default {
 
       loadLayers( layersArray ){
 
-        let mapbox = this.map
+        let mapbox = _map
         this.log && console.log("\nC-MapboxGL / loadLayers ", "... ".repeat(10))
         this.log && console.log("\n")
 
@@ -431,7 +433,7 @@ export default {
 
       loadClicEvents( mapsArray ){
 
-        let mapbox = this.map
+        let mapbox = _map
         this.log && console.log("\nC-MapboxGL / loadClicEvents ", "... ".repeat(10))
 
         // let sourcesList = mapbox.getStyle().sources
@@ -448,13 +450,13 @@ export default {
 
               this.log && console.log("\nC-MapboxGL / loadClicEvents ... clicEvent.layer : ", clicEvent.layer, " / event :", clicEvent.event )
               this.log && console.log("C-MapboxGL / loadClicEvents ... clicEvent : ", clicEvent)
-              
+
               let clicFunctions = clicEvent.functions
 
               mapbox.on( clicEvent.event, clicEvent.layer, e => {
-                
+
                 let featuresItem = mapbox.queryRenderedFeatures( e.point, { layers: [ clicEvent.layer ] } )
-                
+
                 if ( typeof featuresItem !== 'undefined' && featuresItem.length > 0 ){
 
                   let item       = featuresItem[0]
@@ -469,10 +471,10 @@ export default {
                     this.log && console.log( "... itemSource : ", itemSource )
                     this.log && console.log( "... itemProps : ", itemProps )
                   }
-                  
+
                   for ( let fn of clicFunctions ){
-                    
-                    let funcParams = fn.funcParams 
+
+                    let funcParams = fn.funcParams
 
                     let params = funcParams && {
                       source   : itemSource,
@@ -483,31 +485,31 @@ export default {
 
                     switch( fn.funcName ){
 
-                      case 'goToPolygon' : 
+                      case 'goToPolygon' :
                         this.goToPolygon( params ) ;
-                        break ; 
-
-                      case 'setChildrenPolygons' : 
-                        params.targets = funcParams.targets ;
-                        this.setChildrenPolygons( params) ;
-                        break ; 
-
-                      case 'updateDisplayedData' : 
-                        params.targets = funcParams.targets ;
-                        this.updateDisplayedData( params ) ;
-                        break ; 
-
-                      // case 'updateQuery' : 
-                      //   params.targets = funcParams.targets ;
-                      //   this.updateQuery( params ) ;
-                      //   break ; 
-
-                      case 'toggleHighlightOn' : 
-                        this.toggleHighlightOn(e, itemSource ) ; 
                         break ;
 
-                      case 'toggleHighlightOff' : 
-                        this.toggleHighlightOff(e, itemSource ) ; 
+                      case 'setChildrenPolygons' :
+                        params.targets = funcParams.targets ;
+                        this.setChildrenPolygons( params) ;
+                        break ;
+
+                      case 'updateDisplayedData' :
+                        params.targets = funcParams.targets ;
+                        this.updateDisplayedData( params ) ;
+                        break ;
+
+                      // case 'updateQuery' :
+                      //   params.targets = funcParams.targets ;
+                      //   this.updateQuery( params ) ;
+                      //   break ;
+
+                      case 'toggleHighlightOn' :
+                        this.toggleHighlightOn(e, itemSource ) ;
+                        break ;
+
+                      case 'toggleHighlightOff' :
+                        this.toggleHighlightOff(e, itemSource ) ;
                         break ;
                     }
                   }
@@ -527,20 +529,20 @@ export default {
     // DATA INTERACTIONS - - - - - - - - - - - - - - - - - - //
 
       getSourceData( params, from='map' ){
-        
+
         this.log && console.log("\nC-MapboxGL / getSourceGeoData ... from : ", from)
         this.log && console.log("C-MapboxGL / getSourceGeoData ... params : ", params)
 
         let data
 
         if ( from == 'map' ){
-          let sourcesList = this.map.getStyle().sources
+          let sourcesList = _map.getStyle().sources
           this.log && console.log("C-MapboxGL / getSourceGeoData ... sourcesList : ", sourcesList)
           let source = sourcesList && sourcesList[ params.source ]
           this.log && console.log("C-MapboxGL / getSourceGeoData ... source : ", source)
           data = source && source.data.features.find( feat => feat.properties[ params.propName ] == params.prop )
           this.log && console.log("C-MapboxGL / getSourceGeoData ... data : ", data)
-        } 
+        }
 
         if ( from == 'store' ){
 
@@ -575,7 +577,7 @@ export default {
           data = ( params.fromDatasetField ) ? data[ params.fromDatasetField ] : data
           // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (3) : ", data)
         }
-        
+
         return data
       },
 
@@ -583,7 +585,7 @@ export default {
 
         // this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
         // this.log && console.log("\nC-MapboxGL / updateDisplayedData  : ", "+ ".repeat(10) )
-        
+
         for (let targetParams of params.targets ){
 
           // 1 - get data for the update
@@ -607,7 +609,7 @@ export default {
           }
           // this.$store.commit('data/setDeepNestedData', targetData )
           this.$store.dispatch('data/setNestedData', targetData )
-          
+
         }
 
         this.$store.commit('data/toggleTrigger' )
@@ -642,13 +644,13 @@ export default {
       },
       fit (geojson) {
         var _bbox = bbox(geojson)
-        this.map.fitBounds(_bbox, { padding: 20, animate: true })
+        _map.fitBounds(_bbox, { padding: 20, animate: true })
       },
 
       // HIGHLIGHTS FUNCTIONS
 
       toggleHighlightOn (event, source) {
-        let mapbox = this.map
+        let mapbox = _map
         const canvas = mapbox.getCanvas()
         canvas.style.cursor = 'pointer'
         if (event.features.length > 0) {
@@ -661,7 +663,7 @@ export default {
       },
 
       toggleHighlightOff (event, source) {
-        let mapbox = this.map
+        let mapbox = _map
         const canvas = mapbox.getCanvas()
         canvas.style.cursor = ''
         if (this.hoveredStateId[source] !== null) {
@@ -678,12 +680,12 @@ export default {
 
       switchMapVisibility( mapSelectedId ){
 
-        let mapbox = this.map 
+        let mapbox = _map
 
-        let MapVisibilityConfig = this.mapsVisibility.map_switches.find( item => item.id === mapSelectedId ) 
-        
+        let MapVisibilityConfig = this.mapsVisibility.map_switches.find( item => item.id === mapSelectedId )
+
         let mapSelected = this.maps.find( m => m.id === MapVisibilityConfig.mapId )
-        
+
         for (let layerId of mapSelected.layers ){
           let visibility = mapbox.getLayoutProperty( layerId, 'visibility');
           if (visibility === 'visible') {
@@ -714,7 +716,7 @@ export default {
 
 
 <style>
-  
+
   /* cf : https://docs.mapbox.com/mapbox-gl-js/example/updating-choropleth/ */
 
   .legend-block {
@@ -731,27 +733,27 @@ export default {
     padding: 10px;
     /* right: 10px; */
   }
-  
+
   .legend-bottom-left{
     left: 10px;
   }
-  
+
   .legend-bottom-right{
     right: 50px;
   }
 
   .layer-switch{
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
   }
 
   .legend-content{
-    margin-top: .7em; 
+    margin-top: .7em;
   }
 
   .legend h4 {
     margin: 0 0 10px;
   }
-  
+
   .legend div span {
     border-radius: 50%;
     display: inline-block;
@@ -856,8 +858,8 @@ export default {
     margin: 1.5em;
     padding: 1.5em
   }
-  .map { 
-    height: calc(100vh - 64px); 
+  .map {
+    height: calc(100vh - 64px);
     /* height: calc(100vh); */
     width: 100%;
     position: relative;
@@ -908,12 +910,12 @@ export default {
 
   .highlighted-project .card{
     font-size: 0.9em;
-      
+
     box-shadow: none;
   }
 
   .highlighted-project .card .card-content{
-    padding: 0.2em 0.5em;   
+    padding: 0.2em 0.5em;
   }
 
   .highlighted-project .card .card-content:first-of-type{
