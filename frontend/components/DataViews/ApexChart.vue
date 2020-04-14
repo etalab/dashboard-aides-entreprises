@@ -12,7 +12,7 @@
 
   <v-container
     :id="`apexcharts-${ settings.id }`"
-    :class="``"
+    :class="`${settings.containerClass}`"
     :trigger="`${trigger}`"
     >
 

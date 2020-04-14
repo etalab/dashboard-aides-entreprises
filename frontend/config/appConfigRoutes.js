@@ -30,6 +30,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "text-01",
+                    containerClass : 'pb-0',
                   },
                 },
                 { component : "numbers",
@@ -38,6 +39,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "numbers-01",
+                    containerClass : 'pb-0',
                   },
                 },
                 { component : "apexchart",
@@ -46,6 +48,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "apexchart-01",
+                    containerClass : 'pt-3 pb-0',
                   },
                 },
                 // { component : "apexchart",
@@ -54,6 +57,7 @@ export const configAppRoutes = {
                 //   align : "center",
                 //   settings : { 
                 //     id : "apexchart-02",
+                //     containerClass : 'pb-0',
                 //   },
                 // },
               ],
@@ -70,6 +74,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : {
                     id : "map-france-metro",
+                    containerClass : 'pb-0',
                   },
                 },
               ],
@@ -92,6 +97,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : {
                     id : "text-02",
+                    containerClass : 'pb-0',
                   },
                 },
               ],
@@ -123,6 +129,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "text-01",
+                    containerClass : 'pb-0',
                   },
                 },
                 { component : "numbers",
@@ -131,6 +138,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "numbers-01",
+                    containerClass : 'pb-0',
                   },
                 },
                 { component : "map",
@@ -139,6 +147,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : {
                     id : "map-france-metro",
+                    containerClass : 'pb-0',
                   },
                 },
               ],
@@ -170,6 +179,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "text-01",
+                    containerClass : 'pb-0',
                   },
                 },
                 { component : "numbers",
@@ -178,6 +188,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "numbers-01",
+                    containerClass : 'pb-0',
                   },
                 },
                 { component : "apexchart",
@@ -186,6 +197,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "apexchart-01",
+                    containerClass : 'pb-0',
                   },
                 },
               ],
@@ -217,6 +229,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "table-01",
+                    containerClass : 'pb-0',
                   },
                 },
               ],
@@ -248,6 +261,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "chart-01",
+                    containerClass : 'pb-0',
                   },
                 },
               ],

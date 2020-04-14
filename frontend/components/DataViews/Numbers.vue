@@ -9,7 +9,7 @@
 
   <v-container
     :id="`numbers-${ settings.id }`"
-    :class="``"
+    :class="`${settings.containerClass}`"
     :trigger="`${trigger}`"
     >
 
