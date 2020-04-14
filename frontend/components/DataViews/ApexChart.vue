@@ -76,6 +76,8 @@
 
     </v-layout>
 
+    <!-- {{ localChartOptions }} -->
+
   </v-container>
 
 
@@ -117,8 +119,8 @@
 
     watch: {
       trigger(next, prev){
-        this.log && console.log('C-ApexChart / watch / getSpecialStoreForChartData / prev : ', prev )
-        this.log && console.log('C-ApexChart / watch / getSpecialStoreForChartData / next : ', next )
+        this.log && console.log('C-ApexChart / watch / trigger / prev : ', prev )
+        this.log && console.log('C-ApexChart / watch / trigger / next : ', next )
         this.getSeries()
       },
     },

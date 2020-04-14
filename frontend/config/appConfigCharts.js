@@ -48,7 +48,7 @@ export const configAppCharts = {
         chartOptions: {
           chart: {
             type: 'bar',
-            height: '325px',
+            height: '450px',
             width : '450px', 
             toolbar : {
               show: false,
@@ -57,8 +57,44 @@ export const configAppCharts = {
           plotOptions: {
             bar: {
               horizontal: true,
-            }
+              distributed : true, // nerd-pride....
+            },
           },
+          // yaxis : {
+          //   fill: {
+          //     colors: [
+          //       '#008FFB', 
+          //       '#00E396', 
+          //       '#FEB019',
+          //       '#FF4560',
+          //       '#4caf50',
+          //       '#f9a3a4',
+          //       '#2b908f',
+          //       '#5A2A27',
+          //       '#FF9800',
+          //       '#9C27B0',
+          //     ],
+          //   },
+          // },
+          // fill: {
+          //   colors: [
+          //     '#008FFB', 
+          //     '#00E396', 
+          //     '#FEB019',
+          //     '#FF4560',
+          //     '#4caf50',
+          //     '#f9a3a4',
+          //     '#2b908f',
+          //     '#5A2A27',
+          //     '#FF9800',
+          //     '#9C27B0',
+          //   ],
+          // },
+          theme: {
+            mode: 'light', 
+            palette: 'palette1' // upto palette10
+          },
+
           dataLabels: {
             enabled: true
           },
