@@ -7,10 +7,10 @@
 
 <template>
 
-
   <v-container 
     :id="`text-${ settings.id }`" 
     :class="``"
+    :trigger="`${trigger}`"
     >
 
     <!-- 
@@ -60,11 +60,16 @@
             :class="``"
             >
             {{ col.textPrefix[ locale ] }}
-            {{ getDisplayedData( col.displayedData ).join( ' ' ) }}
+            {{ getSpecialStore[ col.specialStoreId ] }}
             {{ col.textSuffix[ locale ] }}
             
           </p> 
 
+          <!-- <code>
+            specialStore[ 'levelname']  : 
+            {{ getSpecialStore[ 'levelname' ] }}
+          </code>  -->
+    
         </v-layout>
 
       </v-col>
@@ -122,12 +127,14 @@
       ...mapState({
         log : state => state.log, 
         locale : state => state.locale,
+        trigger : state => state.data.triggerChange,
       }),
 
       ...mapGetters({
         getCurrentLocale : 'getCurrentLocale',
         getDataViewConfig : 'getDataViewConfig',
         selectFromDisplayedData : 'data/selectFromDisplayedData',
+        getSpecialStore : 'data/getSpecialStore',
       }),
 
       // config

@@ -148,20 +148,34 @@ export const configAppData = {
               montant : undefined, 
               nombre : undefined,
               effectifs : undefined,
+              nafs : undefined,
             },
             texts : { 
-              levels : {
-                name : 'échelle nationale',
-                code : undefined,
-              } 
+              levelname : 'échelle nationale',
+              levelcode : 'national',
             },
+            focusObject : undefined,
             switchers : {
-              nationale : 'échelle nationale',
-              regions : 'échelle régionale',
+              national : 'échelle nationale',
+              regional : 'échelle régionale',
               departement : 'échelle départementale',
             },
           },
           displayed : true,
+          copyTo : [
+            { fieldToCopy : 'levelname',
+              from : { objectRef : 'texts' },
+              help : 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore : 'levelname',
+              format : undefined ,
+            },
+            { fieldToCopy : 'levelcode',
+              from : { objectRef : 'texts' },
+              help : 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore : 'levelcode',
+              format : undefined ,
+            },
+          ]
         },
 
 
@@ -215,12 +229,16 @@ export const configAppData = {
           url   : "/datasets/aides/aides-maille-national.json",
           displayed : true,
           copyTo : [
+            { fieldToCopy : undefined,
+              from : { objectRef : 0 },
+              help : 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore : 'focusObject',
+              format : undefined,
+            },
             { fieldToCopy : 'montant',
               from : { objectRef : 0 },
               help : 'copy to another dataset (id) in displayedData | initData',
-              toDataStore : 'displayedData',
-              toId : 'infos',
-              toDataPath : 'numbers.montant',
+              toSpecialStore : 'montant',
               format : [
                 { utilsFnName : 'toMillionsOrElse',
                   params : { divider: 1000000, fixed:2 },
@@ -230,9 +248,7 @@ export const configAppData = {
             { fieldToCopy : 'nombre',
               from : { objectRef : 0 },
               help : 'copy to another dataset (id) in displayedData | initData',
-              toDataStore : 'displayedData',
-              toId : 'infos',
-              toDataPath : 'numbers.nombre',
+              toSpecialStore : 'nombre',
               format : undefined ,
             },
           ]

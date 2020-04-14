@@ -1,7 +1,36 @@
 import { getDataFromUrl } from "~/utils/getData.js"
-import { objectFromPath, switchFormatFunctions, setNestedObjectFromPath } from '~/utils/utils.js'
+import { objectFromPath, switchFormatFunctions  } from '~/utils/utils.js'
 
 import axios from 'axios'
+
+
+ const copyData = ( respData, store, dataRef, log ) => {
+
+  // COPY A SLICE TO ...
+    
+  for ( let dataCopy of dataRef.copyTo ){
+    
+    log  && console.log('\n... -MW- getDataInit / dataCopy :' , dataCopy )
+    log  && console.log('... -MW- getDataInit / respData :' , respData )
+
+    // get source data
+    const value = respData[ dataCopy.from.objectRef ]
+    log  && console.log('... -MW- getDataInit / value :' , value )
+    if ( dataCopy.fieldToCopy ) { value = value && value[ dataCopy.fieldToCopy ] }
+    if ( dataCopy.format ) {
+      value = switchFormatFunctions( value, dataCopy.format )
+    }
+
+    let targetData = { 
+      value : value,
+      specialStoreId : dataCopy.toSpecialStore,
+      }
+
+    store.dispatch( 'data/setNestedData' , targetData )
+    // store.commit('data/setDeepNestedData', targetData )
+
+  }
+}
 
 export default function ({ store, app, redirect }) {
 
@@ -44,12 +73,16 @@ export default function ({ store, app, redirect }) {
           resolve( dataRef.rawObject )
         })
         .then( resp => {
-          // log && console.log('-MW- getDataInit / dataset.id', dataset.id,' / res :' , resp )
+
+          log && console.log('-MW- getDataInit / dataset.id', dataset.id,' / res :' , resp )
           dataset.data = resp
           store.commit('data/pushToInitData', dataset)
           // COPY IT TO data/displayedData
           if ( dataRef.displayed ){
             store.commit('data/pushToDisplayedData', dataset)
+          }
+          if ( dataRef.copyTo && dataRef.copyTo.length > 0 ){
+            copyData( resp, store, dataRef, log )
           }
         })
         promisesArray.push( initDataFromObjectPromise )
@@ -77,39 +110,34 @@ export default function ({ store, app, redirect }) {
           
           // COPY A SLICE TO ...
           if ( dataRef.copyTo && dataRef.copyTo.length > 0 ){
+            
+            // copyData( resp, store, dataRef, log )
+
             for ( let dataCopy of dataRef.copyTo ){
-              log  && console.log('\n... -MW- getDataInit / dataset.id', dataset.id,' / dataCopy.fieldToCopy :' , dataCopy.fieldToCopy )
+              
+              log  && console.log('\n... -MW- getDataInit / dataset.id : ', dataset.id,' / dataCopy.fieldToCopy :' , dataCopy.fieldToCopy )
               
               // get source data
               const sourceObject = resp.data[ dataCopy.from.objectRef ]
-              const value = sourceObject && sourceObject[ dataCopy.fieldToCopy ]
+              const value = sourceObject
+              if ( dataCopy.fieldToCopy ) { value = sourceObject && sourceObject[ dataCopy.fieldToCopy ] }
               if ( dataCopy.format ) {
                 value = switchFormatFunctions( value, dataCopy.format )
               }
+              log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / value :' , value )
 
-              log  && console.log('... -MW- getDataInit / dataset.id', dataset.id,' / value :' , value )
+              let targetData = { 
+                // store : dataCopy.toDataStore,
+                // id : dataCopy.toId,
+                // path : dataCopy.toDataPath,
+                value : value,
+                specialStoreId : dataCopy.toSpecialStore,
+               }
 
-              // get target dataset 
-              let getterName, setterName 
-              switch( dataCopy.toDataStore ){
-                case 'displayedData' : 
-                  getterName = 'data/getFromDisplayedData' ; 
-                  setterName = 'data/pushToDisplayedData' ; 
-                  break ; 
-                case 'initData' : 
-                  getterName = 'data/getFromInitData' ; 
-                  setterName = 'data/pushToInitData' ; 
-                break ; 
-              }
-              let targetData_ = store.getters[ getterName ]( dataCopy.toId ) 
-              let targetData = { ...targetData_ }
-              log  && console.log('... -MW- getDataInit / dataset.id', dataset.id,' / targetData (before):' , targetData )
-              
-              let targetDataset = targetData.data
-              let modifiedData = setNestedObjectFromPath( dataCopy.toDataPath, value, targetDataset )
-              targetData.data = modifiedData
-              log  && console.log('... -MW- getDataInit / dataset.id', dataset.id,' / targetData (after):' , targetData )
-              // store.commit( setterName , targetData )
+              log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / targetData :' , targetData )
+
+              store.dispatch( 'data/setNestedData' , targetData )
+              // store.commit('data/setDeepNestedData', targetData )
 
             }
           }

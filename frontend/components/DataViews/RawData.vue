@@ -7,9 +7,19 @@
 
 <template>
 
-  <div>
-    RawData- settings.id : {{ settings.id  }}
-  </div>
+  <v-container
+    :id="`rawdata-${ settings.id }`"
+    :class="``"
+    :trigger="`${trigger}`"
+    >
+
+    <v-layout>
+
+      RawData- settings.id : {{ settings.id  }}
+
+    </v-layout>
+
+  </v-container>
 
 </template>
 
@@ -53,6 +63,7 @@
       ...mapState({
         log : state => state.log, 
         locale : state => state.locale,
+        trigger : state => state.data.triggerChange,
       }),
 
       ...mapGetters({

@@ -2,6 +2,10 @@
   <v-app >
 
 
+    <!-- DYNAMIC CSS -->
+    <DynamicCSS/>
+
+    
     <!-- LEFT DRAWER -->
     <Drawer/>
 
@@ -25,7 +29,6 @@
         >
         <nuxt />
       </v-container>
-    
     </v-content>
 
 
@@ -45,7 +48,7 @@
                 mdi-repeat
               </v-icon>
             </v-list-item-action>
-            <v-list-item-title>Switch drawer (click me)</v-list-item-title>
+            <v-list-item-title>Switch drawer (click me) </v-list-item-title>
           </v-list-item>
         </v-list>
       </v-navigation-drawer> 
@@ -63,6 +66,8 @@
 <script>
 
   import { mapState, mapGetters } from 'vuex'
+
+  import DynamicCSS from '~/components/UI/DynamicCSS.vue'
 
   import Navbar from '~/components/UX/Navbar.vue'
   import Drawer from '~/components/UX/Drawer.vue'
@@ -90,6 +95,7 @@
     },
 
     components: {
+      DynamicCSS,
       Navbar,
       Drawer,
       Filters,

@@ -5,8 +5,6 @@ export const configAppNumbers = {
 
   // NUMBERS
 
-
-
   settingsIds : [
 
     { id : "numbers-01",
@@ -24,45 +22,33 @@ export const configAppNumbers = {
           columns : [
 
             { colName : '',
-              colTitle : { fr : '' },
+              colTitle : { fr : 'total montant des aides' },
+              titleI18n : 'numbers.numbers01.amount',
               colClass : '',
               cols : 6,
+              titleClass : '',
               numberClass : '',
               legendClass : '',
               unit : { fr : 'M€' },
               legend : { fr : '' },
               textPrefix : { fr : '' },
               textSuffix : { fr : '' },
-              displayedData : [
-                { 
-                  name : 'displayed data : numbers.montant', 
-                  title : { fr : "total montant des aides"},
-                  titleI18n : 'numbers.numbers01.amount',
-                  id : 'infos',
-                  field : 'numbers.montant',
-                },
-              ],
+              specialStoreId : 'montant',
             },
 
             { colName : '',
-              colTitle : { fr : '' },
+              colTitle : { fr : "nombre d'aides demandées" },
+              titleI18n : 'numbers.numbers01.total',
               colClass : '',
               cols : 6,
+              titleClass : '',
               numberClass : '',
               legendClass : '',
               unit : { fr : 'aides' },
               legend : { fr : '' },
               textPrefix : { fr : '' },
               textSuffix : { fr : '' },
-              displayedData : [
-                { 
-                  name : 'displayed data : numbers.aides',
-                  title : { fr : "nombre d'aides demandées"},
-                  titleI18n : 'numbers.numbers01.total',
-                  id : 'infos',
-                  field : 'numbers.nombre',
-                },
-              ],
+              specialStoreId : 'nombre',
             },
 
           ],

@@ -696,7 +696,8 @@ export default {
     padding: 1.5em
   }
   .map { 
-    height: calc(100vh - 120px); 
+    /* height: calc(100vh - 120px);  */
+    height: 100%;
     width: 100%;
     position: relative;
   }

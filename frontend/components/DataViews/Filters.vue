@@ -13,6 +13,7 @@
     dense
     :fixed="true"
     :class="``"
+    :trigger="`${trigger}`"
     >
 
     <v-spacer></v-spacer>
@@ -93,6 +94,7 @@
       ...mapState({
         log : state => state.log, 
         locale : state => state.locale,
+        trigger : state => state.data.triggerChange,
 
         filters : state => state.data.filters,
         filtersUX : state => state.configUX.filters, 
@@ -101,7 +103,8 @@
       }),
 
       ...mapGetters({
-        getCurrentLocale : 'getCurrentLocale'
+        getCurrentLocale : 'getCurrentLocale',
+        getSpecialStore : 'data/getSpecialStore',
       }),
 
     },

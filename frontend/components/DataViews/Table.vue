@@ -8,27 +8,36 @@
 <template>
 
 
+  <v-container
+    :id="`table-${ settings.id }`"
+    :class="``"
+    :trigger="`${trigger}`"
+    >
 
-  <v-card>
-    <v-card-title>
-      Nutrition
-      <v-spacer></v-spacer>
-      <v-text-field
-        v-model="search"
-        append-icon="mdi-magnify"
-        label="Search"
-        single-line
-        hide-details
-      ></v-text-field>
-    </v-card-title>
-    <v-data-table
-      :headers="headers"
-      :items="desserts"
-      :search="search"
-    ></v-data-table>
-  </v-card>
+    <v-layout>
 
+      <v-card>
+        <v-card-title>
+          Nutrition
+          <v-spacer></v-spacer>
+          <v-text-field
+            v-model="search"
+            append-icon="mdi-magnify"
+            label="Search"
+            single-line
+            hide-details
+          ></v-text-field>
+        </v-card-title>
+        <v-data-table
+          :headers="headers"
+          :items="desserts"
+          :search="search"
+        ></v-data-table>
+      </v-card>
 
+    </v-layout>
+
+  </v-container>
 
 </template>
 
@@ -171,11 +180,13 @@
       ...mapState({
         log : state => state.log, 
         locale : state => state.locale,
+        trigger : state => state.data.triggerChange,
       }),
 
       ...mapGetters({
         getCurrentLocale : 'getCurrentLocale',
-        getDataViewConfig : 'getDataViewConfig'
+        getDataViewConfig : 'getDataViewConfig',
+        getSpecialStore : 'data/getSpecialStore',
       }),
 
       // config

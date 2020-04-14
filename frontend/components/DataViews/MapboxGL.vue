@@ -15,6 +15,7 @@
 
   <div 
     :class="`map`"
+    :trigger="`${trigger}`"
     >
 
     <style type="text/css">
@@ -92,7 +93,7 @@
     <no-ssr>
       
       <MglMap
-        :access-token="'noToken'"
+        access-token=""
         :mapStyle.sync="mapOptions.mapStyle"
         :center="mapOptions.center"
         :zoom="mapOptions.zoom"
@@ -141,6 +142,8 @@ import bbox from '@turf/bbox'
 import axios from 'axios'
 import { getDataFromUrl } from "~/utils/getData.js"
 import { transformDataset, buildProperties } from "~/utils/mapbox.js"
+
+import { objectFromPath, switchFormatFunctions } from '~/utils/utils.js'
 
 import { StylesOSM } from '~/config/mapboxVectorStyles.js'
 
@@ -206,11 +209,12 @@ export default {
 
     let mapOptions = {
 
-      // mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
-      mapStyle      : StylesOSM[ 'testRasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
+      // mapStyle      : StylesOSM[ 'testRasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
+      // mapStyle      : StylesOSM[ 'EtalabRaw' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'RasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'EtalabUrl' ], // EtalabFile | testRasterVoyager | RasterVoyager
       
+      mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
       zoom          : mapOptionsRoute.zoom,
       maxZoom       : mapOptionsRoute.maxZoom,
       minZoom       : mapOptionsRoute.minZoom,
@@ -270,11 +274,14 @@ export default {
       log : state => state.log, 
       locale : state => state.locale,
       mapUI : state => state.configUI.map,
+      trigger : state => state.data.triggerChange,
     }),
 
     ...mapGetters({
       getCurrentLocale : 'getCurrentLocale',
       getDataViewConfig : 'getDataViewConfig',
+      getFromInitData : 'data/getFromInitData',
+      getFromDisplayedData : 'data/getFromDisplayedData',
     }),
 
     // config
@@ -292,7 +299,7 @@ export default {
   methods : {
 
     ...mapActions({
-      // setDisplayedDataset : 'data/setDisplayedDataset',
+      setNestedData : 'data/setNestedData',
     }),
 
     // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
@@ -448,7 +455,7 @@ export default {
                 
                 let featuresItem = mapbox.queryRenderedFeatures( e.point, { layers: [ clicEvent.layer ] } )
                 
-                if ( typeof featuresItem !== 'undefined' ){
+                if ( typeof featuresItem !== 'undefined' && featuresItem.length > 0 ){
 
                   let item       = featuresItem[0]
                   let itemSource = item.source
@@ -471,19 +478,18 @@ export default {
                       source   : itemSource,
                       propName : funcParams.propName ,
                       prop     : itemProps[ funcParams.propName ],
+                      props    : itemProps,
                     }
 
                     switch( fn.funcName ){
 
                       case 'goToPolygon' : 
-                        params.dataFrom = 'map' ;
                         this.goToPolygon( params ) ;
                         break ; 
 
-                      case 'getChildrenPolygons' : 
+                      case 'setChildrenPolygons' : 
                         params.targets = funcParams.targets ;
-                        params.dataFrom = 'map' ;
-                        this.getChildrenPolygons( params) ;
+                        this.setChildrenPolygons( params) ;
                         break ; 
 
                       case 'updateDisplayedData' : 
@@ -491,10 +497,10 @@ export default {
                         this.updateDisplayedData( params ) ;
                         break ; 
 
-                      case 'updateQuery' : 
-                        params.targets = funcParams.targets ;
-                        this.updateQuery( params ) ;
-                        break ; 
+                      // case 'updateQuery' : 
+                      //   params.targets = funcParams.targets ;
+                      //   this.updateQuery( params ) ;
+                      //   break ; 
 
                       case 'toggleHighlightOn' : 
                         this.toggleHighlightOn(e, itemSource ) ; 
@@ -520,37 +526,104 @@ export default {
 
     // DATA INTERACTIONS - - - - - - - - - - - - - - - - - - //
 
-      getSourceData( params ){
+      getSourceData( params, from='map' ){
         
+        // this.log && console.log("\nC-MapboxGL / getSourceGeoData ... from : ", from)
+        // this.log && console.log("C-MapboxGL / getSourceGeoData ... params : ", params)
+
         let data
 
-        if ( params.dataFrom == 'map' ){
+        if ( from == 'map' ){
           let sourcesList = this.map.getStyle().sources
           // this.log && console.log("C-MapboxGL / getSourceGeoData ... sourcesList : ", sourcesList)
           let source = sourcesList && sourcesList[ params.source ]
           // this.log && console.log("C-MapboxGL / getSourceGeoData ... source : ", source)
           data = source && source.data.features.find( feat => feat.properties[ params.propName ] == params.prop )
-          // this.log && console.log("C-MapboxGL / getSourceGeoData ... geodata : ", geodata)
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... data : ", data)
         } 
-        if ( params.dataFrom == 'store' ){
 
+        if ( from == 'store' ){
+
+          // get data from store
+          let fromId = params.fromDatasetId
+          if ( params.fromStoreData == 'initData' ){ 
+            data = this.getFromInitData( fromId ).data
+          }
+          if ( params.fromStoreData == 'displayeData' ){ 
+            data = this.getFromDisplayedData( fromId ).data
+          }
+
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (1) : ", data)
+
+          // filter out from params
+          let itemKey = (params.fromPropKey) ? params.props[ params.fromPropKey ] : params.propValue
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... itemKey : ", itemKey)
+          const fromDatasetKey = params.fromDatasetKey
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... fromDatasetKey : ", fromDatasetKey )
+          if ( Array.isArray(data) ) {
+            data = data.find( i => i[ fromDatasetKey ] == itemKey )
+            // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (2a) : ", data)
+          } else {
+            data = ( fromDatasetKey ) ? data[ fromDatasetKey ] : data
+            // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (2a) : ", data)
+            data = data[ itemKey ]
+            // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (2b) : ", data)
+          }
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (3) : ", data)
+
+          // retrieve correct field
+          data = ( params.fromDatasetField ) ? data[ params.fromDatasetField ] : data
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (3) : ", data)
         }
         
         return data
       },
 
       updateDisplayedData( params ){
-        this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
+
+        // this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
+        // this.log && console.log("\nC-MapboxGL / updateDisplayedData  : ", "+ ".repeat(10) )
+        
+        for (let targetParams of params.targets ){
+
+          // 1 - get data for the update
+          targetParams.prop = params.prop
+          targetParams.propName = params.propName
+          targetParams.props = params.props
+
+          let value = this.getSourceData( targetParams, targetParams.from )
+          // this.log && console.log("C-MapboxGL / updateDisplayedData ... value : ", value )
+
+          if ( targetParams.format ) {
+            value = switchFormatFunctions( value, targetParams.format )
+          }
+          // 2 - then update displayed data
+          let targetData = { 
+            // store : 'displayedData',
+            // id : targetParams.targetDatasetId,
+            // path : targetParams.targetValuePath,
+            value : value,
+            specialStoreId : targetParams.targetSpecialStoreId,
+          }
+          // this.$store.commit('data/setDeepNestedData', targetData )
+          this.$store.dispatch('data/setNestedData', targetData )
+          
+        }
+
+        this.$store.commit('data/toggleTrigger' )
+
+      },
+
+
+      // TO DO ...
+      setChildrenPolygons( params ){
+        this.log && console.log("\nC-MapboxGL / setChildrenPolygons ... params : ", params )
         let geodata = this.getSourceData( params )
-        this.log && console.log("C-MapboxGL / updateDisplayedData ... geodata : ", geodata )
-
       },
+
+      // TO DO ...
       updateQuery( params ){
-        this.log && console.log("\nC-MapboxGL / updateQuery ... params : ", params )
-      },
-
-      getChildrenPolygons( params ){
-        this.log && console.log("\nC-MapboxGL / getChildrenPolygons ... params : ", params )
+        // this.log && console.log("\nC-MapboxGL / updateQuery ... params : ", params )
       },
 
 
@@ -784,7 +857,8 @@ export default {
     padding: 1.5em
   }
   .map { 
-    height: calc(100vh - 120px); 
+    height: calc(100vh - 64px); 
+    /* height: calc(100vh); */
     width: 100%;
     position: relative;
   }

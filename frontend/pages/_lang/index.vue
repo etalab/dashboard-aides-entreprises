@@ -29,12 +29,6 @@
           :id="'R'+index+'-C'+i"
           :class="`${col.colClass} ${ col.positionFixed ? '' : '' }`"
           >
-          <!-- :cols="col.cols" -->
-          <!-- :xs="col.xs"
-          :sm="col.sm"
-          :md="col.md"
-          :lg="col.lg"
-          :xl="col.xl" -->
 
           <template
             v-if="col.activated"
@@ -66,7 +60,12 @@
               />
               
               <ApexChart
-                v-if="colRow.activated && colRow.component == 'chart' "
+                v-if="colRow.activated && colRow.component == 'apexchart' "
+                :settings="colRow.settings"
+              />
+
+              <ChartJS
+                v-if="colRow.activated && colRow.component == 'chartjs' "
                 :settings="colRow.settings"
               />
 
@@ -74,11 +73,6 @@
                 v-if="colRow.activated && colRow.component == 'table' "
                 :settings="colRow.settings"
               />
-
-
-              <br>
-              <hr>
-              <br>
 
             </v-row>
             
@@ -106,6 +100,7 @@
 
   import MapboxGL from '~/components/DataViews/MapboxGL.vue'
   import Numbers from '~/components/DataViews/Numbers.vue'
+  import ChartJS from '~/components/DataViews/ChartJS.vue'
   import ApexChart from '~/components/DataViews/ApexChart.vue'
   import TextFrame from '~/components/DataViews/TextFrame.vue'
   import Table from '~/components/DataViews/Table.vue'
@@ -118,6 +113,7 @@
       Filters,
       MapboxGL,
       Numbers,
+      ChartJS,
       ApexChart,
       TextFrame,
       Table,

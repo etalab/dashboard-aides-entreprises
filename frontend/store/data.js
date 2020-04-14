@@ -1,4 +1,4 @@
-import { objectFromPath } from '~/utils/utils.js'
+import { objectFromPath, setNestedObjectFromPath, setDeep } from '~/utils/utils.js'
 
 
 export const state = () => ({
@@ -25,6 +25,8 @@ export const state = () => ({
 
   // DISPLAYED DATA
   displayedData : undefined,
+  specialStore : {},
+  triggerChange : 1,
 
 })
 
@@ -34,14 +36,12 @@ export const getters = {
   // BACKEND
 
   getBackendApi : (state, getters) => {
-    // state.log && console.log("S-data-G-getBackendApi ...")
     return state.backendApi
   },
 
   // FILTERS
 
   getActivatedFilters : (state) => {
-    // state.log && console.log("S-data-G-getActivatedFilters ...")
     return state.activatedFilters
   },
 
@@ -49,13 +49,15 @@ export const getters = {
   // DATASETS
   
   getFromInitData : (state) => ( id ) => {
-    // state.log && console.log("S-data-G-getFromInitData / id : ", id )
-    // state.log && console.log("S-data-G-getFromInitData / state.initData : ", state.initData )
     return state.initData.find( dataset => dataset.id == id )
   },
 
   getFromDisplayedData : (state) => ( id ) => {
     return state.displayedData && state.displayedData.find( dataset => dataset.id == id )
+  },
+
+  getFromSpecialStore : (state) => ( id ) => {
+    return state.specialStore.find( dataset => dataset.id == id )
   },
 
   selectFromDisplayedData : ( state, getters ) => ( paramsArray ) => {
@@ -68,6 +70,10 @@ export const getters = {
       resultsArray.push( result )
     }
     return resultsArray
+  },
+
+  getSpecialStore : (state) => {
+    return state.specialStore
   },
 
 
@@ -83,29 +89,36 @@ export const mutations = {
   // DATASETS 
 
   pushToInitData (state, dataset){
-    // state.log && console.log("... S-data-M-pushToInitData / dataset.id : ", dataset.id)
-    // state.log && console.log("... S-data-M-pushToInitData / dataset : ", dataset)
-    // state.log && console.log("... S-data-M-pushToInitData / state.initData : ", state.initData)
     if ( !state.initData ){ state.initData = [] }
     state.initData.push( dataset )
   },
 
   pushToDisplayedData (state, dataset){
-    // state.log && console.log("... S-data-M-pushToDisplayedData / dataset.id  : ", dataset.id )
     if ( !state.displayedData ){ state.displayedData = [] }
     state.displayedData.push( dataset )
   },
 
-  
+  setInitDataset (state, dataset ){
+    state.log && console.log("S-data-M-setInitDataset / dataset.id  : ", dataset.id )
+    let foundIndex = state.initData.findIndex( x => x.id == dataset.id )
+    state.initData[ foundIndex ] = dataset 
+  },
+
   setDisplayedDataset (state, dataset ){
     state.log && console.log("S-data-M-setDisplayedDataset / dataset.id  : ", dataset.id )
     let foundIndex = state.displayedData.findIndex( x => x.id == dataset.id )
     state.displayedData[ foundIndex ] = dataset 
   },
 
-  // setData (state, data) {
 
-  // },
+  toggleTrigger (state) {
+    state.triggerChange = state.triggerChange*(-1)
+  }, 
+
+  setDeepNestedData (state, targetData ){
+    state.log && console.log("S-data-M-setDeepNestedData / targetData  : ", targetData )
+    state.specialStore[ targetData.specialStoreId ] = targetData.value
+  },
 
 
   // FILTERS
@@ -131,7 +144,7 @@ export const actions = {
 
   // DATASETS
 
-  setDisplayedDataset({state, getters, commit}, updatedDataset ) {
+  setDisplayedDataset( {state, getters, commit}, updatedDataset ) {
 
     // state.log && console.log("S-data-A-setDisplayedDataset / updatedDataset.id  : ", updatedDataset.id )
    
@@ -146,6 +159,15 @@ export const actions = {
     }
 
   },
+
+  setNestedData ( {state, commit, getters}, targetData ) {
+    // state.log && console.log("S-data-A-setNestedData / targetData  : ", targetData )
+    // state.log && console.log("S-data-A-setNestedData / getters.getSpecialStore (1) : ", getters.getSpecialStore )
+    commit( 'setDeepNestedData', targetData )
+    // state.log && console.log("S-data-A-setNestedData / getters.getSpecialStore (2) : ", getters.getSpecialStore )
+
+  },
+
 
 
 

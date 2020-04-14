@@ -6,75 +6,84 @@ export const configAppCharts = {
   // CHARTS
 
   settingsIds : [
+    
+    // TO DO 
+    // CHARTS JS
+    { id : "chartjs-01",
+      help: 'APE chart', 
+      chartOptions : {
 
+      },
+    },
+
+
+    // APEX CHARTS
     { // BAR HORIZ - SETTINGS EXAMPLE
-      id : "chart-01",
+      id : "apexchart-01",
       serie_id : "stat-bar-horiz",
-      help : "bar horiz + stacked example",
+      help : "bar horiz / kpi_top_10_naf X montant",
       titleI18n : "charts.chart01.title",
-      
-      loadSeriesFrom : {
-        preload : false,
-        sourceType : "json", // json, api, local
-        sourceName : "...",
-      },
+      chartTitle : { fr : 'top 10 des aides par code NAF (en M€)' },
 
-      loadCategoriesFrom : {
-        preload : false,
-        sourceType : "json", // json, api, local
-        sourceName : "...",
-      },
+      datasetMappers : {
 
-      series: [
-        {
-          data: [
-            400, 
-            430, 
-            448, 
-            470, 
-            540, 
-            580, 
-            690, 
-            1100, 
-            1200, 
-            1380
-          ]
-        }
-      ],
-      chartOptions: {
-        chart: {
-          type: 'bar',
-          height: 350,
-          width : 400, 
-        },
-        plotOptions: {
-          bar: {
-            horizontal: true,
+        specialStoreId : 'focusObject',
+        fromDatasetKey : 'kpi_top_10_naf',
+
+        seriesMappers : [
+          { dataFromKey : 'montant',
+            format : [
+              { utilsFnName : 'toMillionsOrElse',
+                params : { divider: 1000000, fixed:2 },
+              },
+            ],
+            buildAxisCategsX : true,
+            buildAxisCategsXsettings : {
+              fromKey : 'libelle_division_naf',
+            }
           }
+        ],
+
+        chartOptions: {
+          chart: {
+            type: 'bar',
+            height: 300,
+            width : 400, 
+          },
+          plotOptions: {
+            bar: {
+              horizontal: true,
+            }
+          },
+          dataLabels: {
+            enabled: true
+          },
+          // xaxis: {
+          //   categories: [
+          //   ],
+          // }
         },
-        dataLabels: {
-          enabled: true
-        },
-        xaxis: {
-          categories: [
-            'South Korea', 
-            'Canada', 
-            'United Kingdom', 
-            'Netherlands', 
-            'Italy', 
-            'France', 
-            'Japan',
-            'United States', 
-            'China', 
-            'Germany'
-          ],
-        }
       },
+
+      // TO DO ...
+
+      // loadSeriesFrom : {
+      //   preload : false,
+      //   sourceType : "json", // json, api, local
+      //   sourceName : "...",
+      // },
+
+      // loadCategoriesFrom : {
+      //   preload : false,
+      //   sourceType : "json", // json, api, local
+      //   sourceName : "...",
+      // },
+
 
     },
 
     { // BAR VERTIC - SETTINGS EXAMPLE
-      id : "chart-02",
+      id : "apexchart-02",
       serie_id : "stat-bar-vertic",
       help : "bar vertic + stacked example",
       titleI18n : "charts.chart02.title",

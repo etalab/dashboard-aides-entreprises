@@ -1,14 +1,19 @@
 <template>
-  <div>
 
+  <div id="dynamic-css">
 
-    <style type="text/css">
-
-
+    <style 
+      v-for="(css, index) in configCSS"
+      :key="index"
+      type="text/css"
+      >
+      {{ css.class }}{{ css.field }} {
+        {{ css.config }}
+      }
     </style>
 
-
   </div>
+
 </template>
 
 
@@ -39,7 +44,11 @@ export default {
   computed: {
 
     ...mapState({
+      log : state => state.log,
       locale : state => state.locale,
+
+      configCSS : state => state.configUI.customCSS,
+
     }),
 
     ...mapGetters({

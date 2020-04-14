@@ -111,37 +111,58 @@ export const configAppUIUX = {
     themes : {
 
       light : {
-        primary   : "#2e2265",
+        primary   : "#000091",
         accent    : "#572a99",
-        secondary : "#de4a5b",
-        info      : "#cbc8d8",
-        warning   : "#FFC107",
-        error     : "#FF5252",
-        success   : "#00BCD4"
+        secondary : "#b1133b",
+        info      : "#53657D",
+        warning   : "#ff9947",
+        error     : "#D1335B;",
+        success   : "#03BD5B"
       },
 
       dark : {
-        primary   : "#2e2265",
+        primary   : "#000091",
         accent    : "#572a99",
-        secondary : "#de4a5b",
-        info      : "#cbc8d8",
-        warning   : "#FFC107",
-        error     : "#FF5252",
-        success   : "#00BCD4"
+        secondary : "#b1133b",
+        info      : "#53657D",
+        warning   : "#ff9947",
+        error     : "#D1335B;",
+        success   : "#03BD5B"
       },
 
     },
 
     map : {
       loader : {
-        color : '#de4a5b',
+        color : '#000091',
         width: '6px',
         height: '6px',
       },
     },
 
     typos : {
-    }
+    },
+
+    customCSS : [
+
+      { field : 'button-container',
+        class : '.',
+        config: `
+          background-color: #fff;
+          border-bottom: 1px solid #000091;
+          border-right: 1px solid #000091;
+          margin: .3em;
+        `,
+      },
+      { field : 'btn-selected',
+        class : '.',
+        config: `
+          color: #FFF;
+          background-color: #000091;
+        `,
+      },
+
+    ]
 
   },
 

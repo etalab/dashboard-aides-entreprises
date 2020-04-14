@@ -1,4 +1,5 @@
 console.log('+ + + utils/utils... ')
+import Vue from 'vue'
 
 // PURE UTILS
 
@@ -49,10 +50,19 @@ export function objectFromPath( obj, path, separator='.'){
   return object
 }
 
+// - - - - - - - - - - - - - - - - - - - //
+// SET NESTED OBJECT FROM PATH 
+// - - - - - - - - - - - - - - - - - - - //
+
+export function cloneObject ( obj ){
+  return JSON.parse(JSON.stringify( obj ))
+}
+
 export function setNestedObjectFromPath( path, value, obj, separator='.'){
   
-  // console.log("\n+ + + setNestedObjectFromPath / obj : ", obj)
+  // console.log("+ + + setNestedObjectFromPath / obj : ", obj)
   // console.log("+ + + setNestedObjectFromPath / path : ", path)
+  // console.log("+ + + setNestedObjectFromPath / value : ", value)
 
   // from : https://medium.com/data-scraper-tips-tricks/safely-read-write-in-deeply-nested-objects-js-a1d9ddd168c6
   // this is a super simple parsing, you will want to make this more complex to handle correctly any path
@@ -73,6 +83,49 @@ export function setNestedObjectFromPath( path, value, obj, separator='.'){
   }
 }
 
+export function setDeep( path, value, obj, setrecursively = false, separator='.') {
+
+  let pathWay = Array.isArray(path) ? path : path.split( separator )
+
+  console.log("+ + + setDeep / pathWay : ", pathWay)
+  console.log("+ + + setDeep / value : ", value)
+  console.log("+ + + setDeep / obj : ", obj)
+
+  pathWay.reduce((a, b, level) => {
+    if (setrecursively && typeof a[b] === "undefined" && level !== pathWay.length){
+      a[b] = {};
+      return a[b];
+    }
+    if (level === pathWay.length){
+      a[b] = value;
+      return value;
+    } 
+    return a[b];
+  }, obj);
+}
+
+
+
+// Example: to set a new property foo.bar.baz = true on a Vuex state object 
+// you would call setProp(state, ['foo', 'bar', 'baz'], true). 
+// The function creates any nested properties that don't already exist.
+
+// export function setProp (obj, props, value) {
+//   const prop = props.shift()
+//   if (!obj[prop]) {
+//     Vue.set(obj, prop, {})
+//   }
+//   if (!props.length) {
+//     if (value && typeof value === 'object' && !Array.isArray(value)) {
+//       obj[prop] = { ...obj[prop], ...value }
+//     } else {
+//       obj[prop] = value
+//     }
+//     return
+//   }
+//   setProp(obj[prop], props, value)
+// }
+
 // - - - - - - - - - - - - - - - - - - - //
 // FORMAT VALUES
 // - - - - - - - - - - - - - - - - - - - //
@@ -88,11 +141,12 @@ export function toFloat (x, params=undefined) {
 }
 
 export function switchFormatFunctions ( value, format) {
+  let val = value
   format.forEach( fn => {
     switch( fn.utilsFnName ){
-      case 'toMillionsOrElse' : value = toMillionsOrElse( value, fn.params  ); break; 
-      case 'toFloat'          : value = toFloat( value, fn.params  ); break; 
+      case 'toMillionsOrElse' : val = toMillionsOrElse( val, fn.params  ); break; 
+      case 'toFloat'          : val = toFloat( val, fn.params  ); break; 
     }
   })
-  return value
+  return val
 }

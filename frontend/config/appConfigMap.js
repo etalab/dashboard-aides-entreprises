@@ -14,8 +14,8 @@
   }
 
   const circlePaintAides = {
-    'circle-opacity': 0.6,
-    'circle-color': '#8393A7',
+    'circle-opacity': 0.4,
+    'circle-color': '#000091',
     'circle-radius': [
       'interpolate', ['linear'],
       ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
@@ -205,22 +205,67 @@ export const configAppMap = {
                   funcParams  : { 
                     propName : 'code', 
                     targets : [
-                      { from : 'store' , targetDatasetId : 'infos', targetValuePath : 'texts.level.name' },
-                      // { from : 'map' , targetDatasetId : 'infos', targetValuePath : 'texts.level.name' },
-                      // { from : 'store' , targetDatasetId : 'infos', targetValuePath : 'texts.level.name' },
-                      // { from : 'store' , targetDatasetId : 'infos', targetValuePath : 'texts.level.name' },
-                      // { from : 'store' , targetDatasetId : 'infos', targetValuePath : 'texts.level.name' },
+
+                      { from : 'store', 
+                        fromPropKey : undefined,
+                        propValue : 'regional',
+                        fromStoreData : 'initData',
+                        fromDatasetId : 'infos',
+                        fromDatasetKey : 'switchers',
+                        fromDatasetField : undefined,
+                        targetSpecialStoreId : 'levelname', 
+                      },
+
+                      { from : 'store',
+                        fromPropKey : 'code', // use props region code
+                        fromStoreData : 'initData',
+                        fromDatasetId : 'regions-aides-raw',
+                        fromDatasetKey : 'reg',
+                        fromDatasetField : 'nombre',
+                        targetSpecialStoreId : 'nombre', 
+                      },
+
+                      { from : 'store',
+                        fromPropKey : 'code', // use props region code
+                        fromStoreData : 'initData',
+                        fromDatasetId : 'regions-aides-raw',
+                        fromDatasetKey : 'reg',
+                        fromDatasetField : 'montant',
+                        targetSpecialStoreId : 'montant', 
+                        format : [
+                          { utilsFnName : 'toMillionsOrElse',
+                            params : { divider: 1000000, fixed:2 },
+                          },
+                        ],
+                      },
+
+                      { from : 'store',
+                        fromPropKey : 'code', // use props region code
+                        fromStoreData : 'initData',
+                        fromDatasetId : 'regions-aides-raw',
+                        fromDatasetKey : 'reg',
+                        fromDatasetField : undefined,
+                        targetDatasetId : 'infos', 
+                        targetSpecialStoreId : 'focusObject', 
+                      },
+
                     ]
                   },
                 },
-                { funcName : 'getChildrenPolygons',
+
+
+                { funcName : 'setChildrenPolygons',
                   funcParams  : { 
                     propName : 'code', 
                     targets : [ 
-                      { targetSource : 'departement', targetPropName : 'region' },
+                      { targetSource : 'departement', 
+                        targetPropName : 'region' 
+                      },
                     ],
                   }
                 },
+
+
                 // { funcName : 'updateQuery',
                 //   funcParams  : { 
                 //     propName : 'code',

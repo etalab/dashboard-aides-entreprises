@@ -31,14 +31,15 @@ export const configAppTexts = {
               legendClass : '',
               textPrefix : { fr : 'Aides versées - ' },
               textSuffix : { fr : '' },
-              displayedData : [
-                { name : 'displayed data : level.montant', 
-                  title : { fr : "texte"},
-                  titleI18n : 'texts.text01.titre',
-                  id : 'infos',
-                  field : 'texts.levels.name',
-                }
-              ],
+              specialStoreId : 'levelname',
+              // displayedData : [
+              //   { name : 'displayed data : level.montant', 
+              //     title : { fr : "texte"},
+              //     titleI18n : 'texts.text01.titre',
+              //     id : 'infos',
+              //     field : 'texts.levels.name',
+              //   }
+              // ],
             },
           
           ]

@@ -10,18 +10,13 @@
   <v-container
     :id="`numbers-${ settings.id }`"
     :class="``"
+    :trigger="`${trigger}`"
     >
 
     <!-- 
     <div>
       Numbers- settings.id : {{ settings.id  }} test
     </div> 
-    -->
-
-    <!-- 
-    <code>
-      {{ viewConfig }}
-    </code> 
     -->
 
     <v-divider
@@ -48,18 +43,27 @@
           >
 
           <!-- NUMBER TITLE -->
-          <h3
-            :class="``"
+          <p
+            :class="`${col.titleClass}`"
             >
+            <!-- {{ trigger }}
+            ///  -->
             {{ col.colTitle[ locale ] }}
-          </h3>
+          </p>
+
+        </v-layout>
+
+        <v-layout
+          :class="`d-flex justify-center`"
+          >
 
           <!-- NUMBER FROM DISPLAYED DATA -->
           <p 
-            :class="``"
+            :class="`${col.numberClass}`"
             >
             <!-- <code> -->
-            {{ getDisplayedData( col.displayedData).join(' ') }}
+            <!-- {{ col.specialStore }} - -->
+            {{ getSpecialStore[ col.specialStoreId ] }}
             {{ col.unit[ locale ] }}
             <!-- </code> -->
           </p> 
@@ -77,7 +81,16 @@
 
     </v-row>
 
-  
+
+    <!-- <code>
+      specialStore[ 'nombre']  : 
+      {{ getSpecialStore[ 'nombre' ] }}
+    </code>  -->
+    <!-- <code>
+      specialStore.nombre  : 
+      {{ getSpecialStore.nombre  }}
+    </code>  -->
+
     <v-divider
       v-if="getLocalConfig.dividers.after"
       >
@@ -113,12 +126,16 @@
     },
 
     watch: {
+      // trigger(next, prev){
+
+      // }
     },
 
     data(){
       return {
         dataViewType : 'numbers',
         viewConfig : undefined,
+
       }
     },
 
@@ -127,12 +144,14 @@
       ...mapState({
         log : state => state.log, 
         locale : state => state.locale,
+        trigger : state => state.data.triggerChange,
       }),
 
       ...mapGetters({
         getCurrentLocale : 'getCurrentLocale',
         getDataViewConfig : 'getDataViewConfig',
         selectFromDisplayedData : 'data/selectFromDisplayedData',
+        getSpecialStore : 'data/getSpecialStore',
       }),
 
       // config
@@ -144,6 +163,7 @@
         let localConfig = this.getDataViewConfig( viewId )
         return localConfig
       },
+
 
     },
     

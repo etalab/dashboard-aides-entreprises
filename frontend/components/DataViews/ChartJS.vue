@@ -1,7 +1,13 @@
 
 
 <style scoped>
-
+.stats-container {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  box-shadow: rgb(201, 211, 223) 0px 1px 4px;
+}
 </style>
 
 
@@ -10,6 +16,7 @@
   <v-container
     :id="`charts-${ settings.id }`"
     :class="``"
+    :trigger="`${trigger}`"
     >
 
     <v-layout
@@ -33,6 +40,13 @@
       justify-center
       >
 
+      <!-- 
+      <ChartBar 
+        :chart-data="APEChartData"
+        :optionsSettings=""
+        >
+      </ChartBar>
+      -->
 
     </v-layout>
 
@@ -45,12 +59,14 @@
 <script>
 
   import { mapState, mapGetters, mapActions } from 'vuex'
+  import ChartBar from '~/components/DataViews/ChartBar.vue'
 
   export default {
     
     name: 'Chartjs',
 
     components: {
+      ChartBar,
     },
     
     props : [
@@ -88,6 +104,7 @@
       ...mapState({
         log : state => state.log, 
         locale : state => state.locale,
+        trigger : state => state.data.triggerChange,
       }),
 
       ...mapGetters({
@@ -104,6 +121,35 @@
         let localConfig = this.getDataViewConfig( viewId )
         return localConfig
       },
+
+      // stats () {
+      //   return this.$store.state.stats
+      // },
+      // aides () {
+      //   return this.$store.state.aides
+      // },
+      // charts () {
+      //   return this.$store.state.charts
+      // },
+      // APEChartData () {
+      //   return {
+      //     labels: this.charts.ape.labels,
+      //     datasets: [
+      //       {
+      //         yAxisID: 'montants',
+      //         label: 'Montant',
+      //         backgroundColor: '#004192',
+      //         data: this.charts.ape.montants
+      //       }, {
+      //         yAxisID: 'nombres',
+      //         label: 'Nombre',
+      //         backgroundColor: '#D1335B',
+      //         data: this.charts.ape.nombres
+      //       }
+      //     ]
+      //   }
+      // }
+
 
     },
     
