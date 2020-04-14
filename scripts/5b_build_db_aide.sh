@@ -5,7 +5,7 @@ echo "CREATE TABLES OK"
 
 datafolder="$(dirname "$(pwd)")"/data/aides/
 
-sudo -u postgres psql -d dashboard -c "\copy aide(code_application, numero_sequentiel, mois, siren, nom1, nom2, effectif, montant, devise, date_dp, date_paiement, siret, reg, dep, codeCommuneEtablissement, activiteprincipaleetablissement, count_siren_nb, montant_modifie,delta_effectif,delta_effectif_percent,classe_effectif) FROM '"$datafolder"aides-1104.csv' delimiter ',' csv header encoding 'UTF8';"
+sudo -u postgres psql -d dashboard -c "\copy aide(code_application, numero_sequentiel, mois, siren, nom1, nom2, effectif, montant, devise, date_dp, date_paiement, siret, reg, dep, codeCommuneEtablissement, activiteprincipaleetablissement, count_siren_nb, montant_modifie,delta_effectif,delta_effectif_percent,classe_effectif) FROM '"$datafolder"aides-1304.csv' delimiter ',' csv header encoding 'UTF8';"
 
 echo "Creating index on siren column"
 sudo -u postgres psql -d dashboard -c "DROP INDEX IF EXISTS aide_siren;"
