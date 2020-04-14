@@ -48,7 +48,7 @@ export const configAppCharts = {
         chartOptions: {
           chart: {
             type: 'bar',
-            height: '350px',
+            height: '325px',
             width : '450px', 
             toolbar : {
               show: false,
