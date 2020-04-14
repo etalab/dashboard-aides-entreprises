@@ -21,7 +21,7 @@ export const configAppRoutes = {
             
             { colName : "Numbers and tables", 
               activated: true,
-              colClass : "col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3",
+              colClass : "col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4",
               positionFixed : true,
               colRows : [
                 { component : "text",
@@ -61,7 +61,7 @@ export const configAppRoutes = {
 
             { colName : "main map", 
               activated: true,
-              colClass : "col-12 col-sm-12 col-md-6 col-lg-8 col-xl-9",
+              colClass : "col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8",
               positionFixed : false,
               colRows : [
                 { component : "map",

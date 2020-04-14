@@ -24,6 +24,7 @@ export const configAppCharts = {
       help : "bar horiz / kpi_top_10_naf X montant",
       titleI18n : "charts.chart01.title",
       chartTitle : { fr : 'top 10 des aides par code NAF (en M€)' },
+      chartTitleClass : 'subtitle-2',
 
       datasetMappers : {
 
@@ -47,8 +48,8 @@ export const configAppCharts = {
         chartOptions: {
           chart: {
             type: 'bar',
-            height: 300,
-            width : 400, 
+            height: '350px',
+            width : '450px', 
             toolbar : {
               show: false,
             },

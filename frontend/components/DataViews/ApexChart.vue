@@ -1,7 +1,10 @@
 
 
 <style scoped>
-
+  .custom-min-height{
+    min-height : 300px;
+    min-width : 400px;
+  }
 </style>
 
 
@@ -18,7 +21,7 @@
       >
 
       <div 
-        :class="``"
+        :class="`${viewConfig.chartTitleClass}`"
         >
         <!-- {{ trigger }}
         ///  -->
@@ -58,6 +61,7 @@
 
     <v-layout
       justify-center
+      :class="`custom-min-height`"
       >
 
       <apexchart 

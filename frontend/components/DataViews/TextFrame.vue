@@ -57,7 +57,7 @@
 
           <!-- TEXT FROM DISPLAYED DATA -->
           <p 
-            :class="``"
+            :class="`${col.textClass}`"
             >
             {{ col.textPrefix[ locale ] }}
             {{ getSpecialStore[ col.specialStoreId ] }}
