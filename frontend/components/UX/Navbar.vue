@@ -7,65 +7,70 @@
 
 <template>
 
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-      :elevation="navbarUI.elevation"
+  <v-app-bar
+    :clipped-left="clipped"
+    :elevation="navbarUI.elevation"
+    :class="`${navbarUI.navbarClass}`"
+    fixed
+    :color="navbarUI.color"
+    :dark="navbarUI.dark"
+    app
+    >
+
+    <!-- DRAWER -->
+    <v-app-bar-nav-icon 
+      v-if="drawerBtn"
+      @click.stop="toogleNavbarItem('drawer')" 
+      />
+
+    <!-- MINIVARIANT  -->
+    <v-btn
+      icon
+        v-if="miniVariantBtn"
+      @click.stop="toogleNavbarItem('miniVariant')"
       >
+      <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
+    </v-btn>
 
-      <!-- DRAWER -->
-      <v-app-bar-nav-icon 
-        v-if="drawerBtn"
-        @click.stop="toogleNavbarItem('drawer')" 
-        />
+    <!-- CLIP BTN -->
+    <v-btn
+      icon
+        v-if="clippedBtn"
+      @click.stop="toogleNavbarItem('clipped')"
+      >
+      <v-icon>mdi-application</v-icon>
+    </v-btn>
 
-      <!-- MINIVARIANT  -->
-      <v-btn
-        icon
-          v-if="miniVariantBtn"
-        @click.stop="toogleNavbarItem('miniVariant')"
-        >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
+    <!-- FIXED -->
+    <v-btn
+      icon
+        v-if="fixedBtn"
+      @click.stop="toogleNavbarItem('fixed')"
+      >
+      <v-icon>mdi-minus</v-icon>
+    </v-btn>
 
-      <!-- CLIP BTN -->
-      <v-btn
-        icon
-          v-if="clippedBtn"
-        @click.stop="toogleNavbarItem('clipped')"
-        >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-
-      <!-- FIXED -->
-      <v-btn
-        icon
-          v-if="fixedBtn"
-        @click.stop="toogleNavbarItem('fixed')"
-        >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-
-      <!-- NAVBAR TITLE -->
-      <v-spacer/>
-      <v-toolbar-title v-text="appTitle[locale]" />
+    <!-- NAVBAR TITLE -->
+    <v-spacer/>
+    <v-toolbar-title 
+      :class="`${navbarUI.titleClass}`"
+      >
+      {{ appTitle[locale] }}
+    </v-toolbar-title>
+    <v-spacer />
 
 
-      <v-spacer />
-
-
-      <!-- RIGHT DRAWER -->
-      <!-- <v-btn
-        icon
-        @click.stop="toogleNavbarItem('rightDrawer')"
-        >
-        <v-icon>mdi-menu</v-icon>
-      </v-btn> -->
+    <!-- RIGHT DRAWER -->
+    <!-- <v-btn
+      icon
+      @click.stop="toogleNavbarItem('rightDrawer')"
+      >
+      <v-icon>mdi-menu</v-icon>
+    </v-btn> -->
 
 
 
-    </v-app-bar>
+  </v-app-bar>
 
 </template>
 

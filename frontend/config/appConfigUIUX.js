@@ -102,6 +102,10 @@ export const configAppUIUX = {
 
     navbar : {
       elevation: 0, 
+      navbarClass : '',
+      color : 'primary',
+      dark : true,
+      titleClass : 'white--text font-weight-black display-1',
     },
 
     filters : {
