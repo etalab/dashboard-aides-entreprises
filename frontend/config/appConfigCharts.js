@@ -49,6 +49,9 @@ export const configAppCharts = {
             type: 'bar',
             height: 300,
             width : 400, 
+            toolbar : {
+              show: false,
+            },
           },
           plotOptions: {
             bar: {

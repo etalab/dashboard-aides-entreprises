@@ -9,31 +9,39 @@
     >
     
     <v-list>
-      <v-list-item
+
+      <div
         v-for="(item, i) in items"
-        :key="i"
-        :to="item.to"
-        router
-        exact
         >
+        <v-list-item
+          v-if="item.isVisible"
+          :key="i"
+          :to="item.to"
+          router
+          exact
+          >
 
-        <!-- ICON -->
-        <v-list-item-action>
-          <v-icon>
-            {{ item.icon }}
-          </v-icon>
-        </v-list-item-action>
+          <!-- ICON -->
+          <v-list-item-action>
+            <v-icon>
+              {{ item.icon }}
+            </v-icon>
+          </v-list-item-action>
 
-        <!-- TEXTE -->
-        <v-list-item-content>
-          <v-list-item-title 
-            v-text="$t(item.i18nTitle)" 
-          />
-        </v-list-item-content>
+          <!-- TEXTE -->
+          <v-list-item-content>
+            <v-list-item-title 
+              v-text="$t(item.i18nTitle)" 
+            />
+          </v-list-item-content>
 
-      </v-list-item>
+        </v-list-item>
+
+      </div>
 
     </v-list>
+
+
   </v-navigation-drawer>
 
 

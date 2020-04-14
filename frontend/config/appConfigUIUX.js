@@ -56,7 +56,7 @@ export const configAppUIUX = {
         },
       ],
 
-      // ITEEMS IN RIIGHT DRAWER
+      // ITEMS IN RIGHT DRAWER
       items: [
         { to: "/",
           // icon: "mdi-apps",
@@ -83,7 +83,7 @@ export const configAppUIUX = {
         { to: "/rawData",
           icon: "fas fa-database",
           i18nTitle: "menu.data",
-          isVisible : true,
+          isVisible : false,
         },
       ]
   
