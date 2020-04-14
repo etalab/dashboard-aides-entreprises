@@ -147,7 +147,7 @@ export const configAppMap = {
           type : 'geojson',
           generateId: true,
           licence : '',
-          loadInStore    : false,
+          loadInStore    : true,
           popupSettings  : undefined,
         },
 
@@ -192,10 +192,11 @@ export const configAppMap = {
             "regions-aides-montants",
           ],
           clicEvents : [
-            { 
-              event : 'click',
+
+            { event : 'click',
               layer : 'regions-fill',
               functions : [ 
+
                 { funcName    : "goToPolygon",
                   funcParams  : { 
                     propName : 'code',
@@ -319,15 +320,57 @@ export const configAppMap = {
             "departements-aides-montants",
           ],
           clicEvents : [
-            { 
-              event : 'click',
-              layer : "departements-fill",
+
+            { event : 'click',
+              layer : 'departements-fill',
               functions : [ 
                 { funcName    : "goToPolygon",
-                  funcParams  : { propName : 'code' },
+                  funcParams  : { 
+                    propName : 'code',
+                  },
+                }, 
+                { funcName : 'updateDisplayedData',
+                  funcParams  : { 
+                    propName : 'code', 
+                    targets : [
+
+                      { from : 'store', 
+                        fromPropKey : 'code',
+                        fromStoreData : 'initData',
+                        fromDatasetId : 'taxo-departements',
+                        fromDatasetKey : 'dep',
+                        fromDatasetField : 'libelle',
+                        targetSpecialStoreId : 'levelname', 
+                      },
+
+                      { from : 'store',
+                        fromPropKey : 'code', // use props region code
+                        fromStoreData : 'initData',
+                        fromDatasetId : 'departements-aides-raw',
+                        fromDatasetKey : 'dep',
+                        fromDatasetField : 'nombre',
+                        targetSpecialStoreId : 'nombre', 
+                      },
+
+                      { from : 'store',
+                        fromPropKey : 'code', // use props region code
+                        fromStoreData : 'initData',
+                        fromDatasetId : 'departements-aides-raw',
+                        fromDatasetKey : 'dep',
+                        fromDatasetField : 'montant',
+                        targetSpecialStoreId : 'montant', 
+                        format : [
+                          { utilsFnName : 'toMillionsOrElse',
+                            params : { divider: 1000000, fixed:2 },
+                          },
+                        ],
+                      },
+                    ]
+                  }
                 },
               ],
             },
+
             { 
               event : 'mousemove',
               layer : "departements-fill",
@@ -336,6 +379,7 @@ export const configAppMap = {
                 }, 
               ],
             },
+
             { 
               event : 'mouseleave',
               layer : "departements-fill",

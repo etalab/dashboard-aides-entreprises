@@ -528,18 +528,18 @@ export default {
 
       getSourceData( params, from='map' ){
         
-        // this.log && console.log("\nC-MapboxGL / getSourceGeoData ... from : ", from)
-        // this.log && console.log("C-MapboxGL / getSourceGeoData ... params : ", params)
+        this.log && console.log("\nC-MapboxGL / getSourceGeoData ... from : ", from)
+        this.log && console.log("C-MapboxGL / getSourceGeoData ... params : ", params)
 
         let data
 
         if ( from == 'map' ){
           let sourcesList = this.map.getStyle().sources
-          // this.log && console.log("C-MapboxGL / getSourceGeoData ... sourcesList : ", sourcesList)
+          this.log && console.log("C-MapboxGL / getSourceGeoData ... sourcesList : ", sourcesList)
           let source = sourcesList && sourcesList[ params.source ]
-          // this.log && console.log("C-MapboxGL / getSourceGeoData ... source : ", source)
+          this.log && console.log("C-MapboxGL / getSourceGeoData ... source : ", source)
           data = source && source.data.features.find( feat => feat.properties[ params.propName ] == params.prop )
-          // this.log && console.log("C-MapboxGL / getSourceGeoData ... data : ", data)
+          this.log && console.log("C-MapboxGL / getSourceGeoData ... data : ", data)
         } 
 
         if ( from == 'store' ){
@@ -632,7 +632,7 @@ export default {
       // ZOOM FUNCTIONS
 
       goToPolygon ( params ) {
-        // this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
+        this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
         let geodata = this.getSourceData( params )
         let data = {
           type: 'FeatureCollection',
