@@ -48,11 +48,14 @@ export const configAppCharts = {
         chartOptions: {
           chart: {
             type: 'bar',
-            height: '450px',
+            height: '420px',
             width : '450px', 
             toolbar : {
               show: false,
             },
+          },
+          legend : {
+            show : false,
           },
           plotOptions: {
             bar: {
