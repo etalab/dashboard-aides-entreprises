@@ -48,7 +48,7 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "apexchart-01",
-                    containerClass : 'pt-3 pb-0',
+                    containerClass : 'mt-4 pt-3 pb-0',
                   },
                 },
                 // { component : "apexchart",

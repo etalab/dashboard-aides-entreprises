@@ -26,7 +26,21 @@
         <!-- {{ trigger }}
         ///  -->
         <!-- {{ $t( viewConfig.titleI18n ) }} -->
+
+        <span
+          v-if="viewConfig.titlePreffixSpecialStoreId"
+          >
+          {{ getSpecialStore[ viewConfig.titlePreffixSpecialStoreId ] }}
+        </span>
+
         {{ viewConfig.chartTitle[ locale ] }}
+
+        <span
+          v-if="viewConfig.titleSuffixSpecialStoreId"
+          >
+          {{ getSpecialStore[ viewConfig.titleSuffixSpecialStoreId ] }}
+        </span>
+
       </div>
 
 
@@ -87,7 +101,7 @@
 <script>
 
   import { mapState, mapGetters, mapActions } from 'vuex'
-  import { switchFormatFunctions } from '~/utils/utils.js'
+  import { switchFormatFunctions, sortArrayBy } from '~/utils/utils.js'
 
   // ONLY DISPLAY DATA FROM data.specialStore
 
@@ -108,7 +122,7 @@
       
       this.viewConfig = this.getLocalConfig
       this.datasetMappers = this.viewConfig.datasetMappers
-    
+      this.localChartOptions = this.datasetMappers.chartOptions
     }, 
 
     mounted(){
@@ -132,7 +146,8 @@
         viewConfig : undefined,
 
         mappers : undefined,
-
+        
+        localRawSerie : undefined,
         localSeries : undefined,
         localChartOptions : undefined,
 
@@ -151,6 +166,7 @@
         getCurrentLocale : 'getCurrentLocale',
         getDataViewConfig : 'getDataViewConfig',
         getSpecialStore : 'data/getSpecialStore',
+        getFromSpecialStoreData : 'data/getFromSpecialStoreData',
       }),
 
       // config
@@ -163,12 +179,12 @@
         return localConfig
       },
 
-      getSpecialStoreForChartData(){
-        this.log && console.log('C-ApexChart / getSpecialStoreForChartData ... ' )
-        let specialStoreId = this.datasetMappers.specialStoreId
-        let result = (specialStoreId) ? specialStoreId && this.getSpecialStore[ specialStoreId ] : this.getSpecialStore
-        return result
-      },
+      // getSpecialStoreForChartData(){
+      //   this.log && console.log('C-ApexChart / getSpecialStoreForChartData ... ' )
+      //   let specialStoreId = this.datasetMappers.specialStoreId
+      //   let result = (specialStoreId) ? specialStoreId && this.getSpecialStore[ specialStoreId ] : this.getSpecialStore
+      //   return result
+      // },
 
     },
     
@@ -178,41 +194,67 @@
         this.log && console.log('C-ApexChart / getSeries ... ' )
         let specialStoreId = this.datasetMappers.specialStoreId
         let fromDatasetKey = this.datasetMappers.fromDatasetKey
-        let chartOptions = this.datasetMappers.chartOptions
+        // let chartOptions   = this.datasetMappers.chartOptions
+        let seriesMappers  = this.datasetMappers.seriesMappers
         
         let dataSeries = []
 
-        for (let mapper of this.datasetMappers.seriesMappers ){
+        for (let mapper of seriesMappers ){
 
-          let specialStoreRawData = this.getSpecialStoreData( { id: specialStoreId, key: fromDatasetKey } )
+          let rawDataSerie = this.getSpecialStoreData( { id: specialStoreId, key: fromDatasetKey, sortParams: mapper.sortDataSerieBy  } )
+          this.rawDataSerie = rawDataSerie
+          // this.log && console.log('C-ApexChart / getSeries / rawDataSerie  : ', rawDataSerie )
+                    
           let dataFromKey = mapper.dataFromKey
-          let remappedSerie = (dataFromKey)? specialStoreRawData.map( i => i[ dataFromKey ]) : specialStoreRawData
 
-          if (mapper.buildAxisCategsX){
-            let settings = mapper.buildAxisCategsXsettings
-            let xaxis = { categories : specialStoreRawData.map( i => i[ settings.fromKey ]) }
-            chartOptions.xaxis = xaxis
-          }
+          let valuesSerie 
 
-          if ( mapper.format ){
-            remappedSerie = remappedSerie.map( value => {
-              return  switchFormatFunctions( value, mapper.format )
+          if ( rawDataSerie &&  dataFromKey ){
+            
+            let tempSerie = [] 
+
+            // 2 - get serie
+            rawDataSerie.forEach( i => {
+
+              // this.log && console.log('C-ApexChart / getSeries / i : ', i )
+              let value = i[ dataFromKey ]
+              if ( value && mapper.format ){
+                value = switchFormatFunctions( value, mapper.format )
+              }
+              // this.log && console.log('C-ApexChart / getSeries / value : ', value )
+
+              // 2bis - rebuild categories on xais
+              if ( mapper.buildAxisCategsX ){
+                let settings = mapper.buildAxisCategsXsettings
+                let categ = i[ settings.fromKey ]
+                // this.log && console.log('C-ApexChart / getSeries / categ : ', categ )
+                let newValue = { x : categ, y : value }
+                value = newValue
+              }
+              tempSerie.push( value )
+
             })
+
+            valuesSerie = tempSerie
+
+          } else {
+            valuesSerie = rawDataSerie
           }
+
+          // this.log && console.log('C-ApexChart / getSeries / valuesSerie (1) : ', valuesSerie )
+
           let dataSerie = {
-            data : remappedSerie,
+            data : valuesSerie,
           }
           dataSeries.push( dataSerie )
 
         }
         this.localSeries = dataSeries
-        this.localChartOptions = chartOptions
       },
 
-      getSpecialStoreData( { id, key } ) {
-        this.log && console.log('C-ApexChart / getSpecialStoreData / {id, key} : ', {id, key} )
-        let obj = this.getSpecialStore[ id ]
-        obj = ( key )? obj[ key ] : key
+      getSpecialStoreData( params ) {
+        this.log && console.log('C-ApexChart / getSpecialStoreData / params : ', params )       
+        let obj = this.getFromSpecialStoreData({id : params.id, key : params.key, sortParams : params.sortParams })
         return obj
       }, 
 

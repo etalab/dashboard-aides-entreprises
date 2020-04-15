@@ -1,4 +1,4 @@
-import { objectFromPath, setNestedObjectFromPath, setDeep } from '~/utils/utils.js'
+import { objectFromPath, sortArrayBy } from '~/utils/utils.js'
 
 
 export const state = () => ({
@@ -76,6 +76,17 @@ export const getters = {
     return state.specialStore
   },
 
+  getFromSpecialStoreData : (state, getters) =>  ( params ) => {
+    state.log && console.log("S-data-A-getFromSpecialStoreData / params  : ", params )
+    let obj = state.specialStore[ params.id ]
+    obj = ( params.key )? obj[ params.key ] : params.key
+
+    let sortParams = params.sortParams
+    if ( sortParams ) {
+      obj = sortArrayBy( obj, sortParams)
+    }
+    return obj
+  },
 
 }
 
@@ -168,7 +179,9 @@ export const actions = {
 
   },
 
-
+  getDataFromSpecialStoreData( { state, getters }, params ) {
+    return getters.getFromSpecialStoreData( params )
+  },
 
 
   // QUERIES

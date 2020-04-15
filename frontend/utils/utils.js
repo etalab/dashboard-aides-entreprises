@@ -4,6 +4,62 @@ import Vue from 'vue'
 // PURE UTILS
 
 
+
+// - - - - - - - - - - - - - - - - - - - //
+// SORT VALUES
+// - - - - - - - - - - - - - - - - - - - //
+
+export function sortByFieldName( arrayOfStuff, fieldName ){
+  let sortedArray = arrayOfStuff.sort( (a, b) => {
+    var nameA = a[ fieldName ].toLowerCase(), nameB = b[ fieldName ].toLowerCase()
+    if (nameA < nameB) //sort string ascending
+    return -1 
+    if (nameA > nameB)
+    return 1
+    return 0 //default return value (no sorting)
+  })
+  return sortedArray
+}
+export function sortByFieldValue( arrayOfStuff, fieldName ){
+  let sortedArray = arrayOfStuff.sort( (a, b) => {
+    return a[ fieldName ] - b[ fieldName ]
+  })
+  return sortedArray
+}
+export function sortByValue( arrayOfStuff ){
+  let sortedArray = arrayOfStuff.sort( (a, b) => {
+    return a - b
+  })
+  return sortedArray
+}
+export function sortByFieldDate( arrayOfStuff, fieldName ){
+  let sortedArray = arrayOfStuff.sort( (a, b) => {
+    var dateA = new Date( a[ fieldName ] ), dateB = new Date( b[ fieldName ] )
+    return dateA - dateB //sort by date ascending
+  })
+  return sortedArray
+}
+
+export function sortArrayBy( arrayOfStuff, params ){
+  let sortedArray = arrayOfStuff
+  let sortBy = params.sortBy
+  switch ( sortBy ){
+    case 'sortByFieldName' : 
+      sortedArray = sortByFieldName( arrayOfStuff, params.fieldName ) ;
+      break ;
+    case 'sortByFieldValue' : 
+      sortedArray = sortByFieldValue( arrayOfStuff, params.fieldName ) ;
+      break ;
+    case 'sortByValue' : 
+      sortedArray = sortByValue( arrayOfStuff ) ;
+      break ;
+    case 'sortByFieldDate' : 
+      sortedArray = sortByFieldDate( arrayOfStuff, params.fieldName ) ;
+      break ;    
+  }
+  return sortedArray 
+}
+
 // - - - - - - - - - - - - - - - - - - - //
 // SELECTOR FUNCTIONS FROM ENV VAR
 // - - - - - - - - - - - - - - - - - - - //

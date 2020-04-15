@@ -23,8 +23,11 @@ export const configAppCharts = {
       serie_id : "stat-bar-horiz",
       help : "bar horiz / kpi_top_10_naf X montant",
       titleI18n : "charts.chart01.title",
-      chartTitle : { fr : 'top 10 des aides par code NAF (en M€)' },
+      chartTitle : { fr : 'top 10 des aides par code NAF (en M€) - ' },
       chartTitleClass : 'subtitle-2',
+
+      titlePreffixSpecialStoreId : undefined,
+      titleSuffixSpecialStoreId : 'levelname', 
 
       datasetMappers : {
 
@@ -38,12 +41,32 @@ export const configAppCharts = {
                 params : { divider: 1000000, fixed:2 },
               },
             ],
+            sortDataSerieBy : { 
+              sortBytype : 'sortByFieldName',
+              fieldName : 'libelle_division_naf',
+            },
             buildAxisCategsX : true,
             buildAxisCategsXsettings : {
               fromKey : 'libelle_division_naf',
             }
           }
         ],
+
+        // series: [
+        //   { data: [
+        //     {
+        //       x: 'Apple',
+        //       y: 54
+        //     }, 
+        //     {
+        //       x: 'Orange',
+        //       y: 66
+        //     }
+        //   ],}
+        // ],
+        // xaxis: {
+        //   type: 'category'
+        // }
 
         chartOptions: {
           chart: {
@@ -101,10 +124,11 @@ export const configAppCharts = {
           dataLabels: {
             enabled: true
           },
-          // xaxis: {
-          //   categories: [
-          //   ],
-          // }
+          
+          xaxis: {
+            type: 'category'
+          },
+
         },
       },
 
