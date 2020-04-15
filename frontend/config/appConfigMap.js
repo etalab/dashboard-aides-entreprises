@@ -3,10 +3,15 @@
 // COMMON PAINT SETTINGS
 // - - - - - - - - - - - - - - - - - - - - - //
 
+  // CONSTANTS
+  // switch between facts on region / departement level
+  const ZOOM_THRESHOLD = 6
+  const PRIMARYFILLCOLOR = '#000091'
+  const OUTLINECOLOR = '#53657D'
 
   const fillPaint = {
-    'fill-color': '#2a4ba9',
-    'fill-outline-color': '#627BC1',
+    'fill-color': PRIMARYFILLCOLOR,
+    'fill-outline-color': OUTLINECOLOR,
     'fill-opacity': ['case',
       ['boolean', ['feature-state', 'hover'], false],
       0.2,
@@ -16,7 +21,7 @@
 
   const circlePaintAides = {
     'circle-opacity': 0.4,
-    'circle-color': '#000091',
+    'circle-color': PRIMARYFILLCOLOR,
     'circle-radius': [
       'interpolate', ['linear'],
       ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
@@ -25,8 +30,7 @@
     ]
   }
 
-  // switch between facts on region / departement level
-  const ZOOM_THRESHOLD = 6
+
 
 // - - - - - - - - - - - - - - - - - - - - - //
 // COMMON PROPERTIES SETTINGS
@@ -421,7 +425,7 @@ export const configAppMap = {
             visibility: 'visible' ,
           },
           paint: {
-            'line-color': '#627BC1',
+            'line-color': OUTLINECOLOR,
             'line-width': 1
           }
         },
@@ -466,7 +470,7 @@ export const configAppMap = {
             // visibility: 'none' ,
           },
           paint: {
-            'line-color': '#627BC1',
+            'line-color': OUTLINECOLOR,
             'line-width': 1
           },
           minzoom: ZOOM_THRESHOLD,
