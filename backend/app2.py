@@ -274,6 +274,70 @@ def getTreemap():
 
         
 
+################## Reports ##############
+
+@app.route('/stat/report', methods=['GET'])
+def getStatReport():
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "SELECT SUM(R.montant) AS TotalMontant, SUM(R.nombre) AS TotalSiren FROM report R;"
+        
+        data = db.session.execute(my_query).fetchall()
+      
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['montant'] = str(data[i][0]) 
+            dataDict['nombre'] = str(data[i][1])            
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+@app.route('/stat/report/dep', methods=['GET'])
+def getStatReportDep():
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "SELECT SUM(R.montant) AS TotalMontant, SUM(R.nombre) AS TotalSiren, R.dep, D.libelle FROM report R LEFT JOIN departement D ON R.dep = D.dep GROUP BY R.dep, D.libelle;"
+        
+        data = db.session.execute(my_query).fetchall()
+      
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['montant'] = str(data[i][0]) 
+            dataDict['nombre'] = str(data[i][1])  
+            dataDict['dep'] = str(data[i][2])     
+            dataDict['libelle'] = str(data[i][3])            
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+
+@app.route('/stat/report/reg', methods=['GET'])
+def getStatReportReg():
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "SELECT SUM(R.montant) AS TotalMontant, SUM(R.nombre) AS TotalSiren, R.reg, D.libelle FROM report R LEFT JOIN region D ON R.reg = D.reg GROUP BY R.reg, D.libelle;"
+        
+        data = db.session.execute(my_query).fetchall()
+      
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['montant'] = str(data[i][0]) 
+            dataDict['nombre'] = str(data[i][1])  
+            dataDict['reg'] = str(data[i][2])     
+            dataDict['libelle'] = str(data[i][3])            
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
 
 ####### GENERIC FUNCTIONS #######
 
