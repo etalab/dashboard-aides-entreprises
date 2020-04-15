@@ -3,6 +3,7 @@
 // COMMON PAINT SETTINGS
 // - - - - - - - - - - - - - - - - - - - - - //
 
+
   const fillPaint = {
     'fill-color': '#2a4ba9',
     'fill-outline-color': '#627BC1',
@@ -24,6 +25,8 @@
     ]
   }
 
+  // switch between facts on region / departement level
+  const ZOOM_THRESHOLD = 6
 
 // - - - - - - - - - - - - - - - - - - - - - //
 // COMMON PROPERTIES SETTINGS
@@ -84,7 +87,9 @@ export const configAppMap = {
 
       },
 
+      // - - - - - - - - - - - - - - - - - - //
       // SOURCES LOADED AT MAP LOADED
+      // - - - - - - - - - - - - - - - - - - //
       sources : [
 
         // http://etalab-datasets.geo.data.gouv.fr/contours-administratifs/latest/geojson/
@@ -177,7 +182,9 @@ export const configAppMap = {
 
       ],
       
+      // - - - - - - - - - - - - - - - - - - //
       // MAPS
+      // - - - - - - - - - - - - - - - - - - //
       maps : [
     
         { id : "map-aides-reg",
@@ -393,7 +400,9 @@ export const configAppMap = {
 
       ],
 
+      // - - - - - - - - - - - - - - - - - - //
       // LAYERS
+      // - - - - - - - - - - - - - - - - - - //
       layers : [
 
         // REGIONS
@@ -422,6 +431,7 @@ export const configAppMap = {
           layout: {
             visibility: 'visible' ,
           },
+          maxzoom: ZOOM_THRESHOLD,
           paint: circlePaintAides
         },
         { id: 'regions-aides-montants',
@@ -432,7 +442,8 @@ export const configAppMap = {
             'text-field': '{montantMillions} M€',
             "text-font": ["Open Sans Regular"], // OK
             'text-size': 14
-          }
+          },
+          maxzoom: ZOOM_THRESHOLD,
         },
 
 
@@ -443,57 +454,61 @@ export const configAppMap = {
           type: 'fill',
           source: 'departements',
           layout: {
-            visibility: 'none' ,
+            // visibility: 'none' ,
           },
-          paint: fillPaint
+          paint: fillPaint,
+          minzoom: ZOOM_THRESHOLD,
         },
         { id: 'departements-lines',
           type: 'line',
           source: 'departements',
           layout: {
-            visibility: 'none' ,
+            // visibility: 'none' ,
           },
           paint: {
             'line-color': '#627BC1',
             'line-width': 1
-          }
+          },
+          minzoom: ZOOM_THRESHOLD,
         },
         { id: 'departements-aides',
           type: 'circle',
           source: 'departements-aides',
           layout: {
-            visibility: 'none'
+            // visibility: 'none'
           },
-          paint: circlePaintAides
+          paint: circlePaintAides,
+          minzoom: ZOOM_THRESHOLD,
         },
         { id: 'departements-aides-montants',
           type: 'symbol',
           source: 'departements-aides',
           layout: {
-            visibility: 'none',
+            // visibility: 'none',
             'text-field': '{montantMillions} M€',
             "text-font": ["Open Sans Regular"],
             'text-size': 14,
-          }
+          },
+          minzoom: ZOOM_THRESHOLD,
         },
 
 
       ],
-      
-      // VISIBILITY
+
+      // - - - - - - - - - - - - - - - - - - //
+      // LAYERS VISIBILITY DRAWER
+      // - - - - - - - - - - - - - - - - - - //
       maps_visibility : {
         title : { fr : "calques" },
-        is_activated : true,
+        is_activated : false,
         is_drawer_open : true,
         map_switches : [ 
-          { 
-            id : "regions",    
+          { id : "regions",    
             mapId : "map-aides-reg",
             label : { fr : "régions" } ,  
             default_visible : true 
           }, 
-          { 
-            id : "departements",
+          { id : "departements",
             mapId : "map-aides-dep",
             label : { fr : "départements"  }, 
             default_visible : false 

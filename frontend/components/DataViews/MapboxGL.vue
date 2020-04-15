@@ -18,6 +18,7 @@
     :trigger="`${trigger}`"
     >
 
+    <!-- LOADER'S CSS -->
     <style type="text/css">
       .lds-roller div:after {
         content: " ";
@@ -85,7 +86,6 @@
           </div>
         </div>
       </div>
-
 
     </v-layout>
 
