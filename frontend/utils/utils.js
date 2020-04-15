@@ -20,9 +20,11 @@ export function sortByFieldName( arrayOfStuff, fieldName ){
   })
   return sortedArray
 }
-export function sortByFieldValue( arrayOfStuff, fieldName ){
+export function sortByFieldValue( arrayOfStuff, fieldName, toNumber=true ){
   let sortedArray = arrayOfStuff.sort( (a, b) => {
-    return a[ fieldName ] - b[ fieldName ]
+    let numbA = new Number(a [ fieldName ])
+    let numbB = new Number(b [ fieldName ])
+    return numbA - numbB 
   })
   return sortedArray
 }
@@ -42,7 +44,7 @@ export function sortByFieldDate( arrayOfStuff, fieldName ){
 
 export function sortArrayBy( arrayOfStuff, params ){
   let sortedArray = arrayOfStuff
-  let sortBy = params.sortBy
+  let sortBy = params.sortByType
   switch ( sortBy ){
     case 'sortByFieldName' : 
       sortedArray = sortByFieldName( arrayOfStuff, params.fieldName ) ;

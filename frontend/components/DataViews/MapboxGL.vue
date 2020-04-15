@@ -296,6 +296,13 @@ export default {
       return localConfig
     },
 
+    getCurrentZoom(){
+      let mapbox = this.map
+      let currentZoom = mapbox.getZoom() 
+      this.log && console.log("C-MapboxGL / getCurrentZoom ... currentZoom : ", currentZoom )
+      return currentZoom
+    },
+
   },
   
   methods : {
@@ -319,6 +326,19 @@ export default {
         // check : https://ypereirareis.github.io/blog/2017/04/25/vuejs-two-way-data-binding-state-management-vuex-strict-mode/
       },
 
+      isInZoomRange( zoomRange ){
+        let currentZoom = this.getCurrentZoom
+        let isInZoomRangeBoolean = true
+        if ( zoomRange ){
+          // let isLessThanMax = currentZoom >= zoomRange.maxZoom 
+          // let isMoreThanMin = currentZoom >= zoomRange.minZoom 
+          if ( currentZoom >= zoomRange.maxZoom || currentZoom <= zoomRange.minZoom  ){
+            isInZoomRangeBoolean = false
+          }
+        } 
+        this.log && console.log("C-MapboxGL / isInZoomRange ... isInZoomRangeBoolean : ", isInZoomRangeBoolean )
+        return isInZoomRangeBoolean
+      },
 
     // LOADERS - - - - - - - - - - - - - - - - - - //
 
@@ -498,22 +518,23 @@ export default {
                   let itemProps  = item.properties
 
                   // DEBUGGING
-                  if( clicEvent.event == 'click' ) {
-                    this.log && console.log( "... clicEvent.event : ", clicEvent.event )
-                    this.log && console.log( "... featuresItem : ", featuresItem )
-                    this.log && console.log( "... itemSource : ", itemSource )
-                    this.log && console.log( "... itemProps : ", itemProps )
-                  }
+                  // if( clicEvent.event == 'click' ) {
+                  //   this.log && console.log( "... clicEvent.event : ", clicEvent.event )
+                  //   this.log && console.log( "... featuresItem : ", featuresItem )
+                  //   this.log && console.log( "... itemSource : ", itemSource )
+                  //   this.log && console.log( "... itemProps : ", itemProps )
+                  // }
                   
                   for ( let fn of clicFunctions ){
                     
                     let funcParams = fn.funcParams 
 
                     let params = funcParams && {
-                      source   : itemSource,
-                      propName : funcParams.propName ,
-                      prop     : itemProps[ funcParams.propName ],
-                      props    : itemProps,
+                      zoomRange : funcParams.zoomRange,
+                      source    : itemSource,
+                      propName  : funcParams.propName ,
+                      prop      : itemProps[ funcParams.propName ],
+                      props     : itemProps,
                     }
 
                     switch( fn.funcName ){
@@ -616,36 +637,39 @@ export default {
 
       updateDisplayedData( params ){
 
-        // this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
+        this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
         // this.log && console.log("\nC-MapboxGL / updateDisplayedData  : ", "+ ".repeat(10) )
         
-        for (let targetParams of params.targets ){
+        let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
 
-          // 1 - get data for the update
-          targetParams.prop = params.prop
-          targetParams.propName = params.propName
-          targetParams.props = params.props
-
-          let value = this.getSourceData( targetParams, targetParams.from )
-          // this.log && console.log("C-MapboxGL / updateDisplayedData ... value : ", value )
-
-          if ( targetParams.format ) {
-            value = switchFormatFunctions( value, targetParams.format )
+        if ( isFnInZoomRange ) {
+          for (let targetParams of params.targets ){
+  
+            // 1 - get data for the update
+            targetParams.prop = params.prop
+            targetParams.propName = params.propName
+            targetParams.props = params.props
+  
+            let value = this.getSourceData( targetParams, targetParams.from )
+            // this.log && console.log("C-MapboxGL / updateDisplayedData ... value : ", value )
+  
+            if ( targetParams.format ) {
+              value = switchFormatFunctions( value, targetParams.format )
+            }
+            // 2 - then update displayed data
+            let targetData = { 
+              // store : 'displayedData',
+              // id : targetParams.targetDatasetId,
+              // path : targetParams.targetValuePath,
+              value : value,
+              specialStoreId : targetParams.targetSpecialStoreId,
+            }
+            // this.$store.commit('data/setDeepNestedData', targetData )
+            this.$store.dispatch('data/setNestedData', targetData )
+            
           }
-          // 2 - then update displayed data
-          let targetData = { 
-            // store : 'displayedData',
-            // id : targetParams.targetDatasetId,
-            // path : targetParams.targetValuePath,
-            value : value,
-            specialStoreId : targetParams.targetSpecialStoreId,
-          }
-          // this.$store.commit('data/setDeepNestedData', targetData )
-          this.$store.dispatch('data/setNestedData', targetData )
-          
+          this.$store.commit('data/toggleTrigger' )
         }
-
-        this.$store.commit('data/toggleTrigger' )
 
       },
 
@@ -653,12 +677,15 @@ export default {
       // TO DO ...
       setChildrenPolygons( params ){
         this.log && console.log("\nC-MapboxGL / setChildrenPolygons ... params : ", params )
+        let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
         let geodata = this.getSourceData( params )
       },
 
       // TO DO ...
       updateQuery( params ){
         // this.log && console.log("\nC-MapboxGL / updateQuery ... params : ", params )
+        let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
+        let geodata = this.getSourceData( params )
       },
 
 
@@ -667,14 +694,19 @@ export default {
       // ZOOM FUNCTIONS
 
       goToPolygon ( params ) {
+      
         this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
-        let geodata = this.getSourceData( params )
-        let data = {
-          type: 'FeatureCollection',
-          features: [ geodata ]
+        let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
+        if ( isFnInZoomRange ){
+          let geodata = this.getSourceData( params )
+          let data = {
+            type: 'FeatureCollection',
+            features: [ geodata ]
+          }
+          this.fit(data)
         }
-        this.fit(data)
       },
+
       fit (geojson) {
         var _bbox = bbox(geojson)
         this.map.fitBounds(_bbox, { padding: 20, animate: true })
@@ -683,25 +715,35 @@ export default {
       // HIGHLIGHTS FUNCTIONS
 
       toggleHighlightOn (event, source) {
-        let mapbox = this.map
-        const canvas = mapbox.getCanvas()
-        canvas.style.cursor = 'pointer'
-        if (event.features.length > 0) {
-          if (this.hoveredStateId[source] !== null) {
-            mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: false }) // clean all sources to prevent error
+
+        // let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
+        // if ( isFnInZoomRange ){
+          let mapbox = this.map
+          const canvas = mapbox.getCanvas()
+          canvas.style.cursor = 'pointer'
+          if (event.features.length > 0) {
+            if (this.hoveredStateId[source] !== null) {
+              mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: false }) // clean all sources to prevent error
+            }
+            this.hoveredStateId[source] = event.features[0].id
+            mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: true })
           }
-          this.hoveredStateId[source] = event.features[0].id
-          mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: true })
-        }
+        // }
+
       },
 
       toggleHighlightOff (event, source) {
-        let mapbox = this.map
-        const canvas = mapbox.getCanvas()
-        canvas.style.cursor = ''
-        if (this.hoveredStateId[source] !== null) {
-          mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: false })
-        }
+
+        // let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
+        // if ( isFnInZoomRange ){
+          let mapbox = this.map
+          const canvas = mapbox.getCanvas()
+          canvas.style.cursor = ''
+          if (this.hoveredStateId[source] !== null) {
+            mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: false })
+          }
+        // }
+
       },
 
 

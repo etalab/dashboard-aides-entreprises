@@ -76,14 +76,20 @@ export const getters = {
     return state.specialStore
   },
 
-  getFromSpecialStoreData : (state, getters) =>  ( params ) => {
+  getFromSpecialStoreData : (state) =>  ( params ) => {
     state.log && console.log("S-data-A-getFromSpecialStoreData / params  : ", params )
     let obj = state.specialStore[ params.id ]
     obj = ( params.key )? obj[ params.key ] : params.key
 
     let sortParams = params.sortParams
     if ( sortParams ) {
-      obj = sortArrayBy( obj, sortParams)
+      let clone = []
+      state.log && console.log("S-data-A-getFromSpecialStoreData / obj  : ", obj )
+      for (let i of obj ){ clone.push( i )}
+      state.log && console.log("S-data-A-getFromSpecialStoreData / clone  : ", clone )
+      state.log && console.log("S-data-A-getFromSpecialStoreData / sortParams  : ", sortParams )
+      let sorted = sortArrayBy( clone, sortParams)
+      obj = sorted
     }
     return obj
   },

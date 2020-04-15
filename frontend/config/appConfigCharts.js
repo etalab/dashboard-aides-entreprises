@@ -41,9 +41,13 @@ export const configAppCharts = {
                 params : { divider: 1000000, fixed:2 },
               },
             ],
-            sortDataSerieBy : { 
-              sortBytype : 'sortByFieldName',
-              fieldName : 'libelle_division_naf',
+            sortDataSerieBy : {
+              sortByType : 'sortByFieldValue',
+              fieldName : 'montant',
+              toNumber : true,
+              exceptions : {
+                putLast : { fieldName : 'division_naf' , value : 'Autres' }
+              },
             },
             buildAxisCategsX : true,
             buildAxisCategsXsettings : {
@@ -124,7 +128,7 @@ export const configAppCharts = {
           dataLabels: {
             enabled: true
           },
-          
+
           xaxis: {
             type: 'category'
           },

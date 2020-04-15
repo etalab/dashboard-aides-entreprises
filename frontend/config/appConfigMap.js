@@ -208,18 +208,20 @@ export const configAppMap = {
 
             { event : 'click',
               layer : 'regions-fill',
+              // zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
               functions : [ 
 
                 { funcName    : "goToPolygon",
                   funcParams  : { 
+                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
                     propName : 'code',
                   },
                 }, 
                 { funcName : 'updateDisplayedData',
                   funcParams  : { 
+                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
                     propName : 'code', 
                     targets : [
-
 
                       // { from : 'store', 
                       //   fromPropKey : undefined,
@@ -239,8 +241,6 @@ export const configAppMap = {
                         fromDatasetField : 'libelle',
                         targetSpecialStoreId : 'levelname', 
                       },
-
-
                       
                       { from : 'store',
                         fromPropKey : 'code', // use props region code
@@ -279,10 +279,11 @@ export const configAppMap = {
                   },
                 },
 
-
+                // TO DO ...
                 { funcName : 'setChildrenPolygons',
                   funcParams  : { 
                     propName : 'code', 
+                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
                     targets : [ 
                       { targetSource : 'departement', 
                         targetPropName : 'region' 
@@ -291,30 +292,33 @@ export const configAppMap = {
                   }
                 },
 
-
                 // { funcName : 'updateQuery',
                 //   funcParams  : { 
                 //     propName : 'code',
+                //     zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
                 //     targets : [
                 //       { dataFromSource : 'departement', targetPropName : 'region' },
                 //     ]
                 //   },
                 // },
+
               ],
             },
-            { 
-              event : 'mousemove',
+
+            { event : 'mousemove',
               layer : "regions-fill",
               functions : [ 
                 { funcName : "toggleHighlightOn",
+                  funcParams : {},
                 }, 
               ],
             },
-            { 
-              event : 'mouseleave',
+
+            { event : 'mouseleave',
               layer : "regions-fill",
               functions : [ 
                 { funcName : "toggleHighlightOff",
+                  funcParams : {},
                 }, 
               ],
             },
@@ -336,14 +340,19 @@ export const configAppMap = {
 
             { event : 'click',
               layer : 'departements-fill',
+              // zoomRange : { minZoom : ZOOM_THRESHOLD, maxZoom : undefined },
               functions : [ 
+
                 // { funcName    : "goToPolygon",
                 //   funcParams  : { 
+                //     zoomRange : { minZoom : ZOOM_THRESHOLD, maxZoom : undefined },
                 //     propName : 'code',
                 //   },
                 // }, 
+
                 { funcName : 'updateDisplayedData',
                   funcParams  : { 
+                    zoomRange : { minZoom : ZOOM_THRESHOLD, maxZoom : undefined },
                     propName : 'code', 
                     targets : [
 
@@ -355,7 +364,7 @@ export const configAppMap = {
                         fromDatasetField : 'libelle',
                         targetSpecialStoreId : 'levelname', 
                       },
-
+                      
                       { from : 'store',
                         fromPropKey : 'code', // use props region code
                         fromStoreData : 'initData',
@@ -378,26 +387,37 @@ export const configAppMap = {
                           },
                         ],
                       },
+
+                      { from : 'store',
+                        fromPropKey : 'code', // use props region code
+                        fromStoreData : 'initData',
+                        fromDatasetId : 'departements-aides-raw',
+                        fromDatasetKey : 'dep',
+                        fromDatasetField : undefined,
+                        targetDatasetId : 'infos', 
+                        targetSpecialStoreId : 'focusObject', 
+                      },
+
                     ]
                   }
                 },
               ],
             },
 
-            { 
-              event : 'mousemove',
+            { event : 'mousemove',
               layer : "departements-fill",
               functions : [ 
                 { funcName    : "toggleHighlightOn",
+                  funcParams : {},
                 }, 
               ],
             },
 
-            { 
-              event : 'mouseleave',
+            { event : 'mouseleave',
               layer : "departements-fill",
               functions : [ 
                 { funcName    : "toggleHighlightOff",
+                  funcParams : {},
                 }, 
               ],
             },

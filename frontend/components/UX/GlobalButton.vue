@@ -8,7 +8,7 @@
 <template>
 
   <v-container 
-    :id="`text-${ settings.id }`" 
+    :id="`globalButton-${ settings.id }`" 
     :class="`${settings.containerClass}`"
     :trigger="`${trigger}`"
     >
@@ -59,10 +59,7 @@
           <p 
             :class="`${col.textClass}`"
             >
-            {{ col.textPrefix[ locale ] }}
-            {{ getSpecialStore[ col.specialStoreId ] }}
-            {{ col.textSuffix[ locale ] }}
-            
+            globalButton            
           </p> 
 
           <!-- <code>
@@ -94,7 +91,7 @@
 
   export default {
     
-    name: 'TextFrame',
+    name: 'GlobalButton',
 
     components: {
     },
@@ -109,7 +106,7 @@
     },
     
     mounted(){
-      this.log && console.log('C-TextFrame / mounted ...')
+      this.log && console.log('C-GlobalButton / mounted ...')
     },
 
     watch: {
@@ -117,7 +114,7 @@
 
     data(){
       return {
-        dataViewType : 'texts',
+        dataViewType : 'globalButton',
         viewConfig : undefined,
       }
     },
@@ -156,7 +153,7 @@
       }),
 
       getDisplayedData( paramsArray ){
-        this.log && console.log('C-TextFrame / getDisplayedData ...')
+        this.log && console.log('C-GlobalButton / getDisplayedData ...')
         let dataFromDisplayedData = this.selectFromDisplayedData( paramsArray ) 
         return dataFromDisplayedData
       },

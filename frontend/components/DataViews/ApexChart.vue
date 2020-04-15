@@ -179,13 +179,6 @@
         return localConfig
       },
 
-      // getSpecialStoreForChartData(){
-      //   this.log && console.log('C-ApexChart / getSpecialStoreForChartData ... ' )
-      //   let specialStoreId = this.datasetMappers.specialStoreId
-      //   let result = (specialStoreId) ? specialStoreId && this.getSpecialStore[ specialStoreId ] : this.getSpecialStore
-      //   return result
-      // },
-
     },
     
     methods : {
@@ -203,7 +196,7 @@
 
           let rawDataSerie = this.getSpecialStoreData( { id: specialStoreId, key: fromDatasetKey, sortParams: mapper.sortDataSerieBy  } )
           this.rawDataSerie = rawDataSerie
-          // this.log && console.log('C-ApexChart / getSeries / rawDataSerie  : ', rawDataSerie )
+          this.log && console.log('C-ApexChart / getSeries / rawDataSerie  : ', rawDataSerie )
                     
           let dataFromKey = mapper.dataFromKey
 
