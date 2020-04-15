@@ -7,7 +7,8 @@
   // switch between facts on region / departement level
   const ZOOM_THRESHOLD = 6
   const PRIMARYFILLCOLOR = '#000091'
-  const OUTLINECOLOR = '#627BC1'
+  const OUTLINECOLOR  = '#627BC1'
+  const OUTLINECOLOR2 = '#7b97bd'
 
   const fillPaint = {
     'fill-color': PRIMARYFILLCOLOR,
@@ -470,7 +471,7 @@ export const configAppMap = {
             // visibility: 'none' ,
           },
           paint: {
-            'line-color': OUTLINECOLOR,
+            'line-color': OUTLINECOLOR2,
             'line-width': 1
           },
           minzoom: ZOOM_THRESHOLD,

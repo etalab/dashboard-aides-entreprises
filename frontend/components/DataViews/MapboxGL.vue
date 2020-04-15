@@ -252,15 +252,17 @@ export default {
         this.log && console.log('C-MapboxGL / watch - map is created ')
 
         let storeSourcesArray = this.sources.filter( s => s.from === 'store')
-        this.loadStoreSources( storeSourcesArray )
-
         let urlSourcesArray = this.sources.filter( s => s.from === 'url')
-        this.loadUrlSources( urlSourcesArray )
-        .then(() => {
-          this.loadLayers( this.layers )
-          this.loadClicEvents( this.maps )
-          this.showLoader = false 
-        })
+
+        this.loadStoreSources( storeSourcesArray )
+        // .then(() => {
+          this.loadUrlSources( urlSourcesArray )
+          .then(() => {
+            this.loadLayers( this.layers )
+            this.loadClicEvents( this.maps )
+            this.showLoader = false 
+          })
+        // })
 
       }
 
@@ -322,35 +324,65 @@ export default {
 
       loadStoreSources( sourcesArray ){
 
-        this.log && console.log("\nC-MapboxGL / loadSources ", "... ".repeat(10)) 
+        this.log && console.log("\nC-MapboxGL / loadStoreSources ", "... ".repeat(10)) 
         let mapbox = this.map
         let store = this.$store
+
+        let promisesArray = []
 
         // STORE SOURCES (loaded as initData @ middleware GetInitData.js )
         for ( let source of sourcesArray ){
           
-          this.log && console.log("\nC-MapboxGL / loadSources - store ... source.id : ", source.id)
-          this.log && console.log("C-MapboxGL / loadSources - store ... source.help : ", source.help)
+          this.log && console.log("\nC-MapboxGL / loadStoreSources - store ... source.id : ", source.id)
+          this.log && console.log("C-MapboxGL / loadStoreSources - store ... source.help : ", source.help)
           let mapBoxSrcObj = {
             type : source.type,
           }
 
           // retrieve source from store 'state.data.initData'
           let dataset = store.getters['data/getFromInitData']( source.fromId )
-          // this.log && console.log("C-MapboxGL / loadSources - store ... dataset : ", dataset)
+          // this.log && console.log("C-MapboxGL / loadStoreSources - store ... dataset : ", dataset)
+
+                  let resp = new Promise( (resolve, reject ) => {
+                    let data = store.getters['data/getFromInitData']( source.fromId )
+                    resolve( data )
+                  })
+                  // .then( dataset => {
+                  //   // transform to source.type if necessary
+                  //   if ( source.needTransform ) {
+                  //     let geoCanvas = store.getters['data/getFromInitData']( source.transformTo.geoCanvasId )
+                  //     // this.log && console.log("C-MapboxGL / loadStoreSources - store ... geoCanvas : ", geoCanvas)
+                  //     let geoCanvasData = geoCanvas.data
+                  //     dataset = transformDataset( source, dataset, geoCanvasData )
+                  //   }
+
+                  //   // this.log && console.log("C-MapboxGL / loadStoreSources - store ... dataset : ", dataset)
+
+                  //   // add source to map
+                  //   // this.log && console.log("C-MapboxGL / loadStoreSources - store ... addSource ...")
+                  //   mapBoxSrcObj.data = {...dataset}
+                  //   if (source.generateId) mapBoxSrcObj.generateId = source.generateId 
+                  //   mapbox.addSource( source.id, mapBoxSrcObj )
+
+                  //   // add source to store 
+                  //   store.dispatch('data/setDisplayedDataset', {
+                  //     id : source.id,
+                  //     data : dataset,
+                  //   })
+                  // })
 
           // transform to source.type if necessary
           if ( source.needTransform ) {
             let geoCanvas = store.getters['data/getFromInitData']( source.transformTo.geoCanvasId )
-            // this.log && console.log("C-MapboxGL / loadSources - store ... geoCanvas : ", geoCanvas)
+            // this.log && console.log("C-MapboxGL / loadStoreSources - store ... geoCanvas : ", geoCanvas)
             let geoCanvasData = geoCanvas.data
             dataset = transformDataset( source, dataset, geoCanvasData )
           }
 
-          // this.log && console.log("C-MapboxGL / loadSources - store ... dataset : ", dataset)
+          // this.log && console.log("C-MapboxGL / loadStoreSources - store ... dataset : ", dataset)
 
           // add source to map
-          // this.log && console.log("C-MapboxGL / loadSources - store ... addSource ...")
+          // this.log && console.log("C-MapboxGL / loadStoreSources - store ... addSource ...")
           mapBoxSrcObj.data = {...dataset}
           if (source.generateId) mapBoxSrcObj.generateId = source.generateId 
           mapbox.addSource( source.id, mapBoxSrcObj )
@@ -361,13 +393,16 @@ export default {
             data : dataset,
           })
 
+          promisesArray.push(resp)
+
         }
+        // return Promise.all( promisesArray )
 
       },
 
       loadUrlSources( sourcesArray ){
 
-        this.log && console.log("\nC-MapboxGL / loadSources ", "... ".repeat(10)) 
+        this.log && console.log("\nC-MapboxGL / loadUrlSources ", "... ".repeat(10)) 
         let mapbox = this.map
         let store = this.$store
 
@@ -375,8 +410,8 @@ export default {
         let promisesArray = []
         for ( let source of sourcesArray ){
           
-          this.log && console.log("\nC-MapboxGL / loadSources - url ... source.id : ", source.id)
-          this.log && console.log("C-MapboxGL / loadSources - url ... source.help : ", source.help)
+          this.log && console.log("\nC-MapboxGL / loadUrlSources - url ... source.id : ", source.id)
+          this.log && console.log("C-MapboxGL / loadUrlSources - url ... source.help : ", source.help)
           let mapBoxSrcObj = {
             type : source.type,
           }
@@ -385,10 +420,10 @@ export default {
             let resp = axios.get( source.url )
             resp.then( r => {
               let dataset = r.data
-              // this.log && console.log("C-MapboxGL / loadSources - url ... dataset : ", dataset)
+              // this.log && console.log("C-MapboxGL / loadUrlSources - url ... dataset : ", dataset)
 
               // add source to map
-              // this.log && console.log("C-MapboxGL / loadSources - url ... addSource ...")
+              // this.log && console.log("C-MapboxGL / loadUrlSources - url ... addSource ...")
               mapBoxSrcObj.data = {...dataset}
               if (source.generateId) mapBoxSrcObj.generateId = source.generateId 
               mapbox.addSource( source.id, mapBoxSrcObj )
@@ -403,7 +438,7 @@ export default {
           } 
           else {
             // add source to map
-            // this.log && console.log("C-MapboxGL / loadSources - url (!loadInStore) ... addSource ...")
+            // this.log && console.log("C-MapboxGL / loadUrlSources - url (!loadInStore) ... addSource ...")
             mapBoxSrcObj.data = source.url
             if (source.generateId) mapBoxSrcObj.generateId = source.generateId 
             mapbox.addSource( source.id, mapBoxSrcObj )
