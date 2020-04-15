@@ -7,7 +7,7 @@
   // switch between facts on region / departement level
   const ZOOM_THRESHOLD = 6
   const PRIMARYFILLCOLOR = '#000091'
-  const OUTLINECOLOR = '#53657D'
+  const OUTLINECOLOR = '#627BC1'
 
   const fillPaint = {
     'fill-color': PRIMARYFILLCOLOR,
