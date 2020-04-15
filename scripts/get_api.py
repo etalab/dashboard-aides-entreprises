@@ -18,6 +18,7 @@ if __name__ == '__main__':
     mydf = []
     i = 0
     for index, row in df.iterrows():
+        time.sleep(0.5)
         i = i + 1
         print(i)
         onerow = {}

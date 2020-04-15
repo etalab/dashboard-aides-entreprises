@@ -54,8 +54,8 @@ def index():
 
 ################## API V1 ##############
 
-@app.route('/stat/aide', methods=['GET'])
-def getStatAideNational():
+@app.route('/stat/aide/section', methods=['GET'])
+def getStatAideNationalSectionAPE():
     # GET a specific data by id
     if request.method == 'GET':
         my_query = "SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren FROM aide A;"
@@ -95,8 +95,8 @@ def getStatAideNational():
         return jsonify(dataJson)
 
 
-@app.route('/stat/aide/reg', methods=['GET'])
-def getStatAideRegional():
+@app.route('/stat/aide/reg/section', methods=['GET'])
+def getStatAideRegionalSectionAPE():
     # GET a specific data by id
     if request.method == 'GET':
         my_query = "SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;"
@@ -140,8 +140,8 @@ def getStatAideRegional():
         return jsonify(dataJson)
 
 
-@app.route('/stat/aide/dep', methods=['GET'])
-def getStatAideDepartemental():
+@app.route('/stat/aide/dep/section', methods=['GET'])
+def getStatAideDepartementalSectionAPE():
     # GET a specific data by id
     if request.method == 'GET':
         my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, D.libelle FROM aide AS A LEFT JOIN departement AS D ON A.dep = D.dep GROUP BY A.dep, D.libelle;"
