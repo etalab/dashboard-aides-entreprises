@@ -1,4 +1,6 @@
 
+const AIDES_FILES_VERSION = '200415'
+
 export const configAppData = {
 
   help : "this file contains the data setup for the app",
@@ -226,7 +228,7 @@ export const configAppData = {
         { id    : "national-aides-raw" ,
           help  : "serie chiffres aides à la maille nationale",
           from  : "static" , 
-          url   : "/datasets/aides/200413/aides-maille-national.json",
+          url   : `/datasets/aides/${AIDES_FILES_VERSION}/aides-maille-national.json`,
           displayed : true,
           copyTo : [
             { fieldToCopy : undefined,
@@ -256,13 +258,13 @@ export const configAppData = {
         { id    : "regions-aides-raw" ,
           help  : "serie chiffres aides à la maille regionale",
           from  : "static" , 
-          url   : "/datasets/aides/200413/aides-maille-regional.json",
+          url   : `/datasets/aides/${AIDES_FILES_VERSION}/aides-maille-regional.json`,
           displayed : true,
         },
         { id    : "departements-aides-raw" ,
           help  : "serie chiffres aides à la maille departementale",
           from  : "static" , 
-          url   : "/datasets/aides/200413/aides-maille-departemental.json",
+          url   : `/datasets/aides/${AIDES_FILES_VERSION}/aides-maille-departemental.json`,
           displayed : false,
         },
 

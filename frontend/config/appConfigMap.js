@@ -151,7 +151,8 @@ export const configAppMap = {
         { id   : 'departements',
           help : 'geojson des contours des départements',
           from : 'url',
-          url  : '/datasets/geodata/departements-100m.geojson',
+          // url  : '/datasets/geodata/departements-100m.geojson',
+          url  : 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson',
           // url  : 'https://raw.githubusercontent.com/etalab/DVF-app/master/static/donneesgeo/departements-100m.geojson',
           // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/j_front/frontend/datasets/geodata/departements-100m.geojson',
           type : 'geojson',
@@ -336,11 +337,11 @@ export const configAppMap = {
             { event : 'click',
               layer : 'departements-fill',
               functions : [ 
-                { funcName    : "goToPolygon",
-                  funcParams  : { 
-                    propName : 'code',
-                  },
-                }, 
+                // { funcName    : "goToPolygon",
+                //   funcParams  : { 
+                //     propName : 'code',
+                //   },
+                // }, 
                 { funcName : 'updateDisplayedData',
                   funcParams  : { 
                     propName : 'code', 
@@ -472,7 +473,9 @@ export const configAppMap = {
           },
           paint: {
             'line-color': OUTLINECOLOR2,
-            'line-width': 1
+            'line-width': 1,
+            // 'line-gap-width': 1,
+            'line-dasharray': [ 2, 2 ],
           },
           minzoom: ZOOM_THRESHOLD,
         },

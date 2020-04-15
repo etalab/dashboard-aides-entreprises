@@ -343,10 +343,10 @@ export default {
           let dataset = store.getters['data/getFromInitData']( source.fromId )
           // this.log && console.log("C-MapboxGL / loadStoreSources - store ... dataset : ", dataset)
 
-                  let resp = new Promise( (resolve, reject ) => {
-                    let data = store.getters['data/getFromInitData']( source.fromId )
-                    resolve( data )
-                  })
+                  // let resp = new Promise( (resolve, reject ) => {
+                  //   let data = store.getters['data/getFromInitData']( source.fromId )
+                  //   resolve( data )
+                  // })
                   // .then( dataset => {
                   //   // transform to source.type if necessary
                   //   if ( source.needTransform ) {
@@ -393,10 +393,10 @@ export default {
             data : dataset,
           })
 
-          promisesArray.push(resp)
+                // promisesArray.push(resp)
 
         }
-        // return Promise.all( promisesArray )
+                // return Promise.all( promisesArray )
 
       },
 

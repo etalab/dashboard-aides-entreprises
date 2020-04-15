@@ -23,29 +23,58 @@ export function transformDataset ( source, dataset, geoCanvas ) {
     features : []
   }
   let transformTo = source.transformTo
-  transformedData.features = dataset.data.map( item => {
-
-    let canvasKey = transformTo.canvasKey
+  let canvasKey = transformTo.canvasKey
+  
+  let features = []
+  
+  dataset.data.forEach( item => {
+    
     let key = canvasKey.canvasKeyPrefix + item[ transformTo.srcKey ] + canvasKey.canvasKeySuffix
     // console.log("+ + + transformDataset ... key : ", key)
-
     let itemPoint = canvasKey.keyIsFieldName ? geoCanvas[ `${key}` ] : geoCanvas.find( g => g[ canvasKey.field ] == key )
-    // console.log("+ + + transformDataset ... itemPoint : ", itemPoint)
-
-    // build properties
-    let properties = buildProperties(transformTo.properties, item)
-    // console.log("+ + + transformDataset ... properties : ", properties)
-
-    // build feature
-    return {
-      type: 'Feature',
-      properties: properties,
-      geometry: {
-        type: transformTo.geometry.type,
-        coordinates: itemPoint
+    if ( itemPoint ) { 
+      let properties = buildProperties(transformTo.properties, item)
+      let geoObject = {
+        type: 'Feature',
+        properties: properties,
+        geometry: {
+          type: transformTo.geometry.type,
+          coordinates: itemPoint
+        }
       }
+      features.push(geoObject)
     }
   })
+
+  transformedData.features = features
+
+  // transformedData.features = dataset.data.map( item => {
+
+
+  //   let itemPoint = canvasKey.keyIsFieldName ? geoCanvas[ `${key}` ] : geoCanvas.find( g => g[ canvasKey.field ] == key )
+  //   console.log("+ + + transformDataset ... itemPoint : ", itemPoint)
+    
+
+  //   if ( itemPoint ) { 
+  //     // build properties
+  //     let properties = buildProperties(transformTo.properties, item)
+  //     console.log("+ + + transformDataset ... properties : ", properties)
+  //     // build feature
+  //     return {
+  //       type: 'Feature',
+  //       properties: properties,
+  //       geometry: {
+  //         type: transformTo.geometry.type,
+  //         coordinates: itemPoint
+  //       }
+  //     }
+  //   }
+
+  //   else {
+  //     return null; // skip
+  //   }
+
+  // })
 
   return transformedData
 }
