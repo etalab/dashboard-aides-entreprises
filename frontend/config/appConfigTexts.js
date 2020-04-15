@@ -32,6 +32,7 @@ export const configAppTexts = {
               textPrefix : { fr : 'Aides versées - ' },
               textSuffix : { fr : '' },
               specialStoreId : 'levelname',
+              specialStoreIdClass : 'font-weight-medium',
               // displayedData : [
               //   { name : 'displayed data : level.montant', 
               //     title : { fr : "texte"},

@@ -59,10 +59,17 @@
           <p 
             :class="`${col.textClass}`"
             >
-            {{ col.textPrefix[ locale ] }}
-            {{ getSpecialStore[ col.specialStoreId ] }}
-            {{ col.textSuffix[ locale ] }}
-            
+            <span>
+              {{ col.textPrefix[ locale ] }}
+            </span>
+            <span
+              :class="`${col.specialStoreIdClass}`">
+              {{ getSpecialStore[ col.specialStoreId ] }}
+            </span>
+            <span>
+              {{ col.textSuffix[ locale ] }}
+            </span>
+
           </p> 
 
           <!-- <code>

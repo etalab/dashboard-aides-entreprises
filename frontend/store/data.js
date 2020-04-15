@@ -1,4 +1,4 @@
-import { objectFromPath, sortArrayBy } from '~/utils/utils.js'
+import { objectFromPath, sortArrayBy, moveArrayElement } from '~/utils/utils.js'
 
 
 export const state = () => ({
@@ -89,6 +89,17 @@ export const getters = {
       state.log && console.log("S-data-A-getFromSpecialStoreData / clone  : ", clone )
       state.log && console.log("S-data-A-getFromSpecialStoreData / sortParams  : ", sortParams )
       let sorted = sortArrayBy( clone, sortParams)
+      if ( sortParams.sortOrder == 'descending' ){ sorted = sorted.reverse() }
+      let excParams = sortParams.exceptions
+      if ( excParams ){
+        let arrayMaxIndex = sorted.length - 1
+        if ( excParams.putLast  ){ 
+          let itemToMoveIndexLast = sorted.findIndex( i => i[ excParams.putLast.fieldName ] == excParams.putLast.value )
+          sorted = moveArrayElement( sorted, itemToMoveIndexLast, arrayMaxIndex) }
+        if ( sortParams.putFirst ){ 
+          let itemToMoveIndexFirst = sorted.findIndex( i => i[ excParams.putFirst.fieldName ] == excParams.putFirst.value )
+          sorted = moveArrayElement( sorted, itemToMoveIndexFirst, 0) }
+      }
       obj = sorted
     }
     return obj

@@ -6,8 +6,25 @@ import Vue from 'vue'
 
 
 // - - - - - - - - - - - - - - - - - - - //
-// SORT VALUES
+// SORT VALUES & ARRAY ORDER
 // - - - - - - - - - - - - - - - - - - - //
+
+export function moveArrayElement(arr, old_index, new_index) {
+  while (old_index < 0) {
+    old_index += arr.length;
+  }
+  while (new_index < 0) {
+    new_index += arr.length;
+  }
+  if (new_index >= arr.length) {
+    let k = new_index - arr.length;
+    while ((k--) + 1) {
+      arr.push(undefined);
+    }
+  }
+   arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);  
+ return arr;
+}
 
 export function sortByFieldName( arrayOfStuff, fieldName ){
   let sortedArray = arrayOfStuff.sort( (a, b) => {
@@ -22,9 +39,15 @@ export function sortByFieldName( arrayOfStuff, fieldName ){
 }
 export function sortByFieldValue( arrayOfStuff, fieldName, toNumber=true ){
   let sortedArray = arrayOfStuff.sort( (a, b) => {
-    let numbA = new Number(a [ fieldName ])
-    let numbB = new Number(b [ fieldName ])
-    return numbA - numbB 
+    let numbA = ( toNumber ) ? new Number(a [ fieldName ]) : a [ fieldName ]
+    let numbB = ( toNumber ) ? new Number(b [ fieldName ]) : b [ fieldName ]
+    // let result
+    // switch( order ){
+    //   case 'ascending'  : result = numbA - numbB  ; break ; 
+    //   case 'descending' : result = numbB - numbA  ; break ; 
+    // }
+    // return result
+    return numbA - numbB
   })
   return sortedArray
 }

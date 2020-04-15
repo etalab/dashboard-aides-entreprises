@@ -8,14 +8,16 @@
   const ZOOM_THRESHOLD = 6
   const PRIMARYFILLCOLOR = '#000091'
   const OUTLINECOLOR  = '#627BC1'
-  const OUTLINECOLOR2 = '#7b97bd'
+  const OUTLINECOLOR2 = '#6c87ab'
+
+  // layer fonts : ["Open Sans Regular","Arial Unicode MS Regular"]
 
   const fillPaint = {
     'fill-color': PRIMARYFILLCOLOR,
     'fill-outline-color': OUTLINECOLOR,
     'fill-opacity': ['case',
       ['boolean', ['feature-state', 'hover'], false],
-      0.2,
+      0.15,
       0
     ]
   }
@@ -467,7 +469,7 @@ export const configAppMap = {
             visibility: 'visible' ,
             'text-field': '{montantMillions} M€',
             "text-font": ["Open Sans Regular"], // OK
-            'text-size': 14
+            'text-size': 14,
           },
           maxzoom: ZOOM_THRESHOLD,
         },
@@ -495,7 +497,7 @@ export const configAppMap = {
             'line-color': OUTLINECOLOR2,
             'line-width': 1,
             // 'line-gap-width': 1,
-            'line-dasharray': [ 2, 2 ],
+            'line-dasharray': [ 2, 3 ],
           },
           minzoom: ZOOM_THRESHOLD,
         },

@@ -33,7 +33,11 @@
           {{ getSpecialStore[ viewConfig.titlePreffixSpecialStoreId ] }}
         </span>
 
-        {{ viewConfig.chartTitle[ locale ] }}
+        <span 
+         v-html="viewConfig.chartTitle[ locale ]"
+        >
+        </span>
+        <!-- {{ viewConfig.chartTitle[ locale ] }} -->
 
         <span
           v-if="viewConfig.titleSuffixSpecialStoreId"
