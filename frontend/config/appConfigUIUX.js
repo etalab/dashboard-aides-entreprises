@@ -15,8 +15,7 @@ export const configAppUIUX = {
   lang : {
     defaultLocale : "fr",
     locales: [
-      {
-        code: "fr",
+      { code: "fr",
         name: "Français",
         file: "fr-FR.js" 
       }
