@@ -47,7 +47,7 @@ export const configAppTexts = {
       titleI18n : "texts.text01.title",
       dividers : {
         before : false,
-        after : true,
+        after : false,
       },
       componentRows : [
 
@@ -56,8 +56,8 @@ export const configAppTexts = {
           columns : [
           
             { colName : '',
-              colTitle : { fr : "Plus d'informations sur les mesures de soutien aux entreprises" },
-              colTitleClass : 'mt-5',
+              colTitle : { fr : "informations" },
+              colTitleClass : 'my-5',
               cols : 12,
               textClass : '',
               subTextClass : '',
@@ -67,7 +67,7 @@ export const configAppTexts = {
               specialStoreIdClass : undefined,
               textsHtml : [
 
-                { id : 'aides-links',
+                { id : 'intro',
                   textClass : 'text-left mx-4 pt-4',
                   textContent : { fr : `
                     L’Etat a mis en place, avec les Régions, un fonds de solidarité doté d’1,7 milliard d’euros 
@@ -75,11 +75,14 @@ export const configAppTexts = {
                     allant jusqu’à 1500 euros aux plus petites entreprises, aux indépendants, 
                     aux micro-entrepreneurs et aux professions libérales touchés par la crise du coronavirus. 
                     Ce fonds sera maintenu autant que durera l’urgence sanitaire.
-                  ` },
-                  fromUrl : undefined,
-                },
+                    ` },
+                    fromUrl : { fr : undefined },
+                  },
+                  // Plus d'informations sur les mesures de soutien aux entreprises sur le 
+                  // <a target="_top" href="https://www.economie.gouv.fr/coronavirus-soutien-entreprises">
+                  //   portail de l'Economie, des Finances, de l'Action et des Comptes publics</a>.
 
-                { id : 'intro',
+                { id : 'aides-textes',
                   textClass : 'text-left mx-4 pt-4',
                   textContent : { fr : `
                     Afin d’offrir de la visibilité à l’ensemble des Français sur 
@@ -95,18 +98,18 @@ export const configAppTexts = {
                       code source est libre</a>
                     qui propose une vision consolidée des aides aux entreprises effectivement versées.
                   ` },
-                  fromUrl : undefined,
+                  fromUrl : { fr : undefined },
                 },
 
-                { id : 'intro-bis',
-                  textClass : 'text-left mx-4 pt-4',
+                { id : 'more-infos',
+                  textClass : 'text-left mx-4 pt-4 pb-5 mb-5',
                   textContent : { fr : `
                     Pour obtenir d’autres informations relatives au fonds de solidarité, il est possible de 
                     consulter la page d’information disponible sur 
-                    <a target="_top" href="https://www.etalab.gouv.fr">
+                    <a target="_top" href="https://www.impots.gouv.fr/portail/">
                       https://www.impots.gouv.fr/portail/</a>.
                   ` },
-                  fromUrl : undefined,
+                  fromUrl : { fr : undefined },
                 },
 
               ] 

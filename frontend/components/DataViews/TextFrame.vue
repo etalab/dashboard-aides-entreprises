@@ -92,7 +92,7 @@
 
             <!-- TEXT FROM DISPLAYED DATA -->
             <div
-              v-if="!txt.fromUrl"
+              v-if="!txt.fromUrl[ locale ]"
               >
               <p 
                 :class="`${txt.textClass}`"
@@ -104,8 +104,9 @@
               </p> 
             </div>
 
+            <!-- TEXT FROM DISTANT HTML FILE -->
             <div
-              v-if="txt.fromUrl"
+              v-if="txt.fromUrl[ locale ]"
               >
               <p 
                 :class="`${txt.textClass}`"
