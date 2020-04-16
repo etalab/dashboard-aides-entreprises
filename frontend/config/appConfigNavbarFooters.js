@@ -9,6 +9,7 @@ export const configAppNavbarFooters = {
 
     { id : "navbar-footer-01",
       help : '',
+
       activated : true,
 
       title : { fr : '' },

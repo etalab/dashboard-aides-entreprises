@@ -70,12 +70,11 @@ export const configAppTexts = {
                 { id : 'aides-links',
                   textClass : 'text-left mx-4 pt-4',
                   textContent : { fr : `
-                    Face à l’épidémie du Coronavirus Covid-19, le Gouvernement met en place des mesures immédiates de soutien aux entreprises. 
-
-                    Pour obtenir plus de détails sur ces mesures vous pouvez consulter la
-                    <a target="_top" href="https://www.economie.gouv.fr/coronavirus-soutien-entreprises">
-                      page d'informations dédiée</a>.
-                    sur le portail du ministère de l'économie, des finances, de l'action et des comptes publics
+                    L’Etat a mis en place, avec les Régions, un fonds de solidarité doté d’1,7 milliard d’euros 
+                    pour le mois de mars qui permettra le versement d’une aide défiscalisée 
+                    allant jusqu’à 1500 euros aux plus petites entreprises, aux indépendants, 
+                    aux micro-entrepreneurs et aux professions libérales touchés par la crise du coronavirus. 
+                    Ce fonds sera maintenu autant que durera l’urgence sanitaire.
                   ` },
                   fromUrl : undefined,
                 },
@@ -83,41 +82,33 @@ export const configAppTexts = {
                 { id : 'intro',
                   textClass : 'text-left mx-4 pt-4',
                   textContent : { fr : `
-                    L’information officielle sur la progression de l’épidémie en France est consolidée par 
-                    <a target="_top" href="https://www.santepubliquefrance.fr">
-                      Santé publique France</a>.
-                    L’agence propose un 
-                    <a target="_top" href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/maladies-et-infections-respiratoires/infection-a-coronavirus/articles/infection-au-nouveau-coronavirus-sars-cov-2-covid-19-france-et-monde">
-                      point épidémiologique quotidien</a>, 
-                    qui comprend les chiffres-clés nationaux. 
-                    Elle propose également des 
-                    <a target="_top" href="https://www.data.gouv.fr/fr/organizations/sante-publique-france/">
-                      données relatives à l’épidémie plus précises</a> 
-                    sur la plateforme 
-                    <a target="_top" href="https://www.data.gouv.fr">
-                      www.data.gouv.fr</a>
+                    Afin d’offrir de la visibilité à l’ensemble des Français sur 
+                    l’attribution des aides versées aux entreprises dans le 
+                    cadre de ce fonds de solidarité, le ministre de l’action et des comptes publics, avec le soutien technique 
+                    <a target="_top" href="https://www.etalab.gouv.fr">
+                      d’Etalab</a>
+                    au sein de la 
+                    <a target="_top" href="https://www.numerique.gouv.fr">
+                      Direction Interministérielle du Numérique (DINUM)</a>,
+                    mettent à disposition un tableau de bord dont le 
+                    <a target="_top" href="https://github.com/etalab/dashboard-aides-entreprises">
+                      code source est libre</a>
+                    qui propose une vision consolidée des aides aux entreprises effectivement versées.
                   ` },
                   fromUrl : undefined,
                 },
 
-                { id : 'repo-01',
-                  textClass : 'text-left mx-4 pt-4 pb-5',
+                { id : 'intro-bis',
+                  textClass : 'text-left mx-4 pt-4',
                   textContent : { fr : `
-
-                    Cet outil 
-                      <a target="_top" href="https://github.com/etalab/dashboard-aides-entreprises">
-                        dont le code source est libre</a>, 
-                      développé sous l’impulsion d’
-                      <a target="_top" href="https://www.etalab.gouv.fr">
-                        Etalab</a>, 
-                      au sein de la 
-                      <a target="_top" href="https://www.numerique.gouv.fr/dinum/">
-                        direction interministérielle du numérique</a>, 
-                      propose une vision consolidée des données officielles disponibles.
-
+                    Pour obtenir d’autres informations relatives au fonds de solidarité, il est possible de 
+                    consulter la page d’information disponible sur 
+                    <a target="_top" href="https://www.etalab.gouv.fr">
+                      https://www.impots.gouv.fr/portail/</a>.
                   ` },
                   fromUrl : undefined,
                 },
+
               ] 
             },
           

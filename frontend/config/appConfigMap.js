@@ -81,7 +81,6 @@ export const configAppMap = {
     { id : "map-base",
       isActivated : true,
       titleI18n : "maps.map01.title",
-      notShowFor : [ 'xs', 'sm' ],
 
       map_options   : {
     
@@ -216,7 +215,7 @@ export const configAppMap = {
 
                 { funcName    : "goToPolygon",
                   funcParams  : { 
-                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
+                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD + 2 },
                     propName : 'code',
                   },
                 }, 
@@ -571,6 +570,7 @@ export const configAppMap = {
           copyFromId : 'map-base',
           fieldsToCopy : [
             'sources', 
+            'notShownFor',
             'maps', 
             'layers', 
             'maps_visibility'

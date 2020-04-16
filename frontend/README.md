@@ -20,7 +20,8 @@ a generic map/dashboard solution for open data
 
 - Julien Paris
 - Alexandre Bulté
-- 
+- Geoffrey 
+
 ----------
 
 ## Sites 

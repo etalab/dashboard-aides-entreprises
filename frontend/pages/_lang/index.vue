@@ -113,7 +113,7 @@
 
 <script>
 
-  import { mapState, mapGetters } from 'vuex'
+  import { mapState, mapGetters, mapActions } from 'vuex'
 
   import Filters from '~/components/DataViews/Filters.vue'
 
@@ -143,29 +143,48 @@
     props : [
     ],
 
+    created() {
+      this.log && console.log('P-Homepage / created ...')
+      window.addEventListener('resize', this.handleResize)
+      this.handleResize()
+    },
+
+    destroyed() {
+      window.removeEventListener('resize', this.handleResize)
+    },
+
     mounted(){
       this.log && console.log('P-Homepage / mounted ...')
     },
 
     watch : {
       getActivatedCurrentNavbarFooter(next, prev){
-        // this.log && console.log('P-Homepage / watch / getActivatedCurrentNavbarFooter ... next :', next)
-        let fallback 
-        if ( next ){
-          // show navbarFooter => mobile
-          fallback = (this.getCurrentNavbarFooter.redirectAtBreakShow.path) ? this.getCurrentNavbarFooter.redirectAtBreakShow.path : '/'
+        this.log && console.log('\nP-Homepage / watch / getActivatedCurrentNavbarFooter ... next :', next)
+        this.log && console.log('P-Homepage / watch / getActivatedCurrentNavbarFooter ... prev :', prev)
+        this.log && console.log('P-Homepage / watch / getActivatedCurrentNavbarFooter ... this.getCurrentNavbarFooter :', this.getCurrentNavbarFooter)
+
+        // if (typeof prev !== 'undefined'){
+          let fallback = '/'
+          if ( next && typeof prev !== 'undefined' ){
+            // show navbarFooter => mobile
+            fallback = (this.getCurrentNavbarFooter.redirectAtBreakShow.path) ? this.getCurrentNavbarFooter.redirectAtBreakShow.path : '/'
+          } else {
+            // don't show navbarFooter => desktop
+            fallback = (this.getCurrentNavbarFooter.redirectAtBreakNoShow.path) ? this.getCurrentNavbarFooter.redirectAtBreakNoShow.path : '/'
+          }
+          this.log && console.log('P-Homepage / watch / getActivatedCurrentNavbarFooter ... fallback :', fallback)
           this.$router.push( fallback )
-        } else {
-          // don't show navbarFooter => desktop
-          fallback = (this.getCurrentNavbarFooter.redirectAtBreakNoShow.path) ? this.getCurrentNavbarFooter.redirectAtBreakNoShow.path : '/'
-          this.$router.push( fallback )
-        }
+        // }
       }
     },
 
     data(){
       return {
         fixed: false,
+        window : {
+          width: 0,
+          height: 0
+        }
       }
     },
 
@@ -205,6 +224,19 @@
     },
     
     methods : {
+
+      ...mapActions({
+        setCurrentWindowSize : 'setCurrentWindowSize',
+      }),
+
+      handleResize() {
+        this.window.width = window.innerWidt
+        this.window.height = window.innerHeight
+        this.setCurrentWindowSize( {
+          width : window.innerWidth,
+          height : window.innerHeight,
+        })
+      },
 
     },
 

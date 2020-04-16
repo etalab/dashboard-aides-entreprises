@@ -107,6 +107,7 @@ export const configAppRoutes = {
                   settings : {
                     id : "map-france-metro",
                     containerClass : 'pb-0',
+                    notShownFor : [ 'xs', 'sm' ],
                   },
                 },
               ],
@@ -226,6 +227,7 @@ export const configAppRoutes = {
               hasScrollbar : true,
               smallScreenVerticalOrder : undefined,
               colRows : [
+
                 { component : "text",
                   activated : true,
                   smallScreenVerticalOrder : undefined,
@@ -256,6 +258,27 @@ export const configAppRoutes = {
                     containerClass : 'pb-0',
                   },
                 },
+                { component : "apexchart",
+                  activated : true,
+                  smallScreenVerticalOrder : 5,
+                  justify : "center",
+                  align : "center",
+                  settings : { 
+                    id : "apexchart-01bis",
+                    containerClass : 'mt-4 pt-3 pb-0',
+                  },
+                },
+                { component : "text",
+                  activated : true,
+                  smallScreenVerticalOrder : 1,
+                  justify : "center",
+                  align : "center",
+                  settings : { 
+                    id : "text-02",
+                    containerClass : 'pb-0',
+                  },
+                },
+                
               ],
             },
           ]

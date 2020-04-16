@@ -22,7 +22,7 @@ export const configAppNumbers = {
           columns : [
 
             { colName : '',
-              colTitle : { fr : 'total montant des aides versées' },
+              colTitle : { fr : 'montant total' },
               titleI18n : 'numbers.numbers01.amount',
               colClass : '',
               cols : 6,
@@ -37,7 +37,7 @@ export const configAppNumbers = {
             },
 
             { colName : '',
-              colTitle : { fr : "nombre d'aides versées" },
+              colTitle : { fr : "nombre" },
               titleI18n : 'numbers.numbers01.total',
               colClass : '',
               cols : 6,

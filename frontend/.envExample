@@ -1,0 +1,8 @@
+
+### GLOBAL ENV VARS
+
+# NUXT_ENV_RUN_MODE : dev | preprod | prod
+NUXT_ENV_RUN_MODE=dev
+
+NUXT_ENV_HOST=localhost
+NUXT_ENV_PORT_DEV=8000

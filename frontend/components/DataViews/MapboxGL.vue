@@ -305,9 +305,13 @@ export default {
 
     canShow(){
       let bool = true
-      let noShowArray = this.viewConfig && this.viewConfig.notShowFor 
+      // this.log && console.log("C-MapboxGL / canShow ... this.viewConfig : ", this.viewConfig )
+      // let noShowArray = this.viewConfig && this.viewConfig.notShownFor 
+      let noShowArray = this.settings.notShownFor 
+      // this.log && console.log("C-MapboxGL / canShow ... noShowArray : ", noShowArray )
       if ( noShowArray ) {
-        let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        let currentBreakpoint = this.getCurrentBreakpoint(this.windowSize.width)
+        bool = !noShowArray.includes(currentBreakpoint)
       }
       return bool
     },
@@ -323,7 +327,7 @@ export default {
     getCurrentZoom(){
       let mapbox = this.map
       let currentZoom = mapbox.getZoom() 
-      this.log && console.log("C-MapboxGL / getCurrentZoom ... currentZoom : ", currentZoom )
+      // this.log && console.log("C-MapboxGL / getCurrentZoom ... currentZoom : ", currentZoom )
       return currentZoom
     },
 

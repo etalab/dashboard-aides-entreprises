@@ -145,12 +145,14 @@ export const getters = {
 
   getCurrentBreakpoint: (state) => (width) => {
     let thresholds = state.breakpoint.thresholds
-    let breakpointName
+    let breakpointName = 'md'
+    state.log && console.log("S-index-G-getCurrentBreakpoint / width : ", width)
     if (width < thresholds.xs) { breakpointName = 'xs' }
     if (width >= thresholds.xs && width < thresholds.sm) { breakpointName = 'sm' }
     if (width >= thresholds.sm && width < thresholds.md) { breakpointName = 'md' }
     if (width >= thresholds.md && width < thresholds.lg) { breakpointName = 'lg' }
     if (width > thresholds.lg ) { breakpointName = 'xl' }
+    state.log && console.log("S-index-G-getCurrentBreakpoint / breakpointName : ", breakpointName)
     return breakpointName
   }
 
@@ -227,18 +229,15 @@ export const actions = {
       let showOnSizes = state.currentNavbarFooter.showOnSizes
       let breakpointName = getters.getCurrentBreakpoint( windowWidth )
       
-      state.log && console.log("S-index-A-setCurrentWindowSize / breakpointName : ", breakpointName)
+      state.log && console.log("S-index-A-setCurrentWindowSize / breakpointName (for NavbarFooter): ", breakpointName)
       
       let bool = false
       if ( showOnSizes.includes(breakpointName) ){
         bool = true
       } 
 
+      state.log && console.log("S-index-A-setCurrentWindowSize / bool (for NavbarFooter): ", bool)
       commit('setNavbarFooterVisibility', bool)
-      
-      // if ( !bool ){
-      //   this.$router.push( state.currentNavbarFooter.fallback )
-      // }
 
     }
   },

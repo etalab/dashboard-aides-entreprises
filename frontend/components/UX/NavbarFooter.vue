@@ -11,19 +11,22 @@
     v-if="getCurrentNavbarFooter && bottomNav"
     >
 
+      <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
     <v-bottom-navigation
-      v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated"
+      v-show="showCurrentNavbarFooter"
       :id="`navbar-footer-${ settings.id }`"
       :class="`${settings.navbarFooterClass}`"
       :trigger="`${trigger}`"
-      :value.sync="bottomNav"
+      :value="bottomNav"
       :grow="navbarFooterConfig.grow"
       :shift="navbarFooterConfig.shift"
       color="primary"
       >
 
+      <!-- {{ showCurrentNavbarFooter }} -->
+      
       <v-btn
-        v-for="(btn, index) in navbarFooterConfig.buttons"
+        v-for="btn in navbarFooterConfig.buttons"
         :key="btn.value"
         :value="btn.value"
         @click.stop="goToRef(btn)"
@@ -62,7 +65,7 @@
     beforeMount() {
       // set up view config
       this.navbarFooterConfig = this.getLocalConfig
-      this.log && console.log('C-NavbarFooter / this.navbarFooterConfig : ', this.navbarFooterConfig)
+      this.log && console.log('C-NavbarFooter / beforeMount / this.navbarFooterConfig : ', this.navbarFooterConfig)
     },
     
     mounted(){
@@ -126,6 +129,7 @@
         selectFromDisplayedData : 'data/selectFromDisplayedData',
         getSpecialStore : 'data/getSpecialStore',
         windowSize : 'getWindowsSize',
+        getCurrentBreakpoint : 'getCurrentBreakpoint',
         getCurrentNavbarFooter : 'getCurrentNavbarFooter',
         getActivatedCurrentNavbarFooter : 'getActivatedCurrentNavbarFooter',
       }),
@@ -146,6 +150,16 @@
           offset: this.offset,
           easing: this.easing,
         }
+      },
+
+      showCurrentNavbarFooter(){
+        let currentNavbarFooterOnSizes = this.getCurrentNavbarFooter.showOnSizes
+        // this.log && console.log('C-NavbarFooter / showCurrentNavbarFooter / currentNavbarFooterOnSizes : ', currentNavbarFooterOnSizes)
+        let currentBreakpoint = this.getCurrentBreakpoint(this.windowSize.width)
+        // this.log && console.log('C-NavbarFooter / showCurrentNavbarFooter / currentBreakpoint : ', currentBreakpoint)
+        let bool = currentNavbarFooterOnSizes.includes( currentBreakpoint )
+        // this.log && console.log('C-NavbarFooter / showCurrentNavbarFooter / bool : ', bool)
+        return bool
       },
 
     },

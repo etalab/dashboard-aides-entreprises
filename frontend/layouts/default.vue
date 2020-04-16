@@ -115,24 +115,25 @@
 
     data () {
       return {
-        window : {
-          width: 0,
-          height: 0
-        }
+        // window : {
+        //   width: 0,
+        //   height: 0
+        // }
       }
     },
 
-    created() {
-      window.addEventListener('resize', this.handleResize);
-      this.handleResize();
-    },
+    // created() {
+    //   window.addEventListener('resize', this.handleResize)
+    //   this.handleResize()
+    // },
 
-    destroyed() {
-      window.removeEventListener('resize', this.handleResize);
-    },
+    // destroyed() {
+    //   window.removeEventListener('resize', this.handleResize)
+    // },
 
     mounted(){
       this.log && console.log('L-default / mounted ...')
+      // this.handleResize()
     },
 
     computed: {
@@ -164,18 +165,18 @@
 
     methods : {
 
-      ...mapActions({
-        setCurrentWindowSize : 'setCurrentWindowSize',
-      }),
+      // ...mapActions({
+      //   setCurrentWindowSize : 'setCurrentWindowSize',
+      // }),
 
-      handleResize() {
-        this.window.width = window.innerWidt
-        this.window.height = window.innerHeight
-        this.setCurrentWindowSize( {
-          width : window.innerWidth,
-          height : window.innerHeight,
-        })
-      },
+      // handleResize() {
+      //   this.window.width = window.innerWidt
+      //   this.window.height = window.innerHeight
+      //   this.setCurrentWindowSize( {
+      //     width : window.innerWidth,
+      //     height : window.innerHeight,
+      //   })
+      // },
 
     }
 
