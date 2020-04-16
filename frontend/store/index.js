@@ -139,6 +139,10 @@ export const getters = {
     return state.currentNavbarFooter 
   },
 
+  getActivatedCurrentNavbarFooter: (state) => {
+    return state.currentNavbarFooter && state.currentNavbarFooter.activated
+  },
+
   getCurrentBreakpoint: (state) => (width) => {
     let thresholds = state.breakpoint.thresholds
     let breakpointName
@@ -232,9 +236,9 @@ export const actions = {
 
       commit('setNavbarFooterVisibility', bool)
       
-      if ( !bool ){
-        this.$router.push( state.currentNavbarFooter.fallback )
-      }
+      // if ( !bool ){
+      //   this.$router.push( state.currentNavbarFooter.fallback )
+      // }
 
     }
   },

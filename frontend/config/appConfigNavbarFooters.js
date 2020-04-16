@@ -18,8 +18,11 @@ export const configAppNavbarFooters = {
       height : 56,
       grow: true,
       shift: true,
-      showOnSizes : [ 'xs', 'sm'],
-      fallback : '/',
+      showOnSizes : [ 'xs', 'sm' ],
+
+      defaultBtnNav : 'map',
+      redirectAtBreakShow :   { path : '/map', btnNav : 'map' },
+      redirectAtBreakNoShow : { path : '/',    btnNav : 'home' },
 
       buttons : [
         { title : { fr : 'accueil' },

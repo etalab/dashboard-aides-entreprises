@@ -7,33 +7,39 @@
 
 <template>
 
-  <v-bottom-navigation
-    v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated"
-    :id="`navbar-footer-${ settings.id }`"
-    :class="`${settings.navbarFooterClass}`"
-    :trigger="`${trigger}`"
-    v-model="bottomNav"
-    :grow="navbarFooterConfig.grow"
-    :shift="navbarFooterConfig.shift"
-    color="primary"
+  <div
+    v-if="getCurrentNavbarFooter && bottomNav"
     >
 
-    <v-btn
-      v-for="(btn, index) in navbarFooterConfig.buttons"
-      :key="btn.value"
-      :value="btn.value"
-      @click.stop="goToRef(btn)"
+    <v-bottom-navigation
+      v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated"
+      :id="`navbar-footer-${ settings.id }`"
+      :class="`${settings.navbarFooterClass}`"
+      :trigger="`${trigger}`"
+      :value.sync="bottomNav"
+      :grow="navbarFooterConfig.grow"
+      :shift="navbarFooterConfig.shift"
+      color="primary"
       >
-      <span>
-        {{ btn.title[ locale ]}}
-      </span>
-      <v-icon>
-        {{ btn.icon }}
-      </v-icon>
-    </v-btn>
+
+      <v-btn
+        v-for="(btn, index) in navbarFooterConfig.buttons"
+        :key="btn.value"
+        :value="btn.value"
+        @click.stop="goToRef(btn)"
+        >
+        <span>
+          {{ btn.title[ locale ]}}
+        </span>
+        <v-icon>
+          {{ btn.icon }}
+        </v-icon>
+      </v-btn>
 
 
-  </v-bottom-navigation>
+    </v-bottom-navigation>
+
+  </div>
 
 </template>
 
@@ -61,19 +67,35 @@
     
     mounted(){
       this.log && console.log('C-NavbarFooter / mounted ...')
+      this.bottomNav = this.navbarFooterConfig.defaultBtnNav
     },
 
     watch: {
       navbarFooterConfig(next, prev){
         this.$store.commit('setCurrentNavbarFooter', next )
       },
+      getActivatedCurrentNavbarFooter(next, prev){
+        this.log && console.log('C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... next :', next)
+        this.log && console.log('C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... this.getCurrentNavbarFooter :', this.getCurrentNavbarFooter)
+        let btnFallback 
+        if ( next ){
+          // show navbarFooter => mobile
+          btnFallback = (this.getCurrentNavbarFooter.redirectAtBreakShow.btnNav) ? this.getCurrentNavbarFooter.redirectAtBreakShow.btnNav : 1
+        } else {
+          // don't show navbarFooter => desktop
+          btnFallback = (this.getCurrentNavbarFooter.redirectAtBreakNoShow.btnNav) ? this.getCurrentNavbarFooter.redirectAtBreakNoShow.btnNav : 1
+        }
+        this.log && console.log('C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... btnFallback :', btnFallback)
+        this.log && console.log('C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... this.bottomNav :', this.bottomNav)
+        this.changeBottomNav( btnFallback )
+      }
     },
 
     data(){
       return {
         dataViewType : 'navbarFooters',
         navbarFooterConfig : undefined,
-        bottomNav : 1, 
+        bottomNav : undefined,
 
         // type: 'number',
         // number: 9999,
@@ -105,6 +127,7 @@
         getSpecialStore : 'data/getSpecialStore',
         windowSize : 'getWindowsSize',
         getCurrentNavbarFooter : 'getCurrentNavbarFooter',
+        getActivatedCurrentNavbarFooter : 'getActivatedCurrentNavbarFooter',
       }),
 
       // config
@@ -145,9 +168,7 @@
       },
 
       goToRef( btn ){
-
-        this.log && console.log('C-NavbarFooter / goToRef / btn : ', btn)
-
+        // this.log && console.log('C-NavbarFooter / goToRef / btn : ', btn)
         if (btn.action == 'scrollTo'){
         // scroll action
           this.$vuetify.goTo( btn.to, this.options)
@@ -156,10 +177,11 @@
           // router action
           this.$router.push( btn.toUrl )
         }
-        // let el = document.getElementById('text-text-01')
-        // this.log && console.log('C-NavbarFooter / goToRef / el : ', el)
-        // document.scrollTop += 10
       },
+
+      changeBottomNav( val ){
+        this.bottomNav = val
+      }
 
     },
 

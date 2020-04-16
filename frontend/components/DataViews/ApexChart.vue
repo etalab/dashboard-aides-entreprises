@@ -11,6 +11,7 @@
 <template>
 
   <v-container
+    v-show="canShow"
     :id="`apexcharts-${ settings.id }`"
     :class="`${settings.containerClass}`"
     :trigger="`${trigger}`"
@@ -183,6 +184,7 @@
         getSpecialStore : 'data/getSpecialStore',
         getFromSpecialStoreData : 'data/getFromSpecialStoreData',
         windowSize : 'getWindowsSize',
+        getCurrentBreakpoint : 'getCurrentBreakpoint',
       }),
 
       // config
@@ -193,6 +195,15 @@
         }
         let localConfig = this.getDataViewConfig( viewId )
         return localConfig
+      },
+
+      canShow(){
+        let bool = true
+        let noShowArray = this.viewConfig && this.viewConfig.notShowFor 
+        if ( noShowArray ) {
+          let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        }
+        return bool
       },
 
     },

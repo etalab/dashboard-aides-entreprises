@@ -14,6 +14,7 @@
 <template>
 
   <div 
+    v-show="canShow"
     :class="`map`"
     :id="`map-${ settings.id }`"
     :trigger="`${trigger}`"
@@ -204,6 +205,7 @@ export default {
     
     // set up view config
     this.viewConfig = this.getLocalConfig
+    this.log && console.log("C-MapboxGL / dataset / this.viewConfig : ", this.viewConfig)
 
     // set up MAPBOX options
     const mapOptionsRoute = this.viewConfig.map_options
@@ -288,6 +290,7 @@ export default {
       getFromDisplayedData : 'data/getFromDisplayedData',
       windowSize : 'getWindowsSize',
       getCurrentNavbarFooter : 'getCurrentNavbarFooter',
+      getCurrentBreakpoint : 'getCurrentBreakpoint',
     }),
 
     // config
@@ -298,6 +301,15 @@ export default {
       }
       let localConfig = this.getDataViewConfig( viewId )
       return localConfig
+    },
+
+    canShow(){
+      let bool = true
+      let noShowArray = this.viewConfig && this.viewConfig.notShowFor 
+      if ( noShowArray ) {
+        let bool = noShowArray.includes(this.getCurrentBreakpoint)
+      }
+      return bool
     },
 
     contentWindowHeight(){

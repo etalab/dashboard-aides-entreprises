@@ -9,6 +9,7 @@
 
 
   <v-container
+    v-show="canShow"
     :id="`table-${ settings.id }`"
     :class="``"
     :trigger="`${trigger}`"
@@ -188,6 +189,7 @@
         getDataViewConfig : 'getDataViewConfig',
         getSpecialStore : 'data/getSpecialStore',
         windowSize : 'getWindowsSize',
+        getCurrentBreakpoint : 'getCurrentBreakpoint',
       }),
 
       // config
@@ -198,6 +200,15 @@
         }
         let localConfig = this.getDataViewConfig( viewId )
         return localConfig
+      },
+
+      canShow(){
+        let bool = true
+        let noShowArray = this.viewConfig && this.viewConfig.notShowFor 
+        if ( noShowArray ) {
+          let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        }
+        return bool
       },
 
     },

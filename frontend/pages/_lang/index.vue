@@ -147,7 +147,20 @@
       this.log && console.log('P-Homepage / mounted ...')
     },
 
-    watch: {
+    watch : {
+      getActivatedCurrentNavbarFooter(next, prev){
+        // this.log && console.log('P-Homepage / watch / getActivatedCurrentNavbarFooter ... next :', next)
+        let fallback 
+        if ( next ){
+          // show navbarFooter => mobile
+          fallback = (this.getCurrentNavbarFooter.redirectAtBreakShow.path) ? this.getCurrentNavbarFooter.redirectAtBreakShow.path : '/'
+          this.$router.push( fallback )
+        } else {
+          // don't show navbarFooter => desktop
+          fallback = (this.getCurrentNavbarFooter.redirectAtBreakNoShow.path) ? this.getCurrentNavbarFooter.redirectAtBreakNoShow.path : '/'
+          this.$router.push( fallback )
+        }
+      }
     },
 
     data(){
@@ -155,6 +168,7 @@
         fixed: false,
       }
     },
+
 
     computed: {
 
@@ -177,6 +191,7 @@
         routeConfig : 'getLocalRouteConfig',
         windowSize : 'getWindowsSize',
         getCurrentNavbarFooter : 'getCurrentNavbarFooter',
+        getActivatedCurrentNavbarFooter : 'getActivatedCurrentNavbarFooter',
       }),
 
       contentWindowHeight(){

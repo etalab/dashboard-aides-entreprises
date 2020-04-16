@@ -8,6 +8,7 @@
 <template>
 
   <v-container
+    v-show="canShow"
     :id="`numbers-${ settings.id }`"
     :class="`${settings.containerClass}`"
     :trigger="`${trigger}`"
@@ -153,6 +154,7 @@
         selectFromDisplayedData : 'data/selectFromDisplayedData',
         getSpecialStore : 'data/getSpecialStore',
         windowSize : 'getWindowsSize',
+        getCurrentBreakpoint : 'getCurrentBreakpoint',
       }),
 
       // config
@@ -165,6 +167,14 @@
         return localConfig
       },
 
+      canShow(){
+        let bool = true
+        let noShowArray = this.viewConfig && this.viewConfig.notShowFor 
+        if ( noShowArray ) {
+          let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        }
+        return bool
+      },
 
     },
     

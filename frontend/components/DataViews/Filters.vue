@@ -8,6 +8,7 @@
 <template>
 
   <v-toolbar 
+    v-show="canShow"
     v-if="filtersUX.isVisible"
     :elevation="filtersUI.elevation"
     dense
@@ -106,7 +107,17 @@
         getCurrentLocale : 'getCurrentLocale',
         getSpecialStore : 'data/getSpecialStore',
         windowSize : 'getWindowsSize',
+        getCurrentBreakpoint : 'getCurrentBreakpoint',
       }),
+
+      canShow(){
+        let bool = true
+        let noShowArray = this.viewConfig && this.viewConfig.notShowFor 
+        if ( noShowArray ) {
+          let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        }
+        return bool
+      },
 
     },
     

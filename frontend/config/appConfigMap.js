@@ -81,6 +81,7 @@ export const configAppMap = {
     { id : "map-base",
       isActivated : true,
       titleI18n : "maps.map01.title",
+      notShowFor : [ 'xs', 'sm' ],
 
       map_options   : {
     
