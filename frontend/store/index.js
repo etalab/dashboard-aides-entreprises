@@ -12,6 +12,11 @@ export const state = () => ({
 
   appTitle: process.env.CONFIG_APP.appTitle,
 
+  windowSize: {
+    width: 0,
+    height: 0,
+  }, 
+
   // NAVBAR - on basis vuetify create-nuxt-app
   navbar : process.env.CONFIG_APP.UX_config.navbar,
   // navbar : {
@@ -104,7 +109,14 @@ export const getters = {
 
     return result
 
+  },
 
+  // WINDOW SIZES
+  getWindowsSize: (state) => {
+    return state.windowSize
+  },
+  getWindowContentHeight: (state) => {
+    return state.windowSize.height - this.navbar.height
   },
 
 
@@ -117,6 +129,10 @@ export const mutations = {
   setFromNavbar(state, value){
     // state.log && console.log("S-index-M-setFromNavbar / value : ", value)
     state.navbar[value] = !state.navbar[value]
+  },
+
+  setWindowSize(state, winSize ){
+    state.windowSize = winSize
   },
 
   // ROUTES CONFIG
@@ -159,10 +175,9 @@ export const mutations = {
 
 export const actions = {
 
-  // setSpecValue({state, commit}, value){
-
-  //   commit('setValue')
-  // },
+  setCurrentWindowSize({state, commit}, winSize){
+    commit('setWindowSize', winSize)
+  },
 
 
 }

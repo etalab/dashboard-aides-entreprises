@@ -1,15 +1,15 @@
 <style scoped>
-  .scrollable{
-    position: fixed;
+  .has-scrollbar {
+    overflow-y:scroll !important;
   }
-
 </style>
 
 <template>
 
   <div id="homepage">
 
-
+    <style>
+    </style>
     <!-- {{ routeConfig }} -->
 
     <v-row
@@ -27,54 +27,65 @@
           v-for="(col, i) in row.columns"
           :key="'R'+index+'-C'+i"
           :id="'R'+index+'-C'+i"
-          :class="`${col.colClass} ${ col.positionFixed ? '' : '' }`"
+          :class="`${col.colClass}`"
           >
 
           <template
             v-if="col.activated"
             >
-
-            <v-row
-              no-gutters
-              v-for="(colRow, iRow) in col.colRows"
-              :key="'R'+index+'-C'+i+'-CR'+iRow"
-              :id="'R'+index+'-C'+i+'-CR'+iRow"
-              :justify="colRow.justify"
-              :align="colRow.align"
-              :class="colRow.class"
+            
+            <!-- 
+            {{ windowSize }}
+            {{ contentWindowHeight }} 
+            -->
+            <div 
+              :class="`${ col.hasScrollbar ? 'has-scrollbar' : ''}`"
+              :style="`${ col.hasScrollbar ? 'max-height:'+contentWindowHeight+'px' : ''}`"
               >
 
-              <TextFrame
-                v-if="colRow.activated && colRow.component == 'text' "
-                :settings="colRow.settings"
-              />
+              <v-row
+                no-gutters
+                v-for="(colRow, iRow) in col.colRows"
+                :key="'R'+index+'-C'+i+'-CR'+iRow"
+                :id="'R'+index+'-C'+i+'-CR'+iRow"
+                :justify="colRow.justify"
+                :align="colRow.align"
+                :class="colRow.class"
+                >
 
-              <Numbers
-                v-if="colRow.activated && colRow.component == 'numbers' "
-                :settings="colRow.settings"
-              />
+                <TextFrame
+                  v-if="colRow.activated && colRow.component == 'text' "
+                  :settings="colRow.settings"
+                />
 
-              <MapboxGL
-                v-if="colRow.activated && colRow.component == 'map' "
-                :settings="colRow.settings"
-              />
-              
-              <ApexChart
-                v-if="colRow.activated && colRow.component == 'apexchart' "
-                :settings="colRow.settings"
-              />
+                <Numbers
+                  v-if="colRow.activated && colRow.component == 'numbers' "
+                  :settings="colRow.settings"
+                />
 
-              <ChartJS
-                v-if="colRow.activated && colRow.component == 'chartjs' "
-                :settings="colRow.settings"
-              />
+                <MapboxGL
+                  v-if="colRow.activated && colRow.component == 'map' "
+                  :settings="colRow.settings"
+                />
+                
+                <ApexChart
+                  v-if="colRow.activated && colRow.component == 'apexchart' "
+                  :settings="colRow.settings"
+                />
 
-              <Table
-                v-if="colRow.activated && colRow.component == 'table' "
-                :settings="colRow.settings"
-              />
+                <ChartJS
+                  v-if="colRow.activated && colRow.component == 'chartjs' "
+                  :settings="colRow.settings"
+                />
 
-            </v-row>
+                <Table
+                  v-if="colRow.activated && colRow.component == 'table' "
+                  :settings="colRow.settings"
+                />
+
+              </v-row>
+
+            </div>
             
           </template>
 
@@ -147,14 +158,19 @@
         initData : state => state.data.initData,
         data : state => state.data.displayedData,
 
+        navbarHeight : state => state.navbar.height,
       }),
 
       ...mapGetters({
-
         getCurrentLocale : 'getCurrentLocale',
         routeConfig : 'getLocalRouteConfig',
-
+        windowSize : 'getWindowsSize',
       }),
+
+      contentWindowHeight() {
+        let height = this.windowSize.height - this.navbarHeight
+        return height
+      },
 
     },
     

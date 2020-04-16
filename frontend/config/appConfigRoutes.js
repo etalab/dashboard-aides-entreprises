@@ -23,6 +23,7 @@ export const configAppRoutes = {
               activated: true,
               colClass : "col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4",
               positionFixed : true,
+              hasScrollbar : true,
               colRows : [
                 { component : "text",
                   activated : true,
@@ -48,6 +49,15 @@ export const configAppRoutes = {
                   align : "center",
                   settings : { 
                     id : "apexchart-01",
+                    containerClass : 'mt-4 pt-3 pb-0',
+                  },
+                },
+                { component : "apexchart",
+                  activated : true,
+                  justify : "center",
+                  align : "center",
+                  settings : { 
+                    id : "apexchart-01bis",
                     containerClass : 'mt-4 pt-3 pb-0',
                   },
                 },

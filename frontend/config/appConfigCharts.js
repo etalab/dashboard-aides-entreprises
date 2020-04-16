@@ -29,6 +29,11 @@ export const configAppCharts = {
       titlePreffixSpecialStoreId : undefined,
       titleSuffixSpecialStoreId : 'levelname', 
 
+      dividers : {
+        before : false,
+        after : true,
+      },
+
       datasetMappers : {
 
         specialStoreId : 'focusObject',
@@ -36,6 +41,7 @@ export const configAppCharts = {
 
         seriesMappers : [
           { dataFromKey : 'montant',
+            serieName : 'montant (M€)',
             format : [
               { utilsFnName : 'toMillionsOrElse',
                 params : { divider: 1000000, fixed:2 },
@@ -153,6 +159,99 @@ export const configAppCharts = {
 
 
     },
+
+
+    // APEX CHARTS
+    { // BAR HORIZ - SETTINGS EXAMPLE
+      id : "apexchart-01bis",
+      serie_id : "stat-bar-horiz",
+      help : "bar horiz / kpi_top_10_naf X montant",
+      titleI18n : "charts.chart01.title",
+      chartTitle : { fr : 'Top 10 des aides par nombre de demandes <br>' },
+      chartTitleClass : 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId : undefined,
+      titleSuffixSpecialStoreId : 'levelname', 
+
+      dividers : {
+        before : false,
+        after : true,
+      },
+
+      datasetMappers : {
+
+        specialStoreId : 'focusObject',
+        fromDatasetKey : 'kpi_top_10_naf',
+
+        seriesMappers : [
+          { dataFromKey : 'nombre',
+            serieName : "nombre d'aides",
+            // format : [
+            //   { utilsFnName : 'toMillionsOrElse',
+            //     params : { divider: 1000000, fixed:2 },
+            //   },
+            // ],
+            sortDataSerieBy : {
+              sortByType : 'sortByFieldValue',
+              fieldName : 'nombre',
+              toNumber : true,
+              sortOrder : 'descending',
+              exceptions : {
+                putLast : { fieldName : 'division_naf' , value : 'Autres' }
+              },
+            },
+            buildAxisCategsX : true,
+            buildAxisCategsXsettings : {
+              fromKey : 'libelle_division_naf',
+            }
+          }
+        ],
+
+        chartOptions: {
+          chart: {
+            type: 'bar',
+            height: '700px',
+            width : '490px', 
+            toolbar : {
+              show: false,
+            },
+          },
+          legend : {
+            show : false,
+          },
+          plotOptions: {
+            bar: {
+              horizontal: false,
+              distributed : true, // nerd-pride....
+            },
+          },
+
+          theme: {
+            mode: 'light', 
+            palette: 'palette2' // upto palette10
+          },
+
+          dataLabels: {
+            enabled: true,
+            style: {
+              fontSize: '10px',
+            },
+          },
+
+          xaxis: {
+            type: 'category',
+            labels: {
+              show: true,
+              rotate: -70,
+              maxHeight: 500
+            }
+          },
+
+        },
+      },
+
+    },
+
 
     { // BAR VERTIC - SETTINGS EXAMPLE
       id : "apexchart-02",

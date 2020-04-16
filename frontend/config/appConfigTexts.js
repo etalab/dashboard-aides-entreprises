@@ -29,7 +29,7 @@ export const configAppTexts = {
               cols : 12,
               textClass : 'headline',
               subTextClass : '',
-              textPrefix : { fr : 'Aides versées - ' },
+              textPrefix : { fr : 'Aides versées : ' },
               textSuffix : { fr : '' },
               specialStoreId : 'levelname',
               specialStoreIdClass : 'font-weight-medium',

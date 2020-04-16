@@ -16,9 +16,16 @@
     :trigger="`${trigger}`"
     >
 
+    <v-divider
+      v-if="viewConfig.dividers.before"
+      >
+    </v-divider>
+
     <v-layout
       justify-center
       >
+
+      <!-- {{ windowSize }} -->
 
       <div 
         :class="`${viewConfig.chartTitleClass}`"
@@ -76,7 +83,6 @@
     </v-layout> -->
 
 
-
     <v-layout
       justify-center
       :class="`custom-min-height`"
@@ -95,6 +101,11 @@
     </v-layout>
 
     <!-- {{ localChartOptions }} -->
+
+    <v-divider
+      v-if="viewConfig.dividers.after"
+      >
+    </v-divider>
 
   </v-container>
 
@@ -171,6 +182,7 @@
         getDataViewConfig : 'getDataViewConfig',
         getSpecialStore : 'data/getSpecialStore',
         getFromSpecialStoreData : 'data/getFromSpecialStoreData',
+        windowSize : 'getWindowsSize',
       }),
 
       // config
@@ -191,7 +203,6 @@
         this.log && console.log('C-ApexChart / getSeries ... ' )
         let specialStoreId = this.datasetMappers.specialStoreId
         let fromDatasetKey = this.datasetMappers.fromDatasetKey
-        // let chartOptions   = this.datasetMappers.chartOptions
         let seriesMappers  = this.datasetMappers.seriesMappers
         
         let dataSeries = []
@@ -200,7 +211,7 @@
 
           let rawDataSerie = this.getSpecialStoreData( { id: specialStoreId, key: fromDatasetKey, sortParams: mapper.sortDataSerieBy  } )
           this.rawDataSerie = rawDataSerie
-          this.log && console.log('C-ApexChart / getSeries / rawDataSerie  : ', rawDataSerie )
+          // this.log && console.log('C-ApexChart / getSeries / rawDataSerie  : ', rawDataSerie )
                     
           let dataFromKey = mapper.dataFromKey
 
@@ -241,6 +252,7 @@
           // this.log && console.log('C-ApexChart / getSeries / valuesSerie (1) : ', valuesSerie )
 
           let dataSerie = {
+            name : mapper.serieName,
             data : valuesSerie,
           }
           dataSeries.push( dataSerie )

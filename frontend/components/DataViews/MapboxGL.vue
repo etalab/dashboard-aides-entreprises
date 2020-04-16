@@ -502,7 +502,7 @@ export default {
             for (let clicEvent of mapRef.clicEvents ){
 
               this.log && console.log("\nC-MapboxGL / loadClicEvents ... clicEvent.layer : ", clicEvent.layer, " / event :", clicEvent.event )
-              this.log && console.log("C-MapboxGL / loadClicEvents ... clicEvent : ", clicEvent)
+              // this.log && console.log("C-MapboxGL / loadClicEvents ... clicEvent : ", clicEvent)
               
               let clicFunctions = clicEvent.functions
 
@@ -584,18 +584,18 @@ export default {
 
       getSourceData( params, from='map' ){
         
-        this.log && console.log("\nC-MapboxGL / getSourceGeoData ... from : ", from)
-        this.log && console.log("C-MapboxGL / getSourceGeoData ... params : ", params)
+        // this.log && console.log("\nC-MapboxGL / getSourceGeoData ... from : ", from)
+        // this.log && console.log("C-MapboxGL / getSourceGeoData ... params : ", params)
 
         let data
 
         if ( from == 'map' ){
           let sourcesList = this.map.getStyle().sources
-          this.log && console.log("C-MapboxGL / getSourceGeoData ... sourcesList : ", sourcesList)
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... sourcesList : ", sourcesList)
           let source = sourcesList && sourcesList[ params.source ]
-          this.log && console.log("C-MapboxGL / getSourceGeoData ... source : ", source)
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... source : ", source)
           data = source && source.data.features.find( feat => feat.properties[ params.propName ] == params.prop )
-          this.log && console.log("C-MapboxGL / getSourceGeoData ... data : ", data)
+          // this.log && console.log("C-MapboxGL / getSourceGeoData ... data : ", data)
         } 
 
         if ( from == 'store' ){

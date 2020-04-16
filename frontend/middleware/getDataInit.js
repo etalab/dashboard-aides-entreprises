@@ -11,11 +11,11 @@ import axios from 'axios'
   for ( let dataCopy of dataRef.copyTo ){
     
     log  && console.log('\n... -MW- getDataInit / dataCopy :' , dataCopy )
-    log  && console.log('... -MW- getDataInit / respData :' , respData )
+    // log  && console.log('... -MW- getDataInit / respData :' , respData )
 
     // get source data
     const value = respData[ dataCopy.from.objectRef ]
-    log  && console.log('... -MW- getDataInit / value :' , value )
+    // log  && console.log('... -MW- getDataInit / value :' , value )
     if ( dataCopy.fieldToCopy ) { value = value && value[ dataCopy.fieldToCopy ] }
     if ( dataCopy.format ) {
       value = switchFormatFunctions( value, dataCopy.format )
@@ -39,8 +39,7 @@ export default function ({ store, app, redirect }) {
   let promisesArray = []
   let callableFrom = [ 'url', 'static' ]
 
-  log && console.log('\n-MW- getDataInit / app : ', app)
-
+  // log && console.log('\n-MW- getDataInit / app : ', app)
 
   // STORE DATASETS
   let hasInitdData = store.state.data.initData 
@@ -124,7 +123,7 @@ export default function ({ store, app, redirect }) {
               if ( dataCopy.format ) {
                 value = switchFormatFunctions( value, dataCopy.format )
               }
-              log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / value :' , value )
+              // log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / value :' , value )
 
               let targetData = { 
                 // store : dataCopy.toDataStore,
@@ -134,7 +133,7 @@ export default function ({ store, app, redirect }) {
                 specialStoreId : dataCopy.toSpecialStore,
                }
 
-              log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / targetData :' , targetData )
+              // log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / targetData :' , targetData )
 
               store.dispatch( 'data/setNestedData' , targetData )
               // store.commit('data/setDeepNestedData', targetData )

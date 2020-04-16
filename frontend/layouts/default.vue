@@ -21,7 +21,6 @@
       <Filters/>
 
       <!-- <FiltersFeedback/> -->
-      
       <v-container 
         id="layout-container"
         fluid
@@ -65,7 +64,7 @@
 
 <script>
 
-  import { mapState, mapGetters } from 'vuex'
+  import { mapState, mapGetters, mapActions } from 'vuex'
 
   import DynamicCSS from '~/components/UI/DynamicCSS.vue'
 
@@ -105,7 +104,19 @@
 
     data () {
       return {
+        window : {
+          width: 0,
+          height: 0
+        }
       }
+    },
+
+    created() {
+      window.addEventListener('resize', this.handleResize);
+      this.handleResize();
+    },
+    destroyed() {
+      window.removeEventListener('resize', this.handleResize);
     },
 
     computed: {
@@ -114,18 +125,34 @@
 
         log : state => state.log, 
         locale : state => state.locale,
-        
         title : state => state.appTitle, 
+
+        navbarHeight : state => state.navbar.height,
+        windowSize : state => state.windowSize,
 
       }),
 
       ...mapGetters({
-
         getCurrentLocale : 'getCurrentLocale',
-
       }),
 
     },
+
+    methods : {
+
+      ...mapActions({
+        setCurrentWindowSize : 'setCurrentWindowSize',
+      }),
+
+      handleResize() {
+        this.window.width = window.innerWidt
+        this.window.height = window.innerHeight
+        this.setCurrentWindowSize( {
+          width : window.innerWidth,
+          height : window.innerHeight,
+        })
+      }
+    }
 
   }
 </script>

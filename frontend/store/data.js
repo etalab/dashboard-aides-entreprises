@@ -65,7 +65,7 @@ export const getters = {
     let resultsArray = [ ]
     for ( let params of paramsArray){
       let dataset = getters.getFromDisplayedData( params.id )
-      state.log && console.log("S-data-A-selectFromDisplayedData / dataset  : ", dataset )
+      // state.log && console.log("S-data-A-selectFromDisplayedData / dataset  : ", dataset )
       let result = dataset && objectFromPath( dataset.data, params.field )
       resultsArray.push( result )
     }
@@ -77,17 +77,17 @@ export const getters = {
   },
 
   getFromSpecialStoreData : (state) =>  ( params ) => {
-    state.log && console.log("S-data-A-getFromSpecialStoreData / params  : ", params )
+    // state.log && console.log("S-data-A-getFromSpecialStoreData / params  : ", params )
     let obj = state.specialStore[ params.id ]
     obj = ( params.key )? obj[ params.key ] : params.key
 
     let sortParams = params.sortParams
     if ( sortParams ) {
       let clone = []
-      state.log && console.log("S-data-A-getFromSpecialStoreData / obj  : ", obj )
+      // state.log && console.log("S-data-A-getFromSpecialStoreData / obj  : ", obj )
       for (let i of obj ){ clone.push( i )}
-      state.log && console.log("S-data-A-getFromSpecialStoreData / clone  : ", clone )
-      state.log && console.log("S-data-A-getFromSpecialStoreData / sortParams  : ", sortParams )
+      // state.log && console.log("S-data-A-getFromSpecialStoreData / clone  : ", clone )
+      // state.log && console.log("S-data-A-getFromSpecialStoreData / sortParams  : ", sortParams )
       let sorted = sortArrayBy( clone, sortParams)
       if ( sortParams.sortOrder == 'descending' ){ sorted = sorted.reverse() }
       let excParams = sortParams.exceptions
@@ -144,7 +144,7 @@ export const mutations = {
   }, 
 
   setDeepNestedData (state, targetData ){
-    state.log && console.log("S-data-M-setDeepNestedData / targetData  : ", targetData )
+    // state.log && console.log("S-data-M-setDeepNestedData / targetData  : ", targetData )
     state.specialStore[ targetData.specialStoreId ] = targetData.value
   },
 

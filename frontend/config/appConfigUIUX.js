@@ -27,6 +27,8 @@ export const configAppUIUX = {
 
     navbar : {
 
+      height : 64, // in pixels
+
       clipped: true,
       clippedBtn : false, 
 
