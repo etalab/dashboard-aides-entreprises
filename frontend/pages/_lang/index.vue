@@ -6,10 +6,14 @@
 
 <template>
 
-  <div id="homepage">
+  <div 
+    id="homepage"
+    :style="`max-height:${contentWindowHeight}px;`"
+    >
 
     <style>
     </style>
+
     <!-- {{ routeConfig }} -->
 
     <v-row
@@ -34,10 +38,9 @@
             v-if="col.activated"
             >
             
-            <!-- 
-            {{ windowSize }}
-            {{ contentWindowHeight }} 
-            -->
+            <!-- {{ windowSize }} -->
+            <!-- {{ contentWindowHeight }}  -->
+           
             <div 
               :class="`${ col.hasScrollbar ? 'has-scrollbar' : ''}`"
               :style="`${ col.hasScrollbar ? 'max-height:'+contentWindowHeight+'px' : ''}`"
@@ -166,16 +169,21 @@
         data : state => state.data.displayedData,
 
         navbarHeight : state => state.navbar.height,
+        // currentNavbarFooter : state => state.currentNavbarFooter,
       }),
 
       ...mapGetters({
         getCurrentLocale : 'getCurrentLocale',
         routeConfig : 'getLocalRouteConfig',
         windowSize : 'getWindowsSize',
+        getCurrentNavbarFooter : 'getCurrentNavbarFooter',
       }),
 
-      contentWindowHeight() {
+      contentWindowHeight(){
         let height = this.windowSize.height - this.navbarHeight
+        if ( this.getCurrentNavbarFooter && this.getCurrentNavbarFooter.activated ){
+          height = height - this.getCurrentNavbarFooter.height
+        }
         return height
       },
 

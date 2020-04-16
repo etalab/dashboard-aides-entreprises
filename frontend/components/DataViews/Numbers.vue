@@ -34,7 +34,7 @@
         v-for="(col, i) in row.columns"
         :key="'R'+index+'-C'+i"
         :id="'R'+index+'-C'+i"
-        :class="`${col.colClass} ${ col.positionFixed ? '' : '' }`"
+        :class="`${col.colClass}`"
         :cols="col.cols"
         >
 

@@ -33,6 +33,11 @@ import { configAppTables } from './config/appConfigTables.js'
 import { configAppRawData } from './config/appConfigRawData.js'
 // console.log('>>> nuxt.config.js / configAppRawData : \n', configAppRawData)
 
+import { configAppNavbarFooters } from './config/appConfigNavbarFooters.js'
+// console.log('>>> nuxt.config.js / configAppNavbarFooters : \n', configAppNavbarFooters)
+
+import { configAppGlobalButtons } from './config/appConfigGlobalButtons.js'
+// console.log('>>> nuxt.config.js / configAppGlobalButtons : \n', configAppGlobalButtons)
 
 const logAllowed = ['preprod', 'dev', 'mockup']
 
@@ -78,6 +83,8 @@ const configApp = {
   // UX - ROUTES
   UX_config : configAppUIUX.UX_config,
   ROUTES_config : configAppRoutes.routes,
+  UX_navbarFooters : configAppNavbarFooters,
+  UX_globalButtons : configAppGlobalButtons,
 
   // UI
   UI_config : configAppUIUX.UI_config,
@@ -105,7 +112,7 @@ const configApp = {
 
 console.log('>>> nuxt.config.js / configApp : \n', configApp)
 
-import webpack from 'webpack'
+// import webpack from 'webpack'
 
 
 export default {
@@ -172,6 +179,7 @@ export default {
   plugins: [
 
     // '~/plugins/utils',
+    // '~/plugins/vuetify',
 
     { src: '~/plugins/mapbox', mode: 'client' },
     // { src: '~/plugins/mapboxgl', mode: 'client' },

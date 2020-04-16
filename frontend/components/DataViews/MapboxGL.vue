@@ -15,7 +15,9 @@
 
   <div 
     :class="`map`"
+    :id="`map-${ settings.id }`"
     :trigger="`${trigger}`"
+    :style="`height:${contentWindowHeight}px!important;max-height:${contentWindowHeight}px`"
     >
 
     <!-- LOADER'S CSS -->
@@ -132,7 +134,7 @@
 
 import { mapState, mapGetters, mapActions } from 'vuex'
 
-import {Mapbox , mapboxgl} from "mapbox-gl";
+import { Mapbox , mapboxgl } from "mapbox-gl";
 import { MglMap } from "vue-mapbox";
 
 // let map
@@ -285,6 +287,7 @@ export default {
       getFromInitData : 'data/getFromInitData',
       getFromDisplayedData : 'data/getFromDisplayedData',
       windowSize : 'getWindowsSize',
+      getCurrentNavbarFooter : 'getCurrentNavbarFooter',
     }),
 
     // config
@@ -295,6 +298,14 @@ export default {
       }
       let localConfig = this.getDataViewConfig( viewId )
       return localConfig
+    },
+
+    contentWindowHeight(){
+      let height = this.windowSize.height - this.navbarHeight
+      if ( this.getCurrentNavbarFooter && this.getCurrentNavbarFooter.activated ){
+        height = height - this.getCurrentNavbarFooter.height
+      }
+      return height
     },
 
     getCurrentZoom(){
@@ -793,6 +804,17 @@ export default {
 
 <style>
   
+  .app-loader {
+    margin: 1.5em;
+    padding: 1.5em
+  }
+  .map { 
+    height: calc(100vh - 64px); 
+    /* height: calc(100vh); */
+    width: 100%;
+    position: relative;
+  }
+
   /* cf : https://docs.mapbox.com/mapbox-gl-js/example/updating-choropleth/ */
 
   .legend-block {
@@ -927,18 +949,6 @@ export default {
     100% {
       transform: rotate(360deg);
     }
-  }
-
-
-  .app-loader {
-    margin: 1.5em;
-    padding: 1.5em
-  }
-  .map { 
-    height: calc(100vh - 64px); 
-    /* height: calc(100vh); */
-    width: 100%;
-    position: relative;
   }
 
 

@@ -12,6 +12,12 @@ export const configAppRoutes = {
       titleI18n : 'routes.home.title',
       urls : [ "/"],
       rawHtml : undefined,
+      navbarFooter : {
+        activated : true,
+        settings : {
+          id : 'navbar-footer-01',
+        },
+      },
       pageRows : [
 
         { rowNumber: 1,
@@ -22,7 +28,6 @@ export const configAppRoutes = {
             { colName : "Numbers and tables", 
               activated: true,
               colClass : "col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4",
-              positionFixed : true,
               hasScrollbar : true,
               smallScreenVerticalOrder : undefined,
               colRows : [
@@ -143,6 +148,12 @@ export const configAppRoutes = {
       titleI18n : 'routes.map.title',
       urls : ["/map"],
       rawHtml : undefined,
+      navbarFooter : {
+        activated : true,
+        settings : {
+          id : 'navbar-footer-01',
+        },
+      },
       pageRows : [
         { rowNumber: 1,
           activated: true,
@@ -151,7 +162,7 @@ export const configAppRoutes = {
             { colName : "map", 
               activated: true,
               colClass : "",
-              hasScrollbar : false,
+              hasScrollbar : true,
               smallScreenVerticalOrder : undefined,
               colRows : [
                 { component : "text",
@@ -198,6 +209,12 @@ export const configAppRoutes = {
       titleI18n : 'routes.charts.title',
       urls : ["/charts"],
       rawHtml : undefined,
+      navbarFooter : {
+        activated : true,
+        settings : {
+          id : 'navbar-footer-01',
+        },
+      },
       pageRows : [
         { rowNumber: 1,
           activated: true,
@@ -206,7 +223,7 @@ export const configAppRoutes = {
             { colName : "chart", 
               activated: true,
               colClass : "",
-              hasScrollbar : false,
+              hasScrollbar : true,
               smallScreenVerticalOrder : undefined,
               colRows : [
                 { component : "text",
@@ -253,6 +270,12 @@ export const configAppRoutes = {
       titleI18n : 'routes.table.title',
       urls : ["/table"],
       rawHtml : undefined,
+      navbarFooter : {
+        activated : true,
+        settings : {
+          id : 'navbar-footer-01',
+        },
+      },
       pageRows : [
         { rowNumber: 1,
           activated: true,
@@ -288,6 +311,12 @@ export const configAppRoutes = {
       titleI18n : 'routes.rawData.title',
       urls : ["/rawData"],
       rawHtml : undefined,
+      navbarFooter : {
+        activated : true,
+        settings : {
+          id : 'navbar-footer-01',
+        },
+      },
       pageRows : [
         { rowNumber: 1,
           activated: true,

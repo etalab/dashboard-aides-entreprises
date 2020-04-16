@@ -17,6 +17,17 @@ export const state = () => ({
     height: 0,
   }, 
 
+  // BREAKPOINTS 
+  breakpoint: {
+    thresholds: {
+      xs: 600,
+      sm: 960,
+      md: 1264,
+      lg: 1904,
+    },
+    // scrollBarWidth: 24,
+  },
+
   // NAVBAR - on basis vuetify create-nuxt-app
   navbar : process.env.CONFIG_APP.UX_config.navbar,
   // navbar : {
@@ -29,24 +40,30 @@ export const state = () => ({
   //   items       : process.env.CONFIG_APP.navbar.items, 
 
   // },
-
+  currentNavbarFooter : undefined,
+  currentFooter : undefined,
+  
   // ROUTES
   localRouteConfig : undefined,
   configRoutes : process.env.CONFIG_APP.ROUTES_config,
-
+  
   // UX-UI
   configUX : process.env.CONFIG_APP.UX_config,
   configUI : process.env.CONFIG_APP.UI_config,
-
+  
   // DATA VIEWS COMPONENTS SETTINGS
   configsData : {
-
+    
     maps     : process.env.CONFIG_APP.MAP_config.settingsIds,
     charts   : process.env.CONFIG_APP.CHARTS_config.settingsIds,
     numbers  : process.env.CONFIG_APP.NUMBERS_config.settingsIds,
     tables   : process.env.CONFIG_APP.TABLES_config.settingsIds,
     texts    : process.env.CONFIG_APP.TEXTS_config.settingsIds,
     rawdatas : process.env.CONFIG_APP.RAWDATA_config.settingsIds,
+
+    // PURE UX COMPONENTS
+    navbarFooters : process.env.CONFIG_APP.UX_navbarFooters.settingsIds,
+    globalButtons : process.env.CONFIG_APP.UX_globalButtons.settingsIds,
     
   },
   
@@ -93,10 +110,9 @@ export const getters = {
     let dataTypeConfigs = state.configsData[ dataViewType ]
     // state.log && console.log("S-index-G-getDataViewConfig / dataTypeConfigs : ", dataTypeConfigs)
    
-    // let result = findElementFromArrayAndId ( id, dataTypeConfigs )
-    let result = dataTypeConfigs.find( d => d.id === id )
+    let result = dataTypeConfigs && dataTypeConfigs.find( d => d.id === id )
 
-    if ( typeof result.copySettingsFrom !== 'undefined' ){
+    if ( result && typeof result.copySettingsFrom !== 'undefined' ){
       for ( let refSetting of result.copySettingsFrom ){
         let settingsToCopy = dataTypeConfigs.find( r => r.id === refSetting.copyFromId )
         for ( let field of refSetting.fieldsToCopy ){
@@ -119,18 +135,42 @@ export const getters = {
     return state.windowSize.height - this.navbar.height
   },
 
+  getCurrentNavbarFooter: (state) => {
+    return state.currentNavbarFooter 
+  },
+
+  getCurrentBreakpoint: (state) => (width) => {
+    let thresholds = state.breakpoint.thresholds
+    let breakpointName
+    if (width < thresholds.xs) { breakpointName = 'xs' }
+    if (width >= thresholds.xs && width < thresholds.sm) { breakpointName = 'sm' }
+    if (width >= thresholds.sm && width < thresholds.md) { breakpointName = 'md' }
+    if (width >= thresholds.md && width < thresholds.lg) { breakpointName = 'lg' }
+    if (width > thresholds.lg ) { breakpointName = 'xl' }
+    return breakpointName
+  }
 
 }
 
 
 export const mutations = {
 
-  // NAVBAR
+  // NAVBARS
   setFromNavbar(state, value){
     // state.log && console.log("S-index-M-setFromNavbar / value : ", value)
     state.navbar[value] = !state.navbar[value]
   },
+  setCurrentNavbarFooter(state, config){
+    state.currentNavbarFooter = config
+  },
+  toggleNavbarFooterVisibility(state){
+    state.currentNavbarFooter.activated = !state.currentNavbarFooter.activated
+  },
+  setNavbarFooterVisibility(state, bool){
+    state.currentNavbarFooter.activated = bool
+  },
 
+  // WINDOW SIZE
   setWindowSize(state, winSize ){
     state.windowSize = winSize
   },
@@ -175,8 +215,28 @@ export const mutations = {
 
 export const actions = {
 
-  setCurrentWindowSize({state, commit}, winSize){
+  setCurrentWindowSize({state, getters, commit}, winSize){
     commit('setWindowSize', winSize)
+    if ( state.currentNavbarFooter ){
+
+      let windowWidth = winSize.width
+      let showOnSizes = state.currentNavbarFooter.showOnSizes
+      let breakpointName = getters.getCurrentBreakpoint( windowWidth )
+      
+      state.log && console.log("S-index-A-setCurrentWindowSize / breakpointName : ", breakpointName)
+      
+      let bool = false
+      if ( showOnSizes.includes(breakpointName) ){
+        bool = true
+      } 
+
+      commit('setNavbarFooterVisibility', bool)
+      
+      if ( !bool ){
+        this.$router.push( state.currentNavbarFooter.fallback )
+      }
+
+    }
   },
 
 

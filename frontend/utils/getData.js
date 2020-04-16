@@ -1,4 +1,4 @@
-console.log('+ + + plugins/getData.js... ')
+console.log('+ + + utils/getData.js... ')
 
 import axios from 'axios'
 

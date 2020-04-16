@@ -1,4 +1,4 @@
-
+""
 
 <style scoped>
 
@@ -14,6 +14,7 @@
     fixed
     :color="navbarUI.color"
     :dark="navbarUI.dark"
+    :height="navbarUX.height"
     app
     >
 
@@ -109,6 +110,7 @@
         appTitle : state => state.appTitle, 
 
         navbarUI : state => state.configUI.navbar,
+        navbarUX : state => state.navbar,
 
         clipped : state => state.navbar.clipped, 
         clippedBtn : state => state.navbar.clippedBtn, 

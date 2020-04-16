@@ -26,8 +26,11 @@
         fluid
         pa-0
         >
+
         <nuxt />
+
       </v-container>
+
     </v-content>
 
 
@@ -58,6 +61,12 @@
     <!-- <Footer/> -->
 
 
+    <!-- NAVBARFOOTER -->
+    <NavbarFooter
+      v-if="routeNavbarFooter && routeNavbarFooter.activated"
+      :settings="routeNavbarFooter.settings"
+    />
+
 
   </v-app>
 </template>
@@ -73,6 +82,7 @@
   import Filters from '~/components/DataViews/Filters.vue'
   import FiltersFeedback from '~/components/DataViews/FiltersFeedback.vue'
   import Footer from '~/components/UX/Footer.vue'
+  import NavbarFooter from '~/components/UX/NavbarFooter.vue'
 
 
   export default {
@@ -100,6 +110,7 @@
       Filters,
       FiltersFeedback,
       Footer,
+      NavbarFooter,
     },
 
     data () {
@@ -115,8 +126,13 @@
       window.addEventListener('resize', this.handleResize);
       this.handleResize();
     },
+
     destroyed() {
       window.removeEventListener('resize', this.handleResize);
+    },
+
+    mounted(){
+      this.log && console.log('L-default / mounted ...')
     },
 
     computed: {
@@ -134,7 +150,13 @@
 
       ...mapGetters({
         getCurrentLocale : 'getCurrentLocale',
+        routeConfig : 'getLocalRouteConfig',
       }),
+      
+      routeNavbarFooter(){
+        let routeConf = this.routeConfig
+        return routeConf.navbarFooter
+      },
 
     },
 
@@ -151,7 +173,8 @@
           width : window.innerWidth,
           height : window.innerHeight,
         })
-      }
+      },
+
     }
 
   }
