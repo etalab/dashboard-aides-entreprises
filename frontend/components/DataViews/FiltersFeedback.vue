@@ -69,7 +69,8 @@
       }),
 
       ...mapGetters({
-        getCurrentLocale : 'getCurrentLocale'
+        getCurrentLocale : 'getCurrentLocale',
+        windowSize : 'getWindowsSize',
       }),
 
     },

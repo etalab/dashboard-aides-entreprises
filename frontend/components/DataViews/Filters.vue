@@ -105,6 +105,7 @@
       ...mapGetters({
         getCurrentLocale : 'getCurrentLocale',
         getSpecialStore : 'data/getSpecialStore',
+        windowSize : 'getWindowsSize',
       }),
 
     },

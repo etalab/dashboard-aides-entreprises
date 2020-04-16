@@ -68,7 +68,8 @@
 
       ...mapGetters({
         getCurrentLocale : 'getCurrentLocale',
-        getDataViewConfig : 'getDataViewConfig'
+        getDataViewConfig : 'getDataViewConfig',
+        windowSize : 'getWindowsSize',
       }),
 
       // config

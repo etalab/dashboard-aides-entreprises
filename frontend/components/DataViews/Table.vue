@@ -187,6 +187,7 @@
         getCurrentLocale : 'getCurrentLocale',
         getDataViewConfig : 'getDataViewConfig',
         getSpecialStore : 'data/getSpecialStore',
+        windowSize : 'getWindowsSize',
       }),
 
       // config

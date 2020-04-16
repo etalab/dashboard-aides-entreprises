@@ -58,6 +58,11 @@
                   :settings="colRow.settings"
                 />
 
+                <GlobalButton
+                  v-if="colRow.activated && colRow.component == 'global-button' "
+                  :settings="colRow.settings"
+                />
+
                 <Numbers
                   v-if="colRow.activated && colRow.component == 'numbers' "
                   :settings="colRow.settings"
@@ -114,6 +119,7 @@
   import ChartJS from '~/components/DataViews/ChartJS.vue'
   import ApexChart from '~/components/DataViews/ApexChart.vue'
   import TextFrame from '~/components/DataViews/TextFrame.vue'
+  import GlobalButton from '~/components/UX/GlobalButton.vue'
   import Table from '~/components/DataViews/Table.vue'
 
   export default {
@@ -127,6 +133,7 @@
       ChartJS,
       ApexChart,
       TextFrame,
+      GlobalButton,
       Table,
     },
     

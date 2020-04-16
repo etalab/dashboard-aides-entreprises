@@ -25,7 +25,7 @@ export const configAppTexts = {
           
             { colName : '',
               colTitle : { fr : '' },
-              colClass : '',
+              colTitleClass : '',
               cols : 12,
               textClass : 'headline',
               subTextClass : '',
@@ -33,14 +33,6 @@ export const configAppTexts = {
               textSuffix : { fr : '' },
               specialStoreId : 'levelname',
               specialStoreIdClass : 'font-weight-medium',
-              // displayedData : [
-              //   { name : 'displayed data : level.montant', 
-              //     title : { fr : "texte"},
-              //     titleI18n : 'texts.text01.titre',
-              //     id : 'infos',
-              //     field : 'texts.levels.name',
-              //   }
-              // ],
             },
           
           ]
@@ -62,12 +54,35 @@ export const configAppTexts = {
         { rowNumber : 1,
           help : '',
           columns : [
-                    
+          
+            { colName : '',
+              colTitle : { fr : "Plus d'informations sur les aides" },
+              colTitleClass : '',
+              cols : 12,
+              textClass : '',
+              subTextClass : '',
+              textPrefix : { fr : undefined },
+              textSuffix : { fr : undefined },
+              specialStoreId : undefined,
+              specialStoreIdClass : undefined,
+              textsHtml : [
+                { id : 'intro',
+                  textContent : { fr : "Texte d'information sur les aides aux entreprises ..." },
+                  textClass : 'text-left mx-4 py-3',
+                  fromUrl : undefined,
+                },
+                { id : 'intro-02',
+                  textContent : { fr : "Lorem ipsum <br> etc ..." },
+                  textClass : 'text-left mx-4 pb-5',
+                  fromUrl : undefined,
+                },
+              ] 
+            },
+          
           ]
         }
 
       ],
-
     },
 
 

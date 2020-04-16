@@ -132,6 +132,7 @@
         getDataViewConfig : 'getDataViewConfig',
         selectFromDisplayedData : 'data/selectFromDisplayedData',
         getSpecialStore : 'data/getSpecialStore',
+        windowSize : 'getWindowsSize',
       }),
 
       // config

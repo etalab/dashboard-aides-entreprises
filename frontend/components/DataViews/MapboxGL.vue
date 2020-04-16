@@ -284,6 +284,7 @@ export default {
       getDataViewConfig : 'getDataViewConfig',
       getFromInitData : 'data/getFromInitData',
       getFromDisplayedData : 'data/getFromDisplayedData',
+      windowSize : 'getWindowsSize',
     }),
 
     // config

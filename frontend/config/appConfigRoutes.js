@@ -24,9 +24,11 @@ export const configAppRoutes = {
               colClass : "col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4",
               positionFixed : true,
               hasScrollbar : true,
+              smallScreenVerticalOrder : undefined,
               colRows : [
                 { component : "text",
                   activated : true,
+                  smallScreenVerticalOrder : 1,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -36,6 +38,7 @@ export const configAppRoutes = {
                 },
                 { component : "numbers",
                   activated : true,
+                  smallScreenVerticalOrder : 3,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -45,6 +48,7 @@ export const configAppRoutes = {
                 },
                 { component : "apexchart",
                   activated : true,
+                  smallScreenVerticalOrder : 4,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -54,6 +58,7 @@ export const configAppRoutes = {
                 },
                 { component : "apexchart",
                   activated : true,
+                  smallScreenVerticalOrder : 5,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -70,16 +75,28 @@ export const configAppRoutes = {
                 //     containerClass : 'pb-0',
                 //   },
                 // },
+                { component : "text",
+                  activated : true,
+                  smallScreenVerticalOrder : 1,
+                  justify : "center",
+                  align : "center",
+                  settings : { 
+                    id : "text-02",
+                    containerClass : 'pb-0',
+                  },
+                },
               ],
             },
 
             { colName : "main map", 
               activated: true,
               colClass : "col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8",
-              positionFixed : false,
+              hasScrollbar : false,
+              smallScreenVerticalOrder : undefined,
               colRows : [
                 { component : "map",
                   activated : true,
+                  smallScreenVerticalOrder : 2,
                   justify : "center",
                   align : "center",
                   settings : {
@@ -99,10 +116,12 @@ export const configAppRoutes = {
             { colName : "text", 
               activated: true,
               colClass : "",
-              positionFixed : false,
+              hasScrollbar : false,
+              smallScreenVerticalOrder : undefined,
               colRows : [
                 { component : "text",
                   activated : true,
+                  smallScreenVerticalOrder : undefined,
                   justify : "center",
                   align : "center",
                   settings : {
@@ -132,9 +151,12 @@ export const configAppRoutes = {
             { colName : "map", 
               activated: true,
               colClass : "",
+              hasScrollbar : false,
+              smallScreenVerticalOrder : undefined,
               colRows : [
                 { component : "text",
                   activated : true,
+                  smallScreenVerticalOrder : undefined,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -144,6 +166,7 @@ export const configAppRoutes = {
                 },
                 { component : "numbers",
                   activated : true,
+                  smallScreenVerticalOrder : undefined,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -153,6 +176,7 @@ export const configAppRoutes = {
                 },
                 { component : "map",
                   activated : true,
+                  smallScreenVerticalOrder : undefined,
                   justify : "center",
                   align : "center",
                   settings : {
@@ -182,9 +206,12 @@ export const configAppRoutes = {
             { colName : "chart", 
               activated: true,
               colClass : "",
+              hasScrollbar : false,
+              smallScreenVerticalOrder : undefined,
               colRows : [
                 { component : "text",
                   activated : true,
+                  smallScreenVerticalOrder : undefined,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -194,6 +221,7 @@ export const configAppRoutes = {
                 },
                 { component : "numbers",
                   activated : true,
+                  smallScreenVerticalOrder : undefined,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -203,6 +231,7 @@ export const configAppRoutes = {
                 },
                 { component : "apexchart",
                   activated : true,
+                  smallScreenVerticalOrder : undefined,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -232,9 +261,12 @@ export const configAppRoutes = {
             { colName : "table", 
               activated: true,
               colClass : "",
+              hasScrollbar : false,
+              smallScreenVerticalOrder : undefined,
               colRows : [
                 { component : "table",
                   activated : true,
+                  smallScreenVerticalOrder : undefined,
                   justify : "center",
                   align : "center",
                   settings : { 
@@ -264,9 +296,12 @@ export const configAppRoutes = {
             { colName : "rawData", 
               activated: true,
               colClass : "",
+              hasScrollbar : false,
+              smallScreenVerticalOrder : undefined,
               colRows : [
                 { component : "rawData",
                   activated : true,
+                  smallScreenVerticalOrder : undefined,
                   justify : "center",
                   align : "center",
                   settings : { 

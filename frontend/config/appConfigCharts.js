@@ -242,7 +242,7 @@ export const configAppCharts = {
             type: 'category',
             labels: {
               show: true,
-              rotate: -70,
+              rotate: -75,
               maxHeight: 500
             }
           },
