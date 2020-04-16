@@ -1,12 +1,8 @@
-sudo -u postgres psql -c "DROP DATABASE IF EXISTS dashboard;"
-echo "DROP DB OK"
-sudo -u postgres psql -c "CREATE DATABASE dashboard ENCODING = 'UTF-8' TEMPLATE=TEMPLATE0;"
-echo "CREATE DB OK"
-sudo -u postgres psql -d dashboard -f "sql/create_table.sql"
-echo "CREATE TABLES OK"
-
 
 datafolder="$(dirname "$(pwd)")"/data/1-enrich/
+
+sudo -u postgres psql -d dashboard -f "sql/create_table_siret.sql"
+echo "CREATE TABLE OK"
 
 for d in `seq -w 1 19` 2A 2B `seq 21 74` `seq 76 95` 98 ""; do
     sudo -u postgres psql -d dashboard -c "\copy siret(siren, nic, siret, statutDiffusionEtablissement, dateCreationEtablissement, trancheEffectifsEtablissement, anneeEffectifsEtablissement, activitePrincipaleRegistreMetiersEtablissement, dateDernierTraitementEtablissement, etablissementSiege, nombrePeriodesEtablissement, complementAdresseEtablissement, numeroVoieEtablissement, indiceRepetitionEtablissement, typeVoieEtablissement, libelleVoieEtablissement, codePostalEtablissement, libelleCommuneEtablissement, libelleCommuneEtrangerEtablissement, distributionSpecialeEtablissement, codeCommuneEtablissement, codeCedexEtablissement, libelleCedexEtablissement, codePaysEtrangerEtablissement, libellePaysEtrangerEtablissement, complementAdresse2Etablissement, numeroVoie2Etablissement, indiceRepetition2Etablissement, typeVoie2Etablissement, libelleVoie2Etablissement, codePostal2Etablissement, libelleCommune2Etablissement, libelleCommuneEtranger2Etablissement, distributionSpeciale2Etablissement, codeCommune2Etablissement, codeCedex2Etablissement, libelleCedex2Etablissement, codePaysEtranger2Etablissement, libellePaysEtranger2Etablissement, dateDebut, etatAdministratifEtablissement, enseigne1Etablissement, enseigne2Etablissement, enseigne3Etablissement, denominationUsuelleEtablissement, activitePrincipaleEtablissement, nomenclatureActivitePrincipaleEtablissement, caractereEmployeurEtablissement, longitude, latitude, geo_score, geo_type, geo_adresse, geo_id, geo_ligne, geo_l4, geo_l5, typecom, reg, dep, arr, tncc, ncc, nccenr, libelle, can, comparent) FROM '"$datafolder"geo_siret_"$d".csv' delimiter ',' csv header encoding 'UTF8';"
@@ -37,32 +33,3 @@ sudo -u postgres psql -d dashboard -c "CREATE INDEX siret_dep ON siret (dep);"
 echo "Creating index on arr column"
 sudo -u postgres psql -d dashboard -c "CREATE INDEX siret_arr ON siret (arr);"
 echo "index created"
-
-echo "CREATE TABLES REGION AND DEPARTEMENT"
-sudo -u postgres psql -d dashboard -c "DROP TABLE IF EXISTS region;"
-echo "DROP TABLE OK"
-sudo -u postgres psql -d dashboard -f "sql/create_table_region.sql"
-echo "CREATE TABLE OK"
-sudo -u postgres psql -d dashboard -c "DROP TABLE IF EXISTS departement;"
-echo "DROP TABLE OK"
-sudo -u postgres psql -d dashboard -f "sql/create_table_departement.sql"
-echo "CREATE TABLE OK"
-datafolder="$(dirname "$(pwd)")"/utils/
-sudo -u postgres psql -d dashboard -c "\copy region(reg, cheflieu, tncc, ncc, nccenr, libelle) FROM '"$datafolder"region2019.csv' delimiter ',' csv header encoding 'UTF8';"
-sudo -u postgres psql -d dashboard -c "\copy departement(dep, reg, cheflieu, tncc, ncc, nccenr, libelle) FROM '"$datafolder"departement2019.csv' delimiter ',' csv header encoding 'UTF8';"
-
-echo "CREATE TABLE NAF"
-sudo -u postgres psql -d dashboard -c "DROP TABLE IF EXISTS naf;"
-echo "DROP TABLE OK"
-sudo -u postgres psql -d dashboard -f "sql/create_table_naf.sql"
-echo "CREATE TABLE OK"
-sudo -u postgres psql -d dashboard -c "\copy naf(code_sous_classe,libelle_sous_classe,code_sous_classe_short,code_classe,libelle_classe,code_classe_short,code_groupe,libelle_groupe,code_groupe_short,code_division,libelle_division,code_section,libelle_section) FROM '"$datafolder"naf_complet.csv' delimiter ',' csv header encoding 'UTF8';"
-
-
-echo "CREATE TABLE CLASSEEFFECTIF"
-sudo -u postgres psql -d dashboard -c "DROP TABLE IF EXISTS classeeffectif;"
-echo "DROP TABLE OK"
-sudo -u postgres psql -d dashboard -f "sql/create_table_classe_effectif.sql"
-echo "CREATE TABLE OK"
-sudo -u postgres psql -d dashboard -c "\copy classeeffectif(denomination, libelle, libelle_long) FROM '"$datafolder"classeeffectif.csv' delimiter ',' csv header encoding 'UTF8';"
-
