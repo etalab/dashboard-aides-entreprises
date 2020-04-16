@@ -30,49 +30,37 @@
       >
     </v-divider>
 
-    <v-row
-      v-for="(row, index) in viewConfig.componentRows"
-      :key="'R'+index"
-      :id="'R'+index"
+    <v-row 
+      :class="`${viewConfig.btnsRowClass}`"
       >
 
-      <v-col
-        v-for="(col, i) in row.columns"
-        :key="'R'+index+'-C'+i"
-        :id="'R'+index+'-C'+i"
-        :class="`${col.colClass}`"
-        :cols="col.cols"
-        >
+      <!-- <div
+        > -->
 
-        <v-layout 
-          :class="`justify-center`"
+        <v-btn 
+          v-for="(btn, index) in viewConfig.componentButtons"
+          :key="'B'+btn.id+index"
+          :id="'B'+btn.id+index"
+          :class="btn.btnClass"
+          :block="btn.block"
+          :icon="btn.icon"
+          :outlined="btn.outlined"
+          :fab="btn.fab"
+          :color="btn.color"
+          :large="btn.large"
+          :small="btn.small"
+          :dark="btn.dark"
+          :tile="btn.tile"
+          :rounded="btn.rounded"
+          :disabled="btn.disabled"
+          @click="runBtnFunctions( btn )"
           >
+          {{ btn.title[ locale ] }}
+        </v-btn>
 
-          <!-- TEXT TITLE -->
-          <h3
-            :class="``"
-            >
-            {{ col.colTitle[ locale ] }}
-          </h3>
-
-          <!-- TEXT FROM DISPLAYED DATA -->
-          <p 
-            :class="`${col.textClass}`"
-            >
-            globalButton            
-          </p> 
-
-          <!-- <code>
-            specialStore[ 'levelname']  : 
-            {{ getSpecialStore[ 'levelname' ] }}
-          </code>  -->
-    
-        </v-layout>
-
-      </v-col>
+      <!-- </div> -->
 
     </v-row>
-
   
     <v-divider
       v-if="getLocalConfig.dividers.after"
@@ -114,7 +102,7 @@
 
     data(){
       return {
-        dataViewType : 'globalButton',
+        dataViewType : 'globalButtons',
         viewConfig : undefined,
       }
     },
@@ -158,6 +146,10 @@
         let dataFromDisplayedData = this.selectFromDisplayedData( paramsArray ) 
         return dataFromDisplayedData
       },
+
+      runBtnFunctions(btn){
+        this.log && console.log('C-GlobalButton / runBtnFunctions / btn : ', btn)
+      }
 
     },
 

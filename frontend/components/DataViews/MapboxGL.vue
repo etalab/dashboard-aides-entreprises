@@ -60,6 +60,7 @@
         <v-btn 
           class="justify-center"
           outlined
+          block
           @click="switchMapsDrawer()"
           >
           {{ mapsVisibility.title[ locale ] }}

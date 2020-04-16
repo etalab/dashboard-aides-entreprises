@@ -62,7 +62,7 @@
                 />
 
                 <GlobalButton
-                  v-if="colRow.activated && colRow.component == 'global-button' "
+                  v-if="colRow.activated && colRow.component == 'globalButton' "
                   :settings="colRow.settings"
                 />
 

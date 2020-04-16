@@ -15,7 +15,7 @@ export const configAppTexts = {
       titleI18n : "texts.text01.title",
       dividers : {
         before : false,
-        after : true,
+        after : false,
       },
       componentRows : [
 
