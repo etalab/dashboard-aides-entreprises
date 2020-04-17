@@ -56,7 +56,7 @@ export const configAppTexts = {
           columns : [
           
             { colName : '',
-              colTitle : { fr : "informations" },
+              colTitle : { fr : "Informations" },
               colTitleClass : 'my-5',
               cols : 12,
               textClass : '',
@@ -79,7 +79,7 @@ export const configAppTexts = {
                     fromUrl : { fr : undefined },
                   },
                   // Plus d'informations sur les mesures de soutien aux entreprises sur le 
-                  // <a target="_top" href="https://www.economie.gouv.fr/coronavirus-soutien-entreprises">
+                  // <a target="_blank" href="https://www.economie.gouv.fr/coronavirus-soutien-entreprises">
                   //   portail de l'Economie, des Finances, de l'Action et des Comptes publics</a>.
 
                 { id : 'aides-textes',
@@ -88,13 +88,13 @@ export const configAppTexts = {
                     Afin d’offrir de la visibilité à l’ensemble des Français sur 
                     l’attribution des aides versées aux entreprises dans le 
                     cadre de ce fonds de solidarité, le ministre de l’action et des comptes publics, avec le soutien technique 
-                    <a target="_top" href="https://www.etalab.gouv.fr">
+                    <a target="_blank" href="https://www.etalab.gouv.fr">
                       d’Etalab</a>
                     au sein de la 
-                    <a target="_top" href="https://www.numerique.gouv.fr">
+                    <a target="_blank" href="https://www.numerique.gouv.fr">
                       Direction Interministérielle du Numérique (DINUM)</a>,
                     mettent à disposition un tableau de bord dont le 
-                    <a target="_top" href="https://github.com/etalab/dashboard-aides-entreprises">
+                    <a target="_blank" href="https://github.com/etalab/dashboard-aides-entreprises">
                       code source est libre</a>
                     qui propose une vision consolidée des aides aux entreprises effectivement versées.
                   ` },
@@ -106,8 +106,16 @@ export const configAppTexts = {
                   textContent : { fr : `
                     Pour obtenir d’autres informations relatives au fonds de solidarité, il est possible de 
                     consulter la page d’information disponible sur 
-                    <a target="_top" href="https://www.impots.gouv.fr/portail/">
+                    <a target="_blank" href="https://www.impots.gouv.fr/portail/">
                       https://www.impots.gouv.fr/portail/</a>.
+                  ` },
+                  fromUrl : { fr : undefined },
+                },
+
+                { id : 'mise-a-jour',
+                  textClass : 'text-left mx-4 pt-4 pb-5 mb-5',
+                  textContent : { fr : `
+                    
                   ` },
                   fromUrl : { fr : undefined },
                 },

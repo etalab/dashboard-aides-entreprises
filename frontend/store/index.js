@@ -146,13 +146,13 @@ export const getters = {
   getCurrentBreakpoint: (state) => (width) => {
     let thresholds = state.breakpoint.thresholds
     let breakpointName = 'md'
-    state.log && console.log("S-index-G-getCurrentBreakpoint / width : ", width)
+    // state.log && console.log("S-index-G-getCurrentBreakpoint / width : ", width)
     if (width < thresholds.xs) { breakpointName = 'xs' }
     if (width >= thresholds.xs && width < thresholds.sm) { breakpointName = 'sm' }
     if (width >= thresholds.sm && width < thresholds.md) { breakpointName = 'md' }
     if (width >= thresholds.md && width < thresholds.lg) { breakpointName = 'lg' }
     if (width > thresholds.lg ) { breakpointName = 'xl' }
-    state.log && console.log("S-index-G-getCurrentBreakpoint / breakpointName : ", breakpointName)
+    // state.log && console.log("S-index-G-getCurrentBreakpoint / breakpointName : ", breakpointName)
     return breakpointName
   }
 

@@ -1,4 +1,11 @@
 
+const KEY_DIVISION_NAF = "division_naf"
+const KEY_DIVISION_NAF_LABEL = "libelle_division_naf"
+
+const KEY_SECTION_NAF = "section_naf"
+const KEY_SECTION_NAF_LABEL = "libelle_section_naf"
+
+
 export const configAppCharts = {
   
   help : "this file contains the setup for the apex charts",
@@ -23,7 +30,12 @@ export const configAppCharts = {
       serie_id : "stat-bar-horiz",
       help : "bar horiz / kpi_top_10_naf X montant",
       titleI18n : "charts.chart01.title",
-      chartTitle : { fr : 'Top 10 des aides par code NAF (en M€) <br>' },
+      chartTitle : { fr : `
+        Top 10 des aides par 
+        <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
+          code section NAF</a>
+        (en M€) <br>
+      ` },
       chartTitleClass : 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId : undefined,
@@ -53,12 +65,12 @@ export const configAppCharts = {
               toNumber : true,
               sortOrder : 'descending',
               exceptions : {
-                putLast : { fieldName : 'division_naf' , value : 'Autres' }
+                putLast : { fieldName : KEY_SECTION_NAF , value : 'Autres' }
               },
             },
             buildAxisCategsX : true,
             buildAxisCategsXsettings : {
-              fromKey : 'libelle_division_naf',
+              fromKey : KEY_SECTION_NAF_LABEL,
             }
           }
         ],
@@ -197,12 +209,12 @@ export const configAppCharts = {
               toNumber : true,
               sortOrder : 'descending',
               exceptions : {
-                putLast : { fieldName : 'division_naf' , value : 'Autres' }
+                putLast : { fieldName : KEY_SECTION_NAF , value : 'Autres' }
               },
             },
             buildAxisCategsX : true,
             buildAxisCategsXsettings : {
-              fromKey : 'libelle_division_naf',
+              fromKey : KEY_SECTION_NAF_LABEL,
             }
           }
         ],

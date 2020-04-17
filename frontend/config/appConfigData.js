@@ -1,5 +1,6 @@
 
-const AIDES_FILES_VERSION = '200415'
+const DATASETS_FOLDER = '/datasets' // in static folder
+const AIDES_FILES_VERSION = '200415/sectionape'
 
 export const configAppData = {
 
@@ -186,28 +187,28 @@ export const configAppData = {
         { id    : "taxo-nafs" ,
           help  : "",
           from  : "static" , 
-          url   : "/datasets/taxonomies/nafs.json",
+          url   : `${DATASETS_FOLDER}/taxonomies/nafs.json`,
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/naf" 
           displayed : false,
         },
         {  id    : "taxo-regions" ,
           help  : "",
           from  : "static" , 
-          url   : "/datasets/taxonomies/regions.json",
+          url   : `${DATASETS_FOLDER}/taxonomies/regions.json`,
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/region" 
           displayed : false,
         },
         {  id    : "taxo-departements" ,
           help  : "",
           from  : "static" , 
-          url   : "/datasets/taxonomies/departements.json",
+          url   : `${DATASETS_FOLDER}/taxonomies/departements.json`,
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/departement" 
           displayed : false,
         },
         {  id    : "taxo-classes-effectifs" ,
           help  : "",
           from  : "static" , 
-          url   : "/datasets/taxonomies/classes-effectifs.json",
+          url   : `${DATASETS_FOLDER}/taxonomies/classes-effectifs.json`,
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/classeeffectif" 
           displayed : false,
         },
@@ -218,7 +219,7 @@ export const configAppData = {
         { id    : "centers" ,
           help  : "geo centres régions et départements",
           from  : "static" , 
-          url   : "/datasets/geodata/centers.json",
+          url   : `${DATASETS_FOLDER}/geodata/centers.json`,
           displayed : true,
         },
 
@@ -228,7 +229,7 @@ export const configAppData = {
         { id    : "national-aides-raw" ,
           help  : "serie chiffres aides à la maille nationale",
           from  : "static" , 
-          url   : `/datasets/aides/${AIDES_FILES_VERSION}/aides-maille-national.json`,
+          url   : `${DATASETS_FOLDER}/aides/${AIDES_FILES_VERSION}/aides-maille-national.json`,
           displayed : true,
           copyTo : [
             { fieldToCopy : undefined,
@@ -258,13 +259,13 @@ export const configAppData = {
         { id    : "regions-aides-raw" ,
           help  : "serie chiffres aides à la maille regionale",
           from  : "static" , 
-          url   : `/datasets/aides/${AIDES_FILES_VERSION}/aides-maille-regional.json`,
+          url   : `${DATASETS_FOLDER}/aides/${AIDES_FILES_VERSION}/aides-maille-regional.json`,
           displayed : true,
         },
         { id    : "departements-aides-raw" ,
           help  : "serie chiffres aides à la maille departementale",
           from  : "static" , 
-          url   : `/datasets/aides/${AIDES_FILES_VERSION}/aides-maille-departemental.json`,
+          url   : `${DATASETS_FOLDER}/aides/${AIDES_FILES_VERSION}/aides-maille-departemental.json`,
           displayed : false,
         },
 
