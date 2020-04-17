@@ -172,6 +172,8 @@ export default {
 
       // MAPBOX MAP OBJECT
       map : undefined,
+      originalCenter : undefined,
+      originalZoom : undefined,
 
       mapOptions : {
         mapStyle : undefined, 
@@ -231,6 +233,8 @@ export default {
 
     // setup sources
     this.sources = this.viewConfig.sources
+    this.originalCenter = [ mapOptionsRoute.center[1], mapOptionsRoute.center[0] ]
+    this.originalZoom = mapOptionsRoute.zoom
 
     // setup maps
     this.maps = this.viewConfig.maps
@@ -251,14 +255,10 @@ export default {
   watch: {
 
     map (next, prev){
-
       if (next && !prev) {
-
-        this.log && console.log('C-MapboxGL / watch - map is created ')
-
+        this.log && console.log('C-MapboxGL / watch - map - is created ')
         let storeSourcesArray = this.sources.filter( s => s.from === 'store')
         let urlSourcesArray = this.sources.filter( s => s.from === 'url')
-
         this.loadStoreSources( storeSourcesArray )
         // .then(() => {
           this.loadUrlSources( urlSourcesArray )
@@ -268,9 +268,12 @@ export default {
             this.showLoader = false 
           })
         // })
-
       }
+    },
 
+    getResetZoomTrigger (next, prev){
+      this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
+      this.resetZoom()
     },
 
   },
@@ -292,6 +295,7 @@ export default {
       windowSize : 'getWindowsSize',
       getCurrentNavbarFooter : 'getCurrentNavbarFooter',
       getCurrentBreakpoint : 'getCurrentBreakpoint',
+      getResetZoomTrigger : 'maps/getResetZoomTrigger',
     }),
 
     // config
@@ -723,7 +727,6 @@ export default {
       // ZOOM FUNCTIONS
 
       goToPolygon ( params ) {
-      
         this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
         let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
         if ( isFnInZoomRange ){
@@ -740,6 +743,17 @@ export default {
         var _bbox = bbox(geojson)
         this.map.fitBounds(_bbox, { padding: 20, animate: true })
       },
+
+      resetZoom () {
+        this.log && console.log("\nC-MapboxGL / resetZoom ... " )
+        this.map.flyTo(
+          {  
+            center: this.originalCenter,
+            zoom: this.originalZoom,
+          }
+        )
+      },
+
 
       // HIGHLIGHTS FUNCTIONS
 

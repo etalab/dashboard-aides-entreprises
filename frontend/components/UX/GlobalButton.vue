@@ -148,7 +148,25 @@
       },
 
       runBtnFunctions(btn){
-        this.log && console.log('C-GlobalButton / runBtnFunctions / btn : ', btn)
+
+        // this.log && console.log('C-GlobalButton / runBtnFunctions / btn : ', btn)
+
+        for ( let fn of btn.functions ){
+          this.log && console.log('C-GlobalButton / runBtnFunctions / fn.funcName : ', fn.funcName )
+          let funcParams = fn.funcParams 
+          switch( fn.funcName ){
+            case 'resetStore' : 
+              this.$store.dispatch('data/resetStore', funcParams ) ;
+              break ; 
+            case 'resetMapZoom' : 
+              this.$store.dispatch('maps/triggerResetZoom', funcParams) ;
+              break ; 
+          }
+
+        }
+
+
+
       }
 
     },

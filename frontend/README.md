@@ -1,19 +1,21 @@
 
 <h1 align="center">
-ODAMAP 
+  ODAMAP 
 </h1>
 <p align="center">
-for Open-Dashboard-Map
+  for Open-Dashboard-Map
 </p>
 
 
 ---------
 
-a generic map/dashboard solution for open data 
+<p align="center">
+  a generic map/dashboard solution for open data 
+</p>
 
 ----------
 
-#### Version : 0.1
+#### Version : 0.2
 
 ----------
 #### Co-auteurs : 
@@ -64,26 +66,27 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 #### configuration de l'app / UI-UX / routes / navbar ...: 
 
 - éditer/créer un fichier `.env` sur le modèle du `example.env`
-- éditer le fichier `config/appConfigUIUX.json`
-- éditer le fichier `config/appConfigRoutes.json`
+- éditer le fichier `config/appConfigUIUX.json` : 
+- éditer le fichier `config/appConfigRoutes.json` : 
 
 
 #### configuration de l'app / data: 
 
-- éditer le fichier `config/appConfigData.json`
+- éditer le fichier `config/appConfigData.json` : 
 
 #### configuration de l'app / carte: 
 
-- éditer le fichier `config/mapboxVectorStyles.json`
+- éditer le fichier `config/mapboxVectorStyles.json` : 
 
 #### configuration de l'app / vues données : 
 
-- éditer le fichier `config/appConfigMap.json`
-- éditer le fichier `config/appConfigData.json`
-- éditer le fichier `config/appConfigNumbers.json`
-- éditer le fichier `config/appConfigTexts.json`
-- éditer le fichier `config/appConfigTables.json`
-- éditer le fichier `config/appConfigRawData.json`
+- éditer le fichier `config/appConfigMap.json` : 
+- éditer le fichier `config/appConfigData.json` : 
+- éditer le fichier `config/appConfigNumbers.json` : 
+- éditer le fichier `config/appConfigGlobalButtons.json` : 
+- éditer le fichier `config/appConfigTexts.json` : 
+- éditer le fichier `config/appConfigTables.json` : 
+- éditer le fichier `config/appConfigRawData.json` : 
 
 #### langues : 
 
@@ -103,8 +106,13 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - design a minima avec des couleurs piquées chez Jérôme ;
 - code le plus factorisé et générique possible (enfin autant que j’ai pu) pour pouvoir ajouter / dupliquer des composants et/ou changer des sources, ... j’ai tenté de faire une “souche” qui pourrait servir autant aux données DVF qu’aux aides aux entreprises qu’aux fonds de carte écolos...
 - le mapping des données avec les variables de l’appli se font via les différents fichiers de configuration dans le dossier /config
+- switch de la carte en 1er + chiffres clés en version mobile ;
+- wording et CSS ;
 
-### ce qu’il n’y a pas encore (pour jeudi idéalement) :
+### ce qu’il n’y a pas encore :
+
+##### se référer au kanban de développement : [page projet Github][kanban]
+
 
 - afficher les départements dépendants d’une région et uniquement eux ;
 - revenir aux chiffres nationaux (réinitialiser) ;
@@ -115,9 +123,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 - pages/utl de textes statiques pour afficher des infos ;
 - footer “officiel” + liens ;
 - meilleure gestion du zoom et des largeurs de cercles en fonction de l’altitude ;
-- switch de la carte en 1er + chiffres clés en version mobile ;
 - repasse sur l’UX (notamment sur l’usage de la barre de gauche par exemple) ;
-- wording et autres joyeuseries CSS ;
 - ...
 
 -----------
@@ -133,3 +139,62 @@ déploiement : SPA mais plusieurs urls possibles pour afficher des pages / netli
 -----------
 ## repo : 
 - branche j_front / dossier frontend du repo qu’on se partage avec Geoffrey => https://github.com/etalab/dashboard-aides-entreprises/tree/j_front/frontend
+
+
+-----------
+
+
+### Variables de configuration remarquables
+
+------------
+
+#### fichier : `appConfigMap.js`
+
+Pour le composant `MapboxGL` : 
+
+- `settingsIds[-].map.clicEvents[-].functions` : (array)
+  - liste des fonctions à déclencher lors d'un événement sur un élément de la carte
+<br>
+
+- `settingsIds[-].map.clicEvents[-].functions[-].funcName` : (string)
+  - choix : 
+    - `goToPolygon` : zoom sur polygon `target`
+    - `updateDisplayedData` : mise à jour de données du store
+    - `setChildrenPolygons` : ( non codé )
+    - `updateQuery` : (non codé )
+<br>
+
+- `settingsIds[-].map.clicEvents[-].functions[-].funcParams.zoomRange` : object)
+  - `minZoom` : fonction inactive en deçà
+  - `maxZoom` : fonction inactive au-delà
+<br>
+
+- `settingsIds[-].map.clicEvents[-].functions[-].funcParams.propName` : 
+  - propriété de la `feature` à récupérer comme valeur à passer dans la fonction
+<br>
+
+- `settingsIds[-].map.clicEvents[-].functions[-].funcParams.targets` : array
+  - liste des références des données à mettre à jour et des données cibles
+<br>
+
+----------------
+
+#### fichier : `appConfigGlobalButtons.js`
+
+Pour le composant `GlobalButton` : 
+
+- `settingsIds[-].componentButtons.functions[-]` : (array)
+  - liste des fonctions à déclencher lors d'un clic sur le bouton
+<br>
+
+- `settingsIds[-].componentButtons.functions[-].funcName` : (string)
+  - choix : 
+    - `resetStore` : reinitiélisation du store
+    - `resetMapZoom` : reinitialisation du zoom du/des composants 
+<br>
+
+
+----------------
+
+[branch_front]: https://github.com/etalab/dashboard-aides-entreprises/tree/j_front/frontend
+[kanban]: https://github.com/etalab/dashboard-aides-entreprises/projects/1 

@@ -200,6 +200,10 @@ export const actions = {
     return getters.getFromSpecialStoreData( params )
   },
 
+  resetStore( {state, getters, commit}, params ){
+    state.log && console.log("\nS-data-A-resetStore / params :", params)
+
+  },
 
   // QUERIES
 
@@ -239,7 +243,7 @@ export const actions = {
 
   },
 
-  emptyOneFilter({state, commit, dispatch}, {filter}){
+  emptyOneFilter({state, commit, dispatch}){
 
     // state.log && console.log("S-data-A-emptyOneFilter / filterItem :", filterItem)
     // const selectedFilters = new Map(getters.getSelectedFilters)

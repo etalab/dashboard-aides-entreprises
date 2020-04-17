@@ -25,8 +25,8 @@ export const configAppCharts = {
 
 
     // APEX CHARTS
-    { // BAR HORIZ - SETTINGS EXAMPLE
-      id : "apexchart-01",
+    // BAR HORIZ - APE X MONTANTS
+    { id : "apexchart-01",
       serie_id : "stat-bar-horiz",
       help : "bar horiz / kpi_top_10_naf X montant",
       titleI18n : "charts.chart01.title",
@@ -174,8 +174,8 @@ export const configAppCharts = {
 
 
     // APEX CHARTS
-    { // BAR HORIZ - SETTINGS EXAMPLE
-      id : "apexchart-01bis",
+    // BAR VERTIC - APE X NOMBRES
+    { id : "apexchart-01bis",
       serie_id : "stat-bar-horiz",
       help : "bar horiz / kpi_top_10_naf X montant",
       titleI18n : "charts.chart01.title",
@@ -265,8 +265,8 @@ export const configAppCharts = {
     },
 
 
-    { // BAR VERTIC - SETTINGS EXAMPLE
-      id : "apexchart-02",
+    // BAR VERTIC - SETTINGS EXAMPLE
+    { id : "apexchart-02",
       serie_id : "stat-bar-vertic",
       help : "bar vertic + stacked example",
       titleI18n : "charts.chart02.title",
