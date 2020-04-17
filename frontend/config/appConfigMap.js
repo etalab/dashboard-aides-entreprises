@@ -215,7 +215,7 @@ export const configAppMap = {
 
                 { funcName    : "goToPolygon",
                   funcParams  : { 
-                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD + 2 },
+                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD + 5 },
                     propName : 'code',
                   },
                 }, 
@@ -273,7 +273,6 @@ export const configAppMap = {
                         fromDatasetId : 'regions-aides-raw',
                         fromDatasetKey : 'reg',
                         fromDatasetField : undefined,
-                        targetDatasetId : 'infos', 
                         targetSpecialStoreId : 'focusObject', 
                       },
 
@@ -396,7 +395,6 @@ export const configAppMap = {
                         fromDatasetId : 'departements-aides-raw',
                         fromDatasetKey : 'dep',
                         fromDatasetField : undefined,
-                        targetDatasetId : 'infos', 
                         targetSpecialStoreId : 'focusObject', 
                       },
 

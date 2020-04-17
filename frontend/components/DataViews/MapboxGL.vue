@@ -272,7 +272,7 @@ export default {
     },
 
     getResetZoomTrigger (next, prev){
-      this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
+      // this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
       this.resetZoom()
     },
 
@@ -292,6 +292,7 @@ export default {
       getDataViewConfig : 'getDataViewConfig',
       getFromInitData : 'data/getFromInitData',
       getFromDisplayedData : 'data/getFromDisplayedData',
+      getStoreSourceData : 'data/getStoreSourceData',
       windowSize : 'getWindowsSize',
       getCurrentNavbarFooter : 'getCurrentNavbarFooter',
       getCurrentBreakpoint : 'getCurrentBreakpoint',
@@ -632,40 +633,14 @@ export default {
         } 
 
         if ( from == 'store' ){
-
-          // get data from store
-          let fromId = params.fromDatasetId
-          if ( params.fromStoreData == 'initData' ){ 
-            data = this.getFromInitData( fromId ).data
-          }
-          if ( params.fromStoreData == 'displayeData' ){ 
-            data = this.getFromDisplayedData( fromId ).data
-          }
-
-          // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (1) : ", data)
-
-          // filter out from params
-          let itemKey = (params.fromPropKey) ? params.props[ params.fromPropKey ] : params.propValue
-          // this.log && console.log("C-MapboxGL / getSourceGeoData ... itemKey : ", itemKey)
-          const fromDatasetKey = params.fromDatasetKey
-          // this.log && console.log("C-MapboxGL / getSourceGeoData ... fromDatasetKey : ", fromDatasetKey )
-          if ( Array.isArray(data) ) {
-            data = data.find( i => i[ fromDatasetKey ] == itemKey )
-            // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (2a) : ", data)
-          } else {
-            data = ( fromDatasetKey ) ? data[ fromDatasetKey ] : data
-            // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (2a) : ", data)
-            data = data[ itemKey ]
-            // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (2b) : ", data)
-          }
-          // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (3) : ", data)
-
-          // retrieve correct field
-          data = ( params.fromDatasetField ) ? data[ params.fromDatasetField ] : data
-          // this.log && console.log("C-MapboxGL / getSourceGeoData ... data (3) : ", data)
+          data = this.getStoreSourceData( params )
         }
-        
+
+        if ( params.format ) {
+          data = switchFormatFunctions( data, params.format )
+        }
         return data
+
       },
 
       updateDisplayedData( params ){
@@ -685,20 +660,13 @@ export default {
   
             let value = this.getSourceData( targetParams, targetParams.from )
             // this.log && console.log("C-MapboxGL / updateDisplayedData ... value : ", value )
-  
-            if ( targetParams.format ) {
-              value = switchFormatFunctions( value, targetParams.format )
-            }
+
             // 2 - then update displayed data
             let targetData = { 
-              // store : 'displayedData',
-              // id : targetParams.targetDatasetId,
-              // path : targetParams.targetValuePath,
               value : value,
               specialStoreId : targetParams.targetSpecialStoreId,
             }
-            // this.$store.commit('data/setDeepNestedData', targetData )
-            this.$store.dispatch('data/setNestedData', targetData )
+            this.$store.dispatch('data/setNestedData', targetData )  // set element in : store.data.sepcialStore
             
           }
           this.$store.commit('data/toggleTrigger' )
@@ -727,7 +695,7 @@ export default {
       // ZOOM FUNCTIONS
 
       goToPolygon ( params ) {
-        this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
+        // this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
         let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
         if ( isFnInZoomRange ){
           let geodata = this.getSourceData( params )
@@ -745,7 +713,7 @@ export default {
       },
 
       resetZoom () {
-        this.log && console.log("\nC-MapboxGL / resetZoom ... " )
+        // this.log && console.log("\nC-MapboxGL / resetZoom ... " )
         this.map.flyTo(
           {  
             center: this.originalCenter,
@@ -753,6 +721,9 @@ export default {
           }
         )
       },
+
+
+
 
 
       // HIGHLIGHTS FUNCTIONS

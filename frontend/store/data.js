@@ -1,4 +1,4 @@
-import { objectFromPath, sortArrayBy, moveArrayElement } from '~/utils/utils.js'
+import { objectFromPath, sortArrayBy, moveArrayElement, switchFormatFunctions } from '~/utils/utils.js'
 
 
 export const state = () => ({
@@ -49,10 +49,18 @@ export const getters = {
   // DATASETS
   
   getFromInitData : (state) => ( id ) => {
+    // state.log && console.log("S-data-G-getFromInitData ... state.initData : ", state.initData)
+    // state.initData.forEach( d => {
+    //   state.log && console.log("S-data-G-getFromInitData ... d.id : ", d.id)
+    // })
     return state.initData.find( dataset => dataset.id == id )
   },
 
   getFromDisplayedData : (state) => ( id ) => {
+    // state.log && console.log("S-data-G-getFromDisplayedData ... state.displayedData : ", state.displayedData)
+    // state.displayedData.forEach( d => {
+    //   state.log && console.log("S-data-G-getFromDisplayedData ... d.id : ", d.id)
+    // })
     return state.displayedData && state.displayedData.find( dataset => dataset.id == id )
   },
 
@@ -104,6 +112,55 @@ export const getters = {
     }
     return obj
   },
+
+  getStoreSourceData : (state, getters) => ( params ) => {
+
+    let data
+
+    // get data from store
+    let fromId = params.fromDatasetId
+    if ( params.fromStoreData == 'initData' ){ 
+      data = getters.getFromInitData( fromId ).data
+    }
+    if ( params.fromStoreData == 'displayeData' ){ 
+      data = getters.getFromDisplayedData( fromId ).data
+    }
+    // state.log && console.log("S-data-G-getStoreSourceData ... data (1) : ", data)
+
+
+    // filter out from params
+    let itemKey = ( params.fromPropKey ) ? params.props[ params.fromPropKey ] : params.fromPropValue
+    // state.log && console.log("S-data-G-getStoreSourceData ... itemKey : ", itemKey)
+
+    const fromDatasetKey = params.fromDatasetKey
+    // state.log && console.log("S-data-G-getStoreSourceData ... fromDatasetKey : ", fromDatasetKey )
+
+    const fromDatasetIndex = params.fromDatasetIndex
+    // state.log && console.log("S-data-G-getStoreSourceData ... fromDatasetIndex : ", fromDatasetIndex )
+
+    if ( Array.isArray(data) ) {
+      if ( fromDatasetKey   ){ data = data.find( i => i[ fromDatasetKey ] == itemKey ) }
+      if ( typeof fromDatasetIndex !== 'undefined' ){ data = data[ fromDatasetIndex ]}
+      // state.log && console.log("S-data-G-getStoreSourceData ... data (2a) : ", data)
+    } 
+    else {
+      data = ( fromDatasetKey ) ? data[ fromDatasetKey ] : data
+      // state.log && console.log("S-data-G-getStoreSourceData ... data (2a) : ", data)
+      data = data[ itemKey ]
+      // state.log && console.log("S-data-G-getStoreSourceData ... data (2b) : ", data)
+    }
+
+    // state.log && console.log("S-data-G-getStoreSourceData ... data (3) : ", data)
+
+    // retrieve correct field
+    const fromDatasetField = params.fromDatasetField
+    data = ( data && fromDatasetField ) ? data[ fromDatasetField ] : data
+    // state.log && console.log("S-data-G-getStoreSourceData ... data (4) : ", data)
+
+    return data
+
+  },
+
 
 }
 
@@ -200,8 +257,31 @@ export const actions = {
     return getters.getFromSpecialStoreData( params )
   },
 
-  resetStore( {state, getters, commit}, params ){
-    state.log && console.log("\nS-data-A-resetStore / params :", params)
+  resetStore( {state, getters, commit, dispatch}, params ){
+    
+    // state.log && console.log("\nS-data-A-resetStore / params :", params)
+    
+    for (let targetParams of params.targets ){
+      
+      // state.log && console.log("S-data-A-resetStore / targetParams :", targetParams)
+
+      let value = getters.getStoreSourceData( targetParams )
+      // state.log && console.log("S-data-A-resetStore / value :", value)
+
+      if ( targetParams.format ) {
+        value = switchFormatFunctions( value, targetParams.format )
+      }
+
+      let targetData = { 
+        value : value,
+        specialStoreId : targetParams.targetSpecialStoreId,
+      }
+      // state.log && console.log("S-data-A-resetStore / targetData :", targetData)
+      dispatch('setNestedData', targetData )  // set element in : store.data.sepcialStore
+
+    }
+    
+    commit('toggleTrigger' )
 
   },
 

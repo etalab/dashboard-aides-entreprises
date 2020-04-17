@@ -152,7 +152,7 @@
         // this.log && console.log('C-GlobalButton / runBtnFunctions / btn : ', btn)
 
         for ( let fn of btn.functions ){
-          this.log && console.log('C-GlobalButton / runBtnFunctions / fn.funcName : ', fn.funcName )
+          // this.log && console.log('C-GlobalButton / runBtnFunctions / fn.funcName : ', fn.funcName )
           let funcParams = fn.funcParams 
           switch( fn.funcName ){
             case 'resetStore' : 

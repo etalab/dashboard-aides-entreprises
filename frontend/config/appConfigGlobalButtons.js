@@ -21,7 +21,7 @@ export const configAppGlobalButtons = {
       componentButtons : [
 
         { id : 'first-button',
-          title : { fr : 'données nationales' },
+          title : { fr : 'retour au niveau national' },
           titleI18n : "buttons.button01.title",
           
           btnClass : 'justify-center',
@@ -45,31 +45,33 @@ export const configAppGlobalButtons = {
                 targets : [
     
                   { from : 'store', 
-                    fromPropKey : 'code',
+                    fromPropKey : undefined,
                     fromPropValue : 'national',
                     fromStoreData : 'initData',
-                    fromDatasetId : 'taxo-regions',
-                    fromDatasetKey : 'reg',
-                    fromDatasetField : 'libelle',
+                    fromDatasetId : 'infos',
+                    fromDatasetKey : 'switchers',
+                    fromDatasetField : undefined,
                     targetSpecialStoreId : 'levelname', 
                   },
     
                   { from : 'store', 
-                    fromPropKey : 'code',
-                    fromPropValue : 'national',
+                    fromPropKey : undefined,
+                    fromPropValue : undefined,
                     fromStoreData : 'initData',
-                    fromDatasetId : 'regions-aides-raw',
-                    fromDatasetKey : 'reg',
+                    fromDatasetId : 'national-aides-raw',
+                    fromDatasetKey : undefined,
+                    fromDatasetIndex : 0,
                     fromDatasetField : 'nombre',
                     targetSpecialStoreId : 'nombre', 
                   },
     
                   { from : 'store', 
-                    fromPropKey : 'code',
-                    fromPropValue : 'national',
+                    fromPropKey : undefined,
+                    fromPropValue : undefined,
                     fromStoreData : 'initData',
-                    fromDatasetId : 'regions-aides-raw',
-                    fromDatasetKey : 'reg',
+                    fromDatasetId : 'national-aides-raw',
+                    fromDatasetKey : undefined,
+                    fromDatasetIndex : 0,
                     fromDatasetField : 'montant',
                     targetSpecialStoreId : 'montant', 
                     format : [
@@ -80,13 +82,13 @@ export const configAppGlobalButtons = {
                   },
     
                   { from : 'store',
-                    fromPropKey : 'code', // use props region code
-                    fromPropValue : 'national',
+                    fromPropKey : undefined,
+                    fromPropValue : undefined,
                     fromStoreData : 'initData',
-                    fromDatasetId : 'regions-aides-raw',
-                    fromDatasetKey : 'reg',
+                    fromDatasetId : 'national-aides-raw',
+                    fromDatasetKey : undefined,
+                    fromDatasetIndex : 0,
                     fromDatasetField : undefined,
-                    targetDatasetId : 'infos', 
                     targetSpecialStoreId : 'focusObject', 
                   },
     
@@ -99,7 +101,7 @@ export const configAppGlobalButtons = {
                 targets : [
     
                   { from : 'store', 
-                    fromPropKey : 'zoom',
+                    fromPropKey : undefined,
                     fromPropValue : 8,
                     fromStoreData : undefined,
                     fromDatasetId : undefined,

@@ -6,6 +6,8 @@ export const state = () => ({
   // GLOABAL APP ENV
   log : process.env.LOG,
 
+  // ZOOM 
+
   resetZoomTrigger : -1,
 
 })
@@ -24,10 +26,10 @@ export const getters = {
 
 export const mutations = {
   
-  // RESET ZOOM TRIGGER
+  // UPDATE ZOOM TRIGGER
 
   setResetZoomTrigger (state) {
-    state.log && console.log("\nS-map-M-setResetZoomTrigger ... ")
+    // state.log && console.log("\nS-map-M-setResetZoomTrigger ... ")
     state.resetZoomTrigger = state.resetZoomTrigger * -1
   },
   
@@ -39,7 +41,7 @@ export const mutations = {
 export const actions = {
 
   triggerResetZoom( {state, commit}, params){
-    state.log && console.log("\nS-map-A-triggerResetZoom / params :", params)
+    // state.log && console.log("\nS-map-A-triggerResetZoom / params :", params)
     commit('setResetZoomTrigger')
   }
 }

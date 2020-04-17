@@ -149,8 +149,8 @@
 
     watch: {
       trigger(next, prev){
-        this.log && console.log('C-ApexChart / watch / trigger / prev : ', prev )
-        this.log && console.log('C-ApexChart / watch / trigger / next : ', next )
+        // this.log && console.log('C-ApexChart / watch / trigger / prev : ', prev )
+        // this.log && console.log('C-ApexChart / watch / trigger / next : ', next )
         this.getSeries()
       },
     },
