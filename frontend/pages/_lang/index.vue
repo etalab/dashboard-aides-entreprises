@@ -162,7 +162,7 @@
       getActivatedCurrentNavbarFooter(next, prev){
         this.log && console.log('\nP-Homepage / watch / getActivatedCurrentNavbarFooter ... next :', next)
         this.log && console.log('P-Homepage / watch / getActivatedCurrentNavbarFooter ... prev :', prev)
-        this.log && console.log('P-Homepage / watch / getActivatedCurrentNavbarFooter ... this.getCurrentNavbarFooter :', this.getCurrentNavbarFooter)
+        // this.log && console.log('P-Homepage / watch / getActivatedCurrentNavbarFooter ... this.getCurrentNavbarFooter :', this.getCurrentNavbarFooter)
 
         // if (typeof prev !== 'undefined'){
           let fallback = '/'

@@ -220,8 +220,8 @@ export default {
       // mapStyle      : StylesOSM[ 'testRasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'EtalabRaw' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'RasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
-      mapStyle      : StylesOSM[ 'EtalabUrl' ], // EtalabFile | testRasterVoyager | RasterVoyager
-      // mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
+      // mapStyle      : StylesOSM[ 'EtalabUrl' ], // EtalabFile | testRasterVoyager | RasterVoyager
+      mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
       
       zoom          : mapOptionsRoute.zoom,
       maxZoom       : mapOptionsRoute.maxZoom,
@@ -794,8 +794,8 @@ export default {
 
       toggleSelectedOn (event, source) {
         let mapbox = _map
-        const canvas = mapbox.getCanvas()
-        canvas.style.cursor = 'pointer'
+        // const canvas = mapbox.getCanvas()
+        // canvas.style.cursor = 'pointer'
         if (event.features.length > 0) {
           if (this.selectedStateId[source] !== null) {
             mapbox.setFeatureState({ source, id: this.selectedStateId[source] }, { selected: false }) // clean all sources to prevent error
@@ -804,14 +804,14 @@ export default {
           mapbox.setFeatureState({ source, id: this.selectedStateId[source] }, { selected: true })
         }
       },
-      // toggleSelectedOff (event, source) {
-      //   let mapbox = _map
-      //   const canvas = mapbox.getCanvas()
-      //   canvas.style.cursor = ''
-      //   if (this.hoveredStateId[source] !== null) {
-      //     mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { selected: false })
-      //   }
-      // },
+      toggleAllSelectedOff (event, source) {
+        let mapbox = _map
+        // const canvas = mapbox.getCanvas()
+        // canvas.style.cursor = ''
+        if (this.hoveredStateId[source] !== null) {
+          mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { selected: false })
+        }
+      },
 
 
 

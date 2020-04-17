@@ -38,7 +38,7 @@
     'fill-outline-color': OUTLINECOLOR,
     'fill-opacity': ['case',
       ['boolean', ['feature-state', 'selected'], ['feature-state', 'hover'], false],
-      0.15,
+      0.1,
       0
     ]
   }
@@ -106,7 +106,8 @@ export const configAppMap = {
       map_options   : {
     
         // ADAPT TO MAPBOX-GL-JS OPTIONS
-        mapStyle         : "testRasterVoyager", // EtalabFile | testRasterVoyager (ok) | RasterVoyager
+        // mapStyle         : "testRasterVoyager", // EtalabFile | testRasterVoyager (ok) | RasterVoyager
+        mapStyle         : "EtalabUrl", // EtalabFile | testRasterVoyager (ok) | RasterVoyager
         center           : [46.2276, 2.2137],
         currentCenter    : [46.2276, 2.2137],
         zoom             : 5,

@@ -41,7 +41,7 @@ export const configAppUIUX = {
       miniVariant: true,
       miniVariantBtn : false, 
 
-      right: true,
+      right: false,
       rightBtn : false, 
 
       rightDrawer: false,

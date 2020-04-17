@@ -88,15 +88,14 @@
           <v-layout 
             v-for="(txt, idx) in col.textsHtml"
             :key="idx"
+            :class="`${txt.textClass}`"
             >
 
             <!-- TEXT FROM DISPLAYED DATA -->
             <div
               v-if="!txt.fromUrl[ locale ]"
               >
-              <p 
-                :class="`${txt.textClass}`"
-                >
+              <p>
                 <span
                   v-if="txt.textContent"
                   v-html="txt.textContent[ locale ]">
@@ -108,9 +107,7 @@
             <div
               v-if="txt.fromUrl[ locale ]"
               >
-              <p 
-                :class="`${txt.textClass}`"
-                >
+              <p>
                 <span
                   v-if="rawHtmls[ txt.id ]"
                   v-html="rawHtmls[ txt.id ]">

@@ -69,7 +69,7 @@ export const getters = {
   },
 
   selectFromDisplayedData : ( state, getters ) => ( paramsArray ) => {
-    state.log && console.log("S-data-A-selectFromDisplayedData / paramsArray  : ", paramsArray )
+    // state.log && console.log("S-data-A-selectFromDisplayedData / paramsArray  : ", paramsArray )
     let resultsArray = [ ]
     for ( let params of paramsArray){
       let dataset = getters.getFromDisplayedData( params.id )
@@ -184,13 +184,13 @@ export const mutations = {
   },
 
   setInitDataset (state, dataset ){
-    state.log && console.log("S-data-M-setInitDataset / dataset.id  : ", dataset.id )
+    // state.log && console.log("S-data-M-setInitDataset / dataset.id  : ", dataset.id )
     let foundIndex = state.initData.findIndex( x => x.id == dataset.id )
     state.initData[ foundIndex ] = dataset 
   },
 
   setDisplayedDataset (state, dataset ){
-    state.log && console.log("S-data-M-setDisplayedDataset / dataset.id  : ", dataset.id )
+    // state.log && console.log("S-data-M-setDisplayedDataset / dataset.id  : ", dataset.id )
     let foundIndex = state.displayedData.findIndex( x => x.id == dataset.id )
     state.displayedData[ foundIndex ] = dataset 
   },
@@ -209,12 +209,12 @@ export const mutations = {
   // FILTERS
 
   resetFilters(state) {
-    state.log && console.log("S-data-M-resetFilters ...")
+    // state.log && console.log("S-data-M-resetFilters ...")
     state.activatedFilters = [ ]
   },
 
   setActivatedFilters (state, selectedFilters) {
-    state.log && console.log("S-data-M-setActivatedFilters / selectedFilters :", selectedFilters)
+    // state.log && console.log("S-data-M-setActivatedFilters / selectedFilters :", selectedFilters)
     state.activatedFilters = selectedFilters
   },
 

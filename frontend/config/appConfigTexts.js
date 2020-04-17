@@ -119,9 +119,9 @@ export const configAppTexts = {
                 },
 
                 { id : 'mise-a-jour',
-                  textClass : 'text-left mx-4 pt-4 pb-5 mb-5',
+                  textClass : 'justify-center mx-4 pt-3 pb-5 mb-5',
                   textContent : { fr : `
-                    
+                    données au 17 avril 2020
                   ` },
                   fromUrl : { fr : undefined },
                 },

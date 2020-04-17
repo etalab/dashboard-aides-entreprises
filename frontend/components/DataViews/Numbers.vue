@@ -64,7 +64,7 @@
             >
             <!-- <code> -->
             <!-- {{ col.specialStore }} - -->
-            {{ getSpecialStore[ col.specialStoreId ] }}
+            {{ numToString(getSpecialStore[ col.specialStoreId ]) }}
             {{ col.unit[ locale ] }}
             <!-- </code> -->
           </p> 
@@ -194,6 +194,10 @@
         this.log && console.log('C-Numbers / getDisplayedData ...')
         let dataFromDisplayedData = this.selectFromDisplayedData( paramsArray ) 
         return dataFromDisplayedData
+      },
+
+      numToString( data ){
+        return data // .replace(/(\d)(?=(\d{3})+$)/g, '$1 ')
       },
 
     },

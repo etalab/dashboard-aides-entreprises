@@ -1,7 +1,7 @@
 
 const DATASETS_FOLDER = '/datasets' // in static folder
-const AIDES_FILES_DATE    = '2020-04-15'
-const AIDES_FILES_VERSION = '200415/sectionape'
+const AIDES_FILES_DATE    = '2020-04-17'
+const AIDES_FILES_VERSION = '200417/sectionape'
 
 export const configAppData = {
 
