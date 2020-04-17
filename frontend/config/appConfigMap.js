@@ -108,7 +108,7 @@ export const configAppMap = {
         // ADAPT TO MAPBOX-GL-JS OPTIONS => check `mapboxVectorStyles.js`
 
         // mapStyle         : "testRasterVoyager", // EtalabFile | testRasterVoyager (ok) | RasterVoyager
-        mapStyle         : "EtalabUrl", // EtalabFile | testRasterVoyager (ok) | RasterVoyager
+        mapStyle         : 'EtalabUrl', // EtalabFile | testRasterVoyager (ok) | RasterVoyager
         center           : [46.2276, 2.2137],
         currentCenter    : [46.2276, 2.2137],
         zoom             : 5,
@@ -584,7 +584,7 @@ export const configAppMap = {
       map_options   : {
     
         // ADAPT TO MAPBOX-GL-JS OPTIONS
-        mapStyle         : "testRasterVoyager", // Etalab
+        mapStyle         : "EtalabUrl",
         center           : [46.2276, 2.2137],
         currentCenter    : [46.2276, 2.2137],
         zoom             : 5,
@@ -616,7 +616,7 @@ export const configAppMap = {
       map_options   : {
     
         // ADAPT TO MAPBOX-GL-JS OPTIONS
-        mapStyle         : "testRasterVoyager", // Etalab
+        mapStyle         : "EtalabUrl", // Etalab
         center           : [46.2276, 2.2137],
         currentCenter    : [46.2276, 2.2137],
         zoom             : 5,
@@ -650,7 +650,7 @@ export const configAppMap = {
       map_options   : {
     
         // ADAPT TO MAPBOX-GL-JS OPTIONS
-        mapStyle         : "testRasterVoyager", // Etalab
+        mapStyle         : "EtalabUrl", // Etalab
         center           : [46.2276, 2.2137],
         currentCenter    : [46.2276, 2.2137],
         zoom             : 5,
@@ -684,7 +684,7 @@ export const configAppMap = {
       map_options   : {
     
         // ADAPT TO MAPBOX-GL-JS OPTIONS
-        mapStyle         : "testRasterVoyager", // Etalab
+        mapStyle         : "EtalabUrl", // Etalab
         center           : [46.2276, 2.2137],
         currentCenter    : [46.2276, 2.2137],
         zoom             : 5,

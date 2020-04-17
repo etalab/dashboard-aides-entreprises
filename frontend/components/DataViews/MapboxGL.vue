@@ -209,19 +209,19 @@ export default {
     
     // set up view config
     this.viewConfig = this.getLocalConfig
-    this.log && console.log("C-MapboxGL / dataset / this.viewConfig : ", this.viewConfig)
+    // this.log && console.log("C-MapboxGL / dataset / this.viewConfig : ", this.viewConfig)
 
     // set up MAPBOX options
     const mapOptionsRoute = this.viewConfig.map_options
-    this.log && console.log("C-MapboxGL / dataset / mapOptionsRoute : ", mapOptionsRoute)
+    // this.log && console.log("C-MapboxGL / dataset / mapOptionsRoute : ", mapOptionsRoute)
 
     let mapOptions = {
 
       // mapStyle      : StylesOSM[ 'testRasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'EtalabRaw' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'RasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
-      mapStyle      : StylesOSM[ 'EtalabUrl' ], // EtalabFile | testRasterVoyager | RasterVoyager
-      // mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
+      // mapStyle      : StylesOSM[ 'EtalabUrl' ], // EtalabFile | testRasterVoyager | RasterVoyager
+      mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
       
       zoom          : mapOptionsRoute.zoom,
       maxZoom       : mapOptionsRoute.maxZoom,
