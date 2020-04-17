@@ -13,7 +13,8 @@ CREATE TABLE naf
     code_division CHARACTER VARYING,
     libelle_division CHARACTER VARYING,
     code_section CHARACTER VARYING,
-    libelle_section CHARACTER VARYING
+    libelle_section CHARACTER VARYING,
+    color_section CHARACTER VARYING
 )
 TABLESPACE pg_default;
 

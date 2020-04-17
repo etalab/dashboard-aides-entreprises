@@ -212,6 +212,23 @@ def getNafs():
         nafs = getobjectsjson(data, columns_naf)
         return jsonify(nafs)
 
+@app.route('/sectionnaf', methods=['GET'])
+def getSectionNafs():
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "SELECT distinct code_section, libelle_section, color_section from naf;"
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['code_section'] = str(data[i][0]) 
+            dataDict['libelle_section'] = str(data[i][1]) 
+            dataDict['color_section'] = str(data[i][2])
+            dataJson.append(dataDict)
+
+        return jsonify(dataJson)
+
 
 @app.route('/classeeffectif', methods=['GET'])
 def getClasseEffectifs():
