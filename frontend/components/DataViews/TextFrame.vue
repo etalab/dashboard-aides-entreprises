@@ -52,14 +52,14 @@
 
           <!-- TEXT TITLE -->
           <h3
-            :class="`${col.colTitleClass}`"
+            :class="`${col.colTitleClass} ${ isMobileWidth ? 'mb-0' : ''}`"
             >
             {{ col.colTitle[ locale ] }}
           </h3>
 
           <!-- TEXT FROM DISPLAYED DATA -->
           <p 
-            :class="`${col.textClass}`"
+            :class="`${col.textClass} ${ isMobileWidth ? 'mb-0' : ''}`"
             >
             <span
               v-html="col.textPrefix[ locale ]">
@@ -212,6 +212,12 @@
           let bool = noShowArray.includes(this.getCurrentBreakpoint)
         }
         return bool
+      },
+
+      isMobileWidth() {
+        let breakpoints = [ 'xs', 'sm' ] 
+        let currentBreakpoint = this.$vuetify.breakpoint.name
+        return breakpoints.includes( currentBreakpoint )
       },
 
     },

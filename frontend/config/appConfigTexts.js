@@ -85,18 +85,24 @@ export const configAppTexts = {
                 { id : 'aides-textes',
                   textClass : 'text-left mx-4 pt-4',
                   textContent : { fr : `
-                    Afin d’offrir de la visibilité à l’ensemble des Français sur 
-                    l’attribution des aides versées aux entreprises dans le 
-                    cadre de ce fonds de solidarité, le ministre de l’action et des comptes publics, avec le soutien technique 
-                    <a target="_blank" href="https://www.etalab.gouv.fr">
-                      d’Etalab</a>
-                    au sein de la 
+
+                    Afin d’offrir de la visibilité à l’ensemble des Français 
+                    sur l’attribution des aides versées aux entreprises 
+                    dans le cadre de ce fonds de solidarité, 
+                    le ministre de l’action et des comptes publics, 
+                    avec le soutien technique du département 
+                    Etalab de la 
+                    
                     <a target="_blank" href="https://www.numerique.gouv.fr">
-                      Direction Interministérielle du Numérique (DINUM)</a>,
+                      Direction Interministérielle du Numérique (DINUM)</a>, 
+
                     mettent à disposition un tableau de bord dont le 
+
                     <a target="_blank" href="https://github.com/etalab/dashboard-aides-entreprises">
                       code source est libre</a>
-                    qui propose une vision consolidée des aides aux entreprises effectivement versées.
+                    qui propose une vision consolidée 
+                    des aides aux entreprises effectivement versées.
+
                   ` },
                   fromUrl : { fr : undefined },
                 },

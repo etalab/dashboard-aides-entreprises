@@ -139,7 +139,7 @@ import { mapState, mapGetters, mapActions } from 'vuex'
 import { Mapbox , mapboxgl } from "mapbox-gl";
 import { MglMap } from "vue-mapbox";
 
-// let map
+let _map
 
 import bbox from '@turf/bbox'
 
@@ -195,7 +195,8 @@ export default {
       layers : undefined,
 
       // UX
-      hoveredStateId : {}
+      hoveredStateId : {},
+      selectedStateId : {},
 
     }
 
@@ -219,9 +220,9 @@ export default {
       // mapStyle      : StylesOSM[ 'testRasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'EtalabRaw' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'RasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
-      // mapStyle      : StylesOSM[ 'EtalabUrl' ], // EtalabFile | testRasterVoyager | RasterVoyager
+      mapStyle      : StylesOSM[ 'EtalabUrl' ], // EtalabFile | testRasterVoyager | RasterVoyager
+      // mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
       
-      mapStyle      : StylesOSM[ mapOptionsRoute.mapStyle ], // EtalabFile | testRasterVoyager | RasterVoyager
       zoom          : mapOptionsRoute.zoom,
       maxZoom       : mapOptionsRoute.maxZoom,
       minZoom       : mapOptionsRoute.minZoom,
@@ -330,12 +331,9 @@ export default {
       return height
     },
 
-    getCurrentZoom(){
-      let mapbox = this.map
-      let currentZoom = mapbox.getZoom() 
-      // this.log && console.log("C-MapboxGL / getCurrentZoom ... currentZoom : ", currentZoom )
-      return currentZoom
-    },
+    // map(){
+    //   return _map
+    // },
 
   },
   
@@ -345,32 +343,48 @@ export default {
       setNestedData : 'data/setNestedData',
     }),
 
-    // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
+    getCurrentZoom(){
 
-      // loaded (_map) {
-      //   map =_map 
-      //   this.map = _map
-      // },
+      // let mapbox = this.map
+      let mapbox = _map
+
+      let currentZoom = mapbox.getZoom() 
+      // this.log && console.log("C-MapboxGL / getCurrentZoom ... currentZoom : ", currentZoom )
+      return currentZoom
+    },
+
+    // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
 
       onMapLoaded(event) {
         this.log && console.log("C-MapboxGL / onMapLoaded ... ")
+        
         // store in component
-        this.map = event.map
+        // this.map = event.map
+        this.map = true
+        _map = event.map
+
         // in store => WARNING : object too complex to be stored/mutated in vuex so far
         // check : https://ypereirareis.github.io/blog/2017/04/25/vuejs-two-way-data-binding-state-management-vuex-strict-mode/
       },
 
       isInZoomRange( zoomRange ){
-        let currentZoom = this.getCurrentZoom
+
+        // this.log && console.log("C-MapboxGL / isInZoomRange ... zoomRange : ", zoomRange )
+
+        let currentZoom = this.getCurrentZoom()
+        // this.log && console.log("C-MapboxGL / isInZoomRange ... currentZoom : ", currentZoom )
+
         let isInZoomRangeBoolean = true
         if ( zoomRange ){
-          // let isLessThanMax = currentZoom >= zoomRange.maxZoom 
-          // let isMoreThanMin = currentZoom >= zoomRange.minZoom 
-          if ( currentZoom >= zoomRange.maxZoom || currentZoom <= zoomRange.minZoom  ){
+
+          let maxZoom = (zoomRange.maxZoom) ? zoomRange.maxZoom : 18
+          let minZoom = (zoomRange.minZoom) ? zoomRange.minZoom : 0
+
+          if ( currentZoom >= maxZoom || currentZoom <= minZoom  ){
             isInZoomRangeBoolean = false
           }
         } 
-        this.log && console.log("C-MapboxGL / isInZoomRange ... isInZoomRangeBoolean : ", isInZoomRangeBoolean )
+        // this.log && console.log("C-MapboxGL / isInZoomRange ... isInZoomRangeBoolean : ", isInZoomRangeBoolean )
         return isInZoomRangeBoolean
       },
 
@@ -379,7 +393,9 @@ export default {
       loadStoreSources( sourcesArray ){
 
         this.log && console.log("\nC-MapboxGL / loadStoreSources ", "... ".repeat(10)) 
-        let mapbox = this.map
+
+        // let mapbox = this.map
+        let mapbox = _map
         let store = this.$store
 
         let promisesArray = []
@@ -457,7 +473,8 @@ export default {
       loadUrlSources( sourcesArray ){
 
         this.log && console.log("\nC-MapboxGL / loadUrlSources ", "... ".repeat(10)) 
-        let mapbox = this.map
+        // let mapbox = this.map
+        let mapbox = _map
         let store = this.$store
 
         // URL SOURCES
@@ -504,7 +521,8 @@ export default {
 
       loadLayers( layersArray ){
 
-        let mapbox = this.map
+        // let mapbox = this.map
+        let mapbox = _map
         this.log && console.log("\nC-MapboxGL / loadLayers ", "... ".repeat(10))
         this.log && console.log("\n")
 
@@ -520,7 +538,8 @@ export default {
 
       loadClicEvents( mapsArray ){
 
-        let mapbox = this.map
+        // let mapbox = this.map
+        let mapbox = _map
         this.log && console.log("\nC-MapboxGL / loadClicEvents ", "... ".repeat(10))
 
         // let sourcesList = mapbox.getStyle().sources
@@ -599,6 +618,15 @@ export default {
                       case 'toggleHighlightOff' : 
                         this.toggleHighlightOff(e, itemSource ) ; 
                         break ;
+
+                      case 'toggleSelectedOn' : 
+                        this.toggleSelectedOn(e, itemSource ) ; 
+                        break ;
+
+                      // case 'toggleSelectedOff' : 
+                      //   this.toggleSelectedOff(e, itemSource ) ; 
+                      //   break ;
+
                     }
                   }
 
@@ -620,11 +648,13 @@ export default {
         
         // this.log && console.log("\nC-MapboxGL / getSourceGeoData ... from : ", from)
         // this.log && console.log("C-MapboxGL / getSourceGeoData ... params : ", params)
-
+        
+        // let mapbox = this.map
+        let mapbox = _map
         let data
 
         if ( from == 'map' ){
-          let sourcesList = this.map.getStyle().sources
+          let sourcesList = mapbox.getStyle().sources
           // this.log && console.log("C-MapboxGL / getSourceGeoData ... sourcesList : ", sourcesList)
           let source = sourcesList && sourcesList[ params.source ]
           // this.log && console.log("C-MapboxGL / getSourceGeoData ... source : ", source)
@@ -645,10 +675,11 @@ export default {
 
       updateDisplayedData( params ){
 
-        this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
         // this.log && console.log("\nC-MapboxGL / updateDisplayedData  : ", "+ ".repeat(10) )
+        // this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
         
         let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
+        // this.log && console.log("\nC-MapboxGL / updateDisplayedData ... isFnInZoomRange : ", isFnInZoomRange )
 
         if ( isFnInZoomRange ) {
           for (let targetParams of params.targets ){
@@ -677,7 +708,7 @@ export default {
 
       // TO DO ...
       setChildrenPolygons( params ){
-        this.log && console.log("\nC-MapboxGL / setChildrenPolygons ... params : ", params )
+        // this.log && console.log("\nC-MapboxGL / setChildrenPolygons ... params : ", params )
         let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
         let geodata = this.getSourceData( params )
       },
@@ -708,13 +739,17 @@ export default {
       },
 
       fit (geojson) {
+        // let mapbox = this.map
+        let mapbox = _map
         var _bbox = bbox(geojson)
-        this.map.fitBounds(_bbox, { padding: 20, animate: true })
+        mapbox.fitBounds(_bbox, { padding: 20, animate: true })
       },
 
       resetZoom () {
         // this.log && console.log("\nC-MapboxGL / resetZoom ... " )
-        this.map.flyTo(
+        // let mapbox = this.map
+        let mapbox = _map
+        mapbox.flyTo(
           {  
             center: this.originalCenter,
             zoom: this.originalZoom,
@@ -729,10 +764,10 @@ export default {
       // HIGHLIGHTS FUNCTIONS
 
       toggleHighlightOn (event, source) {
-
         // let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
         // if ( isFnInZoomRange ){
-          let mapbox = this.map
+          // let mapbox = this.map
+          let mapbox = _map
           const canvas = mapbox.getCanvas()
           canvas.style.cursor = 'pointer'
           if (event.features.length > 0) {
@@ -743,23 +778,40 @@ export default {
             mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: true })
           }
         // }
-
       },
-
       toggleHighlightOff (event, source) {
-
         // let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
         // if ( isFnInZoomRange ){
-          let mapbox = this.map
+          // let mapbox = this.map
+          let mapbox = _map
           const canvas = mapbox.getCanvas()
           canvas.style.cursor = ''
           if (this.hoveredStateId[source] !== null) {
             mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { hover: false })
           }
         // }
-
       },
 
+      toggleSelectedOn (event, source) {
+        let mapbox = _map
+        const canvas = mapbox.getCanvas()
+        canvas.style.cursor = 'pointer'
+        if (event.features.length > 0) {
+          if (this.selectedStateId[source] !== null) {
+            mapbox.setFeatureState({ source, id: this.selectedStateId[source] }, { selected: false }) // clean all sources to prevent error
+          }
+          this.selectedStateId[source] = event.features[0].id
+          mapbox.setFeatureState({ source, id: this.selectedStateId[source] }, { selected: true })
+        }
+      },
+      // toggleSelectedOff (event, source) {
+      //   let mapbox = _map
+      //   const canvas = mapbox.getCanvas()
+      //   canvas.style.cursor = ''
+      //   if (this.hoveredStateId[source] !== null) {
+      //     mapbox.setFeatureState({ source, id: this.hoveredStateId[source] }, { selected: false })
+      //   }
+      // },
 
 
 
@@ -769,7 +821,8 @@ export default {
 
       switchMapVisibility( mapSelectedId ){
 
-        let mapbox = this.map 
+        // let mapbox = this.map
+        let mapbox = _map
 
         let MapVisibilityConfig = this.mapsVisibility.map_switches.find( item => item.id === mapSelectedId ) 
         

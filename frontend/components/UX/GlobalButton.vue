@@ -9,7 +9,7 @@
 
   <v-container 
     :id="`globalButton-${ settings.id }`" 
-    :class="`${settings.containerClass}`"
+    :class="`${settings.containerClass} ${ isMobileWidth ? 'pb-0 mb-0' : ''}`"
     :trigger="`${trigger}`"
     >
 
@@ -31,7 +31,7 @@
     </v-divider>
 
     <v-row 
-      :class="`${viewConfig.btnsRowClass}`"
+      :class="`${viewConfig.btnsRowClass} ${ isMobileWidth ? 'my-0' : ''}`"
       >
 
       <!-- <div
@@ -41,7 +41,7 @@
           v-for="(btn, index) in viewConfig.componentButtons"
           :key="'B'+btn.id+index"
           :id="'B'+btn.id+index"
-          :class="btn.btnClass"
+          :class="`${btn.btnClass}`"
           :block="btn.block"
           :icon="btn.icon"
           :outlined="btn.outlined"
@@ -131,6 +131,12 @@
         }
         let localConfig = this.getDataViewConfig( viewId )
         return localConfig
+      },
+
+      isMobileWidth() {
+        let breakpoints = [ 'xs', 'sm' ] 
+        let currentBreakpoint = this.$vuetify.breakpoint.name
+        return breakpoints.includes( currentBreakpoint )
       },
 
     },

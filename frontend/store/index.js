@@ -154,7 +154,13 @@ export const getters = {
     if (width > thresholds.lg ) { breakpointName = 'xl' }
     // state.log && console.log("S-index-G-getCurrentBreakpoint / breakpointName : ", breakpointName)
     return breakpointName
-  }
+  },
+
+  // isMobileWidth: (state, getters) => {
+  //   let breakpoints = [ 'xs', 'sm' ] 
+  //   let currentBreakpoint = getters.getCurrentBreakpoint()
+  //   return breakpoints.includes( currentBreakpoint )
+  // },
 
 }
 

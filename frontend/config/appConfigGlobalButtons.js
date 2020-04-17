@@ -16,7 +16,7 @@ export const configAppGlobalButtons = {
         after : false,
       },
 
-      btnsRowClass : 'align-center justify-center mb-3',
+      btnsRowClass : 'align-center justify-center',
 
       componentButtons : [
 
@@ -24,7 +24,8 @@ export const configAppGlobalButtons = {
           title : { fr : 'retour au niveau national' },
           titleI18n : "buttons.button01.title",
           
-          btnClass : 'justify-center',
+          btnClass : 'justify-center btn-gouv',
+
           block : false,
           icon : undefined,
           outlined : true, 

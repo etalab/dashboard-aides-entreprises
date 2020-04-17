@@ -4,16 +4,23 @@
 // - - - - - - - - - - - - - - - - - - - - - //
 
   // CONSTANTS
+
   // switch between facts on region / departement level
   const ZOOM_THRESHOLD = 6
-  const PRIMARYFILLCOLOR = '#000091'
+
+  // colors
+  const FR_GOUV_BLUE = "#000091"
+  const PRIMARYFILLCOLOR = '#7373FF' // #572a99 #8393A7
+  const SECONDARYFILLCOLOR = '#526781'
+  const HIGHLIGHTCOLOR = '#572a99'
+
   const OUTLINECOLOR  = '#627BC1'
   const OUTLINECOLOR2 = '#6c87ab'
 
   // layer fonts : ["Open Sans Regular","Arial Unicode MS Regular"]
 
-  const fillPaint = {
-    'fill-color': PRIMARYFILLCOLOR,
+  const fillPaint_ = {
+    'fill-color': SECONDARYFILLCOLOR,
     'fill-outline-color': OUTLINECOLOR,
     'fill-opacity': ['case',
       ['boolean', ['feature-state', 'hover'], false],
@@ -22,8 +29,22 @@
     ]
   }
 
+  const fillPaint = {
+    'fill-color': ['case',
+      ['boolean', ['feature-state', 'selected'], false],
+      HIGHLIGHTCOLOR,
+      SECONDARYFILLCOLOR
+    ],
+    'fill-outline-color': OUTLINECOLOR,
+    'fill-opacity': ['case',
+      ['boolean', ['feature-state', 'selected'], ['feature-state', 'hover'], false],
+      0.15,
+      0
+    ]
+  }
+
   const circlePaintAides = {
-    'circle-opacity': 0.4,
+    'circle-opacity': 0.6,
     'circle-color': PRIMARYFILLCOLOR,
     'circle-radius': [
       'interpolate', ['linear'],
@@ -213,15 +234,18 @@ export const configAppMap = {
               // zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
               functions : [ 
 
+                { funcName : "toggleSelectedOn",
+                  funcParams : {},
+                },
                 { funcName    : "goToPolygon",
                   funcParams  : { 
-                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD + 5 },
+                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD + 3 },
                     propName : 'code',
                   },
                 }, 
                 { funcName : 'updateDisplayedData',
                   funcParams  : { 
-                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
+                    zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD - 0.1 },
                     propName : 'code', 
                     targets : [
 
@@ -343,6 +367,10 @@ export const configAppMap = {
               layer : 'departements-fill',
               // zoomRange : { minZoom : ZOOM_THRESHOLD, maxZoom : undefined },
               functions : [ 
+
+                { funcName : "toggleSelectedOn",
+                  funcParams : {},
+                },
 
                 // { funcName    : "goToPolygon",
                 //   funcParams  : { 

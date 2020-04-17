@@ -7,7 +7,7 @@
       :key="index"
       type="text/css"
       >
-      {{ css.class }}{{ css.field }} {
+      {{ css.class }} {
         {{ css.config }}
       }
     </style>

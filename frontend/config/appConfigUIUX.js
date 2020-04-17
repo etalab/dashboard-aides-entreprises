@@ -150,17 +150,15 @@ export const configAppUIUX = {
 
     customCSS : [
 
-      { field : 'button-container',
-        class : '.',
+      { class : '.btn-gouv',
         config: `
-          background-color: #fff;
-          border-bottom: 1px solid #000091;
-          border-right: 1px solid #000091;
-          margin: .3em;
+          background-color: #fff !important;
+          border-bottom: 1px solid #000091 !important;
+          border-right: 1px solid #000091 !important;
+          margin: .3em !important;
         `,
       },
-      { field : 'btn-selected',
-        class : '.',
+      { class : '.btn-gouv.selected',
         config: `
           color: #FFF;
           background-color: #000091;

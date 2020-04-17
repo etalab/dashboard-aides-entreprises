@@ -35,7 +35,7 @@
         v-for="(col, i) in row.columns"
         :key="'R'+index+'-C'+i"
         :id="'R'+index+'-C'+i"
-        :class="`${col.colClass}`"
+        :class="`${col.colClass} ${isMobileWidth ? 'py-0 my-0' : ''}`"
         :cols="col.cols"
         >
 
@@ -45,7 +45,7 @@
 
           <!-- NUMBER TITLE -->
           <p
-            :class="`${col.titleClass}`"
+            :class="`${col.titleClass} ${ isMobileWidth ? 'mb-0' : ''}`"
             >
             <!-- {{ trigger }}
             ///  -->
@@ -174,6 +174,12 @@
           let bool = noShowArray.includes(this.getCurrentBreakpoint)
         }
         return bool
+      },
+
+      isMobileWidth() {
+        let breakpoints = [ 'xs', 'sm' ] 
+        let currentBreakpoint = this.$vuetify.breakpoint.name
+        return breakpoints.includes( currentBreakpoint )
       },
 
     },

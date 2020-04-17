@@ -273,7 +273,7 @@
       },
 
       getSpecialStoreData( params ) {
-        this.log && console.log('C-ApexChart / getSpecialStoreData / params : ', params )       
+        // this.log && console.log('C-ApexChart / getSpecialStoreData / params : ', params )       
         let obj = this.getFromSpecialStoreData({id : params.id, key : params.key, sortParams : params.sortParams })
         return obj
       }, 

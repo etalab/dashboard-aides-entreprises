@@ -240,7 +240,13 @@ export const configAppCharts = {
 
           theme: {
             mode: 'light', 
-            palette: 'palette2' // upto palette10
+            palette: 'palette2', // upto palette10
+            monochrome : {
+              enabled : true,
+              color : '#000091',
+              shadeTo: 'light', //'light' | 'dark'
+              shadeIntensity: 0.65
+            }
           },
 
           dataLabels: {

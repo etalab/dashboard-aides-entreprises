@@ -22,7 +22,7 @@
 
 - Julien Paris
 - Alexandre Bulté
-- Geoffrey 
+- Geoffrey Aldebert
 
 ----------
 
@@ -58,6 +58,24 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+
+----------
+
+## Déploiement sur Netlify
+
+#### Build settings
+
+- Repository : `github.com/etalab/dashboard-aides-entreprises`
+- Build command : `npm run build`
+- Publish directory : `dist`
+
+#### Deploy contexts
+
+- Production branch : `j_front`
+
+#### Environment variables
+
+- `NUXT_ENV_RUN_MODE` = `prod` (ou `preprod` pour avoir les logs dans la console)
 
 ----------
 

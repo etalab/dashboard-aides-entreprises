@@ -40,6 +40,7 @@
             
             <!-- {{ windowSize }} -->
             <!-- {{ contentWindowHeight }}  -->
+            <!-- {{ $vuetify.breakpoint.name }} -->
            
             <div 
               :class="`${ col.hasScrollbar ? 'has-scrollbar' : ''}`"
@@ -211,6 +212,7 @@
         windowSize : 'getWindowsSize',
         getCurrentNavbarFooter : 'getCurrentNavbarFooter',
         getActivatedCurrentNavbarFooter : 'getActivatedCurrentNavbarFooter',
+        // isMobileWidth : 'isMobileWidth',
       }),
 
       contentWindowHeight(){
