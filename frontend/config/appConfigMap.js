@@ -105,7 +105,8 @@ export const configAppMap = {
 
       map_options   : {
     
-        // ADAPT TO MAPBOX-GL-JS OPTIONS
+        // ADAPT TO MAPBOX-GL-JS OPTIONS => check `mapboxVectorStyles.js`
+
         // mapStyle         : "testRasterVoyager", // EtalabFile | testRasterVoyager (ok) | RasterVoyager
         mapStyle         : "EtalabUrl", // EtalabFile | testRasterVoyager (ok) | RasterVoyager
         center           : [46.2276, 2.2137],
