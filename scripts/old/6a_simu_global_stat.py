@@ -12,7 +12,7 @@ dfeff.siret = dfeff.siret.astype(str)
 df.siret = df.siret.astype(str)
 # Get classe effectif (To change with real slots)
 print("Get classe effectif (To change with real slots)")
-dfeff['classe_effectif'] = dfeff['effectif'].apply(lambda x: 0 if x == 0 else 1 if x <= 5 else 2 if x <= 10 else 3 if x <= 20 else 4 if x <= 40 else 5 if x <= 500 else 6 if x<= 5000 else 7 if x<= 30000 else 8)
+dfeff['classe_effectif'] = dfeff['effectif'].apply(lambda x: '00' if x == 0 else '01' if x <= 2 else '02' if x <= 5 else '03' if x <= 9 else '11' if x <= 19 else '12' if x <= 49 else '21' if x <= 99 else '22' if x <= 199 else '31' if x <= 249 else '32' if x <= 499 else '41' if x <= 999 else '42' if x <= 1999 else '51' if x <= 4999 else '52' if x <= 9999 else '53')
 dfeff = dfeff[['siret', 'delta_effectif', 'delta_effectif_percent', 'classe_effectif']]
 # Merging Effectif + Siren
 print("Merging Effectif + Siren")
