@@ -1,0 +1,32 @@
+{
+  "name": "COVID-AIDES-PRO",
+  "version": "1.0.0",
+  "description": "dashboard des aides demandées par les entreprises durant la crise du Covid",
+  "author": "Julien_P",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@nuxtjs/axios": "^5.3.6",
+    "@turf/bbox": "^6.0.1",
+    "apexcharts": "^3.18.1",
+    "chart.js": "^2.9.3",
+    "dotenv": "^8.2.0",
+    "mapbox-gl": "^1.9.1",
+    "mapbox-gl-vue": "^2.0.4",
+    "material-design-icons-iconfont": "^5.0.1",
+    "nuxt": "^2.0.0",
+    "nuxt-i18n": "^6.8.1",
+    "vue-apexcharts": "^1.5.3",
+    "vue-chartjs": "^3.5.0",
+    "vue-mapbox": "^0.4.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.0.0"
+  }
+}

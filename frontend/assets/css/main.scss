@@ -1,0 +1,15 @@
+@import './fontawesome.scss';
+@import './materialdesign.scss';
+
+
+.skip-navbar{
+  padding-top : rem(64px) ;
+}
+.no-scroll{
+  overflow: hidden;
+  position: fixed;
+}
+.fullscreen-div{
+  height: 100%;
+  width: 100%;
+}
