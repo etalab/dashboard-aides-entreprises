@@ -1,64 +1,42 @@
-
-
-<style scoped>
-
-</style>
-
+<style scoped></style>
 
 <template>
-
-  <div>
-  </div>
-
+  <div />
 </template>
 
-
 <script>
+import { mapState, mapGetters } from "vuex"
 
-  import { mapState, mapGetters } from 'vuex'
+export default {
+  name: "Text",
 
-  export default {
-    
-    name: 'Text',
+  components: {},
 
-    components: {
-    },
-    
-    props : [
-    ],
+  props: [],
 
-    mounted(){
-      this.log && console.log('C-Text / mounted ...')
-    },
+  data() {
+    return {
+      fixed: false,
+    }
+  },
 
-    watch: {
-    },
+  watch: {},
 
-    data(){
-      return {
-        fixed: false,
-      }
-    },
+  mounted() {
+    this.log && console.log("C-Text / mounted ...")
+  },
 
-    computed: {
+  computed: {
+    ...mapState({
+      log: (state) => state.log,
+      locale: (state) => state.locale,
+    }),
 
-      ...mapState({
-        log : state => state.log, 
-        locale : state => state.locale,
-      }),
+    ...mapGetters({
+      getCurrentLocale: "getCurrentLocale",
+    }),
+  },
 
-      ...mapGetters({
-        getCurrentLocale : 'getCurrentLocale'
-      }),
-
-    },
-    
-    methods : {
-
-    },
-
-
-
-  }
+  methods: {},
+}
 </script>
-

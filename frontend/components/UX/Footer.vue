@@ -1,74 +1,44 @@
-
-
-<style scoped>
-
-</style>
-
+<style scoped></style>
 
 <template>
-
-    <v-footer
-      :fixed="fixed"
-      app
-      class="text-center"
-      >
-
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-
-    </v-footer>
-
-
+  <v-footer :fixed="fixed" app class="text-center">
+    <span>&copy; {{ new Date().getFullYear() }}</span>
+  </v-footer>
 </template>
 
-
 <script>
+import { mapState, mapGetters } from "vuex"
 
-  import { mapState, mapGetters } from 'vuex'
+export default {
+  name: "Footer",
 
-  export default {
-    
-    name: 'Footer',
+  components: {},
 
-    components: {
-    },
+  props: [],
 
-    props : [
-    ],
+  data() {
+    return {}
+  },
 
-    mounted(){
-      this.log && console.log('C-Footer / mounted ...')
-    },
+  watch: {},
 
-    watch: {
-    },
+  mounted() {
+    this.log && console.log("C-Footer / mounted ...")
+  },
 
-    data(){
-      return {
-      }
-    },
+  computed: {
+    ...mapState({
+      log: (state) => state.log,
+      locale: (state) => state.locale,
 
-    computed: {
+      fixed: (state) => state.navbar.fixed,
+    }),
 
-      ...mapState({
-        log : state => state.log, 
-        locale : state => state.locale,
+    ...mapGetters({
+      getCurrentLocale: "getCurrentLocale",
+    }),
+  },
 
-        fixed : state => state.navbar.fixed, 
-      }),
-
-      ...mapGetters({
-        getCurrentLocale : 'getCurrentLocale'
-      }),
-
-    },
-
-    methods : {
-
-    },
-
-
-
-  }
-
+  methods: {},
+}
 </script>
-

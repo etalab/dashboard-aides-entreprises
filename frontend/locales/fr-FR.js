@@ -1,1 +1,1 @@
-export default require('./FR.json')
+export default require("./FR.json")

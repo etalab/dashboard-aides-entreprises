@@ -1,58 +1,49 @@
-console.log('+ + + utils/getData.js... ')
+console.log("+ + + utils/getData.js... ")
 
-import axios from 'axios'
-
+import axios from "axios"
 
 // - - - - - - - - - - - - - - - - - - - //
-// API UTILS 
+// API UTILS
 // - - - - - - - - - - - - - - - - - - - //
 
 // feature test for AbortController that works in Safari 12
-let abortableFetchSupported = false;
-try{
+let abortableFetchSupported = false
+try {
   const ac = new AbortController()
-  fetch('.', {signal: ac.signal})
-  .then(r => r.text())
-  .then(result => {
-    abortableFetchSupported = false;
-  })
-  .catch(err => {
-    abortableFetchSupported = err.name === 'AbortError'
-  })
-  ac.abort();
+  fetch(".", { signal: ac.signal })
+    .then((r) => r.text())
+    .then((result) => {
+      abortableFetchSupported = false
+    })
+    .catch((err) => {
+      abortableFetchSupported = err.name === "AbortError"
+    })
+  ac.abort()
+} catch (e) {
+  abortableFetchSupported = false
 }
-catch(e){
-  abortableFetchSupported = false;
-}
-
-
-
 
 // - - - - - - - - - - - - - - - - - - - //
-// API CALLS 
+// API CALLS
 // - - - - - - - - - - - - - - - - - - - //
 
-export default async function getDataFromUrl( fetchUrl, fetchMethod='get' ){
-
+export default async function getDataFromUrl(fetchUrl, fetchMethod = "get") {
   console.log("+ + + getDataFromUrl / fetchUrl : ", fetchUrl)
 
-  let methodsWithPayload = [ "post", "put", "patch" ]
+  let methodsWithPayload = ["post", "put", "patch"]
 
   return axios({
-    method : fetchMethod,
-    url : fetchUrl,
+    method: fetchMethod,
+    url: fetchUrl,
   })
+    .then((resp) => {
+      console.log("+ + + getDataFromUrl / resp :", resp)
+      return resp
+    })
 
-  .then( resp => {
-    console.log("+ + + getDataFromUrl / resp :", resp);
-    return resp
-  })
-  
-  .catch( err => {
-    console.log("+ + + getDataFromUrl / (axios) err / fetchUrl :", fetchUrl);
-    console.log("+ + + getDataFromUrl / (axios) err :", err);
-    return { data : "error" }
-  })
-  
+    .catch((err) => {
+      console.log("+ + + getDataFromUrl / (axios) err / fetchUrl :", fetchUrl)
+      console.log("+ + + getDataFromUrl / (axios) err :", err)
+      return { data: "error" }
+    })
 }
-
