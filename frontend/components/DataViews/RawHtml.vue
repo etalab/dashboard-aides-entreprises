@@ -21,6 +21,8 @@
       return   {
 
         rawHtml : '',
+        errorRawHtml : '-',
+        // errorRawHtml : '<br><br>there was an <strong> error </strong> getting the distant html<br><br>',
         head : { 
           baseURL : 'https://raw.githubusercontent.com/',
           headers: {
@@ -70,7 +72,7 @@
           })
           .catch( (err) => {
             console.log(err)
-            this.rawHtml = '<br><br>there is an <strong> Error </strong> getting the distant html<br><br>'
+            this.rawHtml = this.errorRawHtml
           })
         }
 
