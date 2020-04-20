@@ -43,21 +43,36 @@
 
 ```bash
 # install dependencies
-$ npm install
+npm install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+npm run dev
 
 # build for production and launch server
-$ npm run build
-$ npm run start
+npm run build
+npm run start
 
 # generate static project
-$ npm run generate
+npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+----------
+
+## Linting
+
+Vous pouvez alors lancer lint pour simplement vérifier les erreurs :
+
+```bash
+npm run lint
+```
+
+ou lintfix pour corriger ce qui peut l'être
+
+```bash
+npm run lintfix
+```
 
 ----------
 
