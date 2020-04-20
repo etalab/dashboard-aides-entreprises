@@ -1,16 +1,15 @@
-curl http://localhost:5000/stat/aide > aides-maille-national.json
-curl http://localhost:5000/stat/aide/reg > aides-maille-regional.json
-curl http://localhost:5000/stat/aide/dep > aides-maille-departemental.json
+curl http://localhost:5000/stat/aide > aides/aides-maille-national.json
+curl http://localhost:5000/stat/aide/reg > aides/aides-maille-regional.json
+curl http://localhost:5000/stat/aide/dep > aides/aides-maille-departemental.json
 
-json-minify aides-maille-national.json > aides-maille-national-minify.json
-json-minify aides-maille-regional.json > aides-maille-regional-minify.json
-json-minify aides-maille-departemental.json > aides-maille-departemental-minify.json
+json-minify aides/aides-maille-national.json > aides/aides-maille-national-minify.json
+json-minify aides/aides-maille-regional.json > aides/aides-maille-regional-minify.json
+json-minify aides/aides-maille-departemental.json > aides/aides-maille-departemental-minify.json
 
-curl http://localhost:5000/stat/aide/section > sectionape/aides-maille-national.json
-curl http://localhost:5000/stat/aide/reg/section > sectionape/aides-maille-regional.json
-curl http://localhost:5000/stat/aide/dep/section > sectionape/aides-maille-departemental.json
+output=`curl http://localhost:5000/lastupdate | head -n 1| cut -d $' ' -f2`
+mkdir aides/$output
 
-json-minify sectionape/aides-maille-national.json > sectionape/aides-maille-national-minify.json
-json-minify sectionape/aides-maille-regional.json > sectionape/aides-maille-regional-minify.json
-json-minify sectionape/aides-maille-departemental.json > sectionape/aides-maille-departemental-minify.json
+cp aides/aides* aides/$output
+
+curl http://localhost:5000/lastupdatehtml > last_update_data.txt
 
