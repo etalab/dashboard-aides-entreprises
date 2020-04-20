@@ -1,11 +1,14 @@
 
+const DATE_UPLOAD_DATA = "17 avril 2020"
+// let fs = require('fs')
+// let DATE_UPLOAD_DATA = fs.readFileSync('~/static/datasets/aides/prod/date_update.txt').toString().split("\n")
+// let DATE_UPLOAD_DATA = fetch('/static/datasets/aides/prod/date_update.txt')
+
 export const configAppTexts = {
   
   help : "this file contains the setup for the texts components",
 
   // NUMBERS
-
-
 
   settingsIds : [
 
@@ -75,12 +78,15 @@ export const configAppTexts = {
                     allant jusqu’à 1500 euros aux plus petites entreprises, aux indépendants, 
                     aux micro-entrepreneurs et aux professions libérales touchés par la crise du coronavirus. 
                     Ce fonds sera maintenu autant que durera l’urgence sanitaire.
-                    ` },
-                    fromUrl : { fr : undefined },
+                    ` 
                   },
                   // Plus d'informations sur les mesures de soutien aux entreprises sur le 
                   // <a target="_blank" href="https://www.economie.gouv.fr/coronavirus-soutien-entreprises">
                   //   portail de l'Economie, des Finances, de l'Action et des Comptes publics</a>.
+                  fromUrl : { 
+                    fr : undefined 
+                  },
+                },
 
                 { id : 'aides-textes',
                   textClass : 'text-left mx-4 pt-4',
@@ -104,7 +110,9 @@ export const configAppTexts = {
                     des aides aux entreprises effectivement versées.
 
                   ` },
-                  fromUrl : { fr : undefined },
+                  fromUrl : { 
+                    fr : undefined 
+                  },
                 },
 
                 { id : 'more-infos',
@@ -115,15 +123,20 @@ export const configAppTexts = {
                     <a target="_blank" href="https://www.impots.gouv.fr/portail/">
                       https://www.impots.gouv.fr/portail/</a>.
                   ` },
-                  fromUrl : { fr : undefined },
+                  fromUrl : { 
+                    fr : undefined 
+                  },
                 },
 
-                { id : 'mise-a-jour',
+                { id : 'miseAJour',
                   textClass : 'justify-center mx-4 pt-3 pb-5 mb-5',
                   textContent : { fr : `
-                    données au 17 avril 2020
+                    ${DATE_UPLOAD_DATA}
                   ` },
-                  fromUrl : { fr : undefined },
+                  fromUrl : { 
+                    // fr : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/date_mise_a_jour.txt',
+                    fr : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/requirements.txt',
+                  },
                 },
 
               ] 
