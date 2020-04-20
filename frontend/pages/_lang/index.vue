@@ -9,6 +9,7 @@
     id="homepage"
     :style="`max-height:${contentWindowHeight}px;`"
   >
+
     <v-row
       v-for="(row, index) in routeConfig.pageRows"
       :id="'R' + index"
@@ -25,7 +26,8 @@
           <template v-if="col.activated">
             <!-- {{ windowSize }} -->
             <!-- {{ contentWindowHeight }}  -->
-            <!-- {{ $vuetify.breakpoint.name }} -->
+            <!-- $vuetify.breakpoint.name : {{ $vuetify.breakpoint.name }}<br> -->
+            <!-- $device : {{ $device }}<br> -->
 
             <div
               :class="`${col.hasScrollbar ? 'has-scrollbar' : ''}`"

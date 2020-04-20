@@ -1,7 +1,7 @@
 <style scoped></style>
 
 <template>
-  <div v-if="getCurrentNavbarFooter && bottomNav">
+  <div v-if="getCurrentNavbarFooter">
     <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
     <v-bottom-navigation
       v-show="showCurrentNavbarFooter"

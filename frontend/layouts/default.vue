@@ -4,7 +4,7 @@
     <DynamicCSS />
 
     <!-- LEFT DRAWER -->
-    <Drawer />
+    <Drawer v-if="routeDrawer"/>
 
     <!-- NAVBAR -->
     <Navbar />
@@ -118,6 +118,7 @@ export default {
       locale: (state) => state.locale,
       title: (state) => state.appTitle,
 
+      configUX: (state) => state.configUX,
       navbarHeight: (state) => state.navbar.height,
       windowSize: (state) => state.windowSize,
     }),
@@ -131,6 +132,12 @@ export default {
       let routeConf = this.routeConfig
       return routeConf.navbarFooter
     },
+
+    routeDrawer() {
+      let configUX = this.configUX
+      return configUX.hasDrawer
+    },
+
   },
 
   methods: {
