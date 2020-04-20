@@ -112,13 +112,7 @@
                 <RawHtml
                   :templateURL="txt.fromUrl[ locale ]">
                 </RawHtml>
-                <!-- <span
-                  v-html="getHtmlContent( txt.id )">
-                </span> -->
               </p> 
-
-              <!-- rawHtmls : {{ rawHtmls }}  -->
-
             </div>
 
 
@@ -169,7 +163,6 @@
     
     mounted(){
       this.log && console.log('C-TextFrame / mounted ...')
-      // this.getRawHtmls()
     },
 
     watch: {
@@ -240,90 +233,6 @@
         return dataFromDisplayedData
       },
 
-      getRawHtmls(){
-        // this.log && console.log('C-TextFrame / getRawHtmls / this.viewConfig ', this.viewConfig)
-        for ( let row of this.viewConfig.componentRows ){
-          for ( let col of row.columns ){
-            // this.log && console.log('C-TextFrame / getRawHtmls / col ', col)
-            if ( col.textsHtml ){
-              for ( let refText of col.textsHtml ){
-
-                // this.log && console.log('C-TextFrame / getRawHtmls / refText ', refText)
-                // let urlRefs = refText.filter( r => r.fromUrl )
-                let urlRefs = refText.fromUrl
-
-                // this.log && console.log('C-TextFrame / getRawHtmls / urlRefs ', urlRefs)
-                this.getRawHtml( refText.id, urlRefs )
-
-              }
-            }
-          }
-        }
-      },
-
-      getRawHtml( id, urlRef ){
-        
-        // here we go fetch the raw HTML content of a webpage
-        this.log && console.log('C-TextFrame / getRawHtml / id : ', id) 
-        this.log && console.log('C-TextFrame / getRawHtml / urlRef : ', urlRef) 
-
-        let promisesArray = [ ]
-
-        for (let loc in urlRef){
-
-          this.log && console.log('C-TextFrame / getRawHtml / loc : ', loc)
-          
-          let rawHtmls = this.rawHtmls
-          
-          // let contentContainer = {}
-          // contentContainer[ id ] = ''
-
-          let textContainer = {}
-          textContainer[ loc ] = ''
-          let rawHtml = ''
-
-          let url = urlRef[ loc ]
-          this.log && console.log('C-TextFrame / getRawHtml / url : ', url)
-
-          let rawHtmls_texts = this.rawHtmls[ id ] ? this.rawHtmls[ id ] : textContainer
-          this.log && console.log('C-TextFrame / getRawHtml / rawHtmls_texts : ', rawHtmls_texts)
-
-          if (url){
-            let head = {
-              headers: {
-                'accept' : 'text/html',
-              }
-            }
-            let prom = axios.get(url, head)
-            .then( (resp) => {
-              
-              // this.log && console.log('C-TextFrame / getRawHtml / resp : ', resp)
-
-              rawHtml = (resp && resp.data) ? resp.data : this.errorHtml
-              this.log && console.log('C-TextFrame / getRawHtml / rawHtml : \n', rawHtml)
-              
-              textContainer[ loc ] = rawHtml
-              this.log && console.log('C-TextFrame / getRawHtml / textContainer : \n', textContainer)
-              
-              rawHtmls[ id ] = textContainer 
-              this.log && console.log('C-TextFrame / getRawHtml / this.rawHtmls : \n', this.rawHtmls)
-            })
-            .catch( (err) => { 
-              this.log && console.log('C-TextFrame / getRawHtml / err : ', err)
-              rawHtml = this.errorHtml
-              // this.rawHtmls[ id ] = this.rawHtmls[ id ] ? textContainer : textContainer
-            })
-            promisesArray.push( prom )
-          }
-        }
-        return Promise.all( promisesArray )
-
-      },
-
-      getHtmlContent( id ){
-        let raw = this.rawHtmls[ id ] ? this.rawHtmls[ id ][ this.locale ] : ''
-        return raw
-      },
 
     }
 
