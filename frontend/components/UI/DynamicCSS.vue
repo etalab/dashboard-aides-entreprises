@@ -1,64 +1,44 @@
 <template>
-
   <div id="dynamic-css">
-
-    <style 
-      v-for="(css, index) in configCSS"
-      :key="index"
-      type="text/css"
-      >
+    <style v-for="(css, index) in configCSS" :key="index" type="text/css">
       {{ css.class }} {
-        {{ css.config }}
+      {{ css.config }}
       }
     </style>
-
   </div>
-
 </template>
 
-
-
 <script>
-
-import { mapState, mapGetters } from 'vuex'
+import { mapState, mapGetters } from "vuex"
 
 export default {
+  components: {},
 
-  components: {
+  data() {
+    return {}
   },
 
-  data () {
-    return {
-
-    }
-  },
-
-  beforeMount (){
+  beforeMount() {
     // this.log && console.log('\nC-DynamicCSS.vue / beforeMount...')
   },
 
-  mounted (){
-    this.log && console.log('C-DynamicCSS.vue / mounted...')
+  mounted() {
+    this.log && console.log("C-DynamicCSS.vue / mounted...")
   },
 
   computed: {
-
     ...mapState({
-      log : state => state.log,
-      locale : state => state.locale,
+      log: (state) => state.log,
+      locale: (state) => state.locale,
 
-      configCSS : state => state.configUI.customCSS,
-
+      configCSS: (state) => state.configUI.customCSS,
     }),
 
     ...mapGetters({
-      locale : 'getCurrentLocale',
-    })
+      locale: "getCurrentLocale",
+    }),
   },
 
-  methods: {
-  }
-
+  methods: {},
 }
-
 </script>

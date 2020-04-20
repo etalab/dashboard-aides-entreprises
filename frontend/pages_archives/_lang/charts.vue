@@ -1,79 +1,57 @@
 <template>
-
   <div id="charts">
-
     <v-layout
       column
       justify-center
       align-center
-      >
-
-      <ApexCharts/>
-
+      -apex-charts
+    />
     </v-layout>
-
   </div>
-
 </template>
 
-
-
-
-
 <script>
+import { mapState, mapGetters } from "vuex"
 
-  import { mapState, mapGetters } from 'vuex'
+import ApexChart from "~/components/DataViews/ApexChart.vue"
 
-  import ApexChart from '~/components/DataViews/ApexChart.vue'
+export default {
+  name: "PageCharts",
 
-  export default {
-    
-    name: 'PageCharts',
+  components: {
+    ApexChart,
+  },
 
-    components: {
-      ApexChart,
+  props: [],
+
+  data() {
+    return {}
+  },
+
+    watch: {
     },
-    
-    props : [
-    ],
 
     mounted(){
       this.log && console.log('P-PageCharts / mounted ...')
     },
 
-    watch: {
-    },
+  computed: {
+    ...mapState({
+      log: (state) => state.log,
+      locale: (state) => state.locale,
 
-    data(){
-      return {
-      }
-    },
+      backendApi: (state) => state.data.backendApi,
+      filters: (state) => state.data.filters,
 
-    computed: {
+      initData: (state) => state.data.initData,
+      data: (state) => state.data.displayedData,
+    }),
 
-      ...mapState({
-        log : state => state.log, 
-        locale : state => state.locale,
+    ...mapGetters({
+      getCurrentLocale: "getCurrentLocale",
+    }),
+  },
 
-        backendApi : state => state.data.backendApi,
-        filters : state => state.data.filters,
-
-        initData : state => state.data.initData,
-        data : state => state.data.displayedData,
-
-      }),
-
-      ...mapGetters({
-        getCurrentLocale : 'getCurrentLocale'
-      }),
-
-    },
-    
-    methods : {
-
-    },
-
-
-
-  }
+  methods: {},
+}
 </script>
