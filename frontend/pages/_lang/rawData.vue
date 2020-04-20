@@ -1,160 +1,121 @@
 <template>
-
   <div id="rawData">
-
     <hr>
-    <br>
+    <br >
 
     <v-row>
-      <v-col
-        align-center
-        >
+      <v-col align-center>
         <div class="text-center">
           <code>activatedFilters</code>
         </div>
         <div class="text-center">
           <!-- <code> -->
-            {{ activatedFilters }}
+          {{ activatedFilters }}
           <!-- </code> -->
         </div>
       </v-col>
     </v-row>
-    <br>
+    <br >
 
-    <hr>
+    <hr >
 
     <v-row>
-
       <!-- INIT DATA -->
-      <v-col
-        >
-
+      <v-col>
         <div class="text-center">
-          loop in <code>state.data.initData</code>
-        </div><br>
+loop in <code>state.data.initData</code>
+</div>
+        <br >
 
         <!-- {{ initData }} -->
-        <div
-          v-if=" initData"
-          >
-          <div 
-            v-for="(val, index) in initData"
-            :key="index">
-            <hr><br>
-            <p>id : 
+        <div v-if="initData">
+          <div v-for="(val, index) in initData" :key="index">
+            <hr >
+            <br >
+            <p>
+              id :
               <code>{{ val.id }}</code>
             </p>
             <div>
               <!-- <code> -->
-                <!-- {{ val.data.slice(0,1) }} -->
-                <!-- [ ... ] -->
+              <!-- {{ val.data.slice(0,1) }} -->
+              <!-- [ ... ] -->
               <!-- </code> -->
             </div>
-            <br>
-          </div> 
-        </div>
-       
-
-      </v-col>
-
-
-      <!-- DISPLAYED DATA -->
-      <v-col
-        >
-
-        <div class="text-center">
-          loop in <code>state.data.displayedData</code>
-        </div><br>
-
-        <!-- {{ displayedData }} -->
-        <div
-          v-if="displayedData"
-          >
-          <div 
-            v-for="(val, index) in displayedData"
-            :key="index">
-            <hr><br>
-            <p>id : <br>
-              <code>{{ val.id }}</code>
-            </p>
-            <div>
-              <!-- <code> -->
-                <!-- {{ val.data.slice(0,1) }} -->
-                <!-- [ ... ] -->
-              <!-- </code> -->
-            </div>
-            <br>
+            <br >
           </div>
         </div>
-
       </v-col>
 
+      <!-- DISPLAYED DATA -->
+      <v-col>
+        <div class="text-center">
+          loop in <code>state.data.displayedData</code>
+        </div>
+        <br >
+
+        <!-- {{ displayedData }} -->
+        <div v-if="displayedData">
+          <div v-for="(val, index) in displayedData" :key="index">
+            <hr >
+            <br >
+            <p>
+              id : <br>
+              <code>{{ val.id }}</code>
+            </p>
+            <div>
+              <!-- <code> -->
+              <!-- {{ val.data.slice(0,1) }} -->
+              <!-- [ ... ] -->
+              <!-- </code> -->
+            </div>
+            <br >
+          </div>
+        </div>
+      </v-col>
     </v-row>
-
   </div>
-
 </template>
 
-
-
-
-
 <script>
+import { mapState, mapGetters } from "vuex"
 
-  import { mapState, mapGetters } from 'vuex'
+export default {
+  name: "PageRawData",
 
+  components: {},
 
-  export default {
-    
-    name: 'PageRawData',
+  props: [],
 
-    components: {
-    },
-    
-    props : [
-    ],
+  data() {
+    return {}
+  },
 
-    mounted(){
-      this.log && console.log('P-PageRawData / mounted ...')
-    },
+  watch: {},
 
-    watch: {
-    },
+  mounted() {
+    this.log && console.log("P-PageRawData / mounted ...")
+  },
 
-    data(){
-      return {
-      }
-    },
+  computed: {
+    ...mapState({
+      log: (state) => state.log,
+      locale: (state) => state.locale,
 
-    computed: {
+      backendApi: (state) => state.data.backendApi,
 
-      ...mapState({
-        log : state => state.log, 
-        locale : state => state.locale,
+      activatedFilters: (state) => state.data.activatedFilters,
 
-        backendApi : state => state.data.backendApi,
+      initData: (state) => state.data.initData,
+      displayedData: (state) => state.data.displayedData,
+    }),
 
-        activatedFilters : state => state.data.activatedFilters,
+    ...mapGetters({
+      getCurrentLocale: "getCurrentLocale",
+      // activatedFilters : 'data/getActivatedFilters',
+    }),
+  },
 
-        initData : state => state.data.initData,
-        displayedData : state => state.data.displayedData,
-
-      }),
-
-      ...mapGetters({
-
-        getCurrentLocale : 'getCurrentLocale',
-        // activatedFilters : 'data/getActivatedFilters',
-
-      }),
-
-    },
-    
-    methods : {
-
-    },
-
-
-
-  }
+  methods: {},
+}
 </script>
