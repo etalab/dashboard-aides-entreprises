@@ -28,7 +28,7 @@ export const configAppNavbarFooters = {
           title: { fr: "accueil" },
           value: "home",
           showTitle: true,
-          icon: "fas fa-chart-bar",
+          icon: "fas fa-th",
           action: "goToUrl", // goToUrl | scrollTo
           // to : '#text-text-01',
           toUrl: "/",
