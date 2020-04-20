@@ -134,7 +134,7 @@ export const configAppTexts = {
                     ${DATE_UPLOAD_DATA}
                   ` },
                   fromUrl : { 
-                    fr : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/date_mise_a_jour.txt',
+                    fr : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/last_update_data.txt',
                     // fr : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/requirements.txt',
                   },
                 },
