@@ -1,4 +1,4 @@
 <script>
-  import RawData from '~/pages/_lang/rawData'
-  export default RawData
+import RawData from "~/pages/_lang/rawData"
+export default RawData
 </script>

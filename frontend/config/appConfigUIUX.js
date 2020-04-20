@@ -1,56 +1,47 @@
-
 export const configAppUIUX = {
-  
-  help : "this file contains the setup for the UI-UX",
+  help: "this file contains the setup for the UI-UX",
 
   // GLOBAL
-  appTitle : {
-    fr : "Covid / Aides aux entreprises",
+  appTitle: {
+    fr: "Aides aux entreprises : fonds de solidarité",
   },
-  appMetas : [],
-  appVersion : "V.0.1",
-  appLogo : "https://",
+  appMetas: [],
+  appVersion: "V.0.1",
+  appLogo: "https://",
 
   // INTERATIONALIZATION
-  lang : {
-    defaultLocale : "fr",
-    locales: [
-      { code: "fr",
-        name: "Français",
-        file: "fr-FR.js" 
-      }
-    ]
+  lang: {
+    defaultLocale: "fr",
+    locales: [{ code: "fr", name: "Français", file: "fr-FR.js" }],
   },
 
-  // UX 
-  UX_config : {
-
-    navbar : {
-
-      height : 64, // in pixels
+  // UX
+  UX_config: {
+    navbar: {
+      height: 64, // in pixels
 
       clipped: true,
-      clippedBtn : false, 
+      clippedBtn: false,
 
       drawer: false,
-      drawerBtn : true, 
+      drawerBtn: true,
 
       fixed: false,
-      fixedBtn : false, 
+      fixedBtn: false,
 
       miniVariant: true,
-      miniVariantBtn : false, 
+      miniVariantBtn: false,
 
       right: false,
-      rightBtn : false, 
+      rightBtn: false,
 
       rightDrawer: false,
-      rightDrawerBtn : false, 
+      rightDrawerBtn: false,
 
-      
       // HORIZ BUTTONS
-      buttons : [
-        { to: "/about",
+      buttons: [
+        {
+          to: "/about",
           icon: "mdi-apps",
           i18nTitle: "menu.about",
           switch: false,
@@ -59,98 +50,96 @@ export const configAppUIUX = {
 
       // ITEMS IN RIGHT DRAWER
       items: [
-        { to: "/",
+        {
+          to: "/",
           // icon: "mdi-apps",
           // icon: "fas fa-home",
           icon: "fas fa-th",
           i18nTitle: "menu.welcome",
-          isVisible : true,
+          isVisible: true,
         },
-        { to: "/map",
+        {
+          to: "/map",
           icon: "fas fa-map",
           i18nTitle: "menu.map",
-          isVisible : true,
+          isVisible: true,
         },
-        { to: "/charts",
+        {
+          to: "/charts",
           icon: "fas fa-chart-bar",
           i18nTitle: "menu.charts",
-          isVisible : true,
+          isVisible: true,
         },
         // { to: "/table",
         //   icon: "fas fa-table",
         //   i18nTitle: "menu.table",
         //   isVisible : false,
         // },
-        { to: "/rawData",
+        {
+          to: "/rawData",
           icon: "fas fa-database",
           i18nTitle: "menu.data",
-          isVisible : false,
+          isVisible: false,
         },
-      ]
-  
+      ],
     },
 
-    filters : {
-      isVisible : false, 
+    filters: {
+      isVisible: false,
     },
-
   },
 
   // UI
-  UI_config : {
+  UI_config: {
+    isDarkTheme: false,
 
-    isDarkTheme : false,
-
-    navbar : {
-      elevation: 0, 
-      navbarClass : '',
-      color : 'primary',
-      dark : true,
-      titleClass : 'white--text font-weight-black display-1',
+    navbar: {
+      elevation: 0,
+      navbarClass: "",
+      color: "primary",
+      dark: true,
+      titleClass: "white--text font-weight-black display-1",
     },
 
-    filters : {
+    filters: {
       elevation: 0,
     },
 
-    themes : {
-
-      light : {
-        primary   : "#000091",
-        accent    : "#572a99",
-        secondary : "#b1133b",
-        info      : "#53657D",
-        warning   : "#ff9947",
-        error     : "#D1335B;",
-        success   : "#03BD5B"
+    themes: {
+      light: {
+        primary: "#000091",
+        accent: "#572a99",
+        secondary: "#b1133b",
+        info: "#53657D",
+        warning: "#ff9947",
+        error: "#D1335B;",
+        success: "#03BD5B",
       },
 
-      dark : {
-        primary   : "#000091",
-        accent    : "#572a99",
-        secondary : "#b1133b",
-        info      : "#53657D",
-        warning   : "#ff9947",
-        error     : "#D1335B;",
-        success   : "#03BD5B"
-      },
-
-    },
-
-    map : {
-      loader : {
-        color : '#000091',
-        width: '6px',
-        height: '6px',
+      dark: {
+        primary: "#000091",
+        accent: "#572a99",
+        secondary: "#b1133b",
+        info: "#53657D",
+        warning: "#ff9947",
+        error: "#D1335B;",
+        success: "#03BD5B",
       },
     },
 
-    typos : {
+    map: {
+      loader: {
+        color: "#000091",
+        width: "6px",
+        height: "6px",
+      },
     },
 
-    customCSS : [
+    typos: {},
 
-      { class : '.btn-gouv',
+    customCSS: [
+      {
+        class: ".btn-gouv",
         config: `
           background-color: #fff !important;
           border-bottom: 1px solid #000091 !important;
@@ -158,17 +147,13 @@ export const configAppUIUX = {
           margin: .3em !important;
         `,
       },
-      { class : '.btn-gouv.selected',
+      {
+        class: ".btn-gouv.selected",
         config: `
           color: #FFF;
           background-color: #000091;
         `,
       },
-
-    ]
-
+    ],
   },
-
-
-
 }

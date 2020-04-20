@@ -1,86 +1,53 @@
-
-
-<style scoped>
-
-</style>
-
+<style scoped></style>
 
 <template>
+  <v-toolbar :elevation="filtersUI.elevation" dense :fixed="true" :class="``">
+    <v-spacer />
 
-  <v-toolbar 
-    :elevation="filtersUI.elevation"
-    dense
-    :fixed="true"
-    :class="``"
-    >
-
-    <v-spacer></v-spacer>
-    
     <div class="text-center">
-      
       <!-- LOOP FILTERS -->
       {{ activatedFilters }}
-
     </div>
 
-    <v-spacer></v-spacer>
-
+    <v-spacer />
   </v-toolbar>
-
 </template>
 
-
 <script>
+import { mapState, mapGetters } from "vuex"
 
-  import { mapState, mapGetters } from 'vuex'
+export default {
+  name: "FiltersFeedback",
 
-  export default {
-    
-    name: 'FiltersFeedback',
+  components: {},
 
-    components: {
-    },
-    
-    props : [
-    ],
+  props: [],
 
-    mounted(){
-      this.log && console.log('C-FiltersFeedback / mounted ...')
-    },
+  data() {
+    return {}
+  },
 
-    watch: {
-    },
+  watch: {},
 
-    data(){
-      return {
+  mounted() {
+    this.log && console.log("C-FiltersFeedback / mounted ...")
+  },
 
-      }
-    },
+  computed: {
+    ...mapState({
+      log: (state) => state.log,
+      locale: (state) => state.locale,
 
-    computed: {
+      activatedFilters: (state) => state.data.activatedFilters,
+      filtersUI: (state) => state.configUI.filters,
+    }),
 
-      ...mapState({
-        log : state => state.log, 
-        locale : state => state.locale,
+    ...mapGetters({
+      getCurrentLocale: "getCurrentLocale",
+      windowSize: "getWindowsSize",
+    }),
+  },
 
-        activatedFilters : state => state.data.activatedFilters,
-        filtersUI : state => state.configUI.filters,
-
-      }),
-
-      ...mapGetters({
-        getCurrentLocale : 'getCurrentLocale',
-        windowSize : 'getWindowsSize',
-      }),
-
-    },
-    
-    methods : {
-
-    },
-
-
-
-  }
+  methods: {},
+}
 </script>
-
