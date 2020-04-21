@@ -16,6 +16,7 @@ print("Assurez-vous d'avoir placer le fichier du jour au format XLSX dans ../dat
 
 daytoprocess = sys.argv[1]
 
+
 Xlsx2csv("../data/aides/xlsx/"+daytoprocess+".XLSX", outputencoding="utf-8").convert("../data/aides/csv/"+daytoprocess+".csv")
 
 print("CSV généré")
@@ -124,12 +125,14 @@ result3['montant_modifie'] = None
 result3['delta_effectif'] = None
 result3['delta_effectif_percent'] = None
 
-result3['date_paiement'] = result3['Date paiement'].apply(lambda x: datetime.datetime.strptime(x.replace("-20","-2020"), "%m-%d-%Y").strftime("%Y-%m-%d"))
+
+
+result3['date_paiement'] = result3['Date paiement'].apply(lambda x: datetime.datetime.strptime(x,'%m-%d-%y').strftime('%Y-%m-%d'))
 
 dfaide = result3[['volet','numero_sequentiel','mois','siren','nom1','nom2','effectif_fev','Montant','Dev.','date_dp','date_paiement','siret','reg','dep','codecommuneetablissement','activiteprincipaleetablissement','count_siren_nb','montant_modifie','delta_effectif','delta_effectif_percent','classe_effectif']]
 
 dfaide.to_csv("../data/aides/aides-"+daytoprocess+".csv",index=False)
-
+'''
 print("Fichier aides sauvegardés : ../data/aides/aides-"+daytoprocess+".csv")
 
 print("Récupération des SIREN non diffusibles (peut être long) :")
@@ -175,6 +178,7 @@ dfaidenaenrichapi = pd.DataFrame(mydf)
 dfaidenaenrichapi.to_csv("../data/aides/aides-na-api-"+daytoprocess+".csv",index=False)
 
 print("Fichier des siret non diffusibles enrichis sauvegardé ici : ../data/aides/aides-na-api-"+daytoprocess+".csv")
+'''
 
 dfna = pd.read_csv("../data/aides/aides-na-api-"+daytoprocess+".csv", dtype={'siren':str,'Cde postal':str,'siret':str,'trancheeffectifsetablissement': str,'activiteprincipaleetablissement':str,'reg':str,'dep':str,'codecommuneetablissement':str})
 
@@ -217,7 +221,7 @@ dfna3['montant_modifie'] = None
 dfna3['delta_effectif'] = None
 dfna3['delta_effectif_percent'] = None
 
-dfna3['date_paiement'] = dfna3['Date paiement'].apply(lambda x: datetime.datetime.strptime(x.replace("-20","-2020"), "%m-%d-%Y").strftime("%Y-%m-%d"))
+dfna3['date_paiement'] = dfna3['Date paiement'].apply(lambda x: datetime.datetime.strptime(x,'%m-%d-%y').strftime('%Y-%m-%d'))
 
 dfaidena = dfna3[['volet','numero_sequentiel','mois','siren','nom1','nom2','effectif_fev','Montant','Dev.','date_dp','date_paiement','siret','reg','dep','codecommuneetablissement','activiteprincipaleetablissement','count_siren_nb','montant_modifie','delta_effectif','delta_effectif_percent','classe_effectif']]
 
