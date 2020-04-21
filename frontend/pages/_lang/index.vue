@@ -35,7 +35,7 @@
             <div
               :class="`${col.hasScrollbar ? 'has-scrollbar' : ''}`"
               :style="`${
-                col.hasScrollbar
+                (col.hasScrollbar || isMobileWidth)
                   ? 'max-height:' + contentWindowHeight + 'px'
                   : ''
               }`"
@@ -207,7 +207,8 @@ export default {
       navbarHeight: (state) => state.navbar.height,
       // currentNavbarFooter : state => state.currentNavbarFooter,
       divsVisibility: (state) => state.divsVisibility,
-      triggerVis: (state) => state.triggerVisChange
+      triggerVis: (state) => state.triggerVisChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -230,6 +231,13 @@ export default {
       }
       return height
     },
+
+    isMobileWidth() {
+      let breakpoints = this.mobileBreakpoints
+      let currentBreakpoint = this.$vuetify.breakpoint.name
+      return breakpoints.includes(currentBreakpoint)
+    },
+
   },
 
   methods: {

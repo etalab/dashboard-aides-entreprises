@@ -26,8 +26,6 @@
         <v-layout :class="`d-flex justify-center`">
           <!-- NUMBER TITLE -->
           <p :class="`${col.titleClass} ${isMobileWidth ? 'mb-0' : ''}`">
-            <!-- {{ trigger }}
-            ///  -->
             {{ col.colTitle[locale] }}
           </p>
         </v-layout>
@@ -35,11 +33,10 @@
         <v-layout :class="`d-flex justify-center`">
           <!-- NUMBER FROM DISPLAYED DATA -->
           <p :class="`${col.numberClass}`">
-            <!-- <code> -->
-            <!-- {{ col.specialStore }} - -->
-            {{ numToString(getSpecialStore[col.specialStoreId]) }}
+            <span 
+              v-html="numToString(getSpecialStore[col.specialStoreId], col.format)"
+            ></span>
             {{ col.unit[locale] }}
-            <!-- </code> -->
           </p>
 
           <!-- NUMBER LEGEND -->
@@ -49,15 +46,6 @@
         </v-layout>
       </v-col>
     </v-row>
-
-    <!-- <code>
-      specialStore[ 'nombre']  : 
-      {{ getSpecialStore[ 'nombre' ] }}
-    </code>  -->
-    <!-- <code>
-      specialStore.nombre  : 
-      {{ getSpecialStore.nombre  }}
-    </code>  -->
 
     <v-divider v-if="getLocalConfig.dividers.after" />
   </v-container>
@@ -102,7 +90,8 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
-      triggerVis: (state) => state.triggerVisChange
+      triggerVis: (state) => state.triggerVisChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -126,7 +115,8 @@ export default {
     },
 
     isMobileWidth() {
-      let breakpoints = ["xs", "sm"]
+      // let breakpoints = ["xs", "sm"]
+      let breakpoints = this.mobileBreakpoints
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)
     },
@@ -144,13 +134,30 @@ export default {
     },
 
     getDisplayedData(paramsArray) {
-      this.log && console.log("C-Numbers / getDisplayedData ...")
+      // this.log && console.log("C-Numbers / getDisplayedData ...")
       let dataFromDisplayedData = this.selectFromDisplayedData(paramsArray)
       return dataFromDisplayedData
     },
 
-    numToString(data) {
-      return data // .replace(/(\d)(?=(\d{3})+$)/g, '$1 ')
+    numToString(data, format) {
+      let number = data
+      // this.log && console.log("C-Numbers / numToString / format : ", format)
+      if (format){
+        switch ( format.type ) {
+          case "float" : 
+            number = parseFloat( number );
+            break;
+          case "integer" : 
+            number = parseInt( number );
+            break;
+        }
+      }
+      // number = number.toLocaleString()
+      number = number.toString()
+      if (format && format.sepComma){ number = number.replace(".", format.sepComma) }
+      if (format && format.sepThousands){ number = number.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1'+format.sepThousands) }
+      // this.log && console.log("C-Numbers / numToString / number : ", number)
+      return number
     },
   },
 }

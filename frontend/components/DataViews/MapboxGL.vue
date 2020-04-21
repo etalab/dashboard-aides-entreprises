@@ -367,8 +367,8 @@ export default {
     // LOADERS - - - - - - - - - - - - - - - - - - //
 
     loadStoreSources(sourcesArray) {
-      this.log &&
-        console.log("\nC-MapboxGL / loadStoreSources ", "... ".repeat(10))
+      // this.log &&
+      //   console.log("\nC-MapboxGL / loadStoreSources ", "... ".repeat(10))
 
       // let mapbox = this.map
       let mapbox = _map
@@ -378,16 +378,16 @@ export default {
 
       // STORE SOURCES (loaded as initData @ middleware GetInitData.js )
       for (let source of sourcesArray) {
-        this.log &&
-          console.log(
-            "\nC-MapboxGL / loadStoreSources - store ... source.id : ",
-            source.id
-          )
-        this.log &&
-          console.log(
-            "C-MapboxGL / loadStoreSources - store ... source.help : ",
-            source.help
-          )
+        // this.log &&
+        //   console.log(
+        //     "\nC-MapboxGL / loadStoreSources - store ... source.id : ",
+        //     source.id
+        //   )
+        // this.log &&
+        //   console.log(
+        //     "C-MapboxGL / loadStoreSources - store ... source.help : ",
+        //     source.help
+        //   )
         let mapBoxSrcObj = {
           type: source.type,
         }
@@ -510,14 +510,14 @@ export default {
     loadLayers(layersArray) {
       // let mapbox = this.map
       let mapbox = _map
-      this.log && console.log("\nC-MapboxGL / loadLayers ", "... ".repeat(10))
-      this.log && console.log("\n")
+      // this.log && console.log("\nC-MapboxGL / loadLayers ", "... ".repeat(10))
+      // this.log && console.log("\n")
 
       // ADDING LAYERS TO MAP
       for (let layer of layersArray) {
         // let layer_ = { ...layer }
-        this.log &&
-          console.log("C-MapboxGL / loadLayers ... layer.id : ", layer.id)
+        // this.log &&
+        //   console.log("C-MapboxGL / loadLayers ... layer.id : ", layer.id)
         mapbox.addLayer(layer)
       }
     },

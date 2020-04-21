@@ -63,6 +63,7 @@ export const configAppNavbarFooters = {
               toggle : 'on',
               toggleVisibility : ['isVisibleMobile'],
               divIds : [
+                'text-01', 
                 'map-france-metro',
               ],
             },
@@ -70,7 +71,6 @@ export const configAppNavbarFooters = {
               toggle : 'off',
               toggleVisibility : ['isVisibleMobile'],
               divIds : [
-                'text-01', 
                 'text-02',
                 'apexchart-01', 
               ],
