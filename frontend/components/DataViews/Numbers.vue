@@ -6,13 +6,9 @@
     :id="`numbers-${settings.id}`"
     :class="`${settings.containerClass}`"
     :trigger="`${trigger}`"
+    :triggerVis="`${triggerVis}`"
   >
-    <!-- 
-    <div>
-      Numbers- settings.id : {{ settings.id  }} test
-    </div> 
-    -->
-
+    
     <v-divider v-if="viewConfig.dividers.before" />
 
     <v-row
@@ -30,8 +26,6 @@
         <v-layout :class="`d-flex justify-center`">
           <!-- NUMBER TITLE -->
           <p :class="`${col.titleClass} ${isMobileWidth ? 'mb-0' : ''}`">
-            <!-- {{ trigger }}
-            ///  -->
             {{ col.colTitle[locale] }}
           </p>
         </v-layout>
@@ -39,11 +33,10 @@
         <v-layout :class="`d-flex justify-center`">
           <!-- NUMBER FROM DISPLAYED DATA -->
           <p :class="`${col.numberClass}`">
-            <!-- <code> -->
-            <!-- {{ col.specialStore }} - -->
-            {{ numToString(getSpecialStore[col.specialStoreId]) }}
+            <span 
+              v-html="numToString(getSpecialStore[col.specialStoreId], col.format)"
+            ></span>
             {{ col.unit[locale] }}
-            <!-- </code> -->
           </p>
 
           <!-- NUMBER LEGEND -->
@@ -53,15 +46,6 @@
         </v-layout>
       </v-col>
     </v-row>
-
-    <!-- <code>
-      specialStore[ 'nombre']  : 
-      {{ getSpecialStore[ 'nombre' ] }}
-    </code>  -->
-    <!-- <code>
-      specialStore.nombre  : 
-      {{ getSpecialStore.nombre  }}
-    </code>  -->
 
     <v-divider v-if="getLocalConfig.dividers.after" />
   </v-container>
@@ -75,18 +59,20 @@ export default {
 
   components: {},
 
-  props: ["settings"],
+  props: ["settings", "routeId"],
 
   data() {
     return {
       dataViewType: "numbers",
       viewConfig: undefined,
+      canShow: undefined,
     }
   },
 
   watch: {
-    // trigger(next, prev){
-    // }
+    triggerVis(next, prev){
+      this.getCanShow()
+    },
   },
 
   beforeMount() {
@@ -96,6 +82,7 @@ export default {
 
   mounted() {
     this.log && console.log("C-Numbers / mounted ...")
+    this.getCanShow()
   },
 
   computed: {
@@ -103,6 +90,8 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
+      triggerVis: (state) => state.triggerVisChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -111,7 +100,8 @@ export default {
       selectFromDisplayedData: "data/selectFromDisplayedData",
       getSpecialStore: "data/getSpecialStore",
       windowSize: "getWindowsSize",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      // getCurrentBreakpoint: "getCurrentBreakpoint",
+      getDivCurrentVisibility: "getDivCurrentVisibility",
     }),
 
     // config
@@ -124,17 +114,8 @@ export default {
       return localConfig
     },
 
-    canShow() {
-      let bool = true
-      let noShowArray = this.viewConfig && this.viewConfig.notShowFor
-      if (noShowArray) {
-        let bool = noShowArray.includes(this.getCurrentBreakpoint)
-      }
-      return bool
-    },
-
     isMobileWidth() {
-      let breakpoints = ["xs", "sm"]
+      let breakpoints = this.mobileBreakpoints
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)
     },
@@ -145,14 +126,37 @@ export default {
       // selectFromDisplayedData : 'data/selectFromDisplayedData',
     }),
 
+    getCanShow() {
+      let breakpoint = this.$vuetify.breakpoint.name
+      let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
+      this.canShow = isVisible
+    },
+
     getDisplayedData(paramsArray) {
-      this.log && console.log("C-Numbers / getDisplayedData ...")
+      // this.log && console.log("C-Numbers / getDisplayedData ...")
       let dataFromDisplayedData = this.selectFromDisplayedData(paramsArray)
       return dataFromDisplayedData
     },
 
-    numToString(data) {
-      return data // .replace(/(\d)(?=(\d{3})+$)/g, '$1 ')
+    numToString(data, format) {
+      let number = data
+      // this.log && console.log("C-Numbers / numToString / format : ", format)
+      if (format){
+        switch ( format.type ) {
+          case "float" : 
+            number = parseFloat( number );
+            break;
+          case "integer" : 
+            number = parseInt( number );
+            break;
+        }
+      }
+      // number = number.toLocaleString()
+      number = number.toString()
+      if (format && format.sepComma){ number = number.replace(".", format.sepComma) }
+      if (format && format.sepThousands){ number = number.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1'+format.sepThousands) }
+      // this.log && console.log("C-Numbers / numToString / number : ", number)
+      return number
     },
   },
 }

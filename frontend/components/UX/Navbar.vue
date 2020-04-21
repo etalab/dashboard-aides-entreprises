@@ -6,7 +6,7 @@
   <v-app-bar
     :clipped-left="clipped"
     :elevation="navbarUI.elevation"
-    :class="`${navbarUI.navbarClass}`"
+    :class="`odm-navbar ${navbarUI.navbarClass}`"
     fixed
     :color="navbarUI.color"
     :dark="navbarUI.dark"
@@ -80,6 +80,7 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       appTitle: (state) => state.appTitle,
+      configUX: (state) => state.configUX,
 
       navbarUI: (state) => state.configUI.navbar,
       navbarUX: (state) => state.navbar,

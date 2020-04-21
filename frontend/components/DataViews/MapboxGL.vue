@@ -15,8 +15,10 @@
     :id="`map-${settings.id}`"
     :class="`map`"
     :trigger="`${trigger}`"
-    :style="`height:${contentWindowHeight}px!important;max-height:${contentWindowHeight}px`"
+    :triggerVis="`${triggerVis}`"
+    :style="`height:${mapHeight}px!important;max-height:${mapHeight}px`"
   >
+    <!-- :style="`height:${contentWindowHeight}px!important;max-height:${contentWindowHeight}px`" -->
     <!-- LOADER'S CSS -->
     <style type="text/css">
       .lds-roller div:after {
@@ -137,12 +139,14 @@ export default {
 
   components: {},
 
-  props: ["settings"],
+  props: ["settings", "routeId"],
 
   data() {
     return {
       dataViewType: "maps",
       viewConfig: undefined,
+      canShow : undefined,
+      mapHeight : undefined,
 
       showLoader: true,
 
@@ -177,19 +181,23 @@ export default {
   },
 
   watch: {
+
+    triggerVis(next, prev){
+      this.getCanShow()
+    },
+
     map(next, prev) {
       if (next && !prev) {
+        this.handleResize()
         this.log && console.log("C-MapboxGL / watch - map - is created ")
         let storeSourcesArray = this.sources.filter((s) => s.from === "store")
         let urlSourcesArray = this.sources.filter((s) => s.from === "url")
         this.loadStoreSources(storeSourcesArray)
-        // .then(() => {
         this.loadUrlSources(urlSourcesArray).then(() => {
           this.loadLayers(this.layers)
           this.loadClicEvents(this.maps)
           this.showLoader = false
         })
-        // })
       }
     },
 
@@ -197,6 +205,15 @@ export default {
       // this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
       this.resetZoom()
     },
+  },
+
+  created() {
+    this.log && console.log("C-MapboxGL / created ...")
+    window.addEventListener("resize", this.handleResize)
+  },
+
+  destroyed() {
+    window.removeEventListener("resize", this.handleResize)
   },
 
   beforeMount() {
@@ -207,6 +224,12 @@ export default {
     // set up view config
     this.viewConfig = this.getLocalConfig
     // this.log && console.log("C-MapboxGL / dataset / this.viewConfig : ", this.viewConfig)
+    this.handleResize()
+
+
+    // set div visibility in store
+    this.$store.dispatch('setDivVisibility', this.settings)
+
 
     // set up MAPBOX options
     const mapOptionsRoute = this.viewConfig.map_options
@@ -247,6 +270,8 @@ export default {
 
   mounted() {
     this.log && console.log("C-MapboxGL / mounted ...")
+    this.handleResize()
+    this.getCanShow()
   },
 
   computed: {
@@ -255,6 +280,8 @@ export default {
       locale: (state) => state.locale,
       mapUI: (state) => state.configUI.map,
       trigger: (state) => state.data.triggerChange,
+      triggerVis: (state) => state.triggerVisChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -265,8 +292,9 @@ export default {
       getStoreSourceData: "data/getStoreSourceData",
       windowSize: "getWindowsSize",
       getCurrentNavbarFooter: "getCurrentNavbarFooter",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      // getCurrentBreakpoint: "getCurrentBreakpoint",
       getResetZoomTrigger: "maps/getResetZoomTrigger",
+      getDivCurrentVisibility: "getDivCurrentVisibility",
     }),
 
     // config
@@ -277,19 +305,6 @@ export default {
       }
       let localConfig = this.getDataViewConfig(viewId)
       return localConfig
-    },
-
-    canShow() {
-      let bool = true
-      // this.log && console.log("C-MapboxGL / canShow ... this.viewConfig : ", this.viewConfig )
-      // let noShowArray = this.viewConfig && this.viewConfig.notShownFor
-      let noShowArray = this.settings.notShownFor
-      // this.log && console.log("C-MapboxGL / canShow ... noShowArray : ", noShowArray )
-      if (noShowArray) {
-        let currentBreakpoint = this.getCurrentBreakpoint(this.windowSize.width)
-        bool = !noShowArray.includes(currentBreakpoint)
-      }
-      return bool
     },
 
     contentWindowHeight() {
@@ -303,15 +318,57 @@ export default {
       return height
     },
 
-    // map(){
-    //   return _map
-    // },
+    isMobileWidth() {
+      let breakpoints = this.mobileBreakpoints
+      let currentBreakpoint = this.$vuetify.breakpoint.name
+      return breakpoints.includes(currentBreakpoint)
+    },
+
   },
 
   methods: {
     ...mapActions({
       setNestedData: "data/setNestedData",
     }),
+
+    getCanShow() {
+      let breakpoint = this.$vuetify.breakpoint.name
+      let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
+      // this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
+      this.canShow = isVisible
+    },
+
+    handleResize() {
+
+      let winHeight = window.innerHeight
+      // this.log && console.log("C-MapboxGL / handleResize ... winHeight : ", winHeight )
+
+      let mapHeight = winHeight
+      let navbarHeight = this.navbarHeight
+      // let getCurrentNavbarFooter = this.getCurrentNavbarFooter
+
+      if ( this.isMobileWidth ){
+        
+        var docNavbars = document.querySelectorAll(`.odm-navbar`)
+        // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
+        let docNavbarsArray = Array.prototype.slice.call( docNavbars )
+        let sumNavbarsHeights = docNavbarsArray.map(i => i.offsetHeight).reduce((prev, curr) => prev + curr, 0)
+        // this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
+
+        var docComponents = document.querySelectorAll(`.odm-colrow:not(.odm-colrow-map)`)
+        // this.log && console.log("C-MapboxGL / handleResize ... docComponents : ", docComponents )
+        let docComponentsArray = Array.prototype.slice.call( docComponents )
+        let sumComponentsHeights = docComponentsArray.map(i => i.offsetHeight).reduce((prev, curr) => prev + curr, 0)
+        // this.log && console.log("C-MapboxGL / handleResize ... sumComponentsHeights : ", sumComponentsHeights )
+
+        mapHeight = winHeight - sumNavbarsHeights - sumComponentsHeights //- navbarsHeights
+      } 
+      else {
+        mapHeight = winHeight - navbarHeight
+      }
+      // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
+      this.mapHeight = mapHeight
+    },
 
     getCurrentZoom() {
       // let mapbox = this.map
@@ -358,8 +415,8 @@ export default {
     // LOADERS - - - - - - - - - - - - - - - - - - //
 
     loadStoreSources(sourcesArray) {
-      this.log &&
-        console.log("\nC-MapboxGL / loadStoreSources ", "... ".repeat(10))
+      // this.log &&
+      //   console.log("\nC-MapboxGL / loadStoreSources ", "... ".repeat(10))
 
       // let mapbox = this.map
       let mapbox = _map
@@ -369,16 +426,16 @@ export default {
 
       // STORE SOURCES (loaded as initData @ middleware GetInitData.js )
       for (let source of sourcesArray) {
-        this.log &&
-          console.log(
-            "\nC-MapboxGL / loadStoreSources - store ... source.id : ",
-            source.id
-          )
-        this.log &&
-          console.log(
-            "C-MapboxGL / loadStoreSources - store ... source.help : ",
-            source.help
-          )
+        // this.log &&
+        //   console.log(
+        //     "\nC-MapboxGL / loadStoreSources - store ... source.id : ",
+        //     source.id
+        //   )
+        // this.log &&
+        //   console.log(
+        //     "C-MapboxGL / loadStoreSources - store ... source.help : ",
+        //     source.help
+        //   )
         let mapBoxSrcObj = {
           type: source.type,
         }
@@ -501,14 +558,14 @@ export default {
     loadLayers(layersArray) {
       // let mapbox = this.map
       let mapbox = _map
-      this.log && console.log("\nC-MapboxGL / loadLayers ", "... ".repeat(10))
-      this.log && console.log("\n")
+      // this.log && console.log("\nC-MapboxGL / loadLayers ", "... ".repeat(10))
+      // this.log && console.log("\n")
 
       // ADDING LAYERS TO MAP
       for (let layer of layersArray) {
         // let layer_ = { ...layer }
-        this.log &&
-          console.log("C-MapboxGL / loadLayers ... layer.id : ", layer.id)
+        // this.log &&
+        //   console.log("C-MapboxGL / loadLayers ... layer.id : ", layer.id)
         mapbox.addLayer(layer)
       }
     },
@@ -609,6 +666,8 @@ export default {
                     //   break ;
                   }
                 }
+                this.handleResize()
+
               }
             })
           }
@@ -728,12 +787,14 @@ export default {
     // HIGHLIGHTS FUNCTIONS
 
     toggleHighlightOn(event, source) {
+      // this.log && console.log("\nC-MapboxGL / toggleHighlightOn ... " )
       // let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
       // if ( isFnInZoomRange ){
       // let mapbox = this.map
       let mapbox = _map
       const canvas = mapbox.getCanvas()
       canvas.style.cursor = "pointer"
+      this.log && console.log("C-MapboxGL / event.features : ", event.features )
       if (event.features.length > 0) {
         if (this.hoveredStateId[source] !== null) {
           mapbox.setFeatureState(
@@ -769,6 +830,7 @@ export default {
       let mapbox = _map
       // const canvas = mapbox.getCanvas()
       // canvas.style.cursor = 'pointer'
+      this.log && console.log("C-MapboxGL / event.features : ", event.features )
       if (event.features.length > 0) {
         if (this.selectedStateId[source] !== null) {
           mapbox.setFeatureState(

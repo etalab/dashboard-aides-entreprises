@@ -32,6 +32,7 @@ export const configAppNumbers = {
               textPrefix: { fr: "" },
               textSuffix: { fr: "" },
               specialStoreId: "montant",
+              format : {type: 'float', sepComma : ','},
             },
 
             {
@@ -48,6 +49,7 @@ export const configAppNumbers = {
               textPrefix: { fr: "" },
               textSuffix: { fr: "" },
               specialStoreId: "nombre",
+              format: { type: 'integer', sepThousands: ' '}
             },
           ],
         },

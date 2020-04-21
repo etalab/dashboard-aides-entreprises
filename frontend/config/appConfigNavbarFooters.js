@@ -14,7 +14,7 @@ export const configAppNavbarFooters = {
       titleI18n: "navbars.footer.title",
       navbarFooterClass: "",
 
-      height: 56,
+      height: 64,
       grow: true,
       shift: true,
       showOnSizes: ["xs", "sm"],
@@ -29,9 +29,27 @@ export const configAppNavbarFooters = {
           value: "home",
           showTitle: true,
           icon: "fas fa-th",
-          action: "goToUrl", // goToUrl | scrollTo
-          // to : '#text-text-01',
-          toUrl: "/",
+          action: "toggleDivs", // goToUrl | scrollTo | toggleDivs
+          divsToToggle : [ 
+            { routeId: 'home',
+              toggle : 'on',
+              toggleVisibility : ['isVisibleMobile'],
+              divIds : [
+                'text-01', 
+                'text-02', 
+              ],
+            },
+            { routeId: 'home',
+              toggle : 'off',
+              toggleVisibility : ['isVisibleMobile'],
+              divIds : [
+                'map-france-metro',
+                'apexchart-01', 
+              ],
+            }
+          ],
+          // toUrl: "/",
+          // to : '#text-text-01', // for scrollTo
           offset: 10,
         },
         {
@@ -39,9 +57,27 @@ export const configAppNavbarFooters = {
           value: "map",
           showTitle: true,
           icon: "fas fa-map",
-          action: "goToUrl",
+          action: "toggleDivs",
+          divsToToggle : [ 
+            { routeId: 'home',
+              toggle : 'on',
+              toggleVisibility : ['isVisibleMobile'],
+              divIds : [
+                'text-01', 
+                'map-france-metro',
+              ],
+            },
+            { routeId: 'home',
+              toggle : 'off',
+              toggleVisibility : ['isVisibleMobile'],
+              divIds : [
+                'text-02',
+                'apexchart-01', 
+              ],
+            }
+          ],
+          // toUrl: "/map",
           // to : '#map-map-france-metro',
-          toUrl: "/map",
           offset: 10,
         },
         {
@@ -49,9 +85,27 @@ export const configAppNavbarFooters = {
           value: "charts",
           showTitle: true,
           icon: "fas fa-chart-bar",
-          action: "goToUrl",
+          action: "toggleDivs",
+          divsToToggle : [ 
+            { routeId: 'home',
+              toggle : 'on',
+              toggleVisibility : ['isVisibleMobile'],
+              divIds : [
+                'text-01', 
+                'apexchart-01', 
+              ],
+            },
+            { routeId: 'home',
+              toggle : 'off',
+              toggleVisibility : ['isVisibleMobile'],
+              divIds : [
+                'text-02',
+                'map-france-metro',
+              ],
+            }
+          ],
+          // toUrl: "/charts",
           // to : '#apexcharts-apexchart-01',
-          toUrl: "/charts",
           offset: 10,
         },
       ],

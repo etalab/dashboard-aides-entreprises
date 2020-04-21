@@ -118,6 +118,13 @@ export const configAppGlobalButtons = {
 
             "",
           ],
+          
+          hideIfs: [
+            { specialStoreId: "levelname",
+              value: "échelle nationale",
+            },
+          ]
+
         },
       ],
     },

@@ -17,6 +17,11 @@ export const configAppUIUX = {
 
   // UX
   UX_config: {
+
+    hasDrawer : false,
+    
+    mobileBreakpoints: ["xs", "sm"],
+
     navbar: {
       height: 64, // in pixels
 
@@ -24,7 +29,7 @@ export const configAppUIUX = {
       clippedBtn: false,
 
       drawer: false,
-      drawerBtn: true,
+      drawerBtn: false,
 
       fixed: false,
       fixedBtn: false,

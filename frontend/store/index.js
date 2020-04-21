@@ -62,6 +62,10 @@ export const state = () => ({
     navbarFooters: process.env.CONFIG_APP.UX_navbarFooters.settingsIds,
     globalButtons: process.env.CONFIG_APP.UX_globalButtons.settingsIds,
   },
+
+  divsVisibility: [],
+  triggerVisChange: 1,
+
 })
 
 export const getters = {
@@ -89,6 +93,32 @@ export const getters = {
     } catch (e) {
       state.log && console.log("err", e)
       return undefined
+    }
+  },
+
+  // DIVS VISIBILITY
+  getDivVisibilityArray: (state) => {
+    return state.divsVisibility
+  },
+  getDivVisibility: (state) => (div) => {
+    let divObject = state.divsVisibility.find( d => {return (d.id == div.id) && (d.routeId == div.routeId) })
+    return divObject
+  },
+  getDivCurrentVisibility: (state, getters) => (div) => {
+    // state.log && console.log("S-index-G-getDivCurrentVisibility / div : ", div )
+    const breakpoint = div.breakpoint
+    // state.log && console.log("S-index-G-getDivCurrentVisibility / breakpoint : ", breakpoint )
+
+    let divObject = getters.getDivVisibility(div.div)
+    // state.log && console.log("S-index-G-getDivCurrentVisibility / divObject : ", divObject )
+    
+    let mobileBreakpoints = state.configUX.mobileBreakpoints
+    // state.log && console.log("S-index-G-getDivCurrentVisibility / mobileBreakpoints : ", mobileBreakpoints )
+
+    if ( mobileBreakpoints.includes(breakpoint) ){
+      return divObject.isVisibleMobile
+    } else {
+      return divObject.isVisibleDesktop
     }
   },
 
@@ -157,11 +187,6 @@ export const getters = {
     return breakpointName
   },
 
-  // isMobileWidth: (state, getters) => {
-  //   let breakpoints = [ 'xs', 'sm' ]
-  //   let currentBreakpoint = getters.getCurrentBreakpoint()
-  //   return breakpoints.includes( currentBreakpoint )
-  // },
 }
 
 export const mutations = {
@@ -192,6 +217,25 @@ export const mutations = {
     // state.log && console.log("S-index-M-setLocalRouteConfig / state.localRouteConfig : ", state.localRouteConfig)
   },
 
+  // DIVS VISIBILITY
+  setDivVisibility(state, divRef){
+    // state.log && console.log("S-index-M-setDivVisibility / divRef : ", divRef)
+    // let isDivInArray = state.divsVisibility.find( d => {return (d.id == divRef.id) && (d.routeId == divRef.routeId) })
+    let divIdx = state.divsVisibility.findIndex( d => {
+      return (d.id == divRef.id) && (d.routeId == divRef.routeId) 
+    })
+    // state.log && console.log("S-index-M-setDivVisibility / divIdx : ", divIdx)
+    if ( divIdx > -1 ){
+      state.divsVisibility[ divIdx ] = divRef
+      // isDivInArray = divRef
+    } else {
+      state.divsVisibility.push(divRef)
+    }
+  },
+  toggleVisTrigger(state) {
+    state.triggerVisChange = state.triggerVisChange * -1
+  },
+
   // INTERNATIONALIZATION
   switchLocale(state, localeObject) {
     // state.log && console.log("S-index-M-switchLocale / localeObject : ", localeObject)
@@ -216,30 +260,80 @@ export const mutations = {
 }
 
 export const actions = {
-  setCurrentWindowSize({ state, getters, commit }, winSize) {
-    commit("setWindowSize", winSize)
+  setCurrentWindowSize({ state, getters, commit, dispatch }, windowInfos) {
+    // state.log && console.log("S-index-M-initLocales ... ")
+    // set window in store
+    commit("setWindowSize", windowInfos)
+    // set navvbarFooter visibility
+    let bool = false
     if (state.currentNavbarFooter) {
-      let windowWidth = winSize.width
       let showOnSizes = state.currentNavbarFooter.showOnSizes
-      let breakpointName = getters.getCurrentBreakpoint(windowWidth)
-
-      state.log &&
-        console.log(
-          "S-index-A-setCurrentWindowSize / breakpointName (for NavbarFooter): ",
-          breakpointName
-        )
-
-      let bool = false
-      if (showOnSizes.includes(breakpointName)) {
-        bool = true
-      }
-
-      state.log &&
-        console.log(
-          "S-index-A-setCurrentWindowSize / bool (for NavbarFooter): ",
-          bool
-        )
+      let breakpointName = windowInfos.breakpointName
+      if (showOnSizes.includes(breakpointName)) { bool = true }
       commit("setNavbarFooterVisibility", bool)
     }
+    // reset divs visibility to defaults if desktop
+    // if ( state.currentNavbarFooter && !bool){
+    //   dispatch('setRouteDivsVisibility', windowInfos.routeConfig)
+    // }
   },
+
+  setRouteDivsVisibility({state, commit}, routeConfig){
+    for ( let row of routeConfig.pageRows ){
+      const rowId = row.id
+      for ( let col of row.columns ){
+        const colId = col.id
+        for ( let colRow of col.colRows ){
+          let div = {
+            routeId : routeConfig.id,
+            rowId : rowId,
+            colId : colId,
+            id : colRow.settings.id,
+            isVisibleMobile : colRow.settings.mobileIsVisibleDefault,
+            isVisibleDesktop : colRow.settings.desktopIsVisibleDefault,
+          }
+          state.log && console.log("S-index-M-setRouteDivsVisibility / div : ", div)
+          commit('setDivVisibility', div)
+        }
+      }
+    }
+  },
+  toggleDivsVisibility({state, getters, commit}, btnConfig){
+
+    for (let divsToToggle of btnConfig.divsToToggle){
+
+      const toggle = divsToToggle.toggle
+      const toggleVisibility = divsToToggle.toggleVisibility
+
+      for ( let div of divsToToggle.divIds) {
+
+        let divRef = { 
+          id: div, 
+          routeId: divsToToggle.routeId,
+          isVisibleMobile : true,
+          isVisibleDesktop : true,
+        }
+
+        let isDiv = getters.getDivVisibility( divRef )
+
+        for (let vis of toggleVisibility) {
+          
+          let value
+          switch (toggle){
+            case 'on':
+              divRef[ vis ] = true
+              break;
+            case 'off':
+              divRef[ vis ] = false
+              break;
+            case 'toggle':
+              divRef[ vis ] = !isDiv[ vis ]
+              break;
+          }
+        }
+        commit('setDivVisibility', divRef)
+      }
+    }
+  }
+
 }
