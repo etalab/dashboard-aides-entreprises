@@ -17,6 +17,7 @@
       v-for="(row, index) in routeConfig.pageRows"
       :id="'R' + index"
       :key="'R' + index"
+      :class="`odm-row`"
       no-gutters
     >
       <template v-if="row.activated">
@@ -24,7 +25,7 @@
           v-for="(col, i) in row.columns"
           :id="'R' + index + '-C' + i"
           :key="'R' + index + '-C' + i"
-          :class="`${col.colClass}`"
+          :class="`odm-col ${col.colClass}`"
         >
           <template v-if="col.activated">
             <!-- {{ windowSize }} -->
@@ -36,7 +37,7 @@
               :class="`${col.hasScrollbar ? 'has-scrollbar' : ''}`"
               :style="`${
                 (col.hasScrollbar || isMobileWidth)
-                  ? 'max-height:' + contentWindowHeight + 'px'
+                  ? 'max-height:' + contentWindowHeight() + 'px'
                   : ''
               }`"
             >
@@ -47,7 +48,7 @@
                 no-gutters
                 :justify="colRow.justify"
                 :align="colRow.align"
-                :class="colRow.class"
+                :class="`odm-colrow odm-colrow-${ colRow.component } ${colRow.class}`"
               >
                 <TextFrame
                   v-if="colRow.activated && colRow.component == 'text'"
@@ -55,8 +56,8 @@
                   :routeId="routeConfig.id"
                 />
 
-                <GlobalButton
-                  v-if="colRow.activated && colRow.component == 'globalButton'"
+                <GlobalButtons
+                  v-if="colRow.activated && colRow.component == 'globalButtons'"
                   :settings="colRow.settings"
                   :routeId="routeConfig.id"
                 />
@@ -109,7 +110,7 @@ import Numbers from "~/components/DataViews/Numbers.vue"
 import ChartJS from "~/components/DataViews/ChartJS.vue"
 import ApexChart from "~/components/DataViews/ApexChart.vue"
 import TextFrame from "~/components/DataViews/TextFrame.vue"
-import GlobalButton from "~/components/UX/GlobalButton.vue"
+import GlobalButtons from "~/components/UX/GlobalButtons.vue"
 import Table from "~/components/DataViews/Table.vue"
 
 export default {
@@ -122,7 +123,7 @@ export default {
     ChartJS,
     ApexChart,
     TextFrame,
-    GlobalButton,
+    GlobalButtons,
     Table,
   },
 
@@ -221,17 +222,6 @@ export default {
       getDivVisibilityArray: "getDivVisibilityArray",
     }),
 
-    contentWindowHeight() {
-      let height = this.windowSize.height - this.navbarHeight
-      if (
-        this.getCurrentNavbarFooter &&
-        this.getCurrentNavbarFooter.activated
-      ) {
-        height = height - this.getCurrentNavbarFooter.height
-      }
-      return height
-    },
-
     isMobileWidth() {
       let breakpoints = this.mobileBreakpoints
       let currentBreakpoint = this.$vuetify.breakpoint.name
@@ -245,6 +235,17 @@ export default {
       setCurrentWindowSize: "setCurrentWindowSize",
     }),
 
+    contentWindowHeight() {
+      let height = this.windowSize.height - this.navbarHeight
+      if (
+        this.getCurrentNavbarFooter &&
+        this.getCurrentNavbarFooter.activated
+      ) {
+        height = height - this.getCurrentNavbarFooter.height
+      }
+      return height
+    },
+
     handleResize() {
       this.window.width = window.innerWidt
       this.window.height = window.innerHeight
@@ -252,6 +253,7 @@ export default {
         width: window.innerWidth,
         height: window.innerHeight,
         breakpointName: this.$vuetify.breakpoint.name,
+        isMobile: this.$device,
         routeConfig: this.routeConfig
       })
       this.$store.commit("toggleVisTrigger")

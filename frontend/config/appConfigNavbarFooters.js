@@ -14,7 +14,7 @@ export const configAppNavbarFooters = {
       titleI18n: "navbars.footer.title",
       navbarFooterClass: "",
 
-      height: 56,
+      height: 64,
       grow: true,
       shift: true,
       showOnSizes: ["xs", "sm"],
@@ -99,6 +99,7 @@ export const configAppNavbarFooters = {
               toggle : 'off',
               toggleVisibility : ['isVisibleMobile'],
               divIds : [
+                'text-02',
                 'map-france-metro',
               ],
             }

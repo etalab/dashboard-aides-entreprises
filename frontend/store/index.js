@@ -187,11 +187,6 @@ export const getters = {
     return breakpointName
   },
 
-  // isMobileWidth: (state, getters) => {
-  //   let breakpoints = [ 'xs', 'sm' ]
-  //   let currentBreakpoint = getters.getCurrentBreakpoint()
-  //   return breakpoints.includes( currentBreakpoint )
-  // },
 }
 
 export const mutations = {
@@ -265,7 +260,8 @@ export const mutations = {
 }
 
 export const actions = {
-  setCurrentWindowSize({ state, getters, commit }, windowInfos) {
+  setCurrentWindowSize({ state, getters, commit, dispatch }, windowInfos) {
+    // state.log && console.log("S-index-M-initLocales ... ")
     // set window in store
     commit("setWindowSize", windowInfos)
     // set navvbarFooter visibility
@@ -276,10 +272,10 @@ export const actions = {
       if (showOnSizes.includes(breakpointName)) { bool = true }
       commit("setNavbarFooterVisibility", bool)
     }
-    // reset divs visibility to 
-    if ( state.currentNavbarFooter && !bool){
-      commit('setRouteDivsVisibility', windowInfos.routeConfig)
-    }
+    // reset divs visibility to defaults if desktop
+    // if ( state.currentNavbarFooter && !bool){
+    //   dispatch('setRouteDivsVisibility', windowInfos.routeConfig)
+    // }
   },
 
   setRouteDivsVisibility({state, commit}, routeConfig){

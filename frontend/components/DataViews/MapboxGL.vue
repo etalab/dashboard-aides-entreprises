@@ -16,8 +16,9 @@
     :class="`map`"
     :trigger="`${trigger}`"
     :triggerVis="`${triggerVis}`"
-    :style="`height:${contentWindowHeight}px!important;max-height:${contentWindowHeight}px`"
+    :style="`height:${mapHeight}px!important;max-height:${mapHeight}px`"
   >
+    <!-- :style="`height:${contentWindowHeight}px!important;max-height:${contentWindowHeight}px`" -->
     <!-- LOADER'S CSS -->
     <style type="text/css">
       .lds-roller div:after {
@@ -145,6 +146,7 @@ export default {
       dataViewType: "maps",
       viewConfig: undefined,
       canShow : undefined,
+      mapHeight : undefined,
 
       showLoader: true,
 
@@ -186,17 +188,16 @@ export default {
 
     map(next, prev) {
       if (next && !prev) {
+        this.handleResize()
         this.log && console.log("C-MapboxGL / watch - map - is created ")
         let storeSourcesArray = this.sources.filter((s) => s.from === "store")
         let urlSourcesArray = this.sources.filter((s) => s.from === "url")
         this.loadStoreSources(storeSourcesArray)
-        // .then(() => {
         this.loadUrlSources(urlSourcesArray).then(() => {
           this.loadLayers(this.layers)
           this.loadClicEvents(this.maps)
           this.showLoader = false
         })
-        // })
       }
     },
 
@@ -204,6 +205,15 @@ export default {
       // this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
       this.resetZoom()
     },
+  },
+
+  created() {
+    this.log && console.log("C-MapboxGL / created ...")
+    window.addEventListener("resize", this.handleResize)
+  },
+
+  destroyed() {
+    window.removeEventListener("resize", this.handleResize)
   },
 
   beforeMount() {
@@ -214,6 +224,7 @@ export default {
     // set up view config
     this.viewConfig = this.getLocalConfig
     // this.log && console.log("C-MapboxGL / dataset / this.viewConfig : ", this.viewConfig)
+    this.handleResize()
 
 
     // set div visibility in store
@@ -259,6 +270,7 @@ export default {
 
   mounted() {
     this.log && console.log("C-MapboxGL / mounted ...")
+    this.handleResize()
     this.getCanShow()
   },
 
@@ -268,7 +280,8 @@ export default {
       locale: (state) => state.locale,
       mapUI: (state) => state.configUI.map,
       trigger: (state) => state.data.triggerChange,
-      triggerVis: (state) => state.triggerVisChange
+      triggerVis: (state) => state.triggerVisChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -305,9 +318,12 @@ export default {
       return height
     },
 
-    // map(){
-    //   return _map
-    // },
+    isMobileWidth() {
+      let breakpoints = this.mobileBreakpoints
+      let currentBreakpoint = this.$vuetify.breakpoint.name
+      return breakpoints.includes(currentBreakpoint)
+    },
+
   },
 
   methods: {
@@ -318,8 +334,40 @@ export default {
     getCanShow() {
       let breakpoint = this.$vuetify.breakpoint.name
       let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
-      this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
+      // this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
       this.canShow = isVisible
+    },
+
+    handleResize() {
+
+      let winHeight = window.innerHeight
+      // this.log && console.log("C-MapboxGL / handleResize ... winHeight : ", winHeight )
+
+      let mapHeight = winHeight
+      let navbarHeight = this.navbarHeight
+      // let getCurrentNavbarFooter = this.getCurrentNavbarFooter
+
+      if ( this.isMobileWidth ){
+        
+        var docNavbars = document.querySelectorAll(`.odm-navbar`)
+        // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
+        let docNavbarsArray = Array.prototype.slice.call( docNavbars )
+        let sumNavbarsHeights = docNavbarsArray.map(i => i.offsetHeight).reduce((prev, curr) => prev + curr, 0)
+        // this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
+
+        var docComponents = document.querySelectorAll(`.odm-colrow:not(.odm-colrow-map)`)
+        // this.log && console.log("C-MapboxGL / handleResize ... docComponents : ", docComponents )
+        let docComponentsArray = Array.prototype.slice.call( docComponents )
+        let sumComponentsHeights = docComponentsArray.map(i => i.offsetHeight).reduce((prev, curr) => prev + curr, 0)
+        // this.log && console.log("C-MapboxGL / handleResize ... sumComponentsHeights : ", sumComponentsHeights )
+
+        mapHeight = winHeight - sumNavbarsHeights - sumComponentsHeights //- navbarsHeights
+      } 
+      else {
+        mapHeight = winHeight - navbarHeight
+      }
+      // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
+      this.mapHeight = mapHeight
     },
 
     getCurrentZoom() {
@@ -618,6 +666,8 @@ export default {
                     //   break ;
                   }
                 }
+                this.handleResize()
+
               }
             })
           }
@@ -737,12 +787,14 @@ export default {
     // HIGHLIGHTS FUNCTIONS
 
     toggleHighlightOn(event, source) {
+      // this.log && console.log("\nC-MapboxGL / toggleHighlightOn ... " )
       // let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
       // if ( isFnInZoomRange ){
       // let mapbox = this.map
       let mapbox = _map
       const canvas = mapbox.getCanvas()
       canvas.style.cursor = "pointer"
+      this.log && console.log("C-MapboxGL / event.features : ", event.features )
       if (event.features.length > 0) {
         if (this.hoveredStateId[source] !== null) {
           mapbox.setFeatureState(
@@ -778,6 +830,7 @@ export default {
       let mapbox = _map
       // const canvas = mapbox.getCanvas()
       // canvas.style.cursor = 'pointer'
+      this.log && console.log("C-MapboxGL / event.features : ", event.features )
       if (event.features.length > 0) {
         if (this.selectedStateId[source] !== null) {
           mapbox.setFeatureState(

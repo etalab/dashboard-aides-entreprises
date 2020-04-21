@@ -121,7 +121,8 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
-      triggerVis: (state) => state.triggerVisChange
+      triggerVis: (state) => state.triggerVisChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -144,7 +145,7 @@ export default {
     },
 
     isMobileWidth() {
-      let breakpoints = ["xs", "sm"]
+      let breakpoints = this.mobileBreakpoints
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)
     },

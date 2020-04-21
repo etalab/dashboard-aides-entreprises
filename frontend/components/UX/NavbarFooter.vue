@@ -1,7 +1,10 @@
 <style scoped></style>
 
 <template>
-  <div v-if="getCurrentNavbarFooter">
+  <div 
+    v-if="getCurrentNavbarFooter"
+    :class="`odm-navbar odm-navbar-footer`"
+    >
     <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
     <v-bottom-navigation
       v-show="showCurrentNavbarFooter"
@@ -10,6 +13,7 @@
       :trigger="`${trigger}`"
       :value="bottomNav"
       :grow="navbarFooterConfig.grow"
+      :height="navbarFooterConfig.height"
       :shift="navbarFooterConfig.shift"
       color="primary"
     >

@@ -115,7 +115,6 @@ export default {
     },
 
     isMobileWidth() {
-      // let breakpoints = ["xs", "sm"]
       let breakpoints = this.mobileBreakpoints
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)

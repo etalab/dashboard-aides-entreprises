@@ -6,7 +6,7 @@
   <v-app-bar
     :clipped-left="clipped"
     :elevation="navbarUI.elevation"
-    :class="`${navbarUI.navbarClass}`"
+    :class="`odm-navbar ${navbarUI.navbarClass}`"
     fixed
     :color="navbarUI.color"
     :dark="navbarUI.dark"

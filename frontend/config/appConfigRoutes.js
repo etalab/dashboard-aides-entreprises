@@ -43,7 +43,7 @@ export const configAppRoutes = {
                   },
                 },
                 {
-                  component: "globalButton",
+                  component: "globalButtons",
                   activated: true,
                   smallScreenVerticalOrder: 1,
                   justify: "center",
@@ -194,7 +194,7 @@ export const configAppRoutes = {
                   },
                 },
                 {
-                  component: "globalButton",
+                  component: "globalButtons",
                   activated: true,
                   smallScreenVerticalOrder: 1,
                   justify: "center",
@@ -280,7 +280,7 @@ export const configAppRoutes = {
                   },
                 },
                 {
-                  component: "globalButton",
+                  component: "globalButtons",
                   activated: true,
                   smallScreenVerticalOrder: 1,
                   justify: "center",

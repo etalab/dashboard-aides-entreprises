@@ -119,7 +119,7 @@ export default {
 
     routeNavbarFooter() {
       let routeConf = this.routeConfig
-      return routeConf.navbarFooter
+      return routeConf && routeConf.navbarFooter
     },
 
     routeDrawer() {
