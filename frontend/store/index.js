@@ -269,17 +269,17 @@ export const actions = {
     // set window in store
     commit("setWindowSize", windowInfos)
     // set navvbarFooter visibility
+    let bool = false
     if (state.currentNavbarFooter) {
       let showOnSizes = state.currentNavbarFooter.showOnSizes
       let breakpointName = windowInfos.breakpointName
-      let bool = false
-      if (showOnSizes.includes(breakpointName)) {
-        bool = true
-      }
+      if (showOnSizes.includes(breakpointName)) { bool = true }
       commit("setNavbarFooterVisibility", bool)
     }
-    //set divs visibility
-    
+    // reset divs visibility to 
+    if ( state.currentNavbarFooter && !bool){
+      commit('setRouteDivsVisibility', windowInfos.routeConfig)
+    }
   },
 
   setRouteDivsVisibility({state, commit}, routeConfig){
@@ -303,18 +303,9 @@ export const actions = {
     }
   },
   toggleDivsVisibility({state, getters, commit}, btnConfig){
-    // console.log('\n ---- ')
-    // state.log &&
-    //   console.log(
-    //     "\nS-index-A-toggleDivsVisibility / btnConfig : ",
-    //     btnConfig
-    //   )
+
     for (let divsToToggle of btnConfig.divsToToggle){
-      // state.log &&
-      //   console.log(
-      //     "\nS-index-A-toggleDivsVisibility / divsToToggle : ",
-      //     divsToToggle
-      //   )
+
       const toggle = divsToToggle.toggle
       const toggleVisibility = divsToToggle.toggleVisibility
 
@@ -326,20 +317,8 @@ export const actions = {
           isVisibleMobile : true,
           isVisibleDesktop : true,
         }
-        // state.log &&
-        //   console.log(
-        //     "S-index-A-toggleDivsVisibility / divRef : ",
-        //     divRef
-        //   )
 
         let isDiv = getters.getDivVisibility( divRef )
-        // state.log &&
-        //   console.log(
-        //     "S-index-A-toggleDivsVisibility / isDiv : ",
-        //     isDiv
-        //   )
-
-        // divRef = isDiv ? isDiv : divRef
 
         for (let vis of toggleVisibility) {
           
@@ -356,13 +335,7 @@ export const actions = {
               break;
           }
         }
-        // state.log &&
-        //   console.log(
-        //     "S-index-A-toggleDivsVisibility / divRef : ",
-        //     divRef
-        //   )
         commit('setDivVisibility', divRef)
-
       }
     }
   }

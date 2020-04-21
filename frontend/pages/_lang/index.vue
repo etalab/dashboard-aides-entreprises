@@ -252,10 +252,9 @@ export default {
         width: window.innerWidth,
         height: window.innerHeight,
         breakpointName: this.$vuetify.breakpoint.name,
-        routeId: this.routeConfig.id
+        routeConfig: this.routeConfig
       })
       this.$store.commit("toggleVisTrigger")
-
     },
   },
 }
