@@ -15,6 +15,7 @@
     :id="`map-${settings.id}`"
     :class="`map`"
     :trigger="`${trigger}`"
+    :triggerVis="`${triggerVis}`"
     :style="`height:${contentWindowHeight}px!important;max-height:${contentWindowHeight}px`"
   >
     <!-- LOADER'S CSS -->
@@ -137,12 +138,13 @@ export default {
 
   components: {},
 
-  props: ["settings"],
+  props: ["settings", "routeId"],
 
   data() {
     return {
       dataViewType: "maps",
       viewConfig: undefined,
+      canShow : undefined,
 
       showLoader: true,
 
@@ -177,6 +179,11 @@ export default {
   },
 
   watch: {
+
+    triggerVis(next, prev){
+      this.getCanShow()
+    },
+
     map(next, prev) {
       if (next && !prev) {
         this.log && console.log("C-MapboxGL / watch - map - is created ")
@@ -207,6 +214,11 @@ export default {
     // set up view config
     this.viewConfig = this.getLocalConfig
     // this.log && console.log("C-MapboxGL / dataset / this.viewConfig : ", this.viewConfig)
+
+
+    // set div visibility in store
+    this.$store.dispatch('setDivVisibility', this.settings)
+
 
     // set up MAPBOX options
     const mapOptionsRoute = this.viewConfig.map_options
@@ -247,6 +259,7 @@ export default {
 
   mounted() {
     this.log && console.log("C-MapboxGL / mounted ...")
+    this.getCanShow()
   },
 
   computed: {
@@ -255,6 +268,7 @@ export default {
       locale: (state) => state.locale,
       mapUI: (state) => state.configUI.map,
       trigger: (state) => state.data.triggerChange,
+      triggerVis: (state) => state.triggerVisChange
     }),
 
     ...mapGetters({
@@ -265,8 +279,9 @@ export default {
       getStoreSourceData: "data/getStoreSourceData",
       windowSize: "getWindowsSize",
       getCurrentNavbarFooter: "getCurrentNavbarFooter",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      // getCurrentBreakpoint: "getCurrentBreakpoint",
       getResetZoomTrigger: "maps/getResetZoomTrigger",
+      getDivCurrentVisibility: "getDivCurrentVisibility",
     }),
 
     // config
@@ -277,19 +292,6 @@ export default {
       }
       let localConfig = this.getDataViewConfig(viewId)
       return localConfig
-    },
-
-    canShow() {
-      let bool = true
-      // this.log && console.log("C-MapboxGL / canShow ... this.viewConfig : ", this.viewConfig )
-      // let noShowArray = this.viewConfig && this.viewConfig.notShownFor
-      let noShowArray = this.settings.notShownFor
-      // this.log && console.log("C-MapboxGL / canShow ... noShowArray : ", noShowArray )
-      if (noShowArray) {
-        let currentBreakpoint = this.getCurrentBreakpoint(this.windowSize.width)
-        bool = !noShowArray.includes(currentBreakpoint)
-      }
-      return bool
     },
 
     contentWindowHeight() {
@@ -312,6 +314,13 @@ export default {
     ...mapActions({
       setNestedData: "data/setNestedData",
     }),
+
+    getCanShow() {
+      let breakpoint = this.$vuetify.breakpoint.name
+      let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
+      this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
+      this.canShow = isVisible
+    },
 
     getCurrentZoom() {
       // let mapbox = this.map

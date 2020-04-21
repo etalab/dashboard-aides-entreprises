@@ -131,7 +131,7 @@ export default {
       selectFromDisplayedData: "data/selectFromDisplayedData",
       getSpecialStore: "data/getSpecialStore",
       windowSize: "getWindowsSize",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      // getCurrentBreakpoint: "getCurrentBreakpoint",
       getCurrentNavbarFooter: "getCurrentNavbarFooter",
       getActivatedCurrentNavbarFooter: "getActivatedCurrentNavbarFooter",
     }),
@@ -153,11 +153,11 @@ export default {
         easing: this.easing,
       }
     },
-
     showCurrentNavbarFooter() {
       let currentNavbarFooterOnSizes = this.getCurrentNavbarFooter.showOnSizes
       // this.log && console.log('C-NavbarFooter / showCurrentNavbarFooter / currentNavbarFooterOnSizes : ', currentNavbarFooterOnSizes)
-      let currentBreakpoint = this.getCurrentBreakpoint(this.windowSize.width)
+    //   let currentBreakpoint = this.getCurrentBreakpoint(this.windowSize.width)
+      let currentBreakpoint = this.$vuetify.breakpoint.name
       // this.log && console.log('C-NavbarFooter / showCurrentNavbarFooter / currentBreakpoint : ', currentBreakpoint)
       let bool = currentNavbarFooterOnSizes.includes(currentBreakpoint)
       // this.log && console.log('C-NavbarFooter / showCurrentNavbarFooter / bool : ', bool)
@@ -191,6 +191,11 @@ export default {
       if (btn.action == "goToUrl") {
         // router action
         this.$router.push(btn.toUrl)
+      }
+      if (btn.action == "toggleDivs") {
+        // router action
+        this.$store.dispatch('toggleDivsVisibility', btn)
+        this.$store.commit("toggleVisTrigger")
       }
     },
 

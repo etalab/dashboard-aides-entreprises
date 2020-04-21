@@ -6,13 +6,9 @@
     :id="`numbers-${settings.id}`"
     :class="`${settings.containerClass}`"
     :trigger="`${trigger}`"
+    :triggerVis="`${triggerVis}`"
   >
-    <!-- 
-    <div>
-      Numbers- settings.id : {{ settings.id  }} test
-    </div> 
-    -->
-
+    
     <v-divider v-if="viewConfig.dividers.before" />
 
     <v-row
@@ -75,18 +71,20 @@ export default {
 
   components: {},
 
-  props: ["settings"],
+  props: ["settings", "routeId"],
 
   data() {
     return {
       dataViewType: "numbers",
       viewConfig: undefined,
+      canShow: undefined,
     }
   },
 
   watch: {
-    // trigger(next, prev){
-    // }
+    triggerVis(next, prev){
+      this.getCanShow()
+    },
   },
 
   beforeMount() {
@@ -96,6 +94,7 @@ export default {
 
   mounted() {
     this.log && console.log("C-Numbers / mounted ...")
+    this.getCanShow()
   },
 
   computed: {
@@ -103,6 +102,7 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
+      triggerVis: (state) => state.triggerVisChange
     }),
 
     ...mapGetters({
@@ -111,7 +111,8 @@ export default {
       selectFromDisplayedData: "data/selectFromDisplayedData",
       getSpecialStore: "data/getSpecialStore",
       windowSize: "getWindowsSize",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      // getCurrentBreakpoint: "getCurrentBreakpoint",
+      getDivCurrentVisibility: "getDivCurrentVisibility",
     }),
 
     // config
@@ -122,15 +123,6 @@ export default {
       }
       let localConfig = this.getDataViewConfig(viewId)
       return localConfig
-    },
-
-    canShow() {
-      let bool = true
-      let noShowArray = this.viewConfig && this.viewConfig.notShowFor
-      if (noShowArray) {
-        let bool = noShowArray.includes(this.getCurrentBreakpoint)
-      }
-      return bool
     },
 
     isMobileWidth() {
@@ -144,6 +136,12 @@ export default {
     ...mapActions({
       // selectFromDisplayedData : 'data/selectFromDisplayedData',
     }),
+
+    getCanShow() {
+      let breakpoint = this.$vuetify.breakpoint.name
+      let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
+      this.canShow = isVisible
+    },
 
     getDisplayedData(paramsArray) {
       this.log && console.log("C-Numbers / getDisplayedData ...")

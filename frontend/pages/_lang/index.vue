@@ -6,9 +6,12 @@
 
 <template>
   <div
-    id="homepage"
+    :id="routeConfig.id"
     :style="`max-height:${contentWindowHeight}px;`"
+    :triggerVis="`${triggerVis}`"
   >
+    <!-- triggerVis: <code>{{triggerVis}}</code> -->
+    <!-- getDivVisibilityArray: <br><code>{{getDivVisibilityArray}}</code> -->
 
     <v-row
       v-for="(row, index) in routeConfig.pageRows"
@@ -28,7 +31,7 @@
             <!-- {{ contentWindowHeight }}  -->
             <!-- $vuetify.breakpoint.name : {{ $vuetify.breakpoint.name }}<br> -->
             <!-- $device : {{ $device }}<br> -->
-
+            
             <div
               :class="`${col.hasScrollbar ? 'has-scrollbar' : ''}`"
               :style="`${
@@ -49,36 +52,43 @@
                 <TextFrame
                   v-if="colRow.activated && colRow.component == 'text'"
                   :settings="colRow.settings"
+                  :routeId="routeConfig.id"
                 />
 
                 <GlobalButton
                   v-if="colRow.activated && colRow.component == 'globalButton'"
                   :settings="colRow.settings"
+                  :routeId="routeConfig.id"
                 />
 
                 <Numbers
                   v-if="colRow.activated && colRow.component == 'numbers'"
                   :settings="colRow.settings"
+                  :routeId="routeConfig.id"
                 />
 
                 <MapboxGL
                   v-if="colRow.activated && colRow.component == 'map'"
                   :settings="colRow.settings"
+                  :routeId="routeConfig.id"
                 />
 
                 <ApexChart
                   v-if="colRow.activated && colRow.component == 'apexchart'"
                   :settings="colRow.settings"
+                  :routeId="routeConfig.id"
                 />
 
                 <ChartJS
                   v-if="colRow.activated && colRow.component == 'chartjs'"
                   :settings="colRow.settings"
+                  :routeId="routeConfig.id"
                 />
 
                 <Table
                   v-if="colRow.activated && colRow.component == 'table'"
                   :settings="colRow.settings"
+                  :routeId="routeConfig.id"
                 />
               </v-row>
             </div>
@@ -160,7 +170,7 @@ export default {
           "P-Homepage / watch / getActivatedCurrentNavbarFooter ... fallback :",
           fallback
         )
-      this.$router.push(fallback)
+      // this.$router.push(fallback)
       // }
     },
   },
@@ -173,6 +183,10 @@ export default {
 
   destroyed() {
     window.removeEventListener("resize", this.handleResize)
+  },
+
+  beforeMount() {
+    this.$store.dispatch('setRouteDivsVisibility', this.routeConfig)
   },
 
   mounted() {
@@ -192,6 +206,8 @@ export default {
 
       navbarHeight: (state) => state.navbar.height,
       // currentNavbarFooter : state => state.currentNavbarFooter,
+      divsVisibility: (state) => state.divsVisibility,
+      triggerVis: (state) => state.triggerVisChange
     }),
 
     ...mapGetters({
@@ -201,6 +217,7 @@ export default {
       getCurrentNavbarFooter: "getCurrentNavbarFooter",
       getActivatedCurrentNavbarFooter: "getActivatedCurrentNavbarFooter",
       // isMobileWidth : 'isMobileWidth',
+      getDivVisibilityArray: "getDivVisibilityArray",
     }),
 
     contentWindowHeight() {
@@ -226,7 +243,11 @@ export default {
       this.setCurrentWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
+        breakpointName: this.$vuetify.breakpoint.name,
+        routeId: this.routeConfig.id
       })
+      this.$store.commit("toggleVisTrigger")
+
     },
   },
 }

@@ -60,7 +60,7 @@ export default {
 
   components: {},
 
-  props: ["settings"],
+  props: ["settings", "routeId"],
 
   data() {
     return {

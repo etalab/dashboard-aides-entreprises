@@ -11,6 +11,7 @@
     :id="`apexcharts-${settings.id}`"
     :class="`${settings.containerClass}`"
     :trigger="`${trigger}`"
+    :triggerVis="`${triggerVis}`"
   >
     <v-divider v-if="viewConfig.dividers.before" />
 
@@ -87,12 +88,13 @@ export default {
 
   components: {},
 
-  props: ["settings"],
+  props: ["settings", "routeId"],
 
   data() {
     return {
       dataViewType: "charts",
       viewConfig: undefined,
+      canShow: undefined,
 
       mappers: undefined,
 
@@ -103,9 +105,11 @@ export default {
   },
 
   watch: {
+    triggerVis(next, prev){
+      this.getCanShow()
+      // this.getSeries()
+    },
     trigger(next, prev) {
-      // this.log && console.log('C-ApexChart / watch / trigger / prev : ', prev )
-      // this.log && console.log('C-ApexChart / watch / trigger / next : ', next )
       this.getSeries()
     },
   },
@@ -122,6 +126,7 @@ export default {
   mounted() {
     this.log && console.log("C-ApexChart / mounted ...")
     // this.localSeries = this.getSeries()
+    this.getCanShow()
     this.getSeries()
   },
 
@@ -130,6 +135,7 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
+      triggerVis: (state) => state.triggerVisChange
     }),
 
     ...mapGetters({
@@ -138,7 +144,7 @@ export default {
       getSpecialStore: "data/getSpecialStore",
       getFromSpecialStoreData: "data/getFromSpecialStoreData",
       windowSize: "getWindowsSize",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      getDivCurrentVisibility: "getDivCurrentVisibility",
     }),
 
     // config
@@ -151,17 +157,15 @@ export default {
       return localConfig
     },
 
-    canShow() {
-      let bool = true
-      let noShowArray = this.viewConfig && this.viewConfig.notShowFor
-      if (noShowArray) {
-        let bool = noShowArray.includes(this.getCurrentBreakpoint)
-      }
-      return bool
-    },
   },
 
   methods: {
+    getCanShow() {
+      let breakpoint = this.$vuetify.breakpoint.name
+      let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
+      this.canShow = isVisible
+    },
+
     getSeries() {
       this.log && console.log("C-ApexChart / getSeries ... ")
       let specialStoreId = this.datasetMappers.specialStoreId

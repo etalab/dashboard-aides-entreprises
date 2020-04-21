@@ -49,7 +49,7 @@ export default {
     ChartBar,
   },
 
-  props: ["settings"],
+  props: ["settings", "routeId"],
 
   data() {
     return {
@@ -100,7 +100,8 @@ export default {
       let bool = true
       let noShowArray = this.viewConfig && this.viewConfig.notShowFor
       if (noShowArray) {
-        let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        // let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        let bool = noShowArray.includes(this.$vuetify.breakpoint.name)
       }
       return bool
     },

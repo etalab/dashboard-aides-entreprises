@@ -77,14 +77,15 @@ export default {
       getCurrentLocale: "getCurrentLocale",
       getSpecialStore: "data/getSpecialStore",
       windowSize: "getWindowsSize",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      // getCurrentBreakpoint: "getCurrentBreakpoint",
     }),
 
     canShow() {
       let bool = true
       let noShowArray = this.viewConfig && this.viewConfig.notShowFor
       if (noShowArray) {
-        let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        // let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        let bool = noShowArray.includes(this.$vuetify.breakpoint.name)
       }
       return bool
     },

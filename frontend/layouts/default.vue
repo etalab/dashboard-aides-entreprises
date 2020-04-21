@@ -75,26 +75,15 @@ export default {
   },
 
   data() {
-    return {
-      // window : {
-      //   width: 0,
-      //   height: 0
-      // }
-    }
+    return {}
   },
 
-  // created() {
-  //   window.addEventListener('resize', this.handleResize)
-  //   this.handleResize()
-  // },
-
-  // destroyed() {
-  //   window.removeEventListener('resize', this.handleResize)
+  // beforeMount() {
+  //   this.log && console.log("L-default / beforeMount ...")
   // },
 
   mounted() {
     this.log && console.log("L-default / mounted ...")
-    // this.handleResize()
   },
 
   head() {
@@ -140,18 +129,7 @@ export default {
 
   },
 
-  methods: {
-    // ...mapActions({
-    //   setCurrentWindowSize : 'setCurrentWindowSize',
-    // }),
-    // handleResize() {
-    //   this.window.width = window.innerWidt
-    //   this.window.height = window.innerHeight
-    //   this.setCurrentWindowSize( {
-    //     width : window.innerWidth,
-    //     height : window.innerHeight,
-    //   })
-    // },
-  },
+  methods: {},
+
 }
 </script>

@@ -6,18 +6,8 @@
     :id="`text-${settings.id}`"
     :class="`${settings.containerClass}`"
     :trigger="`${trigger}`"
+    :triggerVis="`${triggerVis}`"
   >
-    <!-- 
-    <div>
-      text- settings.id : {{ settings.id  }} test
-    </div> 
-    -->
-
-    <!-- 
-    <code>
-      {{ viewConfig }}
-    </code> 
-    -->
 
     <v-divider v-if="viewConfig.dividers.before" />
 
@@ -98,18 +88,23 @@ export default {
     RawHtml,
   },
 
-  props: ["settings"],
+  props: ["settings", "routeId"],
 
   data() {
     return {
       dataViewType: "texts",
       viewConfig: undefined,
+      canShow: undefined,
       rawHtmls: {},
       errorHtml: "<br><br>there is an <strong> Error </strong><br><br>",
     }
   },
 
-  watch: {},
+  watch: {
+    triggerVis(next, prev){
+      this.getCanShow()
+    },
+  },
 
   beforeMount() {
     // set up view config
@@ -118,6 +113,7 @@ export default {
 
   mounted() {
     this.log && console.log("C-TextFrame / mounted ...")
+    this.getCanShow()
   },
 
   computed: {
@@ -125,6 +121,7 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
+      triggerVis: (state) => state.triggerVisChange
     }),
 
     ...mapGetters({
@@ -133,7 +130,7 @@ export default {
       selectFromDisplayedData: "data/selectFromDisplayedData",
       getSpecialStore: "data/getSpecialStore",
       windowSize: "getWindowsSize",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      getDivCurrentVisibility: "getDivCurrentVisibility",
     }),
 
     // config
@@ -144,15 +141,6 @@ export default {
       }
       let localConfig = this.getDataViewConfig(viewId)
       return localConfig
-    },
-
-    canShow() {
-      let bool = true
-      let noShowArray = this.viewConfig && this.viewConfig.notShowFor
-      if (noShowArray) {
-        let bool = noShowArray.includes(this.getCurrentBreakpoint)
-      }
-      return bool
     },
 
     isMobileWidth() {
@@ -166,7 +154,11 @@ export default {
     ...mapActions({
       // selectFromDisplayedData : 'data/selectFromDisplayedData',
     }),
-
+    getCanShow() {
+      let breakpoint = this.$vuetify.breakpoint.name
+      let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
+      this.canShow = isVisible
+    },
     getDisplayedData(paramsArray) {
       this.log && console.log("C-TextFrame / getDisplayedData ...")
       let dataFromDisplayedData = this.selectFromDisplayedData(paramsArray)
