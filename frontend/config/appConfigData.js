@@ -190,7 +190,7 @@ export const configAppData = {
           from: "static",
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/naf"
           url: `${DATASETS_REPO_BASE}/taxonomies/nafs.json`,
-          backupUrl   : `${DATASETS_FOLDER}/prod/taxonomies/nafs.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/nafs.json`,
           displayed: false,
         },
         {
@@ -199,7 +199,7 @@ export const configAppData = {
           from: "static",
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/region"
           url: `${DATASETS_REPO_BASE}/taxonomies/regions.json`,
-          backupUrl   : `${DATASETS_FOLDER}/prod/taxonomies/regions.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/regions.json`,
           displayed: false,
         },
         {
@@ -208,7 +208,7 @@ export const configAppData = {
           from: "static",
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/departement"
           url: `${DATASETS_REPO_BASE}/taxonomies/departements.json`,
-          backupUrl  : `${DATASETS_FOLDER}/prod/taxonomies/departements.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/departements.json`,
           displayed: false,
         },
         {
@@ -217,7 +217,7 @@ export const configAppData = {
           from: "static",
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/classeeffectif"
           url: `${DATASETS_REPO_BASE}/taxonomies/classes-effectifs.json`,
-          backupUrl   : `${DATASETS_FOLDER}/prod/taxonomies/classes-effectifs.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/classes-effectifs.json`,
           displayed: false,
         },
 
@@ -239,7 +239,7 @@ export const configAppData = {
           help: "serie chiffres aides à la maille nationale",
           from: "static",
           url: `${DATASETS_REPO_BASE}/aides/aides-maille-national.json`,
-          backupUrl   : `${DATASETS_FOLDER}/prod/aides/aides-maille-national.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-national.json`,
           displayed: true,
           copyTo: [
             {
@@ -275,7 +275,7 @@ export const configAppData = {
           help: "serie chiffres aides à la maille regionale",
           from: "static",
           url: `${DATASETS_REPO_BASE}/aides/aides-maille-regional.json`,
-          backupUrl   : `${DATASETS_FOLDER}/prod/aides/aides-maille-regional.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-regional.json`,
           displayed: true,
         },
         {
@@ -283,7 +283,7 @@ export const configAppData = {
           help: "serie chiffres aides à la maille departementale",
           from: "static",
           url: `${DATASETS_REPO_BASE}/aides/aides-maille-departemental.json`,
-          backupUrl   : `${DATASETS_FOLDER}/prod/aides/aides-maille-departemental.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-departemental.json`,
           displayed: false,
         },
       ],
