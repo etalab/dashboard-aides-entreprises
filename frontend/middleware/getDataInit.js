@@ -30,7 +30,7 @@ const copyData = (respData, store, dataRef, log) => {
   }
 }
 
-export function storeData ( dataset, dataRef, resp, store, log ) {
+export function storeData(dataset, dataRef, resp, store, log) {
   // log && console.log('-MW- getDataInit / dataset.id', dataset.id,' / res :' , resp )
   dataset.data = resp.data
   store.commit("data/pushToInitData", dataset)
@@ -139,22 +139,30 @@ export default function ({ store, app, redirect }) {
         log && console.log("-MW- getDataInit / dataRef.from :", dataRef.from)
 
         // GET DATA AND STORE TO data/initData
-        let initDataFromUrlPromise = axios.get(dataRef.url)
-        .then((resp) => {
-          storeData ( dataset, dataRef, resp, store, log )
-        })
-        .catch((err) => {
-          console.log('-MW- getDataInit / error while loading from dataRef.url :', err)
-          console.log('-MW- trying to load fro backupUrl now...')
-          let backupPromises = []
-          let initDataFromBackupUrlPromise = axios.get(dataRef.backupUrl)
+        let initDataFromUrlPromise = axios
+          .get(dataRef.url)
           .then((resp) => {
-            console.log('-MW- trying to load fro backupUrl / initDataFromBackupUrlPromise / resp : ', resp)
-            storeData ( dataset, dataRef, resp, store, log )
+            storeData(dataset, dataRef, resp, store, log)
           })
-          backupPromises.push( initDataFromBackupUrlPromise )
-          return Promise.all(backupPromises)
-        })
+          .catch((err) => {
+            console.log(
+              "-MW- getDataInit / error while loading from dataRef.url :",
+              err
+            )
+            console.log("-MW- trying to load fro backupUrl now...")
+            let backupPromises = []
+            let initDataFromBackupUrlPromise = axios
+              .get(dataRef.backupUrl)
+              .then((resp) => {
+                console.log(
+                  "-MW- trying to load fro backupUrl / initDataFromBackupUrlPromise / resp : ",
+                  resp
+                )
+                storeData(dataset, dataRef, resp, store, log)
+              })
+            backupPromises.push(initDataFromBackupUrlPromise)
+            return Promise.all(backupPromises)
+          })
         promisesArray.push(initDataFromUrlPromise)
       }
     }

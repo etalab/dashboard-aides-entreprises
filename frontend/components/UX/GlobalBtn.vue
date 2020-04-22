@@ -1,26 +1,24 @@
 <style scoped></style>
 
 <template>
-
-    <v-btn
-      v-show="canShow"
-      :class="`${btn.btnClass}`"
-      :block="btn.block"
-      :icon="btn.icon"
-      :outlined="btn.outlined"
-      :fab="btn.fab"
-      :color="btn.color"
-      :large="isMobileWidth ? false : btn.large"
-      :small="isMobileWidth ? true : btn.small"
-      :dark="btn.dark"
-      :tile="btn.tile"
-      :rounded="btn.rounded"
-      :disabled="btn.disabled"
-      @click="runBtnFunctions(btn)"
-    >
-      {{ btn.title[locale] }}
-    </v-btn>
-
+  <v-btn
+    v-show="canShow"
+    :class="`${btn.btnClass}`"
+    :block="btn.block"
+    :icon="btn.icon"
+    :outlined="btn.outlined"
+    :fab="btn.fab"
+    :color="btn.color"
+    :large="isMobileWidth ? false : btn.large"
+    :small="isMobileWidth ? true : btn.small"
+    :dark="btn.dark"
+    :tile="btn.tile"
+    :rounded="btn.rounded"
+    :disabled="btn.disabled"
+    @click="runBtnFunctions(btn)"
+  >
+    {{ btn.title[locale] }}
+  </v-btn>
 </template>
 
 <script>
@@ -40,12 +38,12 @@ export default {
   },
 
   watch: {
-    trigger(next, prev){
+    trigger(next, prev) {
       this.getCanShow()
     },
-    canShow(next,prev){
+    canShow(next, prev) {
       this.$store.commit("buttons/toggleBtnTrigger")
-    }
+    },
   },
 
   beforeMount() {
@@ -83,15 +81,17 @@ export default {
       // selectFromDisplayedData : 'data/selectFromDisplayedData',
     }),
 
-    getCanShow(){
+    getCanShow() {
       let hideIfs = this.btn.hideIfs
       // this.log && console.log("C-GlobalBtn / canShow / this.getSpecialStore : ", this.getSpecialStore)
-      let boolsArray = [ true ]
-      if (hideIfs){
-        for (let hideIf of hideIfs){
-          let valueFromSpecialStore = this.getSpecialStore[ hideIf.specialStoreId ]
+      let boolsArray = [true]
+      if (hideIfs) {
+        for (let hideIf of hideIfs) {
+          let valueFromSpecialStore = this.getSpecialStore[
+            hideIf.specialStoreId
+          ]
           let tempBool = hideIf.value == valueFromSpecialStore
-          boolsArray.push( !tempBool )
+          boolsArray.push(!tempBool)
         }
       }
       let checker = boolsArray.every(Boolean)

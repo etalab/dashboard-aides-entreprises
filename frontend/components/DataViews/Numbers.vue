@@ -6,9 +6,8 @@
     :id="`numbers-${settings.id}`"
     :class="`${settings.containerClass}`"
     :trigger="`${trigger}`"
-    :triggerVis="`${triggerVis}`"
+    :trigger-vis="`${triggerVis}`"
   >
-    
     <v-divider v-if="viewConfig.dividers.before" />
 
     <v-row
@@ -23,28 +22,29 @@
         :class="`${col.colClass} ${isMobileWidth ? 'py-0 my-0' : ''}`"
         :cols="col.cols"
       >
-        <v-layout 
-          v-if="!isMobileWidth"
-          :class="`d-flex justify-center`"
-          >
+        <v-layout v-if="!isMobileWidth" :class="`d-flex justify-center`">
           <!-- NUMBER TITLE -->
           <p :class="`${col.titleClass} ${isMobileWidth ? 'mb-0' : 'mb-1'}`">
             {{ col.colTitle[locale] }}
           </p>
         </v-layout>
 
-        <v-layout 
-          :class="`d-flex justify-center `"
-        >
+        <v-layout :class="`d-flex justify-center `">
           <!-- NUMBER FROM DISPLAYED DATA -->
-          <p :class="`${col.numberClass} ${isMobileWidth ? col.sizeMobile + ' mb-2' : col.sizeDesktop }`">
+          <p
+            :class="`${col.numberClass} ${
+              isMobileWidth ? col.sizeMobile + ' mb-2' : col.sizeDesktop
+            }`"
+          >
             <!-- NUMBER TITLE -->
             <span v-if="isMobileWidth" class="caption">
               {{ col.colTitle[locale] }} :
             </span>
-            <span 
-              v-html="numToString(getSpecialStore[col.specialStoreId], col.format)"
-            ></span>
+            <span
+              v-html="
+                numToString(getSpecialStore[col.specialStoreId], col.format)
+              "
+            />
             {{ col.unit[locale] }}
           </p>
 
@@ -79,7 +79,7 @@ export default {
   },
 
   watch: {
-    triggerVis(next, prev){
+    triggerVis(next, prev) {
       this.getCanShow()
     },
   },
@@ -137,7 +137,10 @@ export default {
 
     getCanShow() {
       let breakpoint = this.$vuetify.breakpoint.name
-      let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
+      let isVisible = this.getDivCurrentVisibility({
+        div: { id: this.settings.id, routeId: this.routeId },
+        breakpoint: breakpoint,
+      })
       this.canShow = isVisible
     },
 
@@ -150,20 +153,27 @@ export default {
     numToString(data, format) {
       let number = data
       // this.log && console.log("C-Numbers / numToString / format : ", format)
-      if (format){
-        switch ( format.type ) {
-          case "float" : 
-            number = parseFloat( number );
-            break;
-          case "integer" : 
-            number = parseInt( number );
-            break;
+      if (format) {
+        switch (format.type) {
+          case "float":
+            number = parseFloat(number)
+            break
+          case "integer":
+            number = parseInt(number)
+            break
         }
       }
       // number = number.toLocaleString()
       number = number.toString()
-      if (format && format.sepComma){ number = number.replace(".", format.sepComma) }
-      if (format && format.sepThousands){ number = number.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1'+format.sepThousands) }
+      if (format && format.sepComma) {
+        number = number.replace(".", format.sepComma)
+      }
+      if (format && format.sepThousands) {
+        number = number.replace(
+          /(\d)(?=(\d{3})+(?!\d))/g,
+          "$1" + format.sepThousands
+        )
+      }
       // this.log && console.log("C-Numbers / numToString / number : ", number)
       return number
     },

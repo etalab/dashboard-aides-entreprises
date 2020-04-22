@@ -22,20 +22,20 @@
     <!-- LOADER'S CSS -->
     <style type="text/css">
       .lds-roller div:after {
-        content: " ";
-        display: block;
-        position: absolute;
-        width: {{ mapUI.loader.width }};
-        height: {{ mapUI.loader.height }};
-        border-radius: 50%;
-        background:  {{ mapUI.loader.color }};
-        margin: -3px 0 0 -3px;
+      content: " ";
+      display: block;
+      position: absolute;
+      width: {{ mapUI.loader.width }};
+      height: {{ mapUI.loader.height }};
+      border-radius: 50%;
+      background:  {{ mapUI.loader.color }};
+      margin: -3px 0 0 -3px;
       }
       .floating {
-        position: absolute;
-        z-index: 200;
-        top: 50%;
-        left: {{ isMobileWidth ? '35%' : '45%'}};
+      position: absolute;
+      z-index: 200;
+      top: 50%;
+      left: {{ isMobileWidth ? '35%' : '45%' }};
       }
     </style>
 
@@ -151,8 +151,8 @@ export default {
     return {
       dataViewType: "maps",
       viewConfig: undefined,
-      canShow : undefined,
-      mapHeight : undefined,
+      canShow: undefined,
+      mapHeight: undefined,
 
       showLoader: true,
 
@@ -187,13 +187,12 @@ export default {
   },
 
   watch: {
-
-    triggerVis(next, prev){
+    triggerVis(next, prev) {
       this.getCanShow()
       this.handleResize()
     },
 
-    triggerBtn(next, prev){
+    triggerBtn(next, prev) {
       this.handleResize()
     },
 
@@ -214,8 +213,8 @@ export default {
 
     getResetZoomTrigger(next, prev) {
       // this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
-     this.handleResize()
-     this.resetZoom()
+      this.handleResize()
+      this.resetZoom()
     },
   },
 
@@ -238,10 +237,8 @@ export default {
     // this.log && console.log("C-MapboxGL / dataset / this.viewConfig : ", this.viewConfig)
     this.handleResize()
 
-
     // set div visibility in store
-    this.$store.commit('setDivVisibility', this.settings)
-
+    this.$store.commit("setDivVisibility", this.settings)
 
     // set up MAPBOX options
     const mapOptionsRoute = this.viewConfig.map_options
@@ -336,7 +333,6 @@ export default {
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)
     },
-
   },
 
   methods: {
@@ -346,37 +342,43 @@ export default {
 
     getCanShow() {
       let breakpoint = this.$vuetify.breakpoint.name
-      let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
+      let isVisible = this.getDivCurrentVisibility({
+        div: { id: this.settings.id, routeId: this.routeId },
+        breakpoint: breakpoint,
+      })
       // this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
       this.canShow = isVisible
     },
 
     handleResize() {
-
       let winHeight = window.innerHeight
       // this.log && console.log("C-MapboxGL / handleResize ... winHeight : ", winHeight )
 
       let mapHeight = winHeight
       // let navbarHeight = this.navbarHeight
       // let getCurrentNavbarFooter = this.getCurrentNavbarFooter
-      
+
       var docNavbars = document.querySelectorAll(`.odm-navbar`)
       // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
-      let docNavbarsArray = Array.prototype.slice.call( docNavbars )
-      let sumNavbarsHeights = docNavbarsArray.map(i => i.offsetHeight).reduce((prev, curr) => prev + curr, 0)
+      let docNavbarsArray = Array.prototype.slice.call(docNavbars)
+      let sumNavbarsHeights = docNavbarsArray
+        .map((i) => i.offsetHeight)
+        .reduce((prev, curr) => prev + curr, 0)
       // this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
 
-      if ( this.isMobileWidth ){
-        
-        var docComponents = document.querySelectorAll(`.odm-colrow:not(.odm-colrow-map)`)
+      if (this.isMobileWidth) {
+        var docComponents = document.querySelectorAll(
+          `.odm-colrow:not(.odm-colrow-map)`
+        )
         // this.log && console.log("C-MapboxGL / handleResize ... docComponents : ", docComponents )
-        let docComponentsArray = Array.prototype.slice.call( docComponents )
-        let sumComponentsHeights = docComponentsArray.map(i => i.offsetHeight).reduce((prev, curr) => prev + curr, 0)
+        let docComponentsArray = Array.prototype.slice.call(docComponents)
+        let sumComponentsHeights = docComponentsArray
+          .map((i) => i.offsetHeight)
+          .reduce((prev, curr) => prev + curr, 0)
         // this.log && console.log("C-MapboxGL / handleResize ... sumComponentsHeights : ", sumComponentsHeights )
 
         mapHeight = winHeight - sumNavbarsHeights - sumComponentsHeights //- navbarsHeights
-      }
-      else {
+      } else {
         mapHeight = winHeight - sumNavbarsHeights
       }
       // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
@@ -777,8 +779,8 @@ export default {
         }
         this.fit(data)
         // if (this.isMobileWidth){
-          // let currentZoom = this.getCurrentZoom()
-          // mapbox.flyTo( {zoom : 9} )
+        // let currentZoom = this.getCurrentZoom()
+        // mapbox.flyTo( {zoom : 9} )
         // }
       }
     },
@@ -811,7 +813,11 @@ export default {
       let mapbox = _map
       const canvas = mapbox.getCanvas()
       canvas.style.cursor = "pointer"
-      this.log && console.log("C-MapboxGL / toggleHighlightOn / event.features : ", event.features )
+      this.log &&
+        console.log(
+          "C-MapboxGL / toggleHighlightOn / event.features : ",
+          event.features
+        )
       if (event.features.length > 0) {
         if (this.hoveredStateId[source] !== null) {
           mapbox.setFeatureState(
@@ -847,7 +853,11 @@ export default {
       let mapbox = _map
       // const canvas = mapbox.getCanvas()
       // canvas.style.cursor = 'pointer'
-      this.log && console.log("C-MapboxGL / toggleSelectedOn / event.features : ", event.features )
+      this.log &&
+        console.log(
+          "C-MapboxGL / toggleSelectedOn / event.features : ",
+          event.features
+        )
       if (event.features.length > 0) {
         if (this.selectedStateId[source] !== null) {
           mapbox.setFeatureState(

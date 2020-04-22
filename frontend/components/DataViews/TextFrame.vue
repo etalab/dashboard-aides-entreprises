@@ -6,9 +6,8 @@
     :id="`text-${settings.id}`"
     :class="`${settings.containerClass} ${isMobileWidth ? 'py-0' : ''}`"
     :trigger="`${trigger}`"
-    :triggerVis="`${triggerVis}`"
+    :trigger-vis="`${triggerVis}`"
   >
-
     <v-divider v-if="viewConfig.dividers.before" />
 
     <v-row
@@ -24,21 +23,21 @@
         :cols="col.cols"
       >
         <!-- TITLE -->
-        <v-layout 
-          :class="`justify-center`"
-        >
-          
+        <v-layout :class="`justify-center`">
           <!-- TEXT TITLE -->
           <h3 :class="`${isMobileWidth ? 'mb-0' : ''} ${col.colTitleClass} `">
             {{ col.colTitle[locale] }}
           </h3>
 
           <!-- TEXT FROM DISPLAYED DATA -->
-          <p :class="`${col.textClass} ${isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop }`">
-            
-            <span 
+          <p
+            :class="`${col.textClass} ${
+              isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
+            }`"
+          >
+            <span
               :class="`${col.textPrefixClass}`"
-              v-html="col.textPrefix[locale]" 
+              v-html="col.textPrefix[locale]"
             />
 
             <span
@@ -48,9 +47,9 @@
               {{ getSpecialStore[col.specialStoreId] }}
             </span>
 
-            <span 
+            <span
               :class="`${col.textSuffixClass}`"
-              v-html="col.textSuffix[locale]" 
+              v-html="col.textSuffix[locale]"
             />
           </p>
         </v-layout>
@@ -64,14 +63,22 @@
           >
             <!-- TEXT FROM DISPLAYED DATA -->
             <div v-if="!txt.fromUrl[locale]">
-              <p :class="`${col.textClass} ${isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop }`">
+              <p
+                :class="`${col.textClass} ${
+                  isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
+                }`"
+              >
                 <span v-if="txt.textContent" v-html="txt.textContent[locale]" />
               </p>
             </div>
 
             <!-- TEXT FROM DISTANT HTML FILE -->
             <div v-show="txt.fromUrl[locale]">
-              <p :class="`${col.textClass} ${isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop }`">
+              <p
+                :class="`${col.textClass} ${
+                  isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
+                }`"
+              >
                 <RawHtml :template-u-r-l="txt.fromUrl[locale]" />
               </p>
             </div>
@@ -111,7 +118,7 @@ export default {
   },
 
   watch: {
-    triggerVis(next, prev){
+    triggerVis(next, prev) {
       this.getCanShow()
     },
   },
@@ -167,7 +174,10 @@ export default {
     }),
     getCanShow() {
       let breakpoint = this.$vuetify.breakpoint.name
-      let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
+      let isVisible = this.getDivCurrentVisibility({
+        div: { id: this.settings.id, routeId: this.routeId },
+        breakpoint: breakpoint,
+      })
       this.canShow = isVisible
     },
     getDisplayedData(paramsArray) {

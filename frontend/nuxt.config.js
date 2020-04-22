@@ -190,7 +190,7 @@ export default {
     "@nuxtjs/axios",
     "nuxt-i18n",
     // '~/modules/objectFromPath',
-    '@nuxtjs/device',
+    "@nuxtjs/device",
   ],
 
   i18n: {

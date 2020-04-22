@@ -1,10 +1,7 @@
 <style scoped></style>
 
 <template>
-  <div 
-    v-if="getCurrentNavbarFooter"
-    :class="`odm-navbar odm-navbar-footer`"
-    >
+  <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`">
     <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
     <v-bottom-navigation
       v-show="showCurrentNavbarFooter"
@@ -160,7 +157,7 @@ export default {
     showCurrentNavbarFooter() {
       let currentNavbarFooterOnSizes = this.getCurrentNavbarFooter.showOnSizes
       // this.log && console.log('C-NavbarFooter / showCurrentNavbarFooter / currentNavbarFooterOnSizes : ', currentNavbarFooterOnSizes)
-    //   let currentBreakpoint = this.getCurrentBreakpoint(this.windowSize.width)
+      //   let currentBreakpoint = this.getCurrentBreakpoint(this.windowSize.width)
       let currentBreakpoint = this.$vuetify.breakpoint.name
       // this.log && console.log('C-NavbarFooter / showCurrentNavbarFooter / currentBreakpoint : ', currentBreakpoint)
       let bool = currentNavbarFooterOnSizes.includes(currentBreakpoint)
@@ -198,7 +195,7 @@ export default {
       }
       if (btn.action == "toggleDivs") {
         // router action
-        this.$store.dispatch('toggleDivsVisibility', btn)
+        this.$store.dispatch("toggleDivsVisibility", btn)
         this.$store.commit("toggleVisTrigger")
       }
     },

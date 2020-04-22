@@ -32,11 +32,11 @@
             <!-- {{ contentWindowHeight }}  -->
             <!-- $vuetify.breakpoint.name : {{ $vuetify.breakpoint.name }}<br> -->
             <!-- $device : {{ $device }}<br> -->
-            
+
             <div
               :class="`${col.hasScrollbar ? 'has-scrollbar' : ''}`"
               :style="`${
-                (col.hasScrollbar || isMobileWidth)
+                col.hasScrollbar || isMobileWidth
                   ? 'max-height:' + contentWindowHeight() + 'px'
                   : ''
               }`"
@@ -48,48 +48,48 @@
                 no-gutters
                 :justify="colRow.justify"
                 :align="colRow.align"
-                :class="`odm-colrow odm-colrow-${ colRow.component } ${colRow.class}`"
+                :class="`odm-colrow odm-colrow-${colRow.component} ${colRow.class}`"
               >
                 <TextFrame
                   v-if="colRow.activated && colRow.component == 'text'"
                   :settings="colRow.settings"
-                  :routeId="routeConfig.id"
+                  :route-id="routeConfig.id"
                 />
 
                 <GlobalButtons
                   v-if="colRow.activated && colRow.component == 'globalButtons'"
                   :settings="colRow.settings"
-                  :routeId="routeConfig.id"
+                  :route-id="routeConfig.id"
                 />
 
                 <Numbers
                   v-if="colRow.activated && colRow.component == 'numbers'"
                   :settings="colRow.settings"
-                  :routeId="routeConfig.id"
+                  :route-id="routeConfig.id"
                 />
 
                 <MapboxGL
                   v-if="colRow.activated && colRow.component == 'map'"
                   :settings="colRow.settings"
-                  :routeId="routeConfig.id"
+                  :route-id="routeConfig.id"
                 />
 
                 <ApexChart
                   v-if="colRow.activated && colRow.component == 'apexchart'"
                   :settings="colRow.settings"
-                  :routeId="routeConfig.id"
+                  :route-id="routeConfig.id"
                 />
 
                 <ChartJS
                   v-if="colRow.activated && colRow.component == 'chartjs'"
                   :settings="colRow.settings"
-                  :routeId="routeConfig.id"
+                  :route-id="routeConfig.id"
                 />
 
                 <Table
                   v-if="colRow.activated && colRow.component == 'table'"
                   :settings="colRow.settings"
-                  :routeId="routeConfig.id"
+                  :route-id="routeConfig.id"
                 />
               </v-row>
             </div>
@@ -187,7 +187,7 @@ export default {
   },
 
   beforeMount() {
-    this.$store.dispatch('setRouteDivsVisibility', this.routeConfig)
+    this.$store.dispatch("setRouteDivsVisibility", this.routeConfig)
   },
 
   mounted() {
@@ -227,7 +227,6 @@ export default {
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)
     },
-
   },
 
   methods: {
@@ -254,7 +253,7 @@ export default {
         height: window.innerHeight,
         breakpointName: this.$vuetify.breakpoint.name,
         isMobile: this.$device,
-        routeConfig: this.routeConfig
+        routeConfig: this.routeConfig,
       })
       this.$store.commit("toggleVisTrigger")
     },

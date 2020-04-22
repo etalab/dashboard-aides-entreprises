@@ -4,7 +4,7 @@
     <DynamicCSS />
 
     <!-- LEFT DRAWER -->
-    <Drawer v-if="routeDrawer"/>
+    <Drawer v-if="routeDrawer" />
 
     <!-- NAVBAR -->
     <Navbar />
@@ -126,10 +126,8 @@ export default {
       let configUX = this.configUX
       return configUX.hasDrawer
     },
-
   },
 
   methods: {},
-
 }
 </script>

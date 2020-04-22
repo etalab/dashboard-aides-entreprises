@@ -6,19 +6,15 @@
     :class="`${settings.containerClass} ${isMobileWidth ? 'py-0' : ''}`"
     :trigger="`${trigger}`"
   >
-
     <v-divider v-if="viewConfig.dividers.before" />
 
     <v-row :class="`${viewConfig.btnsRowClass} ${isMobileWidth ? 'my-0' : ''}`">
-      
       <div
         v-for="(btn, index) in viewConfig.componentButtons"
         :id="'B' + btn.id + index"
         :key="'B' + btn.id + index"
       >
-        <GlobalBtn
-          :btn="btn"
-        />
+        <GlobalBtn :btn="btn" />
         <!-- <v-btn
           v-show="canShow(btn)"
           :class="`${btn.btnClass}`"
@@ -38,7 +34,6 @@
           {{ btn.title[locale] }}
         </v-btn> -->
       </div>
-
     </v-row>
 
     <v-divider v-if="getLocalConfig.dividers.after" />
@@ -65,8 +60,7 @@ export default {
     }
   },
 
-  watch: {
-  },
+  watch: {},
 
   beforeMount() {
     // set up view config

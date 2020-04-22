@@ -17,9 +17,8 @@ export const configAppUIUX = {
 
   // UX
   UX_config: {
+    hasDrawer: false,
 
-    hasDrawer : false,
-    
     mobileBreakpoints: ["xs", "sm"],
 
     navbar: {

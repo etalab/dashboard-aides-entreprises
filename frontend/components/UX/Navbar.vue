@@ -11,7 +11,7 @@
     :color="navbarUI.color"
     :dark="navbarUI.dark"
     :height="isMobileWidth ? navbarUX.mobileHeight : navbarUX.height"
-    :triggerVis="`${triggerVis}`"
+    :trigger-vis="`${triggerVis}`"
     app
   >
     <!-- DRAWER -->
@@ -41,8 +41,10 @@
 
     <!-- NAVBAR TITLE -->
     <v-spacer />
-    <v-toolbar-title 
-      :class="`${navbarUI.titleClass} ${isMobileWidth ? navbarUI.sizeMobile : navbarUI.sizeDesktop }`"
+    <v-toolbar-title
+      :class="`${navbarUI.titleClass} ${
+        isMobileWidth ? navbarUI.sizeMobile : navbarUI.sizeDesktop
+      }`"
     >
       {{ appTitle[locale] }}
     </v-toolbar-title>
@@ -120,7 +122,6 @@ export default {
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)
     },
-
   },
 
   methods: {

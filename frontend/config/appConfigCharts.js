@@ -130,9 +130,9 @@ export const configAppCharts = {
           xaxis: {
             type: "category",
             labels: {
-              show : false,
+              show: false,
               style: {
-                fontSize: '10px',
+                fontSize: "10px",
               },
             },
           },
@@ -149,18 +149,17 @@ export const configAppCharts = {
                 //   show: false,
                 // },
                 xaxis: {
-                  type: 'numeric',
+                  type: "numeric",
                   labels: {
-                    show : false,
+                    show: false,
                     style: {
-                      fontSize: '9px',
+                      fontSize: "9px",
                     },
                   },
                 },
-              }
-            }
+              },
+            },
           ],
-
         },
       },
 

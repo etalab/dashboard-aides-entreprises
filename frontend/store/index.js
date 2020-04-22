@@ -56,7 +56,6 @@ export const state = () => ({
 
   divsVisibility: [],
   triggerVisChange: 1,
-
 })
 
 export const getters = {
@@ -92,7 +91,9 @@ export const getters = {
     return state.divsVisibility
   },
   getDivVisibility: (state) => (div) => {
-    let divObject = state.divsVisibility.find( d => {return (d.id == div.id) && (d.routeId == div.routeId) })
+    let divObject = state.divsVisibility.find((d) => {
+      return d.id == div.id && d.routeId == div.routeId
+    })
     return divObject
   },
   getDivCurrentVisibility: (state, getters) => (div) => {
@@ -102,11 +103,11 @@ export const getters = {
 
     let divObject = getters.getDivVisibility(div.div)
     // state.log && console.log("S-index-G-getDivCurrentVisibility / divObject : ", divObject )
-    
+
     let mobileBreakpoints = state.configUX.mobileBreakpoints
     // state.log && console.log("S-index-G-getDivCurrentVisibility / mobileBreakpoints : ", mobileBreakpoints )
 
-    if ( mobileBreakpoints.includes(breakpoint) ){
+    if (mobileBreakpoints.includes(breakpoint)) {
       return divObject.isVisibleMobile
     } else {
       return divObject.isVisibleDesktop
@@ -177,7 +178,6 @@ export const getters = {
     // state.log && console.log("S-index-G-getCurrentBreakpoint / breakpointName : ", breakpointName)
     return breakpointName
   },
-
 }
 
 export const mutations = {
@@ -209,15 +209,15 @@ export const mutations = {
   },
 
   // DIVS VISIBILITY
-  setDivVisibility(state, divRef){
+  setDivVisibility(state, divRef) {
     // state.log && console.log("S-index-M-setDivVisibility / divRef : ", divRef)
     // let isDivInArray = state.divsVisibility.find( d => {return (d.id == divRef.id) && (d.routeId == divRef.routeId) })
-    let divIdx = state.divsVisibility.findIndex( d => {
-      return (d.id == divRef.id) && (d.routeId == divRef.routeId) 
+    let divIdx = state.divsVisibility.findIndex((d) => {
+      return d.id == divRef.id && d.routeId == divRef.routeId
     })
     // state.log && console.log("S-index-M-setDivVisibility / divIdx : ", divIdx)
-    if ( divIdx > -1 ){
-      state.divsVisibility[ divIdx ] = divRef
+    if (divIdx > -1) {
+      state.divsVisibility[divIdx] = divRef
       // isDivInArray = divRef
     } else {
       state.divsVisibility.push(divRef)
@@ -261,72 +261,72 @@ export const actions = {
       // state.log && console.log("S-index-A-setCurrentWindowSize / bool : ", bool)
       let showOnSizes = state.currentNavbarFooter.showOnSizes
       let breakpointName = windowInfos.breakpointName
-      if (showOnSizes.includes(breakpointName)) { bool = true }
+      if (showOnSizes.includes(breakpointName)) {
+        bool = true
+      }
       commit("setNavbarFooterVisibility", bool)
     }
     // reset divs visibility to defaults if desktop
-    if ( !(state.currentNavbarFooter && state.currentNavbarFooter.activated) || !bool) {
+    if (
+      !(state.currentNavbarFooter && state.currentNavbarFooter.activated) ||
+      !bool
+    ) {
       // state.log && console.log("S-index-A-setCurrentWindowSize / @ bool : ", bool)
-      dispatch('setRouteDivsVisibility', windowInfos.routeConfig)
+      dispatch("setRouteDivsVisibility", windowInfos.routeConfig)
     }
   },
 
-  setRouteDivsVisibility({state, commit}, routeConfig){
-    for ( let row of routeConfig.pageRows ){
+  setRouteDivsVisibility({ state, commit }, routeConfig) {
+    for (let row of routeConfig.pageRows) {
       const rowId = row.id
-      for ( let col of row.columns ){
+      for (let col of row.columns) {
         const colId = col.id
-        for ( let colRow of col.colRows ){
+        for (let colRow of col.colRows) {
           let div = {
-            routeId : routeConfig.id,
-            rowId : rowId,
-            colId : colId,
-            id : colRow.settings.id,
-            isVisibleMobile : colRow.settings.mobileIsVisibleDefault,
-            isVisibleDesktop : colRow.settings.desktopIsVisibleDefault,
+            routeId: routeConfig.id,
+            rowId: rowId,
+            colId: colId,
+            id: colRow.settings.id,
+            isVisibleMobile: colRow.settings.mobileIsVisibleDefault,
+            isVisibleDesktop: colRow.settings.desktopIsVisibleDefault,
           }
           // state.log && console.log("S-index-A-setRouteDivsVisibility / div : ", div)
-          commit('setDivVisibility', div)
+          commit("setDivVisibility", div)
         }
       }
     }
   },
-  toggleDivsVisibility({state, getters, commit}, btnConfig){
-
-    for (let divsToToggle of btnConfig.divsToToggle){
-
+  toggleDivsVisibility({ state, getters, commit }, btnConfig) {
+    for (let divsToToggle of btnConfig.divsToToggle) {
       const toggle = divsToToggle.toggle
       const toggleVisibility = divsToToggle.toggleVisibility
 
-      for ( let div of divsToToggle.divIds) {
-
-        let divRef = { 
-          id: div, 
+      for (let div of divsToToggle.divIds) {
+        let divRef = {
+          id: div,
           routeId: divsToToggle.routeId,
-          isVisibleMobile : true,
-          isVisibleDesktop : true,
+          isVisibleMobile: true,
+          isVisibleDesktop: true,
         }
 
-        let isDiv = getters.getDivVisibility( divRef )
+        let isDiv = getters.getDivVisibility(divRef)
 
         for (let vis of toggleVisibility) {
-          
           let value
-          switch (toggle){
-            case 'on':
-              divRef[ vis ] = true
-              break;
-            case 'off':
-              divRef[ vis ] = false
-              break;
-            case 'toggle':
-              divRef[ vis ] = !isDiv[ vis ]
-              break;
+          switch (toggle) {
+            case "on":
+              divRef[vis] = true
+              break
+            case "off":
+              divRef[vis] = false
+              break
+            case "toggle":
+              divRef[vis] = !isDiv[vis]
+              break
           }
         }
-        commit('setDivVisibility', divRef)
+        commit("setDivVisibility", divRef)
       }
     }
-  }
-
+  },
 }

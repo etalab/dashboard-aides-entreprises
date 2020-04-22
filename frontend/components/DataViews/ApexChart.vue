@@ -2,25 +2,23 @@
 .custom-min-height {
   min-height: 300px;
 }
-.hide{
+.hide {
   display: none;
 }
 </style>
 
 <template>
   <v-container
+    v-show="canShow"
     :id="`apexcharts-${settings.id}`"
     :trigger="`${trigger}`"
     :class="`${settings.containerClass}`"
-    :triggerVis="`${triggerVis}`"
-    v-show="canShow"
+    :trigger-vis="`${triggerVis}`"
   >
     <v-divider v-if="viewConfig.dividers.before" />
 
     <v-layout justify-center>
-
       <div :class="`${viewConfig.chartTitleClass}`">
-
         <span v-if="viewConfig.titlePreffixSpecialStoreId">
           {{ getSpecialStore[viewConfig.titlePreffixSpecialStoreId] }}
         </span>
@@ -31,13 +29,9 @@
           {{ getSpecialStore[viewConfig.titleSuffixSpecialStoreId] }}
         </span>
       </div>
-
     </v-layout>
 
-
-    <v-layout justify-center 
-      :class="`custom-min-height`"
-    >
+    <v-layout justify-center :class="`custom-min-height`">
       <apexchart
         v-if="canShow && localChartOptions && localSeries"
         :ref="settings.id"
@@ -49,7 +43,12 @@
       />
     </v-layout>
 
-    <v-divider v-if="!( isMobileWidth && viewConfig.dividers.afterHideOnMobile ) && viewConfig.dividers.after" />
+    <v-divider
+      v-if="
+        !(isMobileWidth && viewConfig.dividers.afterHideOnMobile) &&
+          viewConfig.dividers.after
+      "
+    />
   </v-container>
 </template>
 
@@ -81,24 +80,26 @@ export default {
   },
 
   watch: {
-    canShow(next,prev){
+    canShow(next, prev) {
       // this.log && console.log("- ".repeat(10))
       // this.log && console.log("C-ApexChart / watch - canShow / next : ", next)
-      if (next){ 
+      if (next) {
         let promisesArray = []
-        let chart = this.$refs[ this.settings.id ]
+        let chart = this.$refs[this.settings.id]
         this.localSeries = this.getSeries()
         // this.log && console.log("\nC-ApexChart / watch - canShow / this.localSeries : ", this.localSeries)
       }
     },
-    triggerVis(next, prev){
+    triggerVis(next, prev) {
       // this.log && console.log("C-ApexChart / watch - triggerVis / next : ", next)
       this.getCanShow()
     },
     trigger(next, prev) {
       // this.log && console.log("C-ApexChart / watch - trigger / next : ", next)
       this.getCanShow()
-      if (this.canShow){ this.localSeries = this.getSeries() }
+      if (this.canShow) {
+        this.localSeries = this.getSeries()
+      }
     },
   },
 
@@ -109,7 +110,11 @@ export default {
     this.viewConfig = this.getLocalConfig
     this.datasetMappers = this.viewConfig.datasetMappers
     this.localChartOptions = this.datasetMappers.chartOptions
-    this.log && console.log("C-ApexChart / beforeMount / this.localChartOptions : ", this.localChartOptions)
+    this.log &&
+      console.log(
+        "C-ApexChart / beforeMount / this.localChartOptions : ",
+        this.localChartOptions
+      )
   },
 
   mounted() {
@@ -152,13 +157,15 @@ export default {
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)
     },
-
   },
 
   methods: {
     getCanShow() {
       let breakpoint = this.$vuetify.breakpoint.name
-      let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
+      let isVisible = this.getDivCurrentVisibility({
+        div: { id: this.settings.id, routeId: this.routeId },
+        breakpoint: breakpoint,
+      })
       this.canShow = isVisible
     },
 
@@ -219,7 +226,8 @@ export default {
         }
         dataSeries.push(dataSerie)
       }
-      this.log && console.log('C-ApexChart / getSeries / dataSeries : ', dataSeries )
+      this.log &&
+        console.log("C-ApexChart / getSeries / dataSeries : ", dataSeries)
       // this.log && console.log('C-ApexChart / getSeries / this.localChartOptions : ', this.localChartOptions )
       // this.log && console.log('C-ApexChart / getSeries / this.$refs[ this.settings.id ] : ', this.$refs[ this.settings.id ] )
 
@@ -228,7 +236,8 @@ export default {
     },
 
     getSpecialStoreData(params) {
-      this.log && console.log('C-ApexChart / getSpecialStoreData / params : ', params )
+      this.log &&
+        console.log("C-ApexChart / getSpecialStoreData / params : ", params)
       let obj = this.getFromSpecialStoreData({
         id: params.id,
         key: params.key,
@@ -237,10 +246,9 @@ export default {
       return obj
     },
 
-    updateSeries( dataset ){
+    updateSeries(dataset) {
       this.localSeries = dataset
     },
-
   },
 }
 </script>
