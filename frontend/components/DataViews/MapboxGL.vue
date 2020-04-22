@@ -228,7 +228,7 @@ export default {
 
 
     // set div visibility in store
-    this.$store.dispatch('setDivVisibility', this.settings)
+    this.$store.commit('setDivVisibility', this.settings)
 
 
     // set up MAPBOX options
@@ -794,7 +794,7 @@ export default {
       let mapbox = _map
       const canvas = mapbox.getCanvas()
       canvas.style.cursor = "pointer"
-      this.log && console.log("C-MapboxGL / event.features : ", event.features )
+      this.log && console.log("C-MapboxGL / toggleHighlightOn / event.features : ", event.features )
       if (event.features.length > 0) {
         if (this.hoveredStateId[source] !== null) {
           mapbox.setFeatureState(
@@ -830,7 +830,7 @@ export default {
       let mapbox = _map
       // const canvas = mapbox.getCanvas()
       // canvas.style.cursor = 'pointer'
-      this.log && console.log("C-MapboxGL / event.features : ", event.features )
+      this.log && console.log("C-MapboxGL / toggleSelectedOn / event.features : ", event.features )
       if (event.features.length > 0) {
         if (this.selectedStateId[source] !== null) {
           mapbox.setFeatureState(
