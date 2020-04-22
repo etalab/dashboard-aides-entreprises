@@ -10,6 +10,9 @@ output=`curl http://localhost:5000/lastupdate | head -n 1| cut -d $' ' -f2`
 mkdir aides/$output
 
 cp aides/aides* aides/$output
+cp aides/aides* ../../frontend/static/datasets/aides/prod/sectionape/
 
 curl http://localhost:5000/lastupdatehtml > last_update_data.txt
+
+cp last_update_data.txt ../../frontend/static/datasets/aides/prod/
 
