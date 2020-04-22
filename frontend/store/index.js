@@ -28,16 +28,7 @@ export const state = () => ({
 
   // NAVBAR - on basis vuetify create-nuxt-app
   navbar: process.env.CONFIG_APP.UX_config.navbar,
-  // navbar : {
-  //   clipped     :  process.env.CONFIG_APP.navbar.clipped,
-  //   drawer      :  process.env.CONFIG_APP.navbar.drawer,
-  //   fixed       :  process.env.CONFIG_APP.navbar.fixed,
-  //   miniVariant :  process.env.CONFIG_APP.navbar.miniVariant,
-  //   right       :  process.env.CONFIG_APP.navbar.right,
-  //   rightDrawer :  process.env.CONFIG_APP.navbar.rightDrawer,
-  //   items       : process.env.CONFIG_APP.navbar.items,
 
-  // },
   currentNavbarFooter: undefined,
   currentFooter: undefined,
 

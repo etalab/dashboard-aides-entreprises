@@ -4,7 +4,7 @@
   <v-container
     v-show="canShow"
     :id="`text-${settings.id}`"
-    :class="`${settings.containerClass}`"
+    :class="`${settings.containerClass} ${isMobileWidth ? 'py-1' : ''}`"
     :trigger="`${trigger}`"
     :triggerVis="`${triggerVis}`"
   >

@@ -15,53 +15,25 @@
     :triggerVis="`${triggerVis}`"
     v-show="canShow"
   >
-    <!-- :class="`${canShow? '' : 'hide'} ${settings.containerClass}`" -->
     <v-divider v-if="viewConfig.dividers.before" />
 
     <v-layout justify-center>
-      <!-- {{ windowSize }} -->
 
       <div :class="`${viewConfig.chartTitleClass}`">
-        <!-- {{ trigger }}
-        ///  -->
-        <!-- {{ $t( viewConfig.titleI18n ) }} -->
 
         <span v-if="viewConfig.titlePreffixSpecialStoreId">
           {{ getSpecialStore[viewConfig.titlePreffixSpecialStoreId] }}
         </span>
 
         <span v-html="viewConfig.chartTitle[locale]" />
-        <!-- {{ viewConfig.chartTitle[ locale ] }} -->
 
         <span v-if="viewConfig.titleSuffixSpecialStoreId">
           {{ getSpecialStore[viewConfig.titleSuffixSpecialStoreId] }}
         </span>
       </div>
 
-      <!-- DEBUGGING -->
-      <!-- <div justify-center>
-        <code>
-          localChartOptions : 
-          {{ localChartOptions }}
-        </code>
-      </div> -->
-
-      <!-- DEBUGGING -->
-      <!-- <div justify-center>
-        <code>
-          localSeries : 
-          {{ localSeries }}
-        </code>
-      </div> -->
     </v-layout>
 
-    <!-- DEBUGGING -->
-    <!-- <v-layout>
-      <code>
-        getSpecialStore[ 'focusObject']  : <br>
-        {{ getSpecialStore[ 'focusObject' ][ 'kpi_top_10_naf' ] }}
-      </code> 
-    </v-layout> -->
 
     <v-layout justify-center 
       :class="`custom-min-height`"
@@ -77,9 +49,7 @@
       />
     </v-layout>
 
-    <!-- {{ localChartOptions }} -->
-
-    <v-divider v-if="viewConfig.dividers.after" />
+    <v-divider v-if="!( isMobileWidth && viewConfig.dividers.afterHideOnMobile ) && viewConfig.dividers.after" />
   </v-container>
 </template>
 
@@ -154,7 +124,8 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
-      triggerVis: (state) => state.triggerVisChange
+      triggerVis: (state) => state.triggerVisChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -174,6 +145,12 @@ export default {
       }
       let localConfig = this.getDataViewConfig(viewId)
       return localConfig
+    },
+
+    isMobileWidth() {
+      let breakpoints = this.mobileBreakpoints
+      let currentBreakpoint = this.$vuetify.breakpoint.name
+      return breakpoints.includes(currentBreakpoint)
     },
 
   },

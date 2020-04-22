@@ -14,7 +14,7 @@ export const configAppNavbarFooters = {
       titleI18n: "navbars.footer.title",
       navbarFooterClass: "",
 
-      height: 64,
+      height: 70,
       grow: true,
       shift: true,
       showOnSizes: ["xs", "sm"],

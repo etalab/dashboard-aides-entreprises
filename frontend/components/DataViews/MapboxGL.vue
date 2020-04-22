@@ -22,14 +22,20 @@
     <!-- LOADER'S CSS -->
     <style type="text/css">
       .lds-roller div:after {
-      content: " ";
-      display: block;
-      position: absolute;
-      width: {{ mapUI.loader.width }};
-      height: {{ mapUI.loader.height }};
-      border-radius: 50%;
-      background:  {{ mapUI.loader.color }};
-      margin: -3px 0 0 -3px;
+        content: " ";
+        display: block;
+        position: absolute;
+        width: {{ mapUI.loader.width }};
+        height: {{ mapUI.loader.height }};
+        border-radius: 50%;
+        background:  {{ mapUI.loader.color }};
+        margin: -3px 0 0 -3px;
+      }
+      .floating {
+        position: absolute;
+        z-index: 200;
+        top: 50%;
+        left: {{ isMobileWidth ? '35%' : '50%'}};
       }
     </style>
 
@@ -187,9 +193,13 @@ export default {
       this.handleResize()
     },
 
+    triggerBtn(next, prev){
+      this.handleResize()
+    },
+
     map(next, prev) {
+      this.handleResize()
       if (next && !prev) {
-        this.handleResize()
         this.log && console.log("C-MapboxGL / watch - map - is created ")
         let storeSourcesArray = this.sources.filter((s) => s.from === "store")
         let urlSourcesArray = this.sources.filter((s) => s.from === "url")
@@ -283,6 +293,7 @@ export default {
       mapUI: (state) => state.configUI.map,
       trigger: (state) => state.data.triggerChange,
       triggerVis: (state) => state.triggerVisChange,
+      triggerBtn: (state) => state.buttons.triggerBtnChange,
       mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
@@ -951,12 +962,6 @@ export default {
 }
 
 /* LOADERS */
-.floating {
-  position: absolute;
-  z-index: 200;
-  top: 50%;
-  left: 50%;
-}
 
 /* from : https://loading.io/css/ */
 .lds-roller {

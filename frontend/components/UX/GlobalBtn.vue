@@ -42,6 +42,9 @@ export default {
   watch: {
     trigger(next, prev){
       this.getCanShow()
+    },
+    canShow(next,prev){
+      this.$store.commit("buttons/toggleBtnTrigger")
     }
   },
 
@@ -76,7 +79,7 @@ export default {
 
     getCanShow(){
       let hideIfs = this.btn.hideIfs
-      this.log && console.log("C-GlobalBtn / canShow / this.getSpecialStore : ", this.getSpecialStore)
+      // this.log && console.log("C-GlobalBtn / canShow / this.getSpecialStore : ", this.getSpecialStore)
       let boolsArray = [ true ]
       if (hideIfs){
         for (let hideIf of hideIfs){
@@ -104,6 +107,7 @@ export default {
             break
         }
       }
+      this.$store.commit("buttons/toggleBtnTrigger")
     },
   },
 }

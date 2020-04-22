@@ -37,6 +37,7 @@ export const configAppCharts = {
       dividers: {
         before: false,
         after: true,
+        afterHideOnMobile: true,
       },
 
       datasetMappers: {
@@ -68,22 +69,6 @@ export const configAppCharts = {
             },
           },
         ],
-
-        // series: [
-        //   { data: [
-        //     {
-        //       x: 'Apple',
-        //       y: 54
-        //     },
-        //     {
-        //       x: 'Orange',
-        //       y: 66
-        //     }
-        //   ],}
-        // ],
-        // xaxis: {
-        //   type: 'category'
-        // }
 
         chartOptions: {
           chart: {
@@ -154,6 +139,7 @@ export const configAppCharts = {
               breakpoint: 960,
               options: {
                 chart: {
+                  height: "350px",
                   width: "350px",
                 },
                 // legend: {
