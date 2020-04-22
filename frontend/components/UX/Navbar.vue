@@ -7,10 +7,10 @@
     :clipped-left="clipped"
     :elevation="navbarUI.elevation"
     :class="`odm-navbar ${navbarUI.navbarClass}`"
-    fixed
+    :fixed="fixed"
     :color="navbarUI.color"
     :dark="navbarUI.dark"
-    :height="navbarUX.height"
+    :height="isMobileWidth ? navbarUX.height : navbarUX.mobileHeight"
     app
   >
     <!-- DRAWER -->

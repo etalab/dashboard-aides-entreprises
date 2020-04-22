@@ -354,7 +354,7 @@ export default {
     handleResize() {
 
       let winHeight = window.innerHeight
-      this.log && console.log("C-MapboxGL / handleResize ... winHeight : ", winHeight )
+      // this.log && console.log("C-MapboxGL / handleResize ... winHeight : ", winHeight )
 
       let mapHeight = winHeight
       // let navbarHeight = this.navbarHeight
@@ -375,11 +375,11 @@ export default {
         // this.log && console.log("C-MapboxGL / handleResize ... sumComponentsHeights : ", sumComponentsHeights )
 
         mapHeight = winHeight - sumNavbarsHeights - sumComponentsHeights //- navbarsHeights
-      } 
+      }
       else {
         mapHeight = winHeight - sumNavbarsHeights
       }
-      this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
+      // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
       this.mapHeight = mapHeight
     },
 

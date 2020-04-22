@@ -131,6 +131,9 @@ export const configAppCharts = {
             type: "category",
             labels: {
               show : false,
+              style: {
+                fontSize: '10px',
+              },
             },
           },
 
@@ -149,6 +152,9 @@ export const configAppCharts = {
                   type: 'numeric',
                   labels: {
                     show : false,
+                    style: {
+                      fontSize: '9px',
+                    },
                   },
                 },
               }

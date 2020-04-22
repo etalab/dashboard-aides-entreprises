@@ -252,13 +252,13 @@ export const mutations = {
 
 export const actions = {
   setCurrentWindowSize({ state, getters, commit, dispatch }, windowInfos) {
-    state.log && console.log("S-index-A-setCurrentWindowSize / windowInfos.breakpointName : ", windowInfos.breakpointName)
+    // state.log && console.log("S-index-A-setCurrentWindowSize / windowInfos.breakpointName : ", windowInfos.breakpointName)
     // set window in store
     commit("setWindowSize", windowInfos)
     // set navvbarFooter visibility
     let bool = false
     if (state.currentNavbarFooter) {
-      state.log && console.log("S-index-A-setCurrentWindowSize / bool : ", bool)
+      // state.log && console.log("S-index-A-setCurrentWindowSize / bool : ", bool)
       let showOnSizes = state.currentNavbarFooter.showOnSizes
       let breakpointName = windowInfos.breakpointName
       if (showOnSizes.includes(breakpointName)) { bool = true }
@@ -266,7 +266,7 @@ export const actions = {
     }
     // reset divs visibility to defaults if desktop
     if ( !(state.currentNavbarFooter && state.currentNavbarFooter.activated) || !bool) {
-      state.log && console.log("S-index-A-setCurrentWindowSize / @ bool : ", bool)
+      // state.log && console.log("S-index-A-setCurrentWindowSize / @ bool : ", bool)
       dispatch('setRouteDivsVisibility', windowInfos.routeConfig)
     }
   },

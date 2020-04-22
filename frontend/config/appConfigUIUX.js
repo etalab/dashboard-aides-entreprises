@@ -24,15 +24,16 @@ export const configAppUIUX = {
 
     navbar: {
       height: 64, // in pixels
+      mobileHeight: 45,
+
+      fixed: true,
+      fixedBtn: false,
 
       clipped: true,
       clippedBtn: false,
 
       drawer: false,
       drawerBtn: false,
-
-      fixed: false,
-      fixedBtn: false,
 
       miniVariant: true,
       miniVariantBtn: false,

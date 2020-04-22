@@ -33,9 +33,11 @@
           </p>
         </v-layout>
 
-        <v-layout :class="`d-flex justify-center`">
+        <v-layout 
+          :class="`d-flex justify-center `"
+        >
           <!-- NUMBER FROM DISPLAYED DATA -->
-          <p :class="`${col.numberClass}`">
+          <p :class="`${col.numberClass} ${isMobileWidth ? col.sizeMobile : col.sizeDesktop }`">
             <span 
               v-html="numToString(getSpecialStore[col.specialStoreId], col.format)"
             ></span>
