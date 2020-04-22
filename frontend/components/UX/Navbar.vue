@@ -40,7 +40,9 @@
 
     <!-- NAVBAR TITLE -->
     <v-spacer />
-    <v-toolbar-title :class="`${navbarUI.titleClass}`">
+    <v-toolbar-title 
+      :class="`${navbarUI.titleClass} ${isMobileWidth ? navbarUI.sizeMobile : navbarUI.sizeDesktop }`"
+    >
       {{ appTitle[locale] }}
     </v-toolbar-title>
     <v-spacer />
@@ -102,12 +104,21 @@ export default {
 
       rightDrawer: (state) => state.navbar.rightDrawer,
       rightDrawerBtn: (state) => state.navbar.rightDrawerBtn,
+
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
       getCurrentLocale: "getCurrentLocale",
       windowSize: "getWindowsSize",
     }),
+
+    isMobileWidth() {
+      let breakpoints = this.mobileBreakpoints
+      let currentBreakpoint = this.$vuetify.breakpoint.name
+      return breakpoints.includes(currentBreakpoint)
+    },
+
   },
 
   methods: {
