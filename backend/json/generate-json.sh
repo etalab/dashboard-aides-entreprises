@@ -14,5 +14,5 @@ cp aides/aides* ../../frontend/static/datasets/prod/aides/
 
 curl http://localhost:5000/lastupdatehtml > last_update_data.txt
 
-cp last_update_data.txt ../../frontend/static/datasets/prod/aides
+cp last_update_data.txt ../../frontend/static/datasets/prod
 
