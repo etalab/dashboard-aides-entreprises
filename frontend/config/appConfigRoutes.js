@@ -50,7 +50,7 @@ export const configAppRoutes = {
                   align: "center",
                   settings: {
                     id: "global-button-01",
-                    containerClass: "pt-0 mt-0",
+                    containerClass: "py-0 mt-0",
                     mobileIsVisibleDefault : true,
                     desktopIsVisibleDefault : true,
                   },

@@ -35,7 +35,7 @@
         position: absolute;
         z-index: 200;
         top: 50%;
-        left: {{ isMobileWidth ? '35%' : '50%'}};
+        left: {{ isMobileWidth ? '35%' : '45%'}};
       }
     </style>
 
@@ -347,27 +347,27 @@ export default {
     getCanShow() {
       let breakpoint = this.$vuetify.breakpoint.name
       let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
-      // this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
+      this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
       this.canShow = isVisible
     },
 
     handleResize() {
 
       let winHeight = window.innerHeight
-      // this.log && console.log("C-MapboxGL / handleResize ... winHeight : ", winHeight )
+      this.log && console.log("C-MapboxGL / handleResize ... winHeight : ", winHeight )
 
       let mapHeight = winHeight
-      let navbarHeight = this.navbarHeight
+      // let navbarHeight = this.navbarHeight
       // let getCurrentNavbarFooter = this.getCurrentNavbarFooter
+      
+      var docNavbars = document.querySelectorAll(`.odm-navbar`)
+      // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
+      let docNavbarsArray = Array.prototype.slice.call( docNavbars )
+      let sumNavbarsHeights = docNavbarsArray.map(i => i.offsetHeight).reduce((prev, curr) => prev + curr, 0)
+      // this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
 
       if ( this.isMobileWidth ){
         
-        var docNavbars = document.querySelectorAll(`.odm-navbar`)
-        // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
-        let docNavbarsArray = Array.prototype.slice.call( docNavbars )
-        let sumNavbarsHeights = docNavbarsArray.map(i => i.offsetHeight).reduce((prev, curr) => prev + curr, 0)
-        // this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
-
         var docComponents = document.querySelectorAll(`.odm-colrow:not(.odm-colrow-map)`)
         // this.log && console.log("C-MapboxGL / handleResize ... docComponents : ", docComponents )
         let docComponentsArray = Array.prototype.slice.call( docComponents )
@@ -377,9 +377,9 @@ export default {
         mapHeight = winHeight - sumNavbarsHeights - sumComponentsHeights //- navbarsHeights
       } 
       else {
-        mapHeight = winHeight - navbarHeight
+        mapHeight = winHeight - sumNavbarsHeights
       }
-      // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
+      this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
       this.mapHeight = mapHeight
     },
 
