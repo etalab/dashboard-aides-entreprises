@@ -20,7 +20,7 @@
         v-for="(col, i) in row.columns"
         :id="'R' + index + '-C' + i"
         :key="'R' + index + '-C' + i"
-        :class="`${col.colClass}`"
+        :class="`${col.colClass} ${isMobileWidth ? 'py-1' : ''}`"
         :cols="col.cols"
       >
         <!-- TITLE -->
