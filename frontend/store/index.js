@@ -273,9 +273,9 @@ export const actions = {
       commit("setNavbarFooterVisibility", bool)
     }
     // reset divs visibility to defaults if desktop
-    // if ( state.currentNavbarFooter && !bool){
-    //   dispatch('setRouteDivsVisibility', windowInfos.routeConfig)
-    // }
+    if ( state.currentNavbarFooter && !bool){
+      dispatch('setRouteDivsVisibility', windowInfos.routeConfig)
+    }
   },
 
   setRouteDivsVisibility({state, commit}, routeConfig){

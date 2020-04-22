@@ -89,7 +89,7 @@ export const configAppCharts = {
           chart: {
             type: "bar",
             height: "390px",
-            width: "450px",
+            width: "100%",
             toolbar: {
               show: false,
             },
