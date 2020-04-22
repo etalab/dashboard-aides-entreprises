@@ -135,11 +135,7 @@ export const configAppTexts = {
                 {
                   id: "miseAJour",
                   textClass: "justify-center mx-4 pt-3 pb-5 mb-5",
-                  textContent: {
-                    fr: `
-                    ${DATE_UPLOAD_DATA}
-                  `,
-                  },
+                  textContent: undefined,
                   fromUrl: {
                     fr: "https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/last_update_data.txt",
                     // fr: "/datasets/aides/prod/last_update_data.txt",
