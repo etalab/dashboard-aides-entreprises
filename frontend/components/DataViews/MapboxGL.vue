@@ -347,7 +347,7 @@ export default {
     getCanShow() {
       let breakpoint = this.$vuetify.breakpoint.name
       let isVisible = this.getDivCurrentVisibility( {div: {id: this.settings.id, routeId: this.routeId}, breakpoint: breakpoint})
-      this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
+      // this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
       this.canShow = isVisible
     },
 

@@ -105,7 +105,7 @@ export const configAppUIUX = {
       color: "primary",
       dark: true,
       titleClass: "white--text font-weight-black",
-      sizeDesktop: "display-1",
+      sizeDesktop: "headline",
       sizeMobile: "subtitle-1",
     },
 

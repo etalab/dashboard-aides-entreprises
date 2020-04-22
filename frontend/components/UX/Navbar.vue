@@ -10,7 +10,8 @@
     :fixed="fixed"
     :color="navbarUI.color"
     :dark="navbarUI.dark"
-    :height="isMobileWidth ? navbarUX.height : navbarUX.mobileHeight"
+    :height="isMobileWidth ? navbarUX.mobileHeight : navbarUX.height"
+    :triggerVis="`${triggerVis}`"
     app
   >
     <!-- DRAWER -->
@@ -105,6 +106,7 @@ export default {
       rightDrawer: (state) => state.navbar.rightDrawer,
       rightDrawerBtn: (state) => state.navbar.rightDrawerBtn,
 
+      triggerVis: (state) => state.triggerVisChange,
       mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 

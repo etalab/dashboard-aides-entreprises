@@ -82,21 +82,21 @@ export default {
 
   watch: {
     canShow(next,prev){
-      this.log && console.log("- ".repeat(10))
-      this.log && console.log("C-ApexChart / watch - canShow / next : ", next)
+      // this.log && console.log("- ".repeat(10))
+      // this.log && console.log("C-ApexChart / watch - canShow / next : ", next)
       if (next){ 
         let promisesArray = []
         let chart = this.$refs[ this.settings.id ]
         this.localSeries = this.getSeries()
-        this.log && console.log("\nC-ApexChart / watch - canShow / this.localSeries : ", this.localSeries)
+        // this.log && console.log("\nC-ApexChart / watch - canShow / this.localSeries : ", this.localSeries)
       }
     },
     triggerVis(next, prev){
-      this.log && console.log("C-ApexChart / watch - triggerVis / next : ", next)
+      // this.log && console.log("C-ApexChart / watch - triggerVis / next : ", next)
       this.getCanShow()
     },
     trigger(next, prev) {
-      this.log && console.log("C-ApexChart / watch - trigger / next : ", next)
+      // this.log && console.log("C-ApexChart / watch - trigger / next : ", next)
       this.getCanShow()
       if (this.canShow){ this.localSeries = this.getSeries() }
     },
