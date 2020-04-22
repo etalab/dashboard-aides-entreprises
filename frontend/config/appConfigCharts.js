@@ -89,7 +89,7 @@ export const configAppCharts = {
           chart: {
             type: "bar",
             height: "390px",
-            width: "100%",
+            width: "390px",
             toolbar: {
               show: false,
             },
@@ -144,7 +144,31 @@ export const configAppCharts = {
 
           xaxis: {
             type: "category",
+            labels: {
+              show : false,
+            },
           },
+
+          responsive: [
+            {
+              breakpoint: 960,
+              options: {
+                chart: {
+                  width: "350px",
+                },
+                // legend: {
+                //   show: false,
+                // },
+                xaxis: {
+                  type: 'numeric',
+                  labels: {
+                    show : false,
+                  },
+                },
+              }
+            }
+          ],
+
         },
       },
 

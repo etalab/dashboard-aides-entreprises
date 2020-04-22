@@ -23,9 +23,12 @@
         :class="`${col.colClass} ${isMobileWidth ? 'py-0 my-0' : ''}`"
         :cols="col.cols"
       >
-        <v-layout :class="`d-flex justify-center`">
+        <v-layout 
+          v-if="!isMobileWidth"
+          :class="`d-flex justify-center`"
+          >
           <!-- NUMBER TITLE -->
-          <p :class="`${col.titleClass} ${isMobileWidth ? 'mb-0' : ''}`">
+          <p :class="`${col.titleClass} ${isMobileWidth ? 'mb-0' : 'mb-1'}`">
             {{ col.colTitle[locale] }}
           </p>
         </v-layout>

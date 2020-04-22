@@ -24,15 +24,22 @@
         :cols="col.cols"
       >
         <!-- TITLE -->
-        <v-layout :class="`justify-center`">
+        <v-layout 
+          :class="`justify-center`"
+        >
+          
           <!-- TEXT TITLE -->
-          <h3 :class="`${col.colTitleClass} ${isMobileWidth ? 'mb-0' : ''}`">
+          <h3 :class="`${isMobileWidth ? 'mb-0' : ''} ${col.colTitleClass} `">
             {{ col.colTitle[locale] }}
           </h3>
 
           <!-- TEXT FROM DISPLAYED DATA -->
-          <p :class="`${col.textClass} ${isMobileWidth ? 'mb-0' : ''}`">
-            <span v-html="col.textPrefix[locale]" />
+          <p :class="`${col.textClass} ${isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop }`">
+            
+            <span 
+              :class="`${col.textPrefixClass}`"
+              v-html="col.textPrefix[locale]" 
+            />
 
             <span
               v-if="col.specialStoreId"
@@ -41,7 +48,10 @@
               {{ getSpecialStore[col.specialStoreId] }}
             </span>
 
-            <span v-html="col.textSuffix[locale]" />
+            <span 
+              :class="`${col.textSuffixClass}`"
+              v-html="col.textSuffix[locale]" 
+            />
           </p>
         </v-layout>
 
@@ -54,14 +64,14 @@
           >
             <!-- TEXT FROM DISPLAYED DATA -->
             <div v-if="!txt.fromUrl[locale]">
-              <p>
+              <p :class="`${col.textClass} ${isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop }`">
                 <span v-if="txt.textContent" v-html="txt.textContent[locale]" />
               </p>
             </div>
 
             <!-- TEXT FROM DISTANT HTML FILE -->
             <div v-show="txt.fromUrl[locale]">
-              <p>
+              <p :class="`${col.textClass} ${isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop }`">
                 <RawHtml :template-u-r-l="txt.fromUrl[locale]" />
               </p>
             </div>

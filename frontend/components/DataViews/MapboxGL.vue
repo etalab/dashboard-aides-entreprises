@@ -184,6 +184,7 @@ export default {
 
     triggerVis(next, prev){
       this.getCanShow()
+      this.handleResize()
     },
 
     map(next, prev) {
@@ -203,7 +204,8 @@ export default {
 
     getResetZoomTrigger(next, prev) {
       // this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
-      this.resetZoom()
+     this.handleResize()
+     this.resetZoom()
     },
   },
 
@@ -667,7 +669,6 @@ export default {
                   }
                 }
                 this.handleResize()
-
               }
             })
           }

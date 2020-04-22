@@ -1,7 +1,6 @@
 <style scoped>
 .custom-min-height {
   min-height: 300px;
-  min-width: 400px;
 }
 .hide{
   display: none;
