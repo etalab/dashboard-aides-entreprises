@@ -4,7 +4,7 @@
   <v-container
     v-show="canShow"
     :id="`text-${settings.id}`"
-    :class="`${settings.containerClass} ${isMobileWidth ? 'py-1' : ''}`"
+    :class="`${settings.containerClass} ${isMobileWidth ? 'py-0' : ''}`"
     :trigger="`${trigger}`"
     :triggerVis="`${triggerVis}`"
   >
@@ -20,7 +20,7 @@
         v-for="(col, i) in row.columns"
         :id="'R' + index + '-C' + i"
         :key="'R' + index + '-C' + i"
-        :class="`${col.colClass} ${isMobileWidth ? 'py-1' : ''}`"
+        :class="`${col.colClass} ${isMobileWidth ? 'py-0' : ''}`"
         :cols="col.cols"
       >
         <!-- TITLE -->

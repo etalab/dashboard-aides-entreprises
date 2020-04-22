@@ -37,7 +37,11 @@
           :class="`d-flex justify-center `"
         >
           <!-- NUMBER FROM DISPLAYED DATA -->
-          <p :class="`${col.numberClass} ${isMobileWidth ? col.sizeMobile : col.sizeDesktop }`">
+          <p :class="`${col.numberClass} ${isMobileWidth ? col.sizeMobile + ' mb-2' : col.sizeDesktop }`">
+            <!-- NUMBER TITLE -->
+            <span v-if="isMobileWidth" class="caption">
+              {{ col.colTitle[locale] }} :
+            </span>
             <span 
               v-html="numToString(getSpecialStore[col.specialStoreId], col.format)"
             ></span>

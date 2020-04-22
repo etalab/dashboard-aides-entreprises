@@ -776,6 +776,10 @@ export default {
           features: [geodata],
         }
         this.fit(data)
+        // if (this.isMobileWidth){
+          // let currentZoom = this.getCurrentZoom()
+          // mapbox.flyTo( {zoom : 9} )
+        // }
       }
     },
 
@@ -783,7 +787,8 @@ export default {
       // let mapbox = this.map
       let mapbox = _map
       var _bbox = bbox(geojson)
-      mapbox.fitBounds(_bbox, { padding: 20, animate: true })
+      let options = { padding: 20, animate: true }
+      mapbox.fitBounds(_bbox, options)
     },
 
     resetZoom() {

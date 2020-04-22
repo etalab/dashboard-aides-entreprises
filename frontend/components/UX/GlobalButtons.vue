@@ -3,7 +3,7 @@
 <template>
   <v-container
     :id="`globalButtons-${settings.id}`"
-    :class="`${settings.containerClass} ${isMobileWidth ? 'pb-0 mb-1' : ''}`"
+    :class="`${settings.containerClass} ${isMobileWidth ? 'py-0' : ''}`"
     :trigger="`${trigger}`"
   >
 

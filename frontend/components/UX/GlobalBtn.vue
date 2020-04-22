@@ -10,8 +10,8 @@
       :outlined="btn.outlined"
       :fab="btn.fab"
       :color="btn.color"
-      :large="btn.large"
-      :small="btn.small"
+      :large="isMobileWidth ? false : btn.large"
+      :small="isMobileWidth ? true : btn.small"
       :dark="btn.dark"
       :tile="btn.tile"
       :rounded="btn.rounded"
@@ -63,6 +63,7 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -70,6 +71,11 @@ export default {
       getSpecialStore: "data/getSpecialStore",
     }),
 
+    isMobileWidth() {
+      let breakpoints = this.mobileBreakpoints
+      let currentBreakpoint = this.$vuetify.breakpoint.name
+      return breakpoints.includes(currentBreakpoint)
+    },
   },
 
   methods: {
