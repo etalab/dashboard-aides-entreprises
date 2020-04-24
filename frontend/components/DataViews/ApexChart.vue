@@ -54,7 +54,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex"
-import { switchFormatFunctions, sortArrayBy } from "~/utils/utils.js"
+import { switchFormatFunctions, sortArrayBy, splitMulti } from "~/utils/utils.js"
 
 // ONLY DISPLAY DATA FROM data.specialStore
 
@@ -206,6 +206,14 @@ export default {
             if (mapper.buildAxisCategsX) {
               let settings = mapper.buildAxisCategsXsettings
               let categ = i[settings.fromKey]
+
+              if (settings.splitBy) {
+                categ = splitMulti(categ, settings.splitBy)
+                if (categ.length <= 1) {
+                  categ = categ.join("")
+                }
+              }
+
               // this.log && console.log('C-ApexChart / getSeries / categ : ', categ )
               let newValue = { x: categ, y: value }
               value = newValue
