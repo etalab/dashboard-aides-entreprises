@@ -58,7 +58,7 @@
       :class="`legend-block legend-bottom-right`"
     >
       <!-- DEBUGGING -->
-      <span v-if="log">footer fix v1.8</span>
+      <span v-if="log">v1.9 - fix apex sizes</span>
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
 

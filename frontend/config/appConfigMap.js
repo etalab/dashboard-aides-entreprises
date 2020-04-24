@@ -538,7 +538,7 @@ export const configAppMap = {
             // 'line-gap-width': 1,
             "line-dasharray": [2, 3],
           },
-          minzoom: ZOOM_THRESHOLD - 0.5,
+          minzoom: ZOOM_THRESHOLD,
         },
         {
           id: "departements-aides",
