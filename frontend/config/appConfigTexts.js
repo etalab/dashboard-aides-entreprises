@@ -130,7 +130,9 @@ export const configAppTexts = {
                     Pour obtenir d’autres informations relatives au fonds de solidarité, il est possible de 
                     consulter la page d’information disponible sur 
                     <a target="_blank" href="https://www.impots.gouv.fr/portail/">
-                      https://www.impots.gouv.fr/portail/</a>.
+                      https://www.impots.gouv.fr/portail/</a>. Les données utilisées sur ce tableau de bord 
+                    <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/aides-aux-entreprises-dans-le-cadre-de-lepidemie-de-covid-19-en-france/">
+                      sont disponibles sur data.gouv.fr</a>.
                   `,
                   },
                   fromUrl: {
