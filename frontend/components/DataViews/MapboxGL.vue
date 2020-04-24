@@ -59,7 +59,7 @@
     >
       <!-- DEBUGGING -->
       <!-- <b>{{ currentZoom }}</b> -->
-      this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b>
+      <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
 
       <!-- LAYERS SWITCH -->
       <div
@@ -399,7 +399,7 @@ export default {
       if (isMobileOrTablet){
         this.log && console.log("C-MapboxGL / handleResize ... this.$device : ", this.$device )
         const int = setInterval(() => {
-          window.scrollTo(0, 1000)
+          window.scrollTo(0, 0)
         }, 100)
       }
 
