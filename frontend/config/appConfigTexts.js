@@ -30,7 +30,7 @@ export const configAppTexts = {
               cols: 12,
               textClass: "",
               subTextClass: "",
-              sizeDesktop: "headline",
+              sizeDesktop: "headline mb-0",
               sizeMobile: "subtitle-1",
               textPrefix: { fr: "Aides versées : " },
               textPrefixClass: "font-weight-regular",

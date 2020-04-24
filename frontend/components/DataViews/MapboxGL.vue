@@ -57,6 +57,10 @@
       id="legend"
       :class="`legend-block legend-bottom-right`"
     >
+      <!-- DEBUGGING -->
+      <!-- <b>{{ currentZoom }}</b> -->
+      <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
+
       <!-- LAYERS SWITCH -->
       <div
         v-if="mapsVisibility && mapsVisibility.is_activated"
@@ -160,6 +164,7 @@ export default {
       map: undefined,
       originalCenter: undefined,
       originalZoom: undefined,
+      currentZoom: undefined,
 
       mapOptions: {
         mapStyle: undefined,
@@ -254,7 +259,7 @@ export default {
       zoom: mapOptionsRoute.zoom,
       maxZoom: mapOptionsRoute.maxZoom,
       minZoom: mapOptionsRoute.minZoom,
-      currentZoom: mapOptionsRoute.currentZoom,
+      // currentZoom: mapOptionsRoute.currentZoom,
       center: [mapOptionsRoute.center[1], mapOptionsRoute.center[0]],
       currentCenter: mapOptionsRoute.currentCenter,
     }
@@ -264,6 +269,7 @@ export default {
     this.sources = this.viewConfig.sources
     this.originalCenter = [mapOptionsRoute.center[1], mapOptionsRoute.center[0]]
     this.originalZoom = mapOptionsRoute.zoom
+    this.currentZoom = mapOptionsRoute.zoom
 
     // setup maps
     this.maps = this.viewConfig.maps
@@ -333,6 +339,7 @@ export default {
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)
     },
+
   },
 
   methods: {
@@ -383,6 +390,19 @@ export default {
       }
       // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
       this.mapHeight = mapHeight
+
+
+
+      // little hack to redraw window on safari IOS
+      let isMobileOrTablet = this.$device.isMobileOrTablet
+      // let isMobileOrTablet = true
+      if (isMobileOrTablet){
+        this.log && console.log("C-MapboxGL / handleResize ... this.$device : ", this.$device )
+        const int = setInterval(() => {
+          window.scrollTo(0, 0)
+        }, 100)
+      }
+
     },
 
     getCurrentZoom() {
@@ -391,6 +411,7 @@ export default {
 
       let currentZoom = mapbox.getZoom()
       // this.log && console.log("C-MapboxGL / getCurrentZoom ... currentZoom : ", currentZoom )
+      this.currentZoom = currentZoom
       return currentZoom
     },
 
@@ -813,11 +834,11 @@ export default {
       let mapbox = _map
       const canvas = mapbox.getCanvas()
       canvas.style.cursor = "pointer"
-      this.log &&
-        console.log(
-          "C-MapboxGL / toggleHighlightOn / event.features : ",
-          event.features
-        )
+      // this.log &&
+      //   console.log(
+      //     "C-MapboxGL / toggleHighlightOn / event.features : ",
+      //     event.features
+      //   )
       if (event.features.length > 0) {
         if (this.hoveredStateId[source] !== null) {
           mapbox.setFeatureState(
@@ -853,11 +874,11 @@ export default {
       let mapbox = _map
       // const canvas = mapbox.getCanvas()
       // canvas.style.cursor = 'pointer'
-      this.log &&
-        console.log(
-          "C-MapboxGL / toggleSelectedOn / event.features : ",
-          event.features
-        )
+      // this.log &&
+      //   console.log(
+      //     "C-MapboxGL / toggleSelectedOn / event.features : ",
+      //     event.features
+      //   )
       if (event.features.length > 0) {
         if (this.selectedStateId[source] !== null) {
           mapbox.setFeatureState(
