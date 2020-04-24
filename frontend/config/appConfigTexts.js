@@ -131,6 +131,7 @@ export const configAppTexts = {
                     consulter la page d’information 
                     <a target="_blank" href="https://www.impots.gouv.fr/portail/">
                       disponible sur impots.gouv.fr</a>. 
+                    <br><br>
                     Les données utilisées sur ce tableau de bord 
                     <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/aides-aux-entreprises-dans-le-cadre-de-lepidemie-de-covid-19-en-france/">
                       sont disponibles sur data.gouv.fr</a>.
