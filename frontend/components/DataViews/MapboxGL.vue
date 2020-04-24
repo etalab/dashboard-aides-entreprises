@@ -59,6 +59,7 @@
     >
       <!-- DEBUGGING -->
       <!-- <b>{{ currentZoom }}</b> -->
+      this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b>
 
       <!-- LAYERS SWITCH -->
       <div
@@ -258,7 +259,7 @@ export default {
       zoom: mapOptionsRoute.zoom,
       maxZoom: mapOptionsRoute.maxZoom,
       minZoom: mapOptionsRoute.minZoom,
-      currentZoom: mapOptionsRoute.currentZoom,
+      // currentZoom: mapOptionsRoute.currentZoom,
       center: [mapOptionsRoute.center[1], mapOptionsRoute.center[0]],
       currentCenter: mapOptionsRoute.currentCenter,
     }
@@ -389,6 +390,19 @@ export default {
       }
       // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
       this.mapHeight = mapHeight
+
+
+
+      // little hack to redraw window on safari IOS
+      let isMobileOrTablet = this.$device.isMobileOrTablet
+      // let isMobileOrTablet = true
+      if (isMobileOrTablet){
+        this.log && console.log("C-MapboxGL / handleResize ... this.$device : ", this.$device )
+        const int = setInterval(() => {
+          window.scrollTo(0, 1000)
+        }, 100)
+      }
+
     },
 
     getCurrentZoom() {

@@ -175,6 +175,7 @@ export default {
     // { src: '~/plugins/mapboxgl', mode: 'client' },
 
     { src: "~/plugins/apexCharts", mode: "client" },
+    { src: "~/plugins/matomo", mode: "client" },
   ],
 
   /*
