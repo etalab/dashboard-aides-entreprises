@@ -58,6 +58,7 @@
       :class="`legend-block legend-bottom-right`"
     >
       <!-- DEBUGGING -->
+      <span v-if="log">footer fix v1.8</span>
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
 
@@ -366,12 +367,12 @@ export default {
       // let getCurrentNavbarFooter = this.getCurrentNavbarFooter
 
       var docNavbars = document.querySelectorAll(`.odm-navbar`)
-      // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
+      this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
       let docNavbarsArray = Array.prototype.slice.call(docNavbars)
       let sumNavbarsHeights = docNavbarsArray
         .map((i) => i.offsetHeight)
         .reduce((prev, curr) => prev + curr, 0)
-      // this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
+      this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
 
       if (this.isMobileWidth) {
         var docComponents = document.querySelectorAll(
@@ -394,14 +395,14 @@ export default {
 
 
       // little hack to redraw window on safari IOS
-      let isMobileOrTablet = this.$device.isMobileOrTablet
-      // let isMobileOrTablet = true
-      if (isMobileOrTablet){
-        this.log && console.log("C-MapboxGL / handleResize ... this.$device : ", this.$device )
-        const int = setInterval(() => {
-          window.scrollTo(0, 0)
-        }, 100)
-      }
+      // let isMobileOrTablet = this.$device.isMobileOrTablet
+      // // let isMobileOrTablet = true
+      // if (isMobileOrTablet){
+      //   this.log && console.log("C-MapboxGL / handleResize ... this.$device : ", this.$device )
+      //   const int = setInterval(() => {
+      //     window.scrollTo(0, 0)
+      //   }, 100)
+      // }
 
     },
 

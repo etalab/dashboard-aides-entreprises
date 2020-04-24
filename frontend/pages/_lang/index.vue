@@ -97,13 +97,14 @@
         </v-col>
       </template>
     </v-row>
+
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex"
 
-import Filters from "~/components/DataViews/Filters.vue"
+// import Filters from "~/components/DataViews/Filters.vue"
 
 import MapboxGL from "~/components/DataViews/MapboxGL.vue"
 import Numbers from "~/components/DataViews/Numbers.vue"
@@ -117,7 +118,7 @@ export default {
   name: "Homepage",
 
   components: {
-    Filters,
+    // Filters,
     MapboxGL,
     Numbers,
     ChartJS,

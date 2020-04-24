@@ -1,36 +1,46 @@
-<style scoped></style>
+<style scoped>
+.footerAdjustClass {
+  margin-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+  margin-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
+}
+</style>
 
 <template>
-  <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`">
+  <!-- <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`"> -->
     <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
-    <v-bottom-navigation
-      v-show="showCurrentNavbarFooter"
-      :id="`navbar-footer-${settings.id}`"
-      :class="`${settings.navbarFooterClass}`"
-      :trigger="`${trigger}`"
-      :value="bottomNav"
-      :grow="navbarFooterConfig.grow"
-      :height="navbarFooterConfig.height"
-      :shift="navbarFooterConfig.shift"
-      color="primary"
+    <v-footer
+      v-if="getCurrentNavbarFooter && showCurrentNavbarFooter"
+      class="pa-0"
+      fixed
     >
-      <!-- {{ showCurrentNavbarFooter }} -->
-
-      <v-btn
-        v-for="btn in navbarFooterConfig.buttons"
-        :key="btn.value"
-        :value="btn.value"
-        @click.stop="goToRef(btn)"
+      <v-bottom-navigation
+        :id="`navbar-footer-${settings.id}`"
+        :class="`odm-navbar odm-navbar-footer ${settings.navbarFooterClass}`"
+        :trigger="`${trigger}`"
+        :value="bottomNav"
+        :grow="navbarFooterConfig.grow"
+        :height="navbarFooterConfig.height"
+        :shift="navbarFooterConfig.shift"
+        color="primary"
       >
-        <span>
-          {{ btn.title[locale] }}
-        </span>
-        <v-icon>
-          {{ btn.icon }}
-        </v-icon>
-      </v-btn>
-    </v-bottom-navigation>
-  </div>
+        <!-- {{ showCurrentNavbarFooter }} -->
+
+        <v-btn
+          v-for="btn in navbarFooterConfig.buttons"
+          :key="btn.value"
+          :value="btn.value"
+          @click.stop="goToRef(btn)"
+        >
+          <span>
+            {{ btn.title[locale] }}
+          </span>
+          <v-icon>
+            {{ btn.icon }}
+          </v-icon>
+        </v-btn>
+      </v-bottom-navigation>
+    </v-footer>
+  <!-- </div> -->
 </template>
 
 <script>

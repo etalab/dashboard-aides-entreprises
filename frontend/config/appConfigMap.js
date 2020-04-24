@@ -5,7 +5,7 @@
 // CONSTANTS
 
 // switch between facts on region / departement level
-const ZOOM_THRESHOLD = 5.5
+const ZOOM_THRESHOLD = 5.3
 // const ZOOM_THRESHOLD_BIS = 5.4
 
 // colors
