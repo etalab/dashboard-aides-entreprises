@@ -8,35 +8,37 @@
 <template>
   <!-- <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`"> -->
     <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
-    <v-bottom-navigation
-      v-if="getCurrentNavbarFooter && showCurrentNavbarFooter"
-      :id="`navbar-footer-${settings.id}`"
-      :class="`odm-navbar odm-navbar-footer ${settings.navbarFooterClass}`"
-      :trigger="`${trigger}`"
-      :value="bottomNav"
-      :grow="navbarFooterConfig.grow"
-      :height="navbarFooterConfig.height"
-      :shift="navbarFooterConfig.shift"
-      :absolute="true"
-      :fixed="true"
-      color="primary"
-    >
-      <!-- {{ showCurrentNavbarFooter }} -->
-
-      <v-btn
-        v-for="btn in navbarFooterConfig.buttons"
-        :key="btn.value"
-        :value="btn.value"
-        @click.stop="goToRef(btn)"
+    <v-footer>
+      <v-bottom-navigation
+        v-if="getCurrentNavbarFooter && showCurrentNavbarFooter"
+        :id="`navbar-footer-${settings.id}`"
+        :class="`odm-navbar odm-navbar-footer ${settings.navbarFooterClass}`"
+        :trigger="`${trigger}`"
+        :value="bottomNav"
+        :grow="navbarFooterConfig.grow"
+        :height="navbarFooterConfig.height"
+        :shift="navbarFooterConfig.shift"
+        :absolute="true"
+        :fixed="true"
+        color="primary"
       >
-        <span>
-          {{ btn.title[locale] }}
-        </span>
-        <v-icon>
-          {{ btn.icon }}
-        </v-icon>
-      </v-btn>
-    </v-bottom-navigation>
+        <!-- {{ showCurrentNavbarFooter }} -->
+
+        <v-btn
+          v-for="btn in navbarFooterConfig.buttons"
+          :key="btn.value"
+          :value="btn.value"
+          @click.stop="goToRef(btn)"
+        >
+          <span>
+            {{ btn.title[locale] }}
+          </span>
+          <v-icon>
+            {{ btn.icon }}
+          </v-icon>
+        </v-btn>
+      </v-bottom-navigation>
+    </v-footer>
   <!-- </div> -->
 </template>
 
