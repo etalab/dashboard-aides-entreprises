@@ -9,7 +9,7 @@
   <!-- <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`"> -->
     <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
     <v-bottom-navigation
-      v-show="showCurrentNavbarFooter"
+      v-if="getCurrentNavbarFooter && showCurrentNavbarFooter"
       :id="`navbar-footer-${settings.id}`"
       :class="`odm-navbar odm-navbar-footer ${settings.navbarFooterClass}`"
       :trigger="`${trigger}`"
