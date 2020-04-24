@@ -34,7 +34,7 @@ export const configAppNumbers = {
               textPrefix: { fr: "" },
               textSuffix: { fr: "" },
               specialStoreId: "montant",
-              format: { type: "float", sepComma: "," },
+              format: { type: "float", sepThousands: " ", sepComma: "," },
             },
 
             {
