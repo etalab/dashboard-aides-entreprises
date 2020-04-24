@@ -17,6 +17,8 @@
       :grow="navbarFooterConfig.grow"
       :height="navbarFooterConfig.height"
       :shift="navbarFooterConfig.shift"
+      :absolute="true"
+      :fixed="true"
       color="primary"
     >
       <!-- {{ showCurrentNavbarFooter }} -->
