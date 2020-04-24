@@ -8,9 +8,12 @@
 <template>
   <!-- <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`"> -->
     <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
-    <v-footer>
+    <v-footer
+      v-if="getCurrentNavbarFooter && showCurrentNavbarFooter"
+      class="pa-0"
+      fixed
+    >
       <v-bottom-navigation
-        v-if="getCurrentNavbarFooter && showCurrentNavbarFooter"
         :id="`navbar-footer-${settings.id}`"
         :class="`odm-navbar odm-navbar-footer ${settings.navbarFooterClass}`"
         :trigger="`${trigger}`"
@@ -18,8 +21,6 @@
         :grow="navbarFooterConfig.grow"
         :height="navbarFooterConfig.height"
         :shift="navbarFooterConfig.shift"
-        :absolute="true"
-        :fixed="true"
         color="primary"
       >
         <!-- {{ showCurrentNavbarFooter }} -->
