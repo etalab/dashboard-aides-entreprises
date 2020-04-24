@@ -20,7 +20,7 @@ export const configAppNumbers = {
           columns: [
             {
               colName: "",
-              colTitle: { fr: "montant total" },
+              colTitle: { fr: "montant" },
               titleI18n: "numbers.numbers01.amount",
               colClass: "",
               cols: 6,
@@ -34,7 +34,7 @@ export const configAppNumbers = {
               textPrefix: { fr: "" },
               textSuffix: { fr: "" },
               specialStoreId: "montant",
-              format: { type: "float", sepComma: "," },
+              format: { type: "float", sepThousands: " ", sepComma: "," },
             },
 
             {

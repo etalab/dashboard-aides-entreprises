@@ -5,7 +5,8 @@
 // CONSTANTS
 
 // switch between facts on region / departement level
-const ZOOM_THRESHOLD = 6
+const ZOOM_THRESHOLD = 5.5
+// const ZOOM_THRESHOLD_BIS = 5.4
 
 // colors
 const FR_GOUV_BLUE = "#000091"
@@ -371,9 +372,16 @@ export const configAppMap = {
             {
               event: "click",
               layer: "departements-fill",
-              // zoomRange : { minZoom : ZOOM_THRESHOLD, maxZoom : undefined },
               functions: [
-                { funcName: "toggleSelectedOn", funcParams: {} },
+                {
+                  funcName: "toggleSelectedOn",
+                  funcParams: {
+                    zoomRange: {
+                      minZoom: ZOOM_THRESHOLD,
+                      maxZoom: undefined,
+                    },
+                  },
+                },
 
                 // { funcName    : "goToPolygon",
                 //   funcParams  : {
@@ -385,7 +393,10 @@ export const configAppMap = {
                 {
                   funcName: "updateDisplayedData",
                   funcParams: {
-                    zoomRange: { minZoom: ZOOM_THRESHOLD, maxZoom: undefined },
+                    zoomRange: {
+                      minZoom: ZOOM_THRESHOLD,
+                      maxZoom: undefined,
+                    },
                     propName: "code",
                     targets: [
                       {
@@ -527,7 +538,7 @@ export const configAppMap = {
             // 'line-gap-width': 1,
             "line-dasharray": [2, 3],
           },
-          minzoom: ZOOM_THRESHOLD,
+          minzoom: ZOOM_THRESHOLD - 0.5,
         },
         {
           id: "departements-aides",
@@ -588,7 +599,7 @@ export const configAppMap = {
         mapStyle: "EtalabUrl",
         center: [46.2276, 2.2137],
         currentCenter: [46.2276, 2.2137],
-        zoom: 5,
+        zoom: 4.8,
         maxZoom: 8,
         minZoom: 2,
       },

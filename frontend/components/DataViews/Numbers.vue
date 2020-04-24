@@ -165,14 +165,14 @@ export default {
       }
       // number = number.toLocaleString()
       number = number.toString()
-      if (format && format.sepComma) {
-        number = number.replace(".", format.sepComma)
-      }
       if (format && format.sepThousands) {
         number = number.replace(
           /(\d)(?=(\d{3})+(?!\d))/g,
           "$1" + format.sepThousands
         )
+      }
+      if (format && format.sepComma) {
+        number = number.replace(".", format.sepComma)
       }
       // this.log && console.log("C-Numbers / numToString / number : ", number)
       return number
