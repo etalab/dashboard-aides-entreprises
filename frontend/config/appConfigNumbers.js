@@ -20,7 +20,7 @@ export const configAppNumbers = {
           columns: [
             {
               colName: "",
-              colTitle: { fr: "montant total" },
+              colTitle: { fr: "montant" },
               titleI18n: "numbers.numbers01.amount",
               colClass: "",
               cols: 6,

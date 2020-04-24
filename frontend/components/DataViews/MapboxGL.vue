@@ -57,6 +57,9 @@
       id="legend"
       :class="`legend-block legend-bottom-right`"
     >
+      <!-- DEBUGGING -->
+      <!-- <b>{{ currentZoom }}</b> -->
+
       <!-- LAYERS SWITCH -->
       <div
         v-if="mapsVisibility && mapsVisibility.is_activated"
@@ -160,6 +163,7 @@ export default {
       map: undefined,
       originalCenter: undefined,
       originalZoom: undefined,
+      currentZoom: undefined,
 
       mapOptions: {
         mapStyle: undefined,
@@ -264,6 +268,7 @@ export default {
     this.sources = this.viewConfig.sources
     this.originalCenter = [mapOptionsRoute.center[1], mapOptionsRoute.center[0]]
     this.originalZoom = mapOptionsRoute.zoom
+    this.currentZoom = mapOptionsRoute.zoom
 
     // setup maps
     this.maps = this.viewConfig.maps
@@ -333,6 +338,7 @@ export default {
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)
     },
+
   },
 
   methods: {
@@ -391,6 +397,7 @@ export default {
 
       let currentZoom = mapbox.getZoom()
       // this.log && console.log("C-MapboxGL / getCurrentZoom ... currentZoom : ", currentZoom )
+      this.currentZoom = currentZoom
       return currentZoom
     },
 
@@ -813,11 +820,11 @@ export default {
       let mapbox = _map
       const canvas = mapbox.getCanvas()
       canvas.style.cursor = "pointer"
-      this.log &&
-        console.log(
-          "C-MapboxGL / toggleHighlightOn / event.features : ",
-          event.features
-        )
+      // this.log &&
+      //   console.log(
+      //     "C-MapboxGL / toggleHighlightOn / event.features : ",
+      //     event.features
+      //   )
       if (event.features.length > 0) {
         if (this.hoveredStateId[source] !== null) {
           mapbox.setFeatureState(
@@ -853,11 +860,11 @@ export default {
       let mapbox = _map
       // const canvas = mapbox.getCanvas()
       // canvas.style.cursor = 'pointer'
-      this.log &&
-        console.log(
-          "C-MapboxGL / toggleSelectedOn / event.features : ",
-          event.features
-        )
+      // this.log &&
+      //   console.log(
+      //     "C-MapboxGL / toggleSelectedOn / event.features : ",
+      //     event.features
+      //   )
       if (event.features.length > 0) {
         if (this.selectedStateId[source] !== null) {
           mapbox.setFeatureState(
