@@ -58,6 +58,7 @@
       :class="`legend-block legend-bottom-right`"
     >
       <!-- DEBUGGING -->
+      footer fix v1.0
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
 
@@ -394,14 +395,14 @@ export default {
 
 
       // little hack to redraw window on safari IOS
-      let isMobileOrTablet = this.$device.isMobileOrTablet
-      // let isMobileOrTablet = true
-      if (isMobileOrTablet){
-        this.log && console.log("C-MapboxGL / handleResize ... this.$device : ", this.$device )
-        const int = setInterval(() => {
-          window.scrollTo(0, 0)
-        }, 100)
-      }
+      // let isMobileOrTablet = this.$device.isMobileOrTablet
+      // // let isMobileOrTablet = true
+      // if (isMobileOrTablet){
+      //   this.log && console.log("C-MapboxGL / handleResize ... this.$device : ", this.$device )
+      //   const int = setInterval(() => {
+      //     window.scrollTo(0, 0)
+      //   }, 100)
+      // }
 
     },
 

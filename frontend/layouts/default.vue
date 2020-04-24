@@ -1,3 +1,10 @@
+<style scoped>
+  body {
+    padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
+    padding-top: env(safe-area-inset-top); /* iOS 11.2 */
+  }
+</style>
+
 <template>
   <v-app>
     <!-- DYNAMIC CSS -->
@@ -11,12 +18,15 @@
 
     <!-- CONTENT LAYOUT -->
     <v-content id="layout-content">
+
       <Filters />
 
       <!-- <FiltersFeedback/> -->
       <v-container id="layout-container" fluid pa-0>
         <nuxt />
       </v-container>
+
+
     </v-content>
 
     <!-- RIGHT DRAWER -->
@@ -48,6 +58,7 @@
       v-if="routeNavbarFooter && routeNavbarFooter.activated"
       :settings="routeNavbarFooter.settings"
     />
+
   </v-app>
 </template>
 

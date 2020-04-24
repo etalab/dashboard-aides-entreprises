@@ -1,11 +1,16 @@
-<style scoped></style>
+<style scoped>
+.footerAdjustClass {
+  margin-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+  margin-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
+}
+</style>
 
 <template>
   <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`">
     <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
     <v-bottom-navigation
       v-show="showCurrentNavbarFooter"
-      :id="`navbar-footer-${settings.id}`"
+      :id="`footerAdjustClass navbar-footer-${settings.id}`"
       :class="`${settings.navbarFooterClass}`"
       :trigger="`${trigger}`"
       :value="bottomNav"
