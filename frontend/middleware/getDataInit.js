@@ -30,6 +30,53 @@ const copyData = (respData, store, dataRef, log) => {
   }
 }
 
+export function storeData(dataset, dataRef, resp, store, log) {
+  // log && console.log('-MW- getDataInit / dataset.id', dataset.id,' / res :' , resp )
+  dataset.data = resp.data
+  store.commit("data/pushToInitData", dataset)
+
+  // COPY IT TO data/displayedData
+  if (dataRef.displayed) {
+    store.commit("data/pushToDisplayedData", dataset)
+  }
+
+  // COPY A SLICE TO ...
+  if (dataRef.copyTo && dataRef.copyTo.length > 0) {
+    // copyData( resp, store, dataRef, log )
+
+    for (let dataCopy of dataRef.copyTo) {
+      log &&
+        console.log(
+          "\n... -MW- getDataInit / dataset.id : ",
+          dataset.id,
+          " / dataCopy.fieldToCopy :",
+          dataCopy.fieldToCopy
+        )
+
+      // get source data
+      const sourceObject = resp.data[dataCopy.from.objectRef]
+      const value = sourceObject
+      if (dataCopy.fieldToCopy) {
+        value = sourceObject && sourceObject[dataCopy.fieldToCopy]
+      }
+      if (dataCopy.format) {
+        value = switchFormatFunctions(value, dataCopy.format)
+      }
+      // log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / value :' , value )
+
+      let targetData = {
+        value: value,
+        specialStoreId: dataCopy.toSpecialStore,
+      }
+
+      // log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / targetData :' , targetData )
+
+      store.dispatch("data/setNestedData", targetData)
+      // store.commit('data/setDeepNestedData', targetData )
+    }
+  }
+}
+
 export default function ({ store, app, redirect }) {
   let log = store.state.log
   let baseUrl = store.state.data.backendApi
@@ -92,55 +139,30 @@ export default function ({ store, app, redirect }) {
         log && console.log("-MW- getDataInit / dataRef.from :", dataRef.from)
 
         // GET DATA AND STORE TO data/initData
-        let initDataFromUrlPromise = axios.get(dataRef.url).then((resp) => {
-          // log && console.log('-MW- getDataInit / dataset.id', dataset.id,' / res :' , resp )
-          dataset.data = resp.data
-          store.commit("data/pushToInitData", dataset)
-
-          // COPY IT TO data/displayedData
-          if (dataRef.displayed) {
-            store.commit("data/pushToDisplayedData", dataset)
-          }
-
-          // COPY A SLICE TO ...
-          if (dataRef.copyTo && dataRef.copyTo.length > 0) {
-            // copyData( resp, store, dataRef, log )
-
-            for (let dataCopy of dataRef.copyTo) {
-              log &&
+        let initDataFromUrlPromise = axios
+          .get(dataRef.url)
+          .then((resp) => {
+            storeData(dataset, dataRef, resp, store, log)
+          })
+          .catch((err) => {
+            console.log(
+              "-MW- getDataInit / error while loading from dataRef.url :",
+              err
+            )
+            console.log("-MW- trying to load fro backupUrl now...")
+            let backupPromises = []
+            let initDataFromBackupUrlPromise = axios
+              .get(dataRef.backupUrl)
+              .then((resp) => {
                 console.log(
-                  "\n... -MW- getDataInit / dataset.id : ",
-                  dataset.id,
-                  " / dataCopy.fieldToCopy :",
-                  dataCopy.fieldToCopy
+                  "-MW- trying to load fro backupUrl / initDataFromBackupUrlPromise / resp : ",
+                  resp
                 )
-
-              // get source data
-              const sourceObject = resp.data[dataCopy.from.objectRef]
-              const value = sourceObject
-              if (dataCopy.fieldToCopy) {
-                value = sourceObject && sourceObject[dataCopy.fieldToCopy]
-              }
-              if (dataCopy.format) {
-                value = switchFormatFunctions(value, dataCopy.format)
-              }
-              // log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / value :' , value )
-
-              let targetData = {
-                // store : dataCopy.toDataStore,
-                // id : dataCopy.toId,
-                // path : dataCopy.toDataPath,
-                value: value,
-                specialStoreId: dataCopy.toSpecialStore,
-              }
-
-              // log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / targetData :' , targetData )
-
-              store.dispatch("data/setNestedData", targetData)
-              // store.commit('data/setDeepNestedData', targetData )
-            }
-          }
-        })
+                storeData(dataset, dataRef, resp, store, log)
+              })
+            backupPromises.push(initDataFromBackupUrlPromise)
+            return Promise.all(backupPromises)
+          })
         promisesArray.push(initDataFromUrlPromise)
       }
     }

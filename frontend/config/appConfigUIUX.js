@@ -17,17 +17,22 @@ export const configAppUIUX = {
 
   // UX
   UX_config: {
+    hasDrawer: false,
+
+    mobileBreakpoints: ["xs", "sm"],
+
     navbar: {
       height: 64, // in pixels
+      mobileHeight: 45,
+
+      fixed: true,
+      fixedBtn: false,
 
       clipped: true,
       clippedBtn: false,
 
       drawer: false,
-      drawerBtn: true,
-
-      fixed: false,
-      fixedBtn: false,
+      drawerBtn: false,
 
       miniVariant: true,
       miniVariantBtn: false,
@@ -98,7 +103,9 @@ export const configAppUIUX = {
       navbarClass: "",
       color: "primary",
       dark: true,
-      titleClass: "white--text font-weight-black display-1",
+      titleClass: "white--text font-weight-black",
+      sizeDesktop: "headline",
+      sizeMobile: "subtitle-1",
     },
 
     filters: {
