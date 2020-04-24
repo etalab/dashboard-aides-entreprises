@@ -28,10 +28,14 @@ export const configAppTexts = {
               colTitle: { fr: "" },
               colTitleClass: "",
               cols: 12,
-              textClass: "headline",
+              textClass: "",
               subTextClass: "",
+              sizeDesktop: "headline",
+              sizeMobile: "subtitle-1",
               textPrefix: { fr: "Aides versées : " },
+              textPrefixClass: "font-weight-regular",
               textSuffix: { fr: "" },
+              textSuffixClass: undefined,
               specialStoreId: "levelname",
               specialStoreIdClass: "font-weight-medium",
             },
@@ -62,7 +66,9 @@ export const configAppTexts = {
               textClass: "",
               subTextClass: "",
               textPrefix: { fr: undefined },
+              textPrefixClass: undefined,
               textSuffix: { fr: undefined },
+              textSuffixClass: undefined,
               specialStoreId: undefined,
               specialStoreIdClass: undefined,
               textsHtml: [
@@ -135,15 +141,11 @@ export const configAppTexts = {
                 {
                   id: "miseAJour",
                   textClass: "justify-center mx-4 pt-3 pb-5 mb-5",
-                  textContent: {
-                    fr: `
-                    ${DATE_UPLOAD_DATA}
-                  `,
-                  },
+                  textContent: undefined,
                   fromUrl: {
                     fr:
                       "https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/last_update_data.txt",
-                    // fr : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/requirements.txt',
+                    // fr: "/datasets/aides/prod/last_update_data.txt",
                   },
                 },
               ],

@@ -50,7 +50,7 @@ export default {
       getCurrentLocale: "getCurrentLocale",
       getDataViewConfig: "getDataViewConfig",
       windowSize: "getWindowsSize",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      // getCurrentBreakpoint: "getCurrentBreakpoint",
     }),
 
     // config
@@ -67,7 +67,8 @@ export default {
       let bool = true
       let noShowArray = this.viewConfig && this.viewConfig.notShowFor
       if (noShowArray) {
-        let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        // let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        let bool = noShowArray.includes(this.$vuetify.breakpoint.name)
       }
       return bool
     },

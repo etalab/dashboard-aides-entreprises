@@ -34,7 +34,7 @@ export default {
 
   components: {},
 
-  props: ["settings"],
+  props: ["settings", "routeId"],
 
   data() {
     return {
@@ -163,7 +163,7 @@ export default {
       getDataViewConfig: "getDataViewConfig",
       getSpecialStore: "data/getSpecialStore",
       windowSize: "getWindowsSize",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      // getCurrentBreakpoint: "getCurrentBreakpoint",
     }),
 
     // config
@@ -180,7 +180,8 @@ export default {
       let bool = true
       let noShowArray = this.viewConfig && this.viewConfig.notShowFor
       if (noShowArray) {
-        let bool = noShowArray.includes(this.getCurrentBreakpoint)
+        // bool = noShowArray.includes(this.getCurrentBreakpoint)
+        bool = noShowArray.includes(this.$vuetify.breakpoint.name)
       }
       return bool
     },

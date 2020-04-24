@@ -6,11 +6,12 @@
   <v-app-bar
     :clipped-left="clipped"
     :elevation="navbarUI.elevation"
-    :class="`${navbarUI.navbarClass}`"
-    fixed
+    :class="`odm-navbar ${navbarUI.navbarClass}`"
+    :fixed="fixed"
     :color="navbarUI.color"
     :dark="navbarUI.dark"
-    :height="navbarUX.height"
+    :height="isMobileWidth ? navbarUX.mobileHeight : navbarUX.height"
+    :trigger-vis="`${triggerVis}`"
     app
   >
     <!-- DRAWER -->
@@ -40,7 +41,11 @@
 
     <!-- NAVBAR TITLE -->
     <v-spacer />
-    <v-toolbar-title :class="`${navbarUI.titleClass}`">
+    <v-toolbar-title
+      :class="`${navbarUI.titleClass} ${
+        isMobileWidth ? navbarUI.sizeMobile : navbarUI.sizeDesktop
+      }`"
+    >
       {{ appTitle[locale] }}
     </v-toolbar-title>
     <v-spacer />
@@ -80,6 +85,7 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       appTitle: (state) => state.appTitle,
+      configUX: (state) => state.configUX,
 
       navbarUI: (state) => state.configUI.navbar,
       navbarUX: (state) => state.navbar,
@@ -101,12 +107,21 @@ export default {
 
       rightDrawer: (state) => state.navbar.rightDrawer,
       rightDrawerBtn: (state) => state.navbar.rightDrawerBtn,
+
+      triggerVis: (state) => state.triggerVisChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
       getCurrentLocale: "getCurrentLocale",
       windowSize: "getWindowsSize",
     }),
+
+    isMobileWidth() {
+      let breakpoints = this.mobileBreakpoints
+      let currentBreakpoint = this.$vuetify.breakpoint.name
+      return breakpoints.includes(currentBreakpoint)
+    },
   },
 
   methods: {

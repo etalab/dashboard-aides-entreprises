@@ -1,7 +1,7 @@
 <template>
   <div id="rawData">
-    <hr>
-    <br >
+    <hr />
+    <br>
 
     <v-row>
       <v-col align-center>
@@ -15,9 +15,9 @@
         </div>
       </v-col>
     </v-row>
-    <br >
+    <br>
 
-    <hr >
+    <hr>
 
     <v-row>
       <!-- INIT DATA -->
@@ -25,13 +25,13 @@
         <div class="text-center">
 loop in <code>state.data.initData</code>
 </div>
-        <br >
+        <br>
 
         <!-- {{ initData }} -->
         <div v-if="initData">
           <div v-for="(val, index) in initData" :key="index">
-            <hr >
-            <br >
+            <hr>
+            <br>
             <p>
               id :
               <code>{{ val.id }}</code>
@@ -42,7 +42,7 @@ loop in <code>state.data.initData</code>
               <!-- [ ... ] -->
               <!-- </code> -->
             </div>
-            <br >
+            <br>
           </div>
         </div>
       </v-col>
@@ -52,15 +52,15 @@ loop in <code>state.data.initData</code>
         <div class="text-center">
           loop in <code>state.data.displayedData</code>
         </div>
-        <br >
+        <br>
 
         <!-- {{ displayedData }} -->
         <div v-if="displayedData">
           <div v-for="(val, index) in displayedData" :key="index">
-            <hr >
-            <br >
+            <hr>
+            <br>
             <p>
-              id : <br>
+              id : <br />
               <code>{{ val.id }}</code>
             </p>
             <div>
@@ -69,7 +69,7 @@ loop in <code>state.data.initData</code>
               <!-- [ ... ] -->
               <!-- </code> -->
             </div>
-            <br >
+            <br>
           </div>
         </div>
       </v-col>

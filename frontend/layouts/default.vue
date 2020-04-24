@@ -4,7 +4,7 @@
     <DynamicCSS />
 
     <!-- LEFT DRAWER -->
-    <Drawer />
+    <Drawer v-if="routeDrawer" />
 
     <!-- NAVBAR -->
     <Navbar />
@@ -75,26 +75,15 @@ export default {
   },
 
   data() {
-    return {
-      // window : {
-      //   width: 0,
-      //   height: 0
-      // }
-    }
+    return {}
   },
 
-  // created() {
-  //   window.addEventListener('resize', this.handleResize)
-  //   this.handleResize()
-  // },
-
-  // destroyed() {
-  //   window.removeEventListener('resize', this.handleResize)
+  // beforeMount() {
+  //   this.log && console.log("L-default / beforeMount ...")
   // },
 
   mounted() {
     this.log && console.log("L-default / mounted ...")
-    // this.handleResize()
   },
 
   head() {
@@ -118,6 +107,7 @@ export default {
       locale: (state) => state.locale,
       title: (state) => state.appTitle,
 
+      configUX: (state) => state.configUX,
       navbarHeight: (state) => state.navbar.height,
       windowSize: (state) => state.windowSize,
     }),
@@ -129,22 +119,15 @@ export default {
 
     routeNavbarFooter() {
       let routeConf = this.routeConfig
-      return routeConf.navbarFooter
+      return routeConf && routeConf.navbarFooter
+    },
+
+    routeDrawer() {
+      let configUX = this.configUX
+      return configUX.hasDrawer
     },
   },
 
-  methods: {
-    // ...mapActions({
-    //   setCurrentWindowSize : 'setCurrentWindowSize',
-    // }),
-    // handleResize() {
-    //   this.window.width = window.innerWidt
-    //   this.window.height = window.innerHeight
-    //   this.setCurrentWindowSize( {
-    //     width : window.innerWidth,
-    //     height : window.innerHeight,
-    //   })
-    // },
-  },
+  methods: {},
 }
 </script>

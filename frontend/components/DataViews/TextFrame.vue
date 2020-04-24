@@ -4,21 +4,10 @@
   <v-container
     v-show="canShow"
     :id="`text-${settings.id}`"
-    :class="`${settings.containerClass}`"
+    :class="`${settings.containerClass} ${isMobileWidth ? 'py-0' : ''}`"
     :trigger="`${trigger}`"
+    :trigger-vis="`${triggerVis}`"
   >
-    <!-- 
-    <div>
-      text- settings.id : {{ settings.id  }} test
-    </div> 
-    -->
-
-    <!-- 
-    <code>
-      {{ viewConfig }}
-    </code> 
-    -->
-
     <v-divider v-if="viewConfig.dividers.before" />
 
     <v-row
@@ -30,19 +19,26 @@
         v-for="(col, i) in row.columns"
         :id="'R' + index + '-C' + i"
         :key="'R' + index + '-C' + i"
-        :class="`${col.colClass}`"
+        :class="`${col.colClass} ${isMobileWidth ? 'py-0' : ''}`"
         :cols="col.cols"
       >
         <!-- TITLE -->
         <v-layout :class="`justify-center`">
           <!-- TEXT TITLE -->
-          <h3 :class="`${col.colTitleClass} ${isMobileWidth ? 'mb-0' : ''}`">
+          <h3 :class="`${isMobileWidth ? 'mb-0' : ''} ${col.colTitleClass} `">
             {{ col.colTitle[locale] }}
           </h3>
 
           <!-- TEXT FROM DISPLAYED DATA -->
-          <p :class="`${col.textClass} ${isMobileWidth ? 'mb-0' : ''}`">
-            <span v-html="col.textPrefix[locale]" />
+          <p
+            :class="`${col.textClass} ${
+              isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
+            }`"
+          >
+            <span
+              :class="`${col.textPrefixClass}`"
+              v-html="col.textPrefix[locale]"
+            />
 
             <span
               v-if="col.specialStoreId"
@@ -51,7 +47,10 @@
               {{ getSpecialStore[col.specialStoreId] }}
             </span>
 
-            <span v-html="col.textSuffix[locale]" />
+            <span
+              :class="`${col.textSuffixClass}`"
+              v-html="col.textSuffix[locale]"
+            />
           </p>
         </v-layout>
 
@@ -64,14 +63,22 @@
           >
             <!-- TEXT FROM DISPLAYED DATA -->
             <div v-if="!txt.fromUrl[locale]">
-              <p>
+              <p
+                :class="`${col.textClass} ${
+                  isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
+                }`"
+              >
                 <span v-if="txt.textContent" v-html="txt.textContent[locale]" />
               </p>
             </div>
 
             <!-- TEXT FROM DISTANT HTML FILE -->
             <div v-show="txt.fromUrl[locale]">
-              <p>
+              <p
+                :class="`${col.textClass} ${
+                  isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
+                }`"
+              >
                 <RawHtml :template-u-r-l="txt.fromUrl[locale]" />
               </p>
             </div>
@@ -98,18 +105,23 @@ export default {
     RawHtml,
   },
 
-  props: ["settings"],
+  props: ["settings", "routeId"],
 
   data() {
     return {
       dataViewType: "texts",
       viewConfig: undefined,
+      canShow: undefined,
       rawHtmls: {},
       errorHtml: "<br><br>there is an <strong> Error </strong><br><br>",
     }
   },
 
-  watch: {},
+  watch: {
+    triggerVis(next, prev) {
+      this.getCanShow()
+    },
+  },
 
   beforeMount() {
     // set up view config
@@ -118,6 +130,7 @@ export default {
 
   mounted() {
     this.log && console.log("C-TextFrame / mounted ...")
+    this.getCanShow()
   },
 
   computed: {
@@ -125,6 +138,8 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
+      triggerVis: (state) => state.triggerVisChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -133,7 +148,7 @@ export default {
       selectFromDisplayedData: "data/selectFromDisplayedData",
       getSpecialStore: "data/getSpecialStore",
       windowSize: "getWindowsSize",
-      getCurrentBreakpoint: "getCurrentBreakpoint",
+      getDivCurrentVisibility: "getDivCurrentVisibility",
     }),
 
     // config
@@ -146,17 +161,8 @@ export default {
       return localConfig
     },
 
-    canShow() {
-      let bool = true
-      let noShowArray = this.viewConfig && this.viewConfig.notShowFor
-      if (noShowArray) {
-        let bool = noShowArray.includes(this.getCurrentBreakpoint)
-      }
-      return bool
-    },
-
     isMobileWidth() {
-      let breakpoints = ["xs", "sm"]
+      let breakpoints = this.mobileBreakpoints
       let currentBreakpoint = this.$vuetify.breakpoint.name
       return breakpoints.includes(currentBreakpoint)
     },
@@ -166,7 +172,14 @@ export default {
     ...mapActions({
       // selectFromDisplayedData : 'data/selectFromDisplayedData',
     }),
-
+    getCanShow() {
+      let breakpoint = this.$vuetify.breakpoint.name
+      let isVisible = this.getDivCurrentVisibility({
+        div: { id: this.settings.id, routeId: this.routeId },
+        breakpoint: breakpoint,
+      })
+      this.canShow = isVisible
+    },
     getDisplayedData(paramsArray) {
       this.log && console.log("C-TextFrame / getDisplayedData ...")
       let dataFromDisplayedData = this.selectFromDisplayedData(paramsArray)

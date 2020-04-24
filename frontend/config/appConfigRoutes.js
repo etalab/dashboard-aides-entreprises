@@ -4,7 +4,8 @@ export const configAppRoutes = {
   // ROUTES / PAGES
   routes: [
     {
-      name: "home",
+      id: "home",
+      name: "homepage",
       help: "route home viewfor ",
       title: { fr: "" },
       titleI18n: "routes.home.title",
@@ -18,11 +19,13 @@ export const configAppRoutes = {
       },
       pageRows: [
         {
+          id: "row1",
           rowNumber: 1,
           activated: true,
           help: "",
           columns: [
             {
+              id: "col1",
               colName: "Numbers and tables",
               activated: true,
               colClass: "col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4",
@@ -37,18 +40,22 @@ export const configAppRoutes = {
                   align: "center",
                   settings: {
                     id: "text-01",
-                    containerClass: "pb-0",
+                    containerClass: "pt-1 pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
-                  component: "globalButton",
+                  component: "globalButtons",
                   activated: true,
                   smallScreenVerticalOrder: 1,
                   justify: "center",
                   align: "center",
                   settings: {
                     id: "global-button-01",
-                    containerClass: "pt-0 mt-0",
+                    containerClass: "py-0 my-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
@@ -60,6 +67,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "numbers-01",
                     containerClass: "py-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
@@ -71,27 +80,10 @@ export const configAppRoutes = {
                   settings: {
                     id: "apexchart-01",
                     containerClass: "mt-4 pt-3 pb-0",
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true,
                   },
                 },
-                // { component : "apexchart",
-                //   activated : true,
-                //   smallScreenVerticalOrder : 5,
-                //   justify : "center",
-                //   align : "center",
-                //   settings : {
-                //     id : "apexchart-01bis",
-                //     containerClass : 'mt-4 pt-3 pb-0',
-                //   },
-                // },
-                // { component : "apexchart",
-                //   activated : true,
-                //   justify : "center",
-                //   align : "center",
-                //   settings : {
-                //     id : "apexchart-02",
-                //     containerClass : 'pb-0',
-                //   },
-                // },
                 {
                   component: "text",
                   activated: true,
@@ -101,12 +93,15 @@ export const configAppRoutes = {
                   settings: {
                     id: "text-02",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true,
                   },
                 },
               ],
             },
 
             {
+              id: "col2",
               colName: "main map",
               activated: true,
               colClass: "col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8",
@@ -122,7 +117,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "map-france-metro",
                     containerClass: "pb-0",
-                    notShownFor: ["xs", "sm"],
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
               ],
@@ -130,11 +126,13 @@ export const configAppRoutes = {
           ],
         },
         {
+          id: "row2",
           rowNumber: 2,
           activated: false,
           help: "",
           columns: [
             {
+              id: "col1",
               colName: "text",
               activated: true,
               colClass: "",
@@ -148,8 +146,10 @@ export const configAppRoutes = {
                   justify: "center",
                   align: "center",
                   settings: {
-                    id: "text-02",
+                    id: "text-03",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: false,
                   },
                 },
               ],
@@ -161,6 +161,7 @@ export const configAppRoutes = {
 
     // ONLY MAP
     {
+      id: "map",
       name: "map",
       help: "route map viewfor ",
       title: { fr: "" },
@@ -175,11 +176,13 @@ export const configAppRoutes = {
       },
       pageRows: [
         {
+          id: "row1",
           rowNumber: 1,
           activated: true,
           help: "",
           columns: [
             {
+              id: "col1",
               colName: "map",
               activated: true,
               colClass: "",
@@ -195,10 +198,12 @@ export const configAppRoutes = {
                   settings: {
                     id: "text-01",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
-                  component: "globalButton",
+                  component: "globalButtons",
                   activated: true,
                   smallScreenVerticalOrder: 1,
                   justify: "center",
@@ -206,6 +211,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "global-button-01",
                     containerClass: "pt-0 mt-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
@@ -217,6 +224,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "numbers-01",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
@@ -228,6 +237,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "map-france-metro",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
               ],
@@ -239,6 +250,7 @@ export const configAppRoutes = {
 
     // ONLY CHARTS
     {
+      id: "charts",
       name: "charts",
       help: "route for charts view",
       title: { fr: "" },
@@ -253,11 +265,13 @@ export const configAppRoutes = {
       },
       pageRows: [
         {
+          id: "row1",
           rowNumber: 1,
           activated: true,
           help: "",
           columns: [
             {
+              id: "col1",
               colName: "chart",
               activated: true,
               colClass: "",
@@ -273,10 +287,12 @@ export const configAppRoutes = {
                   settings: {
                     id: "text-01",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
-                  component: "globalButton",
+                  component: "globalButtons",
                   activated: true,
                   smallScreenVerticalOrder: 1,
                   justify: "center",
@@ -284,6 +300,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "global-button-01",
                     containerClass: "pt-0 mt-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
@@ -295,6 +313,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "numbers-01",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
@@ -306,6 +326,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "apexchart-01",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
@@ -317,6 +339,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "apexchart-01bis",
                     containerClass: "mt-4 pt-3 pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
                 {
@@ -328,6 +352,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "text-02",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
               ],
@@ -339,6 +365,7 @@ export const configAppRoutes = {
 
     // ONLY TABLE
     {
+      id: "table",
       name: "table",
       help: "route for table view",
       title: { fr: "" },
@@ -353,11 +380,13 @@ export const configAppRoutes = {
       },
       pageRows: [
         {
+          id: "row1",
           rowNumber: 1,
           activated: true,
           help: "",
           columns: [
             {
+              id: "col1",
               colName: "table",
               activated: true,
               colClass: "",
@@ -373,6 +402,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "table-01",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
               ],
@@ -384,6 +415,7 @@ export const configAppRoutes = {
 
     // ONLY RAW DATA
     {
+      id: "rawData",
       name: "rawData",
       help: "route for rawData view",
       title: { fr: "" },
@@ -394,15 +426,20 @@ export const configAppRoutes = {
         activated: true,
         settings: {
           id: "navbar-footer-01",
+          containerClass: "",
+          mobileIsVisibleDefault: true,
+          desktopIsVisibleDefault: true,
         },
       },
       pageRows: [
         {
+          id: "row1",
           rowNumber: 1,
           activated: true,
           help: "",
           columns: [
             {
+              id: "col1",
               colName: "rawData",
               activated: true,
               colClass: "",
@@ -418,6 +455,8 @@ export const configAppRoutes = {
                   settings: {
                     id: "chart-01",
                     containerClass: "pb-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
                   },
                 },
               ],

@@ -6,13 +6,18 @@
 
 <template>
   <div
-    id="homepage"
+    :id="routeConfig.id"
     :style="`max-height:${contentWindowHeight}px;`"
+    :triggerVis="`${triggerVis}`"
   >
+    <!-- triggerVis: <code>{{triggerVis}}</code> -->
+    <!-- getDivVisibilityArray: <br><code>{{getDivVisibilityArray}}</code> -->
+
     <v-row
       v-for="(row, index) in routeConfig.pageRows"
       :id="'R' + index"
       :key="'R' + index"
+      :class="`odm-row`"
       no-gutters
     >
       <template v-if="row.activated">
@@ -20,18 +25,19 @@
           v-for="(col, i) in row.columns"
           :id="'R' + index + '-C' + i"
           :key="'R' + index + '-C' + i"
-          :class="`${col.colClass}`"
+          :class="`odm-col ${col.colClass}`"
         >
           <template v-if="col.activated">
             <!-- {{ windowSize }} -->
             <!-- {{ contentWindowHeight }}  -->
-            <!-- {{ $vuetify.breakpoint.name }} -->
+            <!-- $vuetify.breakpoint.name : {{ $vuetify.breakpoint.name }}<br> -->
+            <!-- $device : {{ $device }}<br> -->
 
             <div
               :class="`${col.hasScrollbar ? 'has-scrollbar' : ''}`"
               :style="`${
-                col.hasScrollbar
-                  ? 'max-height:' + contentWindowHeight + 'px'
+                col.hasScrollbar || isMobileWidth
+                  ? 'max-height:' + contentWindowHeight() + 'px'
                   : ''
               }`"
             >
@@ -42,41 +48,48 @@
                 no-gutters
                 :justify="colRow.justify"
                 :align="colRow.align"
-                :class="colRow.class"
+                :class="`odm-colrow odm-colrow-${colRow.component} ${colRow.class}`"
               >
                 <TextFrame
                   v-if="colRow.activated && colRow.component == 'text'"
                   :settings="colRow.settings"
+                  :route-id="routeConfig.id"
                 />
 
-                <GlobalButton
-                  v-if="colRow.activated && colRow.component == 'globalButton'"
+                <GlobalButtons
+                  v-if="colRow.activated && colRow.component == 'globalButtons'"
                   :settings="colRow.settings"
+                  :route-id="routeConfig.id"
                 />
 
                 <Numbers
                   v-if="colRow.activated && colRow.component == 'numbers'"
                   :settings="colRow.settings"
+                  :route-id="routeConfig.id"
                 />
 
                 <MapboxGL
                   v-if="colRow.activated && colRow.component == 'map'"
                   :settings="colRow.settings"
+                  :route-id="routeConfig.id"
                 />
 
                 <ApexChart
                   v-if="colRow.activated && colRow.component == 'apexchart'"
                   :settings="colRow.settings"
+                  :route-id="routeConfig.id"
                 />
 
                 <ChartJS
                   v-if="colRow.activated && colRow.component == 'chartjs'"
                   :settings="colRow.settings"
+                  :route-id="routeConfig.id"
                 />
 
                 <Table
                   v-if="colRow.activated && colRow.component == 'table'"
                   :settings="colRow.settings"
+                  :route-id="routeConfig.id"
                 />
               </v-row>
             </div>
@@ -97,7 +110,7 @@ import Numbers from "~/components/DataViews/Numbers.vue"
 import ChartJS from "~/components/DataViews/ChartJS.vue"
 import ApexChart from "~/components/DataViews/ApexChart.vue"
 import TextFrame from "~/components/DataViews/TextFrame.vue"
-import GlobalButton from "~/components/UX/GlobalButton.vue"
+import GlobalButtons from "~/components/UX/GlobalButtons.vue"
 import Table from "~/components/DataViews/Table.vue"
 
 export default {
@@ -110,7 +123,7 @@ export default {
     ChartJS,
     ApexChart,
     TextFrame,
-    GlobalButton,
+    GlobalButtons,
     Table,
   },
 
@@ -158,7 +171,7 @@ export default {
           "P-Homepage / watch / getActivatedCurrentNavbarFooter ... fallback :",
           fallback
         )
-      this.$router.push(fallback)
+      // this.$router.push(fallback)
       // }
     },
   },
@@ -171,6 +184,10 @@ export default {
 
   destroyed() {
     window.removeEventListener("resize", this.handleResize)
+  },
+
+  beforeMount() {
+    this.$store.dispatch("setRouteDivsVisibility", this.routeConfig)
   },
 
   mounted() {
@@ -190,6 +207,9 @@ export default {
 
       navbarHeight: (state) => state.navbar.height,
       // currentNavbarFooter : state => state.currentNavbarFooter,
+      divsVisibility: (state) => state.divsVisibility,
+      triggerVis: (state) => state.triggerVisChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -199,6 +219,19 @@ export default {
       getCurrentNavbarFooter: "getCurrentNavbarFooter",
       getActivatedCurrentNavbarFooter: "getActivatedCurrentNavbarFooter",
       // isMobileWidth : 'isMobileWidth',
+      getDivVisibilityArray: "getDivVisibilityArray",
+    }),
+
+    isMobileWidth() {
+      let breakpoints = this.mobileBreakpoints
+      let currentBreakpoint = this.$vuetify.breakpoint.name
+      return breakpoints.includes(currentBreakpoint)
+    },
+  },
+
+  methods: {
+    ...mapActions({
+      setCurrentWindowSize: "setCurrentWindowSize",
     }),
 
     contentWindowHeight() {
@@ -211,12 +244,6 @@ export default {
       }
       return height
     },
-  },
-
-  methods: {
-    ...mapActions({
-      setCurrentWindowSize: "setCurrentWindowSize",
-    }),
 
     handleResize() {
       this.window.width = window.innerWidt
@@ -224,7 +251,11 @@ export default {
       this.setCurrentWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
+        breakpointName: this.$vuetify.breakpoint.name,
+        isMobile: this.$device,
+        routeConfig: this.routeConfig,
       })
+      this.$store.commit("toggleVisTrigger")
     },
   },
 }
