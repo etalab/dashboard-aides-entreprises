@@ -6,12 +6,12 @@
 </style>
 
 <template>
-  <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`">
+  <!-- <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`"> -->
     <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
     <v-bottom-navigation
       v-show="showCurrentNavbarFooter"
-      :id="`footerAdjustClass navbar-footer-${settings.id}`"
-      :class="`${settings.navbarFooterClass}`"
+      :id="`navbar-footer-${settings.id}`"
+      :class="`odm-navbar odm-navbar-footer ${settings.navbarFooterClass}`"
       :trigger="`${trigger}`"
       :value="bottomNav"
       :grow="navbarFooterConfig.grow"
@@ -35,7 +35,7 @@
         </v-icon>
       </v-btn>
     </v-bottom-navigation>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>

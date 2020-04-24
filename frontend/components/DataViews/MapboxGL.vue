@@ -58,7 +58,7 @@
       :class="`legend-block legend-bottom-right`"
     >
       <!-- DEBUGGING -->
-      footer fix v1.0
+      footer fix v1.1
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
 
@@ -367,12 +367,12 @@ export default {
       // let getCurrentNavbarFooter = this.getCurrentNavbarFooter
 
       var docNavbars = document.querySelectorAll(`.odm-navbar`)
-      // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
+      this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
       let docNavbarsArray = Array.prototype.slice.call(docNavbars)
       let sumNavbarsHeights = docNavbarsArray
         .map((i) => i.offsetHeight)
         .reduce((prev, curr) => prev + curr, 0)
-      // this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
+      this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
 
       if (this.isMobileWidth) {
         var docComponents = document.querySelectorAll(

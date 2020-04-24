@@ -26,7 +26,6 @@
         <nuxt />
       </v-container>
 
-
     </v-content>
 
     <!-- RIGHT DRAWER -->
@@ -126,6 +125,7 @@ export default {
     ...mapGetters({
       getCurrentLocale: "getCurrentLocale",
       routeConfig: "getLocalRouteConfig",
+      getCurrentNavbarFooter: "getCurrentNavbarFooter",
     }),
 
     routeNavbarFooter() {
