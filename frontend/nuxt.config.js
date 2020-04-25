@@ -122,8 +122,8 @@ export default {
     title: "",
     meta: [
       { charset: "utf-8" },
-      { 
-        name: "viewport", 
+      {
+        name: "viewport",
         content: "width=device-width, initial-scale=1, height=device-height, viewport-fit=cover" },
       {
         hid: "description",
