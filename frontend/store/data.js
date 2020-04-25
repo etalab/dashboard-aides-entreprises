@@ -8,14 +8,19 @@ import {
 export const state = () => ({
   // GLOABAL APP ENV
   log: process.env.LOG,
+  mode: process.env.CONFIG_APP.mode,
 
   // API BACKEND
-  backendApi: process.env.CONFIG_APP.backendApi,
-  dataSource: process.env.CONFIG_APP.dataSource,
-  defaultDataSetup: process.env.CONFIG_APP.defaultDataSetup,
+  // backendApi: process.env.CONFIG_APP.backendApi,
+  // dataSource: process.env.CONFIG_APP.dataSource,
+  // defaultDataSetup: process.env.CONFIG_APP.defaultDataSetup,
+  backendApi: undefined,
+  dataSource: undefined,
+  defaultDataSetup: undefined,
 
   // FILTERS
-  filters: process.env.CONFIG_APP.filters,
+  // filters: process.env.CONFIG_APP.filters,
+  filters: undefined,
   activatedFilters: [],
 
   // DATASETS
@@ -34,8 +39,12 @@ export const state = () => ({
 
 export const getters = {
   // BACKEND
+  chooseBackend: (state) => {
+    let mode = state.mode
+    return state.dataSource.apiBackendUrl[mode]
+  },
 
-  getBackendApi: (state, getters) => {
+  getBackendApi: (state) => {
     return state.backendApi
   },
 
@@ -177,6 +186,20 @@ export const getters = {
 }
 
 export const mutations = {
+  setConfigData({ state, getters }, configData) {
+    state.log &&
+      console.log("S-data-M-setConfigData / configData  : ", configData)
+
+    let backendUrl = getters.chooseBackend
+    state.log &&
+      console.log("S-data-M-setConfigData / backendUrl  : ", backendUrl)
+
+    state.backendApi = configData.backendApi
+    state.dataSource = configData.dataSource
+    state.defaultDataSetup = configData.defaultDataSetup
+    state.filters = configData.filters
+  },
+
   setInitDataAsSet(state) {
     state.isInitDataSet = !state.isInitDataSet
   },
@@ -232,6 +255,14 @@ export const mutations = {
 }
 
 export const actions = {
+  setUpConfigData({ state, commit, rootGetters }) {
+    state.log && console.log("S-data-A-setUpConfigData / ... ")
+    let configData = rootGetters["configs/getConfigField"]("configAppData")
+    state.log &&
+      console.log("S-data-A-setUpConfigData / configData :", configData)
+    commit("setConfigData", configData)
+  },
+
   // DATASETS
 
   setDisplayedDataset({ state, getters, commit }, updatedDataset) {

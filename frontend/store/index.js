@@ -8,7 +8,8 @@ export const state = () => ({
   locale: undefined,
   locales: undefined,
 
-  appTitle: process.env.CONFIG_APP.appTitle,
+  // appTitle: process.env.CONFIG_APP.appTitle,
+  appTitle: undefined,
 
   windowSize: {
     width: 0,
@@ -27,32 +28,37 @@ export const state = () => ({
   },
 
   // NAVBAR - on basis vuetify create-nuxt-app
-  navbar: process.env.CONFIG_APP.UX_config.navbar,
+  // navbar: process.env.CONFIG_APP.UX_config.navbar,
+  navbar: undefined,
 
   currentNavbarFooter: undefined,
   currentFooter: undefined,
 
   // ROUTES
   localRouteConfig: undefined,
-  configRoutes: process.env.CONFIG_APP.ROUTES_config,
+  // configRoutes: process.env.CONFIG_APP.ROUTES_config,
+  configRoutes: undefined,
 
   // UX-UI
-  configUX: process.env.CONFIG_APP.UX_config,
-  configUI: process.env.CONFIG_APP.UI_config,
+  // configUX: process.env.CONFIG_APP.UX_config,
+  configUX: undefined,
+  // configUI: process.env.CONFIG_APP.UI_config,
+  configUI: undefined,
 
   // DATA VIEWS COMPONENTS SETTINGS
-  configsData: {
-    maps: process.env.CONFIG_APP.MAP_config.settingsIds,
-    charts: process.env.CONFIG_APP.CHARTS_config.settingsIds,
-    numbers: process.env.CONFIG_APP.NUMBERS_config.settingsIds,
-    tables: process.env.CONFIG_APP.TABLES_config.settingsIds,
-    texts: process.env.CONFIG_APP.TEXTS_config.settingsIds,
-    rawdatas: process.env.CONFIG_APP.RAWDATA_config.settingsIds,
+  configsData: undefined,
+  // configsData: {
+  //   maps: process.env.CONFIG_APP.MAP_config.settingsIds,
+  //   charts: process.env.CONFIG_APP.CHARTS_config.settingsIds,
+  //   numbers: process.env.CONFIG_APP.NUMBERS_config.settingsIds,
+  //   tables: process.env.CONFIG_APP.TABLES_config.settingsIds,
+  //   texts: process.env.CONFIG_APP.TEXTS_config.settingsIds,
+  //   rawdatas: process.env.CONFIG_APP.RAWDATA_config.settingsIds,
 
-    // PURE UX COMPONENTS
-    navbarFooters: process.env.CONFIG_APP.UX_navbarFooters.settingsIds,
-    globalButtons: process.env.CONFIG_APP.UX_globalButtons.settingsIds,
-  },
+  //   // PURE UX COMPONENTS
+  //   navbarFooters: process.env.CONFIG_APP.UX_navbarFooters.settingsIds,
+  //   globalButtons: process.env.CONFIG_APP.UX_globalButtons.settingsIds,
+  // },
 
   divsVisibility: [],
   triggerVisChange: 1,
@@ -181,6 +187,32 @@ export const getters = {
 }
 
 export const mutations = {
+  // CONFIGS
+  setRootConfigs(state, configs) {
+    state.log && console.log("S-index-M-setRootConfigs / configs : ", configs)
+
+    state.appTitle = configs.UIUX_config.appTitle
+
+    state.configRoutes = configs.ROUTES_config
+
+    state.navbar   = configs.UIUX_config.UX_config.navbar
+    state.configUX = configs.UIUX_config.UX_config
+
+    state.configUI = configs.UIUX_config.UI_config
+
+    let configsData = {
+      maps: configs.MAP_config.settingsIds,
+      charts: configs.CHARTS_config.settingsIds,
+      numbers: configs.NUMBERS_config.settingsIds,
+      tables: configs.TABLES_config.settingsIds,
+      texts: configs.TEXTS_config.settingsIds,
+      rawdatas: configs.RAWDATA_config.settingsIds,
+      navbarFooters: configs.UX_navbarFooters.settingsIds,
+      globalButtons: configs.UX_globalButtons.settingsIds,
+    }
+    state.configsData = configsData
+  },
+
   // NAVBARS
   setFromNavbar(state, value) {
     // state.log && console.log("S-index-M-setFromNavbar / value : ", value)
@@ -251,6 +283,12 @@ export const mutations = {
 }
 
 export const actions = {
+  setUpConfigs({state, commit, rootGetters}) {
+    state.log && console.log("S-index-A-setUpConfigs / ... ")
+    let allConfigs = rootGetters["configs/getAllConfigs"]
+    state.log && console.log("S-index-A-setUpConfigs / allConfigs :", allConfigs)
+    // commit("setRootConfigs", allConfigs)
+  },
   setCurrentWindowSize({ state, getters, commit, dispatch }, windowInfos) {
     // state.log && console.log("S-index-A-setCurrentWindowSize / windowInfos.breakpointName : ", windowInfos.breakpointName)
     // set window in store
@@ -275,7 +313,6 @@ export const actions = {
       dispatch("setRouteDivsVisibility", windowInfos.routeConfig)
     }
   },
-
   setRouteDivsVisibility({ state, commit }, routeConfig) {
     for (let row of routeConfig.pageRows) {
       const rowId = row.id
