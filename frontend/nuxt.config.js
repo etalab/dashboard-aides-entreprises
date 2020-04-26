@@ -1,9 +1,8 @@
-// import colors from 'vuetify/es5/util/colors'
-
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// IMPORTS
 import { chooseBooleanMode } from "./utils/utils.js"
-
-const fs = require('fs')
-
+// import colors from 'vuetify/es5/util/colors'
+const fs = require("fs")
 const dotenv = require("dotenv")
 dotenv.config()
 console.log(
@@ -23,13 +22,19 @@ if (copyConfigsToJSON && process.env.NUXT_ENV_RUN_MODE == "dev") {
   console.log(">>> nuxt.config.js / copyConfigsToJSON / ...")
   for (let conf of configsJS.configsReferences) {
     let jsonFilename = conf.field + ".json"
-    console.log(">>> nuxt.config.js / copyConfigsToJSON / jsonFilename : ", jsonFilename)
+    console.log(
+      ">>> nuxt.config.js / copyConfigsToJSON / jsonFilename : ",
+      jsonFilename
+    )
     try {
       let jsonStr = JSON.stringify(conf.data, null, 2)
       // console.log('>>> nuxt.config.js / copyConfigsToJSON / jsonStr : ', jsonStr)
       fs.writeFileSync(`./static/configs/json/${jsonFilename}`, jsonStr, "utf8")
     } catch (error) {
-      console.log(">>> nuxt.config.js / copyConfigsToJSON / ... error : ", error)
+      console.log(
+        ">>> nuxt.config.js / copyConfigsToJSON / ... error : ",
+        error
+      )
     }
   }
 }
@@ -134,7 +139,6 @@ if (process.env.NUXT_ENV_CONFIG_FROM == "local_json_files") {
   ]
 }
 
-
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // color themes
 let isDarkTheme = chooseBooleanMode(process.env.NUXT_ENV_THEME_IS_DARK) || false
@@ -157,7 +161,7 @@ let defaultThemes = {
     warning: process.env.NUXT_ENV_THEME_DARK_warning || "#ff9947",
     error: process.env.NUXT_ENV_THEME_DARK_error || "#D1335B;",
     success: process.env.NUXT_ENV_THEME_DARK_success || "#03BD5B",
-  }
+  },
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
@@ -212,14 +216,12 @@ const configApp = {
 
   // CONFIGS
   configsReferences: configsReferences,
-  configsFrom: process.env.NUXT_ENV_CONFIG_FROM,
-  configsToJSON: process.env.NUXT_ENV_CONFIG_TO_JSON,
+  configsFrom: process.env.NUXT_ENV_CONFIG_FROM || "local_js_files",
 
   // INTERNATIONALIZATION
   defaultLocale: process.env.NUXT_ENV_LANG_DEFAULT_LOCALE || defaultLoc,
   localesBuild:
     buildLocales(process.env.NUXT_ENV_LANG_DEFAULT_LOCALES) || defaultLocs,
-
 }
 console.log(">>> nuxt.config.js / configApp : \n", configApp)
 
