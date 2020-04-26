@@ -3,6 +3,7 @@
 
 export const state = () => ({
   // GLOABAL APP ENV
+  appVersion: process.env.CONFIG_APP.appVersion,
   log: process.env.LOG,
 
   locale: undefined,

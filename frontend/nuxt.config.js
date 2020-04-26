@@ -11,6 +11,8 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
+const APP_VERSION = "v.1.11 - Matomo injection"
+
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
 var configsJS = require("./nuxt_loadConfigs_fromJS.js")
@@ -212,6 +214,8 @@ const buildLocales = (localesString) => {
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIG APP OBJECT
 const configApp = {
+  appVersion: APP_VERSION,
+
   // DEV MODE - PORT - HOST ...
   mode: process.env.NUXT_ENV_RUN_MODE,
   host: process.env.NUXT_ENV_HOST,
