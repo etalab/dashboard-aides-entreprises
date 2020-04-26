@@ -75,7 +75,7 @@ export const state = () => ({
 
 export const getters = {
   // INTERNATIONALIZATION
-  getDefaultLocale: (state, getters) => {
+  getDefaultLocale: () => {
     // state.log && console.log("S-index-G-getDefaultLocale ...")
     return process.env.CONFIG_APP.defaultLocale
   },
@@ -219,7 +219,8 @@ export const mutations = {
       navbarFooters: configs.UX_navbarFooters.settingsIds,
       globalButtons: configs.UX_globalButtons.settingsIds,
     }
-    state.log && console.log("S-index-M-setRootConfigs / configsData : ", configsData)
+    state.log &&
+      console.log("S-index-M-setRootConfigs / configsData : ", configsData)
     state.configsData = configsData
   },
 
@@ -297,7 +298,8 @@ export const actions = {
     state.log && console.log("\n", "- ".repeat(20))
     state.log && console.log("S-index-A-setUpConfigs / ... ")
     let allConfigs = rootGetters["configs/getAllConfigs"]
-    state.log && console.log("S-index-A-setUpConfigs / allConfigs :", allConfigs)
+    state.log &&
+      console.log("S-index-A-setUpConfigs / allConfigs :", allConfigs)
     commit("setRootConfigs", allConfigs)
   },
 
@@ -361,7 +363,6 @@ export const actions = {
         let isDiv = getters.getDivVisibility(divRef)
 
         for (let vis of toggleVisibility) {
-          let value
           switch (toggle) {
             case "on":
               divRef[vis] = true

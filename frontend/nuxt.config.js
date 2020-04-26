@@ -36,62 +36,52 @@ if (copyConfigsToJSON && process.env.NUXT_ENV_RUN_MODE == "dev") {
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
+const staticBaseForConfigJSON = "/configs/json/"
 if (process.env.NUXT_ENV_CONFIG_FROM == "local_json_files") {
   configsReferences = [
     {
       field: "configAppUIUX",
-      data: undefined,
-      url: "/configs/json/configAppUIUX.json",
+      url: staticBaseForConfigJSON + "configAppUIUX.json",
     },
     {
       field: "configAppRoutes",
-      data: undefined,
-      url: "/configs/json/configAppRoutes.json",
+      url: staticBaseForConfigJSON + "configAppRoutes.json",
     },
     {
       field: "configAppData",
-      data: undefined,
-      url: "/configs/json/configAppData.json",
+      url: staticBaseForConfigJSON + "configAppData.json",
     },
     {
       field: "configAppMap",
-      data: undefined,
-      url: "/configs/json/configAppMap.json",
+      url: staticBaseForConfigJSON + "configAppMap.json",
     },
     {
       field: "configAppCharts",
-      data: undefined,
-      url: "/configs/json/configAppCharts.json",
+      url: staticBaseForConfigJSON + "configAppCharts.json",
     },
     {
       field: "configAppNumbers",
-      data: undefined,
-      url: "/configs/json/configAppNumbers.json",
+      url: staticBaseForConfigJSON + "configAppNumbers.json",
     },
     {
       field: "configAppTexts",
-      data: undefined,
-      url: "/configs/json/configAppTexts.json",
+      url: staticBaseForConfigJSON + "configAppTexts.json",
     },
     {
       field: "configAppTables",
-      data: undefined,
-      url: "/configs/json/configAppTables.json",
+      url: staticBaseForConfigJSON + "configAppTables.json",
     },
     {
       field: "configAppRawData",
-      data: undefined,
-      url: "/configs/json/configAppRawData.json",
+      url: staticBaseForConfigJSON + "configAppRawData.json",
     },
     {
       field: "configAppNavbarFooters",
-      data: undefined,
-      url: "/configs/json/configAppNavbarFooters.json",
+      url: staticBaseForConfigJSON + "configAppNavbarFooters.json",
     },
     {
       field: "configAppGlobalButtons",
-      data: undefined,
-      url: "/configs/json/configAppGlobalButtons.json",
+      url: staticBaseForConfigJSON + "configAppGlobalButtons.json",
     },
   ]
 } else if (process.env.NUXT_ENV_CONFIG_FROM == "distant_json_files") {
@@ -99,57 +89,46 @@ if (process.env.NUXT_ENV_CONFIG_FROM == "local_json_files") {
   configsReferences = [
     {
       field: "configAppUIUX",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppUIUX,
     },
     {
       field: "configAppRoutes",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppRoutes,
     },
     {
       field: "configAppData",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppData,
     },
     {
       field: "configAppMap",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppMap,
     },
     {
       field: "configAppCharts",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppCharts,
     },
     {
       field: "configAppNumbers",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppNumbers,
     },
     {
       field: "configAppTexts",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppTexts,
     },
     {
       field: "configAppTables",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppTables,
     },
     {
       field: "configAppRawData",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppRawData,
     },
     {
       field: "configAppNavbarFooters",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppNavbarFooters,
     },
     {
       field: "configAppGlobalButtons",
-      data: undefined,
       url: urlBase + process.env.NUXT_ENV_configAppGlobalButtons,
     },
   ]
