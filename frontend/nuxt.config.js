@@ -224,6 +224,10 @@ const configApp = {
   configsReferences: configsReferences,
   configsFrom: process.env.NUXT_ENV_CONFIG_FROM || "local_js_files",
 
+  // MATOMO
+  matomo_host: process.env.NUXT_ENV_MATOMO_HOST || "https://stats.data.gouv.fr",
+  matomo_siteId: parseInt(process.env.NUXT_ENV_MATOMO_SITE_ID) || 127,
+
   // INTERNATIONALIZATION
   defaultLocale: process.env.NUXT_ENV_LANG_DEFAULT_LOCALE || defaultLoc,
   localesBuild:
