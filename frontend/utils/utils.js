@@ -127,7 +127,7 @@ const falseStrings = [
   "f",
   "F",
 ]
-const chooseBooleanMode = (ARG) => {
+export const chooseBooleanMode = (ARG) => {
   if (trueStrings.includes(ARG)) {
     return true
   } else {

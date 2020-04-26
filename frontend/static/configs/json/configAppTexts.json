@@ -1,0 +1,111 @@
+{
+  "help": "this file contains the setup for the texts components",
+  "settingsIds": [
+    {
+      "id": "text-01",
+      "help": "",
+      "title": {
+        "fr": ""
+      },
+      "titleI18n": "texts.text01.title",
+      "dividers": {
+        "before": false,
+        "after": false
+      },
+      "componentRows": [
+        {
+          "rowNumber": 1,
+          "help": "",
+          "columns": [
+            {
+              "colName": "",
+              "colTitle": {
+                "fr": ""
+              },
+              "colTitleClass": "",
+              "cols": 12,
+              "textClass": "",
+              "subTextClass": "",
+              "sizeDesktop": "headline mb-0",
+              "sizeMobile": "subtitle-1",
+              "textPrefix": {
+                "fr": "Aides versées : "
+              },
+              "textPrefixClass": "font-weight-regular",
+              "textSuffix": {
+                "fr": ""
+              },
+              "specialStoreId": "levelname",
+              "specialStoreIdClass": "font-weight-medium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "text-02",
+      "help": "",
+      "title": {
+        "fr": ""
+      },
+      "titleI18n": "texts.text01.title",
+      "dividers": {
+        "before": false,
+        "after": false
+      },
+      "componentRows": [
+        {
+          "rowNumber": 1,
+          "help": "",
+          "columns": [
+            {
+              "colName": "",
+              "colTitle": {
+                "fr": "Informations"
+              },
+              "colTitleClass": "my-5",
+              "cols": 12,
+              "textClass": "",
+              "subTextClass": "",
+              "textPrefix": {},
+              "textSuffix": {},
+              "textsHtml": [
+                {
+                  "id": "intro",
+                  "textClass": "text-left mx-4 pt-4",
+                  "textContent": {
+                    "fr": "\n                    L’Etat a mis en place, avec les Régions, un fonds de solidarité doté d’1,7 milliard d’euros \n                    pour le mois de mars qui permettra le versement d’une aide défiscalisée \n                    allant jusqu’à 1500 euros aux plus petites entreprises, aux indépendants, \n                    aux micro-entrepreneurs et aux professions libérales touchés par la crise du coronavirus. \n                    Ce fonds sera maintenu autant que durera l’urgence sanitaire.\n                    "
+                  },
+                  "fromUrl": {}
+                },
+                {
+                  "id": "aides-textes",
+                  "textClass": "text-left mx-4 pt-4",
+                  "textContent": {
+                    "fr": "\n\n                    Afin d’offrir de la visibilité à l’ensemble des Français \n                    sur l’attribution des aides versées aux entreprises \n                    dans le cadre de ce fonds de solidarité, \n                    le ministre de l’action et des comptes publics, \n                    avec le soutien technique du département \n                    Etalab de la \n                    \n                    <a target=\"_blank\" href=\"https://www.numerique.gouv.fr\">\n                      Direction Interministérielle du Numérique (DINUM)</a>, \n\n                    mettent à disposition un tableau de bord dont le \n\n                    <a target=\"_blank\" href=\"https://github.com/etalab/dashboard-aides-entreprises\">\n                      code source est libre</a>\n                    qui propose une vision consolidée \n                    des aides aux entreprises effectivement versées.\n\n                  "
+                  },
+                  "fromUrl": {}
+                },
+                {
+                  "id": "more-infos",
+                  "textClass": "text-left mx-4 pt-4 pb-5 mb-5",
+                  "textContent": {
+                    "fr": "\n                    Pour obtenir d’autres informations relatives au fonds de solidarité, il est possible de \n                    consulter la page d’information \n                    <a target=\"_blank\" href=\"https://www.impots.gouv.fr/portail/\">\n                      disponible sur impots.gouv.fr</a>. \n                    <br><br>\n                    Les données utilisées sur ce tableau de bord \n                    <a target=\"_blank\" href=\"https://www.data.gouv.fr/fr/datasets/aides-aux-entreprises-dans-le-cadre-de-lepidemie-de-covid-19-en-france/\">\n                      sont disponibles sur data.gouv.fr</a>.\n                  "
+                  },
+                  "fromUrl": {}
+                },
+                {
+                  "id": "miseAJour",
+                  "textClass": "justify-center mx-4 pt-3 pb-5 mb-5",
+                  "fromUrl": {
+                    "fr": "https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/last_update_data.txt"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

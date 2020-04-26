@@ -1,5 +1,8 @@
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// IMPORTS
+import { chooseBooleanMode } from "./utils/utils.js"
 // import colors from 'vuetify/es5/util/colors'
-
+const fs = require("fs")
 const dotenv = require("dotenv")
 dotenv.config()
 console.log(
@@ -7,41 +10,163 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-import { configAppUIUX } from "./config/appConfigUIUX.js"
-// console.log('>>> nuxt.config.js / configAppUIUX : \n', configAppUIUX)
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// CONFIGS FROM...
+var configsJS = require("./nuxt_loadConfigs_fromJS.js")
+let configsReferences = configsJS.configsReferences
 
-import { configAppRoutes } from "./config/appConfigRoutes.js"
-// console.log('>>> nuxt.config.js / configAppRoutes : \n', configAppRoutes)
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// CONFIGS COPIED TO JSON FILES
+let copyConfigsToJSON = chooseBooleanMode(process.env.NUXT_ENV_CONFIG_TO_JSON)
+if (copyConfigsToJSON && process.env.NUXT_ENV_RUN_MODE == "dev") {
+  console.log(">>> nuxt.config.js / copyConfigsToJSON / ...")
+  for (let conf of configsJS.configsReferences) {
+    let jsonFilename = conf.field + ".json"
+    console.log(
+      ">>> nuxt.config.js / copyConfigsToJSON / jsonFilename : ",
+      jsonFilename
+    )
+    try {
+      let jsonStr = JSON.stringify(conf.data, null, 2)
+      // console.log('>>> nuxt.config.js / copyConfigsToJSON / jsonStr : ', jsonStr)
+      fs.writeFileSync(`./static/configs/json/${jsonFilename}`, jsonStr, "utf8")
+    } catch (error) {
+      console.log(
+        ">>> nuxt.config.js / copyConfigsToJSON / ... error : ",
+        error
+      )
+    }
+  }
+}
 
-import { configAppData } from "./config/appConfigData.js"
-// console.log('>>> nuxt.config.js / configAppData : \n', configAppData)
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// CONFIGS FROM...
+const staticBaseForConfigJSON = "/configs/json/"
+if (process.env.NUXT_ENV_CONFIG_FROM == "local_json_files") {
+  configsReferences = [
+    {
+      field: "configAppUIUX",
+      url: staticBaseForConfigJSON + "configAppUIUX.json",
+    },
+    {
+      field: "configAppRoutes",
+      url: staticBaseForConfigJSON + "configAppRoutes.json",
+    },
+    {
+      field: "configAppData",
+      url: staticBaseForConfigJSON + "configAppData.json",
+    },
+    {
+      field: "configAppMap",
+      url: staticBaseForConfigJSON + "configAppMap.json",
+    },
+    {
+      field: "configAppCharts",
+      url: staticBaseForConfigJSON + "configAppCharts.json",
+    },
+    {
+      field: "configAppNumbers",
+      url: staticBaseForConfigJSON + "configAppNumbers.json",
+    },
+    {
+      field: "configAppTexts",
+      url: staticBaseForConfigJSON + "configAppTexts.json",
+    },
+    {
+      field: "configAppTables",
+      url: staticBaseForConfigJSON + "configAppTables.json",
+    },
+    {
+      field: "configAppRawData",
+      url: staticBaseForConfigJSON + "configAppRawData.json",
+    },
+    {
+      field: "configAppNavbarFooters",
+      url: staticBaseForConfigJSON + "configAppNavbarFooters.json",
+    },
+    {
+      field: "configAppGlobalButtons",
+      url: staticBaseForConfigJSON + "configAppGlobalButtons.json",
+    },
+  ]
+} else if (process.env.NUXT_ENV_CONFIG_FROM == "distant_json_files") {
+  const urlBase = process.env.NUXT_ENV_configs_URLBASE
+  configsReferences = [
+    {
+      field: "configAppUIUX",
+      url: urlBase + process.env.NUXT_ENV_configAppUIUX,
+    },
+    {
+      field: "configAppRoutes",
+      url: urlBase + process.env.NUXT_ENV_configAppRoutes,
+    },
+    {
+      field: "configAppData",
+      url: urlBase + process.env.NUXT_ENV_configAppData,
+    },
+    {
+      field: "configAppMap",
+      url: urlBase + process.env.NUXT_ENV_configAppMap,
+    },
+    {
+      field: "configAppCharts",
+      url: urlBase + process.env.NUXT_ENV_configAppCharts,
+    },
+    {
+      field: "configAppNumbers",
+      url: urlBase + process.env.NUXT_ENV_configAppNumbers,
+    },
+    {
+      field: "configAppTexts",
+      url: urlBase + process.env.NUXT_ENV_configAppTexts,
+    },
+    {
+      field: "configAppTables",
+      url: urlBase + process.env.NUXT_ENV_configAppTables,
+    },
+    {
+      field: "configAppRawData",
+      url: urlBase + process.env.NUXT_ENV_configAppRawData,
+    },
+    {
+      field: "configAppNavbarFooters",
+      url: urlBase + process.env.NUXT_ENV_configAppNavbarFooters,
+    },
+    {
+      field: "configAppGlobalButtons",
+      url: urlBase + process.env.NUXT_ENV_configAppGlobalButtons,
+    },
+  ]
+}
 
-import { configAppMap } from "./config/appConfigMap.js"
-// console.log('>>> nuxt.config.js / configAppMap : \n', configAppMap)
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// color themes
+let isDarkTheme = chooseBooleanMode(process.env.NUXT_ENV_THEME_IS_DARK) || false
+let defaultThemes = {
+  light: {
+    primary: process.env.NUXT_ENV_THEME_LIGHT_primary || "#000091",
+    accent: process.env.NUXT_ENV_THEME_LIGHT_accent || "#572a99",
+    secondary: process.env.NUXT_ENV_THEME_LIGHT_secondary || "#b1133b",
+    info: process.env.NUXT_ENV_THEME_LIGHT_info || "#53657D",
+    warning: process.env.NUXT_ENV_THEME_LIGHT_warning || "#ff9947",
+    error: process.env.NUXT_ENV_THEME_LIGHT_error || "#D1335B;",
+    success: process.env.NUXT_ENV_THEME_LIGHT_success || "#03BD5B",
+  },
 
-import { configAppCharts } from "./config/appConfigCharts.js"
-// console.log('>>> nuxt.config.js / configAppCharts : \n', configAppCharts)
+  dark: {
+    primary: process.env.NUXT_ENV_THEME_DARK_primary || "#000091",
+    accent: process.env.NUXT_ENV_THEME_DARK_accent || "#572a99",
+    secondary: process.env.NUXT_ENV_THEME_DARK_secondary || "#b1133b",
+    info: process.env.NUXT_ENV_THEME_DARK_info || "#53657D",
+    warning: process.env.NUXT_ENV_THEME_DARK_warning || "#ff9947",
+    error: process.env.NUXT_ENV_THEME_DARK_error || "#D1335B;",
+    success: process.env.NUXT_ENV_THEME_DARK_success || "#03BD5B",
+  },
+}
 
-import { configAppNumbers } from "./config/appConfigNumbers.js"
-// console.log('>>> nuxt.config.js / configAppNumbers : \n', configAppNumbers)
-
-import { configAppTexts } from "./config/appConfigTexts.js"
-// console.log('>>> nuxt.config.js / configAppTexts : \n', configAppTexts)
-
-import { configAppTables } from "./config/appConfigTables.js"
-// console.log('>>> nuxt.config.js / configAppTables : \n', configAppTables)
-
-import { configAppRawData } from "./config/appConfigRawData.js"
-// console.log('>>> nuxt.config.js / configAppRawData : \n', configAppRawData)
-
-import { configAppNavbarFooters } from "./config/appConfigNavbarFooters.js"
-// console.log('>>> nuxt.config.js / configAppNavbarFooters : \n', configAppNavbarFooters)
-
-import { configAppGlobalButtons } from "./config/appConfigGlobalButtons.js"
-// console.log('>>> nuxt.config.js / configAppGlobalButtons : \n', configAppGlobalButtons)
-
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// PORTS
 const logAllowed = ["preprod", "dev", "mockup"]
-
 const choosePort = (ENVPROD) => {
   const NUXT_ENV_PORT_DEV = parseInt(process.env.NUXT_ENV_PORT_DEV) || 50050
   const NUXT_ENV_PORT_PREPROD =
@@ -56,61 +181,56 @@ const choosePort = (ENVPROD) => {
   }
 }
 
-const chooseBackend = (ENVPROD) => {
-  return configAppData.dataSource.apiBackendUrl[ENVPROD]
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// LOCALES
+const defaultLoc = "fr"
+const defaultLocs = [
+  {
+    code: "fr",
+    name: "Français",
+    file: "fr-FR.js",
+  },
+]
+const buildLocales = (localesString) => {
+  let locales = []
+  let tempLocales = localesString.split(",")
+  for (let loc of tempLocales) {
+    let loc_ = loc.split(":")
+    let obj = {
+      code: loc_[0],
+      name: loc_[1],
+      file: loc_[2],
+    }
+    locales.push(obj)
+  }
+  return locales
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// CONFIG APP OBJECT
 const configApp = {
-  /// APP INFOS
-  appTitle: configAppUIUX.appTitle,
-
   // DEV MODE - PORT - HOST ...
   mode: process.env.NUXT_ENV_RUN_MODE,
   host: process.env.NUXT_ENV_HOST,
   port: choosePort(process.env.NUXT_ENV_RUN_MODE),
 
+  // CONFIGS
+  // configsReferencesBackup: process.env.NUXT_ENV_CONFIG_BACKUP
+  //   ? undefined
+  //   : configsJS.configsReferences,
+  configsReferences: configsReferences,
+  configsFrom: process.env.NUXT_ENV_CONFIG_FROM || "local_js_files",
+
   // INTERNATIONALIZATION
-  defaultLocale: configAppUIUX.lang.defaultLocale,
-  localesBuild: configAppUIUX.lang.locales,
-
-  // DATA :init and backends
-  backendApi: chooseBackend(process.env.NUXT_ENV_RUN_MODE),
-  dataSource: configAppData.dataSource,
-  defaultDataSetup: configAppData.defaultDataSetup,
-  filters: configAppData.filters,
-
-  // UX - ROUTES
-  UX_config: configAppUIUX.UX_config,
-  ROUTES_config: configAppRoutes.routes,
-  UX_navbarFooters: configAppNavbarFooters,
-  UX_globalButtons: configAppGlobalButtons,
-
-  // UI
-  UI_config: configAppUIUX.UI_config,
-
-  // MAP SETTINGS
-  MAP_config: configAppMap,
-
-  // CHARTS SETTINGS
-  CHARTS_config: configAppCharts,
-
-  // NUMBERS SETTINGS
-  NUMBERS_config: configAppNumbers,
-
-  // TABLES SETTINGS
-  TABLES_config: configAppTables,
-
-  // TEXTS SETTINGS
-  TEXTS_config: configAppTexts,
-
-  // TEXTS SETTINGS
-  RAWDATA_config: configAppRawData,
+  defaultLocale: process.env.NUXT_ENV_LANG_DEFAULT_LOCALE || defaultLoc,
+  localesBuild:
+    buildLocales(process.env.NUXT_ENV_LANG_DEFAULT_LOCALES) || defaultLocs,
 }
-
 console.log(">>> nuxt.config.js / configApp : \n", configApp)
 
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// MAIN NUXT CONFIG OBJECT
 // import webpack from 'webpack'
-
 export default {
   mode: "spa",
 
@@ -118,16 +238,19 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.NUXT_ENV_APP_TITLE || "Aides aux entreprises : fonds de solidarité",
+    titleTemplate: process.env.NUXT_ENV_APP_TITLE || "ODAMAP",
+    title: "",
     meta: [
       { charset: "utf-8" },
       {
         name: "viewport",
-        content: "width=device-width, initial-scale=1, height=device-height, viewport-fit=cover" },
+        content:
+          "width=device-width, initial-scale=1, height=device-height, viewport-fit=cover",
+      },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || "",
+        content: process.env.NUXT_ENV_APP_TITLE || "",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
@@ -152,7 +275,13 @@ export default {
    ** Routes and middlewares to load before loading routes
    */
   router: {
-    middleware: ["setLocales", "getDataInit", "getRouteConfig"],
+    middleware: [
+      "getConfigsInit",
+      "setConfigsInit",
+      "setLocales",
+      "getDataInit",
+      "getRouteConfig",
+    ],
   },
 
   /*
@@ -169,11 +298,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    // '~/plugins/utils',
-    // '~/plugins/vuetify',
-
     { src: "~/plugins/mapbox", mode: "client" },
-
     { src: "~/plugins/apexCharts", mode: "client" },
     { src: "~/plugins/matomo", mode: "client" },
   ],
@@ -195,10 +320,11 @@ export default {
   ],
 
   i18n: {
-    defaultLocale: configAppUIUX.lang.defaultLocale, //'fr',
-    locales: configAppUIUX.lang.locales,
+    defaultLocale: process.env.NUXT_ENV_LANG_DEFAULT_LOCALE || defaultLoc, //'fr',
+    locales:
+      buildLocales(process.env.NUXT_ENV_LANG_DEFAULT_LOCALES) || defaultLocs,
     vueI18n: {
-      fallbackLocale: configAppUIUX.lang.defaultLocale, //'fr',
+      fallbackLocale: process.env.NUXT_ENV_LANG_DEFAULT_LOCALE || defaultLoc, //'fr',
     },
     lazy: true,
     langDir: "locales/",
@@ -217,8 +343,8 @@ export default {
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     theme: {
-      dark: configApp.UI_config.isDarkTheme,
-      themes: configApp.UI_config.themes,
+      dark: isDarkTheme,
+      themes: defaultThemes,
     },
   },
 

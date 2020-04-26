@@ -3,19 +3,21 @@
   ODAMAP 
 </h1>
 <p align="center">
-  for Open-Dashboard-Map
+  stands for "Open-Dashboard-And-MAP"
 </p>
 
 
 ---------
 
 <p align="center">
-  a generic map/dashboard solution for open data 
+  A generic and customizable map/dashboard solution for open data visualisation
 </p>
 
 ----------
 
-#### Version : 0.2
+#### Version : 1.1
+
+check the [versions log here]('VERSIONS.md')
 
 ----------
 #### Co-auteurs : 
@@ -29,12 +31,16 @@
 ## Sites 
 
 
-#### Preprod 
+#### - Preprod 
 
 **live test** : https://covid-aides-entreprises.netlify.com
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/71e2942d-961b-4f06-8ac3-8dc73dceb6ee/deploy-status)](https://app.netlify.com/sites/covid-aides-entreprises/deploys)
 
+
+#### - Prod 
+
+**live prod** : https://aides-entreprises.data.gouv.fr/
+(no badge for now)
 
 -----------
 
@@ -62,13 +68,13 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## Linting
 
-Vous pouvez alors lancer lint pour simplement vérifier les erreurs :
+Vous pouvez alors lancer `lint` pour simplement vérifier les erreurs :
 
 ```bash
 npm run lint
 ```
 
-ou lintfix pour corriger ce qui peut l'être
+ou `lintfix` pour corriger ce qui peut l'être
 
 ```bash
 npm run lintfix
@@ -86,48 +92,64 @@ npm run lintfix
 
 #### Deploy contexts
 
-- Production branch : `j_front`
+- Production branch : `master`
+- ( ou : Production branch : `preprod` )
 
 #### Environment variables
 
 - `NUXT_ENV_RUN_MODE` = `prod` (ou `preprod` pour avoir les logs dans la console)
+- voir également les autres variables possibles en regardant le fichier d'exemple [`.envExample`](.envExample)
 
 ----------
 
-## Configuration de l'app front
+## Configuration de l'application ODAMAP
+
+#### Variables d'environnement : 
+
+- éditer/créer un fichier `.env` sur le modèle du fichier [`.envExample`](.envExample)
 
 #### configuration de l'app / UI-UX / routes / navbar ...: 
 
-- éditer/créer un fichier `.env` sur le modèle du `example.env`
-- éditer le fichier `config/appConfigUIUX.json` : 
-- éditer le fichier `config/appConfigRoutes.json` : 
+- éditer le fichier [`config/appConfigUIUX.js`](./config/appConfigUIUX.js) : 
+- éditer le fichier [`config/appConfigRoutes.js`](./config/appConfigRoutes.js) : 
 
 
 #### configuration de l'app / data: 
 
-- éditer le fichier `config/appConfigData.json` : 
+- éditer le fichier [`config/appConfigData.js`](./config/appConfigData.js) : 
 
 #### configuration de l'app / carte: 
 
-- éditer le fichier `config/mapboxVectorStyles.json` : 
+- éditer le fichier [`config/mapboxVectorStyles.js`](./config/mapboxVectorStyles.js) : 
 
-#### configuration de l'app / vues données : 
+#### configuration de l'app / vues données :
 
-- éditer le fichier `config/appConfigMap.json` : 
-- éditer le fichier `config/appConfigData.json` : 
-- éditer le fichier `config/appConfigNumbers.json` : 
-- éditer le fichier `config/appConfigGlobalButtons.json` : 
-- éditer le fichier `config/appConfigTexts.json` : 
-- éditer le fichier `config/appConfigTables.json` : 
-- éditer le fichier `config/appConfigRawData.json` : 
+- éditer le fichier [`config/appConfigMap.js`](./config/appConfigMap.js) : 
+- éditer le fichier [`config/appConfigData.js`](./config/appConfigData.js) : 
+- éditer le fichier [`config/appConfigNumbers.js`](./config/appConfigNumbers.js) : 
+- éditer le fichier [`config/appConfigGlobalButtons.js`](./config/appConfigGlobalButtons.js) : 
+- éditer le fichier [`config/appConfigTexts.js`](./config/appConfigTexts.js) : 
+- éditer le fichier [`config/appConfigTables.js`](./config/appConfigTables.js) : 
+- éditer le fichier [`config/appConfigRawData.js`](./config/appConfigRawData.js) : 
 
 #### langues : 
 
-- voir le dossier `/locales` pour les fichiers de traduction
+- voir le dossier [`/locales`](./locales/) pour les fichiers de traduction
 
 
 ----------------
 
+### ce qu’il n’y a pas encore :
+
+##### se référer au kanban de développement : [page projet Github][kanban]
+
+
+- afficher les départements dépendants d’une région et uniquement eux ;
+- minivues pour les dom-tom en dessous ou à côté de la carte principale ;
+- settings pour connexion à une API de backend, mais sketché pour quand même ;
+- footer “officiel” + liens ;
+- meilleure gestion du zoom et des largeurs de cercles en fonction de l’altitude ;
+- ...
 
 ### ce qu’il y a dedans :
 
@@ -141,23 +163,13 @@ npm run lintfix
 - le mapping des données avec les variables de l’appli se font via les différents fichiers de configuration dans le dossier /config
 - switch de la carte en 1er + chiffres clés en version mobile ;
 - wording et CSS ;
-
-### ce qu’il n’y a pas encore :
-
-##### se référer au kanban de développement : [page projet Github][kanban]
-
-
-- afficher les départements dépendants d’une région et uniquement eux ;
-- revenir aux chiffres nationaux (réinitialiser) ;
 - tiles Etalab (bug relou de mon wrapper mapbox pour charger le style ?!!!) ;
-- scrolling uniquement sur la colonne de gauche pour pouvoir ajouter d’autres charts en dessous de la première ;
-- minivues pour les dom-tom en dessous ou à côté de la carte principale ;
-- settings pour connexion à une API de backend, mais sketché pour quand même ;
-- pages/utl de textes statiques pour afficher des infos ;
-- footer “officiel” + liens ;
-- meilleure gestion du zoom et des largeurs de cercles en fonction de l’altitude ;
 - repasse sur l’UX (notamment sur l’usage de la barre de gauche par exemple) ;
-- ...
+- pages/url de textes statiques pour afficher des infos ;
+- scrolling uniquement sur la colonne de gauche pour pouvoir ajouter d’autres charts en dessous de la première ;
+- revenir aux chiffres nationaux (réinitialiser) ;
+
+
 
 -----------
 
@@ -170,20 +182,15 @@ npm run lintfix
 déploiement : SPA mais plusieurs urls possibles pour afficher des pages / netlify (sur mon compte Netlify pour le moment mais assez simple à déployer)
 
 -----------
-## repo : 
-- branche j_front / dossier frontend du repo qu’on se partage avec Geoffrey => https://github.com/etalab/dashboard-aides-entreprises/tree/j_front/frontend
-
-
------------
 
 
 ### Variables de configuration remarquables
 
 ------------
 
-#### fichier : `appConfigMap.js`
+#### fichier : [`appConfigMap.js`](./config/appConfigMap.js)
 
-Pour le composant `MapboxGL` : 
+Pour le composant [`MapboxGL`](./componenents/DataViews/MapboxGL.vue) : 
 
 - `settingsIds[-].map.clicEvents[-].functions` : (array)
   - liste des fonctions à déclencher lors d'un événement sur un élément de la carte
@@ -212,9 +219,9 @@ Pour le composant `MapboxGL` :
 
 ----------------
 
-#### fichier : `appConfigGlobalButtons.js`
+#### fichier : [`appConfigGlobalButtons.js`](./config/appConfigGlobalButtons.js)
 
-Pour le composant `GlobalButton` : 
+Pour le composant [`GlobalButton`](./components/UX/GlobalButton.vue) : 
 
 - `settingsIds[-].componentButtons.functions[-]` : (array)
   - liste des fonctions à déclencher lors d'un clic sur le bouton

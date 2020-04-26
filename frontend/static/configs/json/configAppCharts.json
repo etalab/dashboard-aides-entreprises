@@ -1,0 +1,314 @@
+{
+  "help": "this file contains the setup for the apex charts",
+  "settingsIds": [
+    {
+      "id": "chartjs-01",
+      "help": "APE chart",
+      "chartOptions": {}
+    },
+    {
+      "id": "apexchart-01",
+      "serie_id": "stat-bar-horiz",
+      "help": "bar horiz / kpi_top_10_naf X montant",
+      "titleI18n": "charts.chart01.title",
+      "chartTitle": {
+        "fr": "\n        Top 10 des aides par \n        <a target=\"_blank\" href=\"https://www.insee.fr/fr/information/2406147\">\n          code section NAF</a>\n        (en M€) <br>\n      "
+      },
+      "chartTitleClass": "subtitle-2 text-center",
+      "titleSuffixSpecialStoreId": "levelname",
+      "dividers": {
+        "before": false,
+        "after": true,
+        "afterHideOnMobile": true
+      },
+      "datasetMappers": {
+        "specialStoreId": "focusObject",
+        "fromDatasetKey": "kpi_top_10_naf",
+        "seriesMappers": [
+          {
+            "dataFromKey": "montant",
+            "serieName": "montant (M€)",
+            "format": [
+              {
+                "utilsFnName": "toMillionsOrElse",
+                "params": {
+                  "divider": 1000000,
+                  "fixed": 2
+                }
+              }
+            ],
+            "sortDataSerieBy": {
+              "sortByType": "sortByFieldValue",
+              "fieldName": "montant",
+              "toNumber": true,
+              "sortOrder": "descending",
+              "exceptions": {
+                "putLast": {
+                  "fieldName": "section_naf",
+                  "value": "Autres"
+                }
+              }
+            },
+            "buildAxisCategsX": true,
+            "buildAxisCategsXsettings": {
+              "fromKey": "libelle_section_naf",
+              "splitBy": [
+                ",",
+                ";"
+              ]
+            }
+          }
+        ],
+        "chartOptions": {
+          "chart": {
+            "type": "bar",
+            "height": "390px",
+            "width": "390px",
+            "toolbar": {
+              "show": false
+            }
+          },
+          "legend": {
+            "show": false
+          },
+          "plotOptions": {
+            "bar": {
+              "horizontal": true,
+              "distributed": true
+            }
+          },
+          "theme": {
+            "mode": "light",
+            "palette": "palette1"
+          },
+          "dataLabels": {
+            "enabled": true
+          },
+          "xaxis": {
+            "type": "category",
+            "labels": {
+              "show": false,
+              "style": {
+                "fontSize": "9px"
+              }
+            }
+          },
+          "responsive": [
+            {
+              "breakpoint": 960,
+              "options": {
+                "chart": {
+                  "width": "350px"
+                },
+                "xaxis": {
+                  "type": "numeric",
+                  "labels": {
+                    "show": false,
+                    "style": {
+                      "fontSize": "9px"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "apexchart-01bis",
+      "serie_id": "stat-bar-horiz",
+      "help": "bar horiz / kpi_top_10_naf X montant",
+      "titleI18n": "charts.chart01.title",
+      "chartTitle": {
+        "fr": "Top 10 des aides par nombre de demandes <br>"
+      },
+      "chartTitleClass": "subtitle-2 text-center",
+      "titleSuffixSpecialStoreId": "levelname",
+      "dividers": {
+        "before": false,
+        "after": true
+      },
+      "datasetMappers": {
+        "specialStoreId": "focusObject",
+        "fromDatasetKey": "kpi_top_10_naf",
+        "seriesMappers": [
+          {
+            "dataFromKey": "nombre",
+            "serieName": "nombre d'aides",
+            "sortDataSerieBy": {
+              "sortByType": "sortByFieldValue",
+              "fieldName": "nombre",
+              "toNumber": true,
+              "sortOrder": "descending",
+              "exceptions": {
+                "putLast": {
+                  "fieldName": "section_naf",
+                  "value": "Autres"
+                }
+              }
+            },
+            "buildAxisCategsX": true,
+            "buildAxisCategsXsettings": {
+              "fromKey": "libelle_section_naf"
+            }
+          }
+        ],
+        "chartOptions": {
+          "chart": {
+            "type": "bar",
+            "height": "700px",
+            "width": "490px",
+            "toolbar": {
+              "show": false
+            }
+          },
+          "legend": {
+            "show": false
+          },
+          "plotOptions": {
+            "bar": {
+              "horizontal": false,
+              "distributed": true
+            }
+          },
+          "theme": {
+            "mode": "light",
+            "palette": "palette2",
+            "monochrome": {
+              "enabled": true,
+              "color": "#000091",
+              "shadeTo": "light",
+              "shadeIntensity": 0.65
+            }
+          },
+          "dataLabels": {
+            "enabled": true,
+            "style": {
+              "fontSize": "10px"
+            }
+          },
+          "xaxis": {
+            "type": "category",
+            "labels": {
+              "show": true,
+              "rotate": -75,
+              "maxHeight": 500
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "apexchart-02",
+      "serie_id": "stat-bar-vertic",
+      "help": "bar vertic + stacked example",
+      "titleI18n": "charts.chart02.title",
+      "loadSeriesFrom": {
+        "preload": false,
+        "sourceType": "json",
+        "sourceName": "..."
+      },
+      "loadCategoriesFrom": {
+        "preload": false,
+        "sourceType": "json",
+        "sourceName": "..."
+      },
+      "series": [
+        {
+          "name": "PRODUCT A",
+          "data": [
+            44,
+            55,
+            41,
+            67,
+            22,
+            43
+          ]
+        },
+        {
+          "name": "PRODUCT B",
+          "data": [
+            13,
+            23,
+            20,
+            8,
+            13,
+            27
+          ]
+        },
+        {
+          "name": "PRODUCT C",
+          "data": [
+            11,
+            17,
+            15,
+            15,
+            21,
+            14
+          ]
+        },
+        {
+          "name": "PRODUCT D",
+          "data": [
+            21,
+            7,
+            25,
+            13,
+            22,
+            8
+          ]
+        }
+      ],
+      "chartOptions": {
+        "chart": {
+          "type": "bar",
+          "height": 350,
+          "width": 400,
+          "stacked": true,
+          "toolbar": {
+            "show": true
+          },
+          "zoom": {
+            "enabled": true
+          }
+        },
+        "responsive": [
+          {
+            "breakpoint": 480,
+            "options": {
+              "legend": {
+                "position": "bottom",
+                "offsetX": -10,
+                "offsetY": 0
+              }
+            }
+          }
+        ],
+        "plotOptions": {
+          "bar": {
+            "horizontal": false
+          }
+        },
+        "xaxis": {
+          "type": "datetime",
+          "categories": [
+            "01/01/2011 GMT",
+            "01/02/2011 GMT",
+            "01/03/2011 GMT",
+            "01/04/2011 GMT",
+            "01/05/2011 GMT",
+            "01/06/2011 GMT"
+          ]
+        },
+        "legend": {
+          "position": "right",
+          "offsetY": 40
+        },
+        "fill": {
+          "opacity": 1
+        }
+      }
+    }
+  ]
+}

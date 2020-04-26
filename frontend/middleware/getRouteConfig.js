@@ -1,11 +1,12 @@
 export default function ({ store, route, redirect }) {
   const log = store.state.log
+  log && console.log("\n", "+ ".repeat(20))
+  log && console.log("-MW- getRouteConfig ... ")
 
   let path = route.path
 
   let queryLocale = route.query.locale
 
-  log && console.log("\n-MW- getRouteConfig ... ")
 
   // set locale if part of url
   if (queryLocale) {
@@ -16,7 +17,11 @@ export default function ({ store, route, redirect }) {
   // retrieve local route config
   // log && console.log('-MW- getRouteConfig / path : ', path)
   let currentRouteConfig = store.getters["getCurrentRouteConfig"](path)
-  // log && console.log('-MW- getRouteConfig / currentRouteConfig : ', currentRouteConfig)
+  log &&
+    console.log(
+      "-MW- getRouteConfig / currentRouteConfig : ",
+      currentRouteConfig
+    )
 
   // reroute to error / or home if currentRouteConfig is undefined
   if (typeof currentRouteConfig === "undefined") {
