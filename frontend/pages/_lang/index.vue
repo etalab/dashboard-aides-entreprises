@@ -80,12 +80,6 @@
                   :route-id="routeConfig.id"
                 />
 
-                <ChartJS
-                  v-if="colRow.activated && colRow.component == 'chartjs'"
-                  :settings="colRow.settings"
-                  :route-id="routeConfig.id"
-                />
-
                 <Table
                   v-if="colRow.activated && colRow.component == 'table'"
                   :settings="colRow.settings"
@@ -108,7 +102,6 @@ import { mapState, mapGetters, mapActions } from "vuex"
 
 import MapboxGL from "~/components/DataViews/MapboxGL.vue"
 import Numbers from "~/components/DataViews/Numbers.vue"
-import ChartJS from "~/components/DataViews/ChartJS.vue"
 import ApexChart from "~/components/DataViews/ApexChart.vue"
 import TextFrame from "~/components/DataViews/TextFrame.vue"
 import GlobalButtons from "~/components/UX/GlobalButtons.vue"
@@ -121,7 +114,6 @@ export default {
     // Filters,
     MapboxGL,
     Numbers,
-    ChartJS,
     ApexChart,
     TextFrame,
     GlobalButtons,

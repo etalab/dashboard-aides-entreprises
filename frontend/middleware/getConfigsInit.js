@@ -30,7 +30,8 @@ export default function ({ store, env }) {
     // loop config urls
     for (let configRef of configsReferences) {
       if (getDistant.includes(configsFrom)) {
-        log && console.log("-MW- getConfigInit / configRef.url : ", configRef.url)
+        log &&
+          console.log("-MW- getConfigInit / configRef.url : ", configRef.url)
         let initConfigFromURL = axios
           .get(configRef.url)
           .then((resp) => {

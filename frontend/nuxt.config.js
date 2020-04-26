@@ -299,7 +299,6 @@ export default {
    */
   plugins: [
     { src: "~/plugins/mapbox", mode: "client" },
-
     { src: "~/plugins/apexCharts", mode: "client" },
     { src: "~/plugins/matomo", mode: "client" },
   ],
