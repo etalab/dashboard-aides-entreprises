@@ -118,12 +118,11 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: process.env.npm_package_name,
-    title: "",
+    title: process.env.NUXT_ENV_APP_TITLE || "Aides aux entreprises : fonds de solidarité",
     meta: [
       { charset: "utf-8" },
-      { 
-        name: "viewport", 
+      {
+        name: "viewport",
         content: "width=device-width, initial-scale=1, height=device-height, viewport-fit=cover" },
       {
         hid: "description",
