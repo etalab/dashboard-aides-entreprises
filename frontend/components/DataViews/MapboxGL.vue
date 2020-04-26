@@ -113,16 +113,6 @@
         <!-- CONTROLS -->
         <MglNavigationControl position="bottom-right" />
       </MglMap>
-
-      <!-- <mapbox
-        accessToken=""
-        :map-options="{
-          style: 'https://etalab-tiles.fr/styles/osm-bright/style.json' ,
-          center: mapOptions.center,
-          zoom : mapOptions.zoom
-        }"
-        @map-load="loaded"
-      /> -->
     </no-ssr>
   </div>
 </template>

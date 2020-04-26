@@ -173,7 +173,6 @@ export default {
     // '~/plugins/vuetify',
 
     { src: "~/plugins/mapbox", mode: "client" },
-    // { src: '~/plugins/mapboxgl', mode: 'client' },
 
     { src: "~/plugins/apexCharts", mode: "client" },
     { src: "~/plugins/matomo", mode: "client" },
