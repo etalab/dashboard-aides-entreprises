@@ -841,7 +841,7 @@ export default {
       //     event.features
       //   )
       if (event.features.length > 0) {
-        if (this.hoveredStateId[source] !== null) {
+        if (this.hoveredStateId[source]) {
           mapbox.setFeatureState(
             { source, id: this.hoveredStateId[source] },
             { hover: false }
