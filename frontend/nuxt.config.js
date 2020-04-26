@@ -118,7 +118,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: "Aides aux entreprises : fonds de solidarité",
+    title: process.env.NUXT_ENV_APP_TITLE || "Aides aux entreprises : fonds de solidarité",
     meta: [
       { charset: "utf-8" },
       {
