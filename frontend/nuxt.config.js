@@ -5,6 +5,7 @@ import { chooseBooleanMode } from "./utils/utils.js"
 const fs = require("fs")
 const dotenv = require("dotenv")
 dotenv.config()
+
 console.log(
   ">>> nuxt.config.js (start) / process.env.NUXT_ENV_APP_TITLE : ",
   process.env.NUXT_ENV_APP_TITLE
@@ -192,18 +193,20 @@ const defaultLocs = [
   },
 ]
 const buildLocales = (localesString) => {
-  let locales = []
-  let tempLocales = localesString.split(",")
-  for (let loc of tempLocales) {
-    let loc_ = loc.split(":")
-    let obj = {
-      code: loc_[0],
-      name: loc_[1],
-      file: loc_[2],
+  if (localesString) {
+    let locales = []
+    let tempLocales = localesString.split(",")
+    for (let loc of tempLocales) {
+      let loc_ = loc.split(":")
+      let obj = {
+        code: loc_[0],
+        name: loc_[1],
+        file: loc_[2],
+      }
+      locales.push(obj)
     }
-    locales.push(obj)
+    return locales
   }
-  return locales
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
@@ -250,7 +253,7 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.NUXT_ENV_APP_TITLE || "",
+        content: process.env.NUXT_ENV_APP_TITLE || "ODAMAP",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
