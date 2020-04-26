@@ -35,7 +35,7 @@
       position: absolute;
       z-index: 200;
       top: 50%;
-      left: {{ isMobileWidth ? '45%' : '45%' }};
+      left: {{ isMobileWidth ? '35%' : '45%' }};
       }
     </style>
 

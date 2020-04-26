@@ -600,7 +600,7 @@ export const configAppMap = {
         center: [46.2276, 2.2137],
         currentCenter: [46.2276, 2.2137],
         zoom: 4.8,
-        maxZoom: 8,
+        maxZoom: 9.5,
         minZoom: 2,
       },
 
