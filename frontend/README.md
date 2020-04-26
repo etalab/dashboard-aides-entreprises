@@ -98,7 +98,7 @@ npm run lintfix
 #### Environment variables
 
 - `NUXT_ENV_RUN_MODE` = `prod` (ou `preprod` pour avoir les logs dans la console)
-- voir également les autres variables possibles en regardant le fichier d'exemple [`.envExample`]('.envExample')
+- voir également les autres variables possibles en regardant le fichier d'exemple [`.envExample`](.envExample)
 
 ----------
 
@@ -106,35 +106,35 @@ npm run lintfix
 
 #### Variables d'environnement : 
 
-- éditer/créer un fichier `.env` sur le modèle du fichier [`.envExample`]('.envExample')
+- éditer/créer un fichier `.env` sur le modèle du fichier [`.envExample`](.envExample)
 
 #### configuration de l'app / UI-UX / routes / navbar ...: 
 
-- éditer le fichier [`config/appConfigUIUX.js`]('./config/appConfigUIUX.js') : 
-- éditer le fichier [`config/appConfigRoutes.js`]('./config/appConfigRoutes.js') : 
+- éditer le fichier [`config/appConfigUIUX.js`](./config/appConfigUIUX.js) : 
+- éditer le fichier [`config/appConfigRoutes.js`](./config/appConfigRoutes.js) : 
 
 
 #### configuration de l'app / data: 
 
-- éditer le fichier [`config/appConfigData.js`]('./config/appConfigData.js') : 
+- éditer le fichier [`config/appConfigData.js`](./config/appConfigData.js) : 
 
 #### configuration de l'app / carte: 
 
-- éditer le fichier [`config/mapboxVectorStyles.js`]('./config/mapboxVectorStyles.js') : 
+- éditer le fichier [`config/mapboxVectorStyles.js`](./config/mapboxVectorStyles.js) : 
 
 #### configuration de l'app / vues données :
 
-- éditer le fichier [`config/appConfigMap.js`]('./config/appConfigMap.js') : 
-- éditer le fichier [`config/appConfigData.js`]('./config/appConfigData.js') : 
-- éditer le fichier [`config/appConfigNumbers.js`]('./config/appConfigNumbers.js') : 
-- éditer le fichier [`config/appConfigGlobalButtons.js`]('./config/appConfigGlobalButtons.js') : 
-- éditer le fichier [`config/appConfigTexts.js`]('./config/appConfigTexts.js') : 
-- éditer le fichier [`config/appConfigTables.js`]('./config/appConfigTables.js') : 
-- éditer le fichier [`config/appConfigRawData.js`]('./config/appConfigRawData.js') : 
+- éditer le fichier [`config/appConfigMap.js`](./config/appConfigMap.js) : 
+- éditer le fichier [`config/appConfigData.js`](./config/appConfigData.js) : 
+- éditer le fichier [`config/appConfigNumbers.js`](./config/appConfigNumbers.js) : 
+- éditer le fichier [`config/appConfigGlobalButtons.js`](./config/appConfigGlobalButtons.js) : 
+- éditer le fichier [`config/appConfigTexts.js`](./config/appConfigTexts.js) : 
+- éditer le fichier [`config/appConfigTables.js`](./config/appConfigTables.js) : 
+- éditer le fichier [`config/appConfigRawData.js`](./config/appConfigRawData.js) : 
 
 #### langues : 
 
-- voir le dossier [`/locales`]('./locales/') pour les fichiers de traduction
+- voir le dossier [`/locales`](./locales/) pour les fichiers de traduction
 
 
 ----------------
@@ -188,9 +188,9 @@ déploiement : SPA mais plusieurs urls possibles pour afficher des pages / netli
 
 ------------
 
-#### fichier : `appConfigMap.js`
+#### fichier : [`appConfigMap.js`](./config/appConfigMap.js)
 
-Pour le composant `MapboxGL` : 
+Pour le composant [`MapboxGL`](./componenents/DataViews/MapboxGL.vue) : 
 
 - `settingsIds[-].map.clicEvents[-].functions` : (array)
   - liste des fonctions à déclencher lors d'un événement sur un élément de la carte
@@ -219,9 +219,9 @@ Pour le composant `MapboxGL` :
 
 ----------------
 
-#### fichier : `appConfigGlobalButtons.js`
+#### fichier : [`appConfigGlobalButtons.js`](./config/appConfigGlobalButtons.js)
 
-Pour le composant `GlobalButton` : 
+Pour le composant [`GlobalButton`](./components/UX/GlobalButton.vue) : 
 
 - `settingsIds[-].componentButtons.functions[-]` : (array)
   - liste des fonctions à déclencher lors d'un clic sur le bouton
