@@ -29,12 +29,12 @@ export default function ({ store, env }) {
 
     // loop config urls
     for (let configRef of configsReferences) {
-      log && console.log("-MW- getConfigInit / configRef.url : ", configRef.url)
       if (getDistant.includes(configsFrom)) {
+        log && console.log("-MW- getConfigInit / configRef.url : ", configRef.url)
         let initConfigFromURL = axios
           .get(configRef.url)
           .then((resp) => {
-            log && console.log("-MW- getConfigInit / resp : ", resp)
+            // log && console.log("-MW- getConfigInit / resp : ", resp)
             let configRefData = {
               field: configRef.field,
               data: resp.data,
@@ -54,12 +54,14 @@ export default function ({ store, env }) {
           })
         promisesArray.push(initConfigFromURL)
       } else if (configsFrom == "local_js_files") {
+        log &&
+          console.log("-MW- getConfigInit / configRef.data : ", configRef.data)
         let initConfigFromJSfile = new Promise((resolve) => {
           let resp = configRef.data
           resolve(resp)
         })
           .then((resp) => {
-            log && console.log("-MW- getConfigInit / resp : ", resp)
+            // log && console.log("-MW- getConfigInit / resp : ", resp)
             let configRefData = {
               field: configRef.field,
               data: resp,
