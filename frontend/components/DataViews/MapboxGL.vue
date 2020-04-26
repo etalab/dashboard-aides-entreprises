@@ -113,7 +113,6 @@
         <!-- CONTROLS -->
         <MglNavigationControl position="bottom-right" />
       </MglMap>
-
     </no-ssr>
   </div>
 </template>
