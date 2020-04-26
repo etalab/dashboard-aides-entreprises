@@ -11,7 +11,7 @@ Check our [project page on Github][kanban] to have a glimpse of our roadmap
 
 -----------------
 
-#### v.1.1
+#### v.1.10
 
 - date : 26/04/2020
 - ability to load config files from distant files
