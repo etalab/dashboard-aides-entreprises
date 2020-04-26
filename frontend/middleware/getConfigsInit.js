@@ -12,6 +12,7 @@ export default function ({ store, env }) {
 
   if (!configsAreSet) {
     // begin to load config files
+    log && console.log("-MW- getConfigInit / !configsAreSet ... ")
 
     let configsReferences = env.CONFIG_APP.configsReferences
     let configsFrom = env.CONFIG_APP.configsFrom

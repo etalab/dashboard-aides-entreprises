@@ -215,6 +215,9 @@ const configApp = {
   port: choosePort(process.env.NUXT_ENV_RUN_MODE),
 
   // CONFIGS
+  // configsReferencesBackup: process.env.NUXT_ENV_CONFIG_BACKUP
+  //   ? undefined
+  //   : configsJS.configsReferences,
   configsReferences: configsReferences,
   configsFrom: process.env.NUXT_ENV_CONFIG_FROM || "local_js_files",
 
