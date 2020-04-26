@@ -235,7 +235,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: process.env.NUXT_ENV_APP_TITLE,
+    titleTemplate: process.env.NUXT_ENV_APP_TITLE || "ODAMAP",
     title: "",
     meta: [
       { charset: "utf-8" },

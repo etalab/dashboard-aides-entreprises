@@ -54,7 +54,7 @@ export default function ({ store, env }) {
         promisesArray.push(initConfigFromURL)
       } else if (configsFrom == "local_js_files") {
         let initConfigFromJSfile = new Promise((resolve) => {
-          let resp = configsFrom.data
+          let resp = configRef.data
           resolve(resp)
         })
           .then((resp) => {
