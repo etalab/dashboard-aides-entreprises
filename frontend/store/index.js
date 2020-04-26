@@ -46,7 +46,16 @@ export const state = () => ({
   configUI: undefined,
 
   // DATA VIEWS COMPONENTS SETTINGS
-  configsData: undefined,
+  configsData: {
+    maps: undefined,
+    charts: undefined,
+    numbers: undefined,
+    tables: undefined,
+    texts: undefined,
+    rawdatas: undefined,
+    navbarFooters: undefined,
+    globalButtons: undefined,
+  },
   // configsData: {
   //   maps: process.env.CONFIG_APP.MAP_config.settingsIds,
   //   charts: process.env.CONFIG_APP.CHARTS_config.settingsIds,
@@ -193,9 +202,9 @@ export const mutations = {
 
     state.appTitle = configs.UIUX_config.appTitle
 
-    state.configRoutes = configs.ROUTES_config
+    state.configRoutes = configs.ROUTES_config.routes
 
-    state.navbar   = configs.UIUX_config.UX_config.navbar
+    state.navbar = configs.UIUX_config.UX_config.navbar
     state.configUX = configs.UIUX_config.UX_config
 
     state.configUI = configs.UIUX_config.UI_config
@@ -210,6 +219,7 @@ export const mutations = {
       navbarFooters: configs.UX_navbarFooters.settingsIds,
       globalButtons: configs.UX_globalButtons.settingsIds,
     }
+    state.log && console.log("S-index-M-setRootConfigs / configsData : ", configsData)
     state.configsData = configsData
   },
 
@@ -271,7 +281,7 @@ export const mutations = {
   },
 
   initLocales(state) {
-    // state.log && console.log("S-index-M-initLocales ... ")
+    state.log && console.log("S-index-M-initLocales ... ")
 
     let localesBuild = process.env.CONFIG_APP.localesBuild
     state.locales = localesBuild
@@ -283,13 +293,15 @@ export const mutations = {
 }
 
 export const actions = {
-  setUpConfigs({state, commit, rootGetters}) {
+  setUpConfigs({ state, commit, rootGetters }) {
+    state.log && console.log("\n", "- ".repeat(20))
     state.log && console.log("S-index-A-setUpConfigs / ... ")
     let allConfigs = rootGetters["configs/getAllConfigs"]
     state.log && console.log("S-index-A-setUpConfigs / allConfigs :", allConfigs)
-    // commit("setRootConfigs", allConfigs)
+    commit("setRootConfigs", allConfigs)
   },
-  setCurrentWindowSize({ state, getters, commit, dispatch }, windowInfos) {
+
+  setCurrentWindowSize({ state, commit, dispatch }, windowInfos) {
     // state.log && console.log("S-index-A-setCurrentWindowSize / windowInfos.breakpointName : ", windowInfos.breakpointName)
     // set window in store
     commit("setWindowSize", windowInfos)
@@ -313,7 +325,7 @@ export const actions = {
       dispatch("setRouteDivsVisibility", windowInfos.routeConfig)
     }
   },
-  setRouteDivsVisibility({ state, commit }, routeConfig) {
+  setRouteDivsVisibility({ commit }, routeConfig) {
     for (let row of routeConfig.pageRows) {
       const rowId = row.id
       for (let col of row.columns) {
@@ -333,7 +345,7 @@ export const actions = {
       }
     }
   },
-  toggleDivsVisibility({ state, getters, commit }, btnConfig) {
+  toggleDivsVisibility({ getters, commit }, btnConfig) {
     for (let divsToToggle of btnConfig.divsToToggle) {
       const toggle = divsToToggle.toggle
       const toggleVisibility = divsToToggle.toggleVisibility

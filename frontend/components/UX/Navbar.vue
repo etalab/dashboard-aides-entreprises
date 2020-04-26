@@ -18,6 +18,7 @@
       @click.stop="toogleNavbarItem('drawer')"
     />
 
+    <!-- {{ appTitle }} -->
     <!-- MINIVARIANT  -->
     <v-btn
       v-if="miniVariantBtn"

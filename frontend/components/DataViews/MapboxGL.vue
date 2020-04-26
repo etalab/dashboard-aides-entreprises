@@ -35,7 +35,7 @@
       position: absolute;
       z-index: 200;
       top: 50%;
-      left: {{ isMobileWidth ? '35%' : '45%' }};
+      left: {{ isMobileWidth ? '45%' : '45%' }};
       }
     </style>
 
@@ -58,7 +58,7 @@
       :class="`legend-block legend-bottom-right`"
     >
       <!-- DEBUGGING -->
-      <span v-if="log">v1.9 - fix apex sizes</span>
+      <span v-if="log">v1.10 - distant config files</span>
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
 

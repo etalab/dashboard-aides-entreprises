@@ -1,6 +1,9 @@
 // import colors from 'vuetify/es5/util/colors'
 
-const fs = require("fs")
+import { chooseBooleanMode } from "./utils/utils.js"
+
+const fs = require('fs')
+
 const dotenv = require("dotenv")
 dotenv.config()
 console.log(
@@ -9,77 +12,86 @@ console.log(
 )
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
-// import { configAppUIUX } from "./config/appConfigUIUX.js"
-// import { configAppRoutes } from "./config/appConfigRoutes.js"
-// import { configAppData } from "./config/appConfigData.js"
-// import { configAppMap } from "./config/appConfigMap.js"
-// import { configAppCharts } from "./config/appConfigCharts.js"
-// import { configAppNumbers } from "./config/appConfigNumbers.js"
-// import { configAppTexts } from "./config/appConfigTexts.js"
-// import { configAppTables } from "./config/appConfigTables.js"
-// import { configAppRawData } from "./config/appConfigRawData.js"
-// import { configAppNavbarFooters } from "./config/appConfigNavbarFooters.js"
-// import { configAppGlobalButtons } from "./config/appConfigGlobalButtons.js"
-
+// CONFIGS FROM...
 var configsJS = require("./nuxt_loadConfigs_fromJS.js")
 let configsReferences = configsJS.configsReferences
 
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// CONFIGS COPIED TO JSON FILES
+let copyConfigsToJSON = chooseBooleanMode(process.env.NUXT_ENV_CONFIG_TO_JSON)
+if (copyConfigsToJSON && process.env.NUXT_ENV_RUN_MODE == "dev") {
+  console.log(">>> nuxt.config.js / copyConfigsToJSON / ...")
+  for (let conf of configsJS.configsReferences) {
+    let jsonFilename = conf.field + ".json"
+    console.log(">>> nuxt.config.js / copyConfigsToJSON / jsonFilename : ", jsonFilename)
+    try {
+      let jsonStr = JSON.stringify(conf.data, null, 2)
+      // console.log('>>> nuxt.config.js / copyConfigsToJSON / jsonStr : ', jsonStr)
+      fs.writeFileSync(`./static/configs/json/${jsonFilename}`, jsonStr, "utf8")
+    } catch (error) {
+      console.log(">>> nuxt.config.js / copyConfigsToJSON / ... error : ", error)
+    }
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// CONFIGS FROM...
 if (process.env.NUXT_ENV_CONFIG_FROM == "local_json_files") {
   configsReferences = [
     {
       field: "configAppUIUX",
       data: undefined,
-      url: "/configs/json/appConfigUIUX.json",
+      url: "/configs/json/configAppUIUX.json",
     },
     {
       field: "configAppRoutes",
       data: undefined,
-      url: "/configs/json/appConfigRoutes.json",
+      url: "/configs/json/configAppRoutes.json",
     },
     {
       field: "configAppData",
       data: undefined,
-      url: "/configs/json/appConfigData.json",
+      url: "/configs/json/configAppData.json",
     },
     {
       field: "configAppMap",
       data: undefined,
-      url: "/configs/json/appConfigMap.json",
+      url: "/configs/json/configAppMap.json",
     },
     {
       field: "configAppCharts",
       data: undefined,
-      url: "/configs/json/appConfigCharts.json",
+      url: "/configs/json/configAppCharts.json",
     },
     {
       field: "configAppNumbers",
       data: undefined,
-      url: "/configs/json/appConfigNumbers.json",
+      url: "/configs/json/configAppNumbers.json",
     },
     {
       field: "configAppTexts",
       data: undefined,
-      url: "/configs/json/appConfigTexts.json",
+      url: "/configs/json/configAppTexts.json",
     },
     {
       field: "configAppTables",
       data: undefined,
-      url: "/configs/json/appConfigTables.json",
+      url: "/configs/json/configAppTables.json",
     },
     {
       field: "configAppRawData",
       data: undefined,
-      url: "/configs/json/appConfigRawData.json",
+      url: "/configs/json/configAppRawData.json",
     },
     {
       field: "configAppNavbarFooters",
       data: undefined,
-      url: "/configs/appConfigNavbarFooters.json",
+      url: "/configs/json/configAppNavbarFooters.json",
     },
     {
       field: "configAppGlobalButtons",
       data: undefined,
-      url: "/configs/appConfigGlobalButtons.json",
+      url: "/configs/json/configAppGlobalButtons.json",
     },
   ]
 } else if (process.env.NUXT_ENV_CONFIG_FROM == "distant_json_files") {
@@ -143,26 +155,35 @@ if (process.env.NUXT_ENV_CONFIG_FROM == "local_json_files") {
   ]
 }
 
-// - - - - - - - - - - - - - - - - - - - - - - - -
-// copy config JS const to files if needed
 
-if (process.env.NUXT_ENV_CONFIG_TO_JSON == "yes") {
-  for (let conf of configsReferences) {
-    let jsonFilename = conf.field + ".json"
-    console.log(">>> nuxt.config.js / jsonFilename : ", jsonFilename)
-    try {
-      let jsonStr = JSON.stringify(conf.data, null, 2)
-      // console.log('>>> nuxt.config.js / jsonStr : ', jsonStr)
-      fs.writeFileSync(`./static/configs/json/${jsonFilename}`, jsonStr, "utf8")
-    } catch (error) {
-      console.log(">>> nuxt.config.js / ... error : ", error)
-    }
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// color themes
+let isDarkTheme = chooseBooleanMode(process.env.NUXT_ENV_THEME_IS_DARK) || false
+let defaultThemes = {
+  light: {
+    primary: process.env.NUXT_ENV_THEME_LIGHT_primary || "#000091",
+    accent: process.env.NUXT_ENV_THEME_LIGHT_accent || "#572a99",
+    secondary: process.env.NUXT_ENV_THEME_LIGHT_secondary || "#b1133b",
+    info: process.env.NUXT_ENV_THEME_LIGHT_info || "#53657D",
+    warning: process.env.NUXT_ENV_THEME_LIGHT_warning || "#ff9947",
+    error: process.env.NUXT_ENV_THEME_LIGHT_error || "#D1335B;",
+    success: process.env.NUXT_ENV_THEME_LIGHT_success || "#03BD5B",
+  },
+
+  dark: {
+    primary: process.env.NUXT_ENV_THEME_DARK_primary || "#000091",
+    accent: process.env.NUXT_ENV_THEME_DARK_accent || "#572a99",
+    secondary: process.env.NUXT_ENV_THEME_DARK_secondary || "#b1133b",
+    info: process.env.NUXT_ENV_THEME_DARK_info || "#53657D",
+    warning: process.env.NUXT_ENV_THEME_DARK_warning || "#ff9947",
+    error: process.env.NUXT_ENV_THEME_DARK_error || "#D1335B;",
+    success: process.env.NUXT_ENV_THEME_DARK_success || "#03BD5B",
   }
 }
+
 // - - - - - - - - - - - - - - - - - - - - - - - -
-
+// PORTS
 const logAllowed = ["preprod", "dev", "mockup"]
-
 const choosePort = (ENVPROD) => {
   const NUXT_ENV_PORT_DEV = parseInt(process.env.NUXT_ENV_PORT_DEV) || 50050
   const NUXT_ENV_PORT_PREPROD =
@@ -177,10 +198,8 @@ const choosePort = (ENVPROD) => {
   }
 }
 
-// const chooseBackend = (ENVPROD) => {
-//   return configAppData.dataSource.apiBackendUrl[ENVPROD]
-// }
-
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// LOCALES
 const defaultLoc = "fr"
 const defaultLocs = [
   {
@@ -189,7 +208,6 @@ const defaultLocs = [
     file: "fr-FR.js",
   },
 ]
-
 const buildLocales = (localesString) => {
   let locales = []
   let tempLocales = localesString.split(",")
@@ -206,6 +224,7 @@ const buildLocales = (localesString) => {
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
+// CONFIG APP OBJECT
 const configApp = {
   // DEV MODE - PORT - HOST ...
   mode: process.env.NUXT_ENV_RUN_MODE,
@@ -217,50 +236,16 @@ const configApp = {
   configsFrom: process.env.NUXT_ENV_CONFIG_FROM,
   configsToJSON: process.env.NUXT_ENV_CONFIG_TO_JSON,
 
-  // APP INFOS
-  // appTitle: configAppUIUX.appTitle,
+  // INTERNATIONALIZATION
+  defaultLocale: process.env.NUXT_ENV_LANG_DEFAULT_LOCALE || defaultLoc,
+  localesBuild:
+    buildLocales(process.env.NUXT_ENV_LANG_DEFAULT_LOCALES) || defaultLocs,
 
-  // // INTERNATIONALIZATION
-  // defaultLocale: configAppUIUX.lang.defaultLocale,
-  // localesBuild: configAppUIUX.lang.locales,
-
-  // // DATA :init and backends
-  // backendApi: chooseBackend(process.env.NUXT_ENV_RUN_MODE),
-  // dataSource: configAppData.dataSource,
-  // defaultDataSetup: configAppData.defaultDataSetup,
-  // filters: configAppData.filters,
-
-  // // UX - ROUTES
-  // UX_config: configAppUIUX.UX_config,
-  // ROUTES_config: configAppRoutes.routes,
-  // UX_navbarFooters: configAppNavbarFooters,
-  // UX_globalButtons: configAppGlobalButtons,
-
-  // // UI
-  // UI_config: configAppUIUX.UI_config,
-
-  // // MAP SETTINGS
-  // MAP_config: configAppMap,
-
-  // // CHARTS SETTINGS
-  // CHARTS_config: configAppCharts,
-
-  // // NUMBERS SETTINGS
-  // NUMBERS_config: configAppNumbers,
-
-  // // TABLES SETTINGS
-  // TABLES_config: configAppTables,
-
-  // // TEXTS SETTINGS
-  // TEXTS_config: configAppTexts,
-
-  // // TEXTS SETTINGS
-  // RAWDATA_config: configAppRawData,
 }
-
 console.log(">>> nuxt.config.js / configApp : \n", configApp)
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
+// MAIN NUXT CONFIG OBJECT
 // import webpack from 'webpack'
 export default {
   mode: "spa",
@@ -269,7 +254,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: process.env.npm_package_name,
+    titleTemplate: process.env.NUXT_ENV_APP_TITLE,
     title: "",
     meta: [
       { charset: "utf-8" },
@@ -281,7 +266,7 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || "",
+        content: process.env.NUXT_ENV_APP_TITLE || "",
       },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
@@ -329,11 +314,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    // '~/plugins/utils',
-    // '~/plugins/vuetify',
-
     { src: "~/plugins/mapbox", mode: "client" },
-    // { src: '~/plugins/mapboxgl', mode: 'client' },
 
     { src: "~/plugins/apexCharts", mode: "client" },
     { src: "~/plugins/matomo", mode: "client" },
@@ -355,15 +336,6 @@ export default {
     "@nuxtjs/device",
   ],
 
-  // i18n: {
-  //   defaultLocale: configAppUIUX.lang.defaultLocale, //'fr',
-  //   locales: configAppUIUX.lang.locales,
-  //   vueI18n: {
-  //     fallbackLocale: configAppUIUX.lang.defaultLocale, //'fr',
-  //   },
-  //   lazy: true,
-  //   langDir: "locales/",
-  // },
   i18n: {
     defaultLocale: process.env.NUXT_ENV_LANG_DEFAULT_LOCALE || defaultLoc, //'fr',
     locales:
@@ -388,8 +360,8 @@ export default {
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
     theme: {
-      dark: configApp.UI_config.isDarkTheme,
-      themes: configApp.UI_config.themes,
+      dark: isDarkTheme,
+      themes: defaultThemes,
     },
   },
 

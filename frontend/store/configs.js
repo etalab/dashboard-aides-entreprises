@@ -3,6 +3,7 @@ export const state = () => ({
 
   configsFrom: undefined,
   configsAreSet: false,
+  vuetifyThemeIsSet: false,
 
   configAppUIUX: undefined,
   configAppRoutes: undefined,
@@ -54,10 +55,14 @@ export const mutations = {
     state.log && console.log("S-configs-M-setConfigsAreSet ...")
     state.configsAreSet = true
   },
+  setVuetifyThemeIsSet(state) {
+    state.log && console.log("S-configs-M-setVuetifyThemeIsSet ...")
+    state.vuetifyThemeIsSet = true
+  },
 }
 
 export const actions = {
-  setRootConfigs({ state, commit, dispatch }) {
+  setRootConfigs({ state, dispatch }) {
     state.log && console.log("S-configs-A-setRootConfigs ...")
 
     // correctly set up store data @ store/index.js
@@ -65,6 +70,6 @@ export const actions = {
     dispatch("data/setUpConfigData", null, { root: true })
 
     // flag as set up
-    commit("setConfigsAreSet")
+    // commit("setConfigsAreSet")
   },
 }

@@ -200,6 +200,9 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
 
+      // vuetifyThemeIsSet: (state) => state.configs.vuetifyThemeIsSet,
+      // configUI: (state) => state.configUI,
+
       backendApi: (state) => state.data.backendApi,
       filters: (state) => state.data.filters,
 

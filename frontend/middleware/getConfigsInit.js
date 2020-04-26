@@ -1,5 +1,4 @@
 import axios from "axios"
-// const fs = require('fs')
 
 // POPULATE CONFIG IF STORE EMPTY
 export default function ({ store, env }) {
@@ -8,7 +7,8 @@ export default function ({ store, env }) {
 
   let promisesArray = []
 
-  log && console.log("\n-MW- getConfigInit ... ")
+  log && console.log("\n", "+ ".repeat(20))
+  log && console.log("-MW- getConfigInit ... ")
 
   if (!configsAreSet) {
     // begin to load config files
@@ -41,6 +41,11 @@ export default function ({ store, env }) {
             store.commit("configs/setConfigField", configRefData)
           })
           .catch((err) => {
+            log &&
+              console.log(
+                "-MW- getConfigInit / error - configRef.url : ",
+                configRef.url
+              )
             console.log(
               "-MW- getConfigInit / error while loading from configURL.url :",
               err

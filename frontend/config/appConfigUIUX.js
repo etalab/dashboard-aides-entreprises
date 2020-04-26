@@ -6,7 +6,7 @@ export const configAppUIUX = {
     fr: "Aides aux entreprises : fonds de solidarité",
   },
   appMetas: [],
-  appVersion: "V.0.1",
+  appVersion: "V.0.1.1",
   appLogo: "https://",
 
   // INTERATIONALIZATION
