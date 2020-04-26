@@ -5,7 +5,7 @@
 NUXT_ENV_RUN_MODE=dev
 NUXT_ENV_HOST=localhost
 NUXT_ENV_PORT_DEV=8000
-NUXT_ENV_APP_TITLE=dashboard fonds de solidarité
+NUXT_ENV_APP_TITLE=Aides aux entreprises : fonds de solidarité
 
 
 ### - - - - - - - - - - - - - - - - - - - - - ###
@@ -17,16 +17,15 @@ NUXT_ENV_LANG_DEFAULT_LOCALES=fr:Français:fr-FR.js
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### CONFIGS FROM ...
 
-# NUXT_ENV_CONFIG_FROM : local_js_files (default) | local_json_files | distant_json_files (distant)
-# NUXT_ENV_CONFIG_FROM=local_js_files
-NUXT_ENV_CONFIG_FROM=local_json_files
+# NUXT_ENV_CONFIG_FROM : local_js_files (default | undefined) | local_json_files | distant_json_files (distant)
+NUXT_ENV_CONFIG_FROM=local_js_files
+# NUXT_ENV_CONFIG_FROM=local_json_files
 # NUXT_ENV_CONFIG_FROM=distant_json_files
 NUXT_ENV_CONFIG_TO_JSON=yes
 
+### ONLY FOR DISTANT FILES
 # https://raw.githubusercontent.com/co-demos/ODAMPA-configs/master/AIDES-ENTREPRISES/configs/json/configAppCharts.json
-
 NUXT_ENV_configs_URLBASE=https://raw.githubusercontent.com/co-demos/ODAMPA-configs/master/AIDES-ENTREPRISES/configs/json/
-
 NUXT_ENV_configAppUIUX=configAppUIUX.json
 NUXT_ENV_configAppRoutes=configAppRoutes.json
 NUXT_ENV_configAppData=configAppData.json
