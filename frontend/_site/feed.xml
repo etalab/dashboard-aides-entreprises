@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-27T18:55:31+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Apiviz docs</title><subtitle>&quot;official documentation for Apiviz :  make a full data-visualisation website  from raw data with the Apiviz eco-sytem&quot;</subtitle><author><name>Julien Paris</name></author><entry><title type="html">CHANGE LOG</title><link href="http://localhost:4000/meta/changelog/" rel="alternate" type="text/html" title="CHANGE LOG" /><published>2019-05-15T00:00:00+02:00</published><updated>2019-05-15T00:00:00+02:00</updated><id>http://localhost:4000/meta/changelog</id><content type="html" xml:base="http://localhost:4000/meta/changelog/">&lt;hr /&gt;
+
+&lt;h2 id=&quot;features-2019-10-19&quot;&gt;features (2019-10-19)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Added export button on every view to get dataset as .csv file&lt;/li&gt;
+  &lt;li&gt;Fixed dynamic CSS to implement primary color and others on every main element in views / nnavbar / buttons / etc…&lt;/li&gt;
+  &lt;li&gt;Added ApexCharts component to complete dataviz views&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;features-2019-08-18&quot;&gt;features (2019-08-18)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Filters responsiveness&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;features-2019-06-07&quot;&gt;features (2019-06-07)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apiviz instance generator&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;features-2019-07-02&quot;&gt;features (2019-07-02)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;More generic EndpointGenerator&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;v01-alpha-2019-05-22&quot;&gt;v.0.1 alpha (2019-05-22)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First published version of Apiviz frontend as stand-alone nuxt project&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Julien Paris</name></author><category term="log" /><category term="versions" /><summary type="html"></summary></entry><entry><title type="html">CREDITS</title><link href="http://localhost:4000/meta/credits/" rel="alternate" type="text/html" title="CREDITS" /><published>2019-05-14T00:00:00+02:00</published><updated>2019-05-14T00:00:00+02:00</updated><id>http://localhost:4000/meta/credits</id><content type="html" xml:base="http://localhost:4000/meta/credits/">&lt;hr /&gt;
+&lt;h4 id=&quot;apivizs-team-thanks-&quot;&gt;ApiViz’s team thanks :&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the &lt;a href=&quot;https://entrepreneur-interet-general.etalab.gouv.fr/&quot;&gt;EIG&lt;/a&gt; program by &lt;a href=&quot;https://www.etalab.gouv.fr/&quot;&gt;Etalab&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the &lt;a href=&quot;https://entrepreneur-interet-general.etalab.gouv.fr/defi/2017/09/26/socialconnect/&quot;&gt;Social Connect&lt;/a&gt; project, aka “Carrefour des Innovations Sociales”&lt;/li&gt;
+  &lt;li&gt;the &lt;a href=&quot;http://www.cget.gouv.fr/&quot;&gt;CGET&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the &lt;a href=&quot;https://lamednum.coop&quot;&gt;MedNum&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the &lt;a href=&quot;https://societenumerique.gouv.fr&quot;&gt;Mission Société Numérique&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;and all those who believed and helped in this project :
+    &lt;ul&gt;
+      &lt;li&gt;Christophe N.&lt;/li&gt;
+      &lt;li&gt;Damla S.&lt;/li&gt;
+      &lt;li&gt;Bastien G.&lt;/li&gt;
+      &lt;li&gt;Mathilde B.&lt;/li&gt;
+      &lt;li&gt;Rémy S.&lt;/li&gt;
+      &lt;li&gt;Cécile B.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Julien Paris</name></author><category term="credits" /><summary type="html">ApiViz’s team thanks :</summary></entry><entry><title type="html">MAINTAIN</title><link href="http://localhost:4000/meta/maintain/" rel="alternate" type="text/html" title="MAINTAIN" /><published>2019-05-13T00:00:00+02:00</published><updated>2019-05-13T00:00:00+02:00</updated><id>http://localhost:4000/meta/maintain</id><content type="html" xml:base="http://localhost:4000/meta/maintain/">&lt;hr /&gt;
+
+&lt;h4 id=&quot;contacts-&quot;&gt;Contacts :&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;mailto:codemos.infos@gmail.com&quot;&gt;Julien Paris&lt;/a&gt; (aka &lt;a href=&quot;https://github.com/JulienParis&quot;&gt;JPy&lt;/a&gt; on Github)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://guillim.github.io&quot;&gt;Guillaume Lancrenon&lt;/a&gt; (aka &lt;a href=&quot;https://github.com/guillim&quot;&gt;Guillim&lt;/a&gt; on Github)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;design-ui-ux&quot;&gt;Design UI-UX&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Eliselalique&quot;&gt;Elise Lalique&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Julien Paris</name></author><category term="credits" /><category term="maintainance" /><summary type="html"></summary></entry><entry><title type="html">GUIDELINES FOR DEVELOPMENT</title><link href="http://localhost:4000/dev/guidelines/" rel="alternate" type="text/html" title="GUIDELINES FOR DEVELOPMENT" /><published>2019-05-12T00:00:00+02:00</published><updated>2019-05-12T00:00:00+02:00</updated><id>http://localhost:4000/dev/guidelines</id><content type="html" xml:base="http://localhost:4000/dev/guidelines/">&lt;hr /&gt;
+&lt;p&gt;This project is prone to be developped by several developpers, so we agreed on some basic rules…&lt;/p&gt;
+
+&lt;h2 id=&quot;general&quot;&gt;GENERAL&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;we try to comment and document in english&lt;/li&gt;
+  &lt;li&gt;check out our &lt;a href=&quot;https://github.com/co-demos/apiviz/projects&quot;&gt;“project” boards&lt;/a&gt; board to have an idea about the priorities we collectively decided to work on&lt;/li&gt;
+  &lt;li&gt;“see something, say something” : open new issues when you see problems to solve&lt;/li&gt;
+  &lt;li&gt;document your own issues with everything you have : images, references, snippets, etc…&lt;/li&gt;
+  &lt;li&gt;we update the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;README.md&lt;/code&gt; and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GUIDELINES_DEV.md&lt;/code&gt; directly on github&lt;/li&gt;
+  &lt;li&gt;for the markdown files try to &lt;a href=&quot;http://www.cirosantilli.com/markdown-style-guide/#dollar-signs-in-shell-code&quot;&gt;follow those advices&lt;/a&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;javascript&quot;&gt;JAVASCRIPT&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;camelcase your functions’ and variables’ names&lt;/li&gt;
+  &lt;li&gt;lint off your code as mush as possible&lt;/li&gt;
+  &lt;li&gt;comment your code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;python&quot;&gt;PYTHON&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;comment your code&lt;/li&gt;
+  &lt;li&gt;factorize what you can&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;git-management&quot;&gt;GIT MANAGEMENT&lt;/h2&gt;
+
+&lt;p&gt;We are following this git principles : &lt;a href=&quot;https://guillim.github.io/git/2018/04/24/Git-workflow.html&quot;&gt;link to blog&lt;/a&gt;. In brief :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;there are 2 main branches : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;new features must be code reviewed and then (if accepted) pulled into the branch &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;once every new feature is accepted and merged into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt; must be merged into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt; to constitute a new release&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please follow those rules when developping new features :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;locally : create a new branch to work on your own feature(s) named like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mypseudo_mynewfeature&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;before pushing your changes pull the remote &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt; branch to be merged with your changes in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mypseudo_mynewfeature&lt;/code&gt; branch (so to be sure the features you just developped are compatible with the checked/reviewed &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt; branch):
+    &lt;blockquote&gt;
+
+      &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git pull origin develop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;then push your branch to the remote repo (github repo) :
+    &lt;blockquote&gt;
+
+      &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push origin &amp;lt;mypseudo_mynewfeature&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ask for a pull request on Github from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mypseudo_mynewfeature&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;develop&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;someone else must be assigned as a code reviewer, whose in charge to accept your code changes and merge&lt;/li&gt;
+  &lt;li&gt;once accepted / reviewed delete &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mypseudo_mynewfeature&lt;/code&gt; from repo to keep the branches clean&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Julien Paris</name></author><category term="tech" /><category term="roadmap" /><category term="guidelines" /><category term="stack" /><summary type="html">This project is prone to be developped by several developpers, so we agreed on some basic rules…</summary></entry><entry><title type="html">ROADMAPS</title><link href="http://localhost:4000/dev/roadmaps/" rel="alternate" type="text/html" title="ROADMAPS" /><published>2019-05-11T00:00:00+02:00</published><updated>2019-05-11T00:00:00+02:00</updated><id>http://localhost:4000/dev/roadmaps</id><content type="html" xml:base="http://localhost:4000/dev/roadmaps/">&lt;hr /&gt;
+
+&lt;h2 id=&quot;apiviz&quot;&gt;APIVIZ&lt;/h2&gt;
+
+&lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/static/logos/logo_apiviz_15-271x64.png&quot; alt=&quot;apiviz logo&quot; /&gt;
+  
+&lt;/figure&gt;
+
+&lt;!-- ![LOGO](/static/logos/logo_apiviz_icon_15-100x64.png) --&gt;
+
+&lt;h3 id=&quot;roadmap-frontend&quot;&gt;ROADMAP FRONTEND&lt;/h3&gt;
+
+&lt;p&gt;To know more check the &lt;em&gt;&lt;a href=&quot;https://github.com/co-demos/apiviz-frontend/projects/1&quot;&gt;roadmap frontend Apiviz&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;roadmap-backend&quot;&gt;ROADMAP BACKEND&lt;/h3&gt;
+
+&lt;p&gt;To know more check the &lt;em&gt;&lt;a href=&quot;https://github.com/co-demos/apiviz-backend/projects/1&quot;&gt;roadmap backend Apiviz&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;solidata&quot;&gt;SOLIDATA&lt;/h2&gt;
+
+&lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/static/logos/logo_solidata_15a-380x64.png&quot; alt=&quot;apiviz logo&quot; /&gt;
+  
+&lt;/figure&gt;
+
+&lt;!-- ![LOGO](/apiviz-frontend/static/logos/logo_solidata-77x64.png) --&gt;
+
+&lt;h3 id=&quot;roadmap-frontend-1&quot;&gt;ROADMAP FRONTEND&lt;/h3&gt;
+
+&lt;p&gt;To know more check the &lt;em&gt;&lt;a href=&quot;hhttps://github.com/entrepreneur-interet-general/solidata_frontend&quot;&gt;roadmap frontend Solidata&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;roadmap-backend--api&quot;&gt;ROADMAP BACKEND / API&lt;/h3&gt;
+
+&lt;p&gt;To know more check the &lt;em&gt;&lt;a href=&quot;https://github.com/entrepreneur-interet-general/solidata_backend/projects/1&quot;&gt;roadmap backend Solidata&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;toktok-microservice&quot;&gt;TOKTOK microservice&lt;/h2&gt;
+
+&lt;!-- &lt;figure class=&quot;&quot;&gt;
+  &lt;img src=&quot;/static/logos/logo_auth_microservice-76x64.png&quot;
+       alt=&quot;toktok logo&quot;&gt;
+  
+&lt;/figure&gt;
+ --&gt;
+
+&lt;p&gt;&lt;img src=&quot;/apiviz-frontend/static/logos/logo_auth_microservice-76x64.png&quot; alt=&quot;LOGO&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;roadmap-api&quot;&gt;ROADMAP API&lt;/h3&gt;
+
+&lt;p&gt;To know more check the &lt;em&gt;&lt;a href=&quot;https://github.com/co-demos/toktok/projects/1&quot;&gt;roadmap frontend Toktok&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content><author><name>Julien Paris</name></author><category term="tech" /><category term="roadmap" /><category term="stack" /><summary type="html"></summary></entry><entry><title type="html">CONTRIBUTING GUIDE</title><link href="http://localhost:4000/dev/contributing/" rel="alternate" type="text/html" title="CONTRIBUTING GUIDE" /><published>2019-05-10T00:00:00+02:00</published><updated>2019-05-10T00:00:00+02:00</updated><id>http://localhost:4000/dev/contributing</id><content type="html" xml:base="http://localhost:4000/dev/contributing/">&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Hello fellow developer/hacker/citizen/peer!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;inspired by : &lt;a href=&quot;https://github.com/opendatateam/udata/blob/master/CONTRIBUTING.md&quot;&gt;contributing guide of udata project&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;… document to finish …&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;language&quot;&gt;Language&lt;/h2&gt;
+
+&lt;p&gt;The development language is English. All comments and documentation should be written in English, so that we don’t end up with “frenghish” methods, and so we can share our learnings with developers around the world.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;code-guides&quot;&gt;Code guides&lt;/h2&gt;
+
+&lt;h3 id=&quot;python-style-guide&quot;&gt;Python style guide&lt;/h3&gt;
+
+&lt;p&gt;We follow the PEP-0008 and PEP-0257 as mush as possible in the respect of PEP-0020.&lt;/p&gt;
+
+&lt;p&gt;On top of that, we apply the &lt;a href=&quot;https://google.github.io/styleguide/pyguide.html&quot;&gt;Python Style Guide&lt;/a&gt; from Google.&lt;/p&gt;
+
+&lt;h4 id=&quot;python-3-forward-compatible-syntax&quot;&gt;Python 3 forward compatible syntax&lt;/h4&gt;
+
+&lt;p&gt;As it’s still planned to migrate to Python 3 some day,
+try to always use a forward compatible syntax in order
+to ensure an easy future migration:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;unicode by default, starts any file with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;from __future__ import unicode_literals&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Python 3 compatible &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;print&lt;/code&gt; statement with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;from __future__ import print_function&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;io.open&lt;/code&gt; instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;codecs.open&lt;/code&gt; to manipulate utf-8 files&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;javascript-style-guide&quot;&gt;JavaScript style guide&lt;/h3&gt;
+
+&lt;p&gt;We follow the &lt;a href=&quot;https://github.com/airbnb/javascript&quot;&gt;JavaScript styleguide&lt;/a&gt; from airbnb.&lt;/p&gt;
+
+&lt;h3 id=&quot;html-and-css-code-guide&quot;&gt;HTML and CSS code guide&lt;/h3&gt;
+
+&lt;p&gt;We follow @mdo’s &lt;a href=&quot;http://codeguide.co/&quot;&gt;code guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;documentation-syntax&quot;&gt;Documentation syntax&lt;/h3&gt;
+
+&lt;p&gt;We try to stay as close as possible to &lt;a href=&quot;http://commonmark.org/&quot;&gt;CommonMark&lt;/a&gt; but use default &lt;a href=&quot;http://www.mkdocs.org/user-guide/writing-your-docs/&quot;&gt;extensions proposed by MkDocs&lt;/a&gt;.&lt;/p&gt;</content><author><name>Julien Paris</name></author><category term="tech" /><category term="stack" /><category term="credits" /><summary type="html"></summary></entry><entry><title type="html">STACK</title><link href="http://localhost:4000/dev/stack/" rel="alternate" type="text/html" title="STACK" /><published>2019-05-09T00:00:00+02:00</published><updated>2019-05-09T00:00:00+02:00</updated><id>http://localhost:4000/dev/stack</id><content type="html" xml:base="http://localhost:4000/dev/stack/">&lt;hr /&gt;
+
+&lt;p&gt;All libraries, packages and tools listed below are under open licence.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;frontend&quot;&gt;Frontend&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://nuxtjs.org/&quot;&gt;Nuxt.js&lt;/a&gt;&lt;/strong&gt; as JS framework upon Vue.js,&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://vuejs.org/&quot;&gt;Vue.js&lt;/a&gt;&lt;/strong&gt; as JS framework,&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/axios/axios&quot;&gt;Axios&lt;/a&gt;&lt;/strong&gt; for API queries (to make queries to &lt;a href=&quot;https://github.com/entrepreneur-interet-general/solidata_backend&quot;&gt;Solidata&lt;/a&gt; or else),&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://bulma.io/&quot;&gt;Bulma&lt;/a&gt;&lt;/strong&gt; as CSS framework, 
+  &lt;!-- - **[Leaflet](https://leafletjs.com)**, **[Vue2Leaflet](https://github.com/KoRiGaN/Vue2Leaflet)**, and **[PruneCluster](https://github.com/SINTEF-9012/PruneCluster)** for map layout --&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://docs.mapbox.com/mapbox-gl-js/api/&quot;&gt;Mapbox-GL&lt;/a&gt;&lt;/strong&gt;, and &lt;strong&gt;&lt;a href=&quot;https://soal.github.io/vue-mapbox/&quot;&gt;vue-mapbox&lt;/a&gt;&lt;/strong&gt; as a mapbox-gl wrapper for vue.js&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/dirkliu/vue-json-editor&quot;&gt;Vue-json-editor&lt;/a&gt;&lt;/strong&gt; for configuration edition in the back-office&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/expressjs/cookie-parser&quot;&gt;cookie-parser&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href=&quot;https://github.com/js-cookie/js-cookie&quot;&gt;js-cookie&lt;/a&gt;&lt;/strong&gt; for cookies management&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;server&quot;&gt;Server&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;&quot;&gt;Ubuntu 18.04&lt;/a&gt;&lt;/strong&gt;,&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.nginx.com/&quot;&gt;NGINX&lt;/a&gt;&lt;/strong&gt;,&lt;/li&gt;
+  &lt;li&gt;hosted in &lt;strong&gt;&lt;a href=&quot;http://digitalocean.com/&quot;&gt;Digital Ocean&lt;/a&gt;&lt;/strong&gt;,&lt;/li&gt;
+  &lt;li&gt;domain name from &lt;strong&gt;&lt;a href=&quot;http://namecheap.com/&quot;&gt;NameCheap&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;dev-tools&quot;&gt;Dev tools&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.docker.com/&quot;&gt;Docker&lt;/a&gt;&lt;/strong&gt;… also check this &lt;a href=&quot;https://guillim.github.io/docker/2018/11/18/docker-hands-on-intro.html&quot;&gt;introduction to Docker&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.iterm2.com/&quot;&gt;iTerm2&lt;/a&gt;&lt;/strong&gt; instead of Terminal&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt;&lt;/strong&gt; as code editor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;documentation&quot;&gt;Documentation&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github pages&lt;/a&gt;&lt;/strong&gt; for hosting&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/strong&gt; as static website framework&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/&quot;&gt;Minimal Mistakes template&lt;/a&gt;&lt;/strong&gt; as Jekyll template&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;others&quot;&gt;Others&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://vue.tufts.edu/index.cfm&quot;&gt;Visual Understanding Environment&lt;/a&gt;&lt;/strong&gt; to draw clean blueprints and mindmaps&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Julien Paris</name></author><category term="tech" /><category term="stack" /><category term="credits" /><summary type="html"></summary></entry><entry><title type="html">INSTALL THE DOCS WITH JEKYLL</title><link href="http://localhost:4000/guide/install-docs/" rel="alternate" type="text/html" title="INSTALL THE DOCS WITH JEKYLL" /><published>2019-05-08T00:00:00+02:00</published><updated>2019-05-08T00:00:00+02:00</updated><id>http://localhost:4000/guide/install-docs</id><content type="html" xml:base="http://localhost:4000/guide/install-docs/">&lt;hr /&gt;
+
+&lt;p&gt;The documentation is produced with :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github pages&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/&quot;&gt;Minimal Mistakes template&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;for-a-local-deployment-of-the-documentation-project-jekyll--mmistakes-template&quot;&gt;For a local deployment of the documentation project (Jekyll + MMistakes template)&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Install ruby, Jekyll&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby
+gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Install setup (given the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile.lock&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; files)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler
+bundle
+bundle &lt;span class=&quot;nb&quot;&gt;install
+&lt;/span&gt;bundle update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Launch Jekyll server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+
+&lt;span class=&quot;c&quot;&gt;# or if you want to run the docs server on another port&lt;/span&gt;
+jekyll serve &lt;span class=&quot;nt&quot;&gt;--port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4001
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;… then check in your browser :&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;127.0.0.1:4000&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;127.0.0.1:4000&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name>Julien Paris</name></author><category term="documentation" /><category term="configuration" /><category term="installation" /><category term="Jekyll" /><summary type="html"></summary></entry><entry><title type="html">BASIC DATAVISUALISATION PROJECT WORKFLOW</title><link href="http://localhost:4000/lexicon/basic-dataviz-project/" rel="alternate" type="text/html" title="BASIC DATAVISUALISATION PROJECT WORKFLOW" /><published>2019-05-07T00:00:00+02:00</published><updated>2019-05-07T00:00:00+02:00</updated><id>http://localhost:4000/lexicon/basic-dataviz-project</id><content type="html" xml:base="http://localhost:4000/lexicon/basic-dataviz-project/">&lt;hr /&gt;
+
+&lt;h3 id=&quot;setting-up-a-datavisualisation-project&quot;&gt;SETTING UP A DATAVISUALISATION PROJECT&lt;/h3&gt;
+
+&lt;p&gt;This simplified illustration aims to explain the role of each service we usually encounter in a data-visualisation project : from the raw data on your desktop (CSV, XLS…) to an online interactive data-visualisation/valorisation service (a website for instance).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; : this illustration simply lists all those services, but an online data-visualisation service could either contain all those necessary services (as a monolithic app) or be just one part of inter-operable services (as Apiviz).&lt;/p&gt;
+
+&lt;h4 id=&quot;illustration&quot;&gt;illustration&lt;/h4&gt;
+
+&lt;figure class=&quot; &quot;&gt;
+  
+    
+      &lt;a href=&quot;/documentation/configurations/DATA_WORKFLOW-light.jpg&quot; title=&quot;integration / modularity with other services&quot;&gt;
+          &lt;img src=&quot;/documentation/configurations/DATA_WORKFLOW-light.jpg&quot; alt=&quot;light details&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+  
+    &lt;figcaption&gt;click for fullscreen view
+&lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;basic-data-workflow-through-services&quot;&gt;BASIC DATA WORKFLOW THROUGH SERVICES&lt;/h3&gt;
+
+&lt;p&gt;Usually in a data-visualisation project an user owning data - aka the data producer - would like to show its original and raw data in an interactive and prettier form. The “raw data” could be a csv or excel file, or even a json.&lt;/p&gt;
+
+&lt;p&gt;To do interactive visualisation (show charts, diagrams, maps… corresponding to the original spreadsheet), the data must be :&lt;/p&gt;
+
+&lt;h4 id=&quot;uploaded-online&quot;&gt;uploaded online&lt;/h4&gt;
+
+&lt;p&gt;so the data is accesible on the web and not only on the data producer’s laptop. This is the upstream part of the data workflow.&lt;/p&gt;
+
+&lt;h4 id=&quot;transformed-as-a-requestable-dataset&quot;&gt;transformed as a requestable dataset&lt;/h4&gt;
+
+&lt;p&gt;so we could make slices, requests, agregations, … as such this represents the “search engine” part of the process, and usually the transformed data must be stored somewhere on thee web (database, github repo…)&lt;/p&gt;
+
+&lt;h4 id=&quot;rendered--displayed&quot;&gt;rendered / displayed&lt;/h4&gt;
+
+&lt;p&gt;this is the data-visualisation part of the process. The search engine fetches data slices we requested, and the data slices are transformed into charts, maps, diagrams… or even downloaded downstream&lt;/p&gt;
+
+&lt;h4 id=&quot;other-services&quot;&gt;other services&lt;/h4&gt;
+
+&lt;p&gt;Optionnaly during the second part the data could be enriched from other sources (like adding geo-location to a dataset containing only adresses as text)&lt;/p&gt;
+
+&lt;p&gt;Under the “hood” several other services are usually necessary for all those processes to run smoothly, in particular when some users are allowed to modify the original dataset or the data-visualisation configurations. As such authentication services are often required to check the user’s rights on the datasets, whichever action is done on any part of the process.&lt;/p&gt;</content><author><name>Julien Paris</name></author><category term="documentation" /><category term="schema" /><category term="principles" /><category term="services" /><category term="data" /><category term="workflow" /><summary type="html"></summary></entry><entry><title type="html">DEPLOYMENT CONFIGURATIONS</title><link href="http://localhost:4000/guide/deployment-configs/" rel="alternate" type="text/html" title="DEPLOYMENT CONFIGURATIONS" /><published>2019-05-07T00:00:00+02:00</published><updated>2019-05-07T00:00:00+02:00</updated><id>http://localhost:4000/guide/deployment-configs</id><content type="html" xml:base="http://localhost:4000/guide/deployment-configs/">&lt;hr /&gt;
+&lt;p&gt;Apiviz can be deployed according to several configurations as follow…&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;legends&quot;&gt;LEGENDS&lt;/h2&gt;
+
+&lt;figure class=&quot; &quot;&gt;
+  
+    
+      &lt;a href=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-legends.jpg&quot; title=&quot;legends&quot;&gt;
+          &lt;img src=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-legends.jpg&quot; alt=&quot;full details&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+  
+    &lt;figcaption&gt;click to enlarge illustration
+&lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;deployment-configurations&quot;&gt;DEPLOYMENT CONFIGURATIONS&lt;/h2&gt;
+
+&lt;h3 id=&quot;deployment-as-full-mutualized-microservices-sytem&quot;&gt;DEPLOYMENT AS FULL MUTUALIZED MICROSERVICES SYTEM&lt;/h3&gt;
+
+&lt;figure class=&quot;half &quot;&gt;
+  
+    
+      &lt;a href=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-paas-D.jpg&quot; title=&quot;zoom on paas client - option D&quot;&gt;
+          &lt;img src=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-paas-D.jpg&quot; alt=&quot;full details&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-paas-A-B.jpg&quot; title=&quot;paas client - options A and B&quot;&gt;
+          &lt;img src=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-paas-D.jpg&quot; alt=&quot;full details&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-paas-C-D.jpg&quot; title=&quot;paas client - options D and D&quot;&gt;
+          &lt;img src=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-paas-D.jpg&quot; alt=&quot;full details&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+  
+    &lt;figcaption&gt;click to enlarge illustration
+&lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;deployment-as-full-client-sovereignety-on-services&quot;&gt;DEPLOYMENT AS FULL CLIENT SOVEREIGNETY ON SERVICES&lt;/h3&gt;
+
+&lt;figure class=&quot;half &quot;&gt;
+  
+    
+      &lt;a href=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-server-A-B-Bbis.jpg&quot; title=&quot;sovereign client - options A, B and Bbis&quot;&gt;
+          &lt;img src=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-server-A-B-Bbis.jpg&quot; alt=&quot;full details&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-server-C-D.jpg&quot; title=&quot;sovereign client - options C and D&quot;&gt;
+          &lt;img src=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-server-C-D.jpg&quot; alt=&quot;full details&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-server-C.jpg&quot; title=&quot;zoom on sovereign client - option C&quot;&gt;
+          &lt;img src=&quot;/documentation/configurations/APIVIZ-CONFIGURATIONS-export-server-C.jpg&quot; alt=&quot;full details&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+  
+    &lt;figcaption&gt;click to enlarge illustration
+&lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;!-- ------
+
+### ALL DEPLOYMENT OPTIONS
+
+
+
+
+
+
+&lt;figure class=&quot;half &quot;&gt;
+  
+  
+    &lt;figcaption&gt;click to enlarge illustration
+&lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+ --&gt;</content><author><name>Julien Paris</name></author><category term="documentation" /><category term="configuration" /><category term="schema" /><category term="principles" /><category term="installation" /><category term="deployment" /><summary type="html">Apiviz can be deployed according to several configurations as follow…</summary></entry></feed>

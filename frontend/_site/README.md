@@ -175,7 +175,7 @@ npm run lintfix
 
 -----------
 
-### Stack :
+### stack :
 
 - vuejs / nuxt / axios / dotenv /
 - vuetify / fontawesome / material Design
@@ -234,44 +234,6 @@ Pour le composant [`GlobalButton`](./components/UX/GlobalButton.vue) :
     - `resetStore` : reinitiélisation du store
     - `resetMapZoom` : reinitialisation du zoom du/des composants 
 <br>
-
-
-----------------
-
-## Documentation
-
-
-
---------
-
-- Install ruby, Jekyll
-
-``` bash
-gem install jekyll
-```
-
----
-- Install setup 
-
-``` bash
-gem install bundler
-bundle
-bundle install
-bundle update
-```
-
----
-- Launch server 
-
-``` bash
-bundle exec jekyll serve
-```
-
-... then check in your browser : 
-
-[`127.0.0.1:4000`](127.0.0.1:4000)
-
-
 
 
 ----------------

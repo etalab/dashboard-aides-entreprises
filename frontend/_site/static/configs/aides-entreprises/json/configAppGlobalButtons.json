@@ -1,0 +1,105 @@
+{
+  "help": "this file contains the setup for the numbers components",
+  "settingsIds": [
+    {
+      "id": "global-button-01",
+      "help": "",
+      "title": {
+        "fr": ""
+      },
+      "titleI18n": "buttons.button01.title",
+      "dividers": {
+        "before": false,
+        "after": false
+      },
+      "btnsRowClass": "align-center justify-center",
+      "componentButtons": [
+        {
+          "id": "first-button",
+          "title": {
+            "fr": "retour au niveau national"
+          },
+          "titleI18n": "buttons.button01.title",
+          "btnClass": "justify-center btn-gouv",
+          "block": false,
+          "outlined": true,
+          "fab": false,
+          "color": "primary",
+          "large": false,
+          "small": false,
+          "dark": false,
+          "tile": true,
+          "rounded": false,
+          "disabled": false,
+          "functions": [
+            {
+              "funcName": "resetStore",
+              "funcParams": {
+                "targets": [
+                  {
+                    "from": "store",
+                    "fromPropValue": "national",
+                    "fromStoreData": "initData",
+                    "fromDatasetId": "infos",
+                    "fromDatasetKey": "switchers",
+                    "targetSpecialStoreId": "levelname"
+                  },
+                  {
+                    "from": "store",
+                    "fromStoreData": "initData",
+                    "fromDatasetId": "national-aides-raw",
+                    "fromDatasetIndex": 0,
+                    "fromDatasetField": "nombre",
+                    "targetSpecialStoreId": "nombre"
+                  },
+                  {
+                    "from": "store",
+                    "fromStoreData": "initData",
+                    "fromDatasetId": "national-aides-raw",
+                    "fromDatasetIndex": 0,
+                    "fromDatasetField": "montant",
+                    "targetSpecialStoreId": "montant",
+                    "format": [
+                      {
+                        "utilsFnName": "toMillionsOrElse",
+                        "params": {
+                          "divider": 1000000,
+                          "fixed": 2
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "from": "store",
+                    "fromStoreData": "initData",
+                    "fromDatasetId": "national-aides-raw",
+                    "fromDatasetIndex": 0,
+                    "targetSpecialStoreId": "focusObject"
+                  }
+                ]
+              }
+            },
+            {
+              "funcName": "resetMapZoom",
+              "funcParams": {
+                "targets": [
+                  {
+                    "from": "store",
+                    "fromPropValue": 8
+                  }
+                ]
+              }
+            },
+            ""
+          ],
+          "hideIfs": [
+            {
+              "specialStoreId": "levelname",
+              "value": "échelle nationale"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
