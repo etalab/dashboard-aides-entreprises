@@ -1,3 +1,5 @@
+import { chooseBooleanMode } from "~/utils/utils.js"
+
 export default function ({ store, route, redirect }) {
   const log = store.state.log
   log && console.log("\n", "+ ".repeat(20))
@@ -6,12 +8,19 @@ export default function ({ store, route, redirect }) {
   let path = route.path
 
   let queryLocale = route.query.locale
+  let queryIframe = route.query.iframe
 
 
   // set locale if part of url
   if (queryLocale) {
     // log && console.log('-MW- getRouteConfig / queryLocale : ', queryLocale)
     store.commit("setLocale", queryLocale)
+  }
+
+  // set locale if part of url
+  if (queryIframe) {
+    // log && console.log('-MW- getRouteConfig / queryLocale : ', queryLocale)
+    store.commit("setIframe", chooseBooleanMode(queryIframe))
   }
 
   // retrieve local route config

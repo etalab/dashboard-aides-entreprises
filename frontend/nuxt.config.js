@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = "v.1.11 - Matomo injection"
+const APP_VERSION = "v.0.12 - Iframing"
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...

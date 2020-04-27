@@ -104,21 +104,29 @@ export function sortArrayBy(arrayOfStuff, params) {
 // - - - - - - - - - - - - - - - - - - - //
 
 const trueStrings = [
+  "y",
   "yes",
   "Yes",
   "YES",
-  "y",
   "Y",
+  "o",
+  "oui",
+  "Oui",
+  "OUI",
+  "O",
+  "t",
   "true",
   "True",
   "TRUE",
-  "t",
   "T",
 ]
 const falseStrings = [
   "no",
   "No",
   "NO",
+  "NON",
+  "Non",
+  "non",
   "n",
   "N",
   "false",

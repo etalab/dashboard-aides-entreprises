@@ -14,7 +14,7 @@ body {
     <Drawer v-if="routeDrawer" />
 
     <!-- NAVBAR -->
-    <Navbar />
+    <Navbar v-if="!isIframe" />
 
     <!-- CONTENT LAYOUT -->
     <v-content id="layout-content">
@@ -90,6 +90,7 @@ export default {
     this.log && console.log("L-default / beforeMount ...")
 
     // NOT WORKING IN SPA MODE !!!
+    // cf : ref on stackoverflow...
     // this.log &&
     //   console.log(
     //     "L-default / beforeMount / this.vuetifyThemeIsSet :",
@@ -135,6 +136,7 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       title: (state) => state.appTitle,
+      isIframe: (state) => state.isIframe,
 
       vuetifyThemeIsSet: (state) => state.configs.vuetifyThemeIsSet,
 

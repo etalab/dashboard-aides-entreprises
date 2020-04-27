@@ -12,6 +12,7 @@ export const state = () => ({
   // appTitle: process.env.CONFIG_APP.appTitle,
   appTitle: undefined,
 
+  isIframe: false,
   windowSize: {
     width: 0,
     height: 0,
@@ -243,6 +244,9 @@ export const mutations = {
   // WINDOW SIZE
   setWindowSize(state, winSize) {
     state.windowSize = winSize
+  },
+  setIframe(state, isIframe) {
+    state.isIframe = isIframe
   },
 
   // ROUTES CONFIG
