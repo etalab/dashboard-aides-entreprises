@@ -20,9 +20,18 @@ let configsReferences = configsJS.configsReferences
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS COPIED TO JSON FILES
-let copyConfigsToJSON = chooseBooleanMode(process.env.NUXT_ENV_CONFIG_TO_JSON)
-if (copyConfigsToJSON && process.env.NUXT_ENV_RUN_MODE == "dev") {
+// let copyConfigsToJSON = chooseBooleanMode(process.env.NUXT_ENV_CONFIG_TO_JSON)
+if (process.env.NUXT_ENV_RUN_MODE == "dev") {
   console.log(">>> nuxt.config.js / copyConfigsToJSON / ...")
+  let staticRoot = "./static/configs"
+  let staticConfigFolder = process.env.NUXT_ENV_CONFIG_TO_JSON_FOLDER || 'dev'
+
+  let staticConfigPath = `${staticRoot}/${staticConfigFolder}`
+  !fs.existsSync(staticConfigPath) && fs.mkdirSync(staticConfigPath)
+
+  let staticJSONpath = `${staticConfigPath}/json`
+  !fs.existsSync(staticJSONpath) && fs.mkdirSync(staticJSONpath)
+
   for (let conf of configsJS.configsReferences) {
     let jsonFilename = conf.field + ".json"
     console.log(
@@ -32,7 +41,7 @@ if (copyConfigsToJSON && process.env.NUXT_ENV_RUN_MODE == "dev") {
     try {
       let jsonStr = JSON.stringify(conf.data, null, 2)
       // console.log('>>> nuxt.config.js / copyConfigsToJSON / jsonStr : ', jsonStr)
-      fs.writeFileSync(`./static/configs/json/${jsonFilename}`, jsonStr, "utf8")
+      fs.writeFileSync(`${staticJSONpath}/${jsonFilename}`, jsonStr, "utf8")
     } catch (error) {
       console.log(
         ">>> nuxt.config.js / copyConfigsToJSON / ... error : ",

@@ -115,27 +115,27 @@ npm run lintfix
 
 #### configuration de l'app / UI-UX / routes / navbar ...: 
 
-- éditer le fichier [`config/appConfigUIUX.js`](./config/appConfigUIUX.js) : 
-- éditer le fichier [`config/appConfigRoutes.js`](./config/appConfigRoutes.js) : 
+- éditer le fichier [`configs/dev/appConfigUIUX.js`](./configs/dev/appConfigUIUX.js) : 
+- éditer le fichier [`configs/dev/appConfigRoutes.js`](./configs/dev/appConfigRoutes.js) : 
 
 
 #### configuration de l'app / data: 
 
-- éditer le fichier [`config/appConfigData.js`](./config/appConfigData.js) : 
+- éditer le fichier [`configs/dev/appConfigData.js`](./configs/dev/appConfigData.js) : 
 
 #### configuration de l'app / carte: 
 
-- éditer le fichier [`config/mapboxVectorStyles.js`](./config/mapboxVectorStyles.js) : 
+- éditer le fichier [`configs/dev/mapboxVectorStyles.js`](./configs/dev/mapboxVectorStyles.js) : 
 
 #### configuration de l'app / vues données :
 
-- éditer le fichier [`config/appConfigMap.js`](./config/appConfigMap.js) : 
-- éditer le fichier [`config/appConfigData.js`](./config/appConfigData.js) : 
-- éditer le fichier [`config/appConfigNumbers.js`](./config/appConfigNumbers.js) : 
-- éditer le fichier [`config/appConfigGlobalButtons.js`](./config/appConfigGlobalButtons.js) : 
-- éditer le fichier [`config/appConfigTexts.js`](./config/appConfigTexts.js) : 
-- éditer le fichier [`config/appConfigTables.js`](./config/appConfigTables.js) : 
-- éditer le fichier [`config/appConfigRawData.js`](./config/appConfigRawData.js) : 
+- éditer le fichier [`configs/dev/appConfigMap.js`](./configs/dev/appConfigMap.js) : 
+- éditer le fichier [`configs/dev/appConfigData.js`](./configs/dev/appConfigData.js) : 
+- éditer le fichier [`configs/dev/appConfigNumbers.js`](./configs/dev/appConfigNumbers.js) : 
+- éditer le fichier [`configs/dev/appConfigGlobalButtons.js`](./configs/dev/appConfigGlobalButtons.js) : 
+- éditer le fichier [`configs/dev/appConfigTexts.js`](./configs/dev/appConfigTexts.js) : 
+- éditer le fichier [`configs/dev/appConfigTables.js`](./configs/dev/appConfigTables.js) : 
+- éditer le fichier [`configs/dev/appConfigRawData.js`](./configs/dev/appConfigRawData.js) : 
 
 #### langues : 
 
@@ -190,7 +190,7 @@ déploiement : SPA mais plusieurs urls possibles pour afficher des pages / netli
 
 ------------
 
-#### fichier : [`appConfigMap.js`](./config/appConfigMap.js)
+#### fichier : [`appConfigMap.js`](./configs/appConfigMap.js)
 
 Pour le composant [`MapboxGL`](./componenents/DataViews/MapboxGL.vue) : 
 
@@ -221,7 +221,7 @@ Pour le composant [`MapboxGL`](./componenents/DataViews/MapboxGL.vue) :
 
 ----------------
 
-#### fichier : [`appConfigGlobalButtons.js`](./config/appConfigGlobalButtons.js)
+#### fichier : [`appConfigGlobalButtons.js`](./configs/appConfigGlobalButtons.js)
 
 Pour le composant [`GlobalButton`](./components/UX/GlobalButton.vue) : 
 

@@ -135,7 +135,7 @@ import { transformDataset, buildProperties } from "~/utils/mapbox.js"
 
 import { objectFromPath, switchFormatFunctions } from "~/utils/utils.js"
 
-import { StylesOSM } from "~/config/mapboxVectorStyles.js"
+import { StylesOSM } from "~/configs/mapboxVectorStyles.js"
 
 export default {
   name: "MapboxGL",
