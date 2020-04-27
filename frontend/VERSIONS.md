@@ -5,10 +5,13 @@
 
 #### Developers / roadmap
 
-Check our [project page on Github][kanban] to have a glimpse of our roadmap
+Check our [project page on Github][kanban] to have a glimpse of our roadmap. 
+
+You can also check the [wireframe document online][wireframe_slides] or the [wireframe document as pdf][wireframe_pdf] we are working on to have a more graphical approach on our roadmap. 
 
 [kanban]: https://github.com/etalab/dashboard-aides-entreprises/projects/1 
-
+[wireframe_slides]: https://docs.google.com/presentation/d/1j_0xaJzPIjmuDSQG-nNYzADad4pFaf8E3VBkggFu1FY/edit?usp=sharing
+[wireframe_pdf]: ../screeshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
 
 -----------------
 date : 27/04/2020
