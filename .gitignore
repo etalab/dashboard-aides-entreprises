@@ -33,3 +33,10 @@ scripts/config.ini
 
 # Nuxt generate
 */dist
+
+
+# Jekyll
+docs/_site
+docs/.sass-cache
+docs/.jekyll-metadata
+docs/emfile.lock
