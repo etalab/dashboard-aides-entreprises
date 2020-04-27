@@ -17,10 +17,15 @@
 
 #### Version : v.0.xxx (beta)
 
-Check the [versions logs here]('VERSIONS.md')
+- Check the [versions logs here](VERSIONS.md)
+
+- See also our roadmaps : 
+  - [page "project" on Github][kanban]
+  - [roadmap (pdf) / wireframe][wireframe_pdf]
+  - [roadmap (slides) / wireframe][wireframe_slides]
 
 ----------
-#### Co-auteurs : 
+#### Co-authors : 
 
 - Julien Paris
 - Alexandre Bulté
@@ -31,16 +36,16 @@ Check the [versions logs here]('VERSIONS.md')
 ## Sites 
 
 
-#### - Preprod 
-
-**live test** : https://covid-aides-entreprises.netlify.com
-[![Netlify Status](https://api.netlify.com/api/v1/badges/71e2942d-961b-4f06-8ac3-8dc73dceb6ee/deploy-status)](https://app.netlify.com/sites/covid-aides-entreprises/deploys)
-
-
 #### - Prod 
 
-**live prod** : https://aides-entreprises.data.gouv.fr/
-(no badge for now)
+**live / prod** : https://aides-entreprises.data.gouv.fr/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f09c4d46-99a4-4fdf-8c4a-34b38f4d6a26/deploy-status)](https://app.netlify.com/sites/aides-entreprises-covid19/deploys)
+
+
+#### - Preprod 
+
+**live / test** : https://covid-aides-entreprises.netlify.com
+[![Netlify Status](https://api.netlify.com/api/v1/badges/71e2942d-961b-4f06-8ac3-8dc73dceb6ee/deploy-status)](https://app.netlify.com/sites/covid-aides-entreprises/deploys)
 
 -----------
 
@@ -137,12 +142,9 @@ npm run lintfix
 - voir le dossier [`/locales`](./locales/) pour les fichiers de traduction
 
 
-----------------
+---------------
 
 ### ce qu’il n’y a pas encore :
-
-##### se référer au kanban de développement : [page projet Github][kanban]
-
 
 - afficher les départements dépendants d’une région et uniquement eux ;
 - minivues pour les dom-tom en dessous ou à côté de la carte principale ;
@@ -238,3 +240,5 @@ Pour le composant [`GlobalButton`](./components/UX/GlobalButton.vue) :
 
 [branch_front]: https://github.com/etalab/dashboard-aides-entreprises/tree/j_front/frontend
 [kanban]: https://github.com/etalab/dashboard-aides-entreprises/projects/1 
+[wireframe_slides]: https://docs.google.com/presentation/d/1j_0xaJzPIjmuDSQG-nNYzADad4pFaf8E3VBkggFu1FY/edit?usp=sharing
+[wireframe_pdf]: ../screeshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
