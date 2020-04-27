@@ -25,9 +25,13 @@ NUXT_ENV_MATOMO_SITE_ID=127
 
 # NUXT_ENV_CONFIG_FROM : local_js_files (default | undefined) | local_json_files | distant_json_files (distant)
 NUXT_ENV_CONFIG_FROM=local_js_files
-NUXT_ENV_CONFIG_TO_JSON=yes
+# NUXT_ENV_CONFIG_FROM=local_json_files
+# NUXT_ENV_CONFIG_FROM=distant_json_files
+# NUXT_ENV_CONFIG_TO_JSON=yes
+NUXT_ENV_CONFIG_TO_JSON_FOLDER=aides-entreprises
 
 ### ONLY FOR DISTANT FILES
+# https://raw.githubusercontent.com/co-demos/ODAMPA-configs/master/AIDES-ENTREPRISES/configs/json/configAppCharts.json
 NUXT_ENV_configs_URLBASE=https://raw.githubusercontent.com/co-demos/ODAMPA-configs/master/AIDES-ENTREPRISES/configs/json/
 NUXT_ENV_configAppUIUX=configAppUIUX.json
 NUXT_ENV_configAppRoutes=configAppRoutes.json
