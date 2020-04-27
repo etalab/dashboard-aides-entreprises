@@ -1,6 +1,6 @@
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### GLOBAL ENV VARS
-
+### - - - - - - - - - - - - - - - - - - - - - ###
 # NUXT_ENV_RUN_MODE : dev | preprod | prod
 NUXT_ENV_RUN_MODE=dev
 NUXT_ENV_HOST=localhost
@@ -10,28 +10,26 @@ NUXT_ENV_APP_TITLE=Aides aux entreprises : fonds de solidarité
 
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### LOCALES / i18n
+### - - - - - - - - - - - - - - - - - - - - - ###
 NUXT_ENV_LANG_DEFAULT_LOCALE=fr
 NUXT_ENV_LANG_DEFAULT_LOCALES=fr:Français:fr-FR.js
 
 
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### MATOMO STATS
+### - - - - - - - - - - - - - - - - - - - - - ###
 NUXT_ENV_MATOMO_HOST=https://stats.data.gouv.fr
 NUXT_ENV_MATOMO_SITE_ID=127
 
 
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### CONFIGS FROM ...
-
+### - - - - - - - - - - - - - - - - - - - - - ###
 # NUXT_ENV_CONFIG_FROM : local_js_files (default | undefined) | local_json_files | distant_json_files (distant)
 NUXT_ENV_CONFIG_FROM=local_js_files
-# NUXT_ENV_CONFIG_FROM=local_json_files
-# NUXT_ENV_CONFIG_FROM=distant_json_files
-# NUXT_ENV_CONFIG_TO_JSON=yes
 NUXT_ENV_CONFIG_TO_JSON_FOLDER=aides-entreprises
 
 ### ONLY FOR DISTANT FILES
-# https://raw.githubusercontent.com/co-demos/ODAMPA-configs/master/AIDES-ENTREPRISES/configs/json/configAppCharts.json
 NUXT_ENV_configs_URLBASE=https://raw.githubusercontent.com/co-demos/ODAMPA-configs/master/AIDES-ENTREPRISES/configs/json/
 NUXT_ENV_configAppUIUX=configAppUIUX.json
 NUXT_ENV_configAppRoutes=configAppRoutes.json
@@ -48,7 +46,7 @@ NUXT_ENV_configAppGlobalButtons=configAppGlobalButtons.json
 
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### COLORS
-
+### - - - - - - - - - - - - - - - - - - - - - ###
 NUXT_ENV_THEME_IS_DARK=false
 
 NUXT_ENV_THEME_LIGHT_primary=#000091

@@ -20,7 +20,6 @@ let configsReferences = configsJS.configsReferences
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS COPIED TO JSON FILES
-// let copyConfigsToJSON = chooseBooleanMode(process.env.NUXT_ENV_CONFIG_TO_JSON)
 if (process.env.NUXT_ENV_RUN_MODE == "dev") {
   console.log(">>> nuxt.config.js / copyConfigsToJSON / ...")
   let staticRoot = "./static/configs"
