@@ -1,0 +1,84 @@
+main:
+  - title: "Overview"
+    url: /general/overview
+  - title: "Quickstart guide"
+    url: /guide/installation
+  - title: "Blog"
+    url: /posts/
+  # - title: "Categories"
+  #   url: /categories/
+  # - title: "Tags"
+  #   url: /tags/
+  # - title: "Pages"
+  #   url: /page-archive/
+  # - title: "Collections"
+  #   url: /collection-archive/
+  - title: "Repo"
+    url: https://github.com/co-demos/apiviz-frontend
+
+
+# documentation links
+docs:
+  - title: The Apiviz project
+    children:
+      - title: "Overview"
+        url: /general/overview
+      - title: "Screenshots"
+        url: /general/screenshots
+      - title: "The Apiviz ecosystem"
+        url: /general/ecosystem
+      - title: "Apiviz backend"
+        url: https://co-demos.github.io/apiviz-backend/
+      - title: "Gallery"
+        url: /general/gallery
+  - title: Dataviz principles
+    children: 
+      - title: "Basis of a datavisualisation project"
+        url: /lexicon/basic-dataviz-project
+      - title: "Inter-operability"
+        url: /lexicon/third-services-integration
+      - title: "Apiviz data flows"
+        url: /lexicon/data-flows
+  - title: Installation
+    children:
+      - title: "Installation walkthrough"
+        url: /guide/installation
+      - title: "Access the back-office"
+        url: /guide/backoffice
+      - title: "Back-office tutorial"
+        url: /guide/backoffice-tuto
+      - title: "Deployment configurations"
+        url: /guide/deployment-configs
+      - title: "Install the docs"
+        url: /guide/install-docs
+
+  - title: Developers
+    children:
+      - title: "Stack"
+        url: /dev/stack
+      - title: "Contributing"
+        url: /dev/contributing
+      - title: "Roadmaps"
+        url: /dev/roadmaps
+      - title: "Guidelines"
+        url: /dev/guidelines
+
+  - title: Meta
+    children:
+      - title: "Maintenance"
+        url: /meta/maintain
+      - title: "Credits"
+        url: /meta/credits
+      - title: "Change log"
+        url: /meta/changelog
+      - title: "License"
+        url: /meta/license
+
+  - title: Blog
+    url: /posts/
+
+  - title: "Categories"
+    url: /categories/
+
+  - title: "Tags"
+    url: /tags/
