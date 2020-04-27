@@ -58,7 +58,9 @@
       :class="`legend-block legend-bottom-right`"
     >
       <!-- DEBUGGING -->
-      <span v-if="log">v1.10 - distant config files</span>
+      <span v-if="log">
+        {{ appVersion }}
+      </span>
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
 
@@ -282,6 +284,7 @@ export default {
 
   computed: {
     ...mapState({
+      appVersion: (state) => state.appVersion,
       log: (state) => state.log,
       locale: (state) => state.locale,
       mapUI: (state) => state.configUI.map,

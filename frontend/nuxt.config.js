@@ -11,6 +11,8 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
+const APP_VERSION = "v.1.11 - Matomo injection"
+
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
 var configsJS = require("./nuxt_loadConfigs_fromJS.js")
@@ -212,6 +214,8 @@ const buildLocales = (localesString) => {
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIG APP OBJECT
 const configApp = {
+  appVersion: APP_VERSION,
+
   // DEV MODE - PORT - HOST ...
   mode: process.env.NUXT_ENV_RUN_MODE,
   host: process.env.NUXT_ENV_HOST,
@@ -223,6 +227,10 @@ const configApp = {
   //   : configsJS.configsReferences,
   configsReferences: configsReferences,
   configsFrom: process.env.NUXT_ENV_CONFIG_FROM || "local_js_files",
+
+  // MATOMO
+  matomo_host: process.env.NUXT_ENV_MATOMO_HOST || "https://stats.data.gouv.fr",
+  matomo_siteId: parseInt(process.env.NUXT_ENV_MATOMO_SITE_ID) || 127,
 
   // INTERNATIONALIZATION
   defaultLocale: process.env.NUXT_ENV_LANG_DEFAULT_LOCALE || defaultLoc,
