@@ -3,7 +3,7 @@
   ODAMAP 
 </h1>
 <p align="center">
-  stands for "Open-Dashboard-And-MAP"
+  ...stands for "Open-Dashboard-And-MAP"
 </p>
 
 
@@ -15,9 +15,9 @@
 
 ----------
 
-#### Version : 1.1
+#### Version : v.0.xxx (beta)
 
-check the [versions log here]('VERSIONS.md')
+Check the [versions logs here]('VERSIONS.md')
 
 ----------
 #### Co-auteurs : 
