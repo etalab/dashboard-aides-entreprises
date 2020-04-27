@@ -5,17 +5,16 @@
 // CONSTANTS
 
 // switch between facts on region / departement level
-const ZOOM_THRESHOLD = 5.3
-// const ZOOM_THRESHOLD_BIS = 5.4
+const ZOOM_THRESHOLD = 6
 
 // colors
-const FR_GOUV_BLUE = "#000091"
-const PRIMARYFILLCOLOR = "#7373FF" // #572a99 #8393A7
-const SECONDARYFILLCOLOR = "#526781"
-const HIGHLIGHTCOLOR = "#572a99"
+const FR_GOUV_BLUE = "#009159"
+const PRIMARYFILLCOLOR = "#009159" // #572a99 #8393A7
+const SECONDARYFILLCOLOR = "#009159"
+const HIGHLIGHTCOLOR = "#009159"
 
-const OUTLINECOLOR = "#627BC1"
-const OUTLINECOLOR2 = "#6c87ab"
+const OUTLINECOLOR = "#009159"
+const OUTLINECOLOR2 = "#009159"
 
 // layer fonts : ["Open Sans Regular","Arial Unicode MS Regular"]
 
@@ -57,7 +56,7 @@ const circlePaintAides = {
   "circle-radius": [
     "interpolate",
     ["linear"],
-    ["*", ["sqrt", ["number", ["get", "montantMillions"]]], 6],
+    ["*", ["sqrt", ["number", ["get", "tonnageMillions"]]], 6],
     0,
     10,
     100,
@@ -71,8 +70,8 @@ const circlePaintAides = {
 
 const aidesProperties = [
   {
-    propName: "montantMillions",
-    itemField: "montant",
+    propName: "tonnageMillions",
+    itemField: "tonnage",
     needFormatting: true,
     format: [
       {
@@ -82,12 +81,22 @@ const aidesProperties = [
     ],
   },
   {
-    propName: "montant",
-    itemField: "montant",
+    propName: "tonnage",
+    itemField: "tonnage",
     needFormatting: true,
-    format: [{ utilsFnName: "toFloat", params: undefined }],
+    format: [{ utilsFnName: "toMillionsOrElse", params: undefined }],
   },
-  { propName: "nombre", itemField: "nombre" },
+  { 
+    propName: "kg_par_habitant", 
+    itemField: "kg_par_habitant",
+    needFormatting: true,
+    format: [
+      {
+        utilsFnName: "toMillionsOrElse",
+        params: { divider: 1, fixed: 0 },
+      },
+    ],
+  },
 ]
 
 // - - - - - - - - - - - - - - - - - - - - - //
@@ -152,7 +161,7 @@ export const configAppMap = {
 
         {
           id: "regions-aides",
-          help: "montants des aides au niveau regional - as geojson from raw",
+          help: "tonnages des aides au niveau regional - as geojson from raw",
           from: "store",
           fromId: "regions-aides-raw",
           type: "geojson",
@@ -193,7 +202,7 @@ export const configAppMap = {
         {
           id: "departements-aides",
           help:
-            "montants des aides au niveau départemental - as geojson from raw",
+            "tonnages des aides au niveau départemental - as geojson from raw",
           from: "store",
           fromId: "departements-aides-raw",
           type: "geojson",
@@ -231,7 +240,7 @@ export const configAppMap = {
             "regions-fill",
             "regions-lines",
             "regions-aides",
-            "regions-aides-montants",
+            "regions-aides-tonnages",
           ],
           clicEvents: [
             {
@@ -285,8 +294,14 @@ export const configAppMap = {
                         fromStoreData: "initData",
                         fromDatasetId: "regions-aides-raw",
                         fromDatasetKey: "reg",
-                        fromDatasetField: "nombre",
-                        targetSpecialStoreId: "nombre",
+                        fromDatasetField: "kg_par_habitant",
+                        targetSpecialStoreId: "kg_par_habitant",
+                        format: [
+                          {
+                            utilsFnName: "toMillionsOrElse",
+                            params: { divider: 1, fixed: 0 },
+                          },
+                        ],
                       },
 
                       {
@@ -295,8 +310,8 @@ export const configAppMap = {
                         fromStoreData: "initData",
                         fromDatasetId: "regions-aides-raw",
                         fromDatasetKey: "reg",
-                        fromDatasetField: "montant",
-                        targetSpecialStoreId: "montant",
+                        fromDatasetField: "tonnage",
+                        targetSpecialStoreId: "tonnage",
                         format: [
                           {
                             utilsFnName: "toMillionsOrElse",
@@ -366,22 +381,15 @@ export const configAppMap = {
             "departements-fill",
             "departements-lines",
             "departements-aides",
-            "departements-aides-montants",
+            "departements-aides-tonnages",
           ],
           clicEvents: [
             {
               event: "click",
               layer: "departements-fill",
+              // zoomRange : { minZoom : ZOOM_THRESHOLD, maxZoom : undefined },
               functions: [
-                {
-                  funcName: "toggleSelectedOn",
-                  funcParams: {
-                    zoomRange: {
-                      minZoom: ZOOM_THRESHOLD,
-                      maxZoom: undefined,
-                    },
-                  },
-                },
+                { funcName: "toggleSelectedOn", funcParams: {} },
 
                 // { funcName    : "goToPolygon",
                 //   funcParams  : {
@@ -393,10 +401,7 @@ export const configAppMap = {
                 {
                   funcName: "updateDisplayedData",
                   funcParams: {
-                    zoomRange: {
-                      minZoom: ZOOM_THRESHOLD,
-                      maxZoom: undefined,
-                    },
+                    zoomRange: { minZoom: ZOOM_THRESHOLD, maxZoom: undefined },
                     propName: "code",
                     targets: [
                       {
@@ -415,8 +420,14 @@ export const configAppMap = {
                         fromStoreData: "initData",
                         fromDatasetId: "departements-aides-raw",
                         fromDatasetKey: "dep",
-                        fromDatasetField: "nombre",
-                        targetSpecialStoreId: "nombre",
+                        fromDatasetField: "kg_par_habitant",
+                        targetSpecialStoreId: "kg_par_habitant",
+                        format: [
+                          {
+                            utilsFnName: "toMillionsOrElse",
+                            params: { divider: 1, fixed: 0 },
+                          },
+                        ],
                       },
 
                       {
@@ -425,8 +436,8 @@ export const configAppMap = {
                         fromStoreData: "initData",
                         fromDatasetId: "departements-aides-raw",
                         fromDatasetKey: "dep",
-                        fromDatasetField: "montant",
-                        targetSpecialStoreId: "montant",
+                        fromDatasetField: "tonnage",
+                        targetSpecialStoreId: "tonnage",
                         format: [
                           {
                             utilsFnName: "toMillionsOrElse",
@@ -502,12 +513,12 @@ export const configAppMap = {
           paint: circlePaintAides,
         },
         {
-          id: "regions-aides-montants",
+          id: "regions-aides-tonnages",
           type: "symbol",
           source: "regions-aides",
           layout: {
             visibility: "visible",
-            "text-field": "{montantMillions} M€",
+            "text-field": "{tonnageMillions} Mt",
             "text-font": ["Open Sans Regular"], // OK
             "text-size": 14,
           },
@@ -551,12 +562,12 @@ export const configAppMap = {
           minzoom: ZOOM_THRESHOLD,
         },
         {
-          id: "departements-aides-montants",
+          id: "departements-aides-tonnages",
           type: "symbol",
           source: "departements-aides",
           layout: {
             // visibility: 'none',
-            "text-field": "{montantMillions} M€",
+            "text-field": "{tonnageMillions} Mt",
             "text-font": ["Open Sans Regular"],
             "text-size": 14,
           },
@@ -599,8 +610,8 @@ export const configAppMap = {
         mapStyle: "EtalabUrl",
         center: [46.2276, 2.2137],
         currentCenter: [46.2276, 2.2137],
-        zoom: 4.8,
-        maxZoom: 8,
+        zoom: 5,
+        maxZoom: 18,
         minZoom: 2,
       },
 
