@@ -7,14 +7,27 @@ import Vue from "vue"
 // - - - - - - - - - - - - - - - - - - - //
 // CLEAN VALUES
 // - - - - - - - - - - - - - - - - - - - //
+export function capitalizeString(string) {
+  return string[0].toUpperCase() + string.substring(1)
+}
 
-export function splitMulti(str, tokens) {
+export function splitMulti(str, tokens, glue=" ", capitalize=false) {
   var tempChar = tokens[0] // We can use the first token as a temporary join character
-  for (var i = 1; i < tokens.length; i++) {
-    str = str.split(tokens[i]).join(tempChar)
+  console.log("\n+ + + splitMulti / str : ", str)
+  for (let token of tokens) {
+    let strArray = str.split(token)
+    console.log("+ + + splitMulti / strArray : ", strArray)
+    let strArrayNew = []
+    for(let [i, s] of strArray.entries() ) {
+      if ( capitalize ) { s = capitalizeString(s.trim()) }
+      if ( glue && i > 0 ) { s = glue + s }
+      strArrayNew.push(s)
+    }
+    console.log("+ + + splitMulti / strArrayNew : ", strArrayNew)
+    str = strArrayNew.join(tempChar)
   }
-  str = str.split(tempChar)
-  return str
+  let finalStrArray = str.split(tempChar)
+  return finalStrArray
 }
 
 // - - - - - - - - - - - - - - - - - - - //
@@ -54,12 +67,6 @@ export function sortByFieldValue(arrayOfStuff, fieldName, toNumber = true) {
   let sortedArray = arrayOfStuff.sort((a, b) => {
     let numbA = toNumber ? new Number(a[fieldName]) : a[fieldName]
     let numbB = toNumber ? new Number(b[fieldName]) : b[fieldName]
-    // let result
-    // switch( order ){
-    //   case 'ascending'  : result = numbA - numbB  ; break ;
-    //   case 'descending' : result = numbB - numbA  ; break ;
-    // }
-    // return result
     return numbA - numbB
   })
   return sortedArray

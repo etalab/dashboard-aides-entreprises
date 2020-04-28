@@ -208,7 +208,7 @@ export default {
               let categ = i[settings.fromKey]
 
               if (settings.splitBy) {
-                categ = splitMulti(categ, settings.splitBy)
+                categ = splitMulti(categ, settings.splitBy, settings.splitGlue, settings.capitalize)
                 if (categ.length <= 1) {
                   categ = categ.join("")
                 }

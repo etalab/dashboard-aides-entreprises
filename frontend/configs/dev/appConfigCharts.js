@@ -67,6 +67,8 @@ export const configAppCharts = {
             buildAxisCategsXsettings: {
               fromKey: KEY_SECTION_NAF_LABEL,
               splitBy: [",", ";"],
+              splitGlue: "- ",
+              capitalize: true,
             },
           },
         ],
