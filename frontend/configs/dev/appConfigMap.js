@@ -123,11 +123,15 @@ export const configAppMap = {
         desktop: {
           maxHeight: undefined,
           maxHeightIframe: undefined,
+          maxBounds: undefined,
+          maxBoundsIframe: undefined, // [[ SW ], [ NE ]]
         },
         mobile: {
           maxHeight: undefined,
           maxHeightIframe: undefined,
-        }
+          maxBounds: undefined,
+          maxBoundsIframe: [[ -5.22, 41.33 ],[ 9.55, 51.0 ]], // [[ SW ], [ NE ]]
+        },
       },
 
       // - - - - - - - - - - - - - - - - - - //

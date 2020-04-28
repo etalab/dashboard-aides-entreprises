@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = "v.0.14 - IE fix"
+const APP_VERSION = "v.0.15 - panning limited"
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
