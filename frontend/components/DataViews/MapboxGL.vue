@@ -442,7 +442,7 @@ export default {
       let mapbox = _map
       if (mapbox) {
         let mapMaxBounds = this.getMapMaxBounds()
-        this.log && console.log("getMapMaxBounds / mapbox : ", mapbox)
+        // this.log && console.log("getMapMaxBounds / mapbox : ", mapbox)
         mapbox.setMaxBounds = mapMaxBounds
       }
     },
