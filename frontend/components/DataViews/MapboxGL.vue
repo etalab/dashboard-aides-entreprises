@@ -443,7 +443,7 @@ export default {
     setMapMaxBounds() {
       let mapbox = _map
       if (mapbox) {
-        let mapMaxBounds = this.getMapMaxBounds
+        let mapMaxBounds = this.getMapMaxBounds()
         this.log && console.log("getMapMaxBounds / mapbox : ", mapbox)
         mapbox.setMaxBounds = mapMaxBounds
       }
