@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = "v.0.13 - Iframing override"
+const APP_VERSION = "v.0.14 - IE fix"
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
@@ -334,7 +334,7 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     // '@nuxtjs/stylelint-module',
 
-    "@nuxtjs/vuetify"
+    "@nuxtjs/vuetify",
   ],
 
   /*
@@ -381,11 +381,9 @@ export default {
    ** Build configuration
    */
   build: {
-    transpile: [
-      "vuetify",
-      "mapbox-gl",
-      "apexcharts"
-    ],
+
+    transpile: ["vue-mapbox"], 
+
     // plugins: [
     //   new webpack.ProvidePlugin({
     //     mapboxgl: 'mapbox-gl'
