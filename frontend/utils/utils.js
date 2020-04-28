@@ -13,17 +13,17 @@ export function capitalizeString(string) {
 
 export function splitMulti(str, tokens, glue=" ", capitalize=false) {
   var tempChar = tokens[0] // We can use the first token as a temporary join character
-  console.log("\n+ + + splitMulti / str : ", str)
+  // console.log("\n+ + + splitMulti / str : ", str)
   for (let token of tokens) {
     let strArray = str.split(token)
-    console.log("+ + + splitMulti / strArray : ", strArray)
+    // console.log("+ + + splitMulti / strArray : ", strArray)
     let strArrayNew = []
     for(let [i, s] of strArray.entries() ) {
       if ( capitalize ) { s = capitalizeString(s.trim()) }
       if ( glue && i > 0 ) { s = glue + s }
       strArrayNew.push(s)
     }
-    console.log("+ + + splitMulti / strArrayNew : ", strArrayNew)
+    // console.log("+ + + splitMulti / strArrayNew : ", strArrayNew)
     str = strArrayNew.join(tempChar)
   }
   let finalStrArray = str.split(tempChar)
