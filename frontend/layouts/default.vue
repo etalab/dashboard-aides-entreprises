@@ -11,7 +11,7 @@ body {
 <template>
   <v-app
     id="ODAMAP-root"
-    :style="`${isIframe && getIframeMaxHeight ? 'max-height:' + getIframeMaxHeight+'px;' : windowHeight+'px'}`"
+    :style="`overflow: hidden; ${isIframe && getIframeMaxHeight ? 'max-height:' + getIframeMaxHeight+'px;' : windowHeight+'px'}`"
   >
     <!-- DYNAMIC CSS -->
     <DynamicCSS />
@@ -25,13 +25,13 @@ body {
     <!-- CONTENT LAYOUT -->
     <v-content 
       id="layout-content"
+      :style="`height: ${contentWindowHeight}px`"
       >
       <Filters />
 
       <!-- <FiltersFeedback/> -->
       <v-container 
         id="layout-container"
-        :style="`height: ${contentWindowHeight}px`"
         fluid pa-0
         >
         <nuxt />
