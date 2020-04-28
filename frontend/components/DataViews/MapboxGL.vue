@@ -919,7 +919,7 @@ export default {
       //     event.features
       //   )
       if (event.features.length > 0) {
-        if (this.selectedStateId[source] !== null) {
+        if (this.selectedStateId[source]) {
           mapbox.setFeatureState(
             { source, id: this.selectedStateId[source] },
             { selected: false }
