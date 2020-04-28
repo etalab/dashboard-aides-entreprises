@@ -205,8 +205,6 @@ export default {
     map(next, prev) {
       this.handleResize()
       if (next && !prev) {
-        this.setMapMaxBounds()
-
         this.log && console.log("C-MapboxGL / watch - map - is created ")
         let storeSourcesArray = this.sources.filter((s) => s.from === "store")
         let urlSourcesArray = this.sources.filter((s) => s.from === "url")
