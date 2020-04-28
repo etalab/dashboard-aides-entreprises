@@ -327,7 +327,15 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxtjs/vuetify"],
+  buildModules: [
+
+    // Doc: https://github.com/nuxt-community/eslint-module
+    // '@nuxtjs/eslint-module',
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    // '@nuxtjs/stylelint-module',
+
+    "@nuxtjs/vuetify"
+  ],
 
   /*
    ** Nuxt.js modules
@@ -373,6 +381,11 @@ export default {
    ** Build configuration
    */
   build: {
+    transpile: [
+      "vuetify",
+      "mapbox-gl",
+      "apexcharts"
+    ],
     // plugins: [
     //   new webpack.ProvidePlugin({
     //     mapboxgl: 'mapbox-gl'
