@@ -1,5 +1,5 @@
-import { getDataFromUrl } from "~/utils/getData.js"
-import { objectFromPath, switchFormatFunctions } from "~/utils/utils.js"
+// import { getDataFromUrl } from "~/utils/getData.js"
+import { switchFormatFunctions } from "~/utils/utils.js"
 
 import axios from "axios"
 
@@ -11,7 +11,7 @@ const copyData = (respData, store, dataRef, log) => {
     // log  && console.log('... -MW- getDataInit / respData :' , respData )
 
     // get source data
-    const value = respData[dataCopy.from.objectRef]
+    let value = respData[dataCopy.from.objectRef]
     // log  && console.log('... -MW- getDataInit / value :' , value )
     if (dataCopy.fieldToCopy) {
       value = value && value[dataCopy.fieldToCopy]
@@ -55,7 +55,7 @@ export function storeData(dataset, dataRef, resp, store, log) {
 
       // get source data
       const sourceObject = resp.data[dataCopy.from.objectRef]
-      const value = sourceObject
+      let value = sourceObject
       if (dataCopy.fieldToCopy) {
         value = sourceObject && sourceObject[dataCopy.fieldToCopy]
       }
@@ -77,13 +77,16 @@ export function storeData(dataset, dataRef, resp, store, log) {
   }
 }
 
-export default function ({ store, app, redirect }) {
-  let log = store.state.log
-  let baseUrl = store.state.data.backendApi
+export default function ({ store }) {
+  const log = store.state.log
+  log && console.log("\n", "+ ".repeat(20))
+  log && console.log("-MW- getDataInit / ... ")
+
+  // log && console.log('-MW- getDataInit / app : ', app)
+
+  // let baseUrl = store.state.data.backendApi
   let promisesArray = []
   let callableFrom = ["url", "static"]
-
-  // log && console.log('\n-MW- getDataInit / app : ', app)
 
   // STORE DATASETS
   let hasInitdData = store.state.data.initData
@@ -109,7 +112,7 @@ export default function ({ store, app, redirect }) {
       if (dataRef.from == "rawObject") {
         log && console.log("-MW- getDataInit / dataRef.from :", dataRef.from)
 
-        let initDataFromObjectPromise = new Promise((resolve, reject) => {
+        let initDataFromObjectPromise = new Promise((resolve) => {
           resolve(dataRef.rawObject)
         }).then((resp) => {
           log &&

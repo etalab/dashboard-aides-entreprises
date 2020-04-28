@@ -3,7 +3,7 @@ export const configAppUIUX = {
 
   // GLOBAL
   appTitle: {
-    fr: "Aides aux entreprises : fonds de solidarité",
+    fr: "Tableau de bord des Déchets 2017",
   },
   appMetas: [],
   appVersion: "V.0.1",
@@ -17,22 +17,17 @@ export const configAppUIUX = {
 
   // UX
   UX_config: {
-    hasDrawer: false,
-
-    mobileBreakpoints: ["xs", "sm"],
-
     navbar: {
       height: 64, // in pixels
-      mobileHeight: 45,
-
-      fixed: true,
-      fixedBtn: false,
 
       clipped: true,
       clippedBtn: false,
 
       drawer: false,
-      drawerBtn: false,
+      drawerBtn: true,
+
+      fixed: false,
+      fixedBtn: false,
 
       miniVariant: true,
       miniVariantBtn: false,
@@ -103,9 +98,7 @@ export const configAppUIUX = {
       navbarClass: "",
       color: "primary",
       dark: true,
-      titleClass: "white--text font-weight-black",
-      sizeDesktop: "headline",
-      sizeMobile: "subtitle-1",
+      titleClass: "white--text font-weight-black display-1",
     },
 
     filters: {
@@ -114,7 +107,7 @@ export const configAppUIUX = {
 
     themes: {
       light: {
-        primary: "#000091",
+        primary: "#009159",
         accent: "#572a99",
         secondary: "#b1133b",
         info: "#53657D",
@@ -136,7 +129,7 @@ export const configAppUIUX = {
 
     map: {
       loader: {
-        color: "#000091",
+        color: "#009159",
         width: "6px",
         height: "6px",
       },
@@ -149,8 +142,8 @@ export const configAppUIUX = {
         class: ".btn-gouv",
         config: `
           background-color: #fff !important;
-          border-bottom: 1px solid #000091 !important;
-          border-right: 1px solid #000091 !important;
+          border-bottom: 1px solid #009159 !important;
+          border-right: 1px solid #009159 !important;
           margin: .3em !important;
         `,
       },
@@ -158,7 +151,7 @@ export const configAppUIUX = {
         class: ".btn-gouv.selected",
         config: `
           color: #FFF;
-          background-color: #000091;
+          background-color: #009159;
         `,
       },
     ],

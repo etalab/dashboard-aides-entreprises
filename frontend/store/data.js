@@ -8,14 +8,19 @@ import {
 export const state = () => ({
   // GLOABAL APP ENV
   log: process.env.LOG,
+  mode: process.env.CONFIG_APP.mode,
 
   // API BACKEND
-  backendApi: process.env.CONFIG_APP.backendApi,
-  dataSource: process.env.CONFIG_APP.dataSource,
-  defaultDataSetup: process.env.CONFIG_APP.defaultDataSetup,
+  // backendApi: process.env.CONFIG_APP.backendApi,
+  // dataSource: process.env.CONFIG_APP.dataSource,
+  // defaultDataSetup: process.env.CONFIG_APP.defaultDataSetup,
+  backendApi: undefined,
+  dataSource: undefined,
+  defaultDataSetup: undefined,
 
   // FILTERS
-  filters: process.env.CONFIG_APP.filters,
+  // filters: process.env.CONFIG_APP.filters,
+  filters: undefined,
   activatedFilters: [],
 
   // DATASETS
@@ -34,8 +39,12 @@ export const state = () => ({
 
 export const getters = {
   // BACKEND
+  chooseBackend: (state) => {
+    let mode = state.mode
+    return state.dataSource.apiBackendUrl[mode]
+  },
 
-  getBackendApi: (state, getters) => {
+  getBackendApi: (state) => {
     return state.backendApi
   },
 
@@ -177,6 +186,19 @@ export const getters = {
 }
 
 export const mutations = {
+  setConfigData(state, configData) {
+    state.log &&
+      console.log("S-data-M-setConfigData / configData  : ", configData)
+    state.dataSource = configData.dataSource
+    state.defaultDataSetup = configData.defaultDataSetup
+    state.filters = configData.filters
+  },
+  setConfigBackendUrl(state, backendApi) {
+    state.log &&
+      console.log("S-data-M-setConfigBackendUrl / backendApi  : ", backendApi)
+    state.backendApi = backendApi
+  },
+
   setInitDataAsSet(state) {
     state.isInitDataSet = !state.isInitDataSet
   },
@@ -232,9 +254,22 @@ export const mutations = {
 }
 
 export const actions = {
+  setUpConfigData({ state, commit, getters, rootGetters }) {
+    state.log && console.log("\n", "- ".repeat(20))
+    state.log && console.log("S-data-A-setUpConfigData / ... ")
+
+    let configData = rootGetters["configs/getConfigField"]("configAppData")
+    state.log &&
+      console.log("S-data-A-setUpConfigData / configData :", configData)
+    commit("setConfigData", configData)
+
+    let backendUrl = getters.chooseBackend
+    commit("setConfigBackendUrl", backendUrl)
+  },
+
   // DATASETS
 
-  setDisplayedDataset({ state, getters, commit }, updatedDataset) {
+  setDisplayedDataset({ getters, commit }, updatedDataset) {
     // state.log && console.log("S-data-A-setDisplayedDataset / updatedDataset.id  : ", updatedDataset.id )
 
     // check if dataset exists in displayedData
@@ -248,18 +283,18 @@ export const actions = {
     }
   },
 
-  setNestedData({ state, commit, getters }, targetData) {
+  setNestedData({ commit }, targetData) {
     // state.log && console.log("S-data-A-setNestedData / targetData  : ", targetData )
     // state.log && console.log("S-data-A-setNestedData / getters.getSpecialStore (1) : ", getters.getSpecialStore )
     commit("setDeepNestedData", targetData)
     // state.log && console.log("S-data-A-setNestedData / getters.getSpecialStore (2) : ", getters.getSpecialStore )
   },
 
-  getDataFromSpecialStoreData({ state, getters }, params) {
+  getDataFromSpecialStoreData({ getters }, params) {
     return getters.getFromSpecialStoreData(params)
   },
 
-  resetStore({ state, getters, commit, dispatch }, params) {
+  resetStore({ getters, commit, dispatch }, params) {
     // state.log && console.log("\nS-data-A-resetStore / params :", params)
 
     for (let targetParams of params.targets) {
@@ -285,7 +320,7 @@ export const actions = {
 
   // QUERIES
 
-  search({ state, commit }) {
+  search({ state }) {
     // TO DO
     state.log && console.log("S-data-A-search / ... ")
   },
@@ -320,15 +355,6 @@ export const actions = {
     commit("setActivatedFilters", currentFilters)
 
     // update query and search
-    dispatch("search")
-  },
-
-  emptyOneFilter({ state, commit, dispatch }) {
-    // state.log && console.log("S-data-A-emptyOneFilter / filterItem :", filterItem)
-    // const selectedFilters = new Map(getters.getSelectedFilters)
-    // selectedFilters.set(filter, new Set())
-
-    commit("setActivatedFilters", selectedFilters)
     dispatch("search")
   },
 

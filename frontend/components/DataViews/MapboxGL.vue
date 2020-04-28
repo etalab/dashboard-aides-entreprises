@@ -35,7 +35,7 @@
       position: absolute;
       z-index: 200;
       top: 50%;
-      left: {{ isMobileWidth ? '35%' : '45%' }};
+      left: {{ isMobileWidth ? '35%' : '45%' }};
       }
     </style>
 
@@ -58,7 +58,9 @@
       :class="`legend-block legend-bottom-right`"
     >
       <!-- DEBUGGING -->
-      <span v-if="log">v1.9 - fix apex sizes</span>
+      <span v-if="log">
+        {{ appVersion }}
+      </span>
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
 
@@ -133,7 +135,7 @@ import { transformDataset, buildProperties } from "~/utils/mapbox.js"
 
 import { objectFromPath, switchFormatFunctions } from "~/utils/utils.js"
 
-import { StylesOSM } from "~/config/mapboxVectorStyles.js"
+import { StylesOSM } from "~/configs/mapboxVectorStyles.js"
 
 export default {
   name: "MapboxGL",
@@ -282,6 +284,7 @@ export default {
 
   computed: {
     ...mapState({
+      appVersion: (state) => state.appVersion,
       log: (state) => state.log,
       locale: (state) => state.locale,
       mapUI: (state) => state.configUI.map,
@@ -357,12 +360,12 @@ export default {
       // let getCurrentNavbarFooter = this.getCurrentNavbarFooter
 
       var docNavbars = document.querySelectorAll(`.odm-navbar`)
-      this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
+      // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
       let docNavbarsArray = Array.prototype.slice.call(docNavbars)
       let sumNavbarsHeights = docNavbarsArray
         .map((i) => i.offsetHeight)
         .reduce((prev, curr) => prev + curr, 0)
-      this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
+      // this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
 
       if (this.isMobileWidth) {
         var docComponents = document.querySelectorAll(
