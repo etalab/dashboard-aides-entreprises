@@ -61,7 +61,7 @@ const circlePaintAides = {
     0,
     10,
     100,
-    70,
+    60,
   ],
 }
 
@@ -130,7 +130,7 @@ export const configAppMap = {
           maxHeight: undefined,
           maxHeightIframe: undefined,
           maxBounds: undefined,
-          maxBoundsIframe: [[ -5.22, 41.33 ],[ 9.55, 51.0 ]], // [[ SW ], [ NE ]]
+          maxBoundsIframe: [[ -5.5, 40.0 ],[ 10.0, 51.0 ]], // [[ SW ], [ NE ]]
         },
       },
 
@@ -615,7 +615,7 @@ export const configAppMap = {
         mapStyle: "EtalabUrl",
         center: [46.2276, 2.2137],
         currentCenter: [46.2276, 2.2137],
-        zoom: 4.8,
+        zoom: 4.6,
         maxZoom: 9.5,
         minZoom: 2,
       },

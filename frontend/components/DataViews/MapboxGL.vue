@@ -193,15 +193,19 @@ export default {
     triggerVis(next, prev) {
       this.getCanShow()
       this.handleResize()
+      this.setMapMaxBounds()
     },
 
     triggerBtn(next, prev) {
       this.handleResize()
+      this.setMapMaxBounds()
     },
 
     map(next, prev) {
       this.handleResize()
       if (next && !prev) {
+        this.setMapMaxBounds()
+
         this.log && console.log("C-MapboxGL / watch - map - is created ")
         let storeSourcesArray = this.sources.filter((s) => s.from === "store")
         let urlSourcesArray = this.sources.filter((s) => s.from === "url")
@@ -396,8 +400,6 @@ export default {
       // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
       this.mapHeight = mapHeight
 
-
-
       // little hack to redraw window on safari IOS
       // let isMobileOrTablet = this.$device.isMobileOrTablet
       // // let isMobileOrTablet = true
@@ -422,8 +424,6 @@ export default {
 
     getMapMaxBounds() {
 
-      let mapbox = _map
-
       let isMobile = this.isMobileWidth
       let isIframe = this.isIframe
       let sizes = this.mapSizes
@@ -436,6 +436,12 @@ export default {
       
       this.mapMaxBounds = mapMaxBounds
       return mapMaxBounds
+    },
+
+    setMapMaxBounds() {
+      let mapbox = _map
+      let mapMaxBounds = this.getMapMaxBounds
+      this.log && console.log("getMapMaxBounds / mapbox : ", mapbox)
     },
 
     // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
