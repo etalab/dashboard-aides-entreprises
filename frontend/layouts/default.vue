@@ -3,10 +3,16 @@ body {
   padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
   padding-top: env(safe-area-inset-top); /* iOS 11.2 */
 }
+.no-scroll{
+  overflow: hidden;
+}
 </style>
 
 <template>
-  <v-app>
+  <v-app
+    id="ODAMAP-root"
+    :style="`overflow: hidden; ${isIframe && getIframeMaxHeight ? 'max-height:' + getIframeMaxHeight+'px;' : windowHeight+'px'}`"
+  >
     <!-- DYNAMIC CSS -->
     <DynamicCSS />
 
@@ -17,11 +23,17 @@ body {
     <Navbar v-if="!isIframe" />
 
     <!-- CONTENT LAYOUT -->
-    <v-content id="layout-content">
+    <v-content 
+      id="layout-content"
+      :style="`height: ${contentWindowHeight}px`"
+      >
       <Filters />
 
       <!-- <FiltersFeedback/> -->
-      <v-container id="layout-container" fluid pa-0>
+      <v-container 
+        id="layout-container"
+        fluid pa-0
+        >
         <nuxt />
       </v-container>
     </v-content>
@@ -46,7 +58,7 @@ body {
         </v-list>
       </v-navigation-drawer> 
     -->
-
+    
     <!-- FOOTER -->
     <!-- <Footer/> -->
 
@@ -161,6 +173,27 @@ export default {
       let configUX = this.configUX
       return configUX.hasDrawer
     },
+
+    getIframeMaxHeight() {
+      return this.configUX.overrideIframeMaxHeight
+    },
+
+    windowHeight() {
+      let winHeight = window.innerHeight
+      return winHeight
+    },
+
+    contentWindowHeight() {
+      let winHeight = window.innerHeight
+      var docNavbars = document.querySelectorAll(`.odm-navbar`)
+      let docNavbarsArray = Array.prototype.slice.call(docNavbars)
+      let sumNavbarsHeights = docNavbarsArray
+        .map((i) => i.offsetHeight)
+        .reduce((prev, curr) => prev + curr, 0)
+      let height = winHeight - sumNavbarsHeights
+      return height
+    },
+
   },
 
   methods: {},

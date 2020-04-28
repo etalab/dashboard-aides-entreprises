@@ -20,6 +20,7 @@ export const configAppUIUX = {
     hasDrawer: false,
 
     mobileBreakpoints: ["xs", "sm"],
+    overrideIframeMaxHeight: 575,
 
     navbar: {
       height: 64, // in pixels
