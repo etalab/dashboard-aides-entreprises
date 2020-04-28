@@ -394,6 +394,6 @@ export default {
       // }
     },
 
-    vendors: ["axios", "mapbox-gl"],
+    // vendors: ["axios", "mapbox-gl"],
   },
 }
