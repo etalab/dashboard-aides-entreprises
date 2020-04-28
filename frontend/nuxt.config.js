@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = "v.0.12 - Iframing"
+const APP_VERSION = "v.0.13 - Iframing override"
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
@@ -228,6 +228,8 @@ const configApp = {
   mode: process.env.NUXT_ENV_RUN_MODE,
   host: process.env.NUXT_ENV_HOST,
   port: choosePort(process.env.NUXT_ENV_RUN_MODE),
+
+  overrideIframe: chooseBooleanMode(process.env.NUXT_ENV_APP_IFRAME_OVERRIDE),
 
   // CONFIGS
   // configsReferencesBackup: process.env.NUXT_ENV_CONFIG_BACKUP

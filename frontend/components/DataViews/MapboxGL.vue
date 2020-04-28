@@ -287,6 +287,8 @@ export default {
       appVersion: (state) => state.appVersion,
       log: (state) => state.log,
       locale: (state) => state.locale,
+      isIframe: (state) => state.isIframe,
+
       mapUI: (state) => state.configUI.map,
       trigger: (state) => state.data.triggerChange,
       triggerVis: (state) => state.triggerVisChange,
@@ -353,7 +355,9 @@ export default {
 
     handleResize() {
       let winHeight = window.innerHeight
+      let ODAMAP_height = document.getElementById('ODAMAP-root') ? document.getElementById('ODAMAP-root').clientHeight : undefined 
       // this.log && console.log("C-MapboxGL / handleResize ... winHeight : ", winHeight )
+      winHeight = ODAMAP_height ? ODAMAP_height : winHeight 
 
       let mapHeight = winHeight
       // let navbarHeight = this.navbarHeight

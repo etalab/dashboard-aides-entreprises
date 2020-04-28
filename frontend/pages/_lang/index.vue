@@ -12,6 +12,7 @@
   >
     <!-- triggerVis: <code>{{triggerVis}}</code> -->
     <!-- getDivVisibilityArray: <br><code>{{getDivVisibilityArray}}</code> -->
+    <!-- {{ contentWindowHeight() }}  -->
 
     <v-row
       v-for="(row, index) in routeConfig.pageRows"
@@ -29,7 +30,6 @@
         >
           <template v-if="col.activated">
             <!-- {{ windowSize }} -->
-            <!-- {{ contentWindowHeight }}  -->
             <!-- $vuetify.breakpoint.name : {{ $vuetify.breakpoint.name }}<br> -->
             <!-- $device : {{ $device }}<br> -->
 
@@ -191,6 +191,7 @@ export default {
     ...mapState({
       log: (state) => state.log,
       locale: (state) => state.locale,
+      isIframe: (state) => state.isIframe,
 
       // vuetifyThemeIsSet: (state) => state.configs.vuetifyThemeIsSet,
       // configUI: (state) => state.configUI,
@@ -231,13 +232,28 @@ export default {
     }),
 
     contentWindowHeight() {
-      let height = this.windowSize.height - this.navbarHeight
-      if (
-        this.getCurrentNavbarFooter &&
-        this.getCurrentNavbarFooter.activated
-      ) {
-        height = height - this.getCurrentNavbarFooter.height
-      }
+      let winHeight = window.innerHeight
+      let ODAMAP_height = document.getElementById('ODAMAP-root') ? document.getElementById('ODAMAP-root').clientHeight : undefined 
+      // this.log && console.log("P-Homepage / handleResize ... winHeight : ", winHeight )
+      winHeight = ODAMAP_height ? ODAMAP_height : winHeight 
+
+      var docNavbars = document.querySelectorAll(`.odm-navbar`)
+      // this.log && console.log("P-Homepage / handleResize ... docNavbars : ", docNavbars )
+      let docNavbarsArray = Array.prototype.slice.call(docNavbars)
+      let sumNavbarsHeights = docNavbarsArray
+        .map((i) => i.offsetHeight)
+        .reduce((prev, curr) => prev + curr, 0)
+      // this.log && console.log("P-Homepage / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
+
+      let height = winHeight - sumNavbarsHeights
+
+      // let height = this.windowSize.height - this.navbarHeight
+      // if (
+      //   this.getCurrentNavbarFooter &&
+      //   this.getCurrentNavbarFooter.activated
+      // ) {
+      //   height = height - this.getCurrentNavbarFooter.height
+      // }
       return height
     },
 

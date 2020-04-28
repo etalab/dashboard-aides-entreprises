@@ -1,6 +1,6 @@
 import { chooseBooleanMode } from "~/utils/utils.js"
 
-export default function ({ store, route, redirect }) {
+export default function ({ store, env, route, redirect }) {
   const log = store.state.log
   log && console.log("\n", "+ ".repeat(20))
   log && console.log("-MW- getRouteConfig ... ")
@@ -17,10 +17,17 @@ export default function ({ store, route, redirect }) {
     store.commit("setLocale", queryLocale)
   }
 
-  // set locale if part of url
-  if (queryIframe) {
+  // set iframe param if part of url OR if override from env file
+  let overrideIframe = env.CONFIG_APP.overrideIframe
+  if (overrideIframe || queryIframe) {
+    let isIframe = false
     // log && console.log('-MW- getRouteConfig / queryLocale : ', queryLocale)
-    store.commit("setIframe", chooseBooleanMode(queryIframe))
+    if ( overrideIframe ) {
+      isIframe = true
+    } else {
+      isIframe = chooseBooleanMode(queryIframe)
+    }
+    store.commit("setIframe",isIframe )
   }
 
   // retrieve local route config

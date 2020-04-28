@@ -116,6 +116,18 @@ export const configAppMap = {
         zoom: 5,
         maxZoom: 18,
         minZoom: 2,
+
+      },
+
+      sizes: {
+        desktop: {
+          maxHeight: undefined,
+          maxHeightIframe: undefined,
+        },
+        mobile: {
+          maxHeight: undefined,
+          maxHeightIframe: undefined,
+        }
       },
 
       // - - - - - - - - - - - - - - - - - - //
@@ -608,6 +620,7 @@ export const configAppMap = {
         {
           copyFromId: "map-base",
           fieldsToCopy: [
+            "sizes",
             "sources",
             "notShownFor",
             "maps",
