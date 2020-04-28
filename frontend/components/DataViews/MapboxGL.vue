@@ -108,13 +108,14 @@
         ref="mapboxDiv"
         access-token=""
         :map-style.sync="mapOptions.mapStyle"
-        :center="mapOptions.center"
         :zoom="mapOptions.zoom"
         :max-zoom="mapOptions.maxZoom"
         :min-zoom="mapOptions.minZoom"
         :max-bounds="mapOptions.maxBounds"
+        :center="mapOptions.center"
         @load="onMapLoaded"
       >
+        <!-- :bounds="mapOptions.bounds" -->
         <!-- CONTROLS -->
         <MglNavigationControl position="bottom-right" />
       </MglMap>
@@ -268,6 +269,7 @@ export default {
       // currentZoom: mapOptionsRoute.currentZoom,
       center: [mapOptionsRoute.center[1], mapOptionsRoute.center[0]],
       currentCenter: mapOptionsRoute.currentCenter,
+      bounds: mapOptionsRoute.bounds,
       maxBounds: mapMaxBounds,
     }
     this.mapOptions = mapOptions
@@ -440,8 +442,11 @@ export default {
 
     setMapMaxBounds() {
       let mapbox = _map
-      let mapMaxBounds = this.getMapMaxBounds
-      this.log && console.log("getMapMaxBounds / mapbox : ", mapbox)
+      if (mapbox) {
+        let mapMaxBounds = this.getMapMaxBounds
+        this.log && console.log("getMapMaxBounds / mapbox : ", mapbox)
+        mapbox.setMaxBounds = mapMaxBounds
+      }
     },
 
     // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
@@ -847,10 +852,17 @@ export default {
       // this.log && console.log("\nC-MapboxGL / resetZoom ... " )
       // let mapbox = this.map
       let mapbox = _map
-      mapbox.flyTo({
-        center: this.originalCenter,
-        zoom: this.originalZoom,
-      })
+      // let mapMaxBounds = this.getMapMaxBounds()
+      // if (mapMaxBounds){
+      //   mapbox.setMaxBounds( undefined )
+      //   mapbox.fitBounds(mapMaxBounds)
+      //   this.setMapMaxBounds()
+      // } else {
+        mapbox.flyTo({
+          center: this.originalCenter,
+          zoom: this.originalZoom,
+        })
+      // }
     },
 
     // HIGHLIGHTS FUNCTIONS
