@@ -19,7 +19,9 @@ Pour faire fonctionner le frontend, rendez-vous [ici](frontend/README.md)
 
 - [aides-entreprises.data.gouv.fr][site_prod]
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f09c4d46-99a4-4fdf-8c4a-34b38f4d6a26/deploy-status)](https://app.netlify.com/sites/aides-entreprises-covid19/deploys)
+
 <br>
+
 - (preprod) : [covid-aides-entreprises.netlify.app][site_preprod]
 [![Netlify Status](https://api.netlify.com/api/v1/badges/71e2942d-961b-4f06-8ac3-8dc73dceb6ee/deploy-status)](https://app.netlify.com/sites/covid-aides-entreprises/deploys)
 
