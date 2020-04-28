@@ -94,6 +94,8 @@ const aidesProperties = [
 // MAPBOX COMPONENT SETTINGS
 // - - - - - - - - - - - - - - - - - - - - - //
 
+const FranceMetroBounds = [[ -8, 40.0 ],[ 10.3, 52.0 ]] 
+
 export const configAppMap = {
   help: "this file contains the setup for the MapboxGL layout / component",
 
@@ -116,6 +118,7 @@ export const configAppMap = {
         zoom: 5,
         maxZoom: 18,
         minZoom: 2,
+        bounds: FranceMetroBounds,
 
       },
 
@@ -124,13 +127,13 @@ export const configAppMap = {
           maxHeight: undefined,
           maxHeightIframe: undefined,
           maxBounds: undefined,
-          maxBoundsIframe: undefined, // [[ SW ], [ NE ]]
+          maxBoundsIframe: undefined, // [[ WS ], [ EN ]]
         },
         mobile: {
           maxHeight: undefined,
           maxHeightIframe: undefined,
           maxBounds: undefined,
-          maxBoundsIframe: [[ -5.5, 40.0 ],[ 10.0, 51.0 ]], // [[ SW ], [ NE ]]
+          maxBoundsIframe: FranceMetroBounds, // [[ WS ], [ EN ]]
         },
       },
 
@@ -618,6 +621,7 @@ export const configAppMap = {
         zoom: 4.6,
         maxZoom: 9.5,
         minZoom: 2,
+        bounds: FranceMetroBounds,
       },
 
       copySettingsFrom: [
