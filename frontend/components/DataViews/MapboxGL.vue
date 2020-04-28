@@ -60,6 +60,8 @@
       <!-- DEBUGGING -->
       <span v-if="log">
         {{ appVersion }}
+        <br>
+        <!-- {{ mapSizes }} -->
       </span>
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
@@ -110,6 +112,7 @@
         :zoom="mapOptions.zoom"
         :max-zoom="mapOptions.maxZoom"
         :min-zoom="mapOptions.minZoom"
+        :max-bounds="mapOptions.maxBounds"
         @load="onMapLoaded"
       >
         <!-- CONTROLS -->
@@ -158,6 +161,8 @@ export default {
       originalCenter: undefined,
       originalZoom: undefined,
       currentZoom: undefined,
+      mapMaxBounds: undefined,
+      mapSizes: undefined, 
 
       mapOptions: {
         mapStyle: undefined,
@@ -238,10 +243,14 @@ export default {
     // set div visibility in store
     this.$store.commit("setDivVisibility", this.settings)
 
+    // setup maps
+    this.maps = this.viewConfig.maps
+    this.mapSizes = this.viewConfig.sizes
+    let mapMaxBounds = this.getMapMaxBounds()
+
     // set up MAPBOX options
     const mapOptionsRoute = this.viewConfig.map_options
     // this.log && console.log("C-MapboxGL / dataset / mapOptionsRoute : ", mapOptionsRoute)
-
     let mapOptions = {
       // mapStyle      : StylesOSM[ 'testRasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'EtalabRaw' ], // EtalabFile | testRasterVoyager | RasterVoyager
@@ -255,6 +264,7 @@ export default {
       // currentZoom: mapOptionsRoute.currentZoom,
       center: [mapOptionsRoute.center[1], mapOptionsRoute.center[0]],
       currentCenter: mapOptionsRoute.currentCenter,
+      maxBounds: mapMaxBounds,
     }
     this.mapOptions = mapOptions
 
@@ -263,9 +273,6 @@ export default {
     this.originalCenter = [mapOptionsRoute.center[1], mapOptionsRoute.center[0]]
     this.originalZoom = mapOptionsRoute.zoom
     this.currentZoom = mapOptionsRoute.zoom
-
-    // setup maps
-    this.maps = this.viewConfig.maps
 
     // setup layers
     this.layers = this.viewConfig.layers
@@ -411,6 +418,24 @@ export default {
       // this.log && console.log("C-MapboxGL / getCurrentZoom ... currentZoom : ", currentZoom )
       this.currentZoom = currentZoom
       return currentZoom
+    },
+
+    getMapMaxBounds() {
+
+      let mapbox = _map
+
+      let isMobile = this.isMobileWidth
+      let isIframe = this.isIframe
+      let sizes = this.mapSizes
+      
+      let mapMaxBounds
+      let sizesDevice = sizes && isMobile ? sizes.mobile : sizes.desktop
+      if (sizesDevice) {
+        mapMaxBounds = isIframe ? sizesDevice.maxBoundsIframe : sizesDevice.maxBounds
+      } 
+      
+      this.mapMaxBounds = mapMaxBounds
+      return mapMaxBounds
     },
 
     // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
