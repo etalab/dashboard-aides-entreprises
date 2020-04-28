@@ -77,11 +77,9 @@ export const configAppTexts = {
                   textClass: "text-left mx-4 pt-4",
                   textContent: {
                     fr: `
-                    L’Etat a mis en place, avec les Régions, un fonds de solidarité doté d’1,7 milliard d’euros 
-                    pour le mois de mars qui permettra le versement d’une aide défiscalisée 
-                    allant jusqu’à 1500 euros aux plus petites entreprises, aux indépendants, 
-                    aux micro-entrepreneurs et aux professions libérales touchés par la crise du coronavirus. 
-                    Ce fonds sera maintenu autant que durera l’urgence sanitaire.
+                    Bruno Le Maire et Gérald Darmanin lancent un tableau de bord du fonds de solidarité.
+                    <br><br>
+                    Créé par l’Etat et les Régions, le Fonds de solidarité est désormais doté de 7 milliards d’euros dont 500 millions d’euros apportés par les Régions. Depuis le 1er avril, le Fonds de solidarité a permis, au titre de son 1er volet mis en œuvre par la Direction générale des finances publiques, d’octroyer 1,29 milliards d’euros d’aides à 971 000 bénéficiaires, sous la forme d’une aide défiscalisée et exonérée de charges sociales pouvant aller jusqu’à 1500 euros.
                     `,
                   },
                   // Plus d'informations sur les mesures de soutien aux entreprises sur le
@@ -97,24 +95,10 @@ export const configAppTexts = {
                   textClass: "text-left mx-4 pt-4",
                   textContent: {
                     fr: `
-
-                    Afin d’offrir de la visibilité à l’ensemble des Français 
-                    sur l’attribution des aides versées aux entreprises 
-                    dans le cadre de ce fonds de solidarité, 
-                    le ministre de l’action et des comptes publics, 
-                    avec le soutien technique du département 
-                    Etalab de la 
-                    
+                    Afin d’offrir de la visibilité à l’ensemble des Français sur l’attribution de ces aides, Bruno Le Maire et Gérald Darmanin mettent à disposition un tableau de bord accessible à tous. Cette plateforme, créée par le département Etalab de la
                     <a target="_blank" href="https://www.numerique.gouv.fr">
-                      Direction Interministérielle du Numérique (DINUM)</a>, 
-
-                    mettent à disposition un tableau de bord dont le 
-
-                    <a target="_blank" href="https://github.com/etalab/dashboard-aides-entreprises">
-                      code source est libre</a>
-                    qui propose une vision consolidée 
-                    des aides aux entreprises effectivement versées.
-
+                      Direction Interministérielle du Numérique (DINUM)</a>
+                    et dont le <a target="_blank" href="https://github.com/etalab/dashboard-aides-entreprises">code source est libre</a>, recense les aides apportées par secteur, par région et département au titre de ce fonds. Elle est mise à jour en temps réel.
                   `,
                   },
                   fromUrl: {
@@ -127,12 +111,7 @@ export const configAppTexts = {
                   textClass: "text-left mx-4 pt-4 pb-5 mb-5",
                   textContent: {
                     fr: `
-                    Pour obtenir d’autres informations relatives au fonds de solidarité, il est possible de 
-                    consulter la page d’information 
-                    <a target="_blank" href="https://www.impots.gouv.fr/portail/">
-                      disponible sur impots.gouv.fr</a>. 
-                    <br><br>
-                    Les données utilisées sur ce tableau de bord 
+                    Les données utilisées sur ce tableau de bord
                     <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/aides-aux-entreprises-dans-le-cadre-de-lepidemie-de-covid-19-en-france/">
                       sont disponibles sur data.gouv.fr</a>.
                   `,
