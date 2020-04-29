@@ -65,6 +65,8 @@ export const configAppTexts = {
               cols: 12,
               textClass: "",
               subTextClass: "",
+              sizeDesktop: "",
+              sizeMobile: "body-2",
               textPrefix: { fr: undefined },
               textPrefixClass: undefined,
               textSuffix: { fr: undefined },
