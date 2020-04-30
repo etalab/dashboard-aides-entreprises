@@ -37,3 +37,9 @@ Le schéma ci-dessous représente l'architecture cible à date de l'application 
 
 [site_prod]: https://aides-entreprises.data.gouv.fr/
 [site_preprod]: https://covid-aides-entreprises.netlify.app
+
+### Auteurs et licence
+
+2020 DINUM, Etalab et les contributeurs du dépôt.
+
+Ce dépôt est publié sous [licence MIT](LICENSE).
