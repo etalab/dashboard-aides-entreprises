@@ -13,8 +13,8 @@
       >
       <div
         v-for="(btn, index) in viewConfig.componentButtons"
-        :id="'B-' + btn.id + '-' + index"
-        :key="'B-' + btn.id + '-' + index"
+        :id="`B-${btn.id}-${index}`"
+        :key="`B-${btn.id}-${index}`"
       >
         <GlobalBtn :btn="btn" />
       </div>
