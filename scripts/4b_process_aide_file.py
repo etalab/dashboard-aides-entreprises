@@ -54,19 +54,40 @@ print("Remplacement des tranche effectifs etablissements au mauvais format")
 
 result['trancheeffectifsetablissement'] = result['trancheeffectifsetablissement'].apply(lambda x: '01' if x == '1.0' else '02' if x == '2.0' else '03' if x == '3.0' else x)
 
+
+del dfsiren
+
+# ICI
+print("Get catégorie juridique")
+dfjur = pd.read_csv("../data/extracts/siren-juridique.csv",dtype={'siren':str,'categoriejuridiqueunitelegale':str})
+result = pd.merge(result,dfjur,on='siren',how='left')
+print("Ok")
+
+del dfjur
+
 resultna = result[result['siret'].isna()]
 
 resultna.to_csv("../data/aides/aides-na-"+daytoprocess+".csv",index=False)
 
 print("Fichier des siret non trouvés sauvegardés ici : ../data/aides/aides-na-"+daytoprocess+".csv")
 
-del dfsiren
+
+
+print("Loading effectif mars")
+
+dfeff_mars = pd.read_csv("../data/effectifs/effectifs-siren-2020-03.csv", dtype={'siren': str})
+
+dfeff_mars = dfeff_mars.rename(columns={'effectif':'effectif_mars'})
 
 print("Loading effectif février")
 
-dfeff_fev = pd.read_csv("../data/effectifs/effectifs-siren.csv", dtype={'siren': str})
+dfeff_fev = pd.read_csv("../data/effectifs/effectifs-siren-2020-02.csv", dtype={'siren': str})
 
 dfeff_fev = dfeff_fev.rename(columns={'effectif':'effectif_fev'})
+
+print("Merging aides avec effectif mars")
+
+result = pd.merge(result,dfeff_mars,on='siren',how='left')
 
 print("Merging aides avec effectif février")
 
@@ -84,11 +105,16 @@ result2 = pd.merge(result,dfeff_2019,on='siren',how='left')
 
 print("Mise à jour de la tranche effectif au plus précis : février meilleur que 2019 meilleur que base SIRENE")
 
+result2['classe_effectif_mars'] = result2['effectif_mars'].apply(lambda x: None if x != x else '00' if x == 0 else '01' if x <= 2 else '02' if x <= 5 else '03' if x <= 9 else '11' if x <= 19 else '12' if x <= 49 else '21' if x <= 99 else '22' if x <= 199 else '31' if x <= 249 else '32' if x <= 499 else '41' if x <= 999 else '42' if x <= 1999 else '51' if x <= 4999 else '52' if x <= 9999 else '53')
+
+
 result2['classe_effectif_fev'] = result2['effectif_fev'].apply(lambda x: None if x != x else '00' if x == 0 else '01' if x <= 2 else '02' if x <= 5 else '03' if x <= 9 else '11' if x <= 19 else '12' if x <= 49 else '21' if x <= 99 else '22' if x <= 199 else '31' if x <= 249 else '32' if x <= 499 else '41' if x <= 999 else '42' if x <= 1999 else '51' if x <= 4999 else '52' if x <= 9999 else '53')
+
 result2['classe_effectif_2019'] = result2['effectif_2019'].apply(lambda x: None if x != x else '00' if x == 0 else '01' if x <= 2 else '02' if x <= 5 else '03' if x <= 9 else '11' if x <= 19 else '12' if x <= 49 else '21' if x <= 99 else '22' if x <= 199 else '31' if x <= 249 else '32' if x <= 499 else '41' if x <= 999 else '42' if x <= 1999 else '51' if x <= 4999 else '52' if x <= 9999 else '53')
+
 result2['classe_effectif_Tranche'] = result2['trancheeffectifsetablissement'].apply(lambda x: None if x != x else x)
 
-result2['classe_effectif'] = result2['classe_effectif_fev']
+result2['classe_effectif'] = result2['classe_effectif_mars']
 
 ress = []
 i = 0
@@ -99,13 +125,16 @@ for index, row in result2.iterrows():
     res = {}
     res = row
     if(res['classe_effectif'] == None):
-        if(res['classe_effectif_2019']== None):
-            if(res['classe_effectif_Tranche'] == None):
-                res['classe_effectif'] = None
+        if(res['classe_effectif_fev'] == None):
+            if(res['classe_effectif_2019']== None):
+                if(res['classe_effectif_Tranche'] == None):
+                    res['classe_effectif'] = None
+                else:
+                    res['classe_effectif'] = res['classe_effectif_Tranche']
             else:
-                res['classe_effectif'] = res['classe_effectif_Tranche']
+                res['classe_effectif'] = res['classe_effectif_2019']
         else:
-            res['classe_effectif'] = res['classe_effectif_2019']
+            res['classe_effectif'] = res['classe_effectif_fev']
     else:
         res['classe_effectif'] = res['classe_effectif']
     ress.append(res)
@@ -129,7 +158,7 @@ result3['delta_effectif_percent'] = None
 
 result3['date_paiement'] = result3['Date paiement'].apply(lambda x: datetime.datetime.strptime(x,'%m-%d-%y').strftime('%Y-%m-%d'))
 
-dfaide = result3[['volet','numero_sequentiel','mois','siren','nom1','nom2','effectif_fev','Montant','Dev.','date_dp','date_paiement','siret','reg','dep','codecommuneetablissement','activiteprincipaleetablissement','count_siren_nb','montant_modifie','delta_effectif','delta_effectif_percent','classe_effectif']]
+dfaide = result3[['volet','numero_sequentiel','mois','siren','nom1','nom2','effectif_mars','Montant','Dev.','date_dp','date_paiement','siret','reg','dep','codecommuneetablissement','activiteprincipaleetablissement','count_siren_nb','montant_modifie','delta_effectif','delta_effectif_percent','classe_effectif','categoriejuridiqueunitelegale']]
 
 dfaide.to_csv("../data/aides/aides-"+daytoprocess+".csv",index=False)
 
@@ -162,6 +191,8 @@ for index, row in resultna.iterrows():
                 if "code_insee_localite" in mydict['etablissement_siege']['adresse']:
                     row['codecommuneetablissement'] = mydict['etablissement_siege']['adresse']['code_insee_localite']
         if "entreprise" in mydict:
+            if "forme_juridique_code" in mydict['entreprise']:
+                row['categoriejuridiqueunitelegale'] = mydict['entreprise']['forme_juridique_code']
             if "tranche_effectif_salarie_entreprise" in mydict['entreprise']:
                 if "code" in mydict['entreprise']['tranche_effectif_salarie_entreprise']:
                     row['trancheeffectifsetablissement'] = mydict['entreprise']['tranche_effectif_salarie_entreprise']['code']
@@ -180,7 +211,7 @@ dfaidenaenrichapi.to_csv("../data/aides/aides-na-api-"+daytoprocess+".csv",index
 print("Fichier des siret non diffusibles enrichis sauvegardé ici : ../data/aides/aides-na-api-"+daytoprocess+".csv")
 
 
-dfna = pd.read_csv("../data/aides/aides-na-api-"+daytoprocess+".csv", dtype={'siren':str,'Cde postal':str,'siret':str,'trancheeffectifsetablissement': str,'activiteprincipaleetablissement':str,'reg':str,'dep':str,'codecommuneetablissement':str})
+dfna = pd.read_csv("../data/aides/aides-na-api-"+daytoprocess+".csv", dtype={'siren':str,'Cde postal':str,'siret':str,'trancheeffectifsetablissement': str,'activiteprincipaleetablissement':str,'reg':str,'dep':str,'codecommuneetablissement':str,'categoriejuridiqueunitelegale':str})
 
 print("Loading communes")
 
@@ -198,7 +229,7 @@ dfna2 = dfna2[['Période', 'siren', 'Cde postal', 'Pays', 'Montant', 'Dev.',
        'trancheeffectifsetablissement', 'etablissementsiege',
        'activiteprincipaleetablissement', 'etatadministratifetablissement',
        'enseigne1etablissement', 'reg_y', 'dep_y', 'codecommuneetablissement',
-       'geo_adresse', 'geo_score', 'longitude', 'latitude']]
+       'geo_adresse', 'geo_score', 'longitude', 'latitude','categoriejuridiqueunitelegale']]
 
 dfna2 = dfna2.rename(columns={'reg_y':'reg','dep_y':'dep'})
 
@@ -206,7 +237,7 @@ print("récupération des effectifs pour aide na")
 
 result3na = result3[result3['siret'].isna()]
 
-result3na = result3na[['siren','effectif_fev','classe_effectif']]
+result3na = result3na[['siren','effectif_mars','classe_effectif']]
 
 dfna3 = pd.merge(dfna2,result3na,on='siren',how='left')
 
@@ -223,7 +254,7 @@ dfna3['delta_effectif_percent'] = None
 
 dfna3['date_paiement'] = dfna3['Date paiement'].apply(lambda x: datetime.datetime.strptime(x,'%m-%d-%y').strftime('%Y-%m-%d'))
 
-dfaidena = dfna3[['volet','numero_sequentiel','mois','siren','nom1','nom2','effectif_fev','Montant','Dev.','date_dp','date_paiement','siret','reg','dep','codecommuneetablissement','activiteprincipaleetablissement','count_siren_nb','montant_modifie','delta_effectif','delta_effectif_percent','classe_effectif']]
+dfaidena = dfna3[['volet','numero_sequentiel','mois','siren','nom1','nom2','effectif_mars','Montant','Dev.','date_dp','date_paiement','siret','reg','dep','codecommuneetablissement','activiteprincipaleetablissement','count_siren_nb','montant_modifie','delta_effectif','delta_effectif_percent','classe_effectif','categoriejuridiqueunitelegale']]
 
 print("Concaténation dataframe aide siret diffusibles et non diffusibles")
 
@@ -247,7 +278,9 @@ print("Effectifs")
 print("---")
 print("Pourcentage de tranche effectifs manquants dans la base sirene : "+str(result3[result3['trancheeffectifsetablissement'].isna()].shape[0] / result3.shape[0] * 100))
 
-print("Pourcentage d'effectifs manquants acoss février : "+str(result3[result3['effectif_fev'].isna()].shape[0] / result3.shape[0] * 100))
+print("Pourcentage d'effectifs manquants acoss mars : "+str(result3[result3['effectif_mars'].isna()].shape[0] / result3.shape[0] * 100))
+
+print("Pourcentage d'effectifs manquants acoss fevrier : "+str(result3[result3['effectif_fevrier'].isna()].shape[0] / result3.shape[0] * 100))
 
 print("Pourcentage d'effectifs manquants acoss 2019 : "+str(result3[result3['effectif_2019'].isna()].shape[0] / result3.shape[0] * 100))
 
@@ -268,6 +301,7 @@ print("Pourcentage de code insee manquant : "+str(dfaidefinal[dfaidefinal['codec
 
 result3[result3['effectif_2019'].isna()][['siren']].to_csv("../data/aides/na/siren-aides-manquants-acoss-effectifs-2019-"+daytoprocess+".csv", index=False)
 result3[result3['effectif_fev'].isna()][['siren']].to_csv("../data/aides/na/siren-aides-manquants-acoss-effectifs-fev-"+daytoprocess+".csv", index=False)
+result3[result3['effectif_mars'].isna()][['siren']].to_csv("../data/aides/na/siren-aides-manquants-acoss-effectifs-mars-"+daytoprocess+".csv", index=False)
 dfaidefinal[dfaidefinal['activiteprincipaleetablissement'].isna()][['siren']].to_csv("../data/aides/na/siren-aides-manquants-ape-"+daytoprocess+".csv", index=False)
 dfaidefinal[dfaidefinal['reg'].isna()][['siren']].to_csv("../data/aides/na/siren-aides-manquants-reg-dep-"+daytoprocess+".csv", index=False)
 dfaidefinal[dfaidefinal['codecommuneetablissement'].isna()][['siren']].to_csv("../data/aides/na/siren-aides-manquants-codeinsee-"+daytoprocess+".csv", index=False)
