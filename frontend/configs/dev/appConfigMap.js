@@ -35,7 +35,7 @@ const fillPaint = {
       ["feature-state", "hover"],
       false,
     ],
-    0.1,
+    0.15,
     0,
   ],
 }
