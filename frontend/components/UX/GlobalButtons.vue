@@ -8,31 +8,15 @@
   >
     <v-divider v-if="viewConfig.dividers.before" />
 
-    <v-row :class="`${viewConfig.btnsRowClass} ${isMobileWidth ? 'my-0' : ''}`">
+    <v-row 
+      :class="`${viewConfig.btnsRowClass} ${isMobileWidth ? viewConfig.btnsRowClassMobile : ''}`"
+      >
       <div
         v-for="(btn, index) in viewConfig.componentButtons"
-        :id="'B' + btn.id + index"
-        :key="'B' + btn.id + index"
+        :id="`B-${btn.id}-${index}`"
+        :key="`B-${btn.id}-${index}`"
       >
         <GlobalBtn :btn="btn" />
-        <!-- <v-btn
-          v-show="canShow(btn)"
-          :class="`${btn.btnClass}`"
-          :block="btn.block"
-          :icon="btn.icon"
-          :outlined="btn.outlined"
-          :fab="btn.fab"
-          :color="btn.color"
-          :large="btn.large"
-          :small="btn.small"
-          :dark="btn.dark"
-          :tile="btn.tile"
-          :rounded="btn.rounded"
-          :disabled="btn.disabled"
-          @click="runBtnFunctions(btn)"
-        >
-          {{ btn.title[locale] }}
-        </v-btn> -->
       </div>
     </v-row>
 

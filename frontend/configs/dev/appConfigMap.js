@@ -19,18 +19,7 @@ const OUTLINECOLOR2 = "#6c87ab"
 
 // layer fonts : ["Open Sans Regular","Arial Unicode MS Regular"]
 
-const fillPaint_ = {
-  "fill-color": SECONDARYFILLCOLOR,
-  "fill-outline-color": OUTLINECOLOR,
-  "fill-opacity": [
-    "case",
-    ["boolean", ["feature-state", "hover"], false],
-    0.15,
-    0,
-  ],
-}
-
-const fillPaint = {
+const fillPaintRegions = {
   "fill-color": [
     "case",
     ["boolean", ["feature-state", "selected"], false],
@@ -46,7 +35,27 @@ const fillPaint = {
       ["feature-state", "hover"],
       false,
     ],
-    0.1,
+    0.15,
+    0,
+  ],
+}
+const fillPaintDepartements = {
+  "fill-color": [
+    "case",
+    ["boolean", ["feature-state", "selected"], false],
+    HIGHLIGHTCOLOR,
+    SECONDARYFILLCOLOR,
+  ],
+  "fill-outline-color": OUTLINECOLOR,
+  "fill-opacity": [
+    "case",
+    [
+      "boolean",
+      ["feature-state", "selected"],
+      ["feature-state", "hover"],
+      false,
+    ],
+    0.35,
     0,
   ],
 }
@@ -61,7 +70,7 @@ const circlePaintAides = {
     0,
     10,
     100,
-    70,
+    60,
   ],
 }
 
@@ -489,7 +498,7 @@ export const configAppMap = {
           layout: {
             visibility: "visible",
           },
-          paint: fillPaint,
+          paint: fillPaintRegions,
         },
         {
           id: "regions-lines",
@@ -534,7 +543,7 @@ export const configAppMap = {
           layout: {
             // visibility: 'none' ,
           },
-          paint: fillPaint,
+          paint: fillPaintDepartements,
           minzoom: ZOOM_THRESHOLD,
         },
         {
