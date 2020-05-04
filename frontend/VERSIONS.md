@@ -13,24 +13,32 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 [wireframe_slides]: https://docs.google.com/presentation/d/1j_0xaJzPIjmuDSQG-nNYzADad4pFaf8E3VBkggFu1FY/edit?usp=sharing
 [wireframe_pdf]: ../screenshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
 
+
+-----------------
+date : 04/05/2020
+
+- v.0.13.1 : fix bug coherent colors when rebuilding apexChart
+
+-----------------
+date : 28/04/2020
+
+- v.0.13 : iframing override from from [`.env` file](.envExample)
+
+
 -----------------
 date : 27/04/2020
 
-##### v.0.12
-- iframing parameter in url to hide navbar
-
-##### v.0.11
-- Matomo parameters injection from [`.env` file](.envExample)
+- v.0.12 : iframing parameter in url to hide navbar
+- v.0.11 : Matomo parameters injection from [`.env` file](.envExample)
 
 -----------------
 date : 26/04/2020
 
-##### v.0.10
-- ability to load config files from distant files
-- can write config js files to json files in statics
+- v.0.10 : 
+  - ability to load config files from distant files
+  - can write config js files to json files in statics
 
 -----------------
 date : 23/04/2020
 
-##### v.0 
-- first version (almost stable)
+- v.0 : first version (almost stable)
