@@ -220,7 +220,7 @@ export default {
             settingsColors.matchWithDatasetId
           )
           colorsReferences = colorsReferencesDataset && colorsReferencesDataset.data
-          this.log && console.log('C-ApexChart / getSeries / colorsReferences : ', colorsReferences )
+          // this.log && console.log('C-ApexChart / getSeries / colorsReferences : ', colorsReferences )
         }
 
         if (rawDataSerie && dataFromKey) {
@@ -228,7 +228,7 @@ export default {
 
           // 2 - get serie
           rawDataSerie.forEach((i) => {
-            this.log && console.log('\nC-ApexChart / getSeries / i : ', i )
+            // this.log && console.log('\nC-ApexChart / getSeries / i : ', i )
             let value = i[dataFromKey]
             if (value && mapper.format) {
               value = switchFormatFunctions(value, mapper.format)
@@ -256,12 +256,12 @@ export default {
             if (mapper.buildColorsAxisX) {
               // this.log && console.log('C-ApexChart / getSeries / localChartOptions : ',localChartOptions )
               let categCode = i[colorFromKey]
-              this.log && console.log('C-ApexChart / getSeries / categCode : ', categCode )
+              // this.log && console.log('C-ApexChart / getSeries / categCode : ', categCode )
 
               // get referencial dataset
               let categColor = colorsReferences.find( color => color[ colorMatchKey ] == categCode )
               categColor = categColor ? categColor[ colorValueFromKey ] : colorFallback
-              this.log && console.log('C-ApexChart / getSeries / categColor : ', categColor )
+              // this.log && console.log('C-ApexChart / getSeries / categColor : ', categColor )
               newColors.push( categColor )
               
             }
