@@ -104,7 +104,6 @@ export const configAppCharts = {
           },
           theme: {
             mode: "light",
-            // palette: "palette1", // upto palette10
           },
 
           dataLabels: {
@@ -120,11 +119,6 @@ export const configAppCharts = {
               },
             },
           },
-          // yaxis: {
-          //   labels: {
-          //     maxHeight: 180,
-          //   },
-          // },
 
           responsive: [
             {

@@ -81,31 +81,22 @@ export default {
 
   watch: {
     canShow(next, prev) {
-      // this.log && console.log("- ".repeat(10))
-      // this.log && console.log("C-ApexChart / watch - canShow / next : ", next)
       if (next) {
         let promisesArray = []
         let newSeries = this.getSeries()
         this.localSeries = newSeries.dataSeries
-        if ( newSeries.colors.length > 0) {
-          this.localChartOptions =  { ...this.localChartOptions, colors: newSeries.colors}
-        }
-        // this.log && console.log("\nC-ApexChart / watch - canShow / this.localSeries : ", this.localSeries)
+        this.updateOptionsColor( newSeries.colors )
       }
     },
     triggerVis(next, prev) {
-      // this.log && console.log("C-ApexChart / watch - triggerVis / next : ", next)
       this.getCanShow()
     },
     trigger(next, prev) {
-      // this.log && console.log("C-ApexChart / watch - trigger / next : ", next)
       this.getCanShow()
       if (this.canShow) {
         let newSeries = this.getSeries()
         this.localSeries = newSeries.dataSeries
-        if ( newSeries.colors.length > 0) {
-          this.localChartOptions =  { ...this.localChartOptions, colors: newSeries.colors}
-        }
+        this.updateOptionsColor( newSeries.colors )
       }
     },
   },
@@ -117,22 +108,14 @@ export default {
     this.viewConfig = this.getLocalConfig
     this.datasetMappers = this.viewConfig.datasetMappers
     this.localChartOptions = this.datasetMappers.chartOptions
-    this.log &&
-      console.log(
-        "C-ApexChart / beforeMount / this.localChartOptions : ",
-        this.localChartOptions
-      )
   },
 
   mounted() {
     this.log && console.log("C-ApexChart / mounted ...")
     this.getCanShow()
     let newSeries = this.getSeries()
-    // let chart = this.$refs[this.settings.id]
     this.localSeries = newSeries.dataSeries
-    if ( newSeries.colors.length > 0) {
-      this.localChartOptions =  { ...this.localChartOptions, colors: newSeries.colors}
-    }
+    this.updateOptionsColor( newSeries.colors )
   },
 
   computed: {
@@ -295,6 +278,11 @@ export default {
       return { dataSeries: dataSeries, colors: newColors }
     },
 
+    updateOptionsColor( colors ) {
+      if ( colors.length > 0) {
+        this.localChartOptions = { ...this.localChartOptions, colors: colors}
+      }
+    },
 
     getSpecialStoreData(params) {
       this.log &&
@@ -307,9 +295,6 @@ export default {
       return obj
     },
 
-    updateSeries(dataset) {
-      this.localSeries = dataset
-    },
   },
 }
 </script>
