@@ -40,7 +40,7 @@ export const configAppRoutes = {
                   align: "center",
                   settings: {
                     id: "text-01",
-                    containerClass: "pt-1 pb-0",
+                    containerClass: "pt-2 pb-0",
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true,
                   },
