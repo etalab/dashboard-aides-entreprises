@@ -140,7 +140,6 @@ export const configAppData = {
 
       store: [
         // INFOS
-
         {
           id: "infos",
           help: "",
@@ -183,13 +182,12 @@ export const configAppData = {
         },
 
         // TAXONOMIES
-
         {
           id: "taxo-nafs",
           help: "",
           from: "static",
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/naf"
-          url: `${DATASETS_REPO_BASE}/taxonomies/nafs.json`,
+          url: `${DATASETS_REPO_BASE}/taxonomies/nafs-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/nafs.json`,
           displayed: false,
         },
@@ -198,7 +196,7 @@ export const configAppData = {
           help: "",
           from: "static",
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/region"
-          url: `${DATASETS_REPO_BASE}/taxonomies/regions.json`,
+          url: `${DATASETS_REPO_BASE}/taxonomies/regions-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/regions.json`,
           displayed: false,
         },
@@ -207,7 +205,7 @@ export const configAppData = {
           help: "",
           from: "static",
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/departement"
-          url: `${DATASETS_REPO_BASE}/taxonomies/departements.json`,
+          url: `${DATASETS_REPO_BASE}/taxonomies/departements-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/departements.json`,
           displayed: false,
         },
@@ -216,13 +214,22 @@ export const configAppData = {
           help: "",
           from: "static",
           //   url  : "http://pad-01.infra.data.gouv.fr:5000/classeeffectif"
-          url: `${DATASETS_REPO_BASE}/taxonomies/classes-effectifs.json`,
+          url: `${DATASETS_REPO_BASE}/taxonomies/classes-effectifs-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/classes-effectifs.json`,
           displayed: false,
         },
 
-        // GEOJSON (NO NEED EXCEPT CENTERS : SOURCES LOADED IN MAPBOX COMPONENT )
+        {
+          id: "taxo-nafs-colors",
+          help: "",
+          from: "static",
+          url: `${DATASETS_REPO_BASE}/taxonomies/sections-naf.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/sections-naf.json`,
+          displayed: false,
+        },
 
+
+        // GEOJSON (NO NEED EXCEPT CENTERS : SOURCES LOADED IN MAPBOX COMPONENT )
         {
           id: "centers",
           help: "geo centres régions et départements",
@@ -233,12 +240,11 @@ export const configAppData = {
         },
 
         // AIDES
-
         {
           id: "national-aides-raw",
           help: "serie chiffres aides à la maille nationale",
           from: "static",
-          url: `${DATASETS_REPO_BASE}/aides/aides-maille-national.json`,
+          url: `${DATASETS_REPO_BASE}/aides/aides-maille-national-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-national.json`,
           displayed: true,
           copyTo: [
@@ -274,7 +280,7 @@ export const configAppData = {
           id: "regions-aides-raw",
           help: "serie chiffres aides à la maille regionale",
           from: "static",
-          url: `${DATASETS_REPO_BASE}/aides/aides-maille-regional.json`,
+          url: `${DATASETS_REPO_BASE}/aides/aides-maille-regional-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-regional.json`,
           displayed: true,
         },
@@ -282,7 +288,7 @@ export const configAppData = {
           id: "departements-aides-raw",
           help: "serie chiffres aides à la maille departementale",
           from: "static",
-          url: `${DATASETS_REPO_BASE}/aides/aides-maille-departemental.json`,
+          url: `${DATASETS_REPO_BASE}/aides/aides-maille-departemental-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-departemental.json`,
           displayed: false,
         },

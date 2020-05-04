@@ -33,7 +33,7 @@
           <!-- NUMBER FROM DISPLAYED DATA -->
           <p
             :class="`${col.numberClass} ${
-              isMobileWidth ? col.sizeMobile + ' mb-2' : col.sizeDesktop
+              isMobileWidth ? col.sizeMobile : col.sizeDesktop
             }`"
           >
             <!-- NUMBER TITLE -->

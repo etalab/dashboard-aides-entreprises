@@ -15,6 +15,7 @@ export const configAppGlobalButtons = {
       },
 
       btnsRowClass: "align-center justify-center",
+      btnsRowClassMobile: "mt-0 pt-0 mb-2",
 
       componentButtons: [
         {
