@@ -85,8 +85,11 @@ export default {
       // this.log && console.log("C-ApexChart / watch - canShow / next : ", next)
       if (next) {
         let promisesArray = []
-        let chart = this.$refs[this.settings.id]
-        this.localSeries = this.getSeries()
+        let newSeries = this.getSeries()
+        this.localSeries = newSeries.dataSeries
+        if ( newSeries.colors.length > 0) {
+          this.localChartOptions =  { ...this.localChartOptions, colors: newSeries.colors}
+        }
         // this.log && console.log("\nC-ApexChart / watch - canShow / this.localSeries : ", this.localSeries)
       }
     },
@@ -98,7 +101,11 @@ export default {
       // this.log && console.log("C-ApexChart / watch - trigger / next : ", next)
       this.getCanShow()
       if (this.canShow) {
-        this.localSeries = this.getSeries()
+        let newSeries = this.getSeries()
+        this.localSeries = newSeries.dataSeries
+        if ( newSeries.colors.length > 0) {
+          this.localChartOptions =  { ...this.localChartOptions, colors: newSeries.colors}
+        }
       }
     },
   },
@@ -119,9 +126,13 @@ export default {
 
   mounted() {
     this.log && console.log("C-ApexChart / mounted ...")
-    // this.localSeries = this.getSeries()
     this.getCanShow()
-    this.localSeries = this.getSeries()
+    let newSeries = this.getSeries()
+    // let chart = this.$refs[this.settings.id]
+    this.localSeries = newSeries.dataSeries
+    if ( newSeries.colors.length > 0) {
+      this.localChartOptions =  { ...this.localChartOptions, colors: newSeries.colors}
+    }
   },
 
   computed: {
@@ -137,6 +148,8 @@ export default {
       getCurrentLocale: "getCurrentLocale",
       getDataViewConfig: "getDataViewConfig",
       getSpecialStore: "data/getSpecialStore",
+      getFromInitData: "data/getFromInitData",
+      getFromDisplayedData: "data/getFromDisplayedData",
       getFromSpecialStoreData: "data/getFromSpecialStoreData",
       windowSize: "getWindowsSize",
       getDivCurrentVisibility: "getDivCurrentVisibility",
@@ -175,9 +188,13 @@ export default {
       let fromDatasetKey = this.datasetMappers.fromDatasetKey
       let seriesMappers = this.datasetMappers.seriesMappers
 
+      let localChartOptions = this.localChartOptions
       let dataSeries = []
+      let newColors = []
 
       for (let mapper of seriesMappers) {
+
+        // get serie values
         let rawDataSerie = this.getSpecialStoreData({
           id: specialStoreId,
           key: fromDatasetKey,
@@ -185,24 +202,40 @@ export default {
         })
         this.rawDataSerie = rawDataSerie
         // this.log && console.log('C-ApexChart / getSeries / rawDataSerie  : ', rawDataSerie )
-
         let dataFromKey = mapper.dataFromKey
-
         let valuesSerie
+
+        let settingsColors, colorFromKey, colorMatchKey, colorValueFromKey, colorFallback, colorsReferences
+
+        // get colors references for x-axis
+        if (mapper.buildColorsAxisX) {
+          // this.log && console.log('C-ApexChart / getSeries /localChartOptions : ',localChartOptions )
+          settingsColors = mapper.buildColorsAxisXsettings
+          colorFromKey = settingsColors.fromKey
+          colorMatchKey = settingsColors.matchKey
+          colorValueFromKey = settingsColors.getValueFromKey
+          colorFallback = settingsColors.fallbackColor
+          // get referencial dataset from initData
+          let colorsReferencesDataset = this.getFromInitData(
+            settingsColors.matchWithDatasetId
+          )
+          colorsReferences = colorsReferencesDataset && colorsReferencesDataset.data
+          this.log && console.log('C-ApexChart / getSeries / colorsReferences : ', colorsReferences )
+        }
 
         if (rawDataSerie && dataFromKey) {
           let tempSerie = []
 
           // 2 - get serie
           rawDataSerie.forEach((i) => {
-            // this.log && console.log('C-ApexChart / getSeries / i : ', i )
+            this.log && console.log('\nC-ApexChart / getSeries / i : ', i )
             let value = i[dataFromKey]
             if (value && mapper.format) {
               value = switchFormatFunctions(value, mapper.format)
             }
             // this.log && console.log('C-ApexChart / getSeries / value : ', value )
 
-            // 2bis - rebuild categories on xais
+            // 2bis - rebuild categories on x-axis
             if (mapper.buildAxisCategsX) {
               let settings = mapper.buildAxisCategsXsettings
               let categ = i[settings.fromKey]
@@ -213,15 +246,33 @@ export default {
                   categ = categ.join("")
                 }
               }
-
               // this.log && console.log('C-ApexChart / getSeries / categ : ', categ )
               let newValue = { x: categ, y: value }
               value = newValue
             }
             tempSerie.push(value)
+
+            // 2ter - rebuild colors on x-axis
+            if (mapper.buildColorsAxisX) {
+              // this.log && console.log('C-ApexChart / getSeries / localChartOptions : ',localChartOptions )
+              let categCode = i[colorFromKey]
+              this.log && console.log('C-ApexChart / getSeries / categCode : ', categCode )
+
+              // get referencial dataset
+              let categColor = colorsReferences.find( color => color[ colorMatchKey ] == categCode )
+              categColor = categColor ? categColor[ colorValueFromKey ] : colorFallback
+              this.log && console.log('C-ApexChart / getSeries / categColor : ', categColor )
+              newColors.push( categColor )
+              
+            }
+
           })
 
           valuesSerie = tempSerie
+          // if (mapper.buildColorsAxisX) {
+          //   localChartOptions.colors = newColors
+          // }
+
         } else {
           valuesSerie = rawDataSerie
         }
@@ -235,13 +286,15 @@ export default {
         dataSeries.push(dataSerie)
       }
       this.log &&
-        console.log("C-ApexChart / getSeries / dataSeries : ", dataSeries)
+        console.log("\nC-ApexChart / getSeries / dataSeries : ", dataSeries)
       // this.log && console.log('C-ApexChart / getSeries / this.localChartOptions : ', this.localChartOptions )
-      // this.log && console.log('C-ApexChart / getSeries / this.$refs[ this.settings.id ] : ', this.$refs[ this.settings.id ] )
 
-      // this.localSeries = dataSeries
-      return dataSeries
+      // let chart = this.$refs[this.settings.id]
+      // this.log && console.log('C-ApexChart / getSeries / chart : ', chart )
+
+      return { dataSeries: dataSeries, colors: newColors }
     },
+
 
     getSpecialStoreData(params) {
       this.log &&

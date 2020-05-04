@@ -63,6 +63,7 @@ export const configAppCharts = {
                 putLast: { fieldName: KEY_SECTION_NAF, value: "Autres" },
               },
             },
+
             buildAxisCategsX: true,
             buildAxisCategsXsettings: {
               fromKey: KEY_SECTION_NAF_LABEL,
@@ -70,6 +71,16 @@ export const configAppCharts = {
               splitGlue: "- ",
               capitalize: true,
             },
+
+            buildColorsAxisX: true,
+            buildColorsAxisXsettings: {
+              fromKey: "section_naf", // KEY_SECTION_NAF
+              // matchWithDataStore: "initData", // by default from initData
+              matchWithDatasetId : "taxo-nafs-colors",
+              matchKey: "code_section",
+              getValueFromKey: "color_section",
+              fallbackColor: "#808080",
+            }
           },
         ],
 
@@ -93,7 +104,7 @@ export const configAppCharts = {
           },
           theme: {
             mode: "light",
-            palette: "palette1", // upto palette10
+            // palette: "palette1", // upto palette10
           },
 
           dataLabels: {
