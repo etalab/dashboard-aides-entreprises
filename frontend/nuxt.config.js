@@ -14,6 +14,7 @@ console.log(
 // const APP_VERSION = "v.0.13 - Iframing override"
 const APP_VERSION = "v.0.13.1 - charts colors"
 
+
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
 var configsJS = require("./nuxt_loadConfigs_fromJS.js")
