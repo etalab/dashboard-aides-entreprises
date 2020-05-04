@@ -268,12 +268,6 @@ export default {
         }
         dataSeries.push(dataSerie)
       }
-      this.log &&
-        console.log("\nC-ApexChart / getSeries / dataSeries : ", dataSeries)
-      // this.log && console.log('C-ApexChart / getSeries / this.localChartOptions : ', this.localChartOptions )
-
-      // let chart = this.$refs[this.settings.id]
-      // this.log && console.log('C-ApexChart / getSeries / chart : ', chart )
 
       return { dataSeries: dataSeries, colors: newColors }
     },
