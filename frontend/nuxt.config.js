@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = "v.0.13 - Iframing override"
+const APP_VERSION = "v.0.13.2 - minor fix on map config"
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
