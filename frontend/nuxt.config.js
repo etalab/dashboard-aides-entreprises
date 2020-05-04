@@ -24,7 +24,7 @@ let configsReferences = configsJS.configsReferences
 if (process.env.NUXT_ENV_RUN_MODE == "dev") {
   console.log(">>> nuxt.config.js / copyConfigsToJSON / ...")
   let staticRoot = "./static/configs"
-  let staticConfigFolder = process.env.NUXT_ENV_CONFIG_TO_JSON_FOLDER || 'dev'
+  let staticConfigFolder = process.env.NUXT_ENV_CONFIG_TO_JSON_FOLDER || "dev"
 
   let staticConfigPath = `${staticRoot}/${staticConfigFolder}`
   !fs.existsSync(staticConfigPath) && fs.mkdirSync(staticConfigPath)
@@ -240,7 +240,7 @@ const configApp = {
   configsFrom: process.env.NUXT_ENV_CONFIG_FROM || "local_js_files",
 
   // MATOMO
-  matomo_host: process.env.NUXT_ENV_MATOMO_HOST || "https://stats.data.gouv.fr",
+  matomo_host: process.env.NUXT_ENV_MATOMO_HOST || "https://stats.data.gouv.fr",
   matomo_siteId: parseInt(process.env.NUXT_ENV_MATOMO_SITE_ID) || 127,
 
   // INTERNATIONALIZATION

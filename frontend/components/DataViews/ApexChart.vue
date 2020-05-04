@@ -53,8 +53,8 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex"
-import { switchFormatFunctions, sortArrayBy, splitMulti } from "~/utils/utils.js"
+import { mapState, mapGetters } from "vuex"
+import { switchFormatFunctions, splitMulti } from "~/utils/utils.js"
 
 // ONLY DISPLAY DATA FROM data.specialStore
 
@@ -82,10 +82,9 @@ export default {
   watch: {
     canShow(next, prev) {
       if (next) {
-        let promisesArray = []
         let newSeries = this.getSeries()
         this.localSeries = newSeries.dataSeries
-        this.updateOptionsColor( newSeries.colors )
+        this.updateOptionsColor(newSeries.colors)
       }
     },
     triggerVis(next, prev) {
@@ -96,7 +95,7 @@ export default {
       if (this.canShow) {
         let newSeries = this.getSeries()
         this.localSeries = newSeries.dataSeries
-        this.updateOptionsColor( newSeries.colors )
+        this.updateOptionsColor(newSeries.colors)
       }
     },
   },
@@ -115,7 +114,7 @@ export default {
     this.getCanShow()
     let newSeries = this.getSeries()
     this.localSeries = newSeries.dataSeries
-    this.updateOptionsColor( newSeries.colors )
+    this.updateOptionsColor(newSeries.colors)
   },
 
   computed: {
@@ -171,12 +170,10 @@ export default {
       let fromDatasetKey = this.datasetMappers.fromDatasetKey
       let seriesMappers = this.datasetMappers.seriesMappers
 
-      let localChartOptions = this.localChartOptions
       let dataSeries = []
       let newColors = []
 
       for (let mapper of seriesMappers) {
-
         // get serie values
         let rawDataSerie = this.getSpecialStoreData({
           id: specialStoreId,
@@ -184,15 +181,19 @@ export default {
           sortParams: mapper.sortDataSerieBy,
         })
         this.rawDataSerie = rawDataSerie
-        // this.log && console.log('C-ApexChart / getSeries / rawDataSerie  : ', rawDataSerie )
+        // this.log && console.log('C-ApexChart / getSeries / rawDataSerie : ', rawDataSerie )
         let dataFromKey = mapper.dataFromKey
         let valuesSerie
 
-        let settingsColors, colorFromKey, colorMatchKey, colorValueFromKey, colorFallback, colorsReferences
+        let settingsColors,
+          colorFromKey,
+          colorMatchKey,
+          colorValueFromKey,
+          colorFallback,
+          colorsReferences
 
         // get colors references for x-axis
         if (mapper.buildColorsAxisX) {
-          // this.log && console.log('C-ApexChart / getSeries /localChartOptions : ',localChartOptions )
           settingsColors = mapper.buildColorsAxisXsettings
           colorFromKey = settingsColors.fromKey
           colorMatchKey = settingsColors.matchKey
@@ -202,7 +203,8 @@ export default {
           let colorsReferencesDataset = this.getFromInitData(
             settingsColors.matchWithDatasetId
           )
-          colorsReferences = colorsReferencesDataset && colorsReferencesDataset.data
+          colorsReferences =
+            colorsReferencesDataset && colorsReferencesDataset.data
           // this.log && console.log('C-ApexChart / getSeries / colorsReferences : ', colorsReferences )
         }
 
@@ -224,7 +226,12 @@ export default {
               let categ = i[settings.fromKey]
 
               if (settings.splitBy) {
-                categ = splitMulti(categ, settings.splitBy, settings.splitGlue, settings.capitalize)
+                categ = splitMulti(
+                  categ,
+                  settings.splitBy,
+                  settings.splitGlue,
+                  settings.capitalize
+                )
                 if (categ.length <= 1) {
                   categ = categ.join("")
                 }
@@ -237,22 +244,22 @@ export default {
 
             // 2ter - rebuild colors on x-axis
             if (mapper.buildColorsAxisX) {
-              // this.log && console.log('C-ApexChart / getSeries / localChartOptions : ',localChartOptions )
               let categCode = i[colorFromKey]
               // this.log && console.log('C-ApexChart / getSeries / categCode : ', categCode )
 
               // get referencial dataset
-              let categColor = colorsReferences.find( color => color[ colorMatchKey ] == categCode )
-              categColor = categColor ? categColor[ colorValueFromKey ] : colorFallback
+              let categColor = colorsReferences.find(
+                (color) => color[colorMatchKey] == categCode
+              )
+              categColor = categColor
+                ? categColor[colorValueFromKey]
+                : colorFallback
               // this.log && console.log('C-ApexChart / getSeries / categColor : ', categColor )
-              newColors.push( categColor )
-              
+              newColors.push(categColor)
             }
-
           })
 
           valuesSerie = tempSerie
-
         } else {
           valuesSerie = rawDataSerie
         }
@@ -269,9 +276,9 @@ export default {
       return { dataSeries: dataSeries, colors: newColors }
     },
 
-    updateOptionsColor( colors ) {
-      if ( colors.length > 0) {
-        this.localChartOptions = { ...this.localChartOptions, colors: colors}
+    updateOptionsColor(colors) {
+      if (colors.length > 0) {
+        this.localChartOptions = { ...this.localChartOptions, colors: colors }
       }
     },
 
@@ -285,7 +292,6 @@ export default {
       })
       return obj
     },
-
   },
 }
 </script>
