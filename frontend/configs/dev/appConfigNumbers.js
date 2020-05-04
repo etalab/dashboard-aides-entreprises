@@ -11,7 +11,7 @@ export const configAppNumbers = {
       titleI18n: "numbers.numbers01.title",
       dividers: {
         before: false,
-        after: true,
+        after: false,
       },
       componentRows: [
         {

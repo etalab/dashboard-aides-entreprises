@@ -46,19 +46,6 @@ export const configAppRoutes = {
                   },
                 },
                 {
-                  component: "globalButtons",
-                  activated: true,
-                  smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
-                  settings: {
-                    id: "global-button-01",
-                    containerClass: "py-0 my-0",
-                    mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
-                },
-                {
                   component: "numbers",
                   activated: true,
                   smallScreenVerticalOrder: 3,
@@ -67,6 +54,19 @@ export const configAppRoutes = {
                   settings: {
                     id: "numbers-01",
                     containerClass: "py-0",
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true,
+                  },
+                },
+                {
+                  component: "globalButtons",
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: "center",
+                  align: "center",
+                  settings: {
+                    id: "global-button-01",
+                    containerClass: "py-0 my-0",
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true,
                   },
