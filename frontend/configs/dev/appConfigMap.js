@@ -19,7 +19,7 @@ const OUTLINECOLOR2 = "#6c87ab"
 
 // layer fonts : ["Open Sans Regular","Arial Unicode MS Regular"]
 
-const fillPaint = {
+const fillPaintRegions = {
   "fill-color": [
     "case",
     ["boolean", ["feature-state", "selected"], false],
@@ -39,7 +39,7 @@ const fillPaint = {
     0,
   ],
 }
-const fillPaintBis = {
+const fillPaintDepartements = {
   "fill-color": [
     "case",
     ["boolean", ["feature-state", "selected"], false],
@@ -498,7 +498,7 @@ export const configAppMap = {
           layout: {
             visibility: "visible",
           },
-          paint: fillPaint,
+          paint: fillPaintRegions,
         },
         {
           id: "regions-lines",
@@ -543,7 +543,7 @@ export const configAppMap = {
           layout: {
             // visibility: 'none' ,
           },
-          paint: fillPaintBis,
+          paint: fillPaintDepartements,
           minzoom: ZOOM_THRESHOLD,
         },
         {
