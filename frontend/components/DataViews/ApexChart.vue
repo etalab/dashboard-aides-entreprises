@@ -252,9 +252,6 @@ export default {
           })
 
           valuesSerie = tempSerie
-          // if (mapper.buildColorsAxisX) {
-          //   localChartOptions.colors = newColors
-          // }
 
         } else {
           valuesSerie = rawDataSerie
