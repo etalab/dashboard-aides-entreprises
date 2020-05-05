@@ -100,6 +100,24 @@ def getSectionNafs():
         return jsonify(dataJson)
 
 
+@app.route('/categoriejuridique', methods=['GET'])
+def getCategorieJuridique():
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "SELECT code, libelle, color from categoriejuridique;"
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['code'] = str(data[i][0]) 
+            dataDict['libelle'] = str(data[i][1]) 
+            dataDict['color'] = str(data[i][2])
+            dataJson.append(dataDict)
+
+        return jsonify(dataJson)
+
+
 @app.route('/classeeffectif', methods=['GET'])
 def getClasseEffectifs():
     # GET a specific data by id
