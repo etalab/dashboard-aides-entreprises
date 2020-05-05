@@ -165,7 +165,7 @@ dfaide.to_csv("../data/aides/aides-"+daytoprocess+".csv",index=False)
 print("Fichier aides sauvegardés : ../data/aides/aides-"+daytoprocess+".csv")
 
 print("Récupération des SIREN non diffusibles (peut être long) :")
-'''
+
 print(str(resultna.shape[0])+" siren à récupérer via API entreprise")
 mydf = []
 i = 0
@@ -210,7 +210,7 @@ dfaidenaenrichapi.to_csv("../data/aides/aides-na-api-"+daytoprocess+".csv",index
 
 print("Fichier des siret non diffusibles enrichis sauvegardé ici : ../data/aides/aides-na-api-"+daytoprocess+".csv")
 
-'''
+
 
 dfna = pd.read_csv("../data/aides/aides-na-api-"+daytoprocess+".csv", dtype={'siren':str,'Cde postal':str,'siret':str,'trancheeffectifsetablissement': str,'activiteprincipaleetablissement':str,'reg':str,'dep':str,'codecommuneetablissement':str,'categoriejuridiqueunitelegale':str})
 
