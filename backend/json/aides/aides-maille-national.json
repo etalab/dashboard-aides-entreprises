@@ -1,5 +1,61 @@
 [
   {
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "156646627.00", 
+        "nombre": "107543"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "436818388.50", 
+        "nombre": "294253"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "148812879.08", 
+        "nombre": "98290"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "39025898.00", 
+        "nombre": "25585"
+      }, 
+      {
+        "classe_effectif": "11", 
+        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
+        "montant": "7169716.20", 
+        "nombre": "4721"
+      }, 
+      {
+        "classe_effectif": "12", 
+        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
+        "montant": "454194.00", 
+        "nombre": "306"
+      }, 
+      {
+        "classe_effectif": "21", 
+        "libelle_classe_effectif": "50 \u00e0 99 salari\u00e9s", 
+        "montant": "30287.00", 
+        "nombre": "21"
+      }, 
+      {
+        "classe_effectif": "22", 
+        "libelle_classe_effectif": "100 \u00e0 199 salari\u00e9s", 
+        "montant": "10500.00", 
+        "nombre": "7"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "142161453.00", 
+        "nombre": "104587"
+      }
+    ], 
     "kpi_top_10_naf": [
       {
         "libelle_section_naf": "Commerce", 
