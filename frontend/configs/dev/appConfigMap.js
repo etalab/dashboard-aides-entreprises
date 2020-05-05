@@ -162,6 +162,7 @@ export const configAppMap = {
           help: 'geojson des contours des régions',
           from: 'url',
           url: '/datasets/geodata/regions-1000m.geojson', // local file in `/static` folder
+          // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/static-data/geodata/regions-1000m.geojson',
           // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/frontend/datasets/geodata/regions-1000m.geojson',
           // url  : 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions-version-simplifiee.geojson',
           type: 'geojson',
@@ -201,6 +202,7 @@ export const configAppMap = {
           help: 'geojson des contours des départements',
           from: 'url',
           url: '/datasets/geodata/departements-1000m.geojson',
+          // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/static-data/geodata/departements-1000m.geojson',
           // url  : 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/j_front/frontend/datasets/geodata/departements-1000m.geojson',
           // url  : 'https://raw.githubusercontent.com/etalab/DVF-app/master/static/donneesgeo/departements-100m.geojson',
           // url  : 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/departements-version-simplifiee.geojson',
