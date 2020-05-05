@@ -1,6 +1,6 @@
 datafolder="$(dirname "$(pwd)")"/data/aides/
 
-sudo -u postgres psql -d dashboard -c "\copy aide(code_application, numero_sequentiel, mois, siren, nom1, nom2, effectif, montant, devise, date_dp, date_paiement, siret, reg, dep, codeCommuneEtablissement, activiteprincipaleetablissement, count_siren_nb, montant_modifie,delta_effectif,delta_effectif_percent,classe_effectif) FROM '"$datafolder$1"' delimiter ',' csv header encoding 'UTF8';"
+sudo -u postgres psql -d dashboard -c "\copy aide(code_application, numero_sequentiel, mois, siren, nom1, nom2, effectif, montant, devise, date_dp, date_paiement, siret, reg, dep, codeCommuneEtablissement, activiteprincipaleetablissement, count_siren_nb, montant_modifie,delta_effectif,delta_effectif_percent,classe_effectif,categoriejuridiqueunitelegale) FROM '"$datafolder$1"' delimiter ',' csv header encoding 'UTF8';"
 
 echo "Creating index on siren column"
 sudo -u postgres psql -d dashboard -c "DROP INDEX IF EXISTS aide_siren;"
@@ -18,5 +18,3 @@ echo "Creating index on codeCommuneEtablissement column"
 sudo -u postgres psql -d dashboard -c "DROP INDEX IF EXISTS aide_codeCommuneEtablissement;"
 sudo -u postgres psql -d dashboard -c "CREATE INDEX aide_codeCommuneEtablissement ON aide (codeCommuneEtablissement);"
 echo "index created"
-
-  
