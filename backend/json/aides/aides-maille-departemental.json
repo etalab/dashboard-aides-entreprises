@@ -1,6 +1,14 @@
 [
   {
     "dep": "None", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [], 
     "kpi_top_10_naf": [
       {
@@ -16,6 +24,62 @@
   }, 
   {
     "dep": "84", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "13168995.00", 
+        "nombre": "10546"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "6001500.00", 
+        "nombre": "4064"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "3464147.00", 
+        "nombre": "2363"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "240154.00", 
+        "nombre": "165"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "130410.00", 
+        "nombre": "93"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "35109.00", 
+        "nombre": "24"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -134,6 +198,56 @@
   }, 
   {
     "dep": "22", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "8608104.00", 
+        "nombre": "6799"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4443692.00", 
+        "nombre": "2988"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "701339.00", 
+        "nombre": "493"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "115770.00", 
+        "nombre": "87"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "89766.00", 
+        "nombre": "61"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "82146.00", 
+        "nombre": "63"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "14886.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -246,6 +360,56 @@
   }, 
   {
     "dep": "79", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "4848829.00", 
+        "nombre": "3801"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2229355.00", 
+        "nombre": "1495"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "443512.00", 
+        "nombre": "306"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "83192.00", 
+        "nombre": "58"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "66273.00", 
+        "nombre": "48"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "30000.00", 
+        "nombre": "20"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -358,6 +522,62 @@
   }, 
   {
     "dep": "94", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "21375154.00", 
+        "nombre": "16017"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "9620866.00", 
+        "nombre": "6478"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "9085393.00", 
+        "nombre": "6185"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "147546.00", 
+        "nombre": "101"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "52547.00", 
+        "nombre": "40"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "40027.00", 
+        "nombre": "27"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "17000.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -476,6 +696,56 @@
   }, 
   {
     "dep": "51", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "6793221.00", 
+        "nombre": "5376"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3799329.00", 
+        "nombre": "2570"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1397162.00", 
+        "nombre": "962"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "144696.00", 
+        "nombre": "100"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "72371.00", 
+        "nombre": "52"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "41146.00", 
+        "nombre": "28"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "4080.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -594,6 +864,50 @@
   }, 
   {
     "dep": "53", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3478433.00", 
+        "nombre": "2696"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1760970.00", 
+        "nombre": "1180"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "341717.00", 
+        "nombre": "237"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "57491.00", 
+        "nombre": "39"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "53404.00", 
+        "nombre": "37"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "37717.00", 
+        "nombre": "26"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -706,6 +1020,68 @@
   }, 
   {
     "dep": "76", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "14329068.00", 
+        "nombre": "11590"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "6845680.00", 
+        "nombre": "4612"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2626615.00", 
+        "nombre": "1792"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "169090.00", 
+        "nombre": "116"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "106112.00", 
+        "nombre": "75"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "66595.00", 
+        "nombre": "46"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "14720.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "7500.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "5804.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -824,6 +1200,50 @@
   }, 
   {
     "dep": "09", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3285047.00", 
+        "nombre": "2737"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1028550.00", 
+        "nombre": "700"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "603559.00", 
+        "nombre": "418"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "70503.00", 
+        "nombre": "53"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "30598.00", 
+        "nombre": "24"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "14250.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -936,6 +1356,50 @@
   }, 
   {
     "dep": "27", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "7589918.00", 
+        "nombre": "5993"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3568275.00", 
+        "nombre": "2413"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1574262.00", 
+        "nombre": "1081"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "93403.00", 
+        "nombre": "66"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "57893.00", 
+        "nombre": "41"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "37263.00", 
+        "nombre": "25"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -1048,6 +1512,56 @@
   }, 
   {
     "dep": "36", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "2808849.00", 
+        "nombre": "2228"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1165173.00", 
+        "nombre": "789"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "432011.00", 
+        "nombre": "296"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "66453.00", 
+        "nombre": "47"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "29407.00", 
+        "nombre": "20"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "20633.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "3494.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -1160,6 +1674,62 @@
   }, 
   {
     "dep": "42", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "12430953.00", 
+        "nombre": "9744"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "5167236.00", 
+        "nombre": "3494"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2726094.00", 
+        "nombre": "1865"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "149248.00", 
+        "nombre": "109"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "122915.00", 
+        "nombre": "85"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "54648.00", 
+        "nombre": "35"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "10732.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "7500.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -1272,6 +1842,56 @@
   }, 
   {
     "dep": "37", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "9124588.00", 
+        "nombre": "7152"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4870498.00", 
+        "nombre": "3272"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1337095.00", 
+        "nombre": "918"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "197807.00", 
+        "nombre": "140"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "99206.00", 
+        "nombre": "71"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "37500.00", 
+        "nombre": "25"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -1384,6 +2004,44 @@
   }, 
   {
     "dep": "976", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "1241401.00", 
+        "nombre": "875"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "560627.00", 
+        "nombre": "378"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "82469.00", 
+        "nombre": "56"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -1484,6 +2142,56 @@
   }, 
   {
     "dep": "72", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "6637399.00", 
+        "nombre": "5307"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3097111.00", 
+        "nombre": "2088"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "746202.00", 
+        "nombre": "519"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "68593.00", 
+        "nombre": "48"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "63425.00", 
+        "nombre": "47"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "18630.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "5191.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -1596,6 +2304,56 @@
   }, 
   {
     "dep": "82", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "4572455.00", 
+        "nombre": "3729"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1963921.00", 
+        "nombre": "1326"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "814123.00", 
+        "nombre": "559"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "63160.00", 
+        "nombre": "46"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "57163.00", 
+        "nombre": "40"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -1714,6 +2472,50 @@
   }, 
   {
     "dep": "15", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "2882542.00", 
+        "nombre": "2196"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "891608.00", 
+        "nombre": "609"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "291013.00", 
+        "nombre": "195"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "231481.00", 
+        "nombre": "158"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "42199.00", 
+        "nombre": "31"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "19500.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -1826,6 +2628,50 @@
   }, 
   {
     "dep": "973", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "1919421.00", 
+        "nombre": "1397"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "787994.00", 
+        "nombre": "545"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "716253.00", 
+        "nombre": "486"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "26000.00", 
+        "nombre": "18"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "16500.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -1938,6 +2784,74 @@
   }, 
   {
     "dep": "34", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "27132579.00", 
+        "nombre": "21830"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "12758669.00", 
+        "nombre": "8616"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "7664576.00", 
+        "nombre": "5251"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "397602.00", 
+        "nombre": "277"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "322774.00", 
+        "nombre": "232"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "35841.00", 
+        "nombre": "25"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "15409.00", 
+        "nombre": "17"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "13993.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "10500.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "23", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en participation", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -2056,6 +2970,68 @@
   }, 
   {
     "dep": "13", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "39761548.00", 
+        "nombre": "31499"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "19979236.00", 
+        "nombre": "13482"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "13972964.00", 
+        "nombre": "9536"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "477355.00", 
+        "nombre": "337"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "261036.00", 
+        "nombre": "185"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "147173.00", 
+        "nombre": "99"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "31500.00", 
+        "nombre": "21"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "23181.00", 
+        "nombre": "19"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -2174,6 +3150,56 @@
   }, 
   {
     "dep": "12", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5550571.00", 
+        "nombre": "4353"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2176156.00", 
+        "nombre": "1479"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "685766.00", 
+        "nombre": "465"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "187049.00", 
+        "nombre": "132"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "74324.00", 
+        "nombre": "52"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "42549.00", 
+        "nombre": "29"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "12036.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -2286,6 +3312,50 @@
   }, 
   {
     "dep": "52", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "1896106.00", 
+        "nombre": "1528"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "875384.00", 
+        "nombre": "591"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "379585.00", 
+        "nombre": "257"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "30484.00", 
+        "nombre": "23"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "22250.00", 
+        "nombre": "15"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "6432.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -2398,6 +3468,50 @@
   }, 
   {
     "dep": "972", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "7025362.00", 
+        "nombre": "5293"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3522298.00", 
+        "nombre": "2382"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2081701.00", 
+        "nombre": "1432"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "101516.00", 
+        "nombre": "73"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "37958.00", 
+        "nombre": "27"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "21330.00", 
+        "nombre": "15"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -2516,6 +3630,68 @@
   }, 
   {
     "dep": "77", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "19356841.00", 
+        "nombre": "14865"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "8818088.00", 
+        "nombre": "5922"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "6909602.00", 
+        "nombre": "4726"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "131999.00", 
+        "nombre": "95"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "81706.00", 
+        "nombre": "59"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "78299.00", 
+        "nombre": "53"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "4370.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -2634,6 +3810,68 @@
   }, 
   {
     "dep": "38", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "23428494.00", 
+        "nombre": "18161"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "10925851.00", 
+        "nombre": "7392"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "5127842.00", 
+        "nombre": "3514"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "162026.00", 
+        "nombre": "114"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "148742.00", 
+        "nombre": "105"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "35061.00", 
+        "nombre": "24"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "11984.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "11779.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "10500.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -2752,6 +3990,68 @@
   }, 
   {
     "dep": "73", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "15239657.00", 
+        "nombre": "11403"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "5709287.00", 
+        "nombre": "3855"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1837519.00", 
+        "nombre": "1249"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "90510.00", 
+        "nombre": "65"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "82287.00", 
+        "nombre": "58"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "53000.00", 
+        "nombre": "34"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "30905.00", 
+        "nombre": "25"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "18904.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "84", 
+        "libelle_cat_juridique": "Organisme professionnel", 
+        "montant": "5000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -2870,6 +4170,74 @@
   }, 
   {
     "dep": "06", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "32108110.00", 
+        "nombre": "24877"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "14520625.00", 
+        "nombre": "9800"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "9372719.50", 
+        "nombre": "6408"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "248171.00", 
+        "nombre": "177"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "160916.00", 
+        "nombre": "111"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "73200.00", 
+        "nombre": "49"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "37144.00", 
+        "nombre": "25"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "18692.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "12000.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "53", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en commandite", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -2988,6 +4356,50 @@
   }, 
   {
     "dep": "28", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5097480.00", 
+        "nombre": "3959"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2621693.00", 
+        "nombre": "1758"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1253097.00", 
+        "nombre": "856"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "58381.00", 
+        "nombre": "43"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "36270.00", 
+        "nombre": "25"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "17016.00", 
+        "nombre": "12"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -3100,6 +4512,50 @@
   }, 
   {
     "dep": "02", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5996706.00", 
+        "nombre": "4855"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2348125.00", 
+        "nombre": "1581"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1086740.00", 
+        "nombre": "744"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "49959.00", 
+        "nombre": "36"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "43666.00", 
+        "nombre": "30"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "43623.00", 
+        "nombre": "30"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -3212,6 +4668,62 @@
   }, 
   {
     "dep": "05", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5772416.00", 
+        "nombre": "4335"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1942085.00", 
+        "nombre": "1308"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "643935.00", 
+        "nombre": "437"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "67892.00", 
+        "nombre": "49"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "56956.00", 
+        "nombre": "41"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "27435.00", 
+        "nombre": "19"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "8762.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "84", 
+        "libelle_cat_juridique": "Organisme professionnel", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -3324,6 +4836,56 @@
   }, 
   {
     "dep": "2A", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "4683111.00", 
+        "nombre": "3610"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1933508.00", 
+        "nombre": "1307"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1275027.00", 
+        "nombre": "872"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "89701.00", 
+        "nombre": "65"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "23568.00", 
+        "nombre": "16"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "11736.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "10430.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -3436,6 +4998,62 @@
   }, 
   {
     "dep": "24", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "9600010.00", 
+        "nombre": "7784"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3396162.00", 
+        "nombre": "2307"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1320530.00", 
+        "nombre": "906"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "162976.00", 
+        "nombre": "112"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "92900.00", 
+        "nombre": "72"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "74043.00", 
+        "nombre": "51"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "14576.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -3548,6 +5166,50 @@
   }, 
   {
     "dep": "16", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5643050.00", 
+        "nombre": "4535"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2271442.00", 
+        "nombre": "1535"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "662822.00", 
+        "nombre": "452"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "69359.00", 
+        "nombre": "50"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "45612.00", 
+        "nombre": "32"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "19775.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -3660,6 +5322,68 @@
   }, 
   {
     "dep": "59", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "29819672.00", 
+        "nombre": "23992"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "15212397.00", 
+        "nombre": "10296"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "7214903.00", 
+        "nombre": "4949"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "262056.00", 
+        "nombre": "187"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "181784.00", 
+        "nombre": "133"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "137935.00", 
+        "nombre": "92"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "28500.00", 
+        "nombre": "19"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "15000.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "99", 
+        "libelle_cat_juridique": "Autre personne morale de droit priv\u00e9", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -3778,6 +5502,50 @@
   }, 
   {
     "dep": "47", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5886805.00", 
+        "nombre": "4737"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2510155.20", 
+        "nombre": "1702"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "954930.00", 
+        "nombre": "653"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "121900.00", 
+        "nombre": "84"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "97040.00", 
+        "nombre": "70"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "16199.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -3890,6 +5658,56 @@
   }, 
   {
     "dep": "23", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "1697023.00", 
+        "nombre": "1375"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "452300.00", 
+        "nombre": "309"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "218654.00", 
+        "nombre": "150"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "39538.00", 
+        "nombre": "28"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "36824.00", 
+        "nombre": "28"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "7500.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -4002,6 +5820,50 @@
   }, 
   {
     "dep": "89", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "4593816.00", 
+        "nombre": "3649"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1979925.00", 
+        "nombre": "1339"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "874110.00", 
+        "nombre": "596"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "92300.00", 
+        "nombre": "65"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "58858.00", 
+        "nombre": "42"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "20124.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -4114,6 +5976,44 @@
   }, 
   {
     "dep": "90", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "1464712.00", 
+        "nombre": "1156"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "887738.00", 
+        "nombre": "598"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "308793.00", 
+        "nombre": "214"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "13710.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -4226,6 +6126,56 @@
   }, 
   {
     "dep": "18", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3938679.00", 
+        "nombre": "3126"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1622786.00", 
+        "nombre": "1097"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "546169.00", 
+        "nombre": "373"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "81580.00", 
+        "nombre": "61"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "28004.00", 
+        "nombre": "22"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "16500.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -4338,6 +6288,56 @@
   }, 
   {
     "dep": "81", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "6791531.00", 
+        "nombre": "5578"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2996812.00", 
+        "nombre": "2046"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1278065.00", 
+        "nombre": "878"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "105023.00", 
+        "nombre": "72"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "101510.00", 
+        "nombre": "75"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "28280.00", 
+        "nombre": "18"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "11000.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -4450,6 +6450,62 @@
   }, 
   {
     "dep": "50", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "7143136.00", 
+        "nombre": "5575"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3130860.00", 
+        "nombre": "2109"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "655128.00", 
+        "nombre": "443"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "116479.00", 
+        "nombre": "82"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "66187.00", 
+        "nombre": "46"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "64218.00", 
+        "nombre": "44"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "19681.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -4562,6 +6618,68 @@
   }, 
   {
     "dep": "62", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "16765130.00", 
+        "nombre": "13683"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "7066603.00", 
+        "nombre": "4779"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2889790.00", 
+        "nombre": "1972"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "121749.00", 
+        "nombre": "83"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "111357.00", 
+        "nombre": "86"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "110647.00", 
+        "nombre": "79"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "7500.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "3450.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -4680,6 +6798,50 @@
   }, 
   {
     "dep": "39", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3839885.00", 
+        "nombre": "3039"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1641357.00", 
+        "nombre": "1115"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "801750.00", 
+        "nombre": "548"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "63799.00", 
+        "nombre": "47"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "46309.00", 
+        "nombre": "32"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "13500.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -4792,6 +6954,68 @@
   }, 
   {
     "dep": "26", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "10563285.00", 
+        "nombre": "8458"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4693484.77", 
+        "nombre": "3178"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2166884.00", 
+        "nombre": "1484"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "137597.00", 
+        "nombre": "95"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "117732.00", 
+        "nombre": "82"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "21000.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "5840.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "53", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en commandite", 
+        "montant": "4320.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -4904,6 +7128,74 @@
   }, 
   {
     "dep": "64", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "14013011.00", 
+        "nombre": "11153"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "7248514.56", 
+        "nombre": "4919"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2361090.00", 
+        "nombre": "1621"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "263084.00", 
+        "nombre": "183"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "217193.00", 
+        "nombre": "154"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "48000.00", 
+        "nombre": "32"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "12000.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "62", 
+        "libelle_cat_juridique": "Groupement d'int\u00e9r\u00eat \u00e9conomique", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "3253.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -5016,6 +7308,74 @@
   }, 
   {
     "dep": "65", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5263081.00", 
+        "nombre": "4177"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2032476.00", 
+        "nombre": "1375"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "631799.00", 
+        "nombre": "429"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "74961.00", 
+        "nombre": "55"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "48741.00", 
+        "nombre": "33"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "15000.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "13500.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6500.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "84", 
+        "libelle_cat_juridique": "Organisme professionnel", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "3650.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -5128,6 +7488,56 @@
   }, 
   {
     "dep": "08", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3573383.00", 
+        "nombre": "2853"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1269244.00", 
+        "nombre": "857"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "363388.00", 
+        "nombre": "244"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "19042.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "18000.00", 
+        "nombre": "12"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "5231.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "2894.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -5240,6 +7650,56 @@
   }, 
   {
     "dep": "95", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "17750106.00", 
+        "nombre": "13339"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "7949485.00", 
+        "nombre": "5331"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "7346437.00", 
+        "nombre": "5018"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "66707.00", 
+        "nombre": "45"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "65312.00", 
+        "nombre": "45"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "48882.00", 
+        "nombre": "35"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "8810.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -5358,6 +7818,62 @@
   }, 
   {
     "dep": "11", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "7812911.00", 
+        "nombre": "6411"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3034233.00", 
+        "nombre": "2061"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1834517.00", 
+        "nombre": "1252"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "186541.00", 
+        "nombre": "129"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "81048.00", 
+        "nombre": "57"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "25500.00", 
+        "nombre": "17"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "7500.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "4653.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -5470,6 +7986,56 @@
   }, 
   {
     "dep": "55", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "2081991.00", 
+        "nombre": "1655"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "804503.00", 
+        "nombre": "543"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "351380.00", 
+        "nombre": "236"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "22849.00", 
+        "nombre": "16"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "20410.00", 
+        "nombre": "16"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "10255.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -5582,6 +8148,56 @@
   }, 
   {
     "dep": "48", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "1321604.00", 
+        "nombre": "1041"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "594053.00", 
+        "nombre": "403"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "172282.00", 
+        "nombre": "119"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "32407.00", 
+        "nombre": "24"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "27455.00", 
+        "nombre": "19"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "21480.00", 
+        "nombre": "15"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "3699.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -5688,6 +8304,68 @@
   }, 
   {
     "dep": "92", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "24186913.00", 
+        "nombre": "18115"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "12537454.00", 
+        "nombre": "8431"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "11415321.00", 
+        "nombre": "7778"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "166145.00", 
+        "nombre": "121"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "62012.00", 
+        "nombre": "45"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "52500.00", 
+        "nombre": "35"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "17551.00", 
+        "nombre": "12"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "7373.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "2335.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -5806,6 +8484,62 @@
   }, 
   {
     "dep": "57", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "11401811.00", 
+        "nombre": "9090"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "5680992.00", 
+        "nombre": "3821"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "3573429.00", 
+        "nombre": "2441"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "112373.00", 
+        "nombre": "80"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "86893.00", 
+        "nombre": "62"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "12000.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "8000.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -5918,6 +8652,50 @@
   }, 
   {
     "dep": "61", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3908340.00", 
+        "nombre": "3023"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1513007.00", 
+        "nombre": "1018"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "489913.00", 
+        "nombre": "332"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "70600.00", 
+        "nombre": "50"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "31794.00", 
+        "nombre": "23"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "21208.00", 
+        "nombre": "15"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -6030,6 +8808,50 @@
   }, 
   {
     "dep": "41", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "4638403.00", 
+        "nombre": "3677"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2326329.00", 
+        "nombre": "1582"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "730228.00", 
+        "nombre": "502"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "94782.00", 
+        "nombre": "68"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "40660.00", 
+        "nombre": "28"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "24000.00", 
+        "nombre": "16"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -6142,6 +8964,62 @@
   }, 
   {
     "dep": "40", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "9074880.00", 
+        "nombre": "7274"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4230552.00", 
+        "nombre": "2873"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1279284.00", 
+        "nombre": "882"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "115265.00", 
+        "nombre": "81"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "105379.00", 
+        "nombre": "80"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "18000.00", 
+        "nombre": "12"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "6318.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "5784.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -6260,6 +9138,56 @@
   }, 
   {
     "dep": "49", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "10506130.00", 
+        "nombre": "8289"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "5974589.00", 
+        "nombre": "4043"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1253294.09", 
+        "nombre": "857"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "323909.00", 
+        "nombre": "225"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "196556.00", 
+        "nombre": "141"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "54071.00", 
+        "nombre": "37"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "15524.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -6378,6 +9306,50 @@
   }, 
   {
     "dep": "58", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "2864922.00", 
+        "nombre": "2247"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1242342.00", 
+        "nombre": "844"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "396040.00", 
+        "nombre": "271"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "49291.00", 
+        "nombre": "37"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "27004.00", 
+        "nombre": "22"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "21000.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -6490,6 +9462,68 @@
   }, 
   {
     "dep": "63", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "10395557.00", 
+        "nombre": "8209"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "5304795.00", 
+        "nombre": "3588"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1751622.00", 
+        "nombre": "1215"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "122899.58", 
+        "nombre": "86"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "96650.00", 
+        "nombre": "67"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "27000.00", 
+        "nombre": "18"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6500.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "5194.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "3904.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -6602,6 +9636,62 @@
   }, 
   {
     "dep": "31", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "25206440.00", 
+        "nombre": "20103"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "12343095.00", 
+        "nombre": "8347"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "6700121.00", 
+        "nombre": "4601"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "364944.00", 
+        "nombre": "261"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "193833.00", 
+        "nombre": "138"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "24103.00", 
+        "nombre": "15"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "9161.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -6720,6 +9810,62 @@
   }, 
   {
     "dep": "60", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "9907288.00", 
+        "nombre": "7790"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4634279.00", 
+        "nombre": "3120"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2802169.00", 
+        "nombre": "1905"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "84488.00", 
+        "nombre": "63"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "69444.00", 
+        "nombre": "47"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "69411.00", 
+        "nombre": "48"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "5061.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -6838,6 +9984,56 @@
   }, 
   {
     "dep": "70", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3047741.00", 
+        "nombre": "2435"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1240224.00", 
+        "nombre": "831"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "395222.00", 
+        "nombre": "272"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "28998.00", 
+        "nombre": "23"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "23015.00", 
+        "nombre": "16"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -6950,6 +10146,68 @@
   }, 
   {
     "dep": "44", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "21124292.00", 
+        "nombre": "16462"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "12937092.00", 
+        "nombre": "8720"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "3181881.00", 
+        "nombre": "2190"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "279102.00", 
+        "nombre": "192"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "241442.00", 
+        "nombre": "170"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "69507.00", 
+        "nombre": "48"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "13500.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "4518.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -7068,6 +10326,56 @@
   }, 
   {
     "dep": "45", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "7950330.00", 
+        "nombre": "6351"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4320147.33", 
+        "nombre": "2908"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1930352.00", 
+        "nombre": "1319"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "75788.00", 
+        "nombre": "55"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "67722.00", 
+        "nombre": "47"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "34195.00", 
+        "nombre": "24"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -7186,6 +10494,68 @@
   }, 
   {
     "dep": "74", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "18178001.00", 
+        "nombre": "13870"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "7287310.00", 
+        "nombre": "4917"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2714701.00", 
+        "nombre": "1860"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "130305.00", 
+        "nombre": "92"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "78119.00", 
+        "nombre": "56"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "47798.00", 
+        "nombre": "33"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "31500.00", 
+        "nombre": "21"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "15278.00", 
+        "nombre": "12"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -7304,6 +10674,62 @@
   }, 
   {
     "dep": "2B", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5349658.00", 
+        "nombre": "4098"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1768244.00", 
+        "nombre": "1208"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1362334.00", 
+        "nombre": "923"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "94497.00", 
+        "nombre": "68"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "41213.00", 
+        "nombre": "29"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "13772.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "7725.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "5272.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -7416,6 +10842,50 @@
   }, 
   {
     "dep": "19", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3760562.00", 
+        "nombre": "2930"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1595839.00", 
+        "nombre": "1076"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "747732.00", 
+        "nombre": "517"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "68946.00", 
+        "nombre": "52"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "41516.00", 
+        "nombre": "30"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "23800.00", 
+        "nombre": "16"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -7528,6 +10998,68 @@
   }, 
   {
     "dep": "67", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "14535425.00", 
+        "nombre": "11463"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "9280554.00", 
+        "nombre": "6283"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "4294287.00", 
+        "nombre": "2940"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "275878.00", 
+        "nombre": "186"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "196352.00", 
+        "nombre": "139"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "11687.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "9674.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "29", 
+        "libelle_cat_juridique": "Autre groupement de droit priv\u00e9 non dot\u00e9 de la personnalit\u00e9 morale", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "3483.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -7646,6 +11178,62 @@
   }, 
   {
     "dep": "85", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "10396013.00", 
+        "nombre": "8167"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "6295257.00", 
+        "nombre": "4263"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1205414.00", 
+        "nombre": "835"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "153102.00", 
+        "nombre": "110"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "128577.00", 
+        "nombre": "96"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "52445.00", 
+        "nombre": "35"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "11098.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "6541.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -7758,6 +11346,56 @@
   }, 
   {
     "dep": "971", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "10338758.00", 
+        "nombre": "7675"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3720062.00", 
+        "nombre": "2503"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2819418.00", 
+        "nombre": "1943"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "120888.00", 
+        "nombre": "85"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "71091.00", 
+        "nombre": "49"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "12000.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -7870,6 +11508,68 @@
   }, 
   {
     "dep": "30", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "15372111.00", 
+        "nombre": "12476"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "7469402.00", 
+        "nombre": "5057"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "3361462.00", 
+        "nombre": "2304"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "198487.00", 
+        "nombre": "142"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "172245.00", 
+        "nombre": "125"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "39000.00", 
+        "nombre": "26"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "18850.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "3250.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -7982,6 +11682,56 @@
   }, 
   {
     "dep": "88", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5646120.00", 
+        "nombre": "4508"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3084665.00", 
+        "nombre": "2097"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1010916.00", 
+        "nombre": "691"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "51541.00", 
+        "nombre": "37"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "50612.00", 
+        "nombre": "35"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "12808.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "4868.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -8094,6 +11844,62 @@
   }, 
   {
     "dep": "71", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "7977113.00", 
+        "nombre": "6242"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3735431.00", 
+        "nombre": "2531"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1186101.00", 
+        "nombre": "819"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "221213.00", 
+        "nombre": "154"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "107056.00", 
+        "nombre": "78"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "26355.00", 
+        "nombre": "19"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "4015.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -8206,6 +12012,68 @@
   }, 
   {
     "dep": "83", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "28300927.00", 
+        "nombre": "22576"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "10836408.00", 
+        "nombre": "7311"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "7231439.00", 
+        "nombre": "4964"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "250986.00", 
+        "nombre": "180"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "204714.00", 
+        "nombre": "147"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "73421.00", 
+        "nombre": "47"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "25144.00", 
+        "nombre": "17"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "16382.00", 
+        "nombre": "15"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "10500.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -8324,6 +12192,68 @@
   }, 
   {
     "dep": "17", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "14765430.00", 
+        "nombre": "11721"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "6942073.00", 
+        "nombre": "4673"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1861955.00", 
+        "nombre": "1278"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "255304.00", 
+        "nombre": "180"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "107964.00", 
+        "nombre": "76"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "57280.00", 
+        "nombre": "39"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "15257.00", 
+        "nombre": "12"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "12715.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "7809.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -8436,6 +12366,62 @@
   }, 
   {
     "dep": "21", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "7576547.66", 
+        "nombre": "5983"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4772348.00", 
+        "nombre": "3226"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1187872.00", 
+        "nombre": "824"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "147701.00", 
+        "nombre": "107"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "124833.00", 
+        "nombre": "86"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "20000.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "11760.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -8554,6 +12540,74 @@
   }, 
   {
     "dep": "974", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "20874488.00", 
+        "nombre": "15532"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "8166957.00", 
+        "nombre": "5544"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2070682.00", 
+        "nombre": "1427"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "193500.00", 
+        "nombre": "129"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "181556.00", 
+        "nombre": "126"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "91988.00", 
+        "nombre": "66"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "12423.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "7964.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "62", 
+        "libelle_cat_juridique": "Groupement d'int\u00e9r\u00eat \u00e9conomique", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "23", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en participation", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -8672,6 +12726,68 @@
   }, 
   {
     "dep": "78", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "17657014.00", 
+        "nombre": "13503"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "9308493.00", 
+        "nombre": "6270"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "6806175.00", 
+        "nombre": "4659"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "95730.00", 
+        "nombre": "68"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "70891.00", 
+        "nombre": "50"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "61143.00", 
+        "nombre": "42"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "13500.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "7500.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "62", 
+        "libelle_cat_juridique": "Groupement d'int\u00e9r\u00eat \u00e9conomique", 
+        "montant": "5972.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -8790,6 +12906,56 @@
   }, 
   {
     "dep": "54", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "8874204.00", 
+        "nombre": "7075"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4384890.00", 
+        "nombre": "2960"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1632634.00", 
+        "nombre": "1119"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "107552.00", 
+        "nombre": "76"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "64423.00", 
+        "nombre": "45"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "30000.00", 
+        "nombre": "20"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "5139.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -8902,6 +13068,62 @@
   }, 
   {
     "dep": "56", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "12281824.00", 
+        "nombre": "9637"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "6805169.00", 
+        "nombre": "4588"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1420286.00", 
+        "nombre": "979"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "198359.00", 
+        "nombre": "140"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "101763.00", 
+        "nombre": "72"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "76500.00", 
+        "nombre": "51"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "21000.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "5250.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -9020,6 +13242,74 @@
   }, 
   {
     "dep": "75", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "57643005.00", 
+        "nombre": "43160"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "42582274.00", 
+        "nombre": "28577"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "29850950.00", 
+        "nombre": "20241"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "760629.00", 
+        "nombre": "534"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "292353.00", 
+        "nombre": "200"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "201250.00", 
+        "nombre": "133"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "106019.00", 
+        "nombre": "69"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "60240.00", 
+        "nombre": "39"
+      }, 
+      {
+        "code_cat_juridique": "62", 
+        "libelle_cat_juridique": "Groupement d'int\u00e9r\u00eat \u00e9conomique", 
+        "montant": "13500.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "53", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en commandite", 
+        "montant": "9716.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "22295.00", 
+        "nombre": "16"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -9138,6 +13428,62 @@
   }, 
   {
     "dep": "80", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "6911736.00", 
+        "nombre": "5644"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2655111.00", 
+        "nombre": "1785"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1151588.00", 
+        "nombre": "788"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "80924.00", 
+        "nombre": "58"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "57972.00", 
+        "nombre": "41"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "45926.00", 
+        "nombre": "32"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "4051.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -9250,6 +13596,68 @@
   }, 
   {
     "dep": "33", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "36141514.00", 
+        "nombre": "28432"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "16332751.00", 
+        "nombre": "11033"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "7514358.00", 
+        "nombre": "5175"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "854693.00", 
+        "nombre": "590"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "327468.00", 
+        "nombre": "232"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "60000.00", 
+        "nombre": "40"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "9875.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "9197.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -9374,6 +13782,56 @@
   }, 
   {
     "dep": "91", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "15663974.00", 
+        "nombre": "11994"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "7714972.00", 
+        "nombre": "5184"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "6297883.00", 
+        "nombre": "4291"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "75596.00", 
+        "nombre": "53"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "63361.00", 
+        "nombre": "43"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "36888.00", 
+        "nombre": "25"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -9492,6 +13950,50 @@
   }, 
   {
     "dep": "10", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3793426.00", 
+        "nombre": "2997"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1815104.00", 
+        "nombre": "1232"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "683273.00", 
+        "nombre": "478"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "52011.00", 
+        "nombre": "38"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "40061.00", 
+        "nombre": "26"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "24028.00", 
+        "nombre": "18"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -9604,6 +14106,74 @@
   }, 
   {
     "dep": "69", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "34346989.00", 
+        "nombre": "26507"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "18077982.40", 
+        "nombre": "12174"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "10895743.00", 
+        "nombre": "7473"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "510000.00", 
+        "nombre": "363"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "269934.00", 
+        "nombre": "192"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "53095.00", 
+        "nombre": "36"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "18274.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "16500.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "15301.00", 
+        "nombre": "12"
+      }, 
+      {
+        "code_cat_juridique": "62", 
+        "libelle_cat_juridique": "Groupement d'int\u00e9r\u00eat \u00e9conomique", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -9722,6 +14292,56 @@
   }, 
   {
     "dep": "68", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "9181527.00", 
+        "nombre": "7315"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "5592933.00", 
+        "nombre": "3776"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2594170.00", 
+        "nombre": "1767"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "234335.00", 
+        "nombre": "165"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "85053.00", 
+        "nombre": "59"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "19500.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -9834,6 +14454,50 @@
   }, 
   {
     "dep": "46", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3517251.00", 
+        "nombre": "2843"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1421202.00", 
+        "nombre": "966"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "549560.00", 
+        "nombre": "375"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "131677.00", 
+        "nombre": "90"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "40778.00", 
+        "nombre": "30"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "19359.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -9946,6 +14610,68 @@
   }, 
   {
     "dep": "93", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "23970617.00", 
+        "nombre": "17839"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "11565866.00", 
+        "nombre": "7772"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "11277045.00", 
+        "nombre": "7667"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "218777.00", 
+        "nombre": "152"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "59545.00", 
+        "nombre": "40"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "50338.00", 
+        "nombre": "34"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "10500.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "6500.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -10064,6 +14790,56 @@
   }, 
   {
     "dep": "04", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "4105265.00", 
+        "nombre": "3258"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1768876.00", 
+        "nombre": "1200"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "809332.00", 
+        "nombre": "553"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "62270.00", 
+        "nombre": "45"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "55579.00", 
+        "nombre": "42"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "19500.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "10302.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -10176,6 +14952,62 @@
   }, 
   {
     "dep": "03", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5130463.00", 
+        "nombre": "4072"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1862006.00", 
+        "nombre": "1262"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "753988.00", 
+        "nombre": "522"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "121702.00", 
+        "nombre": "86"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "42457.00", 
+        "nombre": "32"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "21278.00", 
+        "nombre": "15"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "7877.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -10288,6 +15120,50 @@
   }, 
   {
     "dep": "86", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5894011.00", 
+        "nombre": "4682"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2810077.00", 
+        "nombre": "1890"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "623428.00", 
+        "nombre": "433"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "113792.00", 
+        "nombre": "83"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "79591.00", 
+        "nombre": "56"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "34509.00", 
+        "nombre": "23"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -10400,6 +15276,62 @@
   }, 
   {
     "dep": "25", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "6739669.00", 
+        "nombre": "5268"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3778883.77", 
+        "nombre": "2567"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1147484.00", 
+        "nombre": "788"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "109756.00", 
+        "nombre": "76"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "52741.00", 
+        "nombre": "38"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "19500.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -10518,6 +15450,68 @@
   }, 
   {
     "dep": "66", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "10628059.00", 
+        "nombre": "8480"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4243937.00", 
+        "nombre": "2886"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "2415066.15", 
+        "nombre": "1665"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "154450.00", 
+        "nombre": "109"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "97586.00", 
+        "nombre": "71"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "16500.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "16500.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "6687.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -10630,6 +15624,62 @@
   }, 
   {
     "dep": "01", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "9475474.00", 
+        "nombre": "7423"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4257372.00", 
+        "nombre": "2880"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1974013.00", 
+        "nombre": "1347"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "110303.00", 
+        "nombre": "76"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "86941.00", 
+        "nombre": "61"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "24000.00", 
+        "nombre": "16"
+      }, 
+      {
+        "code_cat_juridique": "84", 
+        "libelle_cat_juridique": "Organisme professionnel", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "4079.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -10742,6 +15792,56 @@
   }, 
   {
     "dep": "35", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "13951228.00", 
+        "nombre": "10841"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "9032431.00", 
+        "nombre": "6079"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1470432.00", 
+        "nombre": "1017"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "186993.00", 
+        "nombre": "131"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "154423.00", 
+        "nombre": "111"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "86017.00", 
+        "nombre": "58"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "5919.00", 
+        "nombre": "5"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -10854,6 +15954,62 @@
   }, 
   {
     "dep": "87", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "5167539.00", 
+        "nombre": "4177"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2513455.77", 
+        "nombre": "1695"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "839551.00", 
+        "nombre": "570"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "64143.00", 
+        "nombre": "45"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "53377.00", 
+        "nombre": "38"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "31977.00", 
+        "nombre": "22"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "10500.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -10966,6 +16122,50 @@
   }, 
   {
     "dep": "32", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "3769303.00", 
+        "nombre": "2998"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1546264.00", 
+        "nombre": "1053"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "636825.00", 
+        "nombre": "439"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "131063.00", 
+        "nombre": "93"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "60072.00", 
+        "nombre": "42"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "13500.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -11078,6 +16278,56 @@
   }, 
   {
     "dep": "14", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "11054323.00", 
+        "nombre": "8719"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "5534020.00", 
+        "nombre": "3744"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1881203.00", 
+        "nombre": "1293"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "150039.00", 
+        "nombre": "108"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "129763.00", 
+        "nombre": "90"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "71110.00", 
+        "nombre": "48"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "10500.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -11196,6 +16446,56 @@
   }, 
   {
     "dep": "07", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "6848360.00", 
+        "nombre": "5512"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "2757886.00", 
+        "nombre": "1869"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "958315.00", 
+        "nombre": "659"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "113715.00", 
+        "nombre": "84"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "74320.00", 
+        "nombre": "54"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "16179.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "13393.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -11308,6 +16608,68 @@
   }, 
   {
     "dep": "29", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "13267166.00", 
+        "nombre": "10347"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "6316596.00", 
+        "nombre": "4267"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1474757.00", 
+        "nombre": "1013"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "138386.00", 
+        "nombre": "92"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "127631.00", 
+        "nombre": "89"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "113688.00", 
+        "nombre": "83"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "10553.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
@@ -11420,6 +16782,56 @@
   }, 
   {
     "dep": "43", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "4032238.00", 
+        "nombre": "3143"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1513871.00", 
+        "nombre": "1038"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "541860.00", 
+        "nombre": "378"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "77729.00", 
+        "nombre": "55"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "67496.00", 
+        "nombre": "47"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "37486.00", 
+        "nombre": "25"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 

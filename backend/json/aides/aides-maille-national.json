@@ -1,5 +1,73 @@
 [
   {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "1115277582.66", 
+        "nombre": "872417"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "542138049.80", 
+        "nombre": "365908"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "275890133.74", 
+        "nombre": "188680"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "12758052.00", 
+        "nombre": "8992"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "11250022.58", 
+        "nombre": "8017"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "4123714.00", 
+        "nombre": "2779"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "817651.00", 
+        "nombre": "564"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "552120.00", 
+        "nombre": "367"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "367888.00", 
+        "nombre": "318"
+      }, 
+      {
+        "code_cat_juridique": "31", 
+        "libelle_cat_juridique": "Personne morale de droit \u00e9tranger - immatricul\u00e9e au RCS", 
+        "montant": "351353.00", 
+        "nombre": "237"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "441366.00", 
+        "nombre": "306"
+      }
+    ], 
     "kpi_classe_effectif": [
       {
         "classe_effectif": "00", 
