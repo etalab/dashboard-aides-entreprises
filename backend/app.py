@@ -263,6 +263,286 @@ def getLastUpdateHtml():
         return "Données au "+str(lastupdate)
 
 
+
+################## Reports ##############
+
+@app.route('/stat/report', methods=['GET'])
+def getStatReportsNationalSectionAPE():
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "SELECT SUM(R.montant) AS TotalMontant, SUM(R.nombre) AS TotalSiren FROM report R;"
+        
+        my_query_2 = "SELECT R.code_section, SUM(R.montant) as montant, SUM(R.nombre) as nombre, N.libelle_section from report R LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = R.code_section GROUP BY R.code_section, N.libelle_section ORDER BY montant DESC;"
+
+        data = db.session.execute(my_query).fetchall()
+        data2 = db.session.execute(my_query_2).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['montant'] = str(data[i][0]) 
+            dataDict['nombre'] = str(data[i][1]) 
+            dataDict['kpi_top_10_naf'] = []
+            autresmontant = 0
+            autresnombre = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['section_naf'] = str(data2[j][0]) 
+                    dataDict2['montant'] = str(data2[j][1]) 
+                    dataDict2['nombre'] = str(data2[j][2])
+                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict['kpi_top_10_naf'].append(dataDict2)
+                else:
+                    autresmontant = autresmontant + data2[j][1]
+                    autresnombre = autresnombre + data2[j][2]           
+            dataDict2 = {}
+            dataDict2['section_naf'] = "Autres" 
+            dataDict2['montant'] = str(autresmontant)
+            dataDict2['nombre'] = str(autresnombre)
+            dataDict2['libelle_section_naf'] = "Autres sections NAF"
+            dataDict['kpi_top_10_naf'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+@app.route('/stat/report/reg', methods=['GET'])
+def getStatReportReg():
+    # GET a specific data by id
+    if request.method == 'GET':
+
+        my_query = "SELECT R.reg, SUM(R.montant) AS TotalMontant, SUM(R.nombre) AS TotalSiren, REG.libelle FROM report R LEFT JOIN region AS REG ON R.reg = REG.reg GROUP BY R.reg, REG.libelle;"
+
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['reg'] = str(data[i][0]) 
+            dataDict['montant'] = str(data[i][1]) 
+            dataDict['nombre'] = str(data[i][2])
+            dataDict['libelle'] = str(data[i][3]) 
+
+
+            my_query_2 = "SELECT R.code_section, SUM(R.montant) as montant, SUM(R.nombre) as nombre, N.libelle_section from report R LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = R.code_section WHERE R.reg = '"+str(data[i][0])+"' GROUP BY R.code_section, N.libelle_section ORDER BY montant DESC;"
+
+            data2 = db.session.execute(my_query_2).fetchall()
+
+            dataDict['kpi_top_10_naf'] = []
+
+            autresmontant = 0
+            autresnombre = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['section_naf'] = str(data2[j][0]) 
+                    dataDict2['montant'] = str(data2[j][1]) 
+                    dataDict2['nombre'] = str(data2[j][2])
+                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict['kpi_top_10_naf'].append(dataDict2)
+                else:
+                    autresmontant = autresmontant + data2[j][1]
+                    autresnombre = autresnombre + data2[j][2]           
+            dataDict2 = {}
+            dataDict2['section_naf'] = "Autres" 
+            dataDict2['montant'] = str(autresmontant)
+            dataDict2['nombre'] = str(autresnombre)
+            dataDict2['libelle_section_naf'] = "Autres sections NAF"
+            dataDict['kpi_top_10_naf'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+@app.route('/stat/report/dep', methods=['GET'])
+def getStatReportDepartementalSectionAPE():
+    # GET a specific data by id
+    if request.method == 'GET':
+
+
+        my_query = "SELECT R.dep, SUM(R.montant) AS TotalMontant, SUM(R.nombre) AS TotalSiren, D.libelle FROM report R LEFT JOIN departement AS D ON R.dep = D.dep GROUP BY R.dep, D.libelle;"
+
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['dep'] = str(data[i][0]) 
+            dataDict['montant'] = str(data[i][1]) 
+            dataDict['nombre'] = str(data[i][2])
+            dataDict['libelle'] = str(data[i][3]) 
+
+            my_query_2 = "SELECT R.code_section, SUM(R.montant) as montant, SUM(R.nombre) as nombre, N.libelle_section from report R LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = R.code_section WHERE R.dep = '"+str(data[i][0])+"' GROUP BY R.code_section, N.libelle_section ORDER BY montant DESC;"
+
+            data2 = db.session.execute(my_query_2).fetchall()
+
+            dataDict['kpi_top_10_naf'] = []
+            
+            autresmontant = 0
+            autresnombre = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['section_naf'] = str(data2[j][0]) 
+                    dataDict2['montant'] = str(data2[j][1]) 
+                    dataDict2['nombre'] = str(data2[j][2])
+                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict['kpi_top_10_naf'].append(dataDict2)
+                else:
+                    autresmontant = autresmontant + data2[j][1]
+                    autresnombre = autresnombre + data2[j][2]           
+            dataDict2 = {}
+            dataDict2['section_naf'] = "Autres" 
+            dataDict2['montant'] = str(autresmontant)
+            dataDict2['nombre'] = str(autresnombre)
+            dataDict2['libelle_section_naf'] = "Autres sections NAF"
+            dataDict['kpi_top_10_naf'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+
+################## PGE ##############
+
+@app.route('/stat/pge', methods=['GET'])
+def getStatPGEsNationalSectionAPE():
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "SELECT SUM(P.montant) AS TotalMontant, SUM(P.nombre) AS TotalSiren FROM pgenaf P;"
+        
+        my_query_2 = "SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;"
+
+        data = db.session.execute(my_query).fetchall()
+        data2 = db.session.execute(my_query_2).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['montant'] = str(data[i][0]) 
+            dataDict['nombre'] = str(data[i][1]) 
+            dataDict['kpi_top_10_naf'] = []
+            autresmontant = 0
+            autresnombre = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['section_naf'] = str(data2[j][0]) 
+                    dataDict2['montant'] = str(data2[j][1]) 
+                    dataDict2['nombre'] = str(data2[j][2])
+                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict['kpi_top_10_naf'].append(dataDict2)
+                else:
+                    autresmontant = autresmontant + data2[j][1]
+                    autresnombre = autresnombre + data2[j][2]           
+            dataDict2 = {}
+            dataDict2['section_naf'] = "Autres" 
+            dataDict2['montant'] = str(autresmontant)
+            dataDict2['nombre'] = str(autresnombre)
+            dataDict2['libelle_section_naf'] = "Autres sections NAF"
+            dataDict['kpi_top_10_naf'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+@app.route('/stat/pge/reg', methods=['GET'])
+def getStatPGEReg():
+    # GET a specific data by id
+    if request.method == 'GET':
+
+        my_query = "SELECT P.reg, SUM(P.montant) AS TotalMontant, SUM(P.nombre) AS TotalSiren, REG.libelle FROM pgenaf P LEFT JOIN region AS REG ON P.reg = REG.reg GROUP BY P.reg, REG.libelle;"
+
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['reg'] = str(data[i][0]) 
+            dataDict['montant'] = str(data[i][1]) 
+            dataDict['nombre'] = str(data[i][2])
+            dataDict['libelle'] = str(data[i][3]) 
+
+
+            my_query_2 = "SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '"+str(data[i][0])+"' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;"
+
+            data2 = db.session.execute(my_query_2).fetchall()
+
+            dataDict['kpi_top_10_naf'] = []
+
+            autresmontant = 0
+            autresnombre = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['section_naf'] = str(data2[j][0]) 
+                    dataDict2['montant'] = str(data2[j][1]) 
+                    dataDict2['nombre'] = str(data2[j][2])
+                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict['kpi_top_10_naf'].append(dataDict2)
+                else:
+                    autresmontant = autresmontant + data2[j][1]
+                    autresnombre = autresnombre + data2[j][2]           
+            dataDict2 = {}
+            dataDict2['section_naf'] = "Autres" 
+            dataDict2['montant'] = str(autresmontant)
+            dataDict2['nombre'] = str(autresnombre)
+            dataDict2['libelle_section_naf'] = "Autres sections NAF"
+            dataDict['kpi_top_10_naf'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+@app.route('/stat/pge/dep', methods=['GET'])
+def getStatPGEDepartementalSectionAPE():
+    # GET a specific data by id
+    if request.method == 'GET':
+
+
+        my_query = "SELECT P.dep, SUM(P.montant) AS TotalMontant, SUM(P.nombre) AS TotalSiren, D.libelle FROM pgenaf P LEFT JOIN departement AS D ON P.dep = D.dep GROUP BY P.dep, D.libelle;"
+
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['dep'] = str(data[i][0]) 
+            dataDict['montant'] = str(data[i][1]) 
+            dataDict['nombre'] = str(data[i][2])
+            dataDict['libelle'] = str(data[i][3]) 
+
+            my_query_2 = "SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '"+str(data[i][0])+"' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;"
+
+            data2 = db.session.execute(my_query_2).fetchall()
+
+            dataDict['kpi_top_10_naf'] = []
+            
+            autresmontant = 0
+            autresnombre = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['section_naf'] = str(data2[j][0]) 
+                    dataDict2['montant'] = str(data2[j][1]) 
+                    dataDict2['nombre'] = str(data2[j][2])
+                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict['kpi_top_10_naf'].append(dataDict2)
+                else:
+                    autresmontant = autresmontant + data2[j][1]
+                    autresnombre = autresnombre + data2[j][2]           
+            dataDict2 = {}
+            dataDict2['section_naf'] = "Autres" 
+            dataDict2['montant'] = str(autresmontant)
+            dataDict2['nombre'] = str(autresnombre)
+            dataDict2['libelle_section_naf'] = "Autres sections NAF"
+            dataDict['kpi_top_10_naf'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+
+
 '''
 
 ################## API V1 ##############
