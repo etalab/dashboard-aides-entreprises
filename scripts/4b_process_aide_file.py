@@ -211,6 +211,7 @@ dfaidenaenrichapi.to_csv("../data/aides/aides-na-api-"+daytoprocess+".csv",index
 print("Fichier des siret non diffusibles enrichis sauvegardé ici : ../data/aides/aides-na-api-"+daytoprocess+".csv")
 
 
+
 dfna = pd.read_csv("../data/aides/aides-na-api-"+daytoprocess+".csv", dtype={'siren':str,'Cde postal':str,'siret':str,'trancheeffectifsetablissement': str,'activiteprincipaleetablissement':str,'reg':str,'dep':str,'codecommuneetablissement':str,'categoriejuridiqueunitelegale':str})
 
 print("Loading communes")
@@ -280,11 +281,17 @@ print("Pourcentage de tranche effectifs manquants dans la base sirene : "+str(re
 
 print("Pourcentage d'effectifs manquants acoss mars : "+str(result3[result3['effectif_mars'].isna()].shape[0] / result3.shape[0] * 100))
 
-print("Pourcentage d'effectifs manquants acoss fevrier : "+str(result3[result3['effectif_fevrier'].isna()].shape[0] / result3.shape[0] * 100))
+print("Pourcentage d'effectifs manquants acoss fevrier : "+str(result3[result3['effectif_fev'].isna()].shape[0] / result3.shape[0] * 100))
 
 print("Pourcentage d'effectifs manquants acoss 2019 : "+str(result3[result3['effectif_2019'].isna()].shape[0] / result3.shape[0] * 100))
 
 print("Pourcentage d'effectifs globaux manquants : "+str(dfaidefinal[dfaidefinal['classe_effectif'].isna()].shape[0] / dfaidefinal.shape[0] * 100))
+
+print("---")
+print("Categorie Juridique")
+print("---")
+print("Pourcentage de cat juridique manquants : "+str(dfaidefinal[dfaidefinal['categoriejuridiqueunitelegale'].isna()].shape[0] / dfaidefinal.shape[0] * 100))
+
 
 print("---")
 print("APE")
