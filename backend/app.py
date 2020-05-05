@@ -403,6 +403,27 @@ def getStatReportDepartementalSectionAPE():
 
 
 
+@app.route('/lastupdate/report', methods=['GET'])
+def getLastUpdateDateReport():
+    if request.method == 'GET':
+        my_query = "select MAX(last_update) FROM report;"
+        data = db.session.execute(my_query).fetchall()
+        for i in range(len(data)):
+            lastupdate = str(data[i][0])
+        return str(lastupdate)
+
+@app.route('/lastupdatehtml/report', methods=['GET'])
+def getLastUpdateHtmlReport():
+    if request.method == 'GET':
+        my_query = "select MAX(last_update) FROM report;"
+        data = db.session.execute(my_query).fetchall()
+        for i in range(len(data)):
+            lastupdate = str(data[i][0])
+            lastupdate = datetime.datetime.strptime(lastupdate, "%Y-%m-%d").strftime("%d/%m/%Y")
+        return "Données au "+str(lastupdate)
+
+
+
 ################## PGE ##############
 
 @app.route('/stat/pge', methods=['GET'])
@@ -540,6 +561,26 @@ def getStatPGEDepartementalSectionAPE():
             dataJson.append(dataDict)
         return jsonify(dataJson)
 
+
+
+@app.route('/lastupdate/pge', methods=['GET'])
+def getLastUpdateDatePGE():
+    if request.method == 'GET':
+        my_query = "select MAX(last_update) FROM pgenaf;"
+        data = db.session.execute(my_query).fetchall()
+        for i in range(len(data)):
+            lastupdate = str(data[i][0])
+        return str(lastupdate)
+
+@app.route('/lastupdatehtml/pge', methods=['GET'])
+def getLastUpdateHtmlPGE():
+    if request.method == 'GET':
+        my_query = "select MAX(last_update) FROM pgenaf;"
+        data = db.session.execute(my_query).fetchall()
+        for i in range(len(data)):
+            lastupdate = str(data[i][0])
+            lastupdate = datetime.datetime.strptime(lastupdate, "%Y-%m-%d").strftime("%d/%m/%Y")
+        return "Données au "+str(lastupdate)
 
 
 
