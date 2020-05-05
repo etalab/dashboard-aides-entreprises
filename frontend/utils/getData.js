@@ -1,6 +1,6 @@
-console.log("+ + + utils/getData.js... ")
+import axios from 'axios'
 
-import axios from "axios"
+console.log('+ + + utils/getData.js... ')
 
 // - - - - - - - - - - - - - - - - - - - //
 // API UTILS
@@ -10,13 +10,13 @@ import axios from "axios"
 let abortableFetchSupported = false
 try {
   const ac = new AbortController()
-  fetch(".", { signal: ac.signal })
+  fetch('.', { signal: ac.signal })
     .then((r) => r.text())
     .then((result) => {
       abortableFetchSupported = false
     })
     .catch((err) => {
-      abortableFetchSupported = err.name === "AbortError"
+      abortableFetchSupported = err.name === 'AbortError'
     })
   ac.abort()
 } catch (e) {
@@ -27,23 +27,23 @@ try {
 // API CALLS
 // - - - - - - - - - - - - - - - - - - - //
 
-export default async function getDataFromUrl(fetchUrl, fetchMethod = "get") {
-  console.log("+ + + getDataFromUrl / fetchUrl : ", fetchUrl)
+export default async function getDataFromUrl (fetchUrl, fetchMethod = 'get') {
+  console.log('+ + + getDataFromUrl / fetchUrl : ', fetchUrl)
 
-  let methodsWithPayload = ["post", "put", "patch"]
+  // const methodsWithPayload = ['post', 'put', 'patch']
 
   return axios({
     method: fetchMethod,
-    url: fetchUrl,
+    url: fetchUrl
   })
     .then((resp) => {
-      console.log("+ + + getDataFromUrl / resp :", resp)
+      console.log('+ + + getDataFromUrl / resp :', resp)
       return resp
     })
 
     .catch((err) => {
-      console.log("+ + + getDataFromUrl / (axios) err / fetchUrl :", fetchUrl)
-      console.log("+ + + getDataFromUrl / (axios) err :", err)
-      return { data: "error" }
+      console.log('+ + + getDataFromUrl / (axios) err / fetchUrl :', fetchUrl)
+      console.log('+ + + getDataFromUrl / (axios) err :', err)
+      return { data: 'error' }
     })
 }
