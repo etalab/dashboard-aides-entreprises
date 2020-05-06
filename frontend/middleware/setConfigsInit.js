@@ -4,10 +4,10 @@ export default function ({ store, app }) {
   log && console.log('\n', '+ '.repeat(20))
   log && console.log('-MW- setConfigsInit ... ')
 
-  log && console.log('-MW- setConfigsInit ... / app :', app)
+  // log && console.log('-MW- setConfigsInit ... / app :', app)
 
-  const vuetifyTheme = app.vuetify.theme
-  log && console.log('-MW- setConfigsInit ... / vuetifyTheme :', vuetifyTheme)
+  // const vuetifyTheme = app.vuetify.theme
+  // log && console.log('-MW- setConfigsInit ... / vuetifyTheme :', vuetifyTheme)
 
   const configsAreSet = store.state.configs.configsAreSet
 

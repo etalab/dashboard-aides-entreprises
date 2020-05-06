@@ -22,6 +22,9 @@ body {
     <!-- NAVBAR -->
     <Navbar v-if="!isIframe" />
 
+    <!-- TABS ROUTES -->
+    <TabsRoutes v-if="routesTabs && routesTabs.isActivated"/>
+
     <!-- CONTENT LAYOUT -->
     <v-content 
       id="layout-content"
@@ -81,6 +84,7 @@ import Filters from "~/components/DataViews/Filters.vue"
 import FiltersFeedback from "~/components/DataViews/FiltersFeedback.vue"
 import Footer from "~/components/UX/Footer.vue"
 import NavbarFooter from "~/components/UX/NavbarFooter.vue"
+import TabsRoutes from "~/components/UX/TabsRoutes.vue"
 
 export default {
   components: {
@@ -91,6 +95,7 @@ export default {
     FiltersFeedback,
     Footer,
     NavbarFooter,
+    TabsRoutes,
   },
 
   data() {
@@ -160,6 +165,7 @@ export default {
 
     ...mapGetters({
       getCurrentLocale: "getCurrentLocale",
+      routesTabs: "getRoutesTabs",
       routeConfig: "getLocalRouteConfig",
       getCurrentNavbarFooter: "getCurrentNavbarFooter",
     }),

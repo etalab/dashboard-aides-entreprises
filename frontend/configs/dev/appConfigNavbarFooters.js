@@ -17,7 +17,7 @@ export const configAppNavbarFooters = {
       height: 70,
       grow: true,
       shift: true,
-      showOnSizes: ['xs', 'sm'],
+      // showOnSizes: ['xs', 'sm'],
 
       defaultBtnNav: 'map',
       redirectAtBreakShow: { path: '/map', btnNav: 'map' },

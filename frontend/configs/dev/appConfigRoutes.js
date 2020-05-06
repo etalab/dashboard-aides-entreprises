@@ -3,13 +3,344 @@ export const configAppRoutes = {
 
   // ROUTES / PAGES
   routes: [
+
+    // HOME - FDS
     {
       id: 'home',
       name: 'homepage',
       help: 'route home viewfor ',
       title: { fr: '' },
       titleI18n: 'routes.home.title',
-      urls: ['/'],
+      urls: ['/', '/fds'],
+      sourcesIds: [
+        'national-aides-raw',
+        'regions-aides-raw',
+        'departements-aides-raw'
+      ],
+      rawHtml: undefined,
+      navbarFooter: {
+        activated: true,
+        settings: {
+          id: 'navbar-footer-01'
+        }
+      },
+      pageRows: [
+        {
+          id: 'row1',
+          rowNumber: 1,
+          activated: true,
+          help: '',
+          columns: [
+            {
+              id: 'col1',
+              colName: 'Numbers and tables',
+              activated: true,
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4',
+              hasScrollbar: true,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-01',
+                    containerClass: 'pt-2 pb-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'numbers',
+                  activated: true,
+                  smallScreenVerticalOrder: 3,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'numbers-01',
+                    containerClass: 'py-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'globalButtons',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'global-button-01',
+                    containerClass: 'py-0 my-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'apexchart',
+                  activated: true,
+                  smallScreenVerticalOrder: 4,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'apexchart-01',
+                    containerClass: 'mt-4 pt-3 pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-02',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            },
+
+            {
+              id: 'col2',
+              colName: 'main map',
+              activated: true,
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8',
+              hasScrollbar: false,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                {
+                  component: 'map',
+                  activated: true,
+                  smallScreenVerticalOrder: 2,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'map-france-metro',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'row2',
+          rowNumber: 2,
+          activated: false,
+          help: '',
+          columns: [
+            {
+              id: 'col1',
+              colName: 'text',
+              activated: true,
+              colClass: '',
+              hasScrollbar: false,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: undefined,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-03',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    // PGE
+    {
+      id: 'pge',
+      name: 'pge page',
+      help: 'route view for pge dataset',
+      title: { fr: '' },
+      titleI18n: 'routes.pge.title',
+      urls: ['/pge'],
+      sourcesIds: [
+        'national-pge-raw',
+        'regions-pge-raw',
+        'departements-pge-raw'
+      ],
+      rawHtml: undefined,
+      navbarFooter: {
+        activated: true,
+        settings: {
+          id: 'navbar-footer-01'
+        }
+      },
+      pageRows: [
+        {
+          id: 'row1',
+          rowNumber: 1,
+          activated: true,
+          help: '',
+          columns: [
+            {
+              id: 'col1',
+              colName: 'Numbers and tables',
+              activated: true,
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4',
+              hasScrollbar: true,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-01',
+                    containerClass: 'pt-2 pb-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'numbers',
+                  activated: true,
+                  smallScreenVerticalOrder: 3,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'numbers-01',
+                    containerClass: 'py-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'globalButtons',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'global-button-01',
+                    containerClass: 'py-0 my-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'apexchart',
+                  activated: true,
+                  smallScreenVerticalOrder: 4,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'apexchart-01',
+                    containerClass: 'mt-4 pt-3 pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-02',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            },
+
+            {
+              id: 'col2',
+              colName: 'main map',
+              activated: true,
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8',
+              hasScrollbar: false,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                {
+                  component: 'map',
+                  activated: true,
+                  smallScreenVerticalOrder: 2,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'map-france-metro',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'row2',
+          rowNumber: 2,
+          activated: false,
+          help: '',
+          columns: [
+            {
+              id: 'col1',
+              colName: 'text',
+              activated: true,
+              colClass: '',
+              hasScrollbar: false,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: undefined,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-03',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    // REPORT
+    {
+      id: 'report',
+      name: 'report page',
+      help: 'route view for report dataset',
+      title: { fr: '' },
+      titleI18n: 'routes.report.title',
+      urls: ['/report'],
+      sourcesIds: [
+        'national-report-raw',
+        'regions-report-raw',
+        'departements-report-raw'
+      ],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,

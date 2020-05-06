@@ -90,6 +90,41 @@ export const configAppUIUX = {
       ]
     },
 
+    tabsRoutes: {
+
+      isActivated: true,
+      grow: true,
+      dark: true,
+      hasSlider: true,
+      slidersClass: 'primary',
+
+      // ITEMS ROUTES TABS
+      tabs: [
+        {
+          to: '/fds',
+          icon: undefined,
+          title: { fr: 'fonds de solidarité' },
+          titleMobile: { fr: 'FDS' },
+          isVisible: true
+        },
+        {
+          to: '/pge',
+          icon: undefined,
+          title: { fr: "prêts garantis par l'Etat" },
+          titleMobile: { fr: 'PGE' },
+          isVisible: true
+        },
+        {
+          to: '/reports',
+          icon: undefined,
+          title: { fr: "reports d'échéance" },
+          titleMobile: { fr: 'REP' },
+          isVisible: true
+        }
+
+      ]
+    },
+
     filters: {
       isVisible: false
     }

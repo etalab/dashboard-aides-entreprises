@@ -9,7 +9,6 @@ export const state = () => ({
   locale: undefined,
   locales: undefined,
 
-  // appTitle: process.env.CONFIG_APP.appTitle,
   appTitle: undefined,
 
   isIframe: false,
@@ -30,21 +29,19 @@ export const state = () => ({
   },
 
   // NAVBAR - on basis vuetify create-nuxt-app
-  // navbar: process.env.CONFIG_APP.UX_config.navbar,
   navbar: undefined,
 
   currentNavbarFooter: undefined,
   currentFooter: undefined,
 
   // ROUTES
-  localRouteConfig: undefined,
-  // configRoutes: process.env.CONFIG_APP.ROUTES_config,
+  routesTabs: undefined,
   configRoutes: undefined,
+  localRouteConfig: undefined,
+  routeNeedDataReset: true,
 
   // UX-UI
-  // configUX: process.env.CONFIG_APP.UX_config,
   configUX: undefined,
-  // configUI: process.env.CONFIG_APP.UI_config,
   configUI: undefined,
 
   // DATA VIEWS COMPONENTS SETTINGS
@@ -58,18 +55,6 @@ export const state = () => ({
     navbarFooters: undefined,
     globalButtons: undefined
   },
-  // configsData: {
-  //   maps: process.env.CONFIG_APP.MAP_config.settingsIds,
-  //   charts: process.env.CONFIG_APP.CHARTS_config.settingsIds,
-  //   numbers: process.env.CONFIG_APP.NUMBERS_config.settingsIds,
-  //   tables: process.env.CONFIG_APP.TABLES_config.settingsIds,
-  //   texts: process.env.CONFIG_APP.TEXTS_config.settingsIds,
-  //   rawdatas: process.env.CONFIG_APP.RAWDATA_config.settingsIds,
-
-  //   // PURE UX COMPONENTS
-  //   navbarFooters: process.env.CONFIG_APP.UX_navbarFooters.settingsIds,
-  //   globalButtons: process.env.CONFIG_APP.UX_globalButtons.settingsIds,
-  // },
 
   divsVisibility: [],
   triggerVisChange: 1
@@ -78,20 +63,20 @@ export const state = () => ({
 export const getters = {
   // INTERNATIONALIZATION
   getDefaultLocale: () => {
-    // state.log && console.log("S-index-G-getDefaultLocale ...")
     return process.env.CONFIG_APP.defaultLocale
   },
 
   getCurrentLocale: (state, getters) => {
-    // state.log && console.log("S-index-G-getCurrentLocale / state.locale : ", state.locale)
     return state.locale ? state.locale : getters.getDefaultLocale
   },
 
   // ROUTES
+  getRoutesTabs: (state) => {
+    return state.routesTabs
+  },
   getLocalRouteConfig: (state) => {
     return state.localRouteConfig
   },
-
   getCurrentRouteConfig: (state) => (currentRoute) => {
     try {
       return state.configRoutes.find(function (r) {
@@ -204,6 +189,7 @@ export const mutations = {
 
     state.appTitle = configs.UIUX_config.appTitle
 
+    state.routesTabs = configs.UIUX_config.UX_config.tabsRoutes
     state.configRoutes = configs.ROUTES_config.routes
 
     state.navbar = configs.UIUX_config.UX_config.navbar
@@ -254,6 +240,9 @@ export const mutations = {
     // state.log && console.log("S-index-M-setLocalRouteConfig...")
     state.localRouteConfig = routeConfig
     // state.log && console.log("S-index-M-setLocalRouteConfig / state.localRouteConfig : ", state.localRouteConfig)
+  },
+  setRouteNeedDataReset (state, boolean) {
+    state.routeNeedDataReset = boolean
   },
 
   // DIVS VISIBILITY

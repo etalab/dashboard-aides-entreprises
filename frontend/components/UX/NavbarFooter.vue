@@ -61,17 +61,10 @@ export default {
       navbarFooterConfig: undefined,
       bottomNav: undefined,
 
-      // type: 'number',
-      // number: 9999,
-      // selector: '#scroll-with-options',
-      // selected: 'Button',
-      // elements: ['Button', 'Radio group'],
-
       duration: 300,
       offset: 0,
       easing: "easeInOutCubic",
 
-      // easings: Object.keys(easings),
     }
   },
 
@@ -119,11 +112,11 @@ export default {
   beforeMount() {
     // set up view config
     this.navbarFooterConfig = this.getLocalConfig
-    this.log &&
-      console.log(
-        "C-NavbarFooter / beforeMount / this.navbarFooterConfig : ",
-        this.navbarFooterConfig
-      )
+    // this.log &&
+    //   console.log(
+    //     "C-NavbarFooter / beforeMount / this.navbarFooterConfig : ",
+    //     this.navbarFooterConfig
+    //   )
   },
 
   mounted() {
@@ -136,6 +129,7 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -167,7 +161,8 @@ export default {
       }
     },
     showCurrentNavbarFooter() {
-      let currentNavbarFooterOnSizes = this.getCurrentNavbarFooter.showOnSizes
+      // let currentNavbarFooterOnSizes = this.getCurrentNavbarFooter.showOnSizes
+      let currentNavbarFooterOnSizes = this.mobileBreakpoints
       // this.log && console.log('C-NavbarFooter / showCurrentNavbarFooter / currentNavbarFooterOnSizes : ', currentNavbarFooterOnSizes)
       //   let currentBreakpoint = this.getCurrentBreakpoint(this.windowSize.width)
       let currentBreakpoint = this.$vuetify.breakpoint.name

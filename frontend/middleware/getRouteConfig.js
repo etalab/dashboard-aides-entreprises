@@ -6,7 +6,6 @@ export default function ({ store, env, route, redirect }) {
   log && console.log('-MW- getRouteConfig ... ')
 
   const path = route.path
-
   const queryLocale = route.query.locale
   const queryIframe = route.query.iframe
 
@@ -29,6 +28,15 @@ export default function ({ store, env, route, redirect }) {
     store.commit('setIframe', isIframe)
   }
 
+  // retrieve last route config
+  const lastRouteConfig = store.getters.getLocalRouteConfig
+  const lastRouteConfigId = lastRouteConfig && lastRouteConfig.id
+  log &&
+    console.log(
+      '-MW- getRouteConfig / lastRouteConfigId : ',
+      lastRouteConfigId
+    )
+
   // retrieve local route config
   // log && console.log('-MW- getRouteConfig / path : ', path)
   const currentRouteConfig = store.getters.getCurrentRouteConfig(path)
@@ -43,7 +51,14 @@ export default function ({ store, env, route, redirect }) {
 
   // set local route config
   else {
+    // set route config
     store.commit('setLocalRouteConfig', currentRouteConfig)
+    // flag need data reset if lastConfig !== currentRouteConfig
+    if (lastRouteConfigId !== currentRouteConfig.id) {
+      store.commit('setRouteNeedDataReset', true)
+    } else {
+      store.commit('setRouteNeedDataReset', false)
+    }
   }
 
   log && console.log('\n')
