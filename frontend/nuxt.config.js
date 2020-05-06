@@ -274,7 +274,10 @@ export default {
         content: process.env.NUXT_ENV_APP_TITLE || 'ODAMAP'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', rel: 'stylesheet' }
+    ]
   },
 
   // for build or dev
@@ -321,8 +324,8 @@ export default {
   plugins: [
     { src: '~/plugins/mapbox', mode: 'client' },
     { src: '~/plugins/apexCharts', mode: 'client' },
-    { src: '~/plugins/matomo', mode: 'client' },
-    { src: '~/plugins/icons.js', ssr: false }
+    { src: '~/plugins/matomo', mode: 'client' }
+    // { src: '~/plugins/icons.js', ssr: false }
   ],
 
   /*
