@@ -189,8 +189,8 @@ export const configAppData = {
           help: '',
           from: 'static',
           //   url  : "${API_URL}/naf"
-          url: `${DATASETS_REPO_STATICS}/prod/taxonomies/nafs-minify.json`,
-          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/nafs.json`,
+          url: `${DATASETS_FOLDER}/prod/taxonomies/nafs.json`,
+          backupUrl: `${DATASETS_REPO_STATICS}/prod/taxonomies/nafs-minify.json`,
           displayed: false
         },
         {
@@ -198,8 +198,8 @@ export const configAppData = {
           help: '',
           from: 'static',
           //   url  : "${API_URL}/region"
-          url: `${DATASETS_REPO_STATICS}/prod/taxonomies/regions-minify.json`,
-          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/regions.json`,
+          url: `${DATASETS_FOLDER}/prod/taxonomies/regions.json`,
+          backupUrl: `${DATASETS_REPO_STATICS}/prod/taxonomies/regions-minify.json`,
           displayed: false
         },
         {
@@ -207,8 +207,8 @@ export const configAppData = {
           help: '',
           from: 'static',
           //   url  : "${API_URL}/departement"
-          url: `${DATASETS_REPO_STATICS}/prod/taxonomies/departements-minify.json`,
-          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/departements.json`,
+          url: `${DATASETS_FOLDER}/prod/taxonomies/departements.json`,
+          backupUrl: `${DATASETS_REPO_STATICS}/prod/taxonomies/departements-minify.json`,
           displayed: false
         },
         {
@@ -216,8 +216,8 @@ export const configAppData = {
           help: '',
           from: 'static',
           //   url  : "${API_URL}/classeeffectif"
-          url: `${DATASETS_REPO_STATICS}/prod/taxonomies/classes-effectifs-minify.json`,
-          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/classes-effectifs.json`,
+          url: `${DATASETS_FOLDER}/prod/taxonomies/classes-effectifs.json`,
+          backupUrl: `${DATASETS_REPO_STATICS}/prod/taxonomies/classes-effectifs-minify.json`,
           displayed: false
         },
 
@@ -225,8 +225,8 @@ export const configAppData = {
           id: 'taxo-nafs-colors',
           help: '',
           from: 'static',
-          url: `${DATASETS_REPO_STATICS}/prod/taxonomies/sections-naf.json`,
-          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/sections-naf.json`,
+          url: `${DATASETS_FOLDER}/prod/taxonomies/sections-naf.json`,
+          backupUrl: `${DATASETS_REPO_STATICS}/prod/taxonomies/sections-naf.json`,
           displayed: false
         },
 
@@ -235,8 +235,8 @@ export const configAppData = {
           id: 'centers',
           help: 'geo centres régions et départements',
           from: 'static',
-          url: `${DATASETS_REPO_STATICS}/geodata/centers.json`,
-          backupUrl: `${DATASETS_FOLDER}/geodata/centers.json`,
+          url: `${DATASETS_FOLDER}/geodata/centers.json`,
+          backupUrl: `${DATASETS_REPO_STATICS}/geodata/centers.json`,
           displayed: true
         },
 
@@ -245,8 +245,8 @@ export const configAppData = {
           id: 'national-aides-raw',
           help: 'serie chiffres aides à la maille nationale',
           from: 'static',
-          url: `${DATASETS_REPO_STATICS}/prod/aides/aides-maille-national-minify.json`,
-          backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-national.json`,
+          url: `${DATASETS_FOLDER}/prod/aides/aides-maille-national.json`,
+          backupUrl: `${DATASETS_REPO_STATICS}/prod/aides/aides-maille-national-minify.json`,
           displayed: true,
           copyTo: [
             {
@@ -281,16 +281,16 @@ export const configAppData = {
           id: 'regions-aides-raw',
           help: 'serie chiffres aides à la maille regionale',
           from: 'static',
-          url: `${DATASETS_REPO_STATICS}/prod/aides/aides-maille-regional-minify.json`,
-          backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-regional.json`,
+          url: `${DATASETS_FOLDER}/prod/aides/aides-maille-regional.json`,
+          backupUrl: `${DATASETS_REPO_STATICS}/prod/aides/aides-maille-regional-minify.json`,
           displayed: true
         },
         {
           id: 'departements-aides-raw',
           help: 'serie chiffres aides à la maille departementale',
           from: 'static',
-          url: `${DATASETS_REPO_STATICS}/prod/aides/aides-maille-departemental-minify.json`,
-          backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-departemental.json`,
+          url: `${DATASETS_FOLDER}/prod/aides/aides-maille-departemental.json`,
+          backupUrl: `${DATASETS_REPO_STATICS}/prod/aides/aides-maille-departemental-minify.json`,
           displayed: false
         }
       ]
