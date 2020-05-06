@@ -1,5 +1,5 @@
-console.log("+ + + plugins/apexCharts... ")
-import VueApexCharts from "vue-apexcharts"
+import VueApexCharts from 'vue-apexcharts'
 
-import Vue from "vue"
-Vue.component("apexchart", VueApexCharts)
+import Vue from 'vue'
+console.log('+ + + plugins/apexCharts... ')
+Vue.component('apexchart', VueApexCharts)
