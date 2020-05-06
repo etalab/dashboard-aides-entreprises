@@ -2,8 +2,8 @@ import {
   objectFromPath,
   sortArrayBy,
   moveArrayElement,
-  switchFormatFunctions,
-} from "~/utils/utils.js"
+  switchFormatFunctions
+} from '~/utils/utils.js'
 
 export const state = () => ({
   // GLOABAL APP ENV
@@ -34,13 +34,13 @@ export const state = () => ({
   // DISPLAYED DATA
   displayedData: undefined,
   specialStore: {},
-  triggerChange: 1,
+  triggerChange: 1
 })
 
 export const getters = {
   // BACKEND
   chooseBackend: (state) => {
-    let mode = state.mode
+    const mode = state.mode
     return state.dataSource.apiBackendUrl[mode]
   },
 
@@ -61,7 +61,7 @@ export const getters = {
     // state.initData.forEach( d => {
     //   state.log && console.log("S-data-G-getFromInitData ... d.id : ", d.id)
     // })
-    return state.initData.find((dataset) => dataset.id == id)
+    return state.initData.find((dataset) => dataset.id === id)
   },
 
   getFromDisplayedData: (state) => (id) => {
@@ -71,21 +71,21 @@ export const getters = {
     // })
     return (
       state.displayedData &&
-      state.displayedData.find((dataset) => dataset.id == id)
+      state.displayedData.find((dataset) => dataset.id === id)
     )
   },
 
   getFromSpecialStore: (state) => (id) => {
-    return state.specialStore.find((dataset) => dataset.id == id)
+    return state.specialStore.find((dataset) => dataset.id === id)
   },
 
   selectFromDisplayedData: (state, getters) => (paramsArray) => {
     // state.log && console.log("S-data-A-selectFromDisplayedData / paramsArray  : ", paramsArray )
-    let resultsArray = []
-    for (let params of paramsArray) {
-      let dataset = getters.getFromDisplayedData(params.id)
+    const resultsArray = []
+    for (const params of paramsArray) {
+      const dataset = getters.getFromDisplayedData(params.id)
       // state.log && console.log("S-data-A-selectFromDisplayedData / dataset  : ", dataset )
-      let result = dataset && objectFromPath(dataset.data, params.field)
+      const result = dataset && objectFromPath(dataset.data, params.field)
       resultsArray.push(result)
     }
     return resultsArray
@@ -100,31 +100,31 @@ export const getters = {
     let obj = state.specialStore[params.id]
     obj = params.key ? obj[params.key] : params.key
 
-    let sortParams = params.sortParams
+    const sortParams = params.sortParams
     if (sortParams) {
-      let clone = []
+      const clone = []
       // state.log && console.log("S-data-A-getFromSpecialStoreData / obj  : ", obj )
-      for (let i of obj) {
+      for (const i of obj) {
         clone.push(i)
       }
       // state.log && console.log("S-data-A-getFromSpecialStoreData / clone  : ", clone )
       // state.log && console.log("S-data-A-getFromSpecialStoreData / sortParams  : ", sortParams )
       let sorted = sortArrayBy(clone, sortParams)
-      if (sortParams.sortOrder == "descending") {
+      if (sortParams.sortOrder === 'descending') {
         sorted = sorted.reverse()
       }
-      let excParams = sortParams.exceptions
+      const excParams = sortParams.exceptions
       if (excParams) {
-        let arrayMaxIndex = sorted.length - 1
+        const arrayMaxIndex = sorted.length - 1
         if (excParams.putLast) {
-          let itemToMoveIndexLast = sorted.findIndex(
-            (i) => i[excParams.putLast.fieldName] == excParams.putLast.value
+          const itemToMoveIndexLast = sorted.findIndex(
+            (i) => i[excParams.putLast.fieldName] === excParams.putLast.value
           )
           sorted = moveArrayElement(sorted, itemToMoveIndexLast, arrayMaxIndex)
         }
         if (sortParams.putFirst) {
-          let itemToMoveIndexFirst = sorted.findIndex(
-            (i) => i[excParams.putFirst.fieldName] == excParams.putFirst.value
+          const itemToMoveIndexFirst = sorted.findIndex(
+            (i) => i[excParams.putFirst.fieldName] === excParams.putFirst.value
           )
           sorted = moveArrayElement(sorted, itemToMoveIndexFirst, 0)
         }
@@ -138,17 +138,17 @@ export const getters = {
     let data
 
     // get data from store
-    let fromId = params.fromDatasetId
-    if (params.fromStoreData == "initData") {
+    const fromId = params.fromDatasetId
+    if (params.fromStoreData === 'initData') {
       data = getters.getFromInitData(fromId).data
     }
-    if (params.fromStoreData == "displayeData") {
+    if (params.fromStoreData === 'displayeData') {
       data = getters.getFromDisplayedData(fromId).data
     }
     // state.log && console.log("S-data-G-getStoreSourceData ... data (1) : ", data)
 
     // filter out from params
-    let itemKey = params.fromPropKey
+    const itemKey = params.fromPropKey
       ? params.props[params.fromPropKey]
       : params.fromPropValue
     // state.log && console.log("S-data-G-getStoreSourceData ... itemKey : ", itemKey)
@@ -161,9 +161,9 @@ export const getters = {
 
     if (Array.isArray(data)) {
       if (fromDatasetKey) {
-        data = data.find((i) => i[fromDatasetKey] == itemKey)
+        data = data.find((i) => i[fromDatasetKey] === itemKey)
       }
-      if (typeof fromDatasetIndex !== "undefined") {
+      if (typeof fromDatasetIndex !== 'undefined') {
         data = data[fromDatasetIndex]
       }
       // state.log && console.log("S-data-G-getStoreSourceData ... data (2a) : ", data)
@@ -182,122 +182,122 @@ export const getters = {
     // state.log && console.log("S-data-G-getStoreSourceData ... data (4) : ", data)
 
     return data
-  },
+  }
 }
 
 export const mutations = {
-  setConfigData(state, configData) {
+  setConfigData (state, configData) {
     state.log &&
-      console.log("S-data-M-setConfigData / configData  : ", configData)
+      console.log('S-data-M-setConfigData / configData  : ', configData)
     state.dataSource = configData.dataSource
     state.defaultDataSetup = configData.defaultDataSetup
     state.filters = configData.filters
   },
-  setConfigBackendUrl(state, backendApi) {
+  setConfigBackendUrl (state, backendApi) {
     state.log &&
-      console.log("S-data-M-setConfigBackendUrl / backendApi  : ", backendApi)
+      console.log('S-data-M-setConfigBackendUrl / backendApi  : ', backendApi)
     state.backendApi = backendApi
   },
 
-  setInitDataAsSet(state) {
+  setInitDataAsSet (state) {
     state.isInitDataSet = !state.isInitDataSet
   },
 
   // DATASETS
 
-  pushToInitData(state, dataset) {
+  pushToInitData (state, dataset) {
     if (!state.initData) {
       state.initData = []
     }
     state.initData.push(dataset)
   },
 
-  pushToDisplayedData(state, dataset) {
+  pushToDisplayedData (state, dataset) {
     if (!state.displayedData) {
       state.displayedData = []
     }
     state.displayedData.push(dataset)
   },
 
-  setInitDataset(state, dataset) {
+  setInitDataset (state, dataset) {
     // state.log && console.log("S-data-M-setInitDataset / dataset.id  : ", dataset.id )
-    let foundIndex = state.initData.findIndex((x) => x.id == dataset.id)
+    const foundIndex = state.initData.findIndex((x) => x.id === dataset.id)
     state.initData[foundIndex] = dataset
   },
 
-  setDisplayedDataset(state, dataset) {
+  setDisplayedDataset (state, dataset) {
     // state.log && console.log("S-data-M-setDisplayedDataset / dataset.id  : ", dataset.id )
-    let foundIndex = state.displayedData.findIndex((x) => x.id == dataset.id)
+    const foundIndex = state.displayedData.findIndex((x) => x.id === dataset.id)
     state.displayedData[foundIndex] = dataset
   },
 
-  toggleTrigger(state) {
+  toggleTrigger (state) {
     state.triggerChange = state.triggerChange * -1
   },
 
-  setDeepNestedData(state, targetData) {
+  setDeepNestedData (state, targetData) {
     // state.log && console.log("S-data-M-setDeepNestedData / targetData  : ", targetData )
     state.specialStore[targetData.specialStoreId] = targetData.value
   },
 
   // FILTERS
 
-  resetFilters(state) {
+  resetFilters (state) {
     // state.log && console.log("S-data-M-resetFilters ...")
     state.activatedFilters = []
   },
 
-  setActivatedFilters(state, selectedFilters) {
+  setActivatedFilters (state, selectedFilters) {
     // state.log && console.log("S-data-M-setActivatedFilters / selectedFilters :", selectedFilters)
     state.activatedFilters = selectedFilters
-  },
+  }
 }
 
 export const actions = {
-  setUpConfigData({ state, commit, getters, rootGetters }) {
-    state.log && console.log("\n", "- ".repeat(20))
-    state.log && console.log("S-data-A-setUpConfigData / ... ")
+  setUpConfigData ({ state, commit, getters, rootGetters }) {
+    state.log && console.log('\n', '- '.repeat(20))
+    state.log && console.log('S-data-A-setUpConfigData / ... ')
 
-    let configData = rootGetters["configs/getConfigField"]("configAppData")
+    const configData = rootGetters['configs/getConfigField']('configAppData')
     state.log &&
-      console.log("S-data-A-setUpConfigData / configData :", configData)
-    commit("setConfigData", configData)
+      console.log('S-data-A-setUpConfigData / configData :', configData)
+    commit('setConfigData', configData)
 
-    let backendUrl = getters.chooseBackend
-    commit("setConfigBackendUrl", backendUrl)
+    const backendUrl = getters.chooseBackend
+    commit('setConfigBackendUrl', backendUrl)
   },
 
   // DATASETS
 
-  setDisplayedDataset({ getters, commit }, updatedDataset) {
+  setDisplayedDataset ({ getters, commit }, updatedDataset) {
     // state.log && console.log("S-data-A-setDisplayedDataset / updatedDataset.id  : ", updatedDataset.id )
 
     // check if dataset exists in displayedData
-    let dataset = getters.getFromDisplayedData(updatedDataset.id)
+    const dataset = getters.getFromDisplayedData(updatedDataset.id)
     // state.log && console.log("S-data-A-setDisplayedDataset / dataset : ", dataset)
 
-    if (typeof dataset !== "undefined") {
-      commit("setDisplayedDataset", updatedDataset)
+    if (typeof dataset !== 'undefined') {
+      commit('setDisplayedDataset', updatedDataset)
     } else {
-      commit("pushToDisplayedData", updatedDataset)
+      commit('pushToDisplayedData', updatedDataset)
     }
   },
 
-  setNestedData({ commit }, targetData) {
+  setNestedData ({ commit }, targetData) {
     // state.log && console.log("S-data-A-setNestedData / targetData  : ", targetData )
     // state.log && console.log("S-data-A-setNestedData / getters.getSpecialStore (1) : ", getters.getSpecialStore )
-    commit("setDeepNestedData", targetData)
+    commit('setDeepNestedData', targetData)
     // state.log && console.log("S-data-A-setNestedData / getters.getSpecialStore (2) : ", getters.getSpecialStore )
   },
 
-  getDataFromSpecialStoreData({ getters }, params) {
+  getDataFromSpecialStoreData ({ getters }, params) {
     return getters.getFromSpecialStoreData(params)
   },
 
-  resetStore({ getters, commit, dispatch }, params) {
+  resetStore ({ getters, commit, dispatch }, params) {
     // state.log && console.log("\nS-data-A-resetStore / params :", params)
 
-    for (let targetParams of params.targets) {
+    for (const targetParams of params.targets) {
       // state.log && console.log("S-data-A-resetStore / targetParams :", targetParams)
 
       let value = getters.getStoreSourceData(targetParams)
@@ -307,33 +307,33 @@ export const actions = {
         value = switchFormatFunctions(value, targetParams.format)
       }
 
-      let targetData = {
+      const targetData = {
         value: value,
-        specialStoreId: targetParams.targetSpecialStoreId,
+        specialStoreId: targetParams.targetSpecialStoreId
       }
       // state.log && console.log("S-data-A-resetStore / targetData :", targetData)
-      dispatch("setNestedData", targetData) // set element in : store.data.sepcialStore
+      dispatch('setNestedData', targetData) // set element in : store.data.sepcialStore
     }
 
-    commit("toggleTrigger")
+    commit('toggleTrigger')
   },
 
   // QUERIES
 
-  search({ state }) {
+  search ({ state }) {
     // TO DO
-    state.log && console.log("S-data-A-search / ... ")
+    state.log && console.log('S-data-A-search / ... ')
   },
 
   // FILTERS
 
-  toggleFilters({ state, commit, dispatch, getters }, filterTag) {
+  toggleFilters ({ state, commit, dispatch, getters }, filterTag) {
     state.log &&
-      console.log("\nS-data-A-getActivatedFilters / filterTag :", filterTag)
+      console.log('\nS-data-A-getActivatedFilters / filterTag :', filterTag)
 
     const currentFilters = getters.getActivatedFilters.map((a) => a)
     state.log &&
-      console.log("S-data-A-toggleFilters / currentFilters A :", currentFilters)
+      console.log('S-data-A-toggleFilters / currentFilters A :', currentFilters)
 
     // find item by FilterCode +
     var removeIndex = currentFilters
@@ -342,25 +342,25 @@ export const actions = {
       })
       .indexOf(filterTag.filterIdx)
     state.log &&
-      console.log("S-data-A-toggleFilters / removeIndex :", removeIndex)
+      console.log('S-data-A-toggleFilters / removeIndex :', removeIndex)
 
-    if (removeIndex != -1) {
+    if (removeIndex !== -1) {
       currentFilters.splice(removeIndex, 1)
     } else {
       currentFilters.push(filterTag)
     }
 
     state.log &&
-      console.log("S-data-A-toggleFilters / currentFilters B :", currentFilters)
-    commit("setActivatedFilters", currentFilters)
+      console.log('S-data-A-toggleFilters / currentFilters B :', currentFilters)
+    commit('setActivatedFilters', currentFilters)
 
     // update query and search
-    dispatch("search")
+    dispatch('search')
   },
 
-  clearFilters({ commit, dispatch }) {
+  clearFilters ({ commit, dispatch }) {
     // state.log && console.log("S-data-A-clearFilters / filterItem :", filterItem)
-    commit("resetFilters")
-    dispatch("search")
-  },
+    commit('resetFilters')
+    dispatch('search')
+  }
 }

@@ -2,7 +2,9 @@
 const DATASETS_REPO_BASE =
   'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/' // in repo folder
 const DATASETS_FOLDER = '/datasets' // in static folder
-const DATASETS_REPO_STATICS = 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/static-data/' // in repo's static folder
+// const AIDES_FILES_DATE    = '2020-04-17'
+// const AIDES_FILES_VERSION = '200417/sectionape'
+// const AIDES_FILES_VERSION = 'prod/sectionape'
 
 export const configAppData = {
   help: 'this file contains the data setup for the app',
@@ -10,7 +12,7 @@ export const configAppData = {
   // DESCRIBE THE BACKEND API
   dataSource: {
     docs:
-      'https://github.com/etalab/dashboard-aides-entreprises/tree/master/frontend',
+      'https://github.com/etalab/dashboard-aides-entreprises/tree/j_front/frontend',
 
     apiBackendUrl: {
       dev: 'http://pad-01.infra.data.gouv.fr:5000/',
