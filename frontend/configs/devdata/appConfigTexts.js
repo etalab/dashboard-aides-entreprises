@@ -124,8 +124,8 @@ export const configAppTexts = {
                   textContent: undefined,
                   fromUrl: {
                     fr:
+                      // 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/static-data/prod/aides/last_update_data.txt'
                       'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/aides/last_update_data.txt'
-                    // fr: "/datasets/aides/prod/last_update_data.txt",
                   }
                 }
               ]
