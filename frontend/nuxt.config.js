@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.0.13.linting - linting frontend code'
+const APP_VERSION = 'v.0.13.analyze - added analyze to build in nuxt config'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
