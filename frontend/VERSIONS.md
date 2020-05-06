@@ -21,6 +21,7 @@ date : 05-06/05/2020
   - fonts from CDN instead of build
   - analyzer in nuxt script : `nuxt run analyze`
   - big linting with standardJS 
+  - fetch minified data instead of pretty jsons
 
 -----------------
 date : 04/05/2020
