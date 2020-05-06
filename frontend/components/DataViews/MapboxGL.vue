@@ -60,6 +60,8 @@
       <!-- DEBUGGING -->
       <span v-if="log">
         {{ appVersion }}
+        <br>
+        <!-- {{ mapSizes }} -->
       </span>
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
@@ -106,12 +108,14 @@
         ref="mapboxDiv"
         access-token=""
         :map-style.sync="mapOptions.mapStyle"
-        :center="mapOptions.center"
         :zoom="mapOptions.zoom"
         :max-zoom="mapOptions.maxZoom"
         :min-zoom="mapOptions.minZoom"
+        :max-bounds="mapOptions.maxBounds"
+        :center="mapOptions.center"
         @load="onMapLoaded"
       >
+        <!-- :bounds="mapOptions.bounds" -->
         <!-- CONTROLS -->
         <MglNavigationControl position="bottom-right" />
       </MglMap>
@@ -158,6 +162,8 @@ export default {
       originalCenter: undefined,
       originalZoom: undefined,
       currentZoom: undefined,
+      mapMaxBounds: undefined,
+      mapSizes: undefined, 
 
       mapOptions: {
         mapStyle: undefined,
@@ -188,10 +194,12 @@ export default {
     triggerVis(next, prev) {
       this.getCanShow()
       this.handleResize()
+      this.setMapMaxBounds()
     },
 
     triggerBtn(next, prev) {
       this.handleResize()
+      this.setMapMaxBounds()
     },
 
     map(next, prev) {
@@ -238,10 +246,14 @@ export default {
     // set div visibility in store
     this.$store.commit("setDivVisibility", this.settings)
 
+    // setup maps
+    this.maps = this.viewConfig.maps
+    this.mapSizes = this.viewConfig.sizes
+    let mapMaxBounds = this.getMapMaxBounds()
+
     // set up MAPBOX options
     const mapOptionsRoute = this.viewConfig.map_options
     // this.log && console.log("C-MapboxGL / dataset / mapOptionsRoute : ", mapOptionsRoute)
-
     let mapOptions = {
       // mapStyle      : StylesOSM[ 'testRasterVoyager' ], // EtalabFile | testRasterVoyager | RasterVoyager
       // mapStyle      : StylesOSM[ 'EtalabRaw' ], // EtalabFile | testRasterVoyager | RasterVoyager
@@ -255,6 +267,8 @@ export default {
       // currentZoom: mapOptionsRoute.currentZoom,
       center: [mapOptionsRoute.center[1], mapOptionsRoute.center[0]],
       currentCenter: mapOptionsRoute.currentCenter,
+      bounds: mapOptionsRoute.bounds,
+      maxBounds: mapMaxBounds,
     }
     this.mapOptions = mapOptions
 
@@ -263,9 +277,6 @@ export default {
     this.originalCenter = [mapOptionsRoute.center[1], mapOptionsRoute.center[0]]
     this.originalZoom = mapOptionsRoute.zoom
     this.currentZoom = mapOptionsRoute.zoom
-
-    // setup maps
-    this.maps = this.viewConfig.maps
 
     // setup layers
     this.layers = this.viewConfig.layers
@@ -389,8 +400,6 @@ export default {
       // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
       this.mapHeight = mapHeight
 
-
-
       // little hack to redraw window on safari IOS
       // let isMobileOrTablet = this.$device.isMobileOrTablet
       // // let isMobileOrTablet = true
@@ -411,6 +420,31 @@ export default {
       // this.log && console.log("C-MapboxGL / getCurrentZoom ... currentZoom : ", currentZoom )
       this.currentZoom = currentZoom
       return currentZoom
+    },
+
+    getMapMaxBounds() {
+
+      let isMobile = this.isMobileWidth
+      let isIframe = this.isIframe
+      let sizes = this.mapSizes
+      
+      let mapMaxBounds
+      let sizesDevice = sizes && isMobile ? sizes.mobile : sizes.desktop
+      if (sizesDevice) {
+        mapMaxBounds = isIframe ? sizesDevice.maxBoundsIframe : sizesDevice.maxBounds
+      } 
+      
+      this.mapMaxBounds = mapMaxBounds
+      return mapMaxBounds
+    },
+
+    setMapMaxBounds() {
+      let mapbox = _map
+      if (mapbox) {
+        let mapMaxBounds = this.getMapMaxBounds()
+        this.log && console.log("getMapMaxBounds / mapbox : ", mapbox)
+        mapbox.setMaxBounds = mapMaxBounds
+      }
     },
 
     // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
@@ -816,10 +850,17 @@ export default {
       // this.log && console.log("\nC-MapboxGL / resetZoom ... " )
       // let mapbox = this.map
       let mapbox = _map
-      mapbox.flyTo({
-        center: this.originalCenter,
-        zoom: this.originalZoom,
-      })
+      // let mapMaxBounds = this.getMapMaxBounds()
+      // if (mapMaxBounds){
+      //   mapbox.setMaxBounds( undefined )
+      //   mapbox.fitBounds(mapMaxBounds)
+      //   this.setMapMaxBounds()
+      // } else {
+        mapbox.flyTo({
+          center: this.originalCenter,
+          zoom: this.originalZoom,
+        })
+      // }
     },
 
     // HIGHLIGHTS FUNCTIONS
