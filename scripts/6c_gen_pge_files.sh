@@ -10,10 +10,10 @@ output=`curl http://localhost:5000/lastupdate/pge | head -n 1| cut -d $' ' -f2`
 mkdir ../backend/json/pge/$output
 
 cp ../backend/json/pge/pge* ../backend/json/pge/$output
-# cp ../backend/json/pge/pge* ../frontend/static/datasets/prod/pge/
+cp ../backend/json/pge/pge* ../frontend/static/datasets/prod/pge/
 cp ../backend/json/pge/pge* ../static-data/prod/pge/
 
 curl http://localhost:5000/lastupdatehtml/pge > ../backend/json/pge/last_update_data.txt
 
-# cp ../backend/json/pge/last_update_data.txt ../frontend/static/datasets/prod/pge/
+cp ../backend/json/pge/last_update_data.txt ../frontend/static/datasets/prod/pge/
 cp ../backend/json/pge/last_update_data.txt ../static-data/prod/pge/
