@@ -22,6 +22,8 @@ print("Shape doit être égal à 24 : "+str(df.shape[0]))
 
 print("Concat in one df")
 
+df = df.iloc[:, :-3]
+
 i = 0
 j = 0
 k = 0
@@ -36,7 +38,7 @@ for column in df:
             j = j + 1
     i = i + 1
 
-df = df[:23]
+df = df[:24]
 
 print("Generate one simple df")
 
