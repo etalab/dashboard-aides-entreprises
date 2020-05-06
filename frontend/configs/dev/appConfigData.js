@@ -1,4 +1,4 @@
-wconst DATASETS_REPO_BACKEND =
+const DATASETS_REPO_BACKEND =
   'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/' // in repo folder
 
 const DATASETS_REPO_STATICS =
