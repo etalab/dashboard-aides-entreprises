@@ -34,9 +34,11 @@
           <span>
             {{ btn.title[locale] }}
           </span>
+
           <v-icon>
             {{ btn.icon }}
           </v-icon>
+
         </v-btn>
       </v-bottom-navigation>
     </v-footer>

@@ -1,10 +1,11 @@
 {
-  "name": "COVID-AIDES-PRO",
-  "version": "1.0.0",
-  "description": "dashboard des aides demandées par les entreprises durant la crise du Covid",
+  "name": "ODAMAP",
+  "version": "1.14.0",
+  "description": "Open Dashboard And Map",
   "author": "Julien_P",
   "private": true,
   "scripts": {
+    "analyze": "nuxt build --analyze",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "dev": "nuxt",
@@ -13,14 +14,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/device": "^1.2.7",
     "@turf/bbox": "^6.0.1",
     "apexcharts": "^3.18.1",
     "dotenv": "^8.2.0",
     "mapbox-gl": "^1.9.1",
-    "material-design-icons-iconfont": "^5.0.1",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.8.1",
     "vue-apexcharts": "^1.5.3",
