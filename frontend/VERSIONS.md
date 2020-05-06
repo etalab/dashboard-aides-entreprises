@@ -15,15 +15,11 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 
 
 -----------------
-date : 04/05/2020
-
-- v.0.13.1 : fix bug coherent colors when rebuilding apexChart
-
------------------
 date : 28/04/2020
 
-- v.0.13 : iframing override from from [`.env` file](.envExample)
-
+- v.0.15 : limit panning on map
+- v.0.14 : IE fix
+- v.0.13 : Iframe override
 
 -----------------
 date : 27/04/2020
@@ -41,4 +37,5 @@ date : 26/04/2020
 -----------------
 date : 23/04/2020
 
-- v.0 : first version (almost stable)
+- v.0 :
+  - first version (almost stable)

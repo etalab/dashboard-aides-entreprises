@@ -70,8 +70,13 @@ const circlePaintAides = {
     0,
     10,
     100,
+<<<<<<< HEAD
     60
   ]
+=======
+    60,
+  ],
+>>>>>>> 01e2da81a50aee76c10220530a0315d305f02f5c
 }
 
 // - - - - - - - - - - - - - - - - - - - - - //
@@ -103,6 +108,8 @@ const aidesProperties = [
 // MAPBOX COMPONENT SETTINGS
 // - - - - - - - - - - - - - - - - - - - - - //
 
+const FranceMetroBounds = [[ -8, 40.0 ],[ 10.3, 52.0 ]] 
+
 export const configAppMap = {
   help: 'this file contains the setup for the MapboxGL layout / component',
 
@@ -124,19 +131,37 @@ export const configAppMap = {
         currentCenter: [46.2276, 2.2137],
         zoom: 5,
         maxZoom: 18,
+<<<<<<< HEAD
         minZoom: 2
+=======
+        minZoom: 2,
+        bounds: FranceMetroBounds,
+>>>>>>> 01e2da81a50aee76c10220530a0315d305f02f5c
 
       },
 
       sizes: {
         desktop: {
           maxHeight: undefined,
+<<<<<<< HEAD
           maxHeightIframe: undefined
         },
         mobile: {
           maxHeight: undefined,
           maxHeightIframe: undefined
         }
+=======
+          maxHeightIframe: undefined,
+          maxBounds: undefined,
+          maxBoundsIframe: undefined, // [[ WS ], [ EN ]]
+        },
+        mobile: {
+          maxHeight: undefined,
+          maxHeightIframe: undefined,
+          maxBounds: undefined,
+          maxBoundsIframe: FranceMetroBounds, // [[ WS ], [ EN ]]
+        },
+>>>>>>> 01e2da81a50aee76c10220530a0315d305f02f5c
       },
 
       // - - - - - - - - - - - - - - - - - - //
@@ -622,9 +647,14 @@ export const configAppMap = {
         mapStyle: 'EtalabUrl',
         center: [46.2276, 2.2137],
         currentCenter: [46.2276, 2.2137],
-        zoom: 4.8,
+        zoom: 4.6,
         maxZoom: 9.5,
+<<<<<<< HEAD
         minZoom: 2
+=======
+        minZoom: 2,
+        bounds: FranceMetroBounds,
+>>>>>>> 01e2da81a50aee76c10220530a0315d305f02f5c
       },
 
       copySettingsFrom: [
