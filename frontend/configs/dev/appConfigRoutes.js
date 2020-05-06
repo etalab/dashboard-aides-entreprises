@@ -1,469 +1,469 @@
 export const configAppRoutes = {
-  help: "this file contains the setup for the routes",
+  help: 'this file contains the setup for the routes',
 
   // ROUTES / PAGES
   routes: [
     {
-      id: "home",
-      name: "homepage",
-      help: "route home viewfor ",
-      title: { fr: "" },
-      titleI18n: "routes.home.title",
-      urls: ["/"],
+      id: 'home',
+      name: 'homepage',
+      help: 'route home viewfor ',
+      title: { fr: '' },
+      titleI18n: 'routes.home.title',
+      urls: ['/'],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,
         settings: {
-          id: "navbar-footer-01",
-        },
+          id: 'navbar-footer-01'
+        }
       },
       pageRows: [
         {
-          id: "row1",
+          id: 'row1',
           rowNumber: 1,
           activated: true,
-          help: "",
+          help: '',
           columns: [
             {
-              id: "col1",
-              colName: "Numbers and tables",
+              id: 'col1',
+              colName: 'Numbers and tables',
               activated: true,
-              colClass: "col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4",
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4',
               hasScrollbar: true,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-01",
-                    containerClass: "pt-2 pb-0",
+                    id: 'text-01',
+                    containerClass: 'pt-2 pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "numbers",
+                  component: 'numbers',
                   activated: true,
                   smallScreenVerticalOrder: 3,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "numbers-01",
-                    containerClass: "py-0",
+                    id: 'numbers-01',
+                    containerClass: 'py-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "globalButtons",
+                  component: 'globalButtons',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "global-button-01",
-                    containerClass: "py-0 my-0",
+                    id: 'global-button-01',
+                    containerClass: 'py-0 my-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "apexchart",
+                  component: 'apexchart',
                   activated: true,
                   smallScreenVerticalOrder: 4,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "apexchart-01",
-                    containerClass: "mt-4 pt-3 pb-0",
+                    id: 'apexchart-01',
+                    containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-02",
-                    containerClass: "pb-0",
+                    id: 'text-02',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: false,
-                    desktopIsVisibleDefault: true,
-                  },
-                },
-              ],
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
             },
 
             {
-              id: "col2",
-              colName: "main map",
+              id: 'col2',
+              colName: 'main map',
               activated: true,
-              colClass: "col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8",
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8',
               hasScrollbar: false,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "map",
+                  component: 'map',
                   activated: true,
                   smallScreenVerticalOrder: 2,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "map-france-metro",
-                    containerClass: "pb-0",
+                    id: 'map-france-metro',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
-                },
-              ],
-            },
-          ],
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            }
+          ]
         },
         {
-          id: "row2",
+          id: 'row2',
           rowNumber: 2,
           activated: false,
-          help: "",
+          help: '',
           columns: [
             {
-              id: "col1",
-              colName: "text",
+              id: 'col1',
+              colName: 'text',
               activated: true,
-              colClass: "",
+              colClass: '',
               hasScrollbar: false,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-03",
-                    containerClass: "pb-0",
+                    id: 'text-03',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: false,
-                    desktopIsVisibleDefault: false,
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
+                    desktopIsVisibleDefault: false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
 
     // ONLY MAP
     {
-      id: "map",
-      name: "map",
-      help: "route map viewfor ",
-      title: { fr: "" },
-      titleI18n: "routes.map.title",
-      urls: ["/map"],
+      id: 'map',
+      name: 'map',
+      help: 'route map viewfor ',
+      title: { fr: '' },
+      titleI18n: 'routes.map.title',
+      urls: ['/map'],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,
         settings: {
-          id: "navbar-footer-01",
-        },
+          id: 'navbar-footer-01'
+        }
       },
       pageRows: [
         {
-          id: "row1",
+          id: 'row1',
           rowNumber: 1,
           activated: true,
-          help: "",
+          help: '',
           columns: [
             {
-              id: "col1",
-              colName: "map",
+              id: 'col1',
+              colName: 'map',
               activated: true,
-              colClass: "",
+              colClass: '',
               hasScrollbar: true,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-01",
-                    containerClass: "pb-0",
+                    id: 'text-01',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "globalButtons",
+                  component: 'globalButtons',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "global-button-01",
-                    containerClass: "pt-0 mt-0",
+                    id: 'global-button-01',
+                    containerClass: 'pt-0 mt-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "numbers",
+                  component: 'numbers',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "numbers-01",
-                    containerClass: "pb-0",
+                    id: 'numbers-01',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "map",
+                  component: 'map',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "map-france-metro",
-                    containerClass: "pb-0",
+                    id: 'map-france-metro',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
 
     // ONLY CHARTS
     {
-      id: "charts",
-      name: "charts",
-      help: "route for charts view",
-      title: { fr: "" },
-      titleI18n: "routes.charts.title",
-      urls: ["/charts"],
+      id: 'charts',
+      name: 'charts',
+      help: 'route for charts view',
+      title: { fr: '' },
+      titleI18n: 'routes.charts.title',
+      urls: ['/charts'],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,
         settings: {
-          id: "navbar-footer-01",
-        },
+          id: 'navbar-footer-01'
+        }
       },
       pageRows: [
         {
-          id: "row1",
+          id: 'row1',
           rowNumber: 1,
           activated: true,
-          help: "",
+          help: '',
           columns: [
             {
-              id: "col1",
-              colName: "chart",
+              id: 'col1',
+              colName: 'chart',
               activated: true,
-              colClass: "",
+              colClass: '',
               hasScrollbar: true,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-01",
-                    containerClass: "pb-0",
+                    id: 'text-01',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "globalButtons",
+                  component: 'globalButtons',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "global-button-01",
-                    containerClass: "pt-0 mt-0",
+                    id: 'global-button-01',
+                    containerClass: 'pt-0 mt-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "numbers",
+                  component: 'numbers',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "numbers-01",
-                    containerClass: "pb-0",
+                    id: 'numbers-01',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "apexchart",
+                  component: 'apexchart',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "apexchart-01",
-                    containerClass: "pb-0",
+                    id: 'apexchart-01',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "apexchart",
+                  component: 'apexchart',
                   activated: true,
                   smallScreenVerticalOrder: 5,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "apexchart-01bis",
-                    containerClass: "mt-4 pt-3 pb-0",
+                    id: 'apexchart-01bis',
+                    containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
+                    desktopIsVisibleDefault: true
+                  }
                 },
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-02",
-                    containerClass: "pb-0",
+                    id: 'text-02',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
 
     // ONLY TABLE
     {
-      id: "table",
-      name: "table",
-      help: "route for table view",
-      title: { fr: "" },
-      titleI18n: "routes.table.title",
-      urls: ["/table"],
+      id: 'table',
+      name: 'table',
+      help: 'route for table view',
+      title: { fr: '' },
+      titleI18n: 'routes.table.title',
+      urls: ['/table'],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,
         settings: {
-          id: "navbar-footer-01",
-        },
+          id: 'navbar-footer-01'
+        }
       },
       pageRows: [
         {
-          id: "row1",
+          id: 'row1',
           rowNumber: 1,
           activated: true,
-          help: "",
+          help: '',
           columns: [
             {
-              id: "col1",
-              colName: "table",
+              id: 'col1',
+              colName: 'table',
               activated: true,
-              colClass: "",
+              colClass: '',
               hasScrollbar: false,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "table",
+                  component: 'table',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "table-01",
-                    containerClass: "pb-0",
+                    id: 'table-01',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
 
     // ONLY RAW DATA
     {
-      id: "rawData",
-      name: "rawData",
-      help: "route for rawData view",
-      title: { fr: "" },
-      titleI18n: "routes.rawData.title",
-      urls: ["/rawData"],
+      id: 'rawData',
+      name: 'rawData',
+      help: 'route for rawData view',
+      title: { fr: '' },
+      titleI18n: 'routes.rawData.title',
+      urls: ['/rawData'],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,
         settings: {
-          id: "navbar-footer-01",
-          containerClass: "",
+          id: 'navbar-footer-01',
+          containerClass: '',
           mobileIsVisibleDefault: true,
-          desktopIsVisibleDefault: true,
-        },
+          desktopIsVisibleDefault: true
+        }
       },
       pageRows: [
         {
-          id: "row1",
+          id: 'row1',
           rowNumber: 1,
           activated: true,
-          help: "",
+          help: '',
           columns: [
             {
-              id: "col1",
-              colName: "rawData",
+              id: 'col1',
+              colName: 'rawData',
               activated: true,
-              colClass: "",
+              colClass: '',
               hasScrollbar: false,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "rawData",
+                  component: 'rawData',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "chart-01",
-                    containerClass: "pb-0",
+                    id: 'chart-01',
+                    containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true,
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  ],
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

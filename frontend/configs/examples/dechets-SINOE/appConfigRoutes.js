@@ -1,77 +1,77 @@
 export const configAppRoutes = {
-  help: "this file contains the setup for the routes",
+  help: 'this file contains the setup for the routes',
 
   // ROUTES / PAGES
   routes: [
     {
-      name: "home",
-      help: "route home viewfor ",
-      title: { fr: "" },
-      titleI18n: "routes.home.title",
-      urls: ["/"],
+      name: 'home',
+      help: 'route home viewfor ',
+      title: { fr: '' },
+      titleI18n: 'routes.home.title',
+      urls: ['/'],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,
         settings: {
-          id: "navbar-footer-01",
-        },
+          id: 'navbar-footer-01'
+        }
       },
       pageRows: [
         {
           rowNumber: 1,
           activated: true,
-          help: "",
+          help: '',
           columns: [
             {
-              colName: "Numbers and tables",
+              colName: 'Numbers and tables',
               activated: true,
-              colClass: "col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4",
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4',
               hasScrollbar: true,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-01",
-                    containerClass: "pb-0",
-                  },
+                    id: 'text-01',
+                    containerClass: 'pb-0'
+                  }
                 },
                 {
-                  component: "globalButton",
+                  component: 'globalButton',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "global-button-01",
-                    containerClass: "pt-0 mt-0",
-                  },
+                    id: 'global-button-01',
+                    containerClass: 'pt-0 mt-0'
+                  }
                 },
                 {
-                  component: "numbers",
+                  component: 'numbers',
                   activated: true,
                   smallScreenVerticalOrder: 3,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "numbers-01",
-                    containerClass: "py-0",
-                  },
+                    id: 'numbers-01',
+                    containerClass: 'py-0'
+                  }
                 },
                 {
-                  component: "apexchart",
+                  component: 'apexchart',
                   activated: true,
                   smallScreenVerticalOrder: 4,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "apexchart-01",
-                    containerClass: "mt-4 pt-3 pb-0",
-                  },
+                    id: 'apexchart-01',
+                    containerClass: 'mt-4 pt-3 pb-0'
+                  }
                 },
                 // { component : "apexchart",
                 //   activated : true,
@@ -93,338 +93,338 @@ export const configAppRoutes = {
                 //   },
                 // },
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-02",
-                    containerClass: "pb-0",
-                  },
-                },
-              ],
+                    id: 'text-02',
+                    containerClass: 'pb-0'
+                  }
+                }
+              ]
             },
 
             {
-              colName: "main map",
+              colName: 'main map',
               activated: true,
-              colClass: "col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8",
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8',
               hasScrollbar: false,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "map",
+                  component: 'map',
                   activated: true,
                   smallScreenVerticalOrder: 2,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "map-france-metro",
-                    containerClass: "pb-0",
-                    notShownFor: ["xs", "sm"],
-                  },
-                },
-              ],
-            },
-          ],
+                    id: 'map-france-metro',
+                    containerClass: 'pb-0',
+                    notShownFor: ['xs', 'sm']
+                  }
+                }
+              ]
+            }
+          ]
         },
         {
           rowNumber: 2,
           activated: false,
-          help: "",
+          help: '',
           columns: [
             {
-              colName: "text",
+              colName: 'text',
               activated: true,
-              colClass: "",
+              colClass: '',
               hasScrollbar: false,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-02",
-                    containerClass: "pb-0",
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
+                    id: 'text-02',
+                    containerClass: 'pb-0'
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
 
     // ONLY MAP
     {
-      name: "map",
-      help: "route map viewfor ",
-      title: { fr: "" },
-      titleI18n: "routes.map.title",
-      urls: ["/map"],
+      name: 'map',
+      help: 'route map viewfor ',
+      title: { fr: '' },
+      titleI18n: 'routes.map.title',
+      urls: ['/map'],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,
         settings: {
-          id: "navbar-footer-01",
-        },
+          id: 'navbar-footer-01'
+        }
       },
       pageRows: [
         {
           rowNumber: 1,
           activated: true,
-          help: "",
+          help: '',
           columns: [
             {
-              colName: "map",
+              colName: 'map',
               activated: true,
-              colClass: "",
+              colClass: '',
               hasScrollbar: true,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-01",
-                    containerClass: "pb-0",
-                  },
+                    id: 'text-01',
+                    containerClass: 'pb-0'
+                  }
                 },
                 {
-                  component: "globalButton",
+                  component: 'globalButton',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "global-button-01",
-                    containerClass: "pt-0 mt-0",
-                  },
+                    id: 'global-button-01',
+                    containerClass: 'pt-0 mt-0'
+                  }
                 },
                 {
-                  component: "numbers",
+                  component: 'numbers',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "numbers-01",
-                    containerClass: "pb-0",
-                  },
+                    id: 'numbers-01',
+                    containerClass: 'pb-0'
+                  }
                 },
                 {
-                  component: "map",
+                  component: 'map',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "map-france-metro",
-                    containerClass: "pb-0",
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
+                    id: 'map-france-metro',
+                    containerClass: 'pb-0'
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
 
     // ONLY CHARTS
     {
-      name: "charts",
-      help: "route for charts view",
-      title: { fr: "" },
-      titleI18n: "routes.charts.title",
-      urls: ["/charts"],
+      name: 'charts',
+      help: 'route for charts view',
+      title: { fr: '' },
+      titleI18n: 'routes.charts.title',
+      urls: ['/charts'],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,
         settings: {
-          id: "navbar-footer-01",
-        },
+          id: 'navbar-footer-01'
+        }
       },
       pageRows: [
         {
           rowNumber: 1,
           activated: true,
-          help: "",
+          help: '',
           columns: [
             {
-              colName: "chart",
+              colName: 'chart',
               activated: true,
-              colClass: "",
+              colClass: '',
               hasScrollbar: true,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-01",
-                    containerClass: "pb-0",
-                  },
+                    id: 'text-01',
+                    containerClass: 'pb-0'
+                  }
                 },
                 {
-                  component: "globalButton",
+                  component: 'globalButton',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "global-button-01",
-                    containerClass: "pt-0 mt-0",
-                  },
+                    id: 'global-button-01',
+                    containerClass: 'pt-0 mt-0'
+                  }
                 },
                 {
-                  component: "numbers",
+                  component: 'numbers',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "numbers-01",
-                    containerClass: "pb-0",
-                  },
+                    id: 'numbers-01',
+                    containerClass: 'pb-0'
+                  }
                 },
                 {
-                  component: "apexchart",
+                  component: 'apexchart',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "apexchart-01",
-                    containerClass: "pb-0",
-                  },
+                    id: 'apexchart-01',
+                    containerClass: 'pb-0'
+                  }
                 },
                 {
-                  component: "apexchart",
+                  component: 'apexchart',
                   activated: true,
                   smallScreenVerticalOrder: 5,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "apexchart-01bis",
-                    containerClass: "mt-4 pt-3 pb-0",
-                  },
+                    id: 'apexchart-01bis',
+                    containerClass: 'mt-4 pt-3 pb-0'
+                  }
                 },
                 {
-                  component: "text",
+                  component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: 1,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "text-02",
-                    containerClass: "pb-0",
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
+                    id: 'text-02',
+                    containerClass: 'pb-0'
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
 
     // ONLY TABLE
     {
-      name: "table",
-      help: "route for table view",
-      title: { fr: "" },
-      titleI18n: "routes.table.title",
-      urls: ["/table"],
+      name: 'table',
+      help: 'route for table view',
+      title: { fr: '' },
+      titleI18n: 'routes.table.title',
+      urls: ['/table'],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,
         settings: {
-          id: "navbar-footer-01",
-        },
+          id: 'navbar-footer-01'
+        }
       },
       pageRows: [
         {
           rowNumber: 1,
           activated: true,
-          help: "",
+          help: '',
           columns: [
             {
-              colName: "table",
+              colName: 'table',
               activated: true,
-              colClass: "",
+              colClass: '',
               hasScrollbar: false,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "table",
+                  component: 'table',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "table-01",
-                    containerClass: "pb-0",
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
+                    id: 'table-01',
+                    containerClass: 'pb-0'
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
 
     // ONLY RAW DATA
     {
-      name: "rawData",
-      help: "route for rawData view",
-      title: { fr: "" },
-      titleI18n: "routes.rawData.title",
-      urls: ["/rawData"],
+      name: 'rawData',
+      help: 'route for rawData view',
+      title: { fr: '' },
+      titleI18n: 'routes.rawData.title',
+      urls: ['/rawData'],
       rawHtml: undefined,
       navbarFooter: {
         activated: true,
         settings: {
-          id: "navbar-footer-01",
-        },
+          id: 'navbar-footer-01'
+        }
       },
       pageRows: [
         {
           rowNumber: 1,
           activated: true,
-          help: "",
+          help: '',
           columns: [
             {
-              colName: "rawData",
+              colName: 'rawData',
               activated: true,
-              colClass: "",
+              colClass: '',
               hasScrollbar: false,
               smallScreenVerticalOrder: undefined,
               colRows: [
                 {
-                  component: "rawData",
+                  component: 'rawData',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
-                  justify: "center",
-                  align: "center",
+                  justify: 'center',
+                  align: 'center',
                   settings: {
-                    id: "chart-01",
-                    containerClass: "pb-0",
-                  },
-                },
-              ],
-            },
-          ],
-        },
-      ],
-    },
-  ],
+                    id: 'chart-01',
+                    containerClass: 'pb-0'
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-import { objectFromPath, sortArrayBy, moveArrayElement } from "~/utils/utils.js"
+// import { objectFromPath, sortArrayBy, moveArrayElement } from '~/utils/utils.js'
 
 export const state = () => ({
   // GLOABAL APP ENV
@@ -6,7 +6,7 @@ export const state = () => ({
 
   // ZOOM
 
-  resetZoomTrigger: -1,
+  resetZoomTrigger: -1
 })
 
 export const getters = {
@@ -14,21 +14,21 @@ export const getters = {
 
   getResetZoomTrigger: (state, getters) => {
     return state.resetZoomTrigger
-  },
+  }
 }
 
 export const mutations = {
   // UPDATE ZOOM TRIGGER
 
-  setResetZoomTrigger(state) {
+  setResetZoomTrigger (state) {
     // state.log && console.log("\nS-map-M-setResetZoomTrigger ... ")
     state.resetZoomTrigger = state.resetZoomTrigger * -1
-  },
+  }
 }
 
 export const actions = {
-  triggerResetZoom({ state, commit }, params) {
+  triggerResetZoom ({ state, commit }, params) {
     // state.log && console.log("\nS-map-A-triggerResetZoom / params :", params)
-    commit("setResetZoomTrigger")
-  },
+    commit('setResetZoomTrigger')
+  }
 }
