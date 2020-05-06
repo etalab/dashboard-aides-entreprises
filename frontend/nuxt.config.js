@@ -373,6 +373,7 @@ export default {
    ** Build configuration
    */
   build: {
+    analyze: true,
     transpile: ['vue-mapbox'],
     // plugins: [
     //   new webpack.ProvidePlugin({
