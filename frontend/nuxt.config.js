@@ -309,8 +309,8 @@ export default {
       'getConfigsInit',
       'setConfigsInit',
       'setLocales',
-      'getDataInit',
-      'getRouteConfig'
+      'getRouteConfig',
+      'getDataInit'
     ]
   },
 
