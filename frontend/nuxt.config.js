@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.0.13.analyze - added analyze to build in nuxt config'
+const APP_VERSION = 'v.0.14.analyze - analyze build + treeshake icons'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
@@ -321,7 +321,8 @@ export default {
   plugins: [
     { src: '~/plugins/mapbox', mode: 'client' },
     { src: '~/plugins/apexCharts', mode: 'client' },
-    { src: '~/plugins/matomo', mode: 'client' }
+    { src: '~/plugins/matomo', mode: 'client' },
+    { src: '~/plugins/icons.js', ssr: false }
   ],
 
   /*
@@ -338,6 +339,7 @@ export default {
     'nuxt-i18n',
     // '~/modules/objectFromPath',
     '@nuxtjs/device'
+
   ],
 
   i18n: {

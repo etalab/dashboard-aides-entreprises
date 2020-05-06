@@ -34,9 +34,18 @@
           <span>
             {{ btn.title[locale] }}
           </span>
+
           <v-icon>
             {{ btn.icon }}
           </v-icon>
+
+          <!-- <v-icon>
+            fas fa-th
+          </v-icon> -->
+
+          <!-- <font-awesome-icon :icon="btn.icon" /> -->
+          <!-- <fa icon="th" /> -->
+
         </v-btn>
       </v-bottom-navigation>
     </v-footer>
