@@ -15,7 +15,7 @@
 
 ----------
 
-#### Version : v.0.xxx (beta)
+#### Version : v.1.xxx (beta)
 
 - Check the [versions logs here](VERSIONS.md)
 
@@ -73,7 +73,27 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## Linting
 
-Vous pouvez alors lancer `lint` pour simplement vérifier les erreurs :
+<br>
+
+#### Linting avec `standard`
+
+Vous pouvez lancer `standard` pour simplement vérifier les erreurs :
+
+```bash
+npx standard
+```
+
+pour corriger ce qui peut l'être
+
+```bash
+npx standard --fix
+```
+
+<br>
+
+#### Linting avec `lint`
+
+Vous pouvez lancer `lint` pour simplement vérifier les erreurs :
 
 ```bash
 npm run lint
@@ -85,7 +105,7 @@ ou `lintfix` pour corriger ce qui peut l'être
 npm run lintfix
 ```
 
-----------
+---------
 
 ## Déploiement sur Netlify
 
@@ -105,11 +125,11 @@ npm run lintfix
 - `NUXT_ENV_RUN_MODE` = `prod` (ou `preprod` pour avoir les logs dans la console)
 - voir également les autres variables possibles en regardant le fichier d'exemple [`.envExample`](.envExample)
 
-----------
+---------
 
 ## Configuration de l'application ODAMAP
 
-#### Variables d'environnement : 
+#### Variables d'environnement :
 
 - éditer/créer un fichier `.env` sur le modèle du fichier [`.envExample`](.envExample)
 

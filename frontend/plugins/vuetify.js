@@ -1,5 +1,5 @@
-import Vue from "vue"
-import Vuetify from "vuetify/lib"
+// import Vue from 'vue'
+import Vuetify from 'vuetify/lib'
 
 export default new Vuetify({
   breakpoint: {
@@ -7,8 +7,8 @@ export default new Vuetify({
       xs: 600,
       sm: 960,
       md: 1264,
-      lg: 1904,
-    },
+      lg: 1904
+    }
     // scrollBarWidth: 24,
-  },
+  }
 })

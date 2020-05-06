@@ -1,77 +1,77 @@
-import axios from "axios"
+import axios from 'axios'
 
 // POPULATE CONFIG IF STORE EMPTY
 export default function ({ store, env }) {
-  let log = store.state.log
-  let configsAreSet = store.state.configs.configsAreSet
+  const log = store.state.log
+  const configsAreSet = store.state.configs.configsAreSet
 
-  let promisesArray = []
+  const promisesArray = []
 
-  log && console.log("\n", "+ ".repeat(20))
-  log && console.log("-MW- getConfigInit ... ")
+  log && console.log('\n', '+ '.repeat(20))
+  log && console.log('-MW- getConfigInit ... ')
 
   if (!configsAreSet) {
     // begin to load config files
-    log && console.log("-MW- getConfigInit / !configsAreSet ... ")
+    log && console.log('-MW- getConfigInit / !configsAreSet ... ')
 
-    let configsReferences = env.CONFIG_APP.configsReferences
-    let configsFrom = env.CONFIG_APP.configsFrom
-    store.commit("configs/setConfigsFrom", configsFrom)
+    const configsReferences = env.CONFIG_APP.configsReferences
+    const configsFrom = env.CONFIG_APP.configsFrom
+    store.commit('configs/setConfigsFrom', configsFrom)
 
     log &&
       console.log(
-        "-MW- getConfigInit / configsReferences : ",
+        '-MW- getConfigInit / configsReferences : ',
         configsReferences
       )
-    log && console.log("-MW- getConfigInit / configsFrom : ", configsFrom)
+    log && console.log('-MW- getConfigInit / configsFrom : ', configsFrom)
 
-    let getDistant = ["local_json_files", "distant_json_files"]
+    const getDistant = ['local_json_files', 'distant_json_files']
 
     // loop config urls
-    for (let configRef of configsReferences) {
+    for (const configRef of configsReferences) {
       if (getDistant.includes(configsFrom)) {
         log &&
-          console.log("-MW- getConfigInit / configRef.url : ", configRef.url)
-        let initConfigFromURL = axios
+          console.log('-MW- getConfigInit / configRef.url : ', configRef.url)
+        const initConfigFromURL = axios
           .get(configRef.url)
           .then((resp) => {
             // log && console.log("-MW- getConfigInit / resp : ", resp)
-            let configRefData = {
+            const configRefData = {
               field: configRef.field,
-              data: resp.data,
+              data: resp.data
             }
-            store.commit("configs/setConfigField", configRefData)
+            store.commit('configs/setConfigField', configRefData)
           })
           .catch((err) => {
             log &&
               console.log(
-                "-MW- getConfigInit / error - configRef.url : ",
+                '-MW- getConfigInit / error - configRef.url : ',
                 configRef.url
               )
             console.log(
-              "-MW- getConfigInit / error while loading from configURL.url :",
+              '-MW- getConfigInit / error while loading from configURL.url :',
               err
             )
           })
         promisesArray.push(initConfigFromURL)
-      } else if (configsFrom == "local_js_files") {
+      } else if (configsFrom === 'local_js_files') {
         log &&
-          console.log("-MW- getConfigInit / configRef.data : ", configRef.data)
-        let initConfigFromJSfile = new Promise((resolve) => {
-          let resp = configRef.data
+          console.log('-MW- getConfigInit / configRef.data : ', configRef.data)
+        const initConfigFromJSfile = new Promise((resolve) => {
+          const resp = configRef.data
           resolve(resp)
         })
           .then((resp) => {
             // log && console.log("-MW- getConfigInit / resp : ", resp)
-            let configRefData = {
+            const configRefData = {
               field: configRef.field,
-              data: resp,
+              data: resp
             }
-            store.commit("configs/setConfigField", configRefData)
+            store.commit('configs/setConfigField', configRefData)
           })
           .catch((err) => {
             console.log(
-              "-MW- getConfigInit / error while loading from configRef :",
+              '-MW- getConfigInit / error while loading from configRef :',
               err
             )
           })
@@ -81,6 +81,6 @@ export default function ({ store, env }) {
   }
 
   // WAIT FOR ALL PROMISES TO RETURN
-  log && console.log("\n")
+  log && console.log('\n')
   return Promise.all(promisesArray)
 }
