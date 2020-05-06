@@ -25,3 +25,7 @@ sudo -u postgres psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Fonds de so
 sudo mv /tmp/fonds-solidarite-volet-1-departemental-naf-latest.csv ../published-data/
 
 python gen-xlsx.py
+
+mkdir ../published-data/$output
+cp ../published-data/*.csv ../published-data/$output/
+cp ../published-data/*.xlsx ../published-data/$output/

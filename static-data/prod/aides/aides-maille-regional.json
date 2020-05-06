@@ -20,10 +20,41 @@
         "nombre": "1943"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "209979.00", 
         "nombre": "146"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "120888.00", 
+        "nombre": "85"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "71091.00", 
+        "nombre": "49"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "12000.00", 
+        "nombre": "8"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -158,10 +189,35 @@
         "nombre": "1432"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "160804.00", 
         "nombre": "115"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "101516.00", 
+        "nombre": "73"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "37958.00", 
+        "nombre": "27"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "21330.00", 
+        "nombre": "15"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -302,10 +358,35 @@
         "nombre": "486"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "47000.00", 
         "nombre": "32"
+=======
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "26000.00", 
+        "nombre": "18"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "16500.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -440,10 +521,59 @@
         "nombre": "1427"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "496431.00", 
         "nombre": "342"
+=======
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "193500.00", 
+        "nombre": "129"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "181556.00", 
+        "nombre": "126"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "91988.00", 
+        "nombre": "66"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "12423.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "7964.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "62", 
+        "libelle_cat_juridique": "Groupement d'int\u00e9r\u00eat \u00e9conomique", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "23", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en participation", 
+        "montant": "4500.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -584,10 +714,29 @@
         "nombre": "56"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "12000.00", 
         "nombre": "8"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -710,10 +859,59 @@
         "nombre": "60565"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "3347439.00", 
         "nombre": "2321"
+=======
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "1586602.00", 
+        "nombre": "1115"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "806429.00", 
+        "nombre": "566"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "587152.00", 
+        "nombre": "394"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "180880.00", 
+        "nombre": "119"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "100613.00", 
+        "nombre": "66"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "23855.00", 
+        "nombre": "19"
+      }, 
+      {
+        "code_cat_juridique": "62", 
+        "libelle_cat_juridique": "Groupement d'int\u00e9r\u00eat \u00e9conomique", 
+        "montant": "20972.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "40936.00", 
+        "nombre": "28"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -854,10 +1052,53 @@
         "nombre": "4264"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "1056391.00", 
         "nombre": "750"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "566725.00", 
+        "nombre": "406"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "290081.00", 
+        "nombre": "208"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "169098.00", 
+        "nombre": "115"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "16994.00", 
+        "nombre": "12"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "4493.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -998,10 +1239,59 @@
         "nombre": "4332"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "1369246.00", 
         "nombre": "973"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "669753.00", 
+        "nombre": "481"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "505831.00", 
+        "nombre": "358"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "128629.00", 
+        "nombre": "88"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "20879.00", 
+        "nombre": "16"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "20154.00", 
+        "nombre": "14"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "18000.00", 
+        "nombre": "12"
+      }, 
+      {
+        "code_cat_juridique": "62", 
+        "libelle_cat_juridique": "Groupement d'int\u00e9r\u00eat \u00e9conomique", 
+        "montant": "6000.00", 
+        "nombre": "4"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -1142,10 +1432,59 @@
         "nombre": "4941"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "1328208.00", 
         "nombre": "928"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "536633.00", 
+        "nombre": "381"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "454727.00", 
+        "nombre": "316"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "260394.00", 
+        "nombre": "178"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "47901.00", 
+        "nombre": "33"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "10500.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "10304.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "29", 
+        "libelle_cat_juridique": "Autre groupement de droit priv\u00e9 non dot\u00e9 de la personnalit\u00e9 morale", 
+        "montant": "4330.00", 
+        "nombre": "3"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "3419.00", 
+        "nombre": "3"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -1286,10 +1625,59 @@
         "nombre": "10358"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "1586480.00", 
         "nombre": "1125"
+=======
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "566661.00", 
+        "nombre": "402"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "485560.00", 
+        "nombre": "359"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "418720.00", 
+        "nombre": "284"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "46500.00", 
+        "nombre": "31"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "36561.00", 
+        "nombre": "25"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "13483.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "99", 
+        "libelle_cat_juridique": "Autre personne morale de droit priv\u00e9", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "9995.00", 
+        "nombre": "7"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -1436,10 +1824,59 @@
         "nombre": "11135"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "1988686.00", 
         "nombre": "1392"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "971479.00", 
+        "nombre": "677"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "719674.00", 
+        "nombre": "510"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "189120.00", 
+        "nombre": "128"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "41087.00", 
+        "nombre": "29"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "38674.00", 
+        "nombre": "24"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "10316.00", 
+        "nombre": "11"
+      }, 
+      {
+        "code_cat_juridique": "29", 
+        "libelle_cat_juridique": "Autre groupement de droit priv\u00e9 non dot\u00e9 de la personnalit\u00e9 morale", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "9336.00", 
+        "nombre": "7"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -1580,10 +2017,53 @@
         "nombre": "4638"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "1866343.00", 
         "nombre": "1320"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "877029.00", 
+        "nombre": "613"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "688572.00", 
+        "nombre": "492"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "232370.00", 
+        "nombre": "160"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "37065.00", 
+        "nombre": "26"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "17116.00", 
+        "nombre": "19"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "14191.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -1724,10 +2204,53 @@
         "nombre": "3502"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "1547000.00", 
         "nombre": "1093"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "562559.00", 
+        "nombre": "403"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "518214.00", 
+        "nombre": "373"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "390669.00", 
+        "nombre": "262"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "43386.00", 
+        "nombre": "29"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "21722.00", 
+        "nombre": "19"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "10450.00", 
+        "nombre": "7"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -1868,10 +2391,59 @@
         "nombre": "12943"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "4100806.00", 
         "nombre": "2891"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "2154244.00", 
+        "nombre": "1501"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "1329085.00", 
+        "nombre": "961"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "421083.00", 
+        "nombre": "285"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "77617.00", 
+        "nombre": "54"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "53090.00", 
+        "nombre": "35"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "31957.00", 
+        "nombre": "32"
+      }, 
+      {
+        "code_cat_juridique": "62", 
+        "libelle_cat_juridique": "Groupement d'int\u00e9r\u00eat \u00e9conomique", 
+        "montant": "15000.00", 
+        "nombre": "10"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "18730.00", 
+        "nombre": "13"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -2018,10 +2590,59 @@
         "nombre": "18755"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "3955733.00", 
         "nombre": "2806"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "1889587.00", 
+        "nombre": "1327"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "1516407.00", 
+        "nombre": "1094"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "304362.00", 
+        "nombre": "202"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "112729.00", 
+        "nombre": "79"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "41699.00", 
+        "nombre": "28"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "39518.00", 
+        "nombre": "41"
+      }, 
+      {
+        "code_cat_juridique": "62", 
+        "libelle_cat_juridique": "Groupement d'int\u00e9r\u00eat \u00e9conomique", 
+        "montant": "13106.00", 
+        "nombre": "9"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "38325.00", 
+        "nombre": "26"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -2162,10 +2783,59 @@
         "nombre": "21761"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "3928388.58", 
         "nombre": "2767"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "1641350.00", 
+        "nombre": "1152"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "1545957.58", 
+        "nombre": "1101"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "393747.00", 
+        "nombre": "262"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "140698.00", 
+        "nombre": "99"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "89509.00", 
+        "nombre": "73"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "73790.00", 
+        "nombre": "49"
+      }, 
+      {
+        "code_cat_juridique": "84", 
+        "libelle_cat_juridique": "Organisme professionnel", 
+        "montant": "18500.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "24837.00", 
+        "nombre": "18"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -2306,10 +2976,59 @@
         "nombre": "24261"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "2840055.00", 
         "nombre": "2000"
+=======
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "1230393.00", 
+        "nombre": "878"
+      }, 
+      {
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "986046.00", 
+        "nombre": "694"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "375838.00", 
+        "nombre": "251"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "114352.00", 
+        "nombre": "78"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "59764.00", 
+        "nombre": "48"
+      }, 
+      {
+        "code_cat_juridique": "55", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 anonyme \u00e0 conseil d'administration", 
+        "montant": "44192.00", 
+        "nombre": "31"
+      }, 
+      {
+        "code_cat_juridique": "53", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en commandite", 
+        "montant": "9000.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "20470.00", 
+        "nombre": "14"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [
@@ -2456,10 +3175,47 @@
         "nombre": "1795"
       }, 
       {
+<<<<<<< HEAD
         "code_cat_juridique": "Autres", 
         "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
         "montant": "297914.00", 
         "nombre": "214"
+=======
+        "code_cat_juridique": "65", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 civile", 
+        "montant": "184198.00", 
+        "nombre": "133"
+      }, 
+      {
+        "code_cat_juridique": "92", 
+        "libelle_cat_juridique": "Association loi 1901 ou assimil\u00e9", 
+        "montant": "64781.00", 
+        "nombre": "45"
+      }, 
+      {
+        "code_cat_juridique": "52", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 en nom collectif", 
+        "montant": "24202.00", 
+        "nombre": "17"
+      }, 
+      {
+        "code_cat_juridique": "21", 
+        "libelle_cat_juridique": "Indivision", 
+        "montant": "17008.00", 
+        "nombre": "13"
+      }, 
+      {
+        "code_cat_juridique": "22", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 cr\u00e9\u00e9e de fait", 
+        "montant": "7725.00", 
+        "nombre": "6"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0"
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169
       }
     ], 
     "kpi_classe_effectif": [

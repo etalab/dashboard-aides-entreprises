@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.0.14.0 - devdata configs'
+const APP_VERSION = 'v.1.14.2 - devdata configs'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
@@ -280,7 +280,10 @@ export default {
         content: process.env.NUXT_ENV_APP_TITLE || 'ODAMAP'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', rel: 'stylesheet' }
+    ]
   },
 
   // for build or dev
@@ -344,6 +347,7 @@ export default {
     'nuxt-i18n',
     // '~/modules/objectFromPath',
     '@nuxtjs/device'
+
   ],
 
   i18n: {
@@ -380,12 +384,6 @@ export default {
    */
   build: {
     transpile: ['vue-mapbox'],
-    // plugins: [
-    //   new webpack.ProvidePlugin({
-    //     mapboxgl: 'mapbox-gl'
-    //   })
-    // ],
-
     /*
      ** You can extend webpack config here
      */
