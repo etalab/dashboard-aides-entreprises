@@ -325,7 +325,6 @@ export default {
     { src: '~/plugins/mapbox', mode: 'client' },
     { src: '~/plugins/apexCharts', mode: 'client' },
     { src: '~/plugins/matomo', mode: 'client' }
-    // { src: '~/plugins/icons.js', ssr: false }
   ],
 
   /*
@@ -378,14 +377,7 @@ export default {
    ** Build configuration
    */
   build: {
-    analyze: true,
     transpile: ['vue-mapbox'],
-    // plugins: [
-    //   new webpack.ProvidePlugin({
-    //     mapboxgl: 'mapbox-gl'
-    //   })
-    // ],
-
     /*
      ** You can extend webpack config here
      */
