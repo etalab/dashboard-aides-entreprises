@@ -1,13 +1,13 @@
 // import { getDataFromUrl } from "~/utils/getData.js"
-import { switchFormatFunctions } from "~/utils/utils.js"
+import { switchFormatFunctions } from '~/utils/utils.js'
 
-import axios from "axios"
+import axios from 'axios'
 
 const copyData = (respData, store, dataRef, log) => {
   // COPY A SLICE TO ...
 
-  for (let dataCopy of dataRef.copyTo) {
-    log && console.log("\n... -MW- getDataInit / dataCopy :", dataCopy)
+  for (const dataCopy of dataRef.copyTo) {
+    log && console.log('\n... -MW- getDataInit / dataCopy :', dataCopy)
     // log  && console.log('... -MW- getDataInit / respData :' , respData )
 
     // get source data
@@ -20,36 +20,36 @@ const copyData = (respData, store, dataRef, log) => {
       value = switchFormatFunctions(value, dataCopy.format)
     }
 
-    let targetData = {
+    const targetData = {
       value: value,
-      specialStoreId: dataCopy.toSpecialStore,
+      specialStoreId: dataCopy.toSpecialStore
     }
 
-    store.dispatch("data/setNestedData", targetData)
+    store.dispatch('data/setNestedData', targetData)
     // store.commit('data/setDeepNestedData', targetData )
   }
 }
 
-export function storeData(dataset, dataRef, resp, store, log) {
+export function storeData (dataset, dataRef, resp, store, log) {
   // log && console.log('-MW- getDataInit / dataset.id', dataset.id,' / res :' , resp )
   dataset.data = resp.data
-  store.commit("data/pushToInitData", dataset)
+  store.commit('data/pushToInitData', dataset)
 
   // COPY IT TO data/displayedData
   if (dataRef.displayed) {
-    store.commit("data/pushToDisplayedData", dataset)
+    store.commit('data/pushToDisplayedData', dataset)
   }
 
   // COPY A SLICE TO ...
   if (dataRef.copyTo && dataRef.copyTo.length > 0) {
     // copyData( resp, store, dataRef, log )
 
-    for (let dataCopy of dataRef.copyTo) {
+    for (const dataCopy of dataRef.copyTo) {
       log &&
         console.log(
-          "\n... -MW- getDataInit / dataset.id : ",
+          '\n... -MW- getDataInit / dataset.id : ',
           dataset.id,
-          " / dataCopy.fieldToCopy :",
+          ' / dataCopy.fieldToCopy :',
           dataCopy.fieldToCopy
         )
 
@@ -64,14 +64,14 @@ export function storeData(dataset, dataRef, resp, store, log) {
       }
       // log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / value :' , value )
 
-      let targetData = {
+      const targetData = {
         value: value,
-        specialStoreId: dataCopy.toSpecialStore,
+        specialStoreId: dataCopy.toSpecialStore
       }
 
       // log  && console.log('... -MW- getDataInit / dataset.id : ', dataset.id,' / targetData :' , targetData )
 
-      store.dispatch("data/setNestedData", targetData)
+      store.dispatch('data/setNestedData', targetData)
       // store.commit('data/setDeepNestedData', targetData )
     }
   }
@@ -79,54 +79,54 @@ export function storeData(dataset, dataRef, resp, store, log) {
 
 export default function ({ store }) {
   const log = store.state.log
-  log && console.log("\n", "+ ".repeat(20))
-  log && console.log("-MW- getDataInit / ... ")
+  log && console.log('\n', '+ '.repeat(20))
+  log && console.log('-MW- getDataInit / ... ')
 
   // log && console.log('-MW- getDataInit / app : ', app)
 
   // let baseUrl = store.state.data.backendApi
-  let promisesArray = []
-  let callableFrom = ["url", "static"]
+  const promisesArray = []
+  const callableFrom = ['url', 'static']
 
   // STORE DATASETS
-  let hasInitdData = store.state.data.initData
+  const hasInitdData = store.state.data.initData
 
   if (!hasInitdData) {
-    log && console.log("\n-MW- getDataInit / !hasInitdData ...")
+    log && console.log('\n-MW- getDataInit / !hasInitdData ...')
 
-    let dataToStoreAtInitList = store.state.data.defaultDataSetup.initData.store
+    const dataToStoreAtInitList = store.state.data.defaultDataSetup.initData.store
     // log && console.log('-MW- getDataInit / !hasInitdData / dataToStoreAtInitList :', dataToStoreAtInitList)
 
-    for (let dataRef of dataToStoreAtInitList) {
-      log && console.log("\n-MW- getDataInit / dataRef.id :", dataRef.id)
+    for (const dataRef of dataToStoreAtInitList) {
+      log && console.log('\n-MW- getDataInit / dataRef.id :', dataRef.id)
       // log && console.log('-MW- getDataInit / dataRef :', dataRef)
       // log && console.log('-MW- getDataInit / is callable :', callableFrom.includes( dataRef.from ))
 
-      let dataset = {
+      const dataset = {
         id: dataRef.id,
-        data: undefined,
+        data: undefined
       }
 
       // PROMISE FOR DATA FROM RAWOBJECT
 
-      if (dataRef.from == "rawObject") {
-        log && console.log("-MW- getDataInit / dataRef.from :", dataRef.from)
+      if (dataRef.from === 'rawObject') {
+        log && console.log('-MW- getDataInit / dataRef.from :', dataRef.from)
 
-        let initDataFromObjectPromise = new Promise((resolve) => {
+        const initDataFromObjectPromise = new Promise((resolve) => {
           resolve(dataRef.rawObject)
         }).then((resp) => {
           log &&
             console.log(
-              "-MW- getDataInit / dataset.id",
+              '-MW- getDataInit / dataset.id',
               dataset.id,
-              " / res :",
+              ' / res :',
               resp
             )
           dataset.data = resp
-          store.commit("data/pushToInitData", dataset)
+          store.commit('data/pushToInitData', dataset)
           // COPY IT TO data/displayedData
           if (dataRef.displayed) {
-            store.commit("data/pushToDisplayedData", dataset)
+            store.commit('data/pushToDisplayedData', dataset)
           }
           if (dataRef.copyTo && dataRef.copyTo.length > 0) {
             copyData(resp, store, dataRef, log)
@@ -139,26 +139,26 @@ export default function ({ store }) {
 
       // if ( dataRef.from == 'url' || dataRef == 'static' ) {
       if (callableFrom.includes(dataRef.from)) {
-        log && console.log("-MW- getDataInit / dataRef.from :", dataRef.from)
+        log && console.log('-MW- getDataInit / dataRef.from :', dataRef.from)
 
         // GET DATA AND STORE TO data/initData
-        let initDataFromUrlPromise = axios
+        const initDataFromUrlPromise = axios
           .get(dataRef.url)
           .then((resp) => {
             storeData(dataset, dataRef, resp, store, log)
           })
           .catch((err) => {
             console.log(
-              "-MW- getDataInit / error while loading from dataRef.url :",
+              '-MW- getDataInit / error while loading from dataRef.url :',
               err
             )
-            console.log("-MW- trying to load fro backupUrl now...")
-            let backupPromises = []
-            let initDataFromBackupUrlPromise = axios
+            console.log('-MW- trying to load fro backupUrl now...')
+            const backupPromises = []
+            const initDataFromBackupUrlPromise = axios
               .get(dataRef.backupUrl)
               .then((resp) => {
                 console.log(
-                  "-MW- trying to load fro backupUrl / initDataFromBackupUrlPromise / resp : ",
+                  '-MW- trying to load fro backupUrl / initDataFromBackupUrlPromise / resp : ',
                   resp
                 )
                 storeData(dataset, dataRef, resp, store, log)
@@ -172,6 +172,6 @@ export default function ({ store }) {
   }
 
   // WAIT FOR ALL PROMISES TO RETURN
-  log && console.log("\n")
+  log && console.log('\n')
   return Promise.all(promisesArray)
 }
