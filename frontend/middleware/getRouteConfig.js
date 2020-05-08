@@ -42,8 +42,10 @@ export default function ({ store, env, route, redirect }) {
   let currentRouteConfig
 
   if (typeof queryRouteId !== 'undefined') {
+    store.commit('SetQueryRouteId', queryRouteId)
     currentRouteConfig = store.getters.getCurrentRouteConfigById(queryRouteId)
   } else {
+    store.commit('SetQueryRouteId', undefined)
     currentRouteConfig = store.getters.getCurrentRouteConfig(path)
   }
   log &&

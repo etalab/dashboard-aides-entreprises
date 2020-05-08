@@ -39,6 +39,7 @@ export const state = () => ({
   configRoutes: undefined,
   localRouteConfig: undefined,
   routeNeedDataReset: true,
+  queryRouteId: undefined,
 
   // UX-UI
   configUX: undefined,
@@ -100,6 +101,9 @@ export const getters = {
   getRouteNeedDataReset: (state) => {
     return state.routeNeedDataReset
   },
+  getQueryRouteId: (state) => {
+    return state.queryRouteId
+  },
 
   // DIVS VISIBILITY
   getDivVisibilityArray: (state) => {
@@ -112,20 +116,24 @@ export const getters = {
     return divObject
   },
   getDivCurrentVisibility: (state, getters) => (div) => {
-    // state.log && console.log("S-index-G-getDivCurrentVisibility / div : ", div )
-    const breakpoint = div.breakpoint
-    // state.log && console.log("S-index-G-getDivCurrentVisibility / breakpoint : ", breakpoint )
+    try {
+      // state.log && console.log("S-index-G-getDivCurrentVisibility / div : ", div )
+      const breakpoint = div.breakpoint
+      // state.log && console.log("S-index-G-getDivCurrentVisibility / breakpoint : ", breakpoint )
 
-    const divObject = getters.getDivVisibility(div.div)
-    // state.log && console.log("S-index-G-getDivCurrentVisibility / divObject : ", divObject )
+      const divObject = getters.getDivVisibility(div.div)
+      // state.log && console.log("S-index-G-getDivCurrentVisibility / divObject : ", divObject )
 
-    const mobileBreakpoints = state.configUX.mobileBreakpoints
-    // state.log && console.log("S-index-G-getDivCurrentVisibility / mobileBreakpoints : ", mobileBreakpoints )
+      const mobileBreakpoints = state.configUX.mobileBreakpoints
+      // state.log && console.log("S-index-G-getDivCurrentVisibility / mobileBreakpoints : ", mobileBreakpoints )
 
-    if (mobileBreakpoints.includes(breakpoint)) {
-      return divObject.isVisibleMobile
-    } else {
-      return divObject.isVisibleDesktop
+      if (mobileBreakpoints.includes(breakpoint)) {
+        return divObject.isVisibleMobile
+      } else {
+        return divObject.isVisibleDesktop
+      }
+    } catch (e) {
+      return false
     }
   },
 
@@ -257,6 +265,9 @@ export const mutations = {
   setRouteNeedDataReset (state, boolean) {
     state.routeNeedDataReset = boolean
   },
+  SetQueryRouteId (state, queryRouteId) {
+    state.queryRouteId = queryRouteId
+  },
 
   // DIVS VISIBILITY
   setDivVisibility (state, divRef) {
@@ -320,7 +331,7 @@ export const actions = {
       // state.log && console.log("S-index-A-setCurrentWindowSize / bool : ", bool)
       const showOnSizes = state.currentNavbarFooter.showOnSizes
       const breakpointName = windowInfos.breakpointName
-      if (showOnSizes.includes(breakpointName)) {
+      if (showOnSizes && showOnSizes.includes(breakpointName)) {
         bool = true
       }
       commit('setNavbarFooterVisibility', bool)
@@ -354,8 +365,9 @@ export const actions = {
       }
     }
   },
-  toggleDivsVisibility ({ getters, commit }, btnConfig) {
+  toggleDivsVisibility ({ state, getters, commit }, btnConfig) {
     for (const divsToToggle of btnConfig.divsToToggle) {
+      // state.log && console.log('S-index-A-toggleDivsVisibility / divsToToggle : ', divsToToggle)
       const toggle = divsToToggle.toggle
       const toggleVisibility = divsToToggle.toggleVisibility
 

@@ -32,16 +32,60 @@ export const configAppNavbarFooters = {
           action: 'toggleDivs', // goToUrl | scrollTo | toggleDivs
           divsToToggle: [
             {
-              routeId: 'home',
+              routeId: 'fds',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
-              divIds: ['text-01', 'text-02']
+              divIds: [
+                'text-fds-title',
+                'text-fds-infos'
+              ]
             },
             {
-              routeId: 'home',
+              routeId: 'fds',
               toggle: 'off',
               toggleVisibility: ['isVisibleMobile'],
-              divIds: ['map-france-metro', 'apexchart-01']
+              divIds: [
+                'apexchart-fds',
+                'apexchart-fds-categ-juridiques',
+                'apexchart-fds-effectifs',
+                'map-france-aides-metro'
+              ]
+            },
+            {
+              routeId: 'pge',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-pge-title',
+                'text-pge-infos'
+              ]
+            },
+            {
+              routeId: 'pge',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'apexchart-pge',
+                'map-france-pge-metro'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-report-title',
+                'text-report-infos'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'apexchart-report',
+                'map-france-report-metro'
+              ]
             }
           ],
           // toUrl: "/",
@@ -56,16 +100,60 @@ export const configAppNavbarFooters = {
           action: 'toggleDivs',
           divsToToggle: [
             {
-              routeId: 'home',
+              routeId: 'fds',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
-              divIds: ['text-01', 'map-france-metro']
+              divIds: [
+                'text-fds-title',
+                'map-france-aides-metro'
+              ]
             },
             {
-              routeId: 'home',
+              routeId: 'fds',
               toggle: 'off',
               toggleVisibility: ['isVisibleMobile'],
-              divIds: ['text-02', 'apexchart-01']
+              divIds: [
+                'text-fds-infos',
+                'apexchart-fds',
+                'apexchart-fds-categ-juridiques',
+                'apexchart-fds-effectifs'
+              ]
+            },
+            {
+              routeId: 'pge',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-pge-title',
+                'map-france-pge-metro'
+              ]
+            },
+            {
+              routeId: 'pge',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-pge-infos',
+                'apexchart-pge'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-report-title',
+                'map-france-report-metro'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-report-infos',
+                'apexchart-report'
+              ]
             }
           ],
           // toUrl: "/map",
@@ -80,16 +168,60 @@ export const configAppNavbarFooters = {
           action: 'toggleDivs',
           divsToToggle: [
             {
-              routeId: 'home',
+              routeId: 'fds',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
-              divIds: ['text-01', 'apexchart-01']
+              divIds: [
+                'text-fds-title',
+                'apexchart-fds',
+                'apexchart-fds-categ-juridiques',
+                'apexchart-fds-effectifs'
+              ]
             },
             {
-              routeId: 'home',
+              routeId: 'fds',
               toggle: 'off',
               toggleVisibility: ['isVisibleMobile'],
-              divIds: ['text-02', 'map-france-metro']
+              divIds: [
+                'text-fds-infos',
+                'map-france-aides-metro'
+              ]
+            },
+            {
+              routeId: 'pge',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-pge-title',
+                'apexchart-pge'
+              ]
+            },
+            {
+              routeId: 'pge',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-pge-infos',
+                'map-france-pge-metro'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-report-title',
+                'apexchart-report'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-report-infos',
+                'map-france-report-metro'
+              ]
             }
           ],
           // toUrl: "/charts",

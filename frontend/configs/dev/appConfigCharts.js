@@ -316,11 +316,12 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-        Top 10 des aides par 
-        <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
-          code section NAF</a>
-        (en M€) <br>
-      `
+          Top 10 des aides du fonds de solidarité <br>
+          ventilés par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
+            code section NAF</a>
+          (en M€) <br>
+        `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
@@ -366,9 +367,9 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-        Top 3 des aides par classes d'effectifs
-        (en M€) <br>
-      `
+          Aides par classes d'effectifs
+          (en M€) <br>
+        `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
@@ -400,9 +401,9 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-        Top 3 des aides par catégories juridiques
-        (en M€) <br>
-      `
+          Top 3 des aides par catégories juridiques
+          (en M€) <br>
+        `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
@@ -532,12 +533,12 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-        Top 10 des prêts garantis par l'Etat 
-        <br>ventilés par 
-        <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
-          code section NAF</a>
-        (en M€) <br>
-      `
+          Top 10 des prêts garantis par l'Etat 
+          <br>ventilés par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
+            code section NAF</a>
+          (en M€) <br>
+        `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
@@ -572,12 +573,12 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-        Top 10 des reports de charges 
-        <br>ventilés par 
-        <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
-          code section NAF</a>
-        (en M€) <br>
-      `
+          Top 10 des reports de charges 
+          <br>ventilés par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
+            code section NAF</a>
+          (en M€) <br>
+        `
       },
       chartTitleClass: 'subtitle-2 text-center',
 

@@ -362,12 +362,12 @@ export const configAppRoutes = {
     // REPORT
     // ============================================================= //
     {
-      id: 'report',
+      id: 'reports',
       name: 'report page',
       help: 'route view for report dataset',
       title: { fr: '' },
       titleI18n: 'routes.report.title',
-      urls: ['/report'],
+      urls: ['/reports'],
       sourcesIds: [
         'national-report-raw',
         'regions-report-raw',

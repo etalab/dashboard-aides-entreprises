@@ -29,10 +29,12 @@
 
         <v-tab
           v-for="rt in routesTabs.tabs"
-          :to="rt.to"
           :key="rt.to"
-          :nuxt="rt.isNuxtLink"
+          :to="rt.isNuxtLink ? rt.to : rt.href"
+          exact
+          nuxt
           >
+          <!-- :nuxt="rt.isNuxtLink" -->
 
           <span v-if="!isMobile">
             {{ rt.title[ locale ] }}
@@ -84,6 +86,7 @@ export default {
 
     ...mapGetters({
       getCurrentLocale: "getCurrentLocale",
+      getLocalRouteConfig: "getLocalRouteConfig",
       routesTabs: "getRoutesTabs",
     }),
 

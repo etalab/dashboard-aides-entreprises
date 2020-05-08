@@ -106,27 +106,30 @@ export const configAppUIUX = {
       tabs: [
         {
           to: '/?routeId=fds',
+          href: '/fds',
           isVisible: true,
           icon: undefined,
           title: { fr: 'fonds de solidarité' },
           titleMobile: { fr: 'FDS' },
-          isNuxtLink: true
+          isNuxtLink: false
         },
         {
           to: '/?routeId=pge',
+          href: '/pge',
           isVisible: true,
           icon: undefined,
           title: { fr: "prêts garantis par l'Etat" },
           titleMobile: { fr: 'PGE' },
-          isNuxtLink: true
+          isNuxtLink: false
         },
         {
           to: '/?routeId=reports',
+          href: '/reports',
           isVisible: true,
           icon: undefined,
           title: { fr: "reports d'échéance" },
           titleMobile: { fr: 'REP' },
-          isNuxtLink: true
+          isNuxtLink: false
         }
 
       ]

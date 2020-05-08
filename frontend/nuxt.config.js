@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.2.0 - multiple dattasets'
+const APP_VERSION = 'v.2.0 - multiple datasets'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...

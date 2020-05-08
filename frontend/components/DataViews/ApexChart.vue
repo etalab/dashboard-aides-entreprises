@@ -83,7 +83,7 @@ export default {
     canShow(next, prev) {
       if (next) {
         let newSeries = this.getSeries()
-        this.localSeries = newSeries.dataSeries
+        this.localSeries = newSeries && newSeries.dataSeries
         this.updateOptionsColor(newSeries.colors)
       }
     },
@@ -94,7 +94,7 @@ export default {
       this.getCanShow()
       if (this.canShow) {
         let newSeries = this.getSeries()
-        this.localSeries = newSeries.dataSeries
+        this.localSeries = newSeries && newSeries.dataSeries
         this.updateOptionsColor(newSeries.colors)
       }
     },
@@ -113,7 +113,7 @@ export default {
     this.log && console.log("C-ApexChart / mounted ...")
     this.getCanShow()
     let newSeries = this.getSeries()
-    this.localSeries = newSeries.dataSeries
+    this.localSeries = newSeries && newSeries.dataSeries
     this.updateOptionsColor(newSeries.colors)
   },
 
