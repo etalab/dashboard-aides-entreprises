@@ -62,18 +62,15 @@
           exact
           nuxt
           >
-
           <span v-if="!isMobile">
             {{ rt.title[ locale ] }}
           </span>
           <span v-else>
             {{ rt.titleMobile[ locale ] }}
           </span>
-
           <v-icon v-if="routesTabs.hasIcons">
             rt.icon
           </v-icon>
-
         </v-tab>
 
       </v-tabs>
