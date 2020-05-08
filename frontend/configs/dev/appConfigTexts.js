@@ -89,7 +89,7 @@ export const configAppTexts = {
           columns: [
             {
               colName: '',
-              colTitle: { fr: 'Informations' },
+              colTitle: { fr: 'Le fonds de solidarité' },
               colTitleClass: 'my-5',
               cols: 12,
               textClass: '',
@@ -190,7 +190,7 @@ export const configAppTexts = {
           columns: [
             {
               colName: '',
-              colTitle: { fr: 'Informations' },
+              colTitle: { fr: "Les prêts garantis par l'Etat" },
               colTitleClass: 'my-5',
               cols: 12,
               textClass: '',
@@ -289,7 +289,7 @@ export const configAppTexts = {
           columns: [
             {
               colName: '',
-              colTitle: { fr: 'Informations' },
+              colTitle: { fr: "Les reeports d'échéance" },
               colTitleClass: 'my-5',
               cols: 12,
               textClass: '',
