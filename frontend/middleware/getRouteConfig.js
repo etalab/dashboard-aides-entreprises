@@ -63,6 +63,8 @@ export default function ({ store, env, route, redirect }) {
     store.commit('setLocalRouteConfig', currentRouteConfig)
     // flag need data reset if lastConfig !== currentRouteConfig
     if (lastRouteConfigId !== currentRouteConfig.id) {
+      log && console.log('-MW- getRouteConfig / lastRouteConfigId :', lastRouteConfigId)
+      store.commit('toggleTriggerResetNavbarFooter')
       store.commit('setRouteNeedDataReset', true)
     } else {
       store.commit('setRouteNeedDataReset', false)

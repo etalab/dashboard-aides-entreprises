@@ -73,16 +73,6 @@ export default {
       this.$store.commit("setCurrentNavbarFooter", next)
     },
     getActivatedCurrentNavbarFooter(next, prev) {
-      this.log &&
-        console.log(
-          "C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... next :",
-          next
-        )
-      this.log &&
-        console.log(
-          "C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... this.getCurrentNavbarFooter :",
-          this.getCurrentNavbarFooter
-        )
       let btnFallback
       if (next) {
         // show navbarFooter => mobile
@@ -95,39 +85,29 @@ export default {
           ? this.getCurrentNavbarFooter.redirectAtBreakNoShow.btnNav
           : 1
       }
-      this.log &&
-        console.log(
-          "C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... btnFallback :",
-          btnFallback
-        )
-      this.log &&
-        console.log(
-          "C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... this.bottomNav :",
-          this.bottomNav
-        )
       this.changeBottomNav(btnFallback)
     },
+    triggerResetNavbarFooter(next, prev) {
+      this.resetBottomNav()
+    }
   },
 
   beforeMount() {
     // set up view config
     this.navbarFooterConfig = this.getLocalConfig
-    // this.log &&
-    //   console.log(
-    //     "C-NavbarFooter / beforeMount / this.navbarFooterConfig : ",
-    //     this.navbarFooterConfig
-    //   )
   },
 
   mounted() {
     this.log && console.log("C-NavbarFooter / mounted ...")
-    this.bottomNav = this.navbarFooterConfig.defaultBtnNav
+    // this.bottomNav = this.navbarFooterConfig.defaultBtnNav
+    this.resetBottomNav()
   },
 
   computed: {
     ...mapState({
       log: (state) => state.log,
       locale: (state) => state.locale,
+      triggerResetNavbarFooter: (state) => state.triggerResetNavbarFooter,
       trigger: (state) => state.data.triggerChange,
       mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
@@ -210,6 +190,10 @@ export default {
     changeBottomNav(val) {
       this.bottomNav = val
     },
+
+    resetBottomNav() {
+      this.bottomNav = this.navbarFooterConfig.defaultBtnNav
+    }
   },
 }
 </script>

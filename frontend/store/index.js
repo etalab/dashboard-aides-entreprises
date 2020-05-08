@@ -33,6 +33,7 @@ export const state = () => ({
 
   currentNavbarFooter: undefined,
   currentFooter: undefined,
+  triggerResetNavbarFooter: 1,
 
   // ROUTES
   routesTabs: undefined,
@@ -246,6 +247,9 @@ export const mutations = {
   },
   setNavbarFooterVisibility (state, bool) {
     state.currentNavbarFooter.activated = bool
+  },
+  toggleTriggerResetNavbarFooter (state) {
+    state.triggerResetNavbarFooter = state.triggerResetNavbarFooter * -1
   },
 
   // WINDOW SIZE
