@@ -111,6 +111,7 @@ export const configAppUIUX = {
           icon: undefined,
           title: { fr: 'fonds de solidarité' },
           titleMobile: { fr: 'FDS' },
+          tooltip: { fr: 'fonds de solidarité' },
           isNuxtLink: false
         },
         {
@@ -120,6 +121,7 @@ export const configAppUIUX = {
           icon: undefined,
           title: { fr: "prêts garantis par l'Etat" },
           titleMobile: { fr: 'PGE' },
+          tooltip: { fr: "prêts garantis par l'Etat" },
           isNuxtLink: false
         },
         {
@@ -129,6 +131,7 @@ export const configAppUIUX = {
           icon: undefined,
           title: { fr: "reports d'échéance" },
           titleMobile: { fr: 'REP' },
+          tooltip: { fr: "reports d'échéance" },
           isNuxtLink: false
         }
 

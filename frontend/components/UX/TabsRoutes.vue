@@ -27,6 +27,34 @@
           >
         </v-tabs-slider>
 
+        <!-- <v-tooltip 
+          v-for="rt in routesTabs.tabs"
+          :key="rt.to"
+          bottom
+          >
+          <template v-slot:activator="{ on }">
+            <v-tab
+              :to="rt.isNuxtLink ? rt.to : rt.href"
+              exact
+              nuxt
+              >
+              <span v-if="!isMobile">
+                {{ rt.title[ locale ] }}
+              </span>
+              <span v-else>
+                {{ rt.titleMobile[ locale ] }}
+              </span>
+
+              <v-icon v-if="routesTabs.hasIcons">
+                rt.icon
+              </v-icon>
+            </v-tab>
+          </template>
+          <span>
+            {{ rt.tooltip[ locale ] }}
+          </span>
+        </v-tooltip> -->
+
         <v-tab
           v-for="rt in routesTabs.tabs"
           :key="rt.to"
@@ -34,7 +62,6 @@
           exact
           nuxt
           >
-          <!-- :nuxt="rt.isNuxtLink" -->
 
           <span v-if="!isMobile">
             {{ rt.title[ locale ] }}
@@ -48,6 +75,7 @@
           </v-icon>
 
         </v-tab>
+
       </v-tabs>
     </v-container>
   </v-content>

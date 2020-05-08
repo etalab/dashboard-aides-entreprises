@@ -4,11 +4,11 @@ const COMMON_TEXTS_HTML = {
     textClass: 'text-left mx-4 pt-4',
     textContent: {
       fr: `
-      Afin d’offrir de la visibilité à l’ensemble des Français sur l’attribution de ces aides, Bruno Le Maire et Gérald Darmanin mettent à disposition un tableau de bord accessible à tous. Cette plateforme, créée par le département Etalab de la
-      <a target="_blank" href="https://www.numerique.gouv.fr">
-        Direction Interministérielle du Numérique (DINUM)</a>
-      et dont le <a target="_blank" href="https://github.com/etalab/dashboard-aides-entreprises">code source est libre</a>, recense les aides apportées par secteur, par région et département au titre de ce fonds. Elle est mise à jour en temps réel.
-    `
+        Afin d’offrir de la visibilité à l’ensemble des Français sur l’attribution de ces aides, Bruno Le Maire et Gérald Darmanin mettent à disposition un tableau de bord accessible à tous. Cette plateforme, créée par le département Etalab de la
+        <a target="_blank" href="https://www.numerique.gouv.fr">
+          Direction Interministérielle du Numérique (DINUM)</a>
+        et dont le <a target="_blank" href="https://github.com/etalab/dashboard-aides-entreprises">code source est libre</a>, recense les aides apportées par secteur, par région et département au titre de ce fonds. Elle est mise à jour en temps réel.
+      `
     },
     fromUrl: {
       fr: undefined
@@ -19,10 +19,10 @@ const COMMON_TEXTS_HTML = {
     textClass: 'text-left mx-4 pt-4 pb-5 mb-5',
     textContent: {
       fr: `
-      Les données utilisées sur ce tableau de bord
-      <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/aides-aux-entreprises-dans-le-cadre-de-lepidemie-de-covid-19-en-france/">
-        sont disponibles sur data.gouv.fr</a>.
-    `
+        Les données utilisées sur ce tableau de bord
+        <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/aides-aux-entreprises-dans-le-cadre-de-lepidemie-de-covid-19-en-france/">
+          sont disponibles sur data.gouv.fr</a>.
+      `
     },
     fromUrl: {
       fr: undefined
