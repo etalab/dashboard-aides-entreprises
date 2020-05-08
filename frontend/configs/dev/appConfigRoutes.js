@@ -4,9 +4,11 @@ export const configAppRoutes = {
   // ROUTES / PAGES
   routes: [
 
+    // ============================================================= //
     // HOME / FDS
+    // ============================================================= //
     {
-      id: 'home',
+      id: 'fds',
       name: 'homepage',
       help: 'route home viewfor ',
       title: { fr: '' },
@@ -46,7 +48,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'text-01',
+                    id: 'text-fds-title',
                     containerClass: 'pt-2 pb-0',
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true
@@ -72,7 +74,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'global-button-01',
+                    id: 'global-button-fds',
                     containerClass: 'py-0 my-0',
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true
@@ -85,7 +87,33 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'apexchart-01',
+                    id: 'apexchart-fds',
+                    containerClass: 'mt-4 pt-3 pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'apexchart',
+                  activated: true,
+                  smallScreenVerticalOrder: 4,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'apexchart-fds-categ-jur',
+                    containerClass: 'mt-4 pt-3 pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'apexchart',
+                  activated: true,
+                  smallScreenVerticalOrder: 4,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'apexchart-fds-effectifs',
                     containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
@@ -98,7 +126,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'text-02',
+                    id: 'text-fds-infos',
                     containerClass: 'pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
@@ -166,7 +194,9 @@ export const configAppRoutes = {
       ]
     },
 
+    // ============================================================= //
     // PGE
+    // ============================================================= //
     {
       id: 'pge',
       name: 'pge page',
@@ -208,7 +238,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'text-01',
+                    id: 'text-pge-title',
                     containerClass: 'pt-2 pb-0',
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true
@@ -234,7 +264,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'global-button-01',
+                    id: 'global-button-pge',
                     containerClass: 'py-0 my-0',
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true
@@ -247,7 +277,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'apexchart-01',
+                    id: 'apexchart-pge',
                     containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
@@ -260,7 +290,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'text-02',
+                    id: 'text-pge-infos',
                     containerClass: 'pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
@@ -328,7 +358,9 @@ export const configAppRoutes = {
       ]
     },
 
+    // ============================================================= //
     // REPORT
+    // ============================================================= //
     {
       id: 'report',
       name: 'report page',
@@ -370,7 +402,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'text-01',
+                    id: 'text-report-title',
                     containerClass: 'pt-2 pb-0',
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true
@@ -396,7 +428,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'global-button-01',
+                    id: 'global-button-report',
                     containerClass: 'py-0 my-0',
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true
@@ -409,7 +441,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'apexchart-01',
+                    id: 'apexchart-report',
                     containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
@@ -422,7 +454,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'text-02',
+                    id: 'text-report-infos',
                     containerClass: 'pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
@@ -489,6 +521,10 @@ export const configAppRoutes = {
         }
       ]
     },
+
+    // ============================================================= //
+    // ============================================================= //
+    // ============================================================= //
 
     // ONLY MAP
     {

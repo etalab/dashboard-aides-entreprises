@@ -2,27 +2,34 @@ import { copyData, storeData } from '~/utils/utilsStore.js'
 
 import axios from 'axios'
 
-export default function ({ store, route }) {
+export default function ({ store }) {
   const log = store.state.log
   log && console.log('\n', '+ '.repeat(20))
   log && console.log('-MW- getRouteData / ... ')
 
-  const path = route.path
-  const currentRouteConfig = store.getters.getCurrentRouteConfig(path)
+  const currentRouteConfig = store.getters.getLocalRouteConfig
   log && console.log('-MW- getRouteData / currentRouteConfig :', currentRouteConfig)
 
-  // let baseUrl = store.state.data.backendApi
   const promisesArray = []
   const callableFrom = ['url', 'static']
 
   // STORE DATASETS
-  const hasRoutedData = true
+  const routeNeedDataReset = store.getters.getRouteNeedDataReset
+  log && console.log('-MW- getRouteData / routeNeedDataReset :', routeNeedDataReset)
 
-  if (!hasRoutedData) {
-    log && console.log('\n-MW- getRouteData / !hasInitdData ...')
+  if (routeNeedDataReset) {
+    log && console.log('\n-MW- getRouteData / routeNeedDataReset ...')
 
-    const dataToStoreAtInitList = store.state.data.defaultDataSetup.initData.store
-    // log && console.log('-MW- getDataInit / !hasInitdData / dataToStoreAtInitList :', dataToStoreAtInitList)
+    const currentRouteConfigDatasets = currentRouteConfig.sourcesIds
+    // log && console.log('\n-MW- getRouteData / currentRouteConfigDatasets :', currentRouteConfigDatasets)
+
+    const RoutesDataList = store.state.data.routesData.initData.store
+    // log && console.log('\n-MW- getRouteData / RoutesDataList :', RoutesDataList)
+
+    const dataToStoreAtInitList = RoutesDataList && RoutesDataList.filter(dataset => {
+      return currentRouteConfigDatasets.includes(dataset.id)
+    })
+    // log && console.log('-MW- getRouteData / routeNeedDataReset / dataToStoreAtInitList :', dataToStoreAtInitList)
 
     for (const dataRef of dataToStoreAtInitList) {
       log && console.log('\n-MW- getRouteData / dataRef.id :', dataRef.id)

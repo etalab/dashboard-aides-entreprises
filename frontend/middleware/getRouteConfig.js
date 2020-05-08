@@ -8,6 +8,7 @@ export default function ({ store, env, route, redirect }) {
   const path = route.path
   const queryLocale = route.query.locale
   const queryIframe = route.query.iframe
+  const queryRouteId = route.query.routeId
 
   // set locale if part of url
   if (queryLocale) {
@@ -38,8 +39,13 @@ export default function ({ store, env, route, redirect }) {
     )
 
   // retrieve local route config
-  // log && console.log('-MW- getRouteConfig / path : ', path)
-  const currentRouteConfig = store.getters.getCurrentRouteConfig(path)
+  let currentRouteConfig
+
+  if (typeof queryRouteId !== 'undefined') {
+    currentRouteConfig = store.getters.getCurrentRouteConfigById(queryRouteId)
+  } else {
+    currentRouteConfig = store.getters.getCurrentRouteConfig(path)
+  }
   log &&
     console.log(
       '-MW- getRouteConfig / currentRouteConfig : ',

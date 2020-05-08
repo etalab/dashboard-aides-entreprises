@@ -135,7 +135,9 @@ export const configAppData = {
       help:
         "populate 'store.data.state.initData' @ middleware getIniitData.js / from : url | localFile",
       store: [
+        // ============================================================= //
         // INFOS
+        // ============================================================= //
         {
           id: 'infos',
           help: '',
@@ -177,7 +179,9 @@ export const configAppData = {
           ]
         },
 
+        // ============================================================= //
         // TAXONOMIES
+        // ============================================================= //
         {
           id: 'taxo-nafs',
           help: '',
@@ -218,12 +222,22 @@ export const configAppData = {
           id: 'taxo-nafs-colors',
           help: '',
           from: 'static',
-          url: `${DATASETS_REPO_BASE}/taxonomies/sections-naf.json`,
+          url: `${DATASETS_REPO_BASE}/taxonomies/sections-naf-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/sections-naf.json`,
           displayed: false
         },
 
+        {
+          id: 'taxo-categ-juridiques',
+          help: '',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/taxonomies/categories-juridiques-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/categories-juridiques.json`,
+          displayed: false
+        },
+        // ============================================================= //
         // GEOJSON (NO NEED EXCEPT CENTERS : SOURCES LOADED IN MAPBOX COMPONENT )
+        // ============================================================= //
         {
           id: 'centers',
           help: 'geo centres régions et départements',
@@ -231,11 +245,24 @@ export const configAppData = {
           url: `${DATASETS_FOLDER}/geodata/centers.json`,
           backupUrl: `${DATASETS_FOLDER}/geodata/centers.json`,
           displayed: true
-        },
+        }
 
-        // AIDES
+      ]
+    }
+  },
+
+  // SOURCES FOR ROUTES
+  routesData: {
+    help: 'data sources not loaded at init but depending on routes',
+    initData: {
+      help: '',
+      store: [
+        // ============================================================= //
+        // === DATASET : FDS - FONDS DE SOLIDARITE
+        // ============================================================= //
         {
           id: 'national-aides-raw',
+          dataset: 'fds',
           help: 'serie chiffres aides à la maille nationale',
           from: 'static',
           url: `${DATASETS_REPO_BASE}/aides/aides-maille-national-minify.json`,
@@ -272,6 +299,7 @@ export const configAppData = {
         },
         {
           id: 'regions-aides-raw',
+          dataset: 'fds',
           help: 'serie chiffres aides à la maille regionale',
           from: 'static',
           url: `${DATASETS_REPO_BASE}/aides/aides-maille-regional-minify.json`,
@@ -280,196 +308,132 @@ export const configAppData = {
         },
         {
           id: 'departements-aides-raw',
+          dataset: 'fds',
           help: 'serie chiffres aides à la maille departementale',
           from: 'static',
           url: `${DATASETS_REPO_BASE}/aides/aides-maille-departemental-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-departemental.json`,
           displayed: false
+        },
+
+        // ============================================================= //
+        // === DATASET : PGE - PRETS GARANTIS PAR L'ETAT
+        // ============================================================= //
+        {
+          id: 'national-pge-raw',
+          dataset: 'pge',
+          help: 'serie chiffres pge à la maille nationale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/pge/pge-maille-national-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/pge/pge-maille-national.json`,
+          displayed: true,
+          copyTo: [
+            {
+              fieldToCopy: undefined,
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'focusObject',
+              format: undefined
+            },
+            {
+              fieldToCopy: 'montant',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'montant',
+              format: [
+                {
+                  utilsFnName: 'toMillionsOrElse',
+                  params: { divider: 1000000, fixed: 2 }
+                }
+              ]
+            },
+            {
+              fieldToCopy: 'nombre',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'nombre',
+              format: undefined
+            }
+          ]
+        },
+        {
+          id: 'regions-pge-raw',
+          dataset: 'pge',
+          help: 'serie chiffres pge à la maille regionale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/pge/pge-maille-regional-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/pge/pge-maille-regional.json`,
+          displayed: true
+        },
+        {
+          id: 'departements-pge-raw',
+          dataset: 'pge',
+          help: 'serie chiffres pge à la maille departementale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/pge/pge-maille-departemental-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/pge/pge-maille-departemental.json`,
+          displayed: false
+        },
+
+        // ============================================================= //
+        // === DATASET : REPORT - REPORT D'ECHEANCE / REPORT DE CHARGES
+        // ============================================================= //
+        {
+          id: 'national-report-raw',
+          dataset: 'report',
+          help: 'serie chiffres report à la maille nationale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/report/report-maille-national-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/report/report-maille-national.json`,
+          displayed: true,
+          copyTo: [
+            {
+              fieldToCopy: undefined,
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'focusObject',
+              format: undefined
+            },
+            {
+              fieldToCopy: 'montant',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'montant',
+              format: [
+                {
+                  utilsFnName: 'toMillionsOrElse',
+                  params: { divider: 1000000, fixed: 2 }
+                }
+              ]
+            },
+            {
+              fieldToCopy: 'nombre',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'nombre',
+              format: undefined
+            }
+          ]
+        },
+        {
+          id: 'regions-report-raw',
+          dataset: 'report',
+          help: 'serie chiffres report à la maille regionale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/report/report-maille-regional-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/report/report-maille-regional.json`,
+          displayed: true
+        },
+        {
+          id: 'departements-report-raw',
+          dataset: 'report',
+          help: 'serie chiffres report à la maille departementale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/report/report-maille-departemental-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/report/report-maille-departemental.json`,
+          displayed: false
         }
       ]
     }
-  },
-
-  // SOURCES FOR ROUTES
-  routesData: {
-    help: 'data sources not loaded at init but depending on routes',
-    sources: [
-      // ============================================================= //
-      // === DATASET : FDS - FONDS DE SOLIDARITE
-      // ============================================================= //
-      {
-        id: 'national-aides-raw',
-        dataset: 'fds',
-        help: 'serie chiffres aides à la maille nationale',
-        from: 'static',
-        url: `${DATASETS_REPO_BASE}/aides/aides-maille-national-minify.json`,
-        backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-national.json`,
-        displayed: true,
-        copyTo: [
-          {
-            fieldToCopy: undefined,
-            from: { objectRef: 0 },
-            help: 'copy to another dataset (id) in displayedData | initData',
-            toSpecialStore: 'focusObject',
-            format: undefined
-          },
-          {
-            fieldToCopy: 'montant',
-            from: { objectRef: 0 },
-            help: 'copy to another dataset (id) in displayedData | initData',
-            toSpecialStore: 'montant',
-            format: [
-              {
-                utilsFnName: 'toMillionsOrElse',
-                params: { divider: 1000000, fixed: 2 }
-              }
-            ]
-          },
-          {
-            fieldToCopy: 'nombre',
-            from: { objectRef: 0 },
-            help: 'copy to another dataset (id) in displayedData | initData',
-            toSpecialStore: 'nombre',
-            format: undefined
-          }
-        ]
-      },
-      {
-        id: 'regions-aides-raw',
-        dataset: 'fds',
-        help: 'serie chiffres aides à la maille regionale',
-        from: 'static',
-        url: `${DATASETS_REPO_BASE}/aides/aides-maille-regional-minify.json`,
-        backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-regional.json`,
-        displayed: true
-      },
-      {
-        id: 'departements-aides-raw',
-        dataset: 'fds',
-        help: 'serie chiffres aides à la maille departementale',
-        from: 'static',
-        url: `${DATASETS_REPO_BASE}/aides/aides-maille-departemental-minify.json`,
-        backupUrl: `${DATASETS_FOLDER}/prod/aides/aides-maille-departemental.json`,
-        displayed: false
-      },
-
-      // ============================================================= //
-      // === DATASET : PGE - PRETS GARANTIS PAR L'ETAT
-      // ============================================================= //
-      {
-        id: 'national-pge-raw',
-        dataset: 'pge',
-        help: 'serie chiffres pge à la maille nationale',
-        from: 'static',
-        url: `${DATASETS_REPO_BASE}/pge/pge-maille-national-minify.json`,
-        backupUrl: `${DATASETS_FOLDER}/prod/pge/pge-maille-national.json`,
-        displayed: true,
-        copyTo: [
-          {
-            fieldToCopy: undefined,
-            from: { objectRef: 0 },
-            help: 'copy to another dataset (id) in displayedData | initData',
-            toSpecialStore: 'focusObject',
-            format: undefined
-          },
-          {
-            fieldToCopy: 'montant',
-            from: { objectRef: 0 },
-            help: 'copy to another dataset (id) in displayedData | initData',
-            toSpecialStore: 'montant',
-            format: [
-              {
-                utilsFnName: 'toMillionsOrElse',
-                params: { divider: 1000000, fixed: 2 }
-              }
-            ]
-          },
-          {
-            fieldToCopy: 'nombre',
-            from: { objectRef: 0 },
-            help: 'copy to another dataset (id) in displayedData | initData',
-            toSpecialStore: 'nombre',
-            format: undefined
-          }
-        ]
-      },
-      {
-        id: 'regions-pge-raw',
-        dataset: 'pge',
-        help: 'serie chiffres pge à la maille regionale',
-        from: 'static',
-        url: `${DATASETS_REPO_BASE}/pge/pge-maille-regional-minify.json`,
-        backupUrl: `${DATASETS_FOLDER}/prod/pge/pge-maille-regional.json`,
-        displayed: true
-      },
-      {
-        id: 'departements-pge-raw',
-        dataset: 'pge',
-        help: 'serie chiffres pge à la maille departementale',
-        from: 'static',
-        url: `${DATASETS_REPO_BASE}/pge/pge-maille-departemental-minify.json`,
-        backupUrl: `${DATASETS_FOLDER}/prod/pge/pge-maille-departemental.json`,
-        displayed: false
-      },
-
-      // ============================================================= //
-      // === DATASET : REPORT - REPORT D'ECHEANCE / REPORT DE CHARGES
-      // ============================================================= //
-      {
-        id: 'national-report-raw',
-        dataset: 'report',
-        help: 'serie chiffres report à la maille nationale',
-        from: 'static',
-        url: `${DATASETS_REPO_BASE}/report/report-maille-national-minify.json`,
-        backupUrl: `${DATASETS_FOLDER}/prod/report/report-maille-national.json`,
-        displayed: true,
-        copyTo: [
-          {
-            fieldToCopy: undefined,
-            from: { objectRef: 0 },
-            help: 'copy to another dataset (id) in displayedData | initData',
-            toSpecialStore: 'focusObject',
-            format: undefined
-          },
-          {
-            fieldToCopy: 'montant',
-            from: { objectRef: 0 },
-            help: 'copy to another dataset (id) in displayedData | initData',
-            toSpecialStore: 'montant',
-            format: [
-              {
-                utilsFnName: 'toMillionsOrElse',
-                params: { divider: 1000000, fixed: 2 }
-              }
-            ]
-          },
-          {
-            fieldToCopy: 'nombre',
-            from: { objectRef: 0 },
-            help: 'copy to another dataset (id) in displayedData | initData',
-            toSpecialStore: 'nombre',
-            format: undefined
-          }
-        ]
-      },
-      {
-        id: 'regions-report-raw',
-        dataset: 'report',
-        help: 'serie chiffres report à la maille regionale',
-        from: 'static',
-        url: `${DATASETS_REPO_BASE}/report/report-maille-regional-minify.json`,
-        backupUrl: `${DATASETS_FOLDER}/prod/report/report-maille-regional.json`,
-        displayed: true
-      },
-      {
-        id: 'departements-report-raw',
-        dataset: 'report',
-        help: 'serie chiffres report à la maille departementale',
-        from: 'static',
-        url: `${DATASETS_REPO_BASE}/report/report-maille-departemental-minify.json`,
-        backupUrl: `${DATASETS_FOLDER}/prod/report/report-maille-departemental.json`,
-        displayed: false
-      }
-    ]
   }
 }

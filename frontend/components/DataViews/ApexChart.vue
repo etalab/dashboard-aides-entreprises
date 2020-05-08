@@ -1,6 +1,6 @@
 <style scoped>
 .custom-min-height {
-  min-height: 300px;
+  min-height: 150px;
 }
 .hide {
   display: none;
@@ -283,8 +283,8 @@ export default {
     },
 
     getSpecialStoreData(params) {
-      this.log &&
-        console.log("C-ApexChart / getSpecialStoreData / params : ", params)
+      // this.log &&
+      //   console.log("C-ApexChart / getSpecialStoreData / params : ", params)
       let obj = this.getFromSpecialStoreData({
         id: params.id,
         key: params.key,

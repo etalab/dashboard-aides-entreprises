@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.0.14.analyze - analyze build + treeshake icons'
+const APP_VERSION = 'v.2.0 - multiple dattasets'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...

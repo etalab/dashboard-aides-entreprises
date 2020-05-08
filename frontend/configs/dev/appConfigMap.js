@@ -10,12 +10,16 @@ const ZOOM_THRESHOLD = 5.3
 
 // colors
 // const FR_GOUV_BLUE = '#000091'
-const PRIMARYFILLCOLOR = '#7373FF' // #572a99 #8393A7
+const PRIMARYFILLCOLOR = '#7373FF'
 const SECONDARYFILLCOLOR = '#526781'
 const HIGHLIGHTCOLOR = '#572a99'
 
 const OUTLINECOLOR = '#627BC1'
 const OUTLINECOLOR2 = '#6c87ab'
+
+const FILLCOLOR_FDS = '#7373FF'
+const FILLCOLOR_PGE = '#00A17F'
+const FILLCOLOR_REPORT = '#D66200'
 
 // layer fonts : ["Open Sans Regular","Arial Unicode MS Regular"]
 
@@ -60,9 +64,9 @@ const fillPaintDepartements = {
   ]
 }
 
-const circlePaintAides = {
+const circlePaintFDS = {
   'circle-opacity': 0.6,
-  'circle-color': PRIMARYFILLCOLOR,
+  'circle-color': FILLCOLOR_FDS,
   'circle-radius': [
     'interpolate',
     ['linear'],
@@ -71,6 +75,32 @@ const circlePaintAides = {
     10,
     100,
     60
+  ]
+}
+const circlePaintPGE = {
+  'circle-opacity': 0.6,
+  'circle-color': FILLCOLOR_PGE,
+  'circle-radius': [
+    'interpolate',
+    ['linear'],
+    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
+    0,
+    10,
+    100,
+    40
+  ]
+}
+const circlePaintREPORT = {
+  'circle-opacity': 0.6,
+  'circle-color': FILLCOLOR_REPORT,
+  'circle-radius': [
+    'interpolate',
+    ['linear'],
+    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
+    0,
+    10,
+    100,
+    50
   ]
 }
 
@@ -620,7 +650,7 @@ export const configAppMap = {
             visibility: 'visible'
           },
           maxzoom: ZOOM_THRESHOLD,
-          paint: circlePaintAides
+          paint: circlePaintFDS
         },
         {
           id: 'regions-aides-montants',
@@ -645,7 +675,7 @@ export const configAppMap = {
           layout: {
             // visibility: 'none'
           },
-          paint: circlePaintAides,
+          paint: circlePaintFDS,
           minzoom: ZOOM_THRESHOLD
         },
         {
@@ -787,7 +817,7 @@ export const configAppMap = {
       maps: [
         {
           id: 'map-pge-reg',
-          name: 'Carte PGE par région',
+          name: 'Carte pge par région',
           category: 'regional',
           properties: 'pge',
           data: 'pge',
@@ -862,29 +892,8 @@ export const configAppMap = {
                       }
                     ]
                   }
-                },
-
-                // TO DO ...
-                {
-                  funcName: 'setChildrenPolygons',
-                  funcParams: {
-                    propName: 'code',
-                    zoomRange: { minZoom: undefined, maxZoom: ZOOM_THRESHOLD },
-                    targets: [
-                      { targetSource: 'departement', targetPropName: 'region' }
-                    ]
-                  }
                 }
 
-                // { funcName : 'updateQuery',
-                //   funcParams  : {
-                //     propName : 'code',
-                //     zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
-                //     targets : [
-                //       { dataFromSource : 'departement', targetPropName : 'region' },
-                //     ]
-                //   },
-                // },
               ]
             },
 
@@ -946,7 +955,7 @@ export const configAppMap = {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
                         fromStoreData: 'initData',
-                        fromDatasetId: 'departements-aides-raw',
+                        fromDatasetId: 'departements-pge-raw',
                         fromDatasetKey: 'dep',
                         fromDatasetField: 'nombre',
                         targetSpecialStoreId: 'nombre'
@@ -956,7 +965,7 @@ export const configAppMap = {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
                         fromStoreData: 'initData',
-                        fromDatasetId: 'departements-aides-raw',
+                        fromDatasetId: 'departements-pge-raw',
                         fromDatasetKey: 'dep',
                         fromDatasetField: 'montant',
                         targetSpecialStoreId: 'montant',
@@ -972,7 +981,7 @@ export const configAppMap = {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
                         fromStoreData: 'initData',
-                        fromDatasetId: 'departements-aides-raw',
+                        fromDatasetId: 'departements-pge-raw',
                         fromDatasetKey: 'dep',
                         fromDatasetField: undefined,
                         targetSpecialStoreId: 'focusObject'
@@ -1018,7 +1027,7 @@ export const configAppMap = {
             visibility: 'visible'
           },
           maxzoom: ZOOM_THRESHOLD,
-          paint: circlePaintAides
+          paint: circlePaintPGE
         },
         {
           id: 'regions-pge-montants',
@@ -1043,7 +1052,7 @@ export const configAppMap = {
           layout: {
             // visibility: 'none'
           },
-          paint: circlePaintAides,
+          paint: circlePaintPGE,
           minzoom: ZOOM_THRESHOLD
         },
         {
@@ -1235,29 +1244,8 @@ export const configAppMap = {
                       }
                     ]
                   }
-                },
-
-                // TO DO ...
-                {
-                  funcName: 'setChildrenPolygons',
-                  funcParams: {
-                    propName: 'code',
-                    zoomRange: { minZoom: undefined, maxZoom: ZOOM_THRESHOLD },
-                    targets: [
-                      { targetSource: 'departement', targetPropName: 'region' }
-                    ]
-                  }
                 }
 
-                // { funcName : 'updateQuery',
-                //   funcParams  : {
-                //     propName : 'code',
-                //     zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
-                //     targets : [
-                //       { dataFromSource : 'departement', targetPropName : 'region' },
-                //     ]
-                //   },
-                // },
               ]
             },
 
@@ -1392,7 +1380,7 @@ export const configAppMap = {
             visibility: 'visible'
           },
           maxzoom: ZOOM_THRESHOLD,
-          paint: circlePaintAides
+          paint: circlePaintREPORT
         },
         {
           id: 'regions-report-montants',
@@ -1417,7 +1405,7 @@ export const configAppMap = {
           layout: {
             // visibility: 'none'
           },
-          paint: circlePaintAides,
+          paint: circlePaintREPORT,
           minzoom: ZOOM_THRESHOLD
         },
         {

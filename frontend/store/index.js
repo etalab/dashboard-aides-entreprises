@@ -77,15 +77,28 @@ export const getters = {
   getLocalRouteConfig: (state) => {
     return state.localRouteConfig
   },
-  getCurrentRouteConfig: (state) => (currentRoute) => {
+  getCurrentRouteConfigById: (state) => (routeId) => {
     try {
       return state.configRoutes.find(function (r) {
-        return r.urls.indexOf(currentRoute) !== -1
+        return r.id === routeId
       })
     } catch (e) {
       state.log && console.log('err', e)
       return undefined
     }
+  },
+  getCurrentRouteConfig: (state) => (currentRoute) => {
+    try {
+      return state.configRoutes.find(function (r) {
+        return r.urls.includes(currentRoute)
+      })
+    } catch (e) {
+      state.log && console.log('err', e)
+      return undefined
+    }
+  },
+  getRouteNeedDataReset: (state) => {
+    return state.routeNeedDataReset
   },
 
   // DIVS VISIBILITY

@@ -25,6 +25,7 @@ export const state = () => ({
 
   // DATASETS
   initData: undefined,
+  routesData: undefined,
   isInitDataSet: false,
 
   // QUERY
@@ -191,6 +192,7 @@ export const mutations = {
       console.log('S-data-M-setConfigData / configData  : ', configData)
     state.dataSource = configData.dataSource
     state.defaultDataSetup = configData.defaultDataSetup
+    state.routesData = configData.routesData
     state.filters = configData.filters
   },
   setConfigBackendUrl (state, backendApi) {
