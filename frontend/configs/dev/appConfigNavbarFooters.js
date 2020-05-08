@@ -46,7 +46,7 @@ export const configAppNavbarFooters = {
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'apexchart-fds',
-                'apexchart-fds-categ-juridiques',
+                'apexchart-fds-categ-jur',
                 'apexchart-fds-effectifs',
                 'map-france-aides-metro'
               ]
@@ -115,7 +115,7 @@ export const configAppNavbarFooters = {
               divIds: [
                 'text-fds-infos',
                 'apexchart-fds',
-                'apexchart-fds-categ-juridiques',
+                'apexchart-fds-categ-jur',
                 'apexchart-fds-effectifs'
               ]
             },
@@ -174,7 +174,7 @@ export const configAppNavbarFooters = {
               divIds: [
                 'text-fds-title',
                 'apexchart-fds',
-                'apexchart-fds-categ-juridiques',
+                'apexchart-fds-categ-jur',
                 'apexchart-fds-effectifs'
               ]
             },
