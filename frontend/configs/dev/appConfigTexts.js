@@ -289,7 +289,7 @@ export const configAppTexts = {
           columns: [
             {
               colName: '',
-              colTitle: { fr: "Les reeports d'échéance" },
+              colTitle: { fr: "Les reports d'échéance" },
               colTitleClass: 'my-5',
               cols: 12,
               textClass: '',
