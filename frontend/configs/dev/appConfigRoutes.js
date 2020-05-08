@@ -4,7 +4,7 @@ export const configAppRoutes = {
   // ROUTES / PAGES
   routes: [
 
-    // HOME - FDS
+    // HOME / FDS
     {
       id: 'home',
       name: 'homepage',
@@ -122,7 +122,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'map-france-metro',
+                    id: 'map-france-aides-metro',
                     containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true
@@ -284,7 +284,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'map-france-metro',
+                    id: 'map-france-pge-metro',
                     containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true
@@ -446,7 +446,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'map-france-metro',
+                    id: 'map-france-report-metro',
                     containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true

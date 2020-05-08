@@ -14,9 +14,14 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 [wireframe_pdf]: ../screenshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
 
 -----------------
+date : 07/05/2020
+
+- v.2.0.0 : routes/tabs for several datasets
+
+-----------------
 date : 05-06/05/2020
 
-- v.1.14.1 : optimizing buiild => 
+- v.1.14.1 : optimizing build => 
   - geojson 1000m instead of 100m
   - fonts from CDN instead of build
   - analyzer in nuxt script : `nuxt run analyze`

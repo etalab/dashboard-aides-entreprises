@@ -95,31 +95,38 @@ export const configAppUIUX = {
       isActivated: true,
       grow: true,
       dark: true,
+      backgroundColor: 'info',
+      hasIcons: false,
       hasSlider: true,
+      height: 35,
       slidersClass: 'primary',
+      format: 'tabs', // todo : as buttons too
 
       // ITEMS ROUTES TABS
       tabs: [
         {
           to: '/fds',
+          isVisible: true,
           icon: undefined,
           title: { fr: 'fonds de solidarité' },
           titleMobile: { fr: 'FDS' },
-          isVisible: true
+          isNuxtLink: true
         },
         {
           to: '/pge',
+          isVisible: true,
           icon: undefined,
           title: { fr: "prêts garantis par l'Etat" },
           titleMobile: { fr: 'PGE' },
-          isVisible: true
+          isNuxtLink: true
         },
         {
           to: '/reports',
+          isVisible: true,
           icon: undefined,
           title: { fr: "reports d'échéance" },
           titleMobile: { fr: 'REP' },
-          isVisible: true
+          isNuxtLink: true
         }
 
       ]

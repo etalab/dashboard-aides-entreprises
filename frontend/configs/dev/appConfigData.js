@@ -294,9 +294,12 @@ export const configAppData = {
   routesData: {
     help: 'data sources not loaded at init but depending on routes',
     sources: [
-      // AIDES - FONDS DE SOLIDARITE
+      // ============================================================= //
+      // === DATASET : FDS - FONDS DE SOLIDARITE
+      // ============================================================= //
       {
         id: 'national-aides-raw',
+        dataset: 'fds',
         help: 'serie chiffres aides à la maille nationale',
         from: 'static',
         url: `${DATASETS_REPO_BASE}/aides/aides-maille-national-minify.json`,
@@ -333,6 +336,7 @@ export const configAppData = {
       },
       {
         id: 'regions-aides-raw',
+        dataset: 'fds',
         help: 'serie chiffres aides à la maille regionale',
         from: 'static',
         url: `${DATASETS_REPO_BASE}/aides/aides-maille-regional-minify.json`,
@@ -341,6 +345,7 @@ export const configAppData = {
       },
       {
         id: 'departements-aides-raw',
+        dataset: 'fds',
         help: 'serie chiffres aides à la maille departementale',
         from: 'static',
         url: `${DATASETS_REPO_BASE}/aides/aides-maille-departemental-minify.json`,
@@ -348,9 +353,12 @@ export const configAppData = {
         displayed: false
       },
 
-      // PGE - PRETS GARANTIS PAR L'ETAT
+      // ============================================================= //
+      // === DATASET : PGE - PRETS GARANTIS PAR L'ETAT
+      // ============================================================= //
       {
         id: 'national-pge-raw',
+        dataset: 'pge',
         help: 'serie chiffres pge à la maille nationale',
         from: 'static',
         url: `${DATASETS_REPO_BASE}/pge/pge-maille-national-minify.json`,
@@ -387,6 +395,7 @@ export const configAppData = {
       },
       {
         id: 'regions-pge-raw',
+        dataset: 'pge',
         help: 'serie chiffres pge à la maille regionale',
         from: 'static',
         url: `${DATASETS_REPO_BASE}/pge/pge-maille-regional-minify.json`,
@@ -395,6 +404,7 @@ export const configAppData = {
       },
       {
         id: 'departements-pge-raw',
+        dataset: 'pge',
         help: 'serie chiffres pge à la maille departementale',
         from: 'static',
         url: `${DATASETS_REPO_BASE}/pge/pge-maille-departemental-minify.json`,
@@ -402,9 +412,12 @@ export const configAppData = {
         displayed: false
       },
 
-      // REPORT - REPORT D'ECHEANCE / REPORT DE CHARGES
+      // ============================================================= //
+      // === DATASET : REPORT - REPORT D'ECHEANCE / REPORT DE CHARGES
+      // ============================================================= //
       {
         id: 'national-report-raw',
+        dataset: 'report',
         help: 'serie chiffres report à la maille nationale',
         from: 'static',
         url: `${DATASETS_REPO_BASE}/report/report-maille-national-minify.json`,
@@ -441,6 +454,7 @@ export const configAppData = {
       },
       {
         id: 'regions-report-raw',
+        dataset: 'report',
         help: 'serie chiffres report à la maille regionale',
         from: 'static',
         url: `${DATASETS_REPO_BASE}/report/report-maille-regional-minify.json`,
@@ -449,6 +463,7 @@ export const configAppData = {
       },
       {
         id: 'departements-report-raw',
+        dataset: 'report',
         help: 'serie chiffres report à la maille departementale',
         from: 'static',
         url: `${DATASETS_REPO_BASE}/report/report-maille-departemental-minify.json`,

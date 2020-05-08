@@ -23,19 +23,21 @@ body {
     <Navbar v-if="!isIframe" />
 
     <!-- TABS ROUTES -->
-    <TabsRoutes v-if="routesTabs && routesTabs.isActivated"/>
+    <TabsRoutes v-if="routesTabs && routesTabs.isActivated" />
 
     <!-- CONTENT LAYOUT -->
     <v-content 
       id="layout-content"
       :style="`height: ${contentWindowHeight}px`"
+      class="ma-0 pa-0"
       >
       <Filters />
 
       <!-- <FiltersFeedback/> -->
       <v-container 
         id="layout-container"
-        fluid pa-0
+        fluid
+        pa-0
         >
         <nuxt />
       </v-container>

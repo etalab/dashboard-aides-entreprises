@@ -1,4 +1,3 @@
-// import Vue from 'vue'
 console.log('+ + + utils/utils... ')
 
 // PURE UTILS
@@ -9,7 +8,6 @@ console.log('+ + + utils/utils... ')
 export function capitalizeString (string) {
   return string[0].toUpperCase() + string.substring(1)
 }
-
 export function splitMulti (str, tokens, glue = ' ', capitalize = false) {
   var tempChar = tokens[0] // We can use the first token as a temporary join character
   // console.log("\n+ + + splitMulti / str : ", str)
@@ -49,7 +47,6 @@ export function moveArrayElement (arr, oldIndex, newIndex) {
   arr.splice(newIndex, 0, arr.splice(oldIndex, 1)[0])
   return arr
 }
-
 export function sortByFieldName (arrayOfStuff, fieldName) {
   const sortedArray = arrayOfStuff.sort((a, b) => {
     var nameA = a[fieldName].toLowerCase()
@@ -83,7 +80,6 @@ export function sortByFieldDate (arrayOfStuff, fieldName) {
   })
   return sortedArray
 }
-
 export function sortArrayBy (arrayOfStuff, params) {
   let sortedArray = arrayOfStuff
   const sortBy = params.sortByType
@@ -184,7 +180,6 @@ export function objectFromPath (obj, path, separator = '.') {
 export function cloneObject (obj) {
   return JSON.parse(JSON.stringify(obj))
 }
-
 export function setNestedObjectFromPath (path, value, obj, separator = '.') {
   // console.log("+ + + setNestedObjectFromPath / obj : ", obj)
   // console.log("+ + + setNestedObjectFromPath / path : ", path)
@@ -215,7 +210,6 @@ export function setNestedObjectFromPath (path, value, obj, separator = '.') {
     return true // this is the end
   }
 }
-
 export function setDeep (
   path,
   value,
@@ -246,26 +240,6 @@ export function setDeep (
   }, obj)
 }
 
-// Example: to set a new property foo.bar.baz = true on a Vuex state object
-// you would call setProp(state, ['foo', 'bar', 'baz'], true).
-// The function creates any nested properties that don't already exist.
-
-// export function setProp (obj, props, value) {
-//   const prop = props.shift()
-//   if (!obj[prop]) {
-//     Vue.set(obj, prop, {})
-//   }
-//   if (!props.length) {
-//     if (value && typeof value === 'object' && !Array.isArray(value)) {
-//       obj[prop] = { ...obj[prop], ...value }
-//     } else {
-//       obj[prop] = value
-//     }
-//     return
-//   }
-//   setProp(obj[prop], props, value)
-// }
-
 // - - - - - - - - - - - - - - - - - - - //
 // FORMAT VALUES
 // - - - - - - - - - - - - - - - - - - - //
@@ -274,12 +248,10 @@ export function toMillionsOrElse (x, params = { divider: 1000000, fixed: 2 }) {
   // console.log( "=== toMillions / x ", x )
   return parseFloat((parseFloat(x) / params.divider).toFixed(params.fixed))
 }
-
 export function toFloat (x, params = undefined) {
   // console.log( "=== toFloat / x ", x )
   return parseFloat(x)
 }
-
 export function switchFormatFunctions (value, format) {
   let val = value
   format.forEach((fn) => {
