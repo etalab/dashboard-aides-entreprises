@@ -70,7 +70,7 @@ export const configAppNavbarFooters = {
               ]
             },
             {
-              routeId: 'report',
+              routeId: 'reports',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
@@ -79,7 +79,7 @@ export const configAppNavbarFooters = {
               ]
             },
             {
-              routeId: 'report',
+              routeId: 'reports',
               toggle: 'off',
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
@@ -138,7 +138,7 @@ export const configAppNavbarFooters = {
               ]
             },
             {
-              routeId: 'report',
+              routeId: 'reports',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
@@ -147,7 +147,7 @@ export const configAppNavbarFooters = {
               ]
             },
             {
-              routeId: 'report',
+              routeId: 'reports',
               toggle: 'off',
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
@@ -206,7 +206,7 @@ export const configAppNavbarFooters = {
               ]
             },
             {
-              routeId: 'report',
+              routeId: 'reports',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
@@ -215,7 +215,7 @@ export const configAppNavbarFooters = {
               ]
             },
             {
-              routeId: 'report',
+              routeId: 'reports',
               toggle: 'off',
               toggleVisibility: ['isVisibleMobile'],
               divIds: [

@@ -55,9 +55,7 @@ export default function ({ store, env, route, redirect }) {
     )
 
   // reroute to error / or home if currentRouteConfig is undefined
-  if (typeof currentRouteConfig === 'undefined') {
-    redirect('/')
-  }
+  if (typeof currentRouteConfig === 'undefined') { redirect('/') }
 
   // set local route config
   else {
