@@ -6,43 +6,42 @@
 </style>
 
 <template>
-  <!-- <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`"> -->
-    <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
-    <v-footer
-      v-if="getCurrentNavbarFooter && showCurrentNavbarFooter"
-      class="pa-0"
-      fixed
+  <v-footer
+    v-if="getCurrentNavbarFooter && showCurrentNavbarFooter"
+    class="pa-0"
+    fixed
+  >
+    <v-bottom-navigation
+      :id="`navbar-footer-${settings.id}`"
+      :class="`odm-navbar odm-navbar-footer ${settings.navbarFooterClass}`"
+      :trigger="`${trigger}`"
+      :value="bottomNav"
+      :grow="navbarFooterConfig.grow"
+      :height="navbarFooterConfig.height"
+      :shift="navbarFooterConfig.shift"
+      color="primary"
+      :triggerResetNavbarFooter="`${triggerResetNavbarFooter}`"
     >
-      <v-bottom-navigation
-        :id="`navbar-footer-${settings.id}`"
-        :class="`odm-navbar odm-navbar-footer ${settings.navbarFooterClass}`"
-        :trigger="`${trigger}`"
-        :value="bottomNav"
-        :grow="navbarFooterConfig.grow"
-        :height="navbarFooterConfig.height"
-        :shift="navbarFooterConfig.shift"
-        color="primary"
+      <!-- {{ showCurrentNavbarFooter }} -->
+      <!-- {{ triggerResetNavbarFooter }} / {{ bottomNav }} -->
+
+      <v-btn
+        v-for="btn in navbarFooterConfig.buttons"
+        :key="btn.value"
+        :value="btn.value"
+        @click.stop="goToRef(btn)"
       >
-        <!-- {{ showCurrentNavbarFooter }} -->
+        <span>
+          {{ btn.title[locale] }}
+        </span>
 
-        <v-btn
-          v-for="btn in navbarFooterConfig.buttons"
-          :key="btn.value"
-          :value="btn.value"
-          @click.stop="goToRef(btn)"
-        >
-          <span>
-            {{ btn.title[locale] }}
-          </span>
+        <v-icon>
+          {{ btn.icon }}
+        </v-icon>
 
-          <v-icon>
-            {{ btn.icon }}
-          </v-icon>
-
-        </v-btn>
-      </v-bottom-navigation>
-    </v-footer>
-  <!-- </div> -->
+      </v-btn>
+    </v-bottom-navigation>
+  </v-footer>
 </template>
 
 <script>
@@ -171,6 +170,9 @@ export default {
     },
 
     goToRef(btn) {
+
+      this.bottomNav = btn.value
+
       // this.log && console.log('C-NavbarFooter / goToRef / btn : ', btn)
       if (btn.action == "scrollTo") {
         // scroll action
@@ -192,6 +194,8 @@ export default {
     },
 
     resetBottomNav() {
+      // this.log && console.log("C-NavbarFooter / resetBottomNav ...")
+      // this.log && console.log("C-NavbarFooter / this.navbarFooterConfig :", this.navbarFooterConfig)
       this.bottomNav = this.navbarFooterConfig.defaultBtnNav
     }
   },
