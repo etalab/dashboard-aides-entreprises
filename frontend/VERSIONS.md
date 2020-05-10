@@ -14,6 +14,11 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 [wireframe_pdf]: ../screenshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
 
 -----------------
+date : 11/05/2020
+
+- v.2.0.1 : pie chart & multiple charts
+
+-----------------
 date : 07/05/2020
 
 - v.2.0.0 : routes/tabs for several datasets

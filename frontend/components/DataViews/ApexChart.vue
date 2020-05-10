@@ -117,7 +117,7 @@ export default {
     this.log && console.log("\nC-ApexChart / mounted ... this.settings.id :", this.settings.id)
     this.getCanShow()
     let newSeries = this.getSeries()
-    this.log && console.log("C-ApexChart / mounted ... newSeries.dataSeries :", newSeries.dataSeries)
+    this.log && console.log("C-ApexChart / mounted ... newSeries :", newSeries)
     this.localSeries = newSeries && newSeries.dataSeries
     this.updateOptionsColor(newSeries.colors)
     this.updateOptionsLabels(newSeries.labels)

@@ -157,7 +157,7 @@ const COMMON_SERIES_MAPPERS = {
       capitalize: true
     },
 
-    buildColorsAxisX: true,
+    buildColorsAxisX: false,
     buildColorsAxisXsettings: {
       fromKey: KEY_SECTION_CATEGJUR,
       matchWithDatasetId: 'taxo-categ-juridiques',
@@ -339,10 +339,10 @@ const COMMON_CHART_OPTIONS = {
       }
     ]
   },
-  categPieH300: {
+  categPieH250: {
     chart: {
       type: 'donut',
-      height: '300px',
+      height: '250px',
       width: '390px',
       toolbar: {
         show: false
@@ -351,30 +351,21 @@ const COMMON_CHART_OPTIONS = {
     legend: {
       position: 'bottom'
     },
-    // plotOptions: {
-    //   bar: {
-    //     horizontal: true,
-    //     distributed: true // nerd-pride....
-    //   }
-    // },
     theme: {
+      palette: 'palette7',
       mode: 'light'
     },
 
     dataLabels: {
       enabled: true
     },
-
-    // xaxis: {
-    //   type: 'category',
-    //   labels: {
-    //     show: false,
-    //     style: {
-    //       fontSize: '9px'
-    //     }
-    //   }
-    // },
-
+    plotOptions: {
+      pie: {
+        donut: {
+          size: '45%'
+        }
+      }
+    },
     responsive: [
       {
         breakpoint: 960,
@@ -383,15 +374,6 @@ const COMMON_CHART_OPTIONS = {
             // height: "370px",
             width: '350px'
           }
-          // xaxis: {
-          //   type: 'numeric',
-          //   labels: {
-          //     show: false,
-          //     style: {
-          //       fontSize: '9px'
-          //     }
-          //   }
-          // }
         }
       }
     ]
@@ -559,7 +541,7 @@ export const configAppCharts = {
           COMMON_SERIES_MAPPERS.CategjurByMontantPie
         ],
 
-        chartOptions: COMMON_CHART_OPTIONS.categPieH300
+        chartOptions: COMMON_CHART_OPTIONS.categPieH250
       }
     },
     // BAR VERTIC - APE X NOMBRES

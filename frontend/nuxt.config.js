@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.2.0 - multiple datasets'
+const APP_VERSION = 'v.2.1 - pie chart example'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
