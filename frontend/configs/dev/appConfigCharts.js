@@ -121,6 +121,50 @@ const COMMON_SERIES_MAPPERS = {
       getValueFromKey: 'color',
       fallbackColor: '#808080'
     }
+  },
+  CategjurByMontantPie: {
+    dataFromKey: KEY_MONTANT,
+    serieName: 'montant (M€)',
+    format: [
+      {
+        utilsFnName: 'toMillionsOrElse',
+        params: { divider: 1000000, fixed: 2 }
+      }
+    ],
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_MONTANT,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_CATEGJUR, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: false,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_CATEGJUR_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildLabels: true,
+    buildLabelsSettings: {
+      fromKey: KEY_SECTION_CATEGJUR_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_CATEGJUR,
+      matchWithDatasetId: 'taxo-categ-juridiques',
+      matchKey: 'code',
+      getValueFromKey: 'color',
+      fallbackColor: '#808080'
+    }
   }
 }
 const COMMON_CHART_OPTIONS = {
@@ -294,6 +338,63 @@ const COMMON_CHART_OPTIONS = {
         }
       }
     ]
+  },
+  categPieH300: {
+    chart: {
+      type: 'donut',
+      height: '300px',
+      width: '390px',
+      toolbar: {
+        show: false
+      }
+    },
+    legend: {
+      position: 'bottom'
+    },
+    // plotOptions: {
+    //   bar: {
+    //     horizontal: true,
+    //     distributed: true // nerd-pride....
+    //   }
+    // },
+    theme: {
+      mode: 'light'
+    },
+
+    dataLabels: {
+      enabled: true
+    },
+
+    // xaxis: {
+    //   type: 'category',
+    //   labels: {
+    //     show: false,
+    //     style: {
+    //       fontSize: '9px'
+    //     }
+    //   }
+    // },
+
+    responsive: [
+      {
+        breakpoint: 960,
+        options: {
+          chart: {
+            // height: "370px",
+            width: '350px'
+          }
+          // xaxis: {
+          //   type: 'numeric',
+          //   labels: {
+          //     show: false,
+          //     style: {
+          //       fontSize: '9px'
+          //     }
+          //   }
+          // }
+        }
+      }
+    ]
   }
 }
 
@@ -425,6 +526,40 @@ export const configAppCharts = {
         ],
 
         chartOptions: COMMON_CHART_OPTIONS.categHorizH170
+      }
+    },
+    // PIE - CATEG JURIDIQUE X MONTANTS
+    {
+      id: 'apexchart-fds-categ-jur-pie',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_categorie_juridique X montant',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Top 3 des aides par catégories juridiques
+          (en M€) <br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_categorie_juridique',
+
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.CategjurByMontantPie
+        ],
+
+        chartOptions: COMMON_CHART_OPTIONS.categPieH300
       }
     },
     // BAR VERTIC - APE X NOMBRES

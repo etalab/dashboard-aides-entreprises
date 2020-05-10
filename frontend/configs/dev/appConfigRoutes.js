@@ -100,7 +100,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'apexchart-fds-categ-jur',
+                    id: 'apexchart-fds-categ-jur-pie',
                     containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
