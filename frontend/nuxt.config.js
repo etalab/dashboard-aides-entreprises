@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.2.0.3 - fix max height'
+const APP_VERSION = 'v.2.0.4 - playing with nuxt loading bar'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
@@ -231,8 +231,11 @@ const configApp = {
 
   overrideIframe: chooseBooleanMode(process.env.NUXT_ENV_APP_IFRAME_OVERRIDE),
   overrideRoutesTabs: chooseBooleanMode(process.env.NUXT_ENV_APP_ROUTESTABS_OVERRIDE),
+
+  // LOADING
   loadingColor: process.env.NUXT_ENV_LOADING_COLOR || '#fff',
   loadingHeight: process.env.NUXT_ENV_LOADING_HEIGHT || 3,
+  loadingContinuous: process.env.NUXT_ENV_APP_LOADING_CONTINUOUS || true,
 
   // CONFIGS
   // configsReferencesBackup: process.env.NUXT_ENV_CONFIG_BACKUP
@@ -317,7 +320,8 @@ export default {
    */
   loading: {
     color: configApp.loadingColor,
-    height: `${configApp.loadingHeight}px`
+    height: `${configApp.loadingHeight}px`,
+    continuous: configApp.loadingContinuous
   },
 
   /*

@@ -450,7 +450,9 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Aides par classes d'effectifs
+          Aides par 
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/methodologie/effectifs-salaries.html">
+            classes d'effectifs</a>
           (en M€) <br>
         `
       },
@@ -484,7 +486,9 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Top 3 des aides par catégories juridiques
+          Top 3 des aides par 
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
+            catégories juridiques </a>a>
           (en M€) <br>
         `
       },
@@ -518,7 +522,9 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Top 3 des aides par catégories juridiques
+          Top 3 des aides par 
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
+            catégories juridiques </a>
           (en M€) <br>
         `
       },

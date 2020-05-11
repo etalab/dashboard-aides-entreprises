@@ -134,7 +134,6 @@ const aidesProperties = [
 // - - - - - - - - - - - - - - - - - - - - - //
 
 const COMMON_SOURCES = {
-
   FranceRegions: {
     id: 'regions',
     help: 'geojson des contours des régions',
@@ -149,7 +148,6 @@ const COMMON_SOURCES = {
     loadInStore: true,
     popupSettings: true
   },
-
   FranceDepartements: {
     id: 'departements',
     help: 'geojson des contours des départements',
@@ -170,58 +168,59 @@ const COMMON_SOURCES = {
 // - - - - - - - - - - - - - - - - - - - - - //
 // COMMON MAP CONFIGURATIONS ELEMENTS
 // - - - - - - - - - - - - - - - - - - - - - //
+// ADAPT TO MAPBOX-GL-JS OPTIONS
 
 const COMMON_OPTIONS = {
   FranceMetro: {
-    // ADAPT TO MAPBOX-GL-JS OPTIONS
     mapStyle: 'EtalabUrl',
     center: [46.2276, 2.2137],
     currentCenter: [46.2276, 2.2137],
+    bbox: [41.277, -5.317, 51.234, 9.689],
     zoom: 4.8,
     maxZoom: 9.5,
     minZoom: 2
   },
   FranceGuadeloupe: {
-    // ADAPT TO MAPBOX-GL-JS OPTIONS
     mapStyle: 'EtalabUrl',
-    center: [46.2276, 2.2137],
-    currentCenter: [46.2276, 2.2137],
+    center: [16.172, -61.406],
+    currentCenter: [16.172, -61.406],
+    bbox: [15.833, -61.81, 16.511, -61.003],
     zoom: 4.8,
     maxZoom: 9.5,
     minZoom: 2
   },
   FranceMartinique: {
-    // ADAPT TO MAPBOX-GL-JS OPTIONS
     mapStyle: 'EtalabUrl',
-    center: [46.2276, 2.2137],
-    currentCenter: [46.2276, 2.2137],
+    center: [14.637, -61.02],
+    currentCenter: [14.637, -61.02],
+    bbox: [-14.395, 61.229, 14.879, -60.811],
     zoom: 4.8,
     maxZoom: 9.5,
     minZoom: 2
   },
   FranceGuyane: {
-    // ADAPT TO MAPBOX-GL-JS OPTIONS
     mapStyle: 'EtalabUrl',
-    center: [46.2276, 2.2137],
-    currentCenter: [46.2276, 2.2137],
+    center: [3.931, -53.119],
+    currentCenter: [3.931, -53.119],
+    bbox: [2.111, -54.603, 5.751, -51.635],
     zoom: 4.8,
     maxZoom: 9.5,
     minZoom: 2
   },
   FranceReunion: {
-    // ADAPT TO MAPBOX-GL-JS OPTIONS
     mapStyle: 'EtalabUrl',
-    center: [46.2276, 2.2137],
-    currentCenter: [46.2276, 2.2137],
+    center: [-21.13, 55.527],
+    currentCenter: [-21.13, 55.527],
+    bbox: [-21.389, 55.216, -20.872, 55.837],
     zoom: 4.8,
     maxZoom: 9.5,
     minZoom: 2
   },
   FranceMayotte: {
-    // ADAPT TO MAPBOX-GL-JS OPTIONS
     mapStyle: 'EtalabUrl',
-    center: [46.2276, 2.2137],
-    currentCenter: [46.2276, 2.2137],
+    center: [-12.818, 45.158],
+    currentCenter: [-12.818, 45.158],
+    bbox: [-13, 45.018, -12.637, 45.298],
     zoom: 4.8,
     maxZoom: 9.5,
     minZoom: 2
@@ -295,10 +294,13 @@ const COMMON_SIZES = {
 const COMMON_CLICK_EVENTS = {
 
   toggleSelectedOn: {
-    funcName: 'toggleSelectedOn', funcParams: {}
+    funcName: 'toggleSelectedOn',
+    help: 'toggle selected polygon as on',
+    funcParams: {}
   },
   goToPolygon: {
     funcName: 'goToPolygon',
+    help: 'fly to polygon',
     funcParams: {
       zoomRange: {
         minZoom: undefined,
@@ -309,6 +311,7 @@ const COMMON_CLICK_EVENTS = {
   },
   goToPolygonPlus: {
     funcName: 'goToPolygon',
+    help: 'fly to polygon with a slightly different zoom level',
     funcParams: {
       zoomRange: {
         minZoom: undefined,
@@ -317,8 +320,16 @@ const COMMON_CLICK_EVENTS = {
       propName: 'code'
     }
   },
-  toggleHighlightOn: { funcName: 'toggleHighlightOn', funcParams: {} },
-  toggleHighlightOff: { funcName: 'toggleHighlightOff', funcParams: {} }
+  toggleHighlightOn: {
+    funcName: 'toggleHighlightOn',
+    help: 'highlight polygon / geo element as on',
+    funcParams: {}
+  },
+  toggleHighlightOff: {
+    funcName: 'toggleHighlightOff',
+    help: 'highlight polygon / geo element as off',
+    funcParams: {}
+  }
 }
 
 // - - - - - - - - - - - - - - - - - - - - - //
@@ -346,9 +357,9 @@ export const configAppMap = {
 
       sizes: COMMON_SIZES.defaultSizes,
 
-      // - - - - - - - - - - - - - - - - - - //
+      // - - - - - - - - - - - - - - - - - - - - - - //
       // SOURCES LOADED AT MAP LOADED
-      // - - - - - - - - - - - - - - - - - - //
+      // - - - - - - - - - - - - - - - - - - - - - - //
       sources: [
 
         COMMON_SOURCES.FranceRegions,
@@ -404,9 +415,9 @@ export const configAppMap = {
         }
       ],
 
-      // - - - - - - - - - - - - - - - - - - //
-      // MAPS
-      // - - - - - - - - - - - - - - - - - - //
+      // - - - - - - - - - - - - - - - - - - - - - - //
+      // MAPS : GROUPS OF LAYERS + CLICK EVENTS
+      // - - - - - - - - - - - - - - - - - - - - - - //
       maps: [
         {
           id: 'map-aides-reg',
@@ -430,6 +441,7 @@ export const configAppMap = {
                 COMMON_CLICK_EVENTS.goToPolygonPlus,
                 {
                   funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
@@ -499,6 +511,7 @@ export const configAppMap = {
                 // TO DO ...
                 {
                   funcName: 'setChildrenPolygons',
+                  help: 'to do still',
                   funcParams: {
                     propName: 'code',
                     zoomRange: { minZoom: undefined, maxZoom: ZOOM_THRESHOLD },
@@ -558,6 +571,7 @@ export const configAppMap = {
                 COMMON_CLICK_EVENTS.toggleSelectedOn,
                 {
                   funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
                   funcParams: {
                     zoomRange: {
                       minZoom: ZOOM_THRESHOLD,
@@ -635,9 +649,9 @@ export const configAppMap = {
         }
       ],
 
-      // - - - - - - - - - - - - - - - - - - //
-      // LAYERS
-      // - - - - - - - - - - - - - - - - - - //
+      // - - - - - - - - - - - - - - - - - - - - - - //
+      // LAYERS : MAPBOX LAYERS
+      // - - - - - - - - - - - - - - - - - - - - - - //
       layers: [
         // REGIONS
         COMMON_LAYERS.FranceRegionsFill,
@@ -692,9 +706,9 @@ export const configAppMap = {
         }
       ],
 
-      // - - - - - - - - - - - - - - - - - - //
+      // - - - - - - - - - - - - - - - - - - - - - - //
       // LAYERS VISIBILITY DRAWER
-      // - - - - - - - - - - - - - - - - - - //
+      // - - - - - - - - - - - - - - - - - - - - - - //
       maps_visibility: {
         title: { fr: 'calques' },
         is_activated: false,
@@ -715,7 +729,6 @@ export const configAppMap = {
         ]
       }
     },
-
     // GUYANE
     {
       id: 'map-france-aides-guyane',
@@ -734,7 +747,104 @@ export const configAppMap = {
           fieldsToCopy: [
             'sources',
             'maps',
-            'layers'
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // GUADELOUPE
+    {
+      id: 'map-france-aides-guadeloupe',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuadeloupe,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-aides-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MARTINIQUE
+    {
+      id: 'map-france-aides-martinique',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMartinique,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-aides-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // LA REUNION
+    {
+      id: 'map-france-aides-la-reunion',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceReunion,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-aides-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MAYOTTE
+    {
+      id: 'map-france-aides-mayotte',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMayotte,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-aides-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
           ]
         }
       ]
@@ -837,6 +947,7 @@ export const configAppMap = {
                 COMMON_CLICK_EVENTS.goToPolygonPlus,
                 {
                   funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
@@ -901,14 +1012,15 @@ export const configAppMap = {
               event: 'mousemove',
               layer: 'regions-fill',
               functions: [
-                { funcName: 'toggleHighlightOn', funcParams: {} }]
+                COMMON_CLICK_EVENTS.toggleHighlightOn
+              ]
             },
 
             {
               event: 'mouseleave',
               layer: 'regions-fill',
               functions: [
-                { funcName: 'toggleHighlightOff', funcParams: {} }
+                COMMON_CLICK_EVENTS.toggleHighlightOff
               ]
             }
           ]
@@ -934,6 +1046,7 @@ export const configAppMap = {
                 COMMON_CLICK_EVENTS.toggleSelectedOn,
                 {
                   funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
                   funcParams: {
                     zoomRange: {
                       minZoom: ZOOM_THRESHOLD,
@@ -1092,6 +1205,126 @@ export const configAppMap = {
         ]
       }
     },
+    // GUYANE
+    {
+      id: 'map-france-pge-guyane',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuyane,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-pge-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // GUADELOUPE
+    {
+      id: 'map-france-pge-guadeloupe',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuadeloupe,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-pge-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MARTINIQUE
+    {
+      id: 'map-france-pge-martinique',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMartinique,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-pge-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // LA REUNION
+    {
+      id: 'map-france-pge-la-reunion',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceReunion,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-pge-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MAYOTTE
+    {
+      id: 'map-france-pge-mayotte',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMayotte,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-pge-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
 
     // ====================================== //
     // === DATASET : REPORTS ================ //
@@ -1189,6 +1422,7 @@ export const configAppMap = {
                 COMMON_CLICK_EVENTS.goToPolygonPlus,
                 {
                   funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
@@ -1285,9 +1519,9 @@ export const configAppMap = {
               layer: 'departements-fill',
               functions: [
                 COMMON_CLICK_EVENTS.toggleSelectedOn,
-
                 {
                   funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
                   funcParams: {
                     zoomRange: {
                       minZoom: ZOOM_THRESHOLD,
@@ -1444,6 +1678,126 @@ export const configAppMap = {
           }
         ]
       }
+    },
+    // GUYANE
+    {
+      id: 'map-france-report-guyane',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuyane,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-report-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // GUADELOUPE
+    {
+      id: 'map-france-report-guadeloupe',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuadeloupe,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-report-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MARTINIQUE
+    {
+      id: 'map-france-report-martinique',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMartinique,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-report-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // LA REUNION
+    {
+      id: 'map-france-report-la-reunion',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceReunion,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-report-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MAYOTTE
+    {
+      id: 'map-france-report-mayotte',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMayotte,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-report-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
     }
 
   ]

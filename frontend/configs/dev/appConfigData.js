@@ -226,7 +226,6 @@ export const configAppData = {
           backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/sections-naf.json`,
           displayed: false
         },
-
         {
           id: 'taxo-categ-juridiques',
           help: '',
@@ -235,6 +234,7 @@ export const configAppData = {
           backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/categories-juridiques.json`,
           displayed: false
         },
+
         // ============================================================= //
         // GEOJSON (NO NEED EXCEPT CENTERS : SOURCES LOADED IN MAPBOX COMPONENT )
         // ============================================================= //
