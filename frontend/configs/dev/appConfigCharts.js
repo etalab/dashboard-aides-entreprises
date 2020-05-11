@@ -448,12 +448,13 @@ export const configAppCharts = {
       serie_id: 'stat-bar-horiz',
       help: 'bar horiz / kpi_categorie_juridique X montant',
       titleI18n: 'charts.chart01.title',
+      // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/methodologie/effectifs-salaries.html">
       chartTitle: {
         fr: `
-          Aides par 
-          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/methodologie/effectifs-salaries.html">
-            classes d'effectifs</a>
-          (en M€) <br>
+        Aides par 
+        <a target="_blank" href="https://www.insee.fr/fr/information/1896448">
+        classes d'effectifs</a>
+        (en M€) <br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
@@ -484,10 +485,11 @@ export const configAppCharts = {
       serie_id: 'stat-bar-horiz',
       help: 'bar horiz / kpi_categorie_juridique X montant',
       titleI18n: 'charts.chart01.title',
+      // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
       chartTitle: {
         fr: `
           Top 3 des aides par 
-          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
+          <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
             catégories juridiques </a>a>
           (en M€) <br>
         `
@@ -520,10 +522,11 @@ export const configAppCharts = {
       serie_id: 'stat-bar-horiz',
       help: 'bar horiz / kpi_categorie_juridique X montant',
       titleI18n: 'charts.chart01.title',
+      // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
       chartTitle: {
         fr: `
           Top 3 des aides par 
-          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
+          <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
             catégories juridiques </a>
           (en M€) <br>
         `
