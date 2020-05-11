@@ -3,11 +3,12 @@
 <template>
   <v-content
     id="routes-tabs"
-    class="odm-navbar"
+    v-if="!noRoutesTabs"
     >
     <v-container
       fluid
-      class="ma-0 pa-0"
+      fixed
+      class="odm-navbar ma-0 pa-0"
       >
       <v-tabs
         show-arrows
@@ -106,6 +107,7 @@ export default {
     ...mapState({
       log: (state) => state.log,
       locale: (state) => state.locale,
+      noRoutesTabs: (state) => state.noRoutesTabs,
 
       mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),

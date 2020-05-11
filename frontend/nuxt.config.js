@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.2.0.1 - pie chart example'
+const APP_VERSION = 'v.2.0.2 - no route tabs param'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...

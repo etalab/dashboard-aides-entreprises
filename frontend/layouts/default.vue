@@ -27,15 +27,15 @@ body {
 
     <!-- CONTENT LAYOUT -->
     <v-content 
-      id="layout-content"
-      :style="`height: ${contentWindowHeight}px`"
+      id="ODAMAP-layout-content"
       class="ma-0 pa-0"
+      :style="`height: ${contentWindowHeight}px; padding: 0 0 0 0`"
       >
       <Filters />
 
       <!-- <FiltersFeedback/> -->
       <v-container 
-        id="layout-container"
+        id="ODAMAP-layout-container"
         fluid
         pa-0
         >

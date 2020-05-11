@@ -177,7 +177,7 @@ export default {
       let seriesMappers = this.datasetMappers.seriesMappers
 
       const chartOptions = this.localChartOptions
-      const pieChartTypes = [ 'donut', 'pie']
+      const pieChartTypes = ['donut', 'pie']
 
       let dataSeries = []
       let newColors = []
@@ -191,7 +191,7 @@ export default {
           sortParams: mapper.sortDataSerieBy,
         })
         this.rawDataSerie = rawDataSerie
-        this.log && console.log('C-ApexChart / getSeries / rawDataSerie : ', rawDataSerie )
+        // this.log && console.log('C-ApexChart / getSeries / rawDataSerie : ', rawDataSerie )
         let dataFromKey = mapper.dataFromKey
         let valuesSerie
 
@@ -296,7 +296,7 @@ export default {
           valuesSerie = rawDataSerie
         }
 
-        this.log && console.log('C-ApexChart / getSeries / valuesSerie (1) : ', valuesSerie )
+        // this.log && console.log('C-ApexChart / getSeries / valuesSerie (1) : ', valuesSerie )
 
         let dataSerie = {
           name: mapper.serieName,

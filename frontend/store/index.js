@@ -37,6 +37,7 @@ export const state = () => ({
 
   // ROUTES
   routesTabs: undefined,
+  noRoutesTabs: false,
   configRoutes: undefined,
   localRouteConfig: undefined,
   routeNeedDataReset: true,
@@ -271,6 +272,9 @@ export const mutations = {
   },
   SetQueryRouteId (state, queryRouteId) {
     state.queryRouteId = queryRouteId
+  },
+  setNoRoutesTabs (state, noRoutesTabs) {
+    state.noRoutesTabs = noRoutesTabs
   },
 
   // DIVS VISIBILITY

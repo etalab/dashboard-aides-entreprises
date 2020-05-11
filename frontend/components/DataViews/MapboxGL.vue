@@ -360,16 +360,14 @@ export default {
       winHeight = ODAMAP_height ? ODAMAP_height : winHeight 
 
       let mapHeight = winHeight
-      // let navbarHeight = this.navbarHeight
-      // let getCurrentNavbarFooter = this.getCurrentNavbarFooter
 
       var docNavbars = document.querySelectorAll(`.odm-navbar`)
-      // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
+      this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
       let docNavbarsArray = Array.prototype.slice.call(docNavbars)
       let sumNavbarsHeights = docNavbarsArray
         .map((i) => i.offsetHeight)
         .reduce((prev, curr) => prev + curr, 0)
-      // this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
+      this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
 
       if (this.isMobileWidth) {
         var docComponents = document.querySelectorAll(

@@ -234,26 +234,18 @@ export default {
     contentWindowHeight() {
       let winHeight = window.innerHeight
       let ODAMAP_height = document.getElementById('ODAMAP-root') ? document.getElementById('ODAMAP-root').clientHeight : undefined 
-      // this.log && console.log("P-Homepage / handleResize ... winHeight : ", winHeight )
+      this.log && console.log("P-Homepage / handleResize ... winHeight : ", winHeight )
       winHeight = ODAMAP_height ? ODAMAP_height : winHeight 
 
       var docNavbars = document.querySelectorAll(`.odm-navbar`)
-      // this.log && console.log("P-Homepage / handleResize ... docNavbars : ", docNavbars )
+      this.log && console.log("P-Homepage / handleResize ... docNavbars : ", docNavbars )
       let docNavbarsArray = Array.prototype.slice.call(docNavbars)
       let sumNavbarsHeights = docNavbarsArray
         .map((i) => i.offsetHeight)
         .reduce((prev, curr) => prev + curr, 0)
-      // this.log && console.log("P-Homepage / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
+      this.log && console.log("P-Homepage / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
 
       let height = winHeight - sumNavbarsHeights
-
-      // let height = this.windowSize.height - this.navbarHeight
-      // if (
-      //   this.getCurrentNavbarFooter &&
-      //   this.getCurrentNavbarFooter.activated
-      // ) {
-      //   height = height - this.getCurrentNavbarFooter.height
-      // }
       return height
     },
 

@@ -8,6 +8,7 @@ export default function ({ store, env, route, redirect }) {
   const path = route.path
   const queryLocale = route.query.locale
   const queryIframe = route.query.iframe
+  const queryNoTabs = route.query.notabs
   const queryRouteId = route.query.routeId
 
   // set locale if part of url
@@ -20,13 +21,26 @@ export default function ({ store, env, route, redirect }) {
   const overrideIframe = env.CONFIG_APP.overrideIframe
   if (overrideIframe || queryIframe) {
     let isIframe = false
-    // log && console.log('-MW- getRouteConfig / queryLocale : ', queryLocale)
+    // log && console.log('-MW- getRouteConfig / queryIframe : ', queryIframe)
     if (overrideIframe) {
       isIframe = true
     } else {
       isIframe = chooseBooleanMode(queryIframe)
     }
     store.commit('setIframe', isIframe)
+  }
+
+  // set iframe param if part of url OR if override from env file
+  const overrideNoTabs = env.CONFIG_APP.overrideRoutesTabs
+  if (overrideNoTabs || queryNoTabs) {
+    let noRoutesTabs = false
+    // log && console.log('-MW- getRouteConfig / queryNoTabs : ', queryNoTabs)
+    if (overrideNoTabs) {
+      noRoutesTabs = true
+    } else {
+      noRoutesTabs = chooseBooleanMode(queryNoTabs)
+    }
+    store.commit('setNoRoutesTabs', noRoutesTabs)
   }
 
   // retrieve last route config
