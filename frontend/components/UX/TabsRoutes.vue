@@ -59,6 +59,7 @@
           v-for="rt in routesTabs.tabs"
           :key="rt.to"
           :to="rt.isNuxtLink ? rt.to : rt.href"
+          :class="routesTabs.tabsClass"
           exact
           nuxt
           >

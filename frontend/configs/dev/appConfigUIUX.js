@@ -3,7 +3,7 @@ export const configAppUIUX = {
 
   // GLOBAL
   appTitle: {
-    fr: 'Aides aux entreprises : fonds de solidarité'
+    fr: 'Aides aux entreprises'
   },
   appMetas: [],
   appVersion: 'v.1.10',
@@ -101,6 +101,7 @@ export const configAppUIUX = {
       height: 35,
       slidersClass: 'primary',
       format: 'tabs', // todo : as buttons too
+      tabsClass: 'text-none',
 
       // ITEMS ROUTES TABS
       tabs: [
@@ -109,8 +110,9 @@ export const configAppUIUX = {
           href: '/fds',
           isVisible: true,
           icon: undefined,
-          title: { fr: 'fonds de solidarité' },
-          titleMobile: { fr: 'FDS' },
+          title: { fr: 'Fonds de solidarité' },
+          titleMobile: { fr: 'Fonds de solidarité' },
+          // titleMobile: { fr: 'FDS' },
           tooltip: { fr: 'fonds de solidarité' },
           isNuxtLink: false
         },
@@ -119,8 +121,9 @@ export const configAppUIUX = {
           href: '/pge',
           isVisible: true,
           icon: undefined,
-          title: { fr: "prêts garantis par l'Etat" },
-          titleMobile: { fr: 'PGE' },
+          title: { fr: "Prêts garantis par l'Etat" },
+          titleMobile: { fr: "Prêts garantis par l'Etat" },
+          // titleMobile: { fr: 'PGE' },
           tooltip: { fr: "prêts garantis par l'Etat" },
           isNuxtLink: false
         },
@@ -129,8 +132,9 @@ export const configAppUIUX = {
           href: '/reports',
           isVisible: true,
           icon: undefined,
-          title: { fr: "reports d'échéance" },
-          titleMobile: { fr: 'REP' },
+          title: { fr: "Reports d'échéance" },
+          titleMobile: { fr: "Reports d'échéance" },
+          // titleMobile: { fr: 'REP' },
           tooltip: { fr: "reports d'échéance" },
           isNuxtLink: false
         }
