@@ -43,7 +43,7 @@ columns_departement = ['dep', 'reg', 'cheflieu', 'tncc', 'ncc', 'nccenr', 'libel
 
 columns_naf = ['code_sous_classe', 'libelle_sous_classe', 'code_sous_classe_short', 'code_classe', 'libelle_classe', 'code_classe_short', 'code_groupe', 'libelle_groupe', 'code_groupe_short', 'code_division', 'libelle_division', 'code_section', 'libelle_section']
 
-columns_classeeffectif = ['denomination', 'libelle', 'libelle_long']
+columns_classeeffectif = ['denomination', 'libelle', 'libelle_long','color']
 
 
 @app.route('/')
@@ -122,9 +122,18 @@ def getCategorieJuridique():
 def getClasseEffectifs():
     # GET a specific data by id
     if request.method == 'GET':
-        data = Classeeffectif.query.all()
-        classeeffectifs = getobjectsjson(data, columns_classeeffectif)
-        return jsonify(classeeffectifs)
+        my_query = "SELECT denomination, libelle, color from classeeffectif;"
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['denomination'] = str(data[i][0]) 
+            dataDict['libelle'] = str(data[i][1]) 
+            dataDict['color'] = str(data[i][2])
+            dataJson.append(dataDict)
+
+        return jsonify(dataJson)
 
 
 #### API Section APE (test) #####
