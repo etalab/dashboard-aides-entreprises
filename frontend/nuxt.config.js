@@ -230,6 +230,7 @@ const configApp = {
   port: choosePort(process.env.NUXT_ENV_RUN_MODE),
 
   overrideIframe: chooseBooleanMode(process.env.NUXT_ENV_APP_IFRAME_OVERRIDE),
+  overrideRoutesTabs: chooseBooleanMode(process.env.NUXT_ENV_APP_ROUTESTABS_OVERRIDE),
 
   // CONFIGS
   // configsReferencesBackup: process.env.NUXT_ENV_CONFIG_BACKUP

@@ -16,6 +16,7 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 -----------------
 date : 11/05/2020
 
+- v.2.0.2 : no tabs override from url param or env var
 - v.2.0.1 : pie chart & multiple charts
 
 -----------------
