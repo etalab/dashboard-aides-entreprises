@@ -11,7 +11,7 @@ body {
 <template>
   <v-app
     id="ODAMAP-root"
-    :style="`overflow: hidden; ${isIframe && getIframeMaxHeight ? 'max-height:' + getIframeMaxHeight+'px;' : windowHeight+'px'}`"
+    :style="`overflow: hidden; max-height:${isIframe && getIframeMaxHeight ? getIframeMaxHeight : contentWindowHeight}px;`"
   >
     <!-- DYNAMIC CSS -->
     <DynamicCSS />
