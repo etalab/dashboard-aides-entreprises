@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.2.0.2 - no route tabs param'
+const APP_VERSION = 'v.2.0.3 - fix max height'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
@@ -231,6 +231,8 @@ const configApp = {
 
   overrideIframe: chooseBooleanMode(process.env.NUXT_ENV_APP_IFRAME_OVERRIDE),
   overrideRoutesTabs: chooseBooleanMode(process.env.NUXT_ENV_APP_ROUTESTABS_OVERRIDE),
+  loadingColor: process.env.NUXT_ENV_LOADING_COLOR || '#fff',
+  loadingHeight: process.env.NUXT_ENV_LOADING_HEIGHT || 3,
 
   // CONFIGS
   // configsReferencesBackup: process.env.NUXT_ENV_CONFIG_BACKUP
@@ -313,7 +315,10 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: {
+    color: configApp.loadingColor,
+    height: `${configApp.loadingHeight}px`
+  },
 
   /*
    ** Global CSS

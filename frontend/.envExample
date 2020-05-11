@@ -50,6 +50,9 @@ NUXT_ENV_configAppGlobalButtons=configAppGlobalButtons.json
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### COLORS
 ### - - - - - - - - - - - - - - - - - - - - - ###
+NUXT_ENV_LOADING_COLOR=#d1335b
+NUXT_ENV_LOADING_HEIGHT=4
+
 NUXT_ENV_THEME_IS_DARK=false
 
 NUXT_ENV_THEME_LIGHT_primary=#000091
