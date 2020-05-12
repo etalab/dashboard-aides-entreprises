@@ -183,13 +183,25 @@ def getStatAideNationalSectionAPE():
             dataDict2['libelle_section_naf'] = "Autres sections NAF"
             dataDict['kpi_top_10_naf'].append(dataDict2)
 
+            autresmontant = 0
+            autresnombre = 0
             for k in range(len(data3)):
-                dataDict3 = {}
-                dataDict3['classe_effectif'] = str(data3[k][0]) 
-                dataDict3['montant'] = str(data3[k][1]) 
-                dataDict3['nombre'] = str(data3[k][2])
-                dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
-                dataDict['kpi_classe_effectif'].append(dataDict3)
+                if((k < 4) | (str(data3[k][0]) == 'NN')):
+                    dataDict3 = {}
+                    dataDict3['classe_effectif'] = str(data3[k][0]) 
+                    dataDict3['montant'] = str(data3[k][1]) 
+                    dataDict3['nombre'] = str(data3[k][2])
+                    dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
+                    dataDict['kpi_classe_effectif'].append(dataDict3)
+                else:
+                    autresmontant = autresmontant + data4[k][1]
+                    autresnombre = autresnombre + data4[k][2] 
+            dataDict3 = {}
+            dataDict3['classe_effectif'] = "Autres" 
+            dataDict3['montant'] = str(autresmontant)
+            dataDict3['nombre'] = str(autresnombre)
+            dataDict3['libelle_classe_effectif'] = "Autres Classes d'Effectifs"
+            dataDict['kpi_classe_effectif'].append(dataDict3)
 
             autresmontant = 0
             autresnombre = 0
@@ -263,13 +275,28 @@ def getStatAideRegionalSectionAPE():
             dataDict2['nombre'] = str(autresnombre)
             dataDict2['libelle_section_naf'] = "Autres sections NAF"
             dataDict['kpi_top_10_naf'].append(dataDict2)
+            
+
+            autresmontant = 0
+            autresnombre = 0
             for k in range(len(data3)):
-                dataDict3 = {}
-                dataDict3['classe_effectif'] = str(data3[k][0]) 
-                dataDict3['montant'] = str(data3[k][1]) 
-                dataDict3['nombre'] = str(data3[k][2])
-                dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
-                dataDict['kpi_classe_effectif'].append(dataDict3)
+                if((k < 4) | (str(data3[k][0]) == 'NN')):
+                    dataDict3 = {}
+                    dataDict3['classe_effectif'] = str(data3[k][0]) 
+                    dataDict3['montant'] = str(data3[k][1]) 
+                    dataDict3['nombre'] = str(data3[k][2])
+                    dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
+                    dataDict['kpi_classe_effectif'].append(dataDict3)
+                else:
+                    autresmontant = autresmontant + data4[k][1]
+                    autresnombre = autresnombre + data4[k][2] 
+            dataDict3 = {}
+            dataDict3['classe_effectif'] = "Autres" 
+            dataDict3['montant'] = str(autresmontant)
+            dataDict3['nombre'] = str(autresnombre)
+            dataDict3['libelle_classe_effectif'] = "Autres Classes d'Effectifs"
+            dataDict['kpi_classe_effectif'].append(dataDict3)
+
 
             autresmontant = 0
             autresnombre = 0
@@ -346,13 +373,26 @@ def getStatAideDepartementalSectionAPE():
             dataDict2['libelle_section_naf'] = "Autres sections NAF"
             dataDict['kpi_top_10_naf'].append(dataDict2)
 
+            autresmontant = 0
+            autresnombre = 0
             for k in range(len(data3)):
-                dataDict3 = {}
-                dataDict3['classe_effectif'] = str(data3[k][0]) 
-                dataDict3['montant'] = str(data3[k][1]) 
-                dataDict3['nombre'] = str(data3[k][2])
-                dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
-                dataDict['kpi_classe_effectif'].append(dataDict3)
+                if((k < 4) | (str(data3[k][0]) == 'NN')):
+                    dataDict3 = {}
+                    dataDict3['classe_effectif'] = str(data3[k][0]) 
+                    dataDict3['montant'] = str(data3[k][1]) 
+                    dataDict3['nombre'] = str(data3[k][2])
+                    dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
+                    dataDict['kpi_classe_effectif'].append(dataDict3)
+                else:
+                    autresmontant = autresmontant + data4[k][1]
+                    autresnombre = autresnombre + data4[k][2] 
+            dataDict3 = {}
+            dataDict3['classe_effectif'] = "Autres" 
+            dataDict3['montant'] = str(autresmontant)
+            dataDict3['nombre'] = str(autresnombre)
+            dataDict3['libelle_classe_effectif'] = "Autres Classes d'Effectifs"
+            dataDict['kpi_classe_effectif'].append(dataDict3)
+
 
             autresmontant = 0
             autresnombre = 0

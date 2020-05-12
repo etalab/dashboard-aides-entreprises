@@ -9,7 +9,14 @@
         "nombre": "0"
       }
     ], 
-    "kpi_classe_effectif": [], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "0", 
+        "nombre": "0"
+      }
+    ], 
     "kpi_top_10_naf": [
       {
         "libelle_section_naf": "Autres sections NAF", 
@@ -76,22 +83,16 @@
         "nombre": "313"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "88500.00", 
-        "nombre": "59"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "6000.00", 
-        "nombre": "4"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2300255.00", 
         "nombre": "1719"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "245591.00", 
+        "nombre": "175"
       }
     ], 
     "kpi_top_10_naf": [
@@ -220,22 +221,16 @@
         "nombre": "207"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "24000.00", 
-        "nombre": "16"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1723273.00", 
         "nombre": "1280"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "254794.00", 
+        "nombre": "181"
       }
     ], 
     "kpi_top_10_naf": [
@@ -364,16 +359,16 @@
         "nombre": "136"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "36500.00", 
-        "nombre": "23"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "803885.00", 
         "nombre": "582"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "98222.00", 
+        "nombre": "70"
       }
     ], 
     "kpi_top_10_naf": [
@@ -502,22 +497,16 @@
         "nombre": "828"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "230000.00", 
-        "nombre": "153"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "10500.00", 
-        "nombre": "7"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "3549181.00", 
         "nombre": "2518"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "151752.00", 
+        "nombre": "108"
       }
     ], 
     "kpi_top_10_naf": [
@@ -646,22 +635,16 @@
         "nombre": "278"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "60000.00", 
-        "nombre": "40"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "7500.00", 
-        "nombre": "5"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1292600.00", 
         "nombre": "961"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "160314.00", 
+        "nombre": "112"
       }
     ], 
     "kpi_top_10_naf": [
@@ -790,16 +773,16 @@
         "nombre": "116"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "27500.00", 
-        "nombre": "16"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "637127.00", 
         "nombre": "467"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "71306.00", 
+        "nombre": "50"
       }
     ], 
     "kpi_top_10_naf": [
@@ -928,22 +911,16 @@
         "nombre": "484"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "161810.00", 
-        "nombre": "108"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "10500.00", 
-        "nombre": "7"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2273292.00", 
         "nombre": "1691"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "255259.00", 
+        "nombre": "180"
       }
     ], 
     "kpi_top_10_naf": [
@@ -1072,16 +1049,16 @@
         "nombre": "83"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "19500.00", 
-        "nombre": "13"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "578932.00", 
         "nombre": "460"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "41098.00", 
+        "nombre": "31"
       }
     ], 
     "kpi_top_10_naf": [
@@ -1210,22 +1187,16 @@
         "nombre": "248"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "42000.00", 
-        "nombre": "28"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "6000.00", 
-        "nombre": "4"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1252412.00", 
         "nombre": "929"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "144518.00", 
+        "nombre": "101"
       }
     ], 
     "kpi_top_10_naf": [
@@ -1354,16 +1325,16 @@
         "nombre": "89"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "27000.00", 
-        "nombre": "18"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "568680.00", 
         "nombre": "444"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "59381.00", 
+        "nombre": "41"
       }
     ], 
     "kpi_top_10_naf": [
@@ -1492,16 +1463,16 @@
         "nombre": "310"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "72000.00", 
-        "nombre": "48"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2480374.00", 
         "nombre": "1867"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "174982.00", 
+        "nombre": "120"
       }
     ], 
     "kpi_top_10_naf": [
@@ -1630,16 +1601,16 @@
         "nombre": "287"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "67500.00", 
-        "nombre": "45"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1526785.00", 
         "nombre": "1122"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "136706.00", 
+        "nombre": "96"
       }
     ], 
     "kpi_top_10_naf": [
@@ -1768,10 +1739,10 @@
         "nombre": "12"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "7500.00", 
-        "nombre": "5"
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "6000.00", 
+        "nombre": "4"
       }
     ], 
     "kpi_top_10_naf": [
@@ -1900,16 +1871,16 @@
         "nombre": "196"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "49500.00", 
-        "nombre": "33"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1037132.00", 
         "nombre": "785"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "88795.00", 
+        "nombre": "65"
       }
     ], 
     "kpi_top_10_naf": [
@@ -2038,16 +2009,16 @@
         "nombre": "122"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "25500.00", 
-        "nombre": "17"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "872582.00", 
         "nombre": "659"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "67867.00", 
+        "nombre": "50"
       }
     ], 
     "kpi_top_10_naf": [
@@ -2176,16 +2147,16 @@
         "nombre": "70"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "10500.00", 
-        "nombre": "7"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "962497.00", 
         "nombre": "703"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "60657.00", 
+        "nombre": "44"
       }
     ], 
     "kpi_top_10_naf": [
@@ -2314,16 +2285,16 @@
         "nombre": "102"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "37500.00", 
-        "nombre": "25"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "463409.00", 
         "nombre": "326"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "21000.00", 
+        "nombre": "14"
       }
     ], 
     "kpi_top_10_naf": [
@@ -2452,22 +2423,16 @@
         "nombre": "763"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "182200.00", 
-        "nombre": "120"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "13500.00", 
-        "nombre": "9"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "4479689.00", 
         "nombre": "3307"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "570304.00", 
+        "nombre": "407"
       }
     ], 
     "kpi_top_10_naf": [
@@ -2596,28 +2561,16 @@
         "nombre": "1247"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "394854.00", 
-        "nombre": "261"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "16500.00", 
-        "nombre": "11"
-      }, 
-      {
-        "classe_effectif": "21", 
-        "libelle_classe_effectif": "50 \u00e0 99 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "7208254.00", 
         "nombre": "5247"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "636764.00", 
+        "nombre": "440"
       }
     ], 
     "kpi_top_10_naf": [
@@ -2746,22 +2699,16 @@
         "nombre": "144"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "40500.00", 
-        "nombre": "27"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "7500.00", 
-        "nombre": "5"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1388741.00", 
         "nombre": "1029"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "162789.00", 
+        "nombre": "114"
       }
     ], 
     "kpi_top_10_naf": [
@@ -2890,16 +2837,16 @@
         "nombre": "69"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "28000.00", 
-        "nombre": "16"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "420323.00", 
         "nombre": "310"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "26750.00", 
+        "nombre": "18"
       }
     ], 
     "kpi_top_10_naf": [
@@ -3028,22 +2975,16 @@
         "nombre": "329"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "101569.00", 
-        "nombre": "68"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "13500.00", 
-        "nombre": "9"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1897809.00", 
         "nombre": "1410"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "83924.00", 
+        "nombre": "60"
       }
     ], 
     "kpi_top_10_naf": [
@@ -3172,22 +3113,16 @@
         "nombre": "768"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "192000.00", 
-        "nombre": "128"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "3086661.00", 
         "nombre": "2216"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "240694.00", 
+        "nombre": "167"
       }
     ], 
     "kpi_top_10_naf": [
@@ -3316,22 +3251,16 @@
         "nombre": "654"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "165000.00", 
-        "nombre": "110"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "10500.00", 
-        "nombre": "7"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "4422556.00", 
         "nombre": "3175"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "261499.00", 
+        "nombre": "182"
       }
     ], 
     "kpi_top_10_naf": [
@@ -3460,22 +3389,16 @@
         "nombre": "553"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "234405.00", 
-        "nombre": "157"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "15000.00", 
-        "nombre": "10"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "5382919.00", 
         "nombre": "3758"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "189258.00", 
+        "nombre": "128"
       }
     ], 
     "kpi_top_10_naf": [
@@ -3551,144 +3474,6 @@
     "nombre": "24230"
   }, 
   {
-    "dep": "28", 
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "6939417.00", 
-        "nombre": "5368"
-      }, 
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "3676514.00", 
-        "nombre": "2470"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "1749962.00", 
-        "nombre": "1194"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "149167.00", 
-        "nombre": "105"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "998857.00", 
-        "nombre": "675"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "3171813.00", 
-        "nombre": "2124"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "1044044.00", 
-        "nombre": "685"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "244000.00", 
-        "nombre": "161"
-      }, 
-      {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "18000.00", 
-        "nombre": "12"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "854248.00", 
-        "nombre": "627"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "2427828.00", 
-        "nombre": "1789", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1903904.00", 
-        "nombre": "1489", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1951692.00", 
-        "nombre": "1352", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1454721.00", 
-        "nombre": "988", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "980760.00", 
-        "nombre": "726", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "805461.00", 
-        "nombre": "601", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "622611.00", 
-        "nombre": "469", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "524575.00", 
-        "nombre": "409", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "575910.00", 
-        "nombre": "395", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "486126.00", 
-        "nombre": "373", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "1243438.00", 
-        "nombre": "919", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Eure-et-Loir", 
-    "montant": "12977026.00", 
-    "nombre": "9510"
-  }, 
-  {
     "dep": "06", 
     "kpi_categorie_juridique": [
       {
@@ -3742,22 +3527,16 @@
         "nombre": "909"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "265271.00", 
-        "nombre": "177"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "18000.00", 
-        "nombre": "12"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "5453164.00", 
         "nombre": "3919"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "382863.00", 
+        "nombre": "262"
       }
     ], 
     "kpi_top_10_naf": [
@@ -3833,6 +3612,144 @@
     "nombre": "59625"
   }, 
   {
+    "dep": "28", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "6939417.00", 
+        "nombre": "5368"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "3676514.00", 
+        "nombre": "2470"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1749962.00", 
+        "nombre": "1194"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "149167.00", 
+        "nombre": "105"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "998857.00", 
+        "nombre": "675"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "3171813.00", 
+        "nombre": "2124"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "1044044.00", 
+        "nombre": "685"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "244000.00", 
+        "nombre": "161"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "854248.00", 
+        "nombre": "627"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "43770.00", 
+        "nombre": "30"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "2427828.00", 
+        "nombre": "1789", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1903904.00", 
+        "nombre": "1489", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1951692.00", 
+        "nombre": "1352", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1454721.00", 
+        "nombre": "988", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "980760.00", 
+        "nombre": "726", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "805461.00", 
+        "nombre": "601", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "622611.00", 
+        "nombre": "469", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "524575.00", 
+        "nombre": "409", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "575910.00", 
+        "nombre": "395", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "486126.00", 
+        "nombre": "373", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "1243438.00", 
+        "nombre": "919", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Eure-et-Loir", 
+    "montant": "12977026.00", 
+    "nombre": "9510"
+  }, 
+  {
     "dep": "02", 
     "kpi_categorie_juridique": [
       {
@@ -3886,22 +3803,16 @@
         "nombre": "184"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "36437.00", 
-        "nombre": "22"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1116424.00", 
         "nombre": "833"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "123673.00", 
+        "nombre": "85"
       }
     ], 
     "kpi_top_10_naf": [
@@ -4030,16 +3941,16 @@
         "nombre": "159"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "76500.00", 
-        "nombre": "51"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1646091.00", 
         "nombre": "1170"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "75744.00", 
+        "nombre": "56"
       }
     ], 
     "kpi_top_10_naf": [
@@ -4168,16 +4079,16 @@
         "nombre": "241"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "68000.00", 
-        "nombre": "44"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "268060.00", 
         "nombre": "196"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "40522.00", 
+        "nombre": "29"
       }
     ], 
     "kpi_top_10_naf": [
@@ -4306,16 +4217,16 @@
         "nombre": "206"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "45000.00", 
-        "nombre": "30"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1812751.00", 
         "nombre": "1358"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "137813.00", 
+        "nombre": "104"
       }
     ], 
     "kpi_top_10_naf": [
@@ -4444,16 +4355,16 @@
         "nombre": "188"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "42000.00", 
-        "nombre": "28"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1038196.00", 
         "nombre": "778"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "56112.00", 
+        "nombre": "39"
       }
     ], 
     "kpi_top_10_naf": [
@@ -4582,22 +4493,16 @@
         "nombre": "1142"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "321702.00", 
-        "nombre": "210"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "28500.00", 
-        "nombre": "19"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "4707164.00", 
         "nombre": "3513"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "458652.00", 
+        "nombre": "319"
       }
     ], 
     "kpi_top_10_naf": [
@@ -4726,16 +4631,16 @@
         "nombre": "150"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "53883.20", 
-        "nombre": "34"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1147917.00", 
         "nombre": "832"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "136887.00", 
+        "nombre": "98"
       }
     ], 
     "kpi_top_10_naf": [
@@ -4864,16 +4769,16 @@
         "nombre": "26"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "427418.00", 
         "nombre": "326"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "55870.00", 
+        "nombre": "41"
       }
     ], 
     "kpi_top_10_naf": [
@@ -5002,16 +4907,16 @@
         "nombre": "122"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "19500.00", 
-        "nombre": "13"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "816610.00", 
         "nombre": "612"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "91131.00", 
+        "nombre": "64"
       }
     ], 
     "kpi_top_10_naf": [
@@ -5140,16 +5045,16 @@
         "nombre": "44"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "13500.00", 
-        "nombre": "9"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "274514.00", 
         "nombre": "202"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "13920.00", 
+        "nombre": "11"
       }
     ], 
     "kpi_top_10_naf": [
@@ -5278,16 +5183,16 @@
         "nombre": "125"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "19500.00", 
-        "nombre": "13"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "873393.00", 
         "nombre": "656"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "40004.00", 
+        "nombre": "30"
       }
     ], 
     "kpi_top_10_naf": [
@@ -5416,16 +5321,16 @@
         "nombre": "134"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "46342.00", 
-        "nombre": "31"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1274362.00", 
         "nombre": "943"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "132274.00", 
+        "nombre": "97"
       }
     ], 
     "kpi_top_10_naf": [
@@ -5554,16 +5459,16 @@
         "nombre": "230"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "36000.00", 
-        "nombre": "24"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1241170.00", 
         "nombre": "919"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "107437.00", 
+        "nombre": "75"
       }
     ], 
     "kpi_top_10_naf": [
@@ -5692,22 +5597,16 @@
         "nombre": "581"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "130500.00", 
-        "nombre": "84"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "10500.00", 
-        "nombre": "7"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2997979.00", 
         "nombre": "2265"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "338658.00", 
+        "nombre": "248"
       }
     ], 
     "kpi_top_10_naf": [
@@ -5836,16 +5735,16 @@
         "nombre": "103"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "24000.00", 
-        "nombre": "16"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "689879.00", 
         "nombre": "513"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "59799.00", 
+        "nombre": "41"
       }
     ], 
     "kpi_top_10_naf": [
@@ -5974,16 +5873,16 @@
         "nombre": "250"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "78000.00", 
-        "nombre": "52"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1778938.00", 
         "nombre": "1354"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "173597.00", 
+        "nombre": "119"
       }
     ], 
     "kpi_top_10_naf": [
@@ -6112,22 +6011,16 @@
         "nombre": "440"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "101200.00", 
-        "nombre": "65"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "6000.00", 
-        "nombre": "4"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2699751.00", 
         "nombre": "1968"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "392920.00", 
+        "nombre": "277"
       }
     ], 
     "kpi_top_10_naf": [
@@ -6256,16 +6149,16 @@
         "nombre": "131"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "39000.00", 
-        "nombre": "26"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1285964.00", 
         "nombre": "947"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "67316.00", 
+        "nombre": "46"
       }
     ], 
     "kpi_top_10_naf": [
@@ -6394,16 +6287,16 @@
         "nombre": "105"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "18000.00", 
-        "nombre": "12"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "690089.00", 
         "nombre": "524"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "26542.00", 
+        "nombre": "18"
       }
     ], 
     "kpi_top_10_naf": [
@@ -6532,22 +6425,16 @@
         "nombre": "696"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "192900.00", 
-        "nombre": "130"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "15000.00", 
-        "nombre": "10"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2714402.00", 
         "nombre": "1946"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "172942.00", 
+        "nombre": "119"
       }
     ], 
     "kpi_top_10_naf": [
@@ -6676,22 +6563,16 @@
         "nombre": "227"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "42000.00", 
-        "nombre": "28"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1325379.00", 
         "nombre": "995"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "149683.00", 
+        "nombre": "103"
       }
     ], 
     "kpi_top_10_naf": [
@@ -6820,16 +6701,16 @@
         "nombre": "62"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "24000.00", 
-        "nombre": "16"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "416405.00", 
         "nombre": "307"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "30910.00", 
+        "nombre": "23"
       }
     ], 
     "kpi_top_10_naf": [
@@ -6958,16 +6839,16 @@
         "nombre": "27"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "6000.00", 
-        "nombre": "4"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "326789.00", 
         "nombre": "239"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "45455.00", 
+        "nombre": "31"
       }
     ], 
     "kpi_top_10_naf": [
@@ -7096,22 +6977,16 @@
         "nombre": "1114"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "308000.00", 
-        "nombre": "203"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "15000.00", 
-        "nombre": "10"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "3973159.00", 
         "nombre": "2826"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "170738.00", 
+        "nombre": "119"
       }
     ], 
     "kpi_top_10_naf": [
@@ -7240,16 +7115,16 @@
         "nombre": "614"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "109500.00", 
-        "nombre": "73"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1809073.00", 
         "nombre": "1316"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "109923.00", 
+        "nombre": "78"
       }
     ], 
     "kpi_top_10_naf": [
@@ -7378,16 +7253,16 @@
         "nombre": "95"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "13500.00", 
-        "nombre": "9"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "827300.00", 
         "nombre": "599"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "47277.00", 
+        "nombre": "34"
       }
     ], 
     "kpi_top_10_naf": [
@@ -7516,16 +7391,16 @@
         "nombre": "120"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "40500.00", 
-        "nombre": "27"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "865445.00", 
         "nombre": "629"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "72160.00", 
+        "nombre": "49"
       }
     ], 
     "kpi_top_10_naf": [
@@ -7654,22 +7529,16 @@
         "nombre": "207"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "74734.00", 
-        "nombre": "48"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "9000.00", 
-        "nombre": "6"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1135923.00", 
         "nombre": "846"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "182222.00", 
+        "nombre": "134"
       }
     ], 
     "kpi_top_10_naf": [
@@ -7798,22 +7667,16 @@
         "nombre": "326"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "61500.00", 
-        "nombre": "41"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "6000.00", 
-        "nombre": "4"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1799841.00", 
         "nombre": "1302"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "361914.00", 
+        "nombre": "256"
       }
     ], 
     "kpi_top_10_naf": [
@@ -7942,16 +7805,16 @@
         "nombre": "61"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "28500.00", 
-        "nombre": "19"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "656612.00", 
         "nombre": "482"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "45004.00", 
+        "nombre": "34"
       }
     ], 
     "kpi_top_10_naf": [
@@ -8080,16 +7943,16 @@
         "nombre": "331"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "78986.00", 
-        "nombre": "53"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2112694.00", 
         "nombre": "1565"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "125934.00", 
+        "nombre": "90"
       }
     ], 
     "kpi_top_10_naf": [
@@ -8218,22 +8081,16 @@
         "nombre": "846"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "210500.00", 
-        "nombre": "138"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "7228.00", 
-        "nombre": "6"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "4519463.00", 
         "nombre": "3314"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "310333.00", 
+        "nombre": "216"
       }
     ], 
     "kpi_top_10_naf": [
@@ -8362,22 +8219,16 @@
         "nombre": "331"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "95000.00", 
-        "nombre": "61"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1593430.00", 
         "nombre": "1148"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "195443.00", 
+        "nombre": "134"
       }
     ], 
     "kpi_top_10_naf": [
@@ -8506,16 +8357,16 @@
         "nombre": "74"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "40261.00", 
-        "nombre": "27"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "598000.00", 
         "nombre": "456"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "30515.00", 
+        "nombre": "21"
       }
     ], 
     "kpi_top_10_naf": [
@@ -8644,22 +8495,16 @@
         "nombre": "637"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "156395.00", 
-        "nombre": "101"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "9000.00", 
-        "nombre": "6"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "3277496.00", 
         "nombre": "2402"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "484673.00", 
+        "nombre": "340"
       }
     ], 
     "kpi_top_10_naf": [
@@ -8788,22 +8633,16 @@
         "nombre": "251"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "45000.00", 
-        "nombre": "30"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1369297.00", 
         "nombre": "1023"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "147149.00", 
+        "nombre": "102"
       }
     ], 
     "kpi_top_10_naf": [
@@ -8932,22 +8771,16 @@
         "nombre": "545"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "205500.00", 
-        "nombre": "137"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "18000.00", 
-        "nombre": "12"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "3764880.00", 
         "nombre": "2692"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "178433.00", 
+        "nombre": "127"
       }
     ], 
     "kpi_top_10_naf": [
@@ -9076,16 +8909,16 @@
         "nombre": "153"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "37500.00", 
-        "nombre": "25"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1078449.00", 
         "nombre": "794"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "58568.00", 
+        "nombre": "42"
       }
     ], 
     "kpi_top_10_naf": [
@@ -9214,16 +9047,16 @@
         "nombre": "111"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "22500.00", 
-        "nombre": "15"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "893594.00", 
         "nombre": "669"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "56972.00", 
+        "nombre": "41"
       }
     ], 
     "kpi_top_10_naf": [
@@ -9352,22 +9185,16 @@
         "nombre": "709"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "192000.00", 
-        "nombre": "128"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "16500.00", 
-        "nombre": "11"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2442522.00", 
         "nombre": "1760"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "306415.00", 
+        "nombre": "218"
       }
     ], 
     "kpi_top_10_naf": [
@@ -9496,16 +9323,16 @@
         "nombre": "281"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "51000.00", 
-        "nombre": "34"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1632838.00", 
         "nombre": "1189"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "193949.00", 
+        "nombre": "143"
       }
     ], 
     "kpi_top_10_naf": [
@@ -9634,16 +9461,16 @@
         "nombre": "336"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "108000.00", 
-        "nombre": "68"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2542863.00", 
         "nombre": "1830"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "151552.00", 
+        "nombre": "105"
       }
     ], 
     "kpi_top_10_naf": [
@@ -9772,16 +9599,16 @@
         "nombre": "336"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "64500.00", 
-        "nombre": "43"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2954203.00", 
         "nombre": "2178"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "262671.00", 
+        "nombre": "189"
       }
     ], 
     "kpi_top_10_naf": [
@@ -9910,22 +9737,16 @@
         "nombre": "175"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "43500.00", 
-        "nombre": "29"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1221103.00", 
         "nombre": "901"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "105251.00", 
+        "nombre": "76"
       }
     ], 
     "kpi_top_10_naf": [
@@ -10054,16 +9875,16 @@
         "nombre": "183"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "37500.00", 
-        "nombre": "25"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1793835.00", 
         "nombre": "1300"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "162640.00", 
+        "nombre": "116"
       }
     ], 
     "kpi_top_10_naf": [
@@ -10192,22 +10013,16 @@
         "nombre": "614"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "139500.00", 
-        "nombre": "93"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "10500.00", 
-        "nombre": "7"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "4309945.00", 
         "nombre": "3135"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "424706.00", 
+        "nombre": "294"
       }
     ], 
     "kpi_top_10_naf": [
@@ -10336,22 +10151,16 @@
         "nombre": "353"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "76928.00", 
-        "nombre": "50"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2163633.00", 
         "nombre": "1592"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "244305.00", 
+        "nombre": "170"
       }
     ], 
     "kpi_top_10_naf": [
@@ -10480,22 +10289,16 @@
         "nombre": "246"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "63000.00", 
-        "nombre": "42"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "7500.00", 
-        "nombre": "5"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1453772.00", 
         "nombre": "1083"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "216297.00", 
+        "nombre": "149"
       }
     ], 
     "kpi_top_10_naf": [
@@ -10624,22 +10427,16 @@
         "nombre": "728"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "213500.00", 
-        "nombre": "143"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "20999.00", 
-        "nombre": "14"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "3273937.00", 
         "nombre": "2399"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "385188.00", 
+        "nombre": "271"
       }
     ], 
     "kpi_top_10_naf": [
@@ -10768,22 +10565,16 @@
         "nombre": "736"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "200450.00", 
-        "nombre": "134"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "14967.00", 
-        "nombre": "10"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "3059767.00", 
         "nombre": "2194"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "206418.00", 
+        "nombre": "143"
       }
     ], 
     "kpi_top_10_naf": [
@@ -10912,16 +10703,16 @@
         "nombre": "269"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "97500.00", 
-        "nombre": "65"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1663925.00", 
         "nombre": "1206"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "85506.00", 
+        "nombre": "60"
       }
     ], 
     "kpi_top_10_naf": [
@@ -11050,22 +10841,16 @@
         "nombre": "317"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "63500.00", 
-        "nombre": "40"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "10500.00", 
-        "nombre": "7"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2289384.00", 
         "nombre": "1658"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "285192.00", 
+        "nombre": "198"
       }
     ], 
     "kpi_top_10_naf": [
@@ -11194,28 +10979,16 @@
         "nombre": "4259"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "1321500.00", 
-        "nombre": "874"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "70500.00", 
-        "nombre": "47"
-      }, 
-      {
-        "classe_effectif": "21", 
-        "libelle_classe_effectif": "50 \u00e0 99 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "11986426.00", 
         "nombre": "8559"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "885435.00", 
+        "nombre": "596"
       }
     ], 
     "kpi_top_10_naf": [
@@ -11344,16 +11117,16 @@
         "nombre": "203"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "70500.00", 
-        "nombre": "47"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1254100.00", 
         "nombre": "950"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "86472.00", 
+        "nombre": "60"
       }
     ], 
     "kpi_top_10_naf": [
@@ -11482,28 +11255,16 @@
         "nombre": "1029"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "297000.00", 
-        "nombre": "198"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "12000.00", 
-        "nombre": "8"
-      }, 
-      {
-        "classe_effectif": "21", 
-        "libelle_classe_effectif": "50 \u00e0 99 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "5042306.00", 
         "nombre": "3657"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "608802.00", 
+        "nombre": "434"
       }
     ], 
     "kpi_top_10_naf": [
@@ -11632,22 +11393,16 @@
         "nombre": "621"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "133301.00", 
-        "nombre": "89"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "15000.00", 
-        "nombre": "10"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2624285.00", 
         "nombre": "1872"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "165840.00", 
+        "nombre": "112"
       }
     ], 
     "kpi_top_10_naf": [
@@ -11776,16 +11531,16 @@
         "nombre": "111"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "30000.00", 
-        "nombre": "20"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "701825.00", 
         "nombre": "511"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "56561.00", 
+        "nombre": "37"
       }
     ], 
     "kpi_top_10_naf": [
@@ -11914,28 +11669,16 @@
         "nombre": "1067"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "294000.00", 
-        "nombre": "196"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "19500.00", 
-        "nombre": "13"
-      }, 
-      {
-        "classe_effectif": "42", 
-        "libelle_classe_effectif": "1 000 \u00e0 1 999 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "5575248.00", 
         "nombre": "3953"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "508931.00", 
+        "nombre": "355"
       }
     ], 
     "kpi_top_10_naf": [
@@ -12064,22 +11807,16 @@
         "nombre": "427"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "134730.00", 
-        "nombre": "90"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "4500.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1464999.00", 
         "nombre": "1081"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "163548.00", 
+        "nombre": "112"
       }
     ], 
     "kpi_top_10_naf": [
@@ -12208,16 +11945,16 @@
         "nombre": "79"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "7500.00", 
-        "nombre": "5"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "818789.00", 
         "nombre": "614"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "54278.00", 
+        "nombre": "39"
       }
     ], 
     "kpi_top_10_naf": [
@@ -12346,22 +12083,16 @@
         "nombre": "1235"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "400068.00", 
-        "nombre": "265"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "22500.00", 
-        "nombre": "15"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "3736047.00", 
         "nombre": "2679"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "200403.00", 
+        "nombre": "138"
       }
     ], 
     "kpi_top_10_naf": [
@@ -12490,16 +12221,16 @@
         "nombre": "82"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "28500.00", 
-        "nombre": "19"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "872199.00", 
         "nombre": "646"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "78516.00", 
+        "nombre": "58"
       }
     ], 
     "kpi_top_10_naf": [
@@ -12628,16 +12359,16 @@
         "nombre": "123"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "27000.00", 
-        "nombre": "18"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1196062.00", 
         "nombre": "899"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "71624.00", 
+        "nombre": "52"
       }
     ], 
     "kpi_top_10_naf": [
@@ -12766,22 +12497,16 @@
         "nombre": "181"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "35000.00", 
-        "nombre": "21"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "3808.00", 
-        "nombre": "3"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "983097.00", 
         "nombre": "717"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "158951.00", 
+        "nombre": "111"
       }
     ], 
     "kpi_top_10_naf": [
@@ -12910,22 +12635,16 @@
         "nombre": "219"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "69000.00", 
-        "nombre": "46"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "6000.00", 
-        "nombre": "4"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1156272.00", 
         "nombre": "835"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "107096.00", 
+        "nombre": "75"
       }
     ], 
     "kpi_top_10_naf": [
@@ -13054,16 +12773,16 @@
         "nombre": "293"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "79500.00", 
-        "nombre": "53"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1965493.00", 
         "nombre": "1458"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "136322.00", 
+        "nombre": "98"
       }
     ], 
     "kpi_top_10_naf": [
@@ -13192,16 +12911,16 @@
         "nombre": "279"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "69000.00", 
-        "nombre": "46"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "137809.00", 
         "nombre": "100"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "111422.00", 
+        "nombre": "80"
       }
     ], 
     "kpi_top_10_naf": [
@@ -13330,16 +13049,16 @@
         "nombre": "468"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "122500.00", 
-        "nombre": "79"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2427243.00", 
         "nombre": "1756"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "215796.00", 
+        "nombre": "156"
       }
     ], 
     "kpi_top_10_naf": [
@@ -13468,16 +13187,16 @@
         "nombre": "181"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "48000.00", 
-        "nombre": "32"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1222491.00", 
         "nombre": "903"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "71518.00", 
+        "nombre": "51"
       }
     ], 
     "kpi_top_10_naf": [
@@ -13606,16 +13325,16 @@
         "nombre": "88"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "31714.00", 
-        "nombre": "20"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "851540.00", 
         "nombre": "637"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "79286.00", 
+        "nombre": "55"
       }
     ], 
     "kpi_top_10_naf": [
@@ -13744,22 +13463,16 @@
         "nombre": "404"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "93000.00", 
-        "nombre": "62"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "10500.00", 
-        "nombre": "7"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1772192.00", 
         "nombre": "1308"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "328542.00", 
+        "nombre": "227"
       }
     ], 
     "kpi_top_10_naf": [
@@ -13888,16 +13601,16 @@
         "nombre": "126"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "21000.00", 
-        "nombre": "14"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "1305549.00", 
         "nombre": "962"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "125157.00", 
+        "nombre": "91"
       }
     ], 
     "kpi_top_10_naf": [
@@ -14026,16 +13739,16 @@
         "nombre": "365"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "80624.00", 
-        "nombre": "54"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "2417006.00", 
         "nombre": "1778"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "186664.00", 
+        "nombre": "129"
       }
     ], 
     "kpi_top_10_naf": [
@@ -14164,22 +13877,16 @@
         "nombre": "94"
       }, 
       {
-        "classe_effectif": "11", 
-        "libelle_classe_effectif": "10 \u00e0 19 salari\u00e9s", 
-        "montant": "21500.00", 
-        "nombre": "13"
-      }, 
-      {
-        "classe_effectif": "12", 
-        "libelle_classe_effectif": "20 \u00e0 49 salari\u00e9s", 
-        "montant": "6000.00", 
-        "nombre": "4"
-      }, 
-      {
         "classe_effectif": "NN", 
         "libelle_classe_effectif": "Etablissement non employeur", 
         "montant": "929453.00", 
         "nombre": "674"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "142736.00", 
+        "nombre": "99"
       }
     ], 
     "kpi_top_10_naf": [
