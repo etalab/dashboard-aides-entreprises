@@ -77,7 +77,7 @@ const COMMON_SERIES_MAPPERS = {
       capitalize: true
     },
 
-    buildColorsAxisX: false,
+    buildColorsAxisX: true,
     buildColorsAxisXsettings: {
       fromKey: KEY_SECTION_EFFECTIF,
       matchWithDatasetId: 'taxo-classes-effectifs',

@@ -14,6 +14,12 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 [wireframe_pdf]: ../screenshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
 
 -----------------
+date : 12/05/2020
+
+- v.2.0.5 : ...
+- v.2.0.4 : custom color and behaviiour for nuxt loading bar
+
+-----------------
 date : 11/05/2020
 
 - v.2.0.3 : fix max-height main window
