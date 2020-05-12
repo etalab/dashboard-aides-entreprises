@@ -1,15 +1,137 @@
 const COMMON_TARGETS = {
-  setLevelFrom: {},
-  setNombreFrom: {},
-  setMontantsFrom: {},
 
-  setFocusObjectFDS: {},
-  setFocusObjectPGE: {},
-  setFocusObjectREPORT: {}
+  // LIBELLES
+  setLibelleRegion: {
+    ifQuery: [{ field: 'datasetid', val: 'regions' }],
+    fromQueryKey: 'code',
+    fromStoreData: 'initData',
+    fromDatasetId: 'taxo-regions',
+    fromDatasetKey: 'reg',
+    fromDatasetField: 'libelle',
+    targetSpecialStoreId: 'levelname'
+  },
+
+  setLibelleDepartement: {
+    ifQuery: [{ field: 'datasetid', val: 'departements' }],
+    fromQueryKey: 'code',
+    fromStoreData: 'initData',
+    fromDatasetId: 'taxo-regions',
+    fromDatasetKey: 'reg',
+    fromDatasetField: 'libelle',
+    targetSpecialStoreId: 'levelname'
+  },
+
+  // OBJECTS
+  setObjectsFDS: [
+    {
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-aides-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'nombre',
+      targetSpecialStoreId: 'nombre'
+    },
+    {
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-aides-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'montant',
+      targetSpecialStoreId: 'montant',
+      format: [
+        {
+          utilsFnName: 'toMillionsOrElse',
+          params: { divider: 1000000, fixed: 2 }
+        }
+      ]
+    },
+    {
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-aides-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: undefined,
+      targetSpecialStoreId: 'focusObject'
+    }
+  ],
+  setObjectsPGE: [
+    {
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-pge-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'nombre',
+      targetSpecialStoreId: 'nombre'
+    },
+    {
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-pge-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'montant',
+      targetSpecialStoreId: 'montant',
+      format: [
+        {
+          utilsFnName: 'toMillionsOrElse',
+          params: { divider: 1000000, fixed: 2 }
+        }
+      ]
+    },
+    {
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-pge-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: undefined,
+      targetSpecialStoreId: 'focusObject'
+    }
+  ],
+  setObjectsREPORT: [
+    {
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-report-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'nombre',
+      targetSpecialStoreId: 'nombre'
+    },
+    {
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-report-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'montant',
+      targetSpecialStoreId: 'montant',
+      format: [
+        {
+          utilsFnName: 'toMillionsOrElse',
+          params: { divider: 1000000, fixed: 2 }
+        }
+      ]
+    },
+    {
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-report-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: undefined,
+      targetSpecialStoreId: 'focusObject'
+    }
+  ],
+
+  // SET MAP ZOOM
+  setMapZoom: {
+    fromQueryKey: 'code',
+    fromStoreData: undefined,
+    fromDatasetId: undefined,
+    fromDatasetKey: undefined,
+    fromDatasetField: undefined,
+    targetSpecialStoreId: undefined
+  }
 
 }
 const COMMON_URL_FOCUS = {
-  setFocusObjects: {
+  setFocusObjectsFDS: {
     urlArgs: [
       'datastore',
       'datasetid',
@@ -18,54 +140,82 @@ const COMMON_URL_FOCUS = {
     ],
     functions: [
       {
-        funcName: 'updateData',
+        funcName: 'updateSpecialStore',
         help: 'set store/data/specialStore',
         funcParams: {
           targets: [
-
-            // {
-            //   from: 'store',
-            //   fromPropKey: 'code',
-            //   fromStoreData: 'initData',
-            //   fromDatasetId: 'taxo-regions',
-            //   fromDatasetKey: 'reg',
-            //   fromDatasetField: 'libelle',
-            //   targetSpecialStoreId: 'levelname'
-            // },
-            // {
-            //   from: 'store',
-            //   fromPropKey: 'code', // use props region code
-            //   fromStoreData: 'initData',
-            //   fromDatasetId: 'regions-aides-raw',
-            //   fromDatasetKey: 'reg',
-            //   fromDatasetField: 'nombre',
-            //   targetSpecialStoreId: 'nombre'
-            // },
-            // {
-            //   from: 'store',
-            //   fromPropKey: 'code', // use props region code
-            //   fromStoreData: 'initData',
-            //   fromDatasetId: 'regions-aides-raw',
-            //   fromDatasetKey: 'reg',
-            //   fromDatasetField: 'montant',
-            //   targetSpecialStoreId: 'montant',
-            //   format: [
-            //     {
-            //       utilsFnName: 'toMillionsOrElse',
-            //       params: { divider: 1000000, fixed: 2 }
-            //     }
-            //   ]
-            // },
-            // {
-            //   from: 'store',
-            //   fromPropKey: 'code', // use props region code
-            //   fromStoreData: 'initData',
-            //   fromDatasetId: 'regions-aides-raw',
-            //   fromDatasetKey: 'reg',
-            //   fromDatasetField: undefined,
-            //   targetSpecialStoreId: 'focusObject'
-            // }
-
+            COMMON_TARGETS.setLibelleRegion,
+            COMMON_TARGETS.setLibelleDepartement,
+            COMMON_TARGETS.setObjectsFDS
+          ]
+        }
+      },
+      {
+        funcName: 'setMapZoom',
+        help: 'set map zoom',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setMapZoom
+          ]
+        }
+      }
+    ]
+  },
+  setFocusObjectsPGE: {
+    urlArgs: [
+      'datastore',
+      'datasetid',
+      'field',
+      'value'
+    ],
+    functions: [
+      {
+        funcName: 'updateSpecialStore',
+        help: 'set store/data/specialStore',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setLibelleRegion,
+            COMMON_TARGETS.setLibelleDepartement,
+            COMMON_TARGETS.setObjectsPGE
+          ]
+        }
+      },
+      {
+        funcName: 'setMapZoom',
+        help: 'set map zoom',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setMapZoom
+          ]
+        }
+      }
+    ]
+  },
+  setFocusObjectsREPORT: {
+    urlArgs: [
+      'datastore',
+      'datasetid',
+      'field',
+      'value'
+    ],
+    functions: [
+      {
+        funcName: 'updateSpecialStore',
+        help: 'set store/data/specialStore',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setLibelleRegion,
+            COMMON_TARGETS.setLibelleDepartement,
+            COMMON_TARGETS.setObjectsREPORT
+          ]
+        }
+      },
+      {
+        funcName: 'setMapZoom',
+        help: 'set map zoom',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setMapZoom
           ]
         }
       }
@@ -267,7 +417,7 @@ export const configAppRoutes = {
           ]
         }
       ],
-      setUpFocus: COMMON_URL_FOCUS.setFocusObjects
+      setUpFocus: COMMON_URL_FOCUS.setFocusObjectsFDS
     },
 
     // ============================================================= //
@@ -432,7 +582,7 @@ export const configAppRoutes = {
           ]
         }
       ],
-      setUpFocus: COMMON_URL_FOCUS.setFocusObjects
+      setUpFocus: COMMON_URL_FOCUS.setFocusObjectsPGE
     },
 
     // ============================================================= //
@@ -597,7 +747,7 @@ export const configAppRoutes = {
           ]
         }
       ],
-      setUpFocus: COMMON_URL_FOCUS.setFocusObjects
+      setUpFocus: COMMON_URL_FOCUS.setFocusObjectsREPORT
 
     },
 
