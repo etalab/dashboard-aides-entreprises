@@ -194,8 +194,8 @@ def getStatAideNationalSectionAPE():
                     dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
                     dataDict['kpi_classe_effectif'].append(dataDict3)
                 else:
-                    autresmontant = autresmontant + data4[k][1]
-                    autresnombre = autresnombre + data4[k][2] 
+                    autresmontant = autresmontant + data3[k][1]
+                    autresnombre = autresnombre + data3[k][2] 
             dataDict3 = {}
             dataDict3['classe_effectif'] = "Autres" 
             dataDict3['montant'] = str(autresmontant)
@@ -288,8 +288,8 @@ def getStatAideRegionalSectionAPE():
                     dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
                     dataDict['kpi_classe_effectif'].append(dataDict3)
                 else:
-                    autresmontant = autresmontant + data4[k][1]
-                    autresnombre = autresnombre + data4[k][2] 
+                    autresmontant = autresmontant + data3[k][1]
+                    autresnombre = autresnombre + data3[k][2] 
             dataDict3 = {}
             dataDict3['classe_effectif'] = "Autres" 
             dataDict3['montant'] = str(autresmontant)
@@ -384,8 +384,8 @@ def getStatAideDepartementalSectionAPE():
                     dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
                     dataDict['kpi_classe_effectif'].append(dataDict3)
                 else:
-                    autresmontant = autresmontant + data4[k][1]
-                    autresnombre = autresnombre + data4[k][2] 
+                    autresmontant = autresmontant + data3[k][1]
+                    autresnombre = autresnombre + data3[k][2] 
             dataDict3 = {}
             dataDict3['classe_effectif'] = "Autres" 
             dataDict3['montant'] = str(autresmontant)
