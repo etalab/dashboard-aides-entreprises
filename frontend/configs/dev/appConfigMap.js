@@ -330,6 +330,7 @@ const COMMON_CLICK_EVENTS = {
     help: 'highlight polygon / geo element as off',
     funcParams: {}
   }
+
 }
 
 // - - - - - - - - - - - - - - - - - - - - - //

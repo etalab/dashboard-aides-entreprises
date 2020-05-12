@@ -362,12 +362,12 @@ export default {
       let mapHeight = winHeight
 
       var docNavbars = document.querySelectorAll(`.odm-navbar`)
-      this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
+      // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
       let docNavbarsArray = Array.prototype.slice.call(docNavbars)
       let sumNavbarsHeights = docNavbarsArray
         .map((i) => i.offsetHeight)
         .reduce((prev, curr) => prev + curr, 0)
-      this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
+      // this.log && console.log("C-MapboxGL / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
 
       if (this.isMobileWidth) {
         var docComponents = document.querySelectorAll(
@@ -386,8 +386,6 @@ export default {
       }
       // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
       this.mapHeight = mapHeight
-
-
 
       // little hack to redraw window on safari IOS
       // let isMobileOrTablet = this.$device.isMobileOrTablet
