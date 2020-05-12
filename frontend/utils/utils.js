@@ -266,3 +266,12 @@ export function switchFormatFunctions (value, format) {
   })
   return val
 }
+export function objectToUrlParams (obj) {
+  let paramsString = ''
+  paramsString = Object.entries(obj).map(([key, val]) => {
+    if (val) {
+      return `${key}=${val}`
+    }
+  }).join('&')
+  return paramsString
+}

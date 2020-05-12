@@ -114,7 +114,8 @@ export const configAppUIUX = {
           titleMobile: { fr: 'Fonds de solidarité' },
           // titleMobile: { fr: 'FDS' },
           tooltip: { fr: 'fonds de solidarité' },
-          isNuxtLink: false
+          isNuxtLink: false,
+          addUrlParams: true
         },
         {
           to: '/?routeId=pge',
@@ -125,7 +126,8 @@ export const configAppUIUX = {
           titleMobile: { fr: "Prêts garantis par l'Etat" },
           // titleMobile: { fr: 'PGE' },
           tooltip: { fr: "prêts garantis par l'Etat" },
-          isNuxtLink: false
+          isNuxtLink: false,
+          addUrlParams: true
         },
         {
           to: '/?routeId=reports',
@@ -136,7 +138,8 @@ export const configAppUIUX = {
           titleMobile: { fr: "Reports d'échéance" },
           // titleMobile: { fr: 'REP' },
           tooltip: { fr: "reports d'échéance" },
-          isNuxtLink: false
+          isNuxtLink: false,
+          addUrlParams: true
         }
 
       ]

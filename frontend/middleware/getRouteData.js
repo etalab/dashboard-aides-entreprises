@@ -2,7 +2,7 @@ import { copyData, storeData } from '~/utils/utilsStore.js'
 
 import axios from 'axios'
 
-export default function ({ store }) {
+export default function ({ store, route }) {
   const log = store.state.log
   log && console.log('\n', '+ '.repeat(20))
   log && console.log('-MW- getRouteData / ... ')
@@ -12,6 +12,17 @@ export default function ({ store }) {
 
   const promisesArray = []
   const callableFrom = ['url', 'static']
+
+  // GET ROUTE PARAMS IF ANY IN ROUTE && ROUTE_CONNFIG
+  const setUpFocus = currentRouteConfig.setUpFocus
+  if (setUpFocus) {
+    var urlParams = {}
+    log && console.log('-MW- getRouteData / setUpFocus :', setUpFocus)
+    for (const p of setUpFocus.urlArgs) {
+      urlParams[p] = route.query[p]
+    }
+    log && console.log('-MW- getRouteData / urlParams :', urlParams)
+  }
 
   // STORE DATASETS
   const routeNeedDataReset = store.getters.getRouteNeedDataReset

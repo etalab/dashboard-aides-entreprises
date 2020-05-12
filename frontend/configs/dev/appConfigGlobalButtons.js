@@ -1,3 +1,21 @@
+const COMMON_FUNCTIONS = {
+  resetUrlPath: {
+    funcName: 'updateUrlPath',
+    funcParams: {
+      targets: [
+        {
+          from: undefined,
+          urlArgs: {
+            datastore: 'initData',
+            datasetid: 'infos',
+            field: 'code',
+            value: 'national'
+          }
+        }
+      ]
+    }
+  }
+}
 const COMMONS_TARGETS = {
   resetLevelName: {
     from: 'store',
@@ -7,7 +25,8 @@ const COMMONS_TARGETS = {
     fromDatasetId: 'infos',
     fromDatasetKey: 'switchers',
     fromDatasetField: undefined,
-    targetSpecialStoreId: 'levelname'
+    targetSpecialStoreId: 'levelname',
+    updatePath: true
   },
   resetMapZoom: {
     from: 'store',
@@ -112,7 +131,6 @@ export const configAppGlobalButtons = {
                 ]
               }
             },
-
             {
               funcName: 'resetMapZoom',
               funcParams: {
@@ -121,8 +139,7 @@ export const configAppGlobalButtons = {
                 ]
               }
             },
-
-            ''
+            COMMON_FUNCTIONS.resetUrlPath
           ],
 
           hideIfs: [
@@ -217,7 +234,6 @@ export const configAppGlobalButtons = {
                 ]
               }
             },
-
             {
               funcName: 'resetMapZoom',
               funcParams: {
@@ -226,8 +242,7 @@ export const configAppGlobalButtons = {
                 ]
               }
             },
-
-            ''
+            COMMON_FUNCTIONS.resetUrlPath
           ],
 
           hideIfs: [
@@ -322,7 +337,6 @@ export const configAppGlobalButtons = {
                 ]
               }
             },
-
             {
               funcName: 'resetMapZoom',
               funcParams: {
@@ -331,8 +345,7 @@ export const configAppGlobalButtons = {
                 ]
               }
             },
-
-            ''
+            COMMON_FUNCTIONS.resetUrlPath
           ],
 
           hideIfs: [

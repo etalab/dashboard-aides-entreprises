@@ -23,6 +23,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex"
+import { objectToUrlParams } from '~/utils/utils.js'
 
 export default {
   name: "GlobalBtn",
@@ -62,6 +63,7 @@ export default {
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
       mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
+      routeParams: (state) => state.routeParams
     }),
 
     ...mapGetters({
@@ -105,16 +107,46 @@ export default {
         // this.log && console.log('C-GlobalButton / runBtnFunctions / fn.funcName : ', fn.funcName )
         let funcParams = fn.funcParams
         switch (fn.funcName) {
+
           case "resetStore":
             this.$store.dispatch("data/resetStore", funcParams)
             break
+
           case "resetMapZoom":
             this.$store.dispatch("maps/triggerResetZoom", funcParams)
             break
+
+          case 'updateUrlPath' :
+            this.updateUrlPath( funcParams ) ;
+            break
+
         }
       }
       this.$store.commit("buttons/toggleBtnTrigger")
     },
+
+    updateUrlPath(params) {
+      this.log && console.log("\nC-GlobalButton / updateUrlPath  : ", "+ ".repeat(10) )
+      this.log && console.log("\nC-GlobalButton / updateUrlPath ... params : ", params )
+
+      for (let targetParams of params.targets) {
+
+        let targetArgs = { ...targetParams.urlArgs }
+        this.log && console.log("C-GlobalButton / updateUrlPath ... this.$store.state.data[ targetArgs.datastore ] : ", this.$store.state.data[ targetArgs.datastore ] )
+
+        const routePath = this.$route.path
+        const paramsString = objectToUrlParams(targetArgs)
+        this.log && console.log("C-GlobalButton / updateUrlPath ... paramsString : ", paramsString )
+        
+        this.$store.commit("setRouteParams", paramsString)
+        history.pushState(
+          {},
+          null,
+          routePath + '?' + paramsString
+        )
+      }
+    }
+
   },
 }
 </script>

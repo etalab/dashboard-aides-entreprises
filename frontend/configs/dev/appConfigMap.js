@@ -329,6 +329,50 @@ const COMMON_CLICK_EVENTS = {
     funcName: 'toggleHighlightOff',
     help: 'highlight polygon / geo element as off',
     funcParams: {}
+  },
+  updateUrlPathRegions: {
+    funcName: 'updateUrlPath',
+    help: 'update url path without reloading page for constant focus object form dataset to dataset',
+    funcParams: {
+      zoomRange: {
+        minZoom: undefined,
+        maxZoom: ZOOM_THRESHOLD - 0.1
+      },
+      propName: 'code',
+      targets: [
+        {
+          from: 'prop',
+          urlArgs: {
+            datastore: 'displayedData',
+            datasetid: 'regions',
+            field: 'code',
+            value: 'prop'
+          }
+        }
+      ]
+    }
+  },
+  updateUrlPathDepartements: {
+    funcName: 'updateUrlPath',
+    help: 'update url path without reloading page for constant focus object form dataset to dataset',
+    funcParams: {
+      zoomRange: {
+        minZoom: ZOOM_THRESHOLD - 0.1,
+        maxZoom: undefined
+      },
+      propName: 'code',
+      targets: [
+        {
+          from: 'prop',
+          urlArgs: {
+            datastore: 'displayedData',
+            datasetid: 'departements',
+            field: 'code',
+            value: undefined
+          }
+        }
+      ]
+    }
   }
 
 }
@@ -508,6 +552,7 @@ export const configAppMap = {
                     ]
                   }
                 },
+                COMMON_CLICK_EVENTS.updateUrlPathRegions,
 
                 // TO DO ...
                 {
@@ -522,15 +567,6 @@ export const configAppMap = {
                   }
                 }
 
-                // { funcName : 'updateQuery',
-                //   funcParams  : {
-                //     propName : 'code',
-                //     zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
-                //     targets : [
-                //       { dataFromSource : 'departement', targetPropName : 'region' },
-                //     ]
-                //   },
-                // },
               ]
             },
 
@@ -627,7 +663,8 @@ export const configAppMap = {
                       }
                     ]
                   }
-                }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathDepartements
               ]
             },
 
@@ -1004,7 +1041,8 @@ export const configAppMap = {
                       }
                     ]
                   }
-                }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathRegions
 
               ]
             },
@@ -1102,7 +1140,8 @@ export const configAppMap = {
                       }
                     ]
                   }
-                }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathDepartements
               ]
             },
 
@@ -1479,7 +1518,8 @@ export const configAppMap = {
                       }
                     ]
                   }
-                }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathRegions
 
               ]
             },
@@ -1577,7 +1617,8 @@ export const configAppMap = {
                       }
                     ]
                   }
-                }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathDepartements
               ]
             },
 

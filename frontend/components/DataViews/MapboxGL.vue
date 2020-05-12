@@ -60,6 +60,8 @@
       <!-- DEBUGGING -->
       <span v-if="log">
         {{ appVersion }}
+        <br>
+        {{ routeParams }}
       </span>
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
@@ -120,22 +122,22 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex"
+import { mapState, mapGetters, mapActions } from 'vuex'
 
-import { Mapbox, mapboxgl } from "mapbox-gl"
-import { MglMap } from "vue-mapbox"
+import { Mapbox, mapboxgl } from 'mapbox-gl'
+import { MglMap } from 'vue-mapbox'
 
 let _map
 
-import bbox from "@turf/bbox"
+import bbox from '@turf/bbox'
 
-import axios from "axios"
-import { getDataFromUrl } from "~/utils/getData.js"
-import { transformDataset, buildProperties } from "~/utils/mapbox.js"
+import axios from 'axios'
+import { getDataFromUrl } from '~/utils/getData.js'
+import { transformDataset, buildProperties } from '~/utils/mapbox.js'
 
-import { objectFromPath, switchFormatFunctions } from "~/utils/utils.js"
+import { objectFromPath, switchFormatFunctions, objectToUrlParams } from '~/utils/utils.js'
 
-import { StylesOSM } from "~/configs/mapboxVectorStyles.js"
+import { StylesOSM } from '~/configs/mapboxVectorStyles.js'
 
 export default {
   name: "MapboxGL",
@@ -288,6 +290,7 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       isIframe: (state) => state.isIframe,
+      routeParams: (state) => state.routeParams,
 
       mapUI: (state) => state.configUI.map,
       trigger: (state) => state.data.triggerChange,
@@ -674,10 +677,10 @@ export default {
                       this.updateDisplayedData(params)
                       break
 
-                    // case 'updateQuery' :
-                    //   params.targets = funcParams.targets ;
-                    //   this.updateQuery( params ) ;
-                    //   break ;
+                    case 'updateUrlPath' :
+                      params.targets = funcParams.targets ;
+                      this.updateUrlPath( params ) ;
+                      break
 
                     case "toggleHighlightOn":
                       this.toggleHighlightOn(e, itemSource)
@@ -731,6 +734,10 @@ export default {
         data = this.getStoreSourceData(params)
       }
 
+      if (from == "prop") {
+        data = params.prop
+      }
+
       if (params.format) {
         data = switchFormatFunctions(data, params.format)
       }
@@ -762,6 +769,48 @@ export default {
           this.$store.dispatch("data/setNestedData", targetData) // set element in : store.data.sepcialStore
         }
         this.$store.commit("data/toggleTrigger")
+      }
+    },
+
+    updateUrlPath(params) {
+      let isFnInZoomRange = this.isInZoomRange(params.zoomRange)
+      // this.log && console.log("\nC-MapboxGL / updateUrlPath ... isFnInZoomRange : ", isFnInZoomRange )
+
+      if (isFnInZoomRange) {
+        this.log && console.log("\nC-MapboxGL / updateUrlPath  : ", "+ ".repeat(10) )
+        this.log && console.log("\nC-MapboxGL / updateUrlPath ... params : ", params )
+
+        for (let targetParams of params.targets) {
+          // 1 - get data for the update
+          targetParams.prop = params.prop
+          targetParams.propName = params.propName
+          targetParams.props = params.props
+
+          let value = this.getSourceData(targetParams, targetParams.from)
+          this.log && console.log("C-MapboxGL / updateUrlPath ... value : ", value )
+
+          // 2 - then update value data in targetParams
+          let targetArgs = { ...targetParams.urlArgs }
+          targetArgs.value = value
+          this.log && console.log("C-MapboxGL / updateUrlPath ... targetArgs : ", targetArgs )
+
+          // 3 - update url path
+          this.log && console.log("C-MapboxGL / updateUrlPath ... this.$store.state.data[ targetArgs.datastore ] : ", this.$store.state.data[ targetArgs.datastore ] )
+          // this.log && console.log("C-MapboxGL / updateUrlPath ... this.$store.state.data.initData : ", this.$store.state.data.initData )
+          // this.log && console.log("C-MapboxGL / updateUrlPath ... this.$store.state.data.displayedData : ", this.$store.state.data.displayedData )
+          // this.log && console.log("C-MapboxGL / updateUrlPath ... this.$store.state.data.specialStore : ", this.$store.state.data.specialStore )
+
+          const routePath = this.$route.path
+          const paramsString = objectToUrlParams(targetArgs)
+          this.log && console.log("C-MapboxGL / updateUrlPath ... paramsString : ", paramsString )
+
+          this.$store.commit("setRouteParams", paramsString)
+          history.pushState(
+            {},
+            null,
+            routePath + '?' + paramsString
+          )
+        }
       }
     },
 

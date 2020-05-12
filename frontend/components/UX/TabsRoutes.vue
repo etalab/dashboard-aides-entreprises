@@ -59,7 +59,7 @@
         <v-tab
           v-for="rt in routesTabs.tabs"
           :key="rt.to"
-          :to="rt.isNuxtLink ? rt.to : rt.href"
+          :to="buildUrlPath(rt)"
           :class="routesTabs.tabsClass"
           exact
           nuxt
@@ -108,6 +108,7 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       noRoutesTabs: (state) => state.noRoutesTabs,
+      routeParams: (state) => state.routeParams,
 
       mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
@@ -127,6 +128,16 @@ export default {
 
   },
 
-  methods: {},
+  methods: {
+    buildUrlPath(rt) {
+      let url = rt.isNuxtLink ? rt.to : rt.href
+      if ( rt.addUrlParams ) {
+        let hasParamStart = url.includes('?')
+        let separator = hasParamStart ? '&' : '?'
+        url = url + separator + this.routeParams
+      }
+      return url
+    }
+  },
 }
 </script>

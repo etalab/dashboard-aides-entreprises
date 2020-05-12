@@ -1,3 +1,78 @@
+const COMMON_TARGETS = {
+  setLevelFrom: {},
+  setNombreFrom: {},
+  setMontantsFrom: {},
+
+  setFocusObjectFDS: {},
+  setFocusObjectPGE: {},
+  setFocusObjectREPORT: {}
+
+}
+const COMMON_URL_FOCUS = {
+  setFocusObjects: {
+    urlArgs: [
+      'datastore',
+      'datasetid',
+      'field',
+      'value'
+    ],
+    functions: [
+      {
+        funcName: 'updateData',
+        help: 'set store/data/specialStore',
+        funcParams: {
+          targets: [
+
+            // {
+            //   from: 'store',
+            //   fromPropKey: 'code',
+            //   fromStoreData: 'initData',
+            //   fromDatasetId: 'taxo-regions',
+            //   fromDatasetKey: 'reg',
+            //   fromDatasetField: 'libelle',
+            //   targetSpecialStoreId: 'levelname'
+            // },
+            // {
+            //   from: 'store',
+            //   fromPropKey: 'code', // use props region code
+            //   fromStoreData: 'initData',
+            //   fromDatasetId: 'regions-aides-raw',
+            //   fromDatasetKey: 'reg',
+            //   fromDatasetField: 'nombre',
+            //   targetSpecialStoreId: 'nombre'
+            // },
+            // {
+            //   from: 'store',
+            //   fromPropKey: 'code', // use props region code
+            //   fromStoreData: 'initData',
+            //   fromDatasetId: 'regions-aides-raw',
+            //   fromDatasetKey: 'reg',
+            //   fromDatasetField: 'montant',
+            //   targetSpecialStoreId: 'montant',
+            //   format: [
+            //     {
+            //       utilsFnName: 'toMillionsOrElse',
+            //       params: { divider: 1000000, fixed: 2 }
+            //     }
+            //   ]
+            // },
+            // {
+            //   from: 'store',
+            //   fromPropKey: 'code', // use props region code
+            //   fromStoreData: 'initData',
+            //   fromDatasetId: 'regions-aides-raw',
+            //   fromDatasetKey: 'reg',
+            //   fromDatasetField: undefined,
+            //   targetSpecialStoreId: 'focusObject'
+            // }
+
+          ]
+        }
+      }
+    ]
+  }
+}
+
 export const configAppRoutes = {
   help: 'this file contains the setup for the routes',
 
@@ -191,7 +266,8 @@ export const configAppRoutes = {
             }
           ]
         }
-      ]
+      ],
+      setUpFocus: COMMON_URL_FOCUS.setFocusObjects
     },
 
     // ============================================================= //
@@ -355,7 +431,8 @@ export const configAppRoutes = {
             }
           ]
         }
-      ]
+      ],
+      setUpFocus: COMMON_URL_FOCUS.setFocusObjects
     },
 
     // ============================================================= //
@@ -519,7 +596,9 @@ export const configAppRoutes = {
             }
           ]
         }
-      ]
+      ],
+      setUpFocus: COMMON_URL_FOCUS.setFocusObjects
+
     },
 
     // ============================================================= //

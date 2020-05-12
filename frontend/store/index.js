@@ -42,6 +42,7 @@ export const state = () => ({
   localRouteConfig: undefined,
   routeNeedDataReset: true,
   queryRouteId: undefined,
+  routeParams: undefined,
 
   // UX-UI
   configUX: undefined,
@@ -275,6 +276,9 @@ export const mutations = {
   },
   setNoRoutesTabs (state, noRoutesTabs) {
     state.noRoutesTabs = noRoutesTabs
+  },
+  setRouteParams (state, paramsString) {
+    state.routeParams = paramsString
   },
 
   // DIVS VISIBILITY
