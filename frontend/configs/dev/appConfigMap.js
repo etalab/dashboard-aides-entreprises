@@ -343,7 +343,6 @@ const COMMON_CLICK_EVENTS = {
         {
           from: 'prop',
           urlArgs: {
-            // datastore: 'displayedData',
             datasetid: 'regions',
             field: 'code',
             value: 'prop'
@@ -365,7 +364,6 @@ const COMMON_CLICK_EVENTS = {
         {
           from: 'prop',
           urlArgs: {
-            // datastore: 'displayedData',
             datasetid: 'departements',
             field: 'code',
             value: 'prop'

@@ -131,7 +131,7 @@ export default {
   methods: {
     buildUrlPath(rt) {
       let url = rt.isNuxtLink ? rt.to : rt.href
-      if ( rt.addUrlParams ) {
+      if (rt.addUrlParams && this.routeParams) {
         let hasParamStart = url.includes('?')
         let separator = hasParamStart ? '&' : '?'
         url = url + separator + this.routeParams

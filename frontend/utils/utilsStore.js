@@ -130,7 +130,7 @@ export function setMapZoom (urlParams, params, store, log) {
   log && console.log('\n+ + + setMapZoom / urlParams : ', urlParams)
   for (const targetParams of params.targets) {
     const canRun = canRunIf(targetParams.ifQuery, urlParams)
-    if (canRun) {
+    if (canRun && urlParams.value) {
       log && console.log('\n+ + + setMapZoom / urlParams : ', urlParams)
 
       targetParams.fromPropValue = urlParams.value

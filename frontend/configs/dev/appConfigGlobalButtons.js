@@ -1,19 +1,23 @@
 const COMMON_FUNCTIONS = {
   resetUrlPath: {
-    funcName: 'updateUrlPath',
+    funcName: 'cleanUrlPath',
     funcParams: {
-      targets: [
-        {
-          from: undefined,
-          urlArgs: {
-            // datastore: 'initData',
-            datasetid: 'infos',
-            field: 'code',
-            value: 'national'
-          }
-        }
-      ]
+    //   targets: [
+    //     {
+    //       from: undefined,
+    //       urlArgs: {
+    //         // datastore: 'initData',
+    //         datasetid: 'regions',
+    //         field: 'code',
+    //         value: 'national'
+    //       }
+    //     }
+    //   ]
     }
+  },
+  resetFitToPolygon: {
+    funcName: 'resetFitToPolygon',
+    funcParams: {}
   }
 }
 const COMMONS_TARGETS = {
@@ -139,7 +143,8 @@ export const configAppGlobalButtons = {
                 ]
               }
             },
-            COMMON_FUNCTIONS.resetUrlPath
+            COMMON_FUNCTIONS.resetUrlPath,
+            COMMON_FUNCTIONS.resetFitToPolygon
           ],
 
           hideIfs: [
@@ -242,7 +247,8 @@ export const configAppGlobalButtons = {
                 ]
               }
             },
-            COMMON_FUNCTIONS.resetUrlPath
+            COMMON_FUNCTIONS.resetUrlPath,
+            COMMON_FUNCTIONS.resetFitToPolygon
           ],
 
           hideIfs: [
@@ -345,7 +351,8 @@ export const configAppGlobalButtons = {
                 ]
               }
             },
-            COMMON_FUNCTIONS.resetUrlPath
+            COMMON_FUNCTIONS.resetUrlPath,
+            COMMON_FUNCTIONS.resetFitToPolygon
           ],
 
           hideIfs: [

@@ -16,6 +16,7 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 -----------------
 date : 12/05/2020
 
+- v.2.0.6 : store setup + zoom from url params
 - v.2.0.5 : url parameters for store preload
 - v.2.0.4 : custom color and behaviour for nuxt loading bar
 

@@ -120,6 +120,14 @@ export default {
             this.updateUrlPath( funcParams ) ;
             break
 
+          case 'cleanUrlPath' :
+            this.cleanUrlPath( ) ;
+            break
+
+          case 'resetFitToPolygon' :
+            this.resetFitToPolygon( ) ;
+            break
+
         }
       }
       this.$store.commit("buttons/toggleBtnTrigger")
@@ -145,6 +153,20 @@ export default {
           routePath + '?' + paramsString
         )
       }
+    },
+
+    cleanUrlPath() {
+      this.$store.commit("setRouteParams", undefined)
+      const routePath = this.$route.path
+      history.pushState(
+        {},
+        null,
+        routePath
+      )
+    },
+
+    resetFitToPolygon() {
+      this.$store.commit('data/setFitToPolygon', undefined)
     }
 
   },

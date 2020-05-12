@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.2.0.5 - url params for store preload'
+const APP_VERSION = 'v.2.0.6 - store setup + zoom from url params'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
