@@ -28,7 +28,7 @@ export default function ({ store, route }) {
         case 'updateDataStore':
           updateDataStore(urlParams, fn.funcParams, store, log)
           break
-        case 'setMapZoom':
+        case 'goToPolygon':
           setMapZoom(urlParams, fn.funcParams, store, log)
           break
       }

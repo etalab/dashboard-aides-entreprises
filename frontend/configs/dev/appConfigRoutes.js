@@ -237,22 +237,22 @@ const COMMON_TARGETS = {
 
   // SET MAP ZOOM
   setMapZoomRegions: {
-    ifQuery: [{ field: 'datasetid', val: 'regions' }],
-    fromQueryKey: 'code',
-    fromStoreData: undefined,
-    fromDatasetId: undefined,
-    fromDatasetKey: undefined,
-    fromDatasetField: undefined,
-    targetSpecialStoreId: undefined
+    ifQuery: [{ field: 'datasetid', val: 'regions' }]
+    // fromQueryKey: 'code',
+    // fromStoreData: 'initData',
+    // fromDatasetId: 'taxo-regions',
+    // fromDatasetKey: 'reg',
+    // fromDatasetField: 'libelle'
+    // targetSpecialStoreId: 'levelname'
   },
   setMapZoomDepartements: {
-    ifQuery: [{ field: 'datasetid', val: 'departements' }],
-    fromQueryKey: 'code',
-    fromStoreData: undefined,
-    fromDatasetId: undefined,
-    fromDatasetKey: undefined,
-    fromDatasetField: undefined,
-    targetSpecialStoreId: undefined
+    ifQuery: [{ field: 'datasetid', val: 'departements' }]
+    // fromQueryKey: 'code',
+    // fromStoreData: 'initData',
+    // fromDatasetId: 'taxo-departements',
+    // fromDatasetKey: 'dep',
+    // fromDatasetField: 'libelle'
+    // targetSpecialStoreId: 'levelname'
   }
 
 }
@@ -278,7 +278,7 @@ const COMMON_URL_FOCUS = {
         }
       },
       {
-        funcName: 'setMapZoom',
+        funcName: 'goToPolygon',
         help: 'set map zoom',
         funcParams: {
           targets: [
@@ -310,7 +310,7 @@ const COMMON_URL_FOCUS = {
         }
       },
       {
-        funcName: 'setMapZoom',
+        funcName: 'goToPolygon',
         help: 'set map zoom',
         funcParams: {
           targets: [
@@ -342,7 +342,7 @@ const COMMON_URL_FOCUS = {
         }
       },
       {
-        funcName: 'setMapZoom',
+        funcName: 'goToPolygon',
         help: 'set map zoom',
         funcParams: {
           targets: [

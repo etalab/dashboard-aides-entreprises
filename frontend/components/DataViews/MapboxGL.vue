@@ -206,6 +206,9 @@ export default {
         this.loadUrlSources(urlSourcesArray).then(() => {
           this.loadLayers(this.layers)
           this.loadClicEvents(this.maps)
+          if ( this.fitToPolygon ) {
+            this.goToPolygon(this.fitToPolygon)
+          }
           this.showLoader = false
         })
       }
@@ -216,6 +219,12 @@ export default {
       this.handleResize()
       this.resetZoom()
     },
+
+    // fitToPolygon(nextParams, prev) {
+    //   this.log && console.log("C-MapboxGL / watch / fitToPolygon ... nextParams : ", nextParams )
+    //   this.goToPolygon(nextParams)
+    // }
+
   },
 
   created() {
@@ -291,6 +300,7 @@ export default {
       locale: (state) => state.locale,
       isIframe: (state) => state.isIframe,
       routeParams: (state) => state.routeParams,
+      fitToPolygon: (state) => state.data.fitToPolygon,
 
       mapUI: (state) => state.configUI.map,
       trigger: (state) => state.data.triggerChange,
@@ -709,7 +719,7 @@ export default {
 
     // DATA INTERACTIONS - - - - - - - - - - - - - - - - - - //
 
-    getSourceData(params, from = "map") {
+    getSourceData(params, from="map") {
       // this.log && console.log("\nC-MapboxGL / getSourceGeoData ... from : ", from)
       // this.log && console.log("C-MapboxGL / getSourceGeoData ... params : ", params)
 
@@ -723,8 +733,7 @@ export default {
         let source = sourcesList && sourcesList[params.source]
         // this.log && console.log("C-MapboxGL / getSourceGeoData ... source : ", source)
         data =
-          source &&
-          source.data.features.find(
+          source && source.data.features.find(
             (feat) => feat.properties[params.propName] == params.prop
           )
         // this.log && console.log("C-MapboxGL / getSourceGeoData ... data : ", data)
@@ -753,6 +762,7 @@ export default {
 
       if (isFnInZoomRange) {
         for (let targetParams of params.targets) {
+
           // 1 - get data for the update
           targetParams.prop = params.prop
           targetParams.propName = params.propName
@@ -833,7 +843,7 @@ export default {
     // ZOOM FUNCTIONS
 
     goToPolygon(params) {
-      // this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
+      this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
       let isFnInZoomRange = this.isInZoomRange(params.zoomRange)
       if (isFnInZoomRange) {
         let geodata = this.getSourceData(params)
@@ -971,14 +981,13 @@ export default {
         }
       }
     },
-
     switchMapsDrawer() {
       this.drawerMapsOpen = !this.drawerMapsOpen
-    },
-
+    }
     // switchLegendDrawer(){
     //   this.drawerScalesOpen = !this.drawerScalesOpen
-    // },
+    // }
+
   },
 }
 </script>

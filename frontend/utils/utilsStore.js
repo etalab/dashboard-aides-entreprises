@@ -132,6 +132,16 @@ export function setMapZoom (urlParams, params, store, log) {
     const canRun = canRunIf(targetParams.ifQuery, urlParams)
     if (canRun) {
       log && console.log('\n+ + + setMapZoom / urlParams : ', urlParams)
+
+      targetParams.fromPropValue = urlParams.value
+      const polygonParams = {
+        source: urlParams.datasetid,
+        prop: urlParams.value,
+        propName: urlParams.field
+      }
+      log && console.log('+ + + setMapZoom / polygonParams : ', polygonParams)
+
+      store.commit('data/setFitToPolygon', polygonParams)
     }
   }
 }
