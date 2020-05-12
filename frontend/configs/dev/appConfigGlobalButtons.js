@@ -6,7 +6,7 @@ const COMMON_FUNCTIONS = {
         {
           from: undefined,
           urlArgs: {
-            datastore: 'initData',
+            // datastore: 'initData',
             datasetid: 'infos',
             field: 'code',
             value: 'national'

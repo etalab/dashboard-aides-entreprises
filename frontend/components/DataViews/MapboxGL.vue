@@ -617,7 +617,7 @@ export default {
 
       for (let mapRef of mapsArray) {
         if (mapRef.clicEvents) {
-          for (let clicEvent of mapRef.clicEvents) {
+          for (const clicEvent of mapRef.clicEvents) {
             this.log &&
               console.log(
                 "\nC-MapboxGL / loadClicEvents ... clicEvent.layer : ",
@@ -663,16 +663,16 @@ export default {
                   }
 
                   switch (fn.funcName) {
-                    case "goToPolygon":
+                    case 'goToPolygon':
                       this.goToPolygon(params)
                       break
 
-                    case "setChildrenPolygons":
+                    case 'setChildrenPolygons':
                       params.targets = funcParams.targets
                       this.setChildrenPolygons(params)
                       break
 
-                    case "updateDisplayedData":
+                    case 'updateDisplayedData':
                       params.targets = funcParams.targets
                       this.updateDisplayedData(params)
                       break
@@ -682,15 +682,15 @@ export default {
                       this.updateUrlPath( params ) ;
                       break
 
-                    case "toggleHighlightOn":
+                    case 'toggleHighlightOn':
                       this.toggleHighlightOn(e, itemSource)
                       break
 
-                    case "toggleHighlightOff":
+                    case 'toggleHighlightOff':
                       this.toggleHighlightOff(e, itemSource)
                       break
 
-                    case "toggleSelectedOn":
+                    case 'toggleSelectedOn':
                       this.toggleSelectedOn(e, itemSource)
                       break
 
@@ -795,7 +795,7 @@ export default {
           this.log && console.log("C-MapboxGL / updateUrlPath ... targetArgs : ", targetArgs )
 
           // 3 - update url path
-          this.log && console.log("C-MapboxGL / updateUrlPath ... this.$store.state.data[ targetArgs.datastore ] : ", this.$store.state.data[ targetArgs.datastore ] )
+          // this.log && console.log("C-MapboxGL / updateUrlPath ... this.$store.state.data[ targetArgs.datastore ] : ", this.$store.state.data[ targetArgs.datastore ] )
           // this.log && console.log("C-MapboxGL / updateUrlPath ... this.$store.state.data.initData : ", this.$store.state.data.initData )
           // this.log && console.log("C-MapboxGL / updateUrlPath ... this.$store.state.data.displayedData : ", this.$store.state.data.displayedData )
           // this.log && console.log("C-MapboxGL / updateUrlPath ... this.$store.state.data.specialStore : ", this.$store.state.data.specialStore )

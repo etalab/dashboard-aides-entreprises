@@ -311,7 +311,8 @@ export default {
       'setLocales',
       'getDataInit',
       'getRouteConfig',
-      'getRouteData'
+      'getRouteData',
+      'setRouteViews'
     ]
   },
 

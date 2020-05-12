@@ -15,15 +15,16 @@ const COMMON_TARGETS = {
     ifQuery: [{ field: 'datasetid', val: 'departements' }],
     fromQueryKey: 'code',
     fromStoreData: 'initData',
-    fromDatasetId: 'taxo-regions',
-    fromDatasetKey: 'reg',
+    fromDatasetId: 'taxo-departements',
+    fromDatasetKey: 'dep',
     fromDatasetField: 'libelle',
     targetSpecialStoreId: 'levelname'
   },
 
-  // OBJECTS
-  setObjectsFDS: [
+  // OBJECTS - REGIONS
+  setObjectsRegionsFDS: [
     {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
       fromDatasetId: 'regions-aides-raw',
@@ -32,6 +33,7 @@ const COMMON_TARGETS = {
       targetSpecialStoreId: 'nombre'
     },
     {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
       fromDatasetId: 'regions-aides-raw',
@@ -46,6 +48,7 @@ const COMMON_TARGETS = {
       ]
     },
     {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
       fromDatasetId: 'regions-aides-raw',
@@ -54,8 +57,9 @@ const COMMON_TARGETS = {
       targetSpecialStoreId: 'focusObject'
     }
   ],
-  setObjectsPGE: [
+  setObjectsRegionsPGE: [
     {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
       fromDatasetId: 'regions-pge-raw',
@@ -64,6 +68,7 @@ const COMMON_TARGETS = {
       targetSpecialStoreId: 'nombre'
     },
     {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
       fromDatasetId: 'regions-pge-raw',
@@ -78,6 +83,7 @@ const COMMON_TARGETS = {
       ]
     },
     {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
       fromDatasetId: 'regions-pge-raw',
@@ -86,8 +92,9 @@ const COMMON_TARGETS = {
       targetSpecialStoreId: 'focusObject'
     }
   ],
-  setObjectsREPORT: [
+  setObjectsRegionsREPORT: [
     {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
       fromDatasetId: 'regions-report-raw',
@@ -96,6 +103,7 @@ const COMMON_TARGETS = {
       targetSpecialStoreId: 'nombre'
     },
     {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
       fromDatasetId: 'regions-report-raw',
@@ -110,17 +118,135 @@ const COMMON_TARGETS = {
       ]
     },
     {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
       fromDatasetId: 'regions-report-raw',
       fromDatasetKey: 'reg',
+      fromDatasetField: undefined,
+      targetSpecialStoreId: 'focusObject'
+    }
+  ],
+
+  // OBJECTS - DEPARTEMENTS
+  setObjectsDepartementsFDS: [
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-aides-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'nombre',
+      targetSpecialStoreId: 'nombre'
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-aides-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'montant',
+      targetSpecialStoreId: 'montant',
+      format: [
+        {
+          utilsFnName: 'toMillionsOrElse',
+          params: { divider: 1000000, fixed: 2 }
+        }
+      ]
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-aides-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: undefined,
+      targetSpecialStoreId: 'focusObject'
+    }
+  ],
+  setObjectsDepartementsPGE: [
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-pge-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'nombre',
+      targetSpecialStoreId: 'nombre'
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-pge-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'montant',
+      targetSpecialStoreId: 'montant',
+      format: [
+        {
+          utilsFnName: 'toMillionsOrElse',
+          params: { divider: 1000000, fixed: 2 }
+        }
+      ]
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-pge-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: undefined,
+      targetSpecialStoreId: 'focusObject'
+    }
+  ],
+  setObjectsDepartementsREPORT: [
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-report-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'nombre',
+      targetSpecialStoreId: 'nombre'
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-report-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'montant',
+      targetSpecialStoreId: 'montant',
+      format: [
+        {
+          utilsFnName: 'toMillionsOrElse',
+          params: { divider: 1000000, fixed: 2 }
+        }
+      ]
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-report-raw',
+      fromDatasetKey: 'dep',
       fromDatasetField: undefined,
       targetSpecialStoreId: 'focusObject'
     }
   ],
 
   // SET MAP ZOOM
-  setMapZoom: {
+  setMapZoomRegions: {
+    ifQuery: [{ field: 'datasetid', val: 'regions' }],
+    fromQueryKey: 'code',
+    fromStoreData: undefined,
+    fromDatasetId: undefined,
+    fromDatasetKey: undefined,
+    fromDatasetField: undefined,
+    targetSpecialStoreId: undefined
+  },
+  setMapZoomDepartements: {
+    ifQuery: [{ field: 'datasetid', val: 'departements' }],
     fromQueryKey: 'code',
     fromStoreData: undefined,
     fromDatasetId: undefined,
@@ -133,20 +259,21 @@ const COMMON_TARGETS = {
 const COMMON_URL_FOCUS = {
   setFocusObjectsFDS: {
     urlArgs: [
-      'datastore',
+      // 'datastore',
       'datasetid',
       'field',
       'value'
     ],
     functions: [
       {
-        funcName: 'updateSpecialStore',
+        funcName: 'updateDataStore',
         help: 'set store/data/specialStore',
         funcParams: {
           targets: [
             COMMON_TARGETS.setLibelleRegion,
             COMMON_TARGETS.setLibelleDepartement,
-            COMMON_TARGETS.setObjectsFDS
+            ...COMMON_TARGETS.setObjectsRegionsFDS,
+            ...COMMON_TARGETS.setObjectsDepartementsFDS
           ]
         }
       },
@@ -155,7 +282,8 @@ const COMMON_URL_FOCUS = {
         help: 'set map zoom',
         funcParams: {
           targets: [
-            COMMON_TARGETS.setMapZoom
+            COMMON_TARGETS.setMapZoomRegions,
+            COMMON_TARGETS.setMapZoomDepartements
           ]
         }
       }
@@ -163,20 +291,21 @@ const COMMON_URL_FOCUS = {
   },
   setFocusObjectsPGE: {
     urlArgs: [
-      'datastore',
+      // 'datastore',
       'datasetid',
       'field',
       'value'
     ],
     functions: [
       {
-        funcName: 'updateSpecialStore',
+        funcName: 'updateDataStore',
         help: 'set store/data/specialStore',
         funcParams: {
           targets: [
             COMMON_TARGETS.setLibelleRegion,
             COMMON_TARGETS.setLibelleDepartement,
-            COMMON_TARGETS.setObjectsPGE
+            ...COMMON_TARGETS.setObjectsRegionsPGE,
+            ...COMMON_TARGETS.setObjectsDepartementsPGE
           ]
         }
       },
@@ -185,7 +314,8 @@ const COMMON_URL_FOCUS = {
         help: 'set map zoom',
         funcParams: {
           targets: [
-            COMMON_TARGETS.setMapZoom
+            COMMON_TARGETS.setMapZoomRegions,
+            COMMON_TARGETS.setMapZoomDepartements
           ]
         }
       }
@@ -193,20 +323,21 @@ const COMMON_URL_FOCUS = {
   },
   setFocusObjectsREPORT: {
     urlArgs: [
-      'datastore',
+      // 'datastore',
       'datasetid',
       'field',
       'value'
     ],
     functions: [
       {
-        funcName: 'updateSpecialStore',
+        funcName: 'updateDataStore',
         help: 'set store/data/specialStore',
         funcParams: {
           targets: [
             COMMON_TARGETS.setLibelleRegion,
             COMMON_TARGETS.setLibelleDepartement,
-            COMMON_TARGETS.setObjectsREPORT
+            ...COMMON_TARGETS.setObjectsRegionsREPORT,
+            ...COMMON_TARGETS.setObjectsDepartementsREPORT
           ]
         }
       },
@@ -215,7 +346,8 @@ const COMMON_URL_FOCUS = {
         help: 'set map zoom',
         funcParams: {
           targets: [
-            COMMON_TARGETS.setMapZoom
+            COMMON_TARGETS.setMapZoomRegions,
+            COMMON_TARGETS.setMapZoomDepartements
           ]
         }
       }
@@ -417,7 +549,7 @@ export const configAppRoutes = {
           ]
         }
       ],
-      setUpFocus: COMMON_URL_FOCUS.setFocusObjectsFDS
+      setUpRouteViews: COMMON_URL_FOCUS.setFocusObjectsFDS
     },
 
     // ============================================================= //
@@ -582,7 +714,7 @@ export const configAppRoutes = {
           ]
         }
       ],
-      setUpFocus: COMMON_URL_FOCUS.setFocusObjectsPGE
+      setUpRouteViews: COMMON_URL_FOCUS.setFocusObjectsPGE
     },
 
     // ============================================================= //
@@ -747,7 +879,7 @@ export const configAppRoutes = {
           ]
         }
       ],
-      setUpFocus: COMMON_URL_FOCUS.setFocusObjectsREPORT
+      setUpRouteViews: COMMON_URL_FOCUS.setFocusObjectsREPORT
 
     },
 

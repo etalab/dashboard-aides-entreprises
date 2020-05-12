@@ -132,7 +132,7 @@ export default {
       for (let targetParams of params.targets) {
 
         let targetArgs = { ...targetParams.urlArgs }
-        this.log && console.log("C-GlobalButton / updateUrlPath ... this.$store.state.data[ targetArgs.datastore ] : ", this.$store.state.data[ targetArgs.datastore ] )
+        // this.log && console.log("C-GlobalButton / updateUrlPath ... this.$store.state.data[ targetArgs.datastore ] : ", this.$store.state.data[ targetArgs.datastore ] )
 
         const routePath = this.$route.path
         const paramsString = objectToUrlParams(targetArgs)

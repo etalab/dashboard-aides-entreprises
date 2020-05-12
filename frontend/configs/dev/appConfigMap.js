@@ -343,7 +343,7 @@ const COMMON_CLICK_EVENTS = {
         {
           from: 'prop',
           urlArgs: {
-            datastore: 'displayedData',
+            // datastore: 'displayedData',
             datasetid: 'regions',
             field: 'code',
             value: 'prop'
@@ -365,10 +365,10 @@ const COMMON_CLICK_EVENTS = {
         {
           from: 'prop',
           urlArgs: {
-            datastore: 'displayedData',
+            // datastore: 'displayedData',
             datasetid: 'departements',
             field: 'code',
-            value: undefined
+            value: 'prop'
           }
         }
       ]
@@ -513,7 +513,6 @@ export const configAppMap = {
                         fromDatasetField: 'libelle',
                         targetSpecialStoreId: 'levelname'
                       },
-
                       {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
@@ -523,7 +522,6 @@ export const configAppMap = {
                         fromDatasetField: 'nombre',
                         targetSpecialStoreId: 'nombre'
                       },
-
                       {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
@@ -539,7 +537,6 @@ export const configAppMap = {
                           }
                         ]
                       },
-
                       {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
@@ -625,7 +622,6 @@ export const configAppMap = {
                         fromDatasetField: 'libelle',
                         targetSpecialStoreId: 'levelname'
                       },
-
                       {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
@@ -635,7 +631,6 @@ export const configAppMap = {
                         fromDatasetField: 'nombre',
                         targetSpecialStoreId: 'nombre'
                       },
-
                       {
                         from: 'store',
                         fromPropKey: 'code', // use props region code

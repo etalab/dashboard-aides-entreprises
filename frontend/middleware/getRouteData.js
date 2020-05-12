@@ -13,17 +13,6 @@ export default function ({ store, route }) {
   const promisesArray = []
   const callableFrom = ['url', 'static']
 
-  // GET ROUTE PARAMS IF ANY IN ROUTE && ROUTE_CONNFIG
-  const setUpFocus = currentRouteConfig.setUpFocus
-  if (setUpFocus) {
-    var urlParams = {}
-    log && console.log('-MW- getRouteData / setUpFocus :', setUpFocus)
-    for (const p of setUpFocus.urlArgs) {
-      urlParams[p] = route.query[p]
-    }
-    log && console.log('-MW- getRouteData / urlParams :', urlParams)
-  }
-
   // STORE DATASETS
   const routeNeedDataReset = store.getters.getRouteNeedDataReset
   log && console.log('-MW- getRouteData / routeNeedDataReset :', routeNeedDataReset)
