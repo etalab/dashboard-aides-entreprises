@@ -67,7 +67,7 @@ export const configAppTexts = {
               subTextClass: '',
               sizeDesktop: 'headline mb-0',
               sizeMobile: 'subtitle-1',
-              textPrefix: { fr: 'Aides versées : ' },
+              textPrefix: { fr: 'Fonds de solidarité : ' },
               textPrefixClass: 'font-weight-regular',
               textSuffix: { fr: '' },
               textSuffixClass: undefined,
