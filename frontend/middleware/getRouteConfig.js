@@ -46,11 +46,7 @@ export default function ({ store, env, route, redirect }) {
   // retrieve last route config
   const lastRouteConfig = store.getters.getLocalRouteConfig
   const lastRouteConfigId = lastRouteConfig && lastRouteConfig.id
-  log &&
-    console.log(
-      '-MW- getRouteConfig / lastRouteConfigId : ',
-      lastRouteConfigId
-    )
+  log && console.log('-MW- getRouteConfig / lastRouteConfigId : ', lastRouteConfigId)
 
   // retrieve local route config
   let currentRouteConfig
