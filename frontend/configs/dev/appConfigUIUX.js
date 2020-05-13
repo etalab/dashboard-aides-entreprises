@@ -134,10 +134,10 @@ export const configAppUIUX = {
           href: '/reports',
           isVisible: true,
           icon: undefined,
-          title: { fr: "Reports d'échéance" },
-          titleMobile: { fr: "Reports d'échéance" },
+          title: { fr: 'Reports fiscaux' },
+          titleMobile: { fr: 'Reports fiscaux' },
           // titleMobile: { fr: 'REP' },
-          tooltip: { fr: "reports d'échéance" },
+          tooltip: { fr: 'reports fiscaux' },
           isNuxtLink: false,
           addUrlParams: true
         }

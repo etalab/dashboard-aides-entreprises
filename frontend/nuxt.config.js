@@ -244,6 +244,9 @@ const configApp = {
   configsReferences: configsReferences,
   configsFrom: process.env.NUXT_ENV_CONFIG_FROM || 'local_js_files',
 
+  // ROUTES
+  generateRoutes: process.env.NUXT_ENV_GENERATE_ROUTES.split(','),
+
   // MATOMO
   matomo_host: process.env.NUXT_ENV_MATOMO_HOST || 'https://stats.data.gouv.fr',
   matomo_siteId: parseInt(process.env.NUXT_ENV_MATOMO_SITE_ID) || 127,
@@ -390,11 +393,7 @@ export default {
   */
   generate: {
     fallback: true,
-    routes: [
-      '/fds',
-      '/pge',
-      '/report'
-    ]
+    routes: configApp.generateRoutes
   },
   build: {
     transpile: ['vue-mapbox'],
