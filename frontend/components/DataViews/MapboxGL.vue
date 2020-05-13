@@ -58,11 +58,10 @@
       :class="`legend-block legend-bottom-right`"
     >
       <!-- DEBUGGING -->
-      <span v-if="log">
-        {{ appVersion }}
-        <br>
-        {{ routeParams }}
-      </span>
+      <div class="content mx-4" v-if="log">
+        <p><code>version :<br> {{ appVersion }}</code></p>
+        <p><code>routeParams :<br> {{ routeParams }}</code></p>
+      </div>
       <!-- <b>{{ currentZoom }}</b> -->
       <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
 
@@ -208,15 +207,21 @@ export default {
           this.loadClicEvents(this.maps)
 
           // set up view 
-          if ( this.fitToPolygon ) {
-            if ( this.fitToPolygon.zoomBy === 'polygon' ) {
+          if (this.fitToPolygon) {
+            if (this.fitToPolygon.zoomBy === 'polygon') {
               this.goToPolygon(this.fitToPolygon)
-            } else if ( this.fitToPolygon.zoomBy === 'centerAndZoom' ) {
+            } else if (this.fitToPolygon.zoomBy === 'centerAndZoom') {
               const center = this.fitToPolygon.center
               const zoom = this.fitToPolygon.zoom
               this.flyTo( center, zoom, true )
             }
           }
+
+          // set up selected polygons
+          if (this.storeSelectedStateId) {
+            this.setSelectedPolygons(this.storeSelectedStateId)
+          }
+
           // flag as loading finished
           this.showLoader = false
         })
@@ -227,6 +232,12 @@ export default {
       // this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
       this.handleResize()
       this.resetZoom()
+    },
+
+    storeSelectedStateId(next, prev) {
+      if ( this.map && typeof next === 'undefined') {
+        this.resetAllSelected()
+      }
     }
 
   },
@@ -305,7 +316,8 @@ export default {
       isIframe: (state) => state.isIframe,
       routeParams: (state) => state.routeParams,
       
-      fitToPolygon: (state) => state.data.fitToPolygon,
+      fitToPolygon: (state) => state.maps.fitToPolygon,
+      storeSelectedStateId: (state) => state.maps.selectedStateId,
 
       mapUI: (state) => state.configUI.map,
       trigger: (state) => state.data.triggerChange,
@@ -785,7 +797,13 @@ export default {
           targetArgs.centerlat = currentCenter.lat.toFixed(4)
 
           // 2ter - set highlighted polygons in url params
-          // targetArgs.highlight = 
+          this.log && console.log('C-MapboxGL / updateUrlPath ... this.selectedStateId : ', this.selectedStateId )
+          let selectedTranslated = []
+          for ( let key in this.selectedStateId ) {
+            selectedTranslated.push( `${key}:${this.selectedStateId[key]}` ) 
+          }
+          this.log && console.log('C-MapboxGL / updateUrlPath ... selectedTranslated : ', selectedTranslated )
+          targetArgs.selected = selectedTranslated
 
           this.log && console.log('C-MapboxGL / updateUrlPath ... targetArgs : ', targetArgs )
 
@@ -832,13 +850,15 @@ export default {
 
     flyTo(center, zoom, convertToLngLat=false) {
       let mapbox = _map
-      this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
+      // this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
       // center = convertToLngLat ? new mapboxgl.LngLat(center.lng, center.lat) : center 
       // this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
-      mapbox.flyTo({
-        center: center,
-        zoom: zoom,
-      })
+      if (zoom) {
+        mapbox.flyTo({
+          center: center,
+          zoom: zoom,
+        })
+      }
     },
 
     goToPolygon(params) {
@@ -894,28 +914,46 @@ export default {
       }
     },
 
-    toggleSelectedOn(event, source) {
+
+
+    // SELECTED POLYGONS
+    resetAllSelected() {
+      this.log && console.log('C-MapboxGL / resetAllSelected ... this.selectedStateId : ', this.selectedStateId )
+      for (let source in this.selectedStateId) {
+        let featureId = this.selectedStateId[source]
+        this.resetSelectedPolygons(source, featureId)
+      }
+    },
+    resetSelectedPolygons(source, featureId) {
       let mapbox = _map
-      if (event.features.length > 0) {
-        if (this.selectedStateId[source]) {
-          mapbox.setFeatureState(
-            { source, id: this.selectedStateId[source] },
-            { selected: false }
-          ) // clean all sources to prevent error
-        }
-        this.selectedStateId[source] = event.features[0].id
+      if (this.selectedStateId[source]) {
         mapbox.setFeatureState(
-          { source, id: this.selectedStateId[source] },
+          { source, id: featureId },
+          { selected: false }
+        ) // clean all sources to prevent error
+      }
+    },
+    setSelectedPolygons(selected) {
+      let mapbox = _map
+      // this.log && console.log('C-MapboxGL / setSelectedPolygons ... selected : ', selected )
+      for (let source in selected) {
+        const featureId = parseInt( selected[source] )
+        this.resetSelectedPolygons(source, featureId)
+        this.selectedStateId[source] = featureId
+        mapbox.setFeatureState(
+          { source, id: featureId },
           { selected: true }
         )
       }
     },
-    toggleAllSelectedOff(event, source) {
+    toggleSelectedOn(event, source) {
       let mapbox = _map
-      if (this.hoveredStateId[source] !== null) {
+      if (event.features.length > 0) {
+        this.resetSelectedPolygons(source, this.selectedStateId[source])
+        this.selectedStateId[source] = event.features[0].id
         mapbox.setFeatureState(
-          { source, id: this.hoveredStateId[source] },
-          { selected: false }
+          { source, id: this.selectedStateId[source] },
+          { selected: true }
         )
       }
     },

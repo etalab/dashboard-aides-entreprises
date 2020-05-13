@@ -15,6 +15,8 @@ export const state = () => ({
   originalZoom: undefined,
   currentZoom: undefined,
 
+  fitToPolygon: undefined,
+
   mapOptions: {
     mapStyle: undefined,
     zoom: undefined,
@@ -58,6 +60,14 @@ export const mutations = {
   setResetZoomTrigger (state) {
     // state.log && console.log("\nS-map-M-setResetZoomTrigger ... ")
     state.resetZoomTrigger = state.resetZoomTrigger * -1
+  },
+  setFitToPolygon (state, polygonParams) {
+    state.fitToPolygon = polygonParams
+  },
+
+  // UPDATE SELECTED
+  seSelectedStateId (state, selectedStateId) {
+    state.selectedStateId = selectedStateId
   }
 
 }

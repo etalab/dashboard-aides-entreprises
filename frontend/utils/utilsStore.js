@@ -1,4 +1,4 @@
-import { switchFormatFunctions } from '~/utils/utils.js'
+import { switchFormatFunctions, objectsFromString } from '~/utils/utils.js'
 
 console.log('+ + + utils/utilsStore... ')
 
@@ -12,7 +12,7 @@ export function copyData (respData, store, dataRef, log) {
   // COPY A SLICE TO ...
 
   for (const dataCopy of dataRef.copyTo) {
-    log && console.log('\n... + + + copyData :', dataCopy)
+    log && console.log('\n... + + + copyData / dataCopy.help :', dataCopy.help)
     // log  && console.log('... + + + copyData / respData :' , respData )
 
     // get source data
@@ -105,10 +105,10 @@ export function updateDataStore (urlParams, params, store, log) {
 
     if (canRun) {
       // 2 - prepare targetParams
-      log && console.log('\n+ + + updateDataStore / urlParams : ', urlParams)
+      // log && console.log('\n+ + + updateDataStore / urlParams : ', urlParams)
 
       targetParams.fromPropValue = urlParams.value
-      log && console.log('+ + + updateDataStore / targetParams : ', targetParams)
+      // log && console.log('+ + + updateDataStore / targetParams : ', targetParams)
 
       // 3 - get data value given the urlArgs
       // log && console.log('+ + + updateDataStore / store.state.data[targetParams.fromStoreData] : ', store.state.data[targetParams.fromStoreData])
@@ -116,26 +116,26 @@ export function updateDataStore (urlParams, params, store, log) {
       if (targetParams.format) {
         data = switchFormatFunctions(data, targetParams.format)
       }
-      log && console.log('+ + + updateDataStore / data : ', data)
+      // log && console.log('+ + + updateDataStore / data : ', data)
 
       // 4 - commit value to datastore
       const targetData = {
         value: data,
         specialStoreId: targetParams.targetSpecialStoreId
       }
-      log && console.log('+ + + updateDataStore / targetData : ', targetData)
+      // log && console.log('+ + + updateDataStore / targetData : ', targetData)
       updateDataStoreDataset(targetData, store, log)
     }
   }
 }
 export function setMapView (urlParams, params, store, log) {
-  log && console.log('\n+ + + setMapZoom / urlParams : ', urlParams)
+  // log && console.log('\n+ + + setMapZoom / urlParams : ', urlParams)
   for (const targetParams of params.targets) {
-    log && console.log('\n+ + + setMapZoom / targetParams : ', targetParams)
+    // log && console.log('\n+ + + setMapZoom / targetParams : ', targetParams)
     const canRun = canRunIf(targetParams.ifQuery, urlParams)
 
     if (canRun) {
-      log && console.log('+ + + setMapZoom /  targetParams.zoomBy : ', targetParams.zoomBy)
+      // log && console.log('+ + + setMapZoom /  targetParams.zoomBy : ', targetParams.zoomBy)
 
       let viewParams = {
         zoomBy: targetParams.zoomBy
@@ -158,17 +158,22 @@ export function setMapView (urlParams, params, store, log) {
         }
       }
       log && console.log('+ + + setMapZoom / viewParams : ', viewParams)
-      store.commit('data/setFitToPolygon', viewParams)
+      store.commit('maps/setFitToPolygon', viewParams)
     }
   }
 }
 export function setSelectedPolygons (urlParams, params, store, log) {
-  log && console.log('\n+ + + setSelectedPolygons / urlParams : ', urlParams)
+  // log && console.log('\n+ + + setSelectedPolygons / urlParams : ', urlParams)
   for (const targetParams of params.targets) {
-    log && console.log('\n+ + + setSelectedPolygons / targetParams : ', targetParams)
+    // log && console.log('\n+ + + setSelectedPolygons / targetParams : ', targetParams)
     const canRun = canRunIf(targetParams.ifQuery, urlParams)
     if (canRun) {
-      log && console.log('+ + + setSelectedPolygons /  targetParams : ', targetParams)
+      // log && console.log('+ + + setSelectedPolygons /  targetParams : ', targetParams)
+      const selectedParams = {
+        selected: objectsFromString(urlParams[targetParams.selectedField])
+      }
+      log && console.log('+ + + setSelectedPolygons /  selectedParams : ', selectedParams)
+      store.commit('maps/seSelectedStateId', selectedParams.selected)
     }
   }
 }

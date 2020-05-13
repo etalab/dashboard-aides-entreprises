@@ -128,6 +128,9 @@ export default {
             this.resetFitToPolygon( ) ;
             break
 
+          case 'resetSelectedPolygons' :
+            this.resetSelectedPolygons( ) ;
+            break
         }
       }
       this.$store.commit("buttons/toggleBtnTrigger")
@@ -166,7 +169,11 @@ export default {
     },
 
     resetFitToPolygon() {
-      this.$store.commit('data/setFitToPolygon', undefined)
+      this.$store.commit('maps/setFitToPolygon', undefined)
+    },
+
+    resetSelectedPolygons() {
+      this.$store.commit('maps/seSelectedStateId', undefined)
     }
 
   },

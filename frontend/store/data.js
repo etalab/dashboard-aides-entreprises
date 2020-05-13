@@ -35,8 +35,7 @@ export const state = () => ({
   // DISPLAYED DATA
   displayedData: undefined,
   specialStore: {},
-  triggerChange: 1,
-  fitToPolygon: undefined
+  triggerChange: 1
 })
 
 export const getters = {
@@ -241,10 +240,6 @@ export const mutations = {
   setDeepNestedData (state, targetData) {
     // state.log && console.log("S-data-M-setDeepNestedData / targetData  : ", targetData )
     state.specialStore[targetData.specialStoreId] = targetData.value
-  },
-
-  setFitToPolygon (state, polygonParams) {
-    state.fitToPolygon = polygonParams
   },
 
   // FILTERS

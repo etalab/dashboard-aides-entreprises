@@ -18,6 +18,10 @@ const COMMON_FUNCTIONS = {
   resetFitToPolygon: {
     funcName: 'resetFitToPolygon',
     funcParams: {}
+  },
+  resetSelectedPolygons: {
+    funcName: 'resetSelectedPolygons',
+    funcParams: {}
   }
 }
 const COMMONS_TARGETS = {
@@ -144,7 +148,8 @@ export const configAppGlobalButtons = {
               }
             },
             COMMON_FUNCTIONS.resetUrlPath,
-            COMMON_FUNCTIONS.resetFitToPolygon
+            COMMON_FUNCTIONS.resetFitToPolygon,
+            COMMON_FUNCTIONS.resetSelectedPolygons
           ],
 
           hideIfs: [
@@ -248,7 +253,8 @@ export const configAppGlobalButtons = {
               }
             },
             COMMON_FUNCTIONS.resetUrlPath,
-            COMMON_FUNCTIONS.resetFitToPolygon
+            COMMON_FUNCTIONS.resetFitToPolygon,
+            COMMON_FUNCTIONS.resetSelectedPolygons
           ],
 
           hideIfs: [
@@ -352,7 +358,8 @@ export const configAppGlobalButtons = {
               }
             },
             COMMON_FUNCTIONS.resetUrlPath,
-            COMMON_FUNCTIONS.resetFitToPolygon
+            COMMON_FUNCTIONS.resetFitToPolygon,
+            COMMON_FUNCTIONS.resetSelectedPolygons
           ],
 
           hideIfs: [

@@ -62,11 +62,7 @@ export default function ({ store, env, route, redirect }) {
     store.commit('SetQueryRouteId', undefined)
     currentRouteConfig = store.getters.getCurrentRouteConfig(path)
   }
-  log &&
-    console.log(
-      '-MW- getRouteConfig / currentRouteConfig : ',
-      currentRouteConfig
-    )
+  log && console.log('-MW- getRouteConfig / currentRouteConfig.id : ', currentRouteConfig.id)
 
   // reroute to error / or home if currentRouteConfig is undefined
   if (typeof currentRouteConfig === 'undefined') { redirect('/') }

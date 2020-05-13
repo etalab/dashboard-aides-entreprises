@@ -7,7 +7,8 @@ const COMMONN_URL_ARGS = {
   mapArgs: [
     'zoom',
     'centerlat',
-    'centerlng'
+    'centerlng',
+    'selected'
   ]
 }
 const COMMON_TARGETS = {
@@ -271,7 +272,10 @@ const COMMON_TARGETS = {
 
   // SET SELECTED POLYGONS
   setSelectedPolygons: {
-    ifQuery: undefined
+    ifQuery: undefined,
+    selectedField: 'selected',
+    selectedSeparator: ',',
+    selectedObjectSeparator: ':'
   }
 
 }

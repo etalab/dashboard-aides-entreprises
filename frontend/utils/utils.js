@@ -1,4 +1,4 @@
-console.log('+ + + utils/utils... ')
+console.log('=== utils/utils... ')
 
 // PURE UTILS
 
@@ -11,17 +11,17 @@ export function capitalizeString (string) {
 }
 export function splitMulti (str, tokens, glue = ' ', capitalize = false) {
   var tempChar = tokens[0] // We can use the first token as a temporary join character
-  // console.log("\n+ + + splitMulti / str : ", str)
+  // console.log("\n=== splitMulti / str : ", str)
   for (const token of tokens) {
     const strArray = str.split(token)
-    // console.log("+ + + splitMulti / strArray : ", strArray)
+    // console.log("=== splitMulti / strArray : ", strArray)
     const strArrayNew = []
     for (let [i, s] of strArray.entries()) {
       if (capitalize) { s = capitalizeString(s.trim()) }
       if (glue && i > 0) { s = glue + s }
       strArrayNew.push(s)
     }
-    // console.log("+ + + splitMulti / strArrayNew : ", strArrayNew)
+    // console.log("=== splitMulti / strArrayNew : ", strArrayNew)
     str = strArrayNew.join(tempChar)
   }
   const finalStrArray = str.split(tempChar)
@@ -150,7 +150,7 @@ export const chooseBooleanMode = (ARG) => {
 // - - - - - - - - - - - - - - - - - - - //
 
 export function findElementFromArrayAndId (id, targetArray, idField = 'id') {
-  // console.log("+ + + findElementFromArrayAndId / id : ", id)
+  // console.log("=== findElementFromArrayAndId / id : ", id)
   const filteredOut = targetArray.find((item) => item[idField] === id)
   return filteredOut
 }
@@ -160,14 +160,14 @@ export function findElementFromArrayAndId (id, targetArray, idField = 'id') {
 // - - - - - - - - - - - - - - - - - - - //
 
 export function objectFromPath (obj, path, separator = '.') {
-  // console.log("\n+ + + objectFromPath / obj : ", obj)
-  // console.log("+ + + objectFromPath / path : ", path)
+  // console.log("\n=== objectFromPath / obj : ", obj)
+  // console.log("=== objectFromPath / path : ", path)
   let object
   if (path) {
     var properties = Array.isArray(path) ? path : path.split(separator)
-    // console.log("+ + + objectFromPath / properties : ", properties)
+    // console.log("=== objectFromPath / properties : ", properties)
     object = properties.reduce((prev, curr) => prev && prev[curr], obj)
-    // console.log("+ + + objectFromPath / object : ", object)
+    // console.log("=== objectFromPath / object : ", object)
   } else {
     object = obj
   }
@@ -182,9 +182,9 @@ export function cloneObject (obj) {
   return JSON.parse(JSON.stringify(obj))
 }
 export function setNestedObjectFromPath (path, value, obj, separator = '.') {
-  // console.log("+ + + setNestedObjectFromPath / obj : ", obj)
-  // console.log("+ + + setNestedObjectFromPath / path : ", path)
-  // console.log("+ + + setNestedObjectFromPath / value : ", value)
+  // console.log("=== setNestedObjectFromPath / obj : ", obj)
+  // console.log("=== setNestedObjectFromPath / path : ", path)
+  // console.log("=== setNestedObjectFromPath / value : ", value)
 
   // from : https://medium.com/data-scraper-tips-tricks/safely-read-write-in-deeply-nested-objects-js-a1d9ddd168c6
   // this is a super simple parsing, you will want to make this more complex to handle correctly any path
@@ -220,9 +220,9 @@ export function setDeep (
 ) {
   const pathWay = Array.isArray(path) ? path : path.split(separator)
 
-  console.log('+ + + setDeep / pathWay : ', pathWay)
-  console.log('+ + + setDeep / value : ', value)
-  console.log('+ + + setDeep / obj : ', obj)
+  console.log('=== setDeep / pathWay : ', pathWay)
+  console.log('=== setDeep / value : ', value)
+  console.log('=== setDeep / obj : ', obj)
 
   pathWay.reduce((a, b, level) => {
     if (
@@ -268,11 +268,45 @@ export function switchFormatFunctions (value, format) {
   return val
 }
 export function objectToUrlParams (obj) {
-  let paramsString = ''
-  paramsString = Object.entries(obj).map(([key, val]) => {
-    if (val) {
-      return `${key}=${val}`
+  const paramsArray = []
+  for (const key in obj) {
+    let val = obj[key]
+    if (val && val !== '') {
+      if (Array.isArray(val)) {
+        val = val.join(',')
+      }
+      paramsArray.push(`${key}=${val}`)
     }
-  }).join('&')
+  }
+  const paramsString = paramsArray.join('&')
   return paramsString
+}
+export function objectsFromString (str, sepArray = ',', sepObject = ':', resultAs = 'asObject') {
+  if (str) {
+    // console.log('=== objectsArrayFromString / str :', str)
+    const resultArray = []
+    const resultObject = {}
+    const tempArray = str.split(sepArray)
+    for (const i of tempArray) {
+      // console.log('\n=== objectsArrayFromString / i :', i)
+      const tempObjArray = i.split(sepObject)
+      // console.log('=== objectsArrayFromString / tempObjArray :', tempObjArray)
+
+      if (resultAs === 'asArray') {
+        const tempObj = {}
+        tempObj[tempObjArray[0]] = tempObjArray[1]
+        resultArray.push(tempObj)
+      } else if (resultAs === 'asObject') {
+        resultObject[tempObjArray[0]] = tempObjArray[1]
+      }
+    }
+
+    if (resultAs === 'asArray') {
+      return resultArray
+    } else if (resultAs === 'asObject') {
+      return resultObject
+    }
+  } else {
+    return undefined
+  }
 }
