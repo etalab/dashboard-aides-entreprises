@@ -389,7 +389,12 @@ export default {
    ** Build configuration
   */
   generate: {
-    fallback: true
+    fallback: true,
+    routes: [
+      '/fds',
+      '/pge',
+      '/report'
+    ]
   },
   build: {
     transpile: ['vue-mapbox'],
