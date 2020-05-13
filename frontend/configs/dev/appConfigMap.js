@@ -345,7 +345,9 @@ const COMMON_CLICK_EVENTS = {
           urlArgs: {
             datasetid: 'regions',
             field: 'code',
-            value: 'prop'
+            value: 'prop',
+            zoom: undefined,
+            highlight: undefined
           }
         }
       ]
@@ -366,7 +368,9 @@ const COMMON_CLICK_EVENTS = {
           urlArgs: {
             datasetid: 'departements',
             field: 'code',
-            value: 'prop'
+            value: 'prop',
+            zoom: undefined,
+            highlight: undefined
           }
         }
       ]
