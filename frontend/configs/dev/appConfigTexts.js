@@ -18,13 +18,12 @@ const COMMON_TEXTS_HTML = {
     textClass: 'text-left mx-4 pt-4 pb-5 mb-5',
     textContent: {
       fr: `
-        Cette tableau de bord, créé par le département Etalab de la
+        Cette tableau de bord a été créé par le département Etalab de la
         <a target="_blank" href="https://www.numerique.gouv.fr">
           Direction Interministérielle du Numérique (DINUM)</a>
-        et dont le 
+        et son
         <a target="_blank" href="https://github.com/etalab/dashboard-aides-entreprises">
-          code source est libre</a>, 
-        recense les différentes catégories d'aides apportées par secteur, par région et département.
+          code source est libre</a>.
       `
     },
     fromUrl: {
