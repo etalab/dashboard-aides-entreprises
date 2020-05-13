@@ -853,12 +853,12 @@ export default {
       // this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
       // center = convertToLngLat ? new mapboxgl.LngLat(center.lng, center.lat) : center 
       // this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
-      if (zoom) {
+      // if (zoom) {
         mapbox.flyTo({
           center: center,
           zoom: zoom,
         })
-      }
+      // }
     },
 
     goToPolygon(params) {
