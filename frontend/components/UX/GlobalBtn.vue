@@ -63,7 +63,8 @@ export default {
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
       mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
-      routeParams: (state) => state.routeParams
+      routeParams: (state) => state.routeParams,
+      queryRouteId: (state) => state.queryRouteId
     }),
 
     ...mapGetters({
@@ -146,7 +147,11 @@ export default {
         // this.log && console.log("C-GlobalButton / updateUrlPath ... this.$store.state.data[ targetArgs.datastore ] : ", this.$store.state.data[ targetArgs.datastore ] )
 
         const routePath = this.$route.path
-        const paramsString = objectToUrlParams(targetArgs)
+        let paramsString = objectToUrlParams(targetArgs)
+        const routeIdString = this.queryRouteId ? `routeId=${this.queryRouteId}` : undefined
+        if (routeIdString) {
+          paramsString = routeIdString + '&' + paramsString
+        }
         this.log && console.log("C-GlobalButton / updateUrlPath ... paramsString : ", paramsString )
         
         this.$store.commit("setRouteParams", paramsString)
@@ -161,6 +166,7 @@ export default {
     cleanUrlPath() {
       this.$store.commit("setRouteParams", undefined)
       const routePath = this.$route.path
+      // const routeIdString = this.queryRouteId ? `routeId=${this.queryRouteId}` : undefined
       history.pushState(
         {},
         null,

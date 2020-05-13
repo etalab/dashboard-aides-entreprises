@@ -18,9 +18,7 @@ const COMMON_TEXTS_HTML = {
     textClass: 'text-left mx-4 pt-4 pb-5 mb-5',
     textContent: {
       fr: `
-        Afin d’offrir de la visibilité à l’ensemble des Français sur l’attribution de ces aides, 
-        Bruno Le Maire et Gérald Darmanin mettent à disposition un tableau de bord accessible à tous. 
-        Cette plateforme, créée par le département Etalab de la
+        Cette tableau de bord, créé par le département Etalab de la
         <a target="_blank" href="https://www.numerique.gouv.fr">
           Direction Interministérielle du Numérique (DINUM)</a>
         et dont le 
@@ -395,8 +393,48 @@ export const configAppTexts = {
                   textClass: 'text-left mx-4 pt-4',
                   textContent: {
                     fr: `
-                      Bruno Le Maire et Gérald Darmanin lancent un tableau de bord 
-                      des reports d'échéance (ou reports de charges).
+                      Le Gouvernement a annoncé le report des principales 
+                      échéances fiscales des professionnels afin de tenir 
+                      compte de leurs difficultés liées à la crise sanitaire du coronavirus.
+                      <br><br>
+                      Le report fiscal concerne :
+                      <br><br>
+                      <ul>
+                        <li>
+                        les entreprises ou les experts-comptables qui 
+                        interviennent pour des clients, pour qui il est possible 
+                        de demander au service des impôts des entreprises 
+                        le report sans pénalité du règlement de leurs prochaines 
+                        échéances d'impôts directs (acompte d'impôt sur les sociétés, 
+                        taxe sur les salaires).
+                        </li>
+                        <li>
+                        Les travailleurs indépendants qui peuvent moduler à 
+                        tout moment le taux et les acomptes de prélèvement à la source. 
+                        Il est aussi possible de reporter le paiement 
+                        des acomptes de prélèvement à la source sur les revenus 
+                        professionnels d’un mois sur l’autre, jusqu’à trois fois 
+                        si les acomptes sont mensuels, ou d’un trimestre sur l’autre 
+                        si les acomptes sont trimestriels.
+                        </li>
+                      </ul>
+                      <br>
+                      Afin d'apporter une aide financière aux entreprises 
+                      en difficulté, une procédure accélérée de remboursement 
+                      des créances d'impôt sur les sociétés restituables en 2020 
+                      est mise en œuvre.
+                      <br><br>
+                      Enfin, la Commission des chefs de services financiers (CCSF) 
+                      peut accorder aux entreprises qui rencontrent des difficultés 
+                      financières des délais de paiement pour s’acquitter de 
+                      leurs dettes fiscales et sociales en toute confidentialité.
+                      <br><br>
+                      Cette cartographie présente les montants associés 
+                      aux reports d'échéances fiscales projetés au niveau départemental 
+                      et régional avec une ventilation par secteur d'activité.
+                      <br><br>
+                      Les données utilisées pour ce tableau de bord sont 
+                      mises à jour de manière hebdomadaire
                     `
                   },
                   fromUrl: {

@@ -108,11 +108,11 @@ export const configAppUIUX = {
         {
           to: '/?routeId=fds',
           href: '/fds',
+          // href: '/?routeId=fds',
           isVisible: true,
           icon: undefined,
           title: { fr: 'Fonds de solidarité' },
           titleMobile: { fr: 'Fonds de solidarité' },
-          // titleMobile: { fr: 'FDS' },
           tooltip: { fr: 'fonds de solidarité' },
           isNuxtLink: false,
           addUrlParams: true
@@ -120,11 +120,11 @@ export const configAppUIUX = {
         {
           to: '/?routeId=pge',
           href: '/pge',
+          // href: '/?routeId=pge',
           isVisible: true,
           icon: undefined,
           title: { fr: "Prêts garantis par l'Etat" },
           titleMobile: { fr: "Prêts garantis par l'Etat" },
-          // titleMobile: { fr: 'PGE' },
           tooltip: { fr: "prêts garantis par l'Etat" },
           isNuxtLink: false,
           addUrlParams: true
@@ -132,11 +132,11 @@ export const configAppUIUX = {
         {
           to: '/?routeId=reports',
           href: '/reports',
+          // href: '/?routeId=reports',
           isVisible: true,
           icon: undefined,
           title: { fr: 'Reports fiscaux' },
           titleMobile: { fr: 'Reports fiscaux' },
-          // titleMobile: { fr: 'REP' },
           tooltip: { fr: 'reports fiscaux' },
           isNuxtLink: false,
           addUrlParams: true

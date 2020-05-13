@@ -319,7 +319,8 @@ export default {
       locale: (state) => state.locale,
       isIframe: (state) => state.isIframe,
       routeParams: (state) => state.routeParams,
-      
+      queryRouteId: (state) => state.queryRouteId,
+
       fitToPolygon: (state) => state.maps.fitToPolygon,
       storeSelectedStateId: (state) => state.maps.selectedStateId,
 
@@ -803,7 +804,11 @@ export default {
           // 3 - update url path
           // this.log && console.log('C-MapboxGL / updateUrlPath ... targetArgs : ', targetArgs )
           const routePath = this.$route.path
-          const paramsString = objectToUrlParams(targetArgs)
+          let paramsString = objectToUrlParams(targetArgs)
+          const routeIdString = this.queryRouteId ? `routeId=${this.queryRouteId}` : undefined
+          if (routeIdString) {
+            paramsString = routeIdString + '&' + paramsString
+          }
           // this.log && console.log('C-MapboxGL / updateUrlPath ... paramsString : ', paramsString )
 
           this.$store.commit('setRouteParams', paramsString)
