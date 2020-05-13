@@ -402,7 +402,7 @@ export const configAppTexts = {
                       <br><br>
                       <ul>
                         <li>
-                        les entreprises ou les experts-comptables qui 
+                        Les entreprises ou les experts-comptables qui 
                         interviennent pour des clients, pour qui il est possible 
                         de demander au service des impôts des entreprises 
                         le report sans pénalité du règlement de leurs prochaines 
