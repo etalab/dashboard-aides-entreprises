@@ -1,3 +1,15 @@
+const COMMONN_URL_ARGS = {
+  objectArgs: [
+    'datasetid',
+    'field',
+    'value'
+  ],
+  mapArgs: [
+    'zoom',
+    'centerlat',
+    'centerlng'
+  ]
+}
 const COMMON_TARGETS = {
 
   // LIBELLES
@@ -10,7 +22,6 @@ const COMMON_TARGETS = {
     fromDatasetField: 'libelle',
     targetSpecialStoreId: 'levelname'
   },
-
   setLibelleDepartement: {
     ifQuery: [{ field: 'datasetid', val: 'departements' }],
     fromQueryKey: 'code',
@@ -236,33 +247,39 @@ const COMMON_TARGETS = {
   ],
 
   // SET MAP ZOOM
+  setMapZoomByCenter: {
+    ifQuery: undefined,
+    zoomBy: 'centerAndZoom',
+    zoomField: 'zoom',
+    centerLngField: 'centerlng',
+    centerLatField: 'centerlat'
+  },
   setMapZoomRegions: {
-    ifQuery: [{ field: 'datasetid', val: 'regions' }]
-    // fromQueryKey: 'code',
-    // fromStoreData: 'initData',
-    // fromDatasetId: 'taxo-regions',
-    // fromDatasetKey: 'reg',
-    // fromDatasetField: 'libelle'
-    // targetSpecialStoreId: 'levelname'
+    ifQuery: [{ field: 'datasetid', val: 'regions' }],
+    zoomBy: 'polygon',
+    sourceField: 'datasetid',
+    propField: 'value',
+    propNameField: 'field'
   },
   setMapZoomDepartements: {
-    ifQuery: [{ field: 'datasetid', val: 'departements' }]
-    // fromQueryKey: 'code',
-    // fromStoreData: 'initData',
-    // fromDatasetId: 'taxo-departements',
-    // fromDatasetKey: 'dep',
-    // fromDatasetField: 'libelle'
-    // targetSpecialStoreId: 'levelname'
+    ifQuery: [{ field: 'datasetid', val: 'departements' }],
+    zoomBy: 'polygon',
+    sourceField: 'datasetid',
+    propField: 'value',
+    propNameField: 'field'
+  },
+
+  // SET SELECTED POLYGONS
+  setSelectedPolygons: {
+    ifQuery: undefined
   }
 
 }
 const COMMON_URL_FOCUS = {
   setFocusObjectsFDS: {
     urlArgs: [
-      // 'datastore',
-      'datasetid',
-      'field',
-      'value'
+      ...COMMONN_URL_ARGS.objectArgs,
+      ...COMMONN_URL_ARGS.mapArgs
     ],
     functions: [
       {
@@ -282,8 +299,18 @@ const COMMON_URL_FOCUS = {
         help: 'set map zoom',
         funcParams: {
           targets: [
-            COMMON_TARGETS.setMapZoomRegions,
-            COMMON_TARGETS.setMapZoomDepartements
+            COMMON_TARGETS.setMapZoomByCenter
+            // COMMON_TARGETS.setMapZoomRegions,
+            // COMMON_TARGETS.setMapZoomDepartements
+          ]
+        }
+      },
+      {
+        funcName: 'toggleSelected',
+        help: 'set selected polygon on map',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setSelectedPolygons
           ]
         }
       }
@@ -291,10 +318,8 @@ const COMMON_URL_FOCUS = {
   },
   setFocusObjectsPGE: {
     urlArgs: [
-      // 'datastore',
-      'datasetid',
-      'field',
-      'value'
+      ...COMMONN_URL_ARGS.objectArgs,
+      ...COMMONN_URL_ARGS.mapArgs
     ],
     functions: [
       {
@@ -314,8 +339,18 @@ const COMMON_URL_FOCUS = {
         help: 'set map zoom',
         funcParams: {
           targets: [
-            COMMON_TARGETS.setMapZoomRegions,
-            COMMON_TARGETS.setMapZoomDepartements
+            COMMON_TARGETS.setMapZoomByCenter
+            // COMMON_TARGETS.setMapZoomRegions,
+            // COMMON_TARGETS.setMapZoomDepartements
+          ]
+        }
+      },
+      {
+        funcName: 'toggleSelected',
+        help: 'set selected polygon on map',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setSelectedPolygons
           ]
         }
       }
@@ -323,10 +358,8 @@ const COMMON_URL_FOCUS = {
   },
   setFocusObjectsREPORT: {
     urlArgs: [
-      // 'datastore',
-      'datasetid',
-      'field',
-      'value'
+      ...COMMONN_URL_ARGS.objectArgs,
+      ...COMMONN_URL_ARGS.mapArgs
     ],
     functions: [
       {
@@ -346,8 +379,18 @@ const COMMON_URL_FOCUS = {
         help: 'set map zoom',
         funcParams: {
           targets: [
-            COMMON_TARGETS.setMapZoomRegions,
-            COMMON_TARGETS.setMapZoomDepartements
+            COMMON_TARGETS.setMapZoomByCenter
+            // COMMON_TARGETS.setMapZoomRegions,
+            // COMMON_TARGETS.setMapZoomDepartements
+          ]
+        }
+      },
+      {
+        funcName: 'toggleSelected',
+        help: 'set selected polygon on map',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setSelectedPolygons
           ]
         }
       }

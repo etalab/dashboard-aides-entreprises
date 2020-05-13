@@ -346,7 +346,6 @@ const COMMON_CLICK_EVENTS = {
             datasetid: 'regions',
             field: 'code',
             value: 'prop',
-            zoom: undefined,
             highlight: undefined
           }
         }
@@ -369,7 +368,6 @@ const COMMON_CLICK_EVENTS = {
             datasetid: 'departements',
             field: 'code',
             value: 'prop',
-            zoom: undefined,
             highlight: undefined
           }
         }

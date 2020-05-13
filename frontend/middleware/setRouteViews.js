@@ -1,4 +1,5 @@
-import { updateDataStore, setMapZoom } from '~/utils/utilsStore.js'
+import { objectToUrlParams } from '~/utils/utils.js'
+import { updateDataStore, setMapView, setSelectedPolygons } from '~/utils/utilsStore.js'
 
 export default function ({ store, route }) {
   const log = store.state.log
@@ -19,6 +20,8 @@ export default function ({ store, route }) {
       urlParams[p] = route.query[p]
     }
     log && console.log('-MW- setRouteViews / urlParams :', urlParams)
+    const paramsString = objectToUrlParams(urlParams)
+    store.commit('setRouteParams', paramsString)
 
     // LOOP FUNCTIONS TO RUN FOR THIS ROUTE
     for (const fn of setUpRouteViews.functions) {
@@ -28,8 +31,13 @@ export default function ({ store, route }) {
         case 'updateDataStore':
           updateDataStore(urlParams, fn.funcParams, store, log)
           break
+
         case 'goToPolygon':
-          setMapZoom(urlParams, fn.funcParams, store, log)
+          setMapView(urlParams, fn.funcParams, store, log)
+          break
+
+        case 'toggleSelected':
+          setSelectedPolygons(urlParams, fn.funcParams, store, log)
           break
       }
     }

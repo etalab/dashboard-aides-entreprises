@@ -4,9 +4,40 @@ export const state = () => ({
   // GLOABAL APP ENV
   log: process.env.LOG,
 
-  // ZOOM
+  mapHeight: undefined,
+  showLoader: true,
 
-  resetZoomTrigger: -1
+  resetZoomTrigger: -1,
+
+  // ZOOM & CENTER
+  map: undefined,
+  originalCenter: undefined,
+  originalZoom: undefined,
+  currentZoom: undefined,
+
+  mapOptions: {
+    mapStyle: undefined,
+    zoom: undefined,
+    maxZoom: undefined,
+    minZoom: undefined,
+    currentZoom: undefined,
+    center: undefined,
+    currentCenter: undefined
+  },
+
+  mapsVisibility: undefined,
+  drawerMapsOpen: undefined,
+
+  // LAYERS & SOURCES
+  sources: undefined,
+
+  maps: undefined,
+  layers: undefined,
+
+  // UX
+  hoveredStateId: {},
+  selectedStateId: {}
+
 })
 
 export const getters = {
@@ -18,12 +49,17 @@ export const getters = {
 }
 
 export const mutations = {
-  // UPDATE ZOOM TRIGGER
+  // GENERAL SETTER
+  setStateObject (state, fieldAndValue) {
+    state[fieldAndValue.field] = fieldAndValue.value
+  },
 
+  // UPDATE ZOOM TRIGGER
   setResetZoomTrigger (state) {
     // state.log && console.log("\nS-map-M-setResetZoomTrigger ... ")
     state.resetZoomTrigger = state.resetZoomTrigger * -1
   }
+
 }
 
 export const actions = {

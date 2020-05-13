@@ -81,9 +81,11 @@ export function storeData (dataset, dataRef, resp, store, log) {
 
 export function canRunIf (ifQuery, urlParams) {
   let canRun = true
-  for (const condition of ifQuery) {
-    const urlArgBool = urlParams[condition.field] === condition.val
-    canRun = canRun ? urlArgBool : false
+  if (ifQuery) {
+    for (const condition of ifQuery) {
+      const urlArgBool = urlParams[condition.field] === condition.val
+      canRun = canRun ? urlArgBool : false
+    }
   }
   return canRun
 }
@@ -126,22 +128,47 @@ export function updateDataStore (urlParams, params, store, log) {
     }
   }
 }
-export function setMapZoom (urlParams, params, store, log) {
+export function setMapView (urlParams, params, store, log) {
   log && console.log('\n+ + + setMapZoom / urlParams : ', urlParams)
   for (const targetParams of params.targets) {
+    log && console.log('\n+ + + setMapZoom / targetParams : ', targetParams)
     const canRun = canRunIf(targetParams.ifQuery, urlParams)
-    if (canRun && urlParams.value) {
-      log && console.log('\n+ + + setMapZoom / urlParams : ', urlParams)
 
-      targetParams.fromPropValue = urlParams.value
-      const polygonParams = {
-        source: urlParams.datasetid,
-        prop: urlParams.value,
-        propName: urlParams.field
+    if (canRun) {
+      log && console.log('+ + + setMapZoom /  targetParams.zoomBy : ', targetParams.zoomBy)
+
+      let viewParams = {
+        zoomBy: targetParams.zoomBy
       }
-      log && console.log('+ + + setMapZoom / polygonParams : ', polygonParams)
-
-      store.commit('data/setFitToPolygon', polygonParams)
+      if (targetParams.zoomBy === 'polygon') {
+        viewParams = {
+          ...viewParams,
+          source: urlParams[targetParams.sourceField],
+          prop: urlParams[targetParams.propField],
+          propName: urlParams[targetParams.propNameField]
+        }
+      } else if (targetParams.zoomBy === 'centerAndZoom') {
+        viewParams = {
+          ...viewParams,
+          center: {
+            lng: parseFloat(urlParams[targetParams.centerLngField]),
+            lat: parseFloat(urlParams[targetParams.centerLatField])
+          },
+          zoom: parseFloat(urlParams[targetParams.zoomField])
+        }
+      }
+      log && console.log('+ + + setMapZoom / viewParams : ', viewParams)
+      store.commit('data/setFitToPolygon', viewParams)
+    }
+  }
+}
+export function setSelectedPolygons (urlParams, params, store, log) {
+  log && console.log('\n+ + + setSelectedPolygons / urlParams : ', urlParams)
+  for (const targetParams of params.targets) {
+    log && console.log('\n+ + + setSelectedPolygons / targetParams : ', targetParams)
+    const canRun = canRunIf(targetParams.ifQuery, urlParams)
+    if (canRun) {
+      log && console.log('+ + + setSelectedPolygons /  targetParams : ', targetParams)
     }
   }
 }
