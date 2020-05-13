@@ -157,7 +157,7 @@ export function setMapView (urlParams, params, store, log) {
           zoom: parseFloat(urlParams[targetParams.zoomField])
         }
       }
-      log && console.log('+ + + setMapZoom / viewParams : ', viewParams)
+      // log && console.log('+ + + setMapZoom / viewParams : ', viewParams)
       store.commit('maps/setFitToPolygon', viewParams)
     }
   }
@@ -172,7 +172,7 @@ export function setSelectedPolygons (urlParams, params, store, log) {
       const selectedParams = {
         selected: objectsFromString(urlParams[targetParams.selectedField])
       }
-      log && console.log('+ + + setSelectedPolygons /  selectedParams : ', selectedParams)
+      // log && console.log('+ + + setSelectedPolygons /  selectedParams : ', selectedParams)
       store.commit('maps/seSelectedStateId', selectedParams.selected)
     }
   }

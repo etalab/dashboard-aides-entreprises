@@ -1,7 +1,21 @@
 const COMMON_TEXTS_HTML = {
+  moreInfos: {
+    id: 'more-infos',
+    textClass: 'text-left mx-4 pt-4',
+    textContent: {
+      fr: `
+        Les données utilisées sur ce tableau de bord
+        <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/aides-aux-entreprises-dans-le-cadre-de-lepidemie-de-covid-19-en-france/">
+          sont disponibles en open data sur data.gouv.fr</a>.
+      `
+    },
+    fromUrl: {
+      fr: undefined
+    }
+  },
   dashboardIntro: {
     id: 'dashboard-intro',
-    textClass: 'text-left mx-4 pt-4',
+    textClass: 'text-left mx-4 pt-4 pb-5 mb-5',
     textContent: {
       fr: `
         Afin d’offrir de la visibilité à l’ensemble des Français sur l’attribution de ces aides, 
@@ -13,20 +27,6 @@ const COMMON_TEXTS_HTML = {
         <a target="_blank" href="https://github.com/etalab/dashboard-aides-entreprises">
           code source est libre</a>, 
         recense les différentes catégories d'aides apportées par secteur, par région et département.
-      `
-    },
-    fromUrl: {
-      fr: undefined
-    }
-  },
-  moreInfos: {
-    id: 'more-infos',
-    textClass: 'text-left mx-4 pt-4 pb-5 mb-5',
-    textContent: {
-      fr: `
-        Les données utilisées sur ce tableau de bord
-        <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/aides-aux-entreprises-dans-le-cadre-de-lepidemie-de-covid-19-en-france/">
-          sont disponibles en open data sur data.gouv.fr</a>.
       `
     },
     fromUrl: {

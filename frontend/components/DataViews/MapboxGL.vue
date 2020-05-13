@@ -209,7 +209,7 @@ export default {
 
           // set up view 
           if (this.fitToPolygon) {
-            this.log && console.log("C-MapboxGL / watch - map / this.fitToPolygon : ", this.fitToPolygon)
+            // this.log && console.log("C-MapboxGL / watch - map / this.fitToPolygon : ", this.fitToPolygon)
             if (this.fitToPolygon.zoomBy === 'polygon') {
               this.goToPolygon(this.fitToPolygon)
             } else if (this.fitToPolygon.zoomBy === 'centerAndZoom') {
@@ -843,10 +843,8 @@ export default {
     },
     flyTo(center, zoom, convertToLngLat=false) {
       let mapbox = _map
-      this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
-      this.log && console.log('C-MapboxGL / flyTo ... zoom : ', zoom )
-      // center = convertToLngLat ? new mapboxgl.LngLat(center.lng, center.lat) : center 
       // this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
+      // this.log && console.log('C-MapboxGL / flyTo ... zoom : ', zoom )
       if (zoom > 0 && center) {
         mapbox.flyTo({
           center: center,
@@ -855,7 +853,7 @@ export default {
       }
     },
     goToPolygon(params) {
-      this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
+      // this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
       let isFnInZoomRange = this.isInZoomRange(params.zoomRange)
       if (isFnInZoomRange) {
         let geodata = this.getSourceData(params)

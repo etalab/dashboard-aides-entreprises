@@ -8,7 +8,7 @@ export default function ({ store, route }) {
   log && console.log('-MW- getRouteData / ... ')
 
   const currentRouteConfig = store.getters.getLocalRouteConfig
-  log && console.log('-MW- getRouteData / currentRouteConfig :', currentRouteConfig)
+  log && console.log('-MW- getRouteData / currentRouteConfig.id :', currentRouteConfig.id)
 
   const promisesArray = []
   const callableFrom = ['url', 'static']
