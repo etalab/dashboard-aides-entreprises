@@ -60,11 +60,11 @@
       <!-- DEBUGGING -->
       <div class="content mx-4" v-if="log">
         <p><code>version :<br> {{ appVersion }}</code></p>
-        <p><code>selectedStateId :<br> {{ selectedStateId }}</code></p>
+        <!-- <p><code>selectedStateId :<br> {{ selectedStateId }}</code></p> -->
         <p><code>routeParams :<br> {{ routeParams }}</code></p>
+        <!-- <b>{{ currentZoom }}</b> -->
+        <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
       </div>
-      <!-- <b>{{ currentZoom }}</b> -->
-      <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
 
       <!-- LAYERS SWITCH -->
       <div
