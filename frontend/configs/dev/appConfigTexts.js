@@ -111,8 +111,6 @@ export const configAppTexts = {
                   textClass: 'text-left mx-4 pt-4',
                   textContent: {
                     fr: `
-                      Bruno Le Maire et Gérald Darmanin lancent un tableau de bord du fonds de solidarité.
-                      <br><br>
                       L’État et les Régions ont mis en place un fonds de solidarité pour 
                       aider les petites entreprises les plus touchées par la crise. 
                       Les intercommunalités et les grandes entreprises pourront contribuer 
