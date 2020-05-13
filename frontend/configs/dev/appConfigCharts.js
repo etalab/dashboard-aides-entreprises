@@ -699,7 +699,7 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Top 10 des reports de charges 
+          Top 10 des reports d'échéances fiscales 
           <br>ventilés par 
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>

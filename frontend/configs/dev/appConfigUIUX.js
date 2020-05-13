@@ -135,9 +135,9 @@ export const configAppUIUX = {
           // href: '/?routeId=reports',
           isVisible: true,
           icon: undefined,
-          title: { fr: 'Reports fiscaux' },
-          titleMobile: { fr: 'Reports fiscaux' },
-          tooltip: { fr: 'reports fiscaux' },
+          title: { fr: "Reports d'échéances fiscales" },
+          titleMobile: { fr: "Reports d'échéances fiscales" },
+          tooltip: { fr: "reports d'échéances fiscales" },
           isNuxtLink: false,
           addUrlParams: true
         }

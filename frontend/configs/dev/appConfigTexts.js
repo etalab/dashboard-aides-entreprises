@@ -348,7 +348,7 @@ export const configAppTexts = {
               subTextClass: '',
               sizeDesktop: 'headline mb-0',
               sizeMobile: 'subtitle-1',
-              textPrefix: { fr: "Reports d'échéance : " },
+              textPrefix: { fr: "Reports d'échéances fiscales: " },
               textPrefixClass: 'font-weight-regular',
               textSuffix: { fr: '' },
               textSuffixClass: undefined,
@@ -375,7 +375,7 @@ export const configAppTexts = {
           columns: [
             {
               colName: '',
-              colTitle: { fr: 'Les reports fiscaux' },
+              colTitle: { fr: "Les reports d'échéances fiscales" },
               colTitleClass: 'my-5',
               cols: 12,
               textClass: '',
