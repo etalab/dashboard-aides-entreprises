@@ -417,7 +417,7 @@ export const configAppRoutes = {
       help: 'route home viewfor ',
       title: { fr: '' },
       titleI18n: 'routes.home.title',
-      urls: ['/', '/fds'],
+      urls: ['/', '/fds', '/fds/'],
       sourcesIds: [
         'national-aides-raw',
         'regions-aides-raw',
@@ -608,7 +608,7 @@ export const configAppRoutes = {
       help: 'route view for pge dataset',
       title: { fr: '' },
       titleI18n: 'routes.pge.title',
-      urls: ['/pge'],
+      urls: ['/pge', '/pge/'],
       sourcesIds: [
         'national-pge-raw',
         'regions-pge-raw',
@@ -773,7 +773,7 @@ export const configAppRoutes = {
       help: 'route view for report dataset',
       title: { fr: '' },
       titleI18n: 'routes.report.title',
-      urls: ['/reports'],
+      urls: ['/reports', '/reports/'],
       sourcesIds: [
         'national-report-raw',
         'regions-report-raw',
