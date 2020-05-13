@@ -387,7 +387,10 @@ export default {
 
   /*
    ** Build configuration
-   */
+  */
+  generate: {
+    fallback: true
+  },
   build: {
     transpile: ['vue-mapbox'],
     /*
