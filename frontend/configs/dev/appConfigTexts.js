@@ -132,10 +132,14 @@ export const configAppTexts = {
                         OU
                         <br><br>
                         <li>
-                          Pour l’aide versée au titre du mois de mars : qui connaissent une perte de chiffre d'affaires d’au moins 50 % au mois de mars 2020 par rapport au mois de mars 2019 ;
+                          Pour l’aide versée au titre du mois de mars : 
+                          qui connaissent une perte de chiffre d'affaires d’au moins 50 % au mois de mars 2020 
+                          par rapport au mois de mars 2019 ;
                         </li>
                         <li>
-                          Pour l’aide versée au titre du mois d’avril : qui connaissent une perte de chiffre d'affaires d’au moins 50 % au mois d’avril 2020 par rapport au mois d’avril 2019 ou au chiffre d’affaires mensuel moyen sur 2019.                  
+                          Pour l’aide versée au titre du mois d’avril : 
+                          qui connaissent une perte de chiffre d'affaires d’au moins 50 % au mois d’avril 2020 
+                          par rapport au mois d’avril 2019 ou au chiffre d’affaires mensuel moyen sur 2019.                  
                         </li>
                       </ul>
                       <br>
