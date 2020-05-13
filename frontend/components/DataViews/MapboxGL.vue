@@ -208,6 +208,7 @@ export default {
 
           // set up view 
           if (this.fitToPolygon) {
+            this.log && console.log("C-MapboxGL / watch - map / this.fitToPolygon : ", this.fitToPolygon)
             if (this.fitToPolygon.zoomBy === 'polygon') {
               this.goToPolygon(this.fitToPolygon)
             } else if (this.fitToPolygon.zoomBy === 'centerAndZoom') {
@@ -784,7 +785,7 @@ export default {
           targetParams.props = params.props
 
           let value = this.getSourceData(targetParams, targetParams.from)
-          this.log && console.log('C-MapboxGL / updateUrlPath ... value : ', value )
+          // this.log && console.log('C-MapboxGL / updateUrlPath ... value : ', value )
 
           // 2 - then update value data in targetParams
           let targetArgs = { ...targetParams.urlArgs }
@@ -797,20 +798,19 @@ export default {
           targetArgs.centerlat = currentCenter.lat.toFixed(4)
 
           // 2ter - set highlighted polygons in url params
-          this.log && console.log('C-MapboxGL / updateUrlPath ... this.selectedStateId : ', this.selectedStateId )
+          // this.log && console.log('C-MapboxGL / updateUrlPath ... this.selectedStateId : ', this.selectedStateId )
           let selectedTranslated = []
           for ( let key in this.selectedStateId ) {
             selectedTranslated.push( `${key}:${this.selectedStateId[key]}` ) 
           }
-          this.log && console.log('C-MapboxGL / updateUrlPath ... selectedTranslated : ', selectedTranslated )
+          // this.log && console.log('C-MapboxGL / updateUrlPath ... selectedTranslated : ', selectedTranslated )
           targetArgs.selected = selectedTranslated
 
-          this.log && console.log('C-MapboxGL / updateUrlPath ... targetArgs : ', targetArgs )
-
           // 3 - update url path
+          // this.log && console.log('C-MapboxGL / updateUrlPath ... targetArgs : ', targetArgs )
           const routePath = this.$route.path
           const paramsString = objectToUrlParams(targetArgs)
-          this.log && console.log('C-MapboxGL / updateUrlPath ... paramsString : ', paramsString )
+          // this.log && console.log('C-MapboxGL / updateUrlPath ... paramsString : ', paramsString )
 
           this.$store.commit('setRouteParams', paramsString)
           history.pushState(
@@ -850,15 +850,16 @@ export default {
 
     flyTo(center, zoom, convertToLngLat=false) {
       let mapbox = _map
-      // this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
+      this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
+      this.log && console.log('C-MapboxGL / flyTo ... zoom : ', zoom )
       // center = convertToLngLat ? new mapboxgl.LngLat(center.lng, center.lat) : center 
       // this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
-      // if (zoom) {
+      if (zoom > 0) {
         mapbox.flyTo({
           center: center,
           zoom: zoom,
         })
-      // }
+      }
     },
 
     goToPolygon(params) {
