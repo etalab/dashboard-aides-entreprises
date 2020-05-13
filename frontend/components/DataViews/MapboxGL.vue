@@ -60,6 +60,7 @@
       <!-- DEBUGGING -->
       <div class="content mx-4" v-if="log">
         <p><code>version :<br> {{ appVersion }}</code></p>
+        <p><code>selectedStateId :<br> {{ selectedStateId }}</code></p>
         <p><code>routeParams :<br> {{ routeParams }}</code></p>
       </div>
       <!-- <b>{{ currentZoom }}</b> -->
@@ -230,13 +231,15 @@ export default {
     },
 
     getResetZoomTrigger(next, prev) {
-      // this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
+      this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
       this.handleResize()
       this.resetZoom()
+      this.resetAllSelected()
     },
 
     storeSelectedStateId(next, prev) {
-      if ( this.map && typeof next === 'undefined') {
+      if (typeof next === 'undefined') {
+        // this.resetZoom()
         this.resetAllSelected()
       }
     }
@@ -383,7 +386,6 @@ export default {
       // this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
       this.canShow = isVisible
     },
-
     handleResize() {
       let winHeight = window.innerHeight
       let ODAMAP_height = document.getElementById('ODAMAP-root') ? document.getElementById('ODAMAP-root').clientHeight : undefined 
@@ -429,7 +431,6 @@ export default {
       // }
 
     },
-
     getCurrentCenter() {
       // let mapbox = this.map
       let mapbox = _map
@@ -440,7 +441,6 @@ export default {
       // this.$store.commit('maps/setStateObject', { field: 'currentCenter', value: currentCenter})
       return currrentCenter
     },
-
     getCurrentZoom() {
       // let mapbox = this.map
       let mapbox = _map
@@ -466,7 +466,6 @@ export default {
       // in store => WARNING : object too complex to be stored/mutated in vuex so far
       // check : https://ypereirareis.github.io/blog/2017/04/25/vuejs-two-way-data-binding-state-management-vuex-strict-mode/
     },
-
     isInZoomRange(zoomRange) {
       // this.log && console.log("C-MapboxGL / isInZoomRange ... zoomRange : ", zoomRange )
 
@@ -532,7 +531,6 @@ export default {
         })
       }
     },
-
     loadUrlSources(sourcesArray) {
       this.log && console.log("\nC-MapboxGL / loadUrlSources ", "... ".repeat(10))
       // let mapbox = this.map
@@ -585,7 +583,6 @@ export default {
       }
       return Promise.all(promisesArray)
     },
-
     loadLayers(layersArray) {
       // let mapbox = this.map
       let mapbox = _map
@@ -600,7 +597,6 @@ export default {
         mapbox.addLayer(layer)
       }
     },
-
     loadClicEvents(mapsArray) {
       // let mapbox = this.map
       let mapbox = _map
@@ -740,7 +736,6 @@ export default {
       }
       return data
     },
-
     updateDisplayedData(params) {
       // this.log && console.log("\nC-MapboxGL / updateDisplayedData  : ", "+ ".repeat(10) )
       // this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
@@ -769,7 +764,6 @@ export default {
         this.$store.commit("data/toggleTrigger")
       }
     },
-
     updateUrlPath(params) {
       let isFnInZoomRange = this.isInZoomRange(params.zoomRange)
       // this.log && console.log('\nC-MapboxGL / updateUrlPath ... isFnInZoomRange : ', isFnInZoomRange )
@@ -847,21 +841,19 @@ export default {
       let options = { padding: 20, animate: true }
       mapbox.fitBounds(_bbox, options)
     },
-
     flyTo(center, zoom, convertToLngLat=false) {
       let mapbox = _map
       this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
       this.log && console.log('C-MapboxGL / flyTo ... zoom : ', zoom )
       // center = convertToLngLat ? new mapboxgl.LngLat(center.lng, center.lat) : center 
       // this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
-      if (zoom > 0) {
+      if (zoom > 0 && center) {
         mapbox.flyTo({
           center: center,
           zoom: zoom,
         })
       }
     },
-
     goToPolygon(params) {
       this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
       let isFnInZoomRange = this.isInZoomRange(params.zoomRange)
@@ -874,9 +866,8 @@ export default {
         this.fit(data)
       }
     },
-
     resetZoom() {
-      // this.log && console.log("\nC-MapboxGL / resetZoom ... " )
+      this.log && console.log("\nC-MapboxGL / resetZoom ... " )
       this.flyTo(this.originalCenter, this.originalZoom)
     },
 
@@ -915,8 +906,6 @@ export default {
       }
     },
 
-
-
     // SELECTED POLYGONS
     resetAllSelected() {
       this.log && console.log('C-MapboxGL / resetAllSelected ... this.selectedStateId : ', this.selectedStateId )
@@ -924,6 +913,7 @@ export default {
         let featureId = this.selectedStateId[source]
         this.resetSelectedPolygons(source, featureId)
       }
+      this.selectedStateId = {}
     },
     resetSelectedPolygons(source, featureId) {
       let mapbox = _map

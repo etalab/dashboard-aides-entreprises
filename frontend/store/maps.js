@@ -58,7 +58,7 @@ export const mutations = {
 
   // UPDATE ZOOM TRIGGER
   setResetZoomTrigger (state) {
-    // state.log && console.log("\nS-map-M-setResetZoomTrigger ... ")
+    state.log && console.log('\nS-map-M-setResetZoomTrigger ... ')
     state.resetZoomTrigger = state.resetZoomTrigger * -1
   },
   setFitToPolygon (state, polygonParams) {

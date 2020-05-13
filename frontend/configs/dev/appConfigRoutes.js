@@ -249,7 +249,7 @@ const COMMON_TARGETS = {
 
   // SET MAP ZOOM
   setMapZoomByCenter: {
-    ifQuery: undefined,
+    ifQuery: [{ field: 'datasetid', val: 'departements' }],
     zoomBy: 'centerAndZoom',
     zoomField: 'zoom',
     centerLngField: 'centerlng',
@@ -303,9 +303,9 @@ const COMMON_URL_FOCUS = {
         help: 'set map zoom',
         funcParams: {
           targets: [
+            COMMON_TARGETS.setMapZoomRegions,
+            // COMMON_TARGETS.setMapZoomDepartements,
             COMMON_TARGETS.setMapZoomByCenter
-            // COMMON_TARGETS.setMapZoomRegions,
-            // COMMON_TARGETS.setMapZoomDepartements
           ]
         }
       },
@@ -343,9 +343,9 @@ const COMMON_URL_FOCUS = {
         help: 'set map zoom',
         funcParams: {
           targets: [
+            COMMON_TARGETS.setMapZoomRegions,
+            // COMMON_TARGETS.setMapZoomDepartements,
             COMMON_TARGETS.setMapZoomByCenter
-            // COMMON_TARGETS.setMapZoomRegions,
-            // COMMON_TARGETS.setMapZoomDepartements
           ]
         }
       },
@@ -383,9 +383,9 @@ const COMMON_URL_FOCUS = {
         help: 'set map zoom',
         funcParams: {
           targets: [
+            COMMON_TARGETS.setMapZoomRegions,
+            // COMMON_TARGETS.setMapZoomDepartements,
             COMMON_TARGETS.setMapZoomByCenter
-            // COMMON_TARGETS.setMapZoomRegions,
-            // COMMON_TARGETS.setMapZoomDepartements
           ]
         }
       },
