@@ -406,8 +406,8 @@ export const configAppTexts = {
                         interviennent pour des clients, pour qui il est possible 
                         de demander au service des impôts des entreprises 
                         le report sans pénalité du règlement de leurs prochaines 
-                        échéances d'impôts directs (acompte d'impôt sur les sociétés, 
-                        taxe sur les salaires).
+                        échéances d'impôts directs 
+                        (acompte d'impôt sur les sociétés, taxe sur les salaires).
                         </li>
                         <li>
                         Les travailleurs indépendants qui peuvent moduler à 
