@@ -3,7 +3,7 @@ export const configAppUIUX = {
 
   // GLOBAL
   appTitle: {
-    fr: 'Aides aux entreprises : fonds de solidarité'
+    fr: 'Aides aux entreprises'
   },
   appMetas: [],
   appVersion: 'v.1.10',
@@ -87,6 +87,61 @@ export const configAppUIUX = {
           i18nTitle: 'menu.data',
           isVisible: false
         }
+      ]
+    },
+
+    tabsRoutes: {
+
+      isActivated: true,
+      grow: true,
+      dark: true,
+      backgroundColor: 'info',
+      hasIcons: false,
+      hasSlider: true,
+      height: 35,
+      slidersClass: 'primary',
+      format: 'tabs', // todo : as buttons too
+      tabsClass: 'text-none',
+
+      // ITEMS ROUTES TABS
+      tabs: [
+        {
+          to: '/?routeId=fds',
+          href: '/fds',
+          // href: '/?routeId=fds',
+          isVisible: true,
+          icon: undefined,
+          title: { fr: 'Fonds de solidarité' },
+          titleMobile: { fr: 'Fonds de solidarité' },
+          tooltip: { fr: 'fonds de solidarité' },
+          isNuxtLink: false,
+          addUrlParams: true
+        },
+        {
+          to: '/?routeId=pge',
+          href: '/pge',
+          // href: '/?routeId=pge',
+          isVisible: true,
+          icon: undefined,
+          title: { fr: "Prêts garantis par l'Etat" },
+          titleMobile: { fr: "Prêts garantis par l'Etat" },
+          tooltip: { fr: "prêts garantis par l'Etat" },
+          isNuxtLink: false,
+          addUrlParams: true
+        },
+        {
+          to: '/?routeId=reports',
+          href: '/reports',
+          // href: '/?routeId=reports',
+          isVisible: true,
+          icon: undefined,
+          title: { fr: "Reports d'échéances fiscales" },
+          titleMobile: { fr: "Reports d'échéances fiscales" },
+          tooltip: { fr: "reports d'échéances fiscales" },
+          isNuxtLink: false,
+          addUrlParams: true
+        }
+
       ]
     },
 

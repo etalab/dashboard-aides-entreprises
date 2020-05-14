@@ -25,6 +25,7 @@ export const state = () => ({
 
   // DATASETS
   initData: undefined,
+  routesData: undefined,
   isInitDataSet: false,
 
   // QUERY
@@ -98,10 +99,10 @@ export const getters = {
   getFromSpecialStoreData: (state) => (params) => {
     // state.log && console.log("S-data-A-getFromSpecialStoreData / params  : ", params )
     let obj = state.specialStore[params.id]
-    obj = params.key ? obj[params.key] : params.key
+    obj = params.key ? obj && obj[params.key] : params.key
 
     const sortParams = params.sortParams
-    if (sortParams) {
+    if (obj && sortParams) {
       const clone = []
       // state.log && console.log("S-data-A-getFromSpecialStoreData / obj  : ", obj )
       for (const i of obj) {
@@ -187,15 +188,14 @@ export const getters = {
 
 export const mutations = {
   setConfigData (state, configData) {
-    state.log &&
-      console.log('S-data-M-setConfigData / configData  : ', configData)
+    state.log && console.log('S-data-M-setConfigData / configData.help  : ', configData.help)
     state.dataSource = configData.dataSource
     state.defaultDataSetup = configData.defaultDataSetup
+    state.routesData = configData.routesData
     state.filters = configData.filters
   },
   setConfigBackendUrl (state, backendApi) {
-    state.log &&
-      console.log('S-data-M-setConfigBackendUrl / backendApi  : ', backendApi)
+    state.log && console.log('S-data-M-setConfigBackendUrl / backendApi  : ', backendApi)
     state.backendApi = backendApi
   },
 
@@ -259,8 +259,7 @@ export const actions = {
     state.log && console.log('S-data-A-setUpConfigData / ... ')
 
     const configData = rootGetters['configs/getConfigField']('configAppData')
-    state.log &&
-      console.log('S-data-A-setUpConfigData / configData :', configData)
+    // state.log && console.log('S-data-A-setUpConfigData / configData :', configData)
     commit('setConfigData', configData)
 
     const backendUrl = getters.chooseBackend

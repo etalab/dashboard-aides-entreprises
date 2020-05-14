@@ -55,8 +55,7 @@ export default function ({ store, env }) {
           })
         promisesArray.push(initConfigFromURL)
       } else if (configsFrom === 'local_js_files') {
-        log &&
-          console.log('-MW- getConfigInit / configRef.data : ', configRef.data)
+        log && console.log('-MW- getConfigInit / configRef.data.help : ', configRef.data.help)
         const initConfigFromJSfile = new Promise((resolve) => {
           const resp = configRef.data
           resolve(resp)

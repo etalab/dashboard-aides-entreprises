@@ -42,13 +42,11 @@ export const getters = {
 
 export const mutations = {
   setConfigField (state, configRef) {
-    state.log &&
-      console.log('S-configs-M-setConfigField / configRef :', configRef)
+    state.log && console.log('S-configs-M-setConfigField / configRef.field :', configRef.field)
     state[configRef.field] = configRef.data
   },
   setConfigsFrom (state, configsFrom) {
-    state.log &&
-      console.log('S-configs-M-setConfigsFrom / configsFrom :', configsFrom)
+    state.log && console.log('S-configs-M-setConfigsFrom / configsFrom :', configsFrom)
     state.configsFrom = configsFrom
   },
   setConfigsAreSet (state) {
