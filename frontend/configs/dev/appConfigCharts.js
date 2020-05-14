@@ -451,11 +451,14 @@ export const configAppCharts = {
       // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/methodologie/effectifs-salaries.html">
       chartTitle: {
         fr: `
-        Aides par 
-        <a target="_blank" href="https://www.insee.fr/fr/information/1896448">
-        classes d'effectifs</a>
-        (en M€) <br>
-        Les données concernent uniquement les entreprises affiliées au régime général<br>
+          Aides par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/1896448">
+            classes d'effectifs</a>
+          (en M€)<br>
+         <span class='font-weight-light'>
+          (uniquement entreprises affiliées au régime général)
+         </span>
+         <br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
