@@ -19,15 +19,23 @@
 
     <v-layout justify-center>
       <div :class="`${viewConfig.chartTitleClass}`">
-        <span v-if="viewConfig.titlePreffixSpecialStoreId">
+
+        <span 
+          v-if="viewConfig.titlePreffixSpecialStoreId"
+          :class="viewConfig.titlePreffixClass"
+          >
           {{ getSpecialStore[viewConfig.titlePreffixSpecialStoreId] }}
         </span>
 
         <span v-html="viewConfig.chartTitle[locale]" />
 
-        <span v-if="viewConfig.titleSuffixSpecialStoreId">
+        <span 
+          v-if="viewConfig.titleSuffixSpecialStoreId"
+          :class="viewConfig.titleSuffixClass"
+          >
           {{ getSpecialStore[viewConfig.titleSuffixSpecialStoreId] }}
         </span>
+
       </div>
     </v-layout>
 

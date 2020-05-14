@@ -410,6 +410,7 @@ export const configAppCharts = {
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'text-uppercase',
 
       dividers: {
         before: false,
@@ -465,6 +466,7 @@ export const configAppCharts = {
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'text-uppercase',
 
       dividers: {
         before: false,
@@ -502,6 +504,7 @@ export const configAppCharts = {
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'text-uppercase',
 
       dividers: {
         before: false,
@@ -539,6 +542,7 @@ export const configAppCharts = {
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'text-uppercase',
 
       dividers: {
         before: false,
@@ -568,6 +572,7 @@ export const configAppCharts = {
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'text-uppercase',
 
       dividers: {
         before: false,
@@ -674,6 +679,7 @@ export const configAppCharts = {
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'text-uppercase',
 
       dividers: {
         before: false,
@@ -714,6 +720,7 @@ export const configAppCharts = {
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'text-uppercase',
 
       dividers: {
         before: false,
