@@ -45,6 +45,7 @@ date : 07/05/2020
 -----------------
 date : 05-06/05/2020
 
+- v.1.14.2 : setting field for static datasets outside of frontend folder
 - v.1.14.1 : optimizing build => 
   - geojson 1000m instead of 100m
   - fonts from CDN instead of build

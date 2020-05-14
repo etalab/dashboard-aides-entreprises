@@ -15,12 +15,18 @@ const APP_VERSION = 'v.2.0.8 - no map scroll parameter'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
-var configsJS = require('./nuxt_loadConfigs_fromJS.js')
+const devModes = ['dev', 'devdata']
+var configsJS
+if (process.env.NUXT_ENV_RUN_MODE === 'devdata') {
+  configsJS = require('./nuxt_loadConfigs_fromJS_devData.js')
+} else {
+  configsJS = require('./nuxt_loadConfigs_fromJS.js')
+}
 let configsReferences = configsJS.configsReferences
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS COPIED TO JSON FILES
-if (process.env.NUXT_ENV_RUN_MODE === 'dev') {
+if (devModes.includes(process.env.NUXT_ENV_RUN_MODE)) {
   console.log('>>> nuxt.config.js / copyConfigsToJSON / ...')
   const staticRoot = './static/configs'
   const staticConfigFolder = process.env.NUXT_ENV_CONFIG_TO_JSON_FOLDER || 'dev'

@@ -11,6 +11,7 @@ mkdir ../backend/json/report/$output
 
 cp ../backend/json/report/report* ../backend/json/report/$output
 cp ../backend/json/report/report* ../frontend/static/datasets/prod/report/
+cp ../backend/json/report/report* ../static-data/prod/report/
 
 curl http://localhost:5000/lastupdatehtml/report > ../backend/json/report/last_update_data.txt
 

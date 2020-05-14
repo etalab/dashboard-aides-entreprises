@@ -11,6 +11,7 @@ mkdir ../backend/json/pge/$output
 
 cp ../backend/json/pge/pge* ../backend/json/pge/$output
 cp ../backend/json/pge/pge* ../frontend/static/datasets/prod/pge/
+cp ../backend/json/pge/pge* ../static-data/prod/pge/
 
 curl http://localhost:5000/lastupdatehtml/pge > ../backend/json/pge/last_update_data.txt
 
