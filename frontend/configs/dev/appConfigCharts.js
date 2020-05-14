@@ -399,8 +399,9 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Top 10 des aides du fonds de solidarité <br>
-          ventilés par 
+          Top 10 des aides du fonds de solidarité 
+          <br>
+          ventilées par 
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
           (en M€)
@@ -453,7 +454,9 @@ export const configAppCharts = {
       // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/methodologie/effectifs-salaries.html">
       chartTitle: {
         fr: `
-          Aides par 
+          Aides du fonds de solidarité 
+          <br>
+          ventilées par 
           <a target="_blank" href="https://www.insee.fr/fr/information/1896448">
             classes d'effectifs</a>
           (en M€)<br>
@@ -495,7 +498,9 @@ export const configAppCharts = {
       // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
       chartTitle: {
         fr: `
-          Top 3 des aides par 
+          Top 3 des aides du fonds de solidarité 
+          <br>
+          ventilées par 
           <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
             catégories juridiques </a>a>
           (en M€)
@@ -534,7 +539,9 @@ export const configAppCharts = {
       // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
       chartTitle: {
         fr: `
-          Top 3 des aides par 
+          Top 3 des aides du fonds de solidarité 
+          <br>
+          ventilées par 
           <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
             catégories juridiques </a>
           (en M€)
