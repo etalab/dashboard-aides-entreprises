@@ -548,7 +548,7 @@ export const configAppCharts = {
           <br><br>
         `
       },
-      chartTitleClass: 'subtitle-2 text-center',
+      chartTitleClass: 'subtitle-2 text-center pb-4',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
