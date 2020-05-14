@@ -320,15 +320,10 @@ export default {
       'getConfigsInit',
       'setConfigsInit',
       'setLocales',
-<<<<<<< HEAD
-      'getRouteConfig',
-      'getDataInit'
-=======
       'getDataInit',
       'getRouteConfig',
       'getRouteData',
       'setRouteViews'
->>>>>>> e17f5307098248e33b5ef0bb9c982a535a593ff3
     ]
   },
 
