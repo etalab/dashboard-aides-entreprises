@@ -22,7 +22,7 @@ print("Shape doit être égal à 24 : "+str(df.shape[0]))
 
 print("Concat in one df")
 
-df = df.iloc[:, :-3]
+df = df.iloc[:, :-2]
 
 i = 0
 j = 0

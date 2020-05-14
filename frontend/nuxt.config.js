@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.1.14.2 - devdata configs'
+const APP_VERSION = 'v.2.0.8 - no map scroll parameter'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...
@@ -236,6 +236,13 @@ const configApp = {
   port: choosePort(process.env.NUXT_ENV_RUN_MODE),
 
   overrideIframe: chooseBooleanMode(process.env.NUXT_ENV_APP_IFRAME_OVERRIDE),
+  overrideRoutesTabs: chooseBooleanMode(process.env.NUXT_ENV_APP_ROUTESTABS_OVERRIDE),
+  overrideNopMapScroll: chooseBooleanMode(process.env.NUXT_ENV_APP_NOMAPSCROLL_OVERRIDE),
+
+  // LOADING
+  loadingColor: process.env.NUXT_ENV_LOADING_COLOR || '#fff',
+  loadingHeight: process.env.NUXT_ENV_LOADING_HEIGHT || 3,
+  loadingContinuous: process.env.NUXT_ENV_APP_LOADING_CONTINUOUS || true,
 
   // CONFIGS
   // configsReferencesBackup: process.env.NUXT_ENV_CONFIG_BACKUP
@@ -243,6 +250,9 @@ const configApp = {
   //   : configsJS.configsReferences,
   configsReferences: configsReferences,
   configsFrom: process.env.NUXT_ENV_CONFIG_FROM || 'local_js_files',
+
+  // ROUTES
+  generateRoutes: process.env.NUXT_ENV_GENERATE_ROUTES.split(','),
 
   // MATOMO
   matomo_host: process.env.NUXT_ENV_MATOMO_HOST || 'https://stats.data.gouv.fr',
@@ -260,6 +270,7 @@ console.log('>>> nuxt.config.js / configApp : \n', configApp)
 // import webpack from 'webpack'
 export default {
   mode: 'spa',
+  // mode: 'universal',
 
   /*
    ** Headers of the page
@@ -309,15 +320,26 @@ export default {
       'getConfigsInit',
       'setConfigsInit',
       'setLocales',
+<<<<<<< HEAD
       'getRouteConfig',
       'getDataInit'
+=======
+      'getDataInit',
+      'getRouteConfig',
+      'getRouteData',
+      'setRouteViews'
+>>>>>>> e17f5307098248e33b5ef0bb9c982a535a593ff3
     ]
   },
 
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: {
+    color: configApp.loadingColor,
+    height: `${configApp.loadingHeight}px`,
+    continuous: configApp.loadingContinuous
+  },
 
   /*
    ** Global CSS
@@ -381,7 +403,11 @@ export default {
 
   /*
    ** Build configuration
-   */
+  */
+  generate: {
+    fallback: true,
+    routes: configApp.generateRoutes
+  },
   build: {
     transpile: ['vue-mapbox'],
     /*

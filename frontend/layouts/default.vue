@@ -11,7 +11,7 @@ body {
 <template>
   <v-app
     id="ODAMAP-root"
-    :style="`overflow: hidden; ${isIframe && getIframeMaxHeight ? 'max-height:' + getIframeMaxHeight+'px;' : windowHeight+'px'}`"
+    :style="`overflow: hidden; max-height:${isIframe && getIframeMaxHeight ? getIframeMaxHeight : contentWindowHeight}px;`"
   >
     <!-- DYNAMIC CSS -->
     <DynamicCSS />
@@ -22,17 +22,22 @@ body {
     <!-- NAVBAR -->
     <Navbar v-if="!isIframe" />
 
+    <!-- TABS ROUTES -->
+    <TabsRoutes v-if="routesTabs && routesTabs.isActivated" />
+
     <!-- CONTENT LAYOUT -->
     <v-content 
-      id="layout-content"
-      :style="`height: ${contentWindowHeight}px`"
+      id="ODAMAP-layout-content"
+      class="ma-0 pa-0"
+      :style="`height: ${contentWindowHeight}px; padding: 0 0 0 0`"
       >
       <Filters />
 
       <!-- <FiltersFeedback/> -->
       <v-container 
-        id="layout-container"
-        fluid pa-0
+        id="ODAMAP-layout-container"
+        fluid
+        pa-0
         >
         <nuxt />
       </v-container>
@@ -81,6 +86,7 @@ import Filters from "~/components/DataViews/Filters.vue"
 import FiltersFeedback from "~/components/DataViews/FiltersFeedback.vue"
 import Footer from "~/components/UX/Footer.vue"
 import NavbarFooter from "~/components/UX/NavbarFooter.vue"
+import TabsRoutes from "~/components/UX/TabsRoutes.vue"
 
 export default {
   components: {
@@ -91,6 +97,7 @@ export default {
     FiltersFeedback,
     Footer,
     NavbarFooter,
+    TabsRoutes,
   },
 
   data() {
@@ -160,6 +167,7 @@ export default {
 
     ...mapGetters({
       getCurrentLocale: "getCurrentLocale",
+      routesTabs: "getRoutesTabs",
       routeConfig: "getLocalRouteConfig",
       getCurrentNavbarFooter: "getCurrentNavbarFooter",
     }),

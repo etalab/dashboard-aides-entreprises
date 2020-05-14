@@ -3,7 +3,7 @@ export const configAppUIUX = {
 
   // GLOBAL
   appTitle: {
-    fr: 'Aides aux entreprises : fonds de solidarité'
+    fr: 'Aides aux entreprises'
   },
   appMetas: [],
   appVersion: 'v.1.10',
