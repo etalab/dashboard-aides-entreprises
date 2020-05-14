@@ -478,13 +478,7 @@ export const configAppTexts = {
                   textContent: undefined,
                   fromUrl: {
                     fr:
-<<<<<<< HEAD
-                      '/datasets/prod/aides/last_update_data.txt'
-                    // 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/static-data/prod/aides/last_update_data.txt'
-                    // 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/aides/last_update_data.txt'
-=======
                       'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/report/last_update_data.txt'
->>>>>>> e17f5307098248e33b5ef0bb9c982a535a593ff3
                   }
                 }
               ]
