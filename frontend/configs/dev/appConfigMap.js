@@ -178,7 +178,8 @@ const COMMON_OPTIONS = {
     bbox: [41.277, -5.317, 51.234, 9.689],
     zoom: 4.8,
     maxZoom: 9.5,
-    minZoom: 2
+    minZoom: 2,
+    noScroll: false
   },
   FranceGuadeloupe: {
     mapStyle: 'EtalabUrl',
@@ -187,7 +188,8 @@ const COMMON_OPTIONS = {
     bbox: [15.833, -61.81, 16.511, -61.003],
     zoom: 4.8,
     maxZoom: 9.5,
-    minZoom: 2
+    minZoom: 2,
+    noScroll: false
   },
   FranceMartinique: {
     mapStyle: 'EtalabUrl',
@@ -196,7 +198,8 @@ const COMMON_OPTIONS = {
     bbox: [-14.395, 61.229, 14.879, -60.811],
     zoom: 4.8,
     maxZoom: 9.5,
-    minZoom: 2
+    minZoom: 2,
+    noScroll: false
   },
   FranceGuyane: {
     mapStyle: 'EtalabUrl',
@@ -205,7 +208,8 @@ const COMMON_OPTIONS = {
     bbox: [2.111, -54.603, 5.751, -51.635],
     zoom: 4.8,
     maxZoom: 9.5,
-    minZoom: 2
+    minZoom: 2,
+    noScroll: false
   },
   FranceReunion: {
     mapStyle: 'EtalabUrl',
@@ -214,7 +218,8 @@ const COMMON_OPTIONS = {
     bbox: [-21.389, 55.216, -20.872, 55.837],
     zoom: 4.8,
     maxZoom: 9.5,
-    minZoom: 2
+    minZoom: 2,
+    noScroll: false
   },
   FranceMayotte: {
     mapStyle: 'EtalabUrl',
@@ -223,7 +228,8 @@ const COMMON_OPTIONS = {
     bbox: [-13, 45.018, -12.637, 45.298],
     zoom: 4.8,
     maxZoom: 9.5,
-    minZoom: 2
+    minZoom: 2,
+    noScroll: false
   }
 }
 const COMMON_LAYERS = {

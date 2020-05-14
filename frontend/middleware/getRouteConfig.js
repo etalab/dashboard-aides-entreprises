@@ -9,6 +9,7 @@ export default function ({ store, env, route, redirect }) {
   const queryLocale = route.query.locale
   const queryIframe = route.query.iframe
   const queryNoTabs = route.query.notabs
+  const queryNoMapScroll = route.query.nomapscroll
   const queryRouteId = route.query.routeId
 
   // set locale if part of url
@@ -30,7 +31,7 @@ export default function ({ store, env, route, redirect }) {
     store.commit('setIframe', isIframe)
   }
 
-  // set iframe param if part of url OR if override from env file
+  // set noRouteTabs param if part of url OR if override from env file
   const overrideNoTabs = env.CONFIG_APP.overrideRoutesTabs
   if (overrideNoTabs || queryNoTabs) {
     let noRoutesTabs = false
@@ -41,6 +42,19 @@ export default function ({ store, env, route, redirect }) {
       noRoutesTabs = chooseBooleanMode(queryNoTabs)
     }
     store.commit('setNoRoutesTabs', noRoutesTabs)
+  }
+
+  // set noMapScroll param if part of url OR if override from env file
+  const overrideNoMapScroll = env.CONFIG_APP.overrideNopMapScroll
+  if (overrideNoMapScroll || queryNoMapScroll) {
+    let noMapScroll = false
+    // log && console.log('-MW- getRouteConfig / queryNoMapScroll : ', queryNoMapScroll)
+    if (overrideNoMapScroll) {
+      noMapScroll = true
+    } else {
+      noMapScroll = chooseBooleanMode(queryNoMapScroll)
+    }
+    store.commit('maps/setNoMapScroll', noMapScroll)
   }
 
   // retrieve last route config

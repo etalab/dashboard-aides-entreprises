@@ -38,7 +38,9 @@ export const state = () => ({
 
   // UX
   hoveredStateId: {},
-  selectedStateId: {}
+  selectedStateId: {},
+
+  noMapScroll: false
 
 })
 
@@ -68,6 +70,11 @@ export const mutations = {
   // UPDATE SELECTED
   seSelectedStateId (state, selectedStateId) {
     state.selectedStateId = selectedStateId
+  },
+
+  // UPDATE NO MAP SCROLL
+  setNoMapScroll (state, noMapScrollBool) {
+    state.noMapScroll = noMapScrollBool
   }
 
 }

@@ -231,6 +231,7 @@ const configApp = {
 
   overrideIframe: chooseBooleanMode(process.env.NUXT_ENV_APP_IFRAME_OVERRIDE),
   overrideRoutesTabs: chooseBooleanMode(process.env.NUXT_ENV_APP_ROUTESTABS_OVERRIDE),
+  overrideNopMapScroll: chooseBooleanMode(process.env.NUXT_ENV_APP_NOMAPSCROLL_OVERRIDE),
 
   // LOADING
   loadingColor: process.env.NUXT_ENV_LOADING_COLOR || '#fff',

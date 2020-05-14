@@ -323,6 +323,7 @@ export default {
 
       fitToPolygon: (state) => state.maps.fitToPolygon,
       storeSelectedStateId: (state) => state.maps.selectedStateId,
+      noMapScroll: (state) => state.maps.noMapScroll,
 
       mapUI: (state) => state.configUI.map,
       trigger: (state) => state.data.triggerChange,
@@ -466,6 +467,11 @@ export default {
 
       // in store => WARNING : object too complex to be stored/mutated in vuex so far
       // check : https://ypereirareis.github.io/blog/2017/04/25/vuejs-two-way-data-binding-state-management-vuex-strict-mode/
+
+      if (this.noMapScroll) {
+        _map.scrollZoom.disable()
+      }
+
     },
     isInZoomRange(zoomRange) {
       // this.log && console.log("C-MapboxGL / isInZoomRange ... zoomRange : ", zoomRange )
