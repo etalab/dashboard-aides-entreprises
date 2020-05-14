@@ -1,6 +1,23 @@
 const COMMON_TEXTS_HTML = {
-  moreInfos: {
-    id: 'more-infos',
+  dashboardIntro: {
+    id: 'dashboard-intro',
+    textClass: 'text-left mx-4 pt-4 pb-5 mb-5',
+    textContent: {
+      fr: `
+        Cette tableau de bord a été créé par le département Etalab de la
+        <a target="_blank" href="https://www.numerique.gouv.fr">
+          Direction Interministérielle du Numérique (DINUM)</a>
+        et son
+        <a target="_blank" href="https://github.com/etalab/dashboard-aides-entreprises">
+          code source est libre</a>.
+      `
+    },
+    fromUrl: {
+      fr: undefined
+    }
+  },
+  moreInfosFDS: {
+    id: 'more-infos-fds',
     textClass: 'text-left mx-4 pt-4',
     textContent: {
       fr: `
@@ -13,17 +30,28 @@ const COMMON_TEXTS_HTML = {
       fr: undefined
     }
   },
-  dashboardIntro: {
-    id: 'dashboard-intro',
-    textClass: 'text-left mx-4 pt-4 pb-5 mb-5',
+  moreInfosPGE: {
+    id: 'more-infos-pge',
+    textClass: 'text-left mx-4 pt-4',
     textContent: {
       fr: `
-        Cette tableau de bord a été créé par le département Etalab de la
-        <a target="_blank" href="https://www.numerique.gouv.fr">
-          Direction Interministérielle du Numérique (DINUM)</a>
-        et son
-        <a target="_blank" href="https://github.com/etalab/dashboard-aides-entreprises">
-          code source est libre</a>.
+        Les données utilisées sur ce tableau de bord
+        <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-prets-garantis-par-letat-dans-le-cadre-de-lepidemie-de-covid-19/">
+          sont disponibles en open data sur data.gouv.fr</a>.
+      `
+    },
+    fromUrl: {
+      fr: undefined
+    }
+  },
+  moreInfosREPORT: {
+    id: 'more-infos-reports',
+    textClass: 'text-left mx-4 pt-4',
+    textContent: {
+      fr: `
+        Les données utilisées sur ce tableau de bord
+        <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-reports-decheances-fiscales-accordes-dans-le-cadre-de-lepidemie-de-covid-19/">
+          sont disponibles en open data sur data.gouv.fr</a>.
       `
     },
     fromUrl: {
@@ -170,7 +198,7 @@ export const configAppTexts = {
                     fr: undefined
                   }
                 },
-                COMMON_TEXTS_HTML.moreInfos,
+                COMMON_TEXTS_HTML.moreInfosFDS,
                 COMMON_TEXTS_HTML.dashboardIntro,
                 {
                   id: 'miseAJour',
@@ -304,7 +332,7 @@ export const configAppTexts = {
                     fr: undefined
                   }
                 },
-                COMMON_TEXTS_HTML.moreInfos,
+                COMMON_TEXTS_HTML.moreInfosPGE,
                 COMMON_TEXTS_HTML.dashboardIntro,
                 {
                   id: 'miseAJour',
@@ -442,7 +470,7 @@ export const configAppTexts = {
                     fr: undefined
                   }
                 },
-                COMMON_TEXTS_HTML.moreInfos,
+                COMMON_TEXTS_HTML.moreInfosREPORT,
                 COMMON_TEXTS_HTML.dashboardIntro,
                 {
                   id: 'miseAJour',
