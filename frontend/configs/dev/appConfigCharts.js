@@ -455,6 +455,7 @@ export const configAppCharts = {
         <a target="_blank" href="https://www.insee.fr/fr/information/1896448">
         classes d'effectifs</a>
         (en M€) <br>
+        Les données concernent uniquement les entreprises affiliées au régime général<br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
