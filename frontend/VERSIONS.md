@@ -14,9 +14,18 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 [wireframe_pdf]: ../screenshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
 
 -----------------
-date : 12/05/2020
+date : 14/05/2020
+
+- v.2.0.8 : no map scroll parameter in .env and/or url
+
+-----------------
+date : 13/05/2020
 
 - v.2.0.7 : fix bug of color and zoom when switching datasets with url params
+
+-----------------
+date : 12/05/2020
+
 - v.2.0.6 : store setup + zoom from url params
 - v.2.0.5 : url parameters for store preload
 - v.2.0.4 : custom color and behaviour for nuxt loading bar

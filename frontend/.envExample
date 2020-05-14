@@ -9,7 +9,7 @@ NUXT_ENV_APP_TITLE=Aides aux entreprises
 
 NUXT_ENV_APP_IFRAME_OVERRIDE=no
 NUXT_ENV_APP_ROUTESTABS_OVERRIDE=no
-
+NUXT_ENV_APP_NOMAPSCROLL_OVERRIDE=no
 
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### LOCALES / i18n
@@ -46,12 +46,16 @@ NUXT_ENV_configAppRawData=configAppRawData.json
 NUXT_ENV_configAppNavbarFooters=configAppNavbarFooters.json
 NUXT_ENV_configAppGlobalButtons=configAppGlobalButtons.json
 
+### - - - - - - - - - - - - - - - - - - - - - ###
+### CONFIGS FROM ...
+### - - - - - - - - - - - - - - - - - - - - - ###
+NUXT_ENV_GENERATE_ROUTES=/fds,/pge,/reports
 
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### COLORS
 ### - - - - - - - - - - - - - - - - - - - - - ###
 NUXT_ENV_LOADING_COLOR=#d1335b
-NUXT_ENV_LOADING_HEIGHT=4
+NUXT_ENV_LOADING_HEIGHT=5
 
 NUXT_ENV_THEME_IS_DARK=false
 
