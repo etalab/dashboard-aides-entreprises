@@ -405,14 +405,14 @@ export const configAppCharts = {
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
           (en M€)
-          <br>
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
-      titleSuffixClass: 'text-uppercase',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -463,14 +463,14 @@ export const configAppCharts = {
           <span class='font-weight-light'>
             (uniquement entreprises affiliées au régime général)
           </span>
-          <br>
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
-      titleSuffixClass: 'text-uppercase',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -504,14 +504,14 @@ export const configAppCharts = {
           <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
             catégories juridiques </a>a>
           (en M€)
-          <br>
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
-      titleSuffixClass: 'text-uppercase',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -545,14 +545,14 @@ export const configAppCharts = {
           <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
             catégories juridiques </a>
           (en M€)
-          <br>
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
-      titleSuffixClass: 'text-uppercase',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -582,7 +582,7 @@ export const configAppCharts = {
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
-      titleSuffixClass: 'text-uppercase',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -684,14 +684,14 @@ export const configAppCharts = {
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
           (en M€)
-          <br>
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
-      titleSuffixClass: 'text-uppercase',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -727,14 +727,14 @@ export const configAppCharts = {
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
           (en M€)
-          <br>
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
-      titleSuffixClass: 'text-uppercase',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
