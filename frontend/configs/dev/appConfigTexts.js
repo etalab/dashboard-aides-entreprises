@@ -189,7 +189,11 @@ export const configAppTexts = {
                         <li>ont vu leur demande d'un prêt de trésorerie faite depuis le 1er mars 2020, auprès d'une banque dont elles étaient clientes à cette date, refusée ou restée sans réponse passé un délai de dix jours.</li>
                       </ul>
                       <br>
-                      Cette cartographie présente les montants attribués dans le cadre du fonds de solidarité projetés au niveau départemental et régional avec une ventilation par secteur d'activité, structure juridique et tranche d'effectifs (effectifs pour les entreprises affiliées au régime général).
+                      Cette cartographie présente les montants attribués dans le cadre du fonds de solidarité 
+                      projetés au niveau départemental et régional 
+                      avec une ventilation par secteur d'activité, structure juridique et 
+                      tranche d'effectifs (effectifs pour les entreprises affiliées au régime général).
+                      Les données concernent uniquement les entreprises affiliées au régime général
                       <br><br>
                       Les données sont mises à jour quotidiennement.
                     `

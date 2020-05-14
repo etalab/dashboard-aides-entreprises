@@ -399,17 +399,20 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Top 10 des aides du fonds de solidarité <br>
-          ventilés par 
+          Top 10 des aides du fonds de solidarité 
+          <br>
+          ventilées par 
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
-          (en M€) <br>
+          (en M€)
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -451,16 +454,23 @@ export const configAppCharts = {
       // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/methodologie/effectifs-salaries.html">
       chartTitle: {
         fr: `
-        Aides par 
-        <a target="_blank" href="https://www.insee.fr/fr/information/1896448">
-        classes d'effectifs</a>
-        (en M€) <br>
+          Aides du fonds de solidarité 
+          <br>
+          ventilées par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/1896448">
+            classes d'effectifs</a>
+          (en M€)<br>
+          <span class='font-weight-light'>
+            (uniquement entreprises affiliées au régime général)
+          </span>
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -488,16 +498,20 @@ export const configAppCharts = {
       // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
       chartTitle: {
         fr: `
-          Top 3 des aides par 
+          Top 3 des aides du fonds de solidarité 
+          <br>
+          ventilées par 
           <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
             catégories juridiques </a>a>
-          (en M€) <br>
+          (en M€)
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -525,16 +539,20 @@ export const configAppCharts = {
       // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
       chartTitle: {
         fr: `
-          Top 3 des aides par 
+          Top 3 des aides du fonds de solidarité 
+          <br>
+          ventilées par 
           <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
             catégories juridiques </a>
-          (en M€) <br>
+          (en M€)
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -564,6 +582,7 @@ export const configAppCharts = {
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -660,16 +679,19 @@ export const configAppCharts = {
       chartTitle: {
         fr: `
           Top 10 des prêts garantis par l'Etat 
-          <br>ventilés par 
+          <br>
+          ventilés par 
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
-          (en M€) <br>
+          (en M€)
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
@@ -700,16 +722,19 @@ export const configAppCharts = {
       chartTitle: {
         fr: `
           Top 10 des reports d'échéances fiscales 
-          <br>ventilés par 
+          <br>
+          ventilés par 
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
-          (en M€) <br>
+          (en M€)
+          <br><br>
         `
       },
       chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
       titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
