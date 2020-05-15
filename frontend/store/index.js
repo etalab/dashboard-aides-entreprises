@@ -9,7 +9,6 @@ export const state = () => ({
   locale: undefined,
   locales: undefined,
 
-  // appTitle: process.env.CONFIG_APP.appTitle,
   appTitle: undefined,
 
   isIframe: false,
@@ -30,21 +29,23 @@ export const state = () => ({
   },
 
   // NAVBAR - on basis vuetify create-nuxt-app
-  // navbar: process.env.CONFIG_APP.UX_config.navbar,
   navbar: undefined,
 
   currentNavbarFooter: undefined,
   currentFooter: undefined,
+  triggerResetNavbarFooter: 1,
 
   // ROUTES
-  localRouteConfig: undefined,
-  // configRoutes: process.env.CONFIG_APP.ROUTES_config,
+  routesTabs: undefined,
+  noRoutesTabs: false,
   configRoutes: undefined,
+  localRouteConfig: undefined,
+  routeNeedDataReset: true,
+  queryRouteId: undefined,
+  routeParams: undefined,
 
   // UX-UI
-  // configUX: process.env.CONFIG_APP.UX_config,
   configUX: undefined,
-  // configUI: process.env.CONFIG_APP.UI_config,
   configUI: undefined,
 
   // DATA VIEWS COMPONENTS SETTINGS
@@ -58,18 +59,6 @@ export const state = () => ({
     navbarFooters: undefined,
     globalButtons: undefined
   },
-  // configsData: {
-  //   maps: process.env.CONFIG_APP.MAP_config.settingsIds,
-  //   charts: process.env.CONFIG_APP.CHARTS_config.settingsIds,
-  //   numbers: process.env.CONFIG_APP.NUMBERS_config.settingsIds,
-  //   tables: process.env.CONFIG_APP.TABLES_config.settingsIds,
-  //   texts: process.env.CONFIG_APP.TEXTS_config.settingsIds,
-  //   rawdatas: process.env.CONFIG_APP.RAWDATA_config.settingsIds,
-
-  //   // PURE UX COMPONENTS
-  //   navbarFooters: process.env.CONFIG_APP.UX_navbarFooters.settingsIds,
-  //   globalButtons: process.env.CONFIG_APP.UX_globalButtons.settingsIds,
-  // },
 
   divsVisibility: [],
   triggerVisChange: 1
@@ -78,29 +67,45 @@ export const state = () => ({
 export const getters = {
   // INTERNATIONALIZATION
   getDefaultLocale: () => {
-    // state.log && console.log("S-index-G-getDefaultLocale ...")
     return process.env.CONFIG_APP.defaultLocale
   },
 
   getCurrentLocale: (state, getters) => {
-    // state.log && console.log("S-index-G-getCurrentLocale / state.locale : ", state.locale)
     return state.locale ? state.locale : getters.getDefaultLocale
   },
 
   // ROUTES
+  getRoutesTabs: (state) => {
+    return state.routesTabs
+  },
   getLocalRouteConfig: (state) => {
     return state.localRouteConfig
   },
-
-  getCurrentRouteConfig: (state) => (currentRoute) => {
+  getCurrentRouteConfigById: (state) => (routeId) => {
     try {
       return state.configRoutes.find(function (r) {
-        return r.urls.indexOf(currentRoute) !== -1
+        return r.id === routeId
       })
     } catch (e) {
       state.log && console.log('err', e)
       return undefined
     }
+  },
+  getCurrentRouteConfig: (state) => (currentRoute) => {
+    try {
+      return state.configRoutes.find(function (r) {
+        return r.urls.includes(currentRoute)
+      })
+    } catch (e) {
+      state.log && console.log('err', e)
+      return undefined
+    }
+  },
+  getRouteNeedDataReset: (state) => {
+    return state.routeNeedDataReset
+  },
+  getQueryRouteId: (state) => {
+    return state.queryRouteId
   },
 
   // DIVS VISIBILITY
@@ -114,20 +119,24 @@ export const getters = {
     return divObject
   },
   getDivCurrentVisibility: (state, getters) => (div) => {
-    // state.log && console.log("S-index-G-getDivCurrentVisibility / div : ", div )
-    const breakpoint = div.breakpoint
-    // state.log && console.log("S-index-G-getDivCurrentVisibility / breakpoint : ", breakpoint )
+    try {
+      // state.log && console.log("S-index-G-getDivCurrentVisibility / div : ", div )
+      const breakpoint = div.breakpoint
+      // state.log && console.log("S-index-G-getDivCurrentVisibility / breakpoint : ", breakpoint )
 
-    const divObject = getters.getDivVisibility(div.div)
-    // state.log && console.log("S-index-G-getDivCurrentVisibility / divObject : ", divObject )
+      const divObject = getters.getDivVisibility(div.div)
+      // state.log && console.log("S-index-G-getDivCurrentVisibility / divObject : ", divObject )
 
-    const mobileBreakpoints = state.configUX.mobileBreakpoints
-    // state.log && console.log("S-index-G-getDivCurrentVisibility / mobileBreakpoints : ", mobileBreakpoints )
+      const mobileBreakpoints = state.configUX.mobileBreakpoints
+      // state.log && console.log("S-index-G-getDivCurrentVisibility / mobileBreakpoints : ", mobileBreakpoints )
 
-    if (mobileBreakpoints.includes(breakpoint)) {
-      return divObject.isVisibleMobile
-    } else {
-      return divObject.isVisibleDesktop
+      if (mobileBreakpoints.includes(breakpoint)) {
+        return divObject.isVisibleMobile
+      } else {
+        return divObject.isVisibleDesktop
+      }
+    } catch (e) {
+      return false
     }
   },
 
@@ -204,6 +213,7 @@ export const mutations = {
 
     state.appTitle = configs.UIUX_config.appTitle
 
+    state.routesTabs = configs.UIUX_config.UX_config.tabsRoutes
     state.configRoutes = configs.ROUTES_config.routes
 
     state.navbar = configs.UIUX_config.UX_config.navbar
@@ -240,6 +250,9 @@ export const mutations = {
   setNavbarFooterVisibility (state, bool) {
     state.currentNavbarFooter.activated = bool
   },
+  toggleTriggerResetNavbarFooter (state) {
+    state.triggerResetNavbarFooter = state.triggerResetNavbarFooter * -1
+  },
 
   // WINDOW SIZE
   setWindowSize (state, winSize) {
@@ -254,6 +267,18 @@ export const mutations = {
     // state.log && console.log("S-index-M-setLocalRouteConfig...")
     state.localRouteConfig = routeConfig
     // state.log && console.log("S-index-M-setLocalRouteConfig / state.localRouteConfig : ", state.localRouteConfig)
+  },
+  setRouteNeedDataReset (state, boolean) {
+    state.routeNeedDataReset = boolean
+  },
+  SetQueryRouteId (state, queryRouteId) {
+    state.queryRouteId = queryRouteId
+  },
+  setNoRoutesTabs (state, noRoutesTabs) {
+    state.noRoutesTabs = noRoutesTabs
+  },
+  setRouteParams (state, paramsString) {
+    state.routeParams = paramsString
   },
 
   // DIVS VISIBILITY
@@ -318,7 +343,7 @@ export const actions = {
       // state.log && console.log("S-index-A-setCurrentWindowSize / bool : ", bool)
       const showOnSizes = state.currentNavbarFooter.showOnSizes
       const breakpointName = windowInfos.breakpointName
-      if (showOnSizes.includes(breakpointName)) {
+      if (showOnSizes && showOnSizes.includes(breakpointName)) {
         bool = true
       }
       commit('setNavbarFooterVisibility', bool)
@@ -352,8 +377,9 @@ export const actions = {
       }
     }
   },
-  toggleDivsVisibility ({ getters, commit }, btnConfig) {
+  toggleDivsVisibility ({ state, getters, commit }, btnConfig) {
     for (const divsToToggle of btnConfig.divsToToggle) {
+      // state.log && console.log('S-index-A-toggleDivsVisibility / divsToToggle : ', divsToToggle)
       const toggle = divsToToggle.toggle
       const toggleVisibility = divsToToggle.toggleVisibility
 

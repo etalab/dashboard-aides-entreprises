@@ -58,11 +58,13 @@
       :class="`legend-block legend-bottom-right`"
     >
       <!-- DEBUGGING -->
-      <span v-if="log">
-        {{ appVersion }}
-      </span>
-      <!-- <b>{{ currentZoom }}</b> -->
-      <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
+      <div class="content mx-4" v-if="log">
+        <p><code>version :<br> {{ appVersion }}</code></p>
+        <!-- <p><code>selectedStateId :<br> {{ selectedStateId }}</code></p> -->
+        <p><code>routeParams :<br> {{ routeParams }}</code></p>
+        <!-- <b>{{ currentZoom }}</b> -->
+        <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
+      </div>
 
       <!-- LAYERS SWITCH -->
       <div
@@ -120,22 +122,22 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from "vuex"
+import { mapState, mapGetters, mapActions } from 'vuex'
 
-import { Mapbox, mapboxgl } from "mapbox-gl"
-import { MglMap } from "vue-mapbox"
+import { Mapbox, mapboxgl } from 'mapbox-gl'
+import { MglMap } from 'vue-mapbox'
 
 let _map
 
-import bbox from "@turf/bbox"
+import bbox from '@turf/bbox'
 
-import axios from "axios"
-import { getDataFromUrl } from "~/utils/getData.js"
-import { transformDataset, buildProperties } from "~/utils/mapbox.js"
+import axios from 'axios'
+import { getDataFromUrl } from '~/utils/getData.js'
+import { transformDataset, buildProperties } from '~/utils/mapbox.js'
 
-import { objectFromPath, switchFormatFunctions } from "~/utils/utils.js"
+import { objectFromPath, switchFormatFunctions, objectToUrlParams } from '~/utils/utils.js'
 
-import { StylesOSM } from "~/configs/mapboxVectorStyles.js"
+import { StylesOSM } from '~/configs/mapboxVectorStyles.js'
 
 export default {
   name: "MapboxGL",
@@ -149,8 +151,8 @@ export default {
       dataViewType: "maps",
       viewConfig: undefined,
       canShow: undefined,
-      mapHeight: undefined,
 
+      mapHeight: undefined,
       showLoader: true,
 
       // MAPBOX MAP OBJECT
@@ -204,16 +206,44 @@ export default {
         this.loadUrlSources(urlSourcesArray).then(() => {
           this.loadLayers(this.layers)
           this.loadClicEvents(this.maps)
+
+          // set up view 
+          if (this.fitToPolygon) {
+            // this.log && console.log("C-MapboxGL / watch - map / this.fitToPolygon : ", this.fitToPolygon)
+            if (this.fitToPolygon.zoomBy === 'polygon') {
+              this.goToPolygon(this.fitToPolygon)
+            } else if (this.fitToPolygon.zoomBy === 'centerAndZoom') {
+              const center = this.fitToPolygon.center
+              const zoom = this.fitToPolygon.zoom
+              this.flyTo( center, zoom, true )
+            }
+          }
+
+          // set up selected polygons
+          if (this.storeSelectedStateId) {
+            this.setSelectedPolygons(this.storeSelectedStateId)
+          }
+
+          // flag as loading finished
           this.showLoader = false
         })
       }
     },
 
     getResetZoomTrigger(next, prev) {
-      // this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
+      this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
       this.handleResize()
       this.resetZoom()
+      this.resetAllSelected()
     },
+
+    storeSelectedStateId(next, prev) {
+      if (typeof next === 'undefined') {
+        // this.resetZoom()
+        this.resetAllSelected()
+      }
+    }
+
   },
 
   created() {
@@ -288,6 +318,12 @@ export default {
       log: (state) => state.log,
       locale: (state) => state.locale,
       isIframe: (state) => state.isIframe,
+      routeParams: (state) => state.routeParams,
+      queryRouteId: (state) => state.queryRouteId,
+
+      fitToPolygon: (state) => state.maps.fitToPolygon,
+      storeSelectedStateId: (state) => state.maps.selectedStateId,
+      noMapScroll: (state) => state.maps.noMapScroll,
 
       mapUI: (state) => state.configUI.map,
       trigger: (state) => state.data.triggerChange,
@@ -304,9 +340,9 @@ export default {
       getStoreSourceData: "data/getStoreSourceData",
       windowSize: "getWindowsSize",
       getCurrentNavbarFooter: "getCurrentNavbarFooter",
+      getDivCurrentVisibility: "getDivCurrentVisibility",
       // getCurrentBreakpoint: "getCurrentBreakpoint",
       getResetZoomTrigger: "maps/getResetZoomTrigger",
-      getDivCurrentVisibility: "getDivCurrentVisibility",
     }),
 
     // config
@@ -352,7 +388,6 @@ export default {
       // this.log && console.log("C-MapboxGL / canShow ... isVisible : ", isVisible )
       this.canShow = isVisible
     },
-
     handleResize() {
       let winHeight = window.innerHeight
       let ODAMAP_height = document.getElementById('ODAMAP-root') ? document.getElementById('ODAMAP-root').clientHeight : undefined 
@@ -360,8 +395,6 @@ export default {
       winHeight = ODAMAP_height ? ODAMAP_height : winHeight 
 
       let mapHeight = winHeight
-      // let navbarHeight = this.navbarHeight
-      // let getCurrentNavbarFooter = this.getCurrentNavbarFooter
 
       var docNavbars = document.querySelectorAll(`.odm-navbar`)
       // this.log && console.log("C-MapboxGL / handleResize ... docNavbars : ", docNavbars )
@@ -389,8 +422,6 @@ export default {
       // this.log && console.log("C-MapboxGL / handleResize ... mapHeight : ", mapHeight )
       this.mapHeight = mapHeight
 
-
-
       // little hack to redraw window on safari IOS
       // let isMobileOrTablet = this.$device.isMobileOrTablet
       // // let isMobileOrTablet = true
@@ -402,7 +433,16 @@ export default {
       // }
 
     },
+    getCurrentCenter() {
+      // let mapbox = this.map
+      let mapbox = _map
 
+      let currrentCenter = mapbox.getCenter()
+      // this.log && console.log("C-MapboxGL / getCurrentCenter ... currrentCenter : ", currrentCenter )
+      this.currrentCenter = currrentCenter
+      // this.$store.commit('maps/setStateObject', { field: 'currentCenter', value: currentCenter})
+      return currrentCenter
+    },
     getCurrentZoom() {
       // let mapbox = this.map
       let mapbox = _map
@@ -410,6 +450,7 @@ export default {
       let currentZoom = mapbox.getZoom()
       // this.log && console.log("C-MapboxGL / getCurrentZoom ... currentZoom : ", currentZoom )
       this.currentZoom = currentZoom
+      // this.$store.commit('maps/setStateObject', { field: 'currentZoom', value: currentZoom})
       return currentZoom
     },
 
@@ -421,12 +462,18 @@ export default {
       // store in component
       // this.map = event.map
       this.map = true
+      // this.$store.commit('maps/setStateObject', { field: 'map', value: true})
       _map = event.map
 
       // in store => WARNING : object too complex to be stored/mutated in vuex so far
       // check : https://ypereirareis.github.io/blog/2017/04/25/vuejs-two-way-data-binding-state-management-vuex-strict-mode/
-    },
 
+      // disable scroll zoom if 
+      if (this.noMapScroll || this.mapOptions.noScroll ) {
+        _map.scrollZoom.disable()
+      }
+
+    },
     isInZoomRange(zoomRange) {
       // this.log && console.log("C-MapboxGL / isInZoomRange ... zoomRange : ", zoomRange )
 
@@ -449,8 +496,7 @@ export default {
     // LOADERS - - - - - - - - - - - - - - - - - - //
 
     loadStoreSources(sourcesArray) {
-      // this.log &&
-      //   console.log("\nC-MapboxGL / loadStoreSources ", "... ".repeat(10))
+      // this.log && console.log("\nC-MapboxGL / loadStoreSources ", "... ".repeat(10))
 
       // let mapbox = this.map
       let mapbox = _map
@@ -460,16 +506,6 @@ export default {
 
       // STORE SOURCES (loaded as initData @ middleware GetInitData.js )
       for (let source of sourcesArray) {
-        // this.log &&
-        //   console.log(
-        //     "\nC-MapboxGL / loadStoreSources - store ... source.id : ",
-        //     source.id
-        //   )
-        // this.log &&
-        //   console.log(
-        //     "C-MapboxGL / loadStoreSources - store ... source.help : ",
-        //     source.help
-        //   )
         let mapBoxSrcObj = {
           type: source.type,
         }
@@ -477,34 +513,6 @@ export default {
         // retrieve source from store 'state.data.initData'
         let dataset = store.getters["data/getFromInitData"](source.fromId)
         // this.log && console.log("C-MapboxGL / loadStoreSources - store ... dataset : ", dataset)
-
-        // let resp = new Promise( (resolve, reject ) => {
-        //   let data = store.getters['data/getFromInitData']( source.fromId )
-        //   resolve( data )
-        // })
-        // .then( dataset => {
-        //   // transform to source.type if necessary
-        //   if ( source.needTransform ) {
-        //     let geoCanvas = store.getters['data/getFromInitData']( source.transformTo.geoCanvasId )
-        //     // this.log && console.log("C-MapboxGL / loadStoreSources - store ... geoCanvas : ", geoCanvas)
-        //     let geoCanvasData = geoCanvas.data
-        //     dataset = transformDataset( source, dataset, geoCanvasData )
-        //   }
-
-        //   // this.log && console.log("C-MapboxGL / loadStoreSources - store ... dataset : ", dataset)
-
-        //   // add source to map
-        //   // this.log && console.log("C-MapboxGL / loadStoreSources - store ... addSource ...")
-        //   mapBoxSrcObj.data = {...dataset}
-        //   if (source.generateId) mapBoxSrcObj.generateId = source.generateId
-        //   mapbox.addSource( source.id, mapBoxSrcObj )
-
-        //   // add source to store
-        //   store.dispatch('data/setDisplayedDataset', {
-        //     id : source.id,
-        //     data : dataset,
-        //   })
-        // })
 
         // transform to source.type if necessary
         if (source.needTransform) {
@@ -529,15 +537,10 @@ export default {
           id: source.id,
           data: dataset,
         })
-
-        // promisesArray.push(resp)
       }
-      // return Promise.all( promisesArray )
     },
-
     loadUrlSources(sourcesArray) {
-      this.log &&
-        console.log("\nC-MapboxGL / loadUrlSources ", "... ".repeat(10))
+      this.log && console.log("\nC-MapboxGL / loadUrlSources ", "... ".repeat(10))
       // let mapbox = this.map
       let mapbox = _map
       let store = this.$store
@@ -588,7 +591,6 @@ export default {
       }
       return Promise.all(promisesArray)
     },
-
     loadLayers(layersArray) {
       // let mapbox = this.map
       let mapbox = _map
@@ -603,7 +605,6 @@ export default {
         mapbox.addLayer(layer)
       }
     },
-
     loadClicEvents(mapsArray) {
       // let mapbox = this.map
       let mapbox = _map
@@ -618,7 +619,7 @@ export default {
 
       for (let mapRef of mapsArray) {
         if (mapRef.clicEvents) {
-          for (let clicEvent of mapRef.clicEvents) {
+          for (const clicEvent of mapRef.clicEvents) {
             this.log &&
               console.log(
                 "\nC-MapboxGL / loadClicEvents ... clicEvent.layer : ",
@@ -664,34 +665,34 @@ export default {
                   }
 
                   switch (fn.funcName) {
-                    case "goToPolygon":
+                    case 'goToPolygon':
                       this.goToPolygon(params)
                       break
 
-                    case "setChildrenPolygons":
+                    case 'setChildrenPolygons':
                       params.targets = funcParams.targets
                       this.setChildrenPolygons(params)
                       break
 
-                    case "updateDisplayedData":
+                    case 'updateDisplayedData':
                       params.targets = funcParams.targets
                       this.updateDisplayedData(params)
                       break
 
-                    // case 'updateQuery' :
-                    //   params.targets = funcParams.targets ;
-                    //   this.updateQuery( params ) ;
-                    //   break ;
+                    case 'updateUrlPath' :
+                      params.targets = funcParams.targets ;
+                      this.updateUrlPath( params ) ;
+                      break
 
-                    case "toggleHighlightOn":
+                    case 'toggleHighlightOn':
                       this.toggleHighlightOn(e, itemSource)
                       break
 
-                    case "toggleHighlightOff":
+                    case 'toggleHighlightOff':
                       this.toggleHighlightOff(e, itemSource)
                       break
 
-                    case "toggleSelectedOn":
+                    case 'toggleSelectedOn':
                       this.toggleSelectedOn(e, itemSource)
                       break
 
@@ -710,7 +711,7 @@ export default {
 
     // DATA INTERACTIONS - - - - - - - - - - - - - - - - - - //
 
-    getSourceData(params, from = "map") {
+    getSourceData(params, from="map") {
       // this.log && console.log("\nC-MapboxGL / getSourceGeoData ... from : ", from)
       // this.log && console.log("C-MapboxGL / getSourceGeoData ... params : ", params)
 
@@ -724,8 +725,7 @@ export default {
         let source = sourcesList && sourcesList[params.source]
         // this.log && console.log("C-MapboxGL / getSourceGeoData ... source : ", source)
         data =
-          source &&
-          source.data.features.find(
+          source && source.data.features.find(
             (feat) => feat.properties[params.propName] == params.prop
           )
         // this.log && console.log("C-MapboxGL / getSourceGeoData ... data : ", data)
@@ -735,12 +735,15 @@ export default {
         data = this.getStoreSourceData(params)
       }
 
+      if (from == "prop") {
+        data = params.prop
+      }
+
       if (params.format) {
         data = switchFormatFunctions(data, params.format)
       }
       return data
     },
-
     updateDisplayedData(params) {
       // this.log && console.log("\nC-MapboxGL / updateDisplayedData  : ", "+ ".repeat(10) )
       // this.log && console.log("\nC-MapboxGL / updateDisplayedData ... params : ", params )
@@ -750,6 +753,7 @@ export default {
 
       if (isFnInZoomRange) {
         for (let targetParams of params.targets) {
+
           // 1 - get data for the update
           targetParams.prop = params.prop
           targetParams.propName = params.propName
@@ -766,6 +770,61 @@ export default {
           this.$store.dispatch("data/setNestedData", targetData) // set element in : store.data.sepcialStore
         }
         this.$store.commit("data/toggleTrigger")
+      }
+    },
+    updateUrlPath(params) {
+      let isFnInZoomRange = this.isInZoomRange(params.zoomRange)
+      // this.log && console.log('\nC-MapboxGL / updateUrlPath ... isFnInZoomRange : ', isFnInZoomRange )
+
+      if (isFnInZoomRange) {
+        this.log && console.log('\nC-MapboxGL / updateUrlPath  : ', '+ '.repeat(10) )
+        this.log && console.log('\nC-MapboxGL / updateUrlPath ... params : ', params )
+
+        for (let targetParams of params.targets) {
+          // 1 - get data for the update
+          targetParams.prop = params.prop
+          targetParams.propName = params.propName
+          targetParams.props = params.props
+
+          let value = this.getSourceData(targetParams, targetParams.from)
+          // this.log && console.log('C-MapboxGL / updateUrlPath ... value : ', value )
+
+          // 2 - then update value data in targetParams
+          let targetArgs = { ...targetParams.urlArgs }
+          targetArgs.value = value
+
+          // 2bis - set zoom and center params in url
+          targetArgs.zoom = this.getCurrentZoom().toFixed(2)
+          const currentCenter = this.getCurrentCenter() //
+          targetArgs.centerlng = currentCenter.lng.toFixed(4)
+          targetArgs.centerlat = currentCenter.lat.toFixed(4)
+
+          // 2ter - set highlighted polygons in url params
+          // this.log && console.log('C-MapboxGL / updateUrlPath ... this.selectedStateId : ', this.selectedStateId )
+          let selectedTranslated = []
+          for ( let key in this.selectedStateId ) {
+            selectedTranslated.push( `${key}:${this.selectedStateId[key]}` ) 
+          }
+          // this.log && console.log('C-MapboxGL / updateUrlPath ... selectedTranslated : ', selectedTranslated )
+          targetArgs.selected = selectedTranslated
+
+          // 3 - update url path
+          // this.log && console.log('C-MapboxGL / updateUrlPath ... targetArgs : ', targetArgs )
+          const routePath = this.$route.path
+          let paramsString = objectToUrlParams(targetArgs)
+          const routeIdString = this.queryRouteId ? `routeId=${this.queryRouteId}` : undefined
+          if (routeIdString) {
+            paramsString = routeIdString + '&' + paramsString
+          }
+          // this.log && console.log('C-MapboxGL / updateUrlPath ... paramsString : ', paramsString )
+
+          this.$store.commit('setRouteParams', paramsString)
+          history.pushState(
+            {},
+            null,
+            routePath + '?' + paramsString
+          )
+        }
       }
     },
 
@@ -787,6 +846,24 @@ export default {
 
     // ZOOM FUNCTIONS
 
+    fit(geojson) {
+      // let mapbox = this.map
+      let mapbox = _map
+      var _bbox = bbox(geojson)
+      let options = { padding: 20, animate: true }
+      mapbox.fitBounds(_bbox, options)
+    },
+    flyTo(center, zoom, convertToLngLat=false) {
+      let mapbox = _map
+      // this.log && console.log('C-MapboxGL / flyTo ... center : ', center )
+      // this.log && console.log('C-MapboxGL / flyTo ... zoom : ', zoom )
+      if (zoom > 0 && center) {
+        mapbox.flyTo({
+          center: center,
+          zoom: zoom,
+        })
+      }
+    },
     goToPolygon(params) {
       // this.log && console.log("\nC-MapboxGL / goToPolygon ... params : ", params )
       let isFnInZoomRange = this.isInZoomRange(params.zoomRange)
@@ -797,46 +874,21 @@ export default {
           features: [geodata],
         }
         this.fit(data)
-        // if (this.isMobileWidth){
-        // let currentZoom = this.getCurrentZoom()
-        // mapbox.flyTo( {zoom : 9} )
-        // }
       }
     },
-
-    fit(geojson) {
-      // let mapbox = this.map
-      let mapbox = _map
-      var _bbox = bbox(geojson)
-      let options = { padding: 20, animate: true }
-      mapbox.fitBounds(_bbox, options)
-    },
-
     resetZoom() {
-      // this.log && console.log("\nC-MapboxGL / resetZoom ... " )
-      // let mapbox = this.map
-      let mapbox = _map
-      mapbox.flyTo({
-        center: this.originalCenter,
-        zoom: this.originalZoom,
-      })
+      this.log && console.log("\nC-MapboxGL / resetZoom ... " )
+      this.flyTo(this.originalCenter, this.originalZoom)
     },
 
     // HIGHLIGHTS FUNCTIONS
 
     toggleHighlightOn(event, source) {
       // this.log && console.log("\nC-MapboxGL / toggleHighlightOn ... " )
-      // let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
-      // if ( isFnInZoomRange ){
       // let mapbox = this.map
       let mapbox = _map
       const canvas = mapbox.getCanvas()
       canvas.style.cursor = "pointer"
-      // this.log &&
-      //   console.log(
-      //     "C-MapboxGL / toggleHighlightOn / event.features : ",
-      //     event.features
-      //   )
       if (event.features.length > 0) {
         if (this.hoveredStateId[source]) {
           mapbox.setFeatureState(
@@ -850,11 +902,8 @@ export default {
           { hover: true }
         )
       }
-      // }
     },
     toggleHighlightOff(event, source) {
-      // let isFnInZoomRange = this.isInZoomRange( params.zoomRange )
-      // if ( isFnInZoomRange ){
       // let mapbox = this.map
       let mapbox = _map
       const canvas = mapbox.getCanvas()
@@ -865,40 +914,47 @@ export default {
           { hover: false }
         )
       }
-      // }
     },
 
-    toggleSelectedOn(event, source) {
+    // SELECTED POLYGONS
+    resetAllSelected() {
+      this.log && console.log('C-MapboxGL / resetAllSelected ... this.selectedStateId : ', this.selectedStateId )
+      for (let source in this.selectedStateId) {
+        let featureId = this.selectedStateId[source]
+        this.resetSelectedPolygons(source, featureId)
+      }
+      this.selectedStateId = {}
+    },
+    resetSelectedPolygons(source, featureId) {
       let mapbox = _map
-      // const canvas = mapbox.getCanvas()
-      // canvas.style.cursor = 'pointer'
-      // this.log &&
-      //   console.log(
-      //     "C-MapboxGL / toggleSelectedOn / event.features : ",
-      //     event.features
-      //   )
-      if (event.features.length > 0) {
-        if (this.selectedStateId[source]) {
-          mapbox.setFeatureState(
-            { source, id: this.selectedStateId[source] },
-            { selected: false }
-          ) // clean all sources to prevent error
-        }
-        this.selectedStateId[source] = event.features[0].id
+      if (this.selectedStateId[source]) {
         mapbox.setFeatureState(
-          { source, id: this.selectedStateId[source] },
+          { source, id: featureId },
+          { selected: false }
+        ) // clean all sources to prevent error
+      }
+    },
+    setSelectedPolygons(selected) {
+      let mapbox = _map
+      // this.log && console.log('C-MapboxGL / setSelectedPolygons ... selected : ', selected )
+      for (let source in selected) {
+        const featureId = parseInt( selected[source] )
+        this.resetSelectedPolygons(source, featureId)
+        this.selectedStateId[source] = featureId
+        mapbox.setFeatureState(
+          { source, id: featureId },
           { selected: true }
         )
       }
     },
-    toggleAllSelectedOff(event, source) {
+    toggleSelectedOn(event, source) {
       let mapbox = _map
-      // const canvas = mapbox.getCanvas()
-      // canvas.style.cursor = ''
-      if (this.hoveredStateId[source] !== null) {
+      if (event.features.length > 0) {
+        this.resetSelectedPolygons(source, this.selectedStateId[source])
+        this.selectedStateId[source] = event.features[0].id
         mapbox.setFeatureState(
-          { source, id: this.hoveredStateId[source] },
-          { selected: false }
+          { source, id: this.selectedStateId[source] },
+          { selected: true }
         )
       }
     },
@@ -926,14 +982,13 @@ export default {
         }
       }
     },
-
     switchMapsDrawer() {
       this.drawerMapsOpen = !this.drawerMapsOpen
-    },
-
+    }
     // switchLegendDrawer(){
     //   this.drawerScalesOpen = !this.drawerScalesOpen
-    // },
+    // }
+
   },
 }
 </script>

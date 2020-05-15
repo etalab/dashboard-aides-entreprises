@@ -2,6 +2,7 @@
 .has-scrollbar {
   overflow-y: scroll !important;
 }
+
 </style>
 
 <template>
@@ -246,14 +247,6 @@ export default {
       // this.log && console.log("P-Homepage / handleResize ... sumNavbarsHeights : ", sumNavbarsHeights )
 
       let height = winHeight - sumNavbarsHeights
-
-      // let height = this.windowSize.height - this.navbarHeight
-      // if (
-      //   this.getCurrentNavbarFooter &&
-      //   this.getCurrentNavbarFooter.activated
-      // ) {
-      //   height = height - this.getCurrentNavbarFooter.height
-      // }
       return height
     },
 
