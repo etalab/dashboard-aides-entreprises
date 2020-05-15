@@ -329,7 +329,8 @@ export const configAppTexts = {
                       projetés au niveau départemental et régional avec une ventilation 
                       par secteur d'activité.
                       <br><br>
-                      Les données sous-jacentes sont mises à jour de manière hebdomadaires.
+                      Les données sous-jacentes sont mises à jour 
+                      de manière hebdomadaire.
                     `
                   },
                   fromUrl: {
