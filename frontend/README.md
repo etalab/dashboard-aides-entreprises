@@ -15,7 +15,16 @@
 
 ----------
 
-#### Version : v.1.xxx (beta)
+#### Documentation
+
+Check our brand new documentation website : 
+
+https://etalab.github.io/dashboard-aides-entreprises/
+
+
+----------
+
+#### Version : v.2.xxx (beta)
 
 - Check the [versions logs here](VERSIONS.md)
 
@@ -35,17 +44,14 @@
 
 ## Sites 
 
-
-#### - Prod 
-
-**live / prod** : https://aides-entreprises.data.gouv.fr/
+- **live / prod** : https://aides-entreprises.data.gouv.fr/
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f09c4d46-99a4-4fdf-8c4a-34b38f4d6a26/deploy-status)](https://app.netlify.com/sites/aides-entreprises-covid19/deploys)
 
 
-#### - Preprod 
+<!-- #### - Preprod 
 
 **live / test** : https://covid-aides-entreprises.netlify.com
-[![Netlify Status](https://api.netlify.com/api/v1/badges/71e2942d-961b-4f06-8ac3-8dc73dceb6ee/deploy-status)](https://app.netlify.com/sites/covid-aides-entreprises/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/71e2942d-961b-4f06-8ac3-8dc73dceb6ee/deploy-status)](https://app.netlify.com/sites/covid-aides-entreprises/deploys) -->
 
 -----------
 

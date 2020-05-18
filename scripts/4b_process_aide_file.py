@@ -212,6 +212,7 @@ print("Fichier des siret non diffusibles enrichis sauvegardé ici : ../data/aide
 
 
 
+
 dfna = pd.read_csv("../data/aides/aides-na-api-"+daytoprocess+".csv", dtype={'siren':str,'Cde postal':str,'siret':str,'trancheeffectifsetablissement': str,'activiteprincipaleetablissement':str,'reg':str,'dep':str,'codecommuneetablissement':str,'categoriejuridiqueunitelegale':str})
 
 print("Loading communes")
@@ -225,12 +226,14 @@ print("Merging aide na avec communes")
 
 dfna2 = pd.merge(dfna,dfcom,on='codecommuneetablissement',how='left')
 
+
 dfna2 = dfna2[['Période', 'siren', 'Cde postal', 'Pays', 'Montant', 'Dev.', 
        'Date paiement', 'mois', 'volet', 'siret',
        'trancheeffectifsetablissement', 'etablissementsiege',
        'activiteprincipaleetablissement', 'etatadministratifetablissement',
        'enseigne1etablissement', 'reg_y', 'dep_y', 'codecommuneetablissement',
        'geo_adresse', 'geo_score', 'longitude', 'latitude','categoriejuridiqueunitelegale']]
+
 
 dfna2 = dfna2.rename(columns={'reg_y':'reg','dep_y':'dep'})
 
@@ -239,6 +242,8 @@ print("récupération des effectifs pour aide na")
 result3na = result3[result3['siret'].isna()]
 
 result3na = result3na[['siren','effectif_mars','classe_effectif']]
+
+result3na = result3na.drop_duplicates(keep='first')
 
 dfna3 = pd.merge(dfna2,result3na,on='siren',how='left')
 

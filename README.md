@@ -34,6 +34,38 @@ Le schéma ci-dessous représente l'architecture cible à date de l'application 
 ![Architecture](screenshots/architecture.png)
 
 
+-------------
+## Documentation 
+
+- Install ruby, Jekyll
+
+```bash
+gem install jekyll
+```
+
+---
+- Install setup 
+
+```bash
+gem install bundler
+bundle
+bundle install
+bundle update
+```
+
+---
+- Launch server 
+
+```bash
+bundle exec jekyll serve
+```
+
+... then check in your browser : 
+
+[`127.0.0.1:4000`](http://127.0.0.1:4000)
+
+----------
+
 
 [site_prod]: https://aides-entreprises.data.gouv.fr/
 [site_preprod]: https://covid-aides-entreprises.netlify.app

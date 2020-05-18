@@ -15,13 +15,13 @@ dffinal = pd.DataFrame(columns=['nombre', 'montant', 'code_section','code_depart
 for sheet in sheet_names:
     if(sheet != 'Récap'):
         df = xls_file.parse(sheet)
-        dfnaf = df[31:51]
+        dfnaf = df[26:47]
         dfnaf = dfnaf.rename(columns={dfnaf.columns[0]:"section_naf",dfnaf.columns[1]:"nombre",dfnaf.columns[3]:"montant"})
         dfnaf = dfnaf[['section_naf','nombre','montant']]
-        dfnaf['montant'] = dfnaf['montant'].apply(lambda x: x * 1000000)
+        dfnaf['montant'] = dfnaf['montant'].apply(lambda x: 0 if x == 'ND' else x * 1000000)
         dfnaf = dfnaf.reset_index()
         dfnaf = dfnaf.drop(columns={'index'})
-        sectioncode = "ABCDEFGHIJKLMNOPQRSZ"
+        sectioncode = "ABCDEFGHIJKLMNOPQRSZX"
         i = 0
         naf = []
         for index,row in dfnaf.iterrows():
@@ -29,11 +29,50 @@ for sheet in sheet_names:
             i = i +1
             naf.append(row)
         newdfnaf = pd.DataFrame(naf)
+        
+        newdfnaf
+        
+        totalnb = 0
+        totalm = 0
+        arr = []
+        for index,row in newdfnaf.iterrows():
+            if(row['nombre'] == 'ND'):
+                row['nombre'] = 0
+            if(row['nombre'] !=  row['nombre']):
+                row['nombre'] = 0
+            if(row['montant'] == 'ND'):
+                row['montant'] = 0
+            if(row['montant'] !=  row['montant']):
+                row['montant'] = 0
+            if(row['code_section'] != 'X'):
+                totalnb = totalnb + row['nombre']
+                totalm = totalm + row['montant']
+            arr.append(row)
+        newdfnaf = pd.DataFrame(arr)
+        
+        newdfnaf
+        
+        
+        if(newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['montant'] != newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['montant']):
+            newdfnaf.loc[newdfnaf['code_section'] == 'Z', "montant"] = 0
+        if(newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['nombre'] != newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['nombre']):
+            newdfnaf.loc[newdfnaf['code_section'] == 'Z', "nombre"] = 0
+        
+        newdfnaf.loc[newdfnaf['code_section'] == 'Z', "montant"] = newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['montant'] + newdfnaf[newdfnaf['code_section'] == 'X'].iloc[0]['montant'] - totalm
+        
+        
+        newdfnaf.loc[newdfnaf['code_section'] == 'Z', "nombre"] = newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['nombre'] + newdfnaf[newdfnaf['code_section'] == 'X'].iloc[0]['nombre'] - totalnb
+        
+        newdfnaf = newdfnaf[:-1]
+       
+        
         newdfnaf = newdfnaf[newdfnaf['nombre'].notna()]
         newdfnaf = newdfnaf.drop(columns={'section_naf'})
         newdfnaf['code_departement'] = sheet
+        
         newdfnaf
         dffinal = dffinal.append(newdfnaf, ignore_index=True)
+
 
 print("Clean dataframe")
 
@@ -57,24 +96,7 @@ dffinal = dffinal[['reg','dep','code_section','nombre','montant','last_update']]
 
 print("Remove info secret fiscal")
 
-dfinter = dffinal[dffinal['code_section'] != 'Z']
-
-dfgb = dfinter[dfinter['nombre'] < 3].groupby(['dep'], as_index=False).sum()
-
-dffinal2 = dffinal
-
-fin = []
-for index,row in dffinal.iterrows():
-    if(row['code_section'] == 'Z'):
-        for index2,row2 in dfgb.iterrows():
-            if(row['dep'] == row2['dep']):
-                row['nombre'] = row['nombre'] + row2['nombre']
-                row['montant'] = row['montant'] + row2['montant']
-    fin.append(row)
-
-dffin = pd.DataFrame(fin)
-
-dffin['nombre'] = dffin['nombre'].apply(lambda x: 0 if x < 3 else x)
+dffin = dffinal
 
 dffin = dffin[dffin['nombre'] != 0]
 

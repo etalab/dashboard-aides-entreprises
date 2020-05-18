@@ -5,8 +5,12 @@
 NUXT_ENV_RUN_MODE=dev
 NUXT_ENV_HOST=localhost
 NUXT_ENV_PORT_DEV=8000
-NUXT_ENV_APP_TITLE=Aides aux entreprises : fonds de solidarité
+NUXT_ENV_APP_TITLE=Aides aux entreprises
 
+### OVERRIDES
+NUXT_ENV_APP_IFRAME_OVERRIDE=no
+NUXT_ENV_APP_ROUTESTABS_OVERRIDE=no
+NUXT_ENV_APP_NOMAPSCROLL_OVERRIDE=no
 
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### LOCALES / i18n
@@ -19,7 +23,7 @@ NUXT_ENV_LANG_DEFAULT_LOCALES=fr:Français:fr-FR.js
 ### MATOMO STATS
 ### - - - - - - - - - - - - - - - - - - - - - ###
 NUXT_ENV_MATOMO_HOST=https://stats.data.gouv.fr
-NUXT_ENV_MATOMO_SITE_ID=127
+NUXT_ENV_MATOMO_SITE_ID=126
 
 
 ### - - - - - - - - - - - - - - - - - - - - - ###
@@ -43,10 +47,17 @@ NUXT_ENV_configAppRawData=configAppRawData.json
 NUXT_ENV_configAppNavbarFooters=configAppNavbarFooters.json
 NUXT_ENV_configAppGlobalButtons=configAppGlobalButtons.json
 
+### - - - - - - - - - - - - - - - - - - - - - ###
+### CONFIGS FROM ...
+### - - - - - - - - - - - - - - - - - - - - - ###
+NUXT_ENV_GENERATE_ROUTES=/fds,/pge,/reports
 
 ### - - - - - - - - - - - - - - - - - - - - - ###
 ### COLORS
 ### - - - - - - - - - - - - - - - - - - - - - ###
+NUXT_ENV_LOADING_COLOR=#d1335b
+NUXT_ENV_LOADING_HEIGHT=5
+
 NUXT_ENV_THEME_IS_DARK=false
 
 NUXT_ENV_THEME_LIGHT_primary=#000091
