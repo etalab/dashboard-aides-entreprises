@@ -55,35 +55,33 @@ sovereign:
 #     title: "main data flows"
 ---
 
------
-Apiviz can be deployed according to several configurations as follow...
 
+---------
+## Deployment in Netlify
+
+On Netlify, section `Build & deploy ` : 
+
+### in : `Continuous Deployment / Build settings`
+
+  ```bash
+  Repository : github.com/etalab/dashboard-aides-entreprises
+  Build command : npm run build
+  Publish directory : dist
+  ```
+
+### in : `Continuous Deployment / Deply contexts`
+
+  ```bash
+  Production branch : master
+  ```
+
+### in : `Environment / Environment variables `
+
+  ```bash
+  ### copy your variables from your .env file 
+  ```
 
 ---------
 
-
-## LEGENDS
-
-{% include gallery id="legends" caption="click to enlarge illustration" %}
-
-------
-
-## DEPLOYMENT CONFIGURATIONS
-
-### DEPLOYMENT AS FULL MUTUALIZED MICROSERVICES SYTEM
-
-{% include gallery id="paas" layout="half" caption="click to enlarge illustration" %}
-
-------
-
-### DEPLOYMENT AS FULL CLIENT SOVEREIGNETY ON SERVICES 
-
-
-{% include gallery id="sovereign" layout="half" caption="click to enlarge illustration" %}
-
-<!-- ------
-
-### ALL DEPLOYMENT OPTIONS
-
-
-{% include gallery id="alloptions" layout="half" caption="click to enlarge illustration" %} -->
+<br>
+<br>

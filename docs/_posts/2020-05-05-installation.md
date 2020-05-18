@@ -104,30 +104,6 @@ Try to lint and fix what could be :
 
 <br>
 
----------
-## Deployment 
-
-On Netlify, section `Build & deploy ` : 
-
-### in : `Continuous Deployment / Build settings`
-
-  ```bash
-  Repository : github.com/etalab/dashboard-aides-entreprises
-  Build command : npm run build
-  Publish directory : dist
-  ```
-
-### in : `Continuous Deployment / Deply contexts`
-
-  ```bash
-  Production branch : matser
-  ```
-
-### in : `Environment / Environment variables `
-
-  ```bash
-  ### copy your variables from your .env file 
-  ```
 
 ------------
 
