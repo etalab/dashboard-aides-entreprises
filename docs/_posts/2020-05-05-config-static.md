@@ -7,7 +7,6 @@ tags:
   - tutorial
   - configuration
   - installation
-  - internationalization
 toc: true
 toc_label: " contents"
 toc_sticky: true

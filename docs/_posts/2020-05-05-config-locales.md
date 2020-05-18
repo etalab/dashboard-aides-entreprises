@@ -21,6 +21,8 @@ toc_sticky: true
 
 You can set several languages for your ODAMAP instance. After having set in the `.env` file which languages you want to use, the files contained in the `frontend/locales` folder will allow you to translate the default fields of nuxt components (or new ones if you add some to your code).
 
+ODAMAP uses the [nuxt i18n](https://github.com/nuxt-community/nuxt-i18n) module to internationalize your instance.
+
 ### ODAMAP `frontend/locales` folder's location and structure
 
 ```shell
@@ -52,10 +54,10 @@ This is just a file which need to contain something like :
 
 This is a JSON file which need to contain the field / nested fields of the texts i18n will translate each time it will be activated in a nuxt component.
 
-For instance when you'll cross :
+For instance when in a vue component you'll cross :
 
-```js
-  {{ $t('my.nested.field', locale) }}
+```vue
+$t('my.nested.field', locale)
 ```
 
 It will fetch the value in your JSON locale file `<LOCALE>.json`:

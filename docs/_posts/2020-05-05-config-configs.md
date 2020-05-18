@@ -7,7 +7,6 @@ tags:
   - tutorial
   - configuration
   - installation
-  - internationalization
 toc: true
 toc_label: " contents"
 toc_sticky: true
@@ -57,57 +56,64 @@ frontend
 
 ```
 
--------
 
-## The `frontend/configs/dev` files
+------
 
-
-### Charts
+## Charts
 
 The `appConfigCharts.js` file manages the Charts you will need to display in your instance.
 
+------
 
-### Data
+## Data
 
 The `appConfigData.js` file manages the Data you will need to display in your instance.
 
+------
 
-### GlobalButtons
+## GlobalButtons
 
 The `appConfigGlobalButtons.js` file manages the GlobalButtons you will need to display in your instance.
 
+------
 
-### Map
+## Map
 
 The `appConfigMap.js` file manages the Map you will need to display in your instance.
 
+------
 
-### NavbarFooters
+## NavbarFooters
 
 The `appConfigNavbarFooters.js` file manages the NavbarFooters you will need to display in your instance.
 
+------
 
-### RawData
+## RawData
 
 The `appConfigRawData.js` file manages the RawData you will need to display in your instance.
 
+------
 
-### Routes
+## Routes
 
 The `appConfigRoutes.js` file manages the Routes you will need to display in your instance.
 
+------
 
-### Tables
+## Tables
 
 The `appConfigTables.js` file manages the Tables you will need to display in your instance.
 
+------
 
-### Texts
+## Texts
 
 The `appConfigTexts.js` file manages the Texts you will need to display in your instance.
 
+------
 
-### UIUX
+## UIUX
 
 The `appConfigUIUX.js` file manages the UIUX you will need to display in your instance.
 

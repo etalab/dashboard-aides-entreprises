@@ -24,10 +24,11 @@ The `.env` file manages the first level of customization. It allows you to overr
 
 Those variables are loaded indirectly in `nuxt.config.js`, via the `nuxt_loadConfigs_fromJS.js` file, and then pass through several processes : 
 
-- they are stored in `process.env.CONFIG_APP`, to be usable in the vuex store ;
+- they have an influence on how configs JSON files are produced. More on that topic [here](/configuration/config-configs) ;
+- they are stored in `process.env.CONFIG_APP`, to be usable in the vuex store later on ;
 
 
-### The ODAMAP `.env` file location
+### The ODAMAP `.env`-related  files locations
 
 ```shell
 frontend
@@ -42,7 +43,6 @@ frontend
 ---------
 
 ## The `.env` file's structure
-
 
 ---
 ### Global variables
@@ -102,20 +102,22 @@ NUXT_ENV_MATOMO_SITE_ID=<YOUR ID NUMBER>
 ---
 ### Datasets variables / data files
 
-This part sets up where your datasets are loaded from
+This part sets up where your config files are loaded from if you want them to be loaded remotely.
+
+More on that topic [here](/configuration/config-configs)
 
 ```bash
-# NUXT_ENV_CONFIG_FROM : local_js_files (default | undefined) | local_json_files | distant_json_files (distant)
 NUXT_ENV_CONFIG_FROM=local_js_files
 NUXT_ENV_CONFIG_TO_JSON_FOLDER=aides-entreprises
 ```
 
----
-### Datasets variables / config files
+The `NUXT_ENV_CONFIG_FROM` variable can have one of the following values :
 
-This part sets up where your config files are loaded from if you want them to be loaded remotely.
+- `local_js_files`
+- `local_json_files`
+- `distant_json_files`
 
-More on that topic [here](/configuration/config-configs)
+Then map the config files : 
 
 ```bash
 ### ONLY FOR DISTANT FILES
