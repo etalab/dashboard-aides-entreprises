@@ -84,4 +84,13 @@ date : 26/04/2020
 -----------------
 date : 23/04/2020
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+- v.0 :
+  - first version (almost stable)
+=======
+- v.0 : first version (almost stable)
+>>>>>>> 535ca16e6c899d9f1548aed34dbac3cc40980f4b
+=======
 - v.1 : first version (almost stable)
+>>>>>>> 9a17f636977cae54a18a9bb3b452c281ccdba169

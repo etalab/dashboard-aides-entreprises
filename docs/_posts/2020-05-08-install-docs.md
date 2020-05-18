@@ -46,7 +46,6 @@ The documentation is produced with :
   <br>
 
   ```bash
-  cd docs
 
   bundle exec jekyll serve
   # or if you want to run the docs server on another port

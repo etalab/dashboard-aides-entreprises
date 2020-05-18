@@ -387,6 +387,8 @@ const COMMON_CLICK_EVENTS = {
 // MAIN MAPBOX COMPONENT SETTINGS
 // - - - - - - - - - - - - - - - - - - - - - //
 
+const FranceMetroBounds = [[-8, 40.0], [10.3, 52.0]]
+
 export const configAppMap = {
   help: 'this file contains the setup for the MapboxGL layout / component',
 
