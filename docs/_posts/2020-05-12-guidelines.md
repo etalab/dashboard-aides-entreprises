@@ -41,12 +41,12 @@ Please follow those rules when developping new features :
 - locally : create a new branch to work on your own feature(s) named like `mypseudo/mynewfeature`
 - before pushing your changes pull the remote `preprod` branch to be merged with your changes in `mypseudo/mynewfeature` branch (so to be sure the features you just developped are compatible with the checked/reviewed `develop` branch):
   >
-  ```bash
+  ```shell
   git pull origin preprod
   ```
 - then push your branch to the remote repo (github repo) : 
   > 
-  ```bash
+  ```shell
   git push origin <mypseudo/mynewfeature>
   ```
 - ask for a pull request on Github from `mypseudo/mynewfeature` to `develop`
