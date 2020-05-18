@@ -43,6 +43,14 @@ docs:
     children: 
       - title: "Configuration overview"
         url: /configuration/config-overview
+      - title: "Environment variables"
+        url: /configuration/config-envfile
+      - title: "Configuration files"
+        url: /configuration/config-configs
+      - title: "Static datasets"
+        url: /configuration/config-static
+      - title: "Locales"
+        url: /configuration/config-locales
 
   - title: Developers
     children:
