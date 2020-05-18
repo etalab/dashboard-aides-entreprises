@@ -25,43 +25,31 @@ docs:
         url: /general/overview
       - title: "Screenshots"
         url: /general/screenshots
-      # - title: "The Apiviz ecosystem"
-      #   url: /general/ecosystem
-      # - title: "Apiviz backend"
-      #   url: https://co-demos.github.io/apiviz-backend/
       - title: "Gallery"
         url: /general/gallery
-
-  # - title: Dataviz principles
-  #   children: 
-  #     - title: "Basis of a datavisualisation project"
-  #       url: /lexicon/basic-dataviz-project
-  #     - title: "Inter-operability"
-  #       url: /lexicon/third-services-integration
-  #     - title: "Apiviz data flows"
-  #       url: /lexicon/data-flows
 
   - title: Installation
     children:
       - title: "Installation walkthrough"
         url: /guide/installation
-      # - title: "Access the back-office"
-      #   url: /guide/backoffice
-      # - title: "Back-office tutorial"
-      #   url: /guide/backoffice-tuto
       - title: "Deployment configurations"
         url: /guide/deployment-configs
       - title: "Install the docs"
         url: /guide/install-docs
 
+  - title: Customization
+    children: 
+      - title: "Configuration overview"
+        url: /configuration/config-overview
+
   - title: Developers
     children:
+      - title: "Roadmaps"
+        url: /dev/roadmaps
       - title: "Stack"
         url: /dev/stack
       - title: "Contributing"
         url: /dev/contributing
-      - title: "Roadmaps"
-        url: /dev/roadmaps
       - title: "Guidelines"
         url: /dev/guidelines
 

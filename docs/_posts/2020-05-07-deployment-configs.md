@@ -57,11 +57,11 @@ sovereign:
 
 
 ---------
-## Deployment in Netlify
+## Deployment on Netlify
 
-On Netlify, section `Build & deploy ` : 
+### section `Build & deploy ` : 
 
-### in : `Continuous Deployment / Build settings`
+#### `Continuous Deployment / Build settings`
 
   ```bash
   Repository : github.com/etalab/dashboard-aides-entreprises
@@ -69,16 +69,16 @@ On Netlify, section `Build & deploy ` :
   Publish directory : dist
   ```
 
-### in : `Continuous Deployment / Deply contexts`
+#### `Continuous Deployment / Deply contexts`
 
   ```bash
   Production branch : master
   ```
 
-### in : `Environment / Environment variables `
+#### `Environment / Environment variables `
 
   ```bash
-  ### copy your variables from your .env file 
+  ### copy your variables from your .env file
   ```
 
 ---------
