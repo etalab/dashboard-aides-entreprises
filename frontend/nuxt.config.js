@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.2.0.8 - no map scroll parameter'
+const APP_VERSION = 'v.2.1.0 - adding docs'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...

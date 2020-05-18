@@ -9,9 +9,14 @@ Check our [project page on Github][kanban] to have a glimpse of our roadmap.
 
 You can also check the [wireframe document online][wireframe_slides] or the [wireframe document as pdf][wireframe_pdf] we are working on to have a more graphical approach on our roadmap. 
 
-[kanban]: https://github.com/etalab/dashboard-aides-entreprises/projects/1 
+[kanban]: https://github.com/etalab/dashboard-aides-entreprises/projects/2 
 [wireframe_slides]: https://docs.google.com/presentation/d/1j_0xaJzPIjmuDSQG-nNYzADad4pFaf8E3VBkggFu1FY/edit?usp=sharing
 [wireframe_pdf]: ../screenshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
+
+-----------------
+date : 18/05/2020
+
+- v.2.1.0 : adding docs
 
 -----------------
 date : 14/05/2020
