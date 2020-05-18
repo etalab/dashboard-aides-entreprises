@@ -1,7 +1,7 @@
 ---
 title : CHANGE LOG
 categories:
-  - meta
+  - general
 tags:
   - log
   - versions
@@ -14,7 +14,7 @@ toc_sticky: true
 
 ### Version 2
 
-- v.2.0.9 : adding docs
+- v.2.1.0 : adding docs
 - v.2.0.8 : no map scroll parameter in .env and/or url
 - v.2.0.7 : fix bug of color and zoom when switching datasets with url params
 - v.2.0.6 : store setup + zoom from url params

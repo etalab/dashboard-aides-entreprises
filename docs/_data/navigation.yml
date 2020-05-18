@@ -3,8 +3,8 @@ main:
     url: /general/overview
   - title: "Quickstart guide"
     url: /guide/installation
-  - title: "Blog"
-    url: /posts/
+  # - title: "Blog"
+  #   url: /posts/
   # - title: "Categories"
   #   url: /categories/
   # - title: "Tags"
@@ -27,12 +27,14 @@ docs:
         url: /general/screenshots
       - title: "Gallery"
         url: /general/gallery
+      - title: "Change log"
+        url: /general/changelog
 
   - title: Installation
     children:
       - title: "Installation walkthrough"
         url: /guide/installation
-      - title: "Deployment configurations"
+      - title: "Deployment"
         url: /guide/deployment-configs
       - title: "Install the docs"
         url: /guide/install-docs
@@ -44,6 +46,8 @@ docs:
 
   - title: Developers
     children:
+      - title: "Maintenance"
+        url: /dev/maintain
       - title: "Roadmaps"
         url: /dev/roadmaps
       - title: "Stack"
@@ -55,12 +59,8 @@ docs:
 
   - title: Meta
     children:
-      - title: "Maintenance"
-        url: /meta/maintain
       - title: "Credits"
         url: /meta/credits
-      - title: "Change log"
-        url: /meta/changelog
       - title: "License"
         url: /meta/license
 

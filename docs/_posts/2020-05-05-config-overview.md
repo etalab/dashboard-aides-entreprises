@@ -12,15 +12,23 @@ toc_label: " contents"
 toc_sticky: true
 ---
 
+
+-----
+## Modules
+
+### Frontend overview
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-architecture-01.png" alt="" %}
+
 --------
-## Configure your ODAMAP instance 
+
+## Configure your ODAMAP instance
 
 
-### The configuration folder
+### The config folders
 
 
 
-### The configuration files
+### The config files
 
 
 ------------

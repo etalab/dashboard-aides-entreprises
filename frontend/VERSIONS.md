@@ -16,7 +16,7 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 -----------------
 date : 18/05/2020
 
-- v.2.0.9 : adding docs
+- v.2.1.0 : adding docs
 
 -----------------
 date : 14/05/2020
