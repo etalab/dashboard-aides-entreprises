@@ -13,12 +13,10 @@ toc_sticky: true
 ---
 
 --------
-## Development 
 
+## Shortcut
 
-### Shortcut
-
-The quickest way to install and run ODAMAP on your computer
+Time is precious. The quickest way to install and run ODAMAP on your computer for development :
 
   ```shell
   ### clone the repository
@@ -33,13 +31,36 @@ The quickest way to install and run ODAMAP on your computer
   npm run dev
   ```
 
+  ... then open your browser and enter the following url
+  
+  ```http
+  http://localhost:8000
+  ````
+
 --------
 
-### Step-by-step
+## Step-by-step
 
-#### Create a `.env` file at the folder's root 
+Okay... you want to take your time, so let's unwrap the pack...
 
-You can create the `.env` file content based on the `.envExample` file : 
+### Clone the ODAMAP repository
+
+  ```shell
+  git clone https://github.com/etalab/dashboard-aides-entreprises.git
+  ```
+
+### Clone `.env` file
+
+  ```shell
+  cd frontend
+  cp .envExample .env
+  ```
+
+### Create a `.env` file at the folder's root 
+
+You can create/modify the `.env` file content based on the `.envExample` file :
+
+More on that topic [here](/configuration/config-envfile)
 
   ```shell
   ### MAIN 
@@ -60,20 +81,23 @@ You can create the `.env` file content based on the `.envExample` file :
   ### ETC...
   ```
 
-#### Build setup with Node/Nuxt
+### Install dependencies
 
 Note : this configuration needs Node previously installed on your computer/server
 
   ```bash
   # install dependencies
   npm install
+  ```
 
+### Run the app
+
+  ```bash
   # serve with hot reload at localhost:8000
   # get env vars from .env file
   npm run dev
   ```
 
-... then check in your browser : [`localhost:8000`](localhost:8000)
 
 Other options for deployment :
 
@@ -86,6 +110,14 @@ Other options for deployment :
   # generate static project
   npm run generate
   ```
+
+### Run in browser 
+
+... check in your browser at [`localhost:8000`](http://localhost:8000)
+
+-----
+
+## Development tools
 
 ### Linting
 

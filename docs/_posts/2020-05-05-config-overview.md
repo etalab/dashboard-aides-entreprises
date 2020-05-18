@@ -16,13 +16,13 @@ toc_sticky: true
 -----
 ## Modules
 
-### Frontend overview
+### Frontend modules overview
+
 {% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-architecture-01.png" alt="" %}
 
 --------
 
 ## Configure your ODAMAP instance
- 
 
 ### What you have to know
 
@@ -33,32 +33,32 @@ To configure your instance you need to differenciate the following folders in th
 As a developper you'll mainly have to use and modify :
 
 - `/frontend/.env` file
-- `/frontend/configs/dev` foldeer
+- `/frontend/configs/dev` folder
 - `/frontend/static/` folder
-
 
 ### ODAMAP folders structure
 
-```
+```shell
 frontend
 │   README.md
 │   VERSIONS.md
 │   .env
 │   .envExample
 │   nuxt.config.js
+│   nuxt_loadConfigs_fromJSjs
 │
 └─── ... <nuxt and vue folders>
 │
 └─── configs
 │   │
 │   └─── dev
-│   │   │ ... <config files in development / JS files>
+│   │   │ ... <config files development / JS files>
 │   │
 │   └─── examples
-│   │   │ ... <config files in development / JS files>
+│   │   │ ... <config files development / JS files>
 │   │
 │   └─── vectorStyles
-│       │ ... <vector styles files for development / JS files>
+│       │ ... <vector styles files development / JS files>
 │
 └─── locales
 │       │ ... <translation files>
@@ -66,7 +66,7 @@ frontend
 └─── static
     │
     └─── configs
-    │   │ ... <config files for production / JSON files>
+    │   │ ... <config files production / JSON files>
     │
     └─── datasets
         │
@@ -77,6 +77,11 @@ frontend
             │ ... <your data as JSON>
 
 ```
+
+### The URL parameters
+
+- To know more about the URL parameters you can use [click here](/configuration/config-url-params)
+
 
 ### The config files
 

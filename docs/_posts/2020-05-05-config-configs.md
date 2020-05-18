@@ -19,15 +19,26 @@ toc_sticky: true
  
 ### What you have to know
 
-Your ODAMAP instance is fully configurable. So you can change either the texts, the translation, the data you want to display, the routes you want for your website, etc...
+The `.env` file manages the first level of customization. It allows you to override some parameters, set the running mode of your app, set some default colors, set the languages you want, etc...
+
+Those variables are loaded indirectly in `nuxt.config.js`, via the `nuxt_loadConfigs_fromJS.js` file, and then pass through several processes : 
+
+- each `.js`config file is translated into a `.json` file and copied in `/frontend/static/configs/` folder ;
+- they are stored in `process.env.CONFIG_APP`, to be usable in the vuex store ;
+
 
 ### ODAMAP folders structure
 
-```
+```shell
 frontend
 │   README.md
 │   .env
 │   nuxt.config.js
+│
+└─── static
+│   │
+│   └─── configs
+│       │ ... <config files production / JSON files>
 │
 └─── configs
     │

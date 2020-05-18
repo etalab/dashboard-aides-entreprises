@@ -23,15 +23,15 @@ You can set several languages for your ODAMAP instance. After having set in the 
 
 ### ODAMAP `frontend/locales` folder's location and structure
 
-```
+```shell
 frontend
 │   README.md
 │   .env
 │   nuxt.config.js
 │
 └─── locales
-│   │ ... <locale-LOCALE>.js
-│   │ ... <LOCALE>.json
+    │ ... <locale-LOCALE>.js
+    │ ... <LOCALE>.json
 
 ```
 

@@ -1,5 +1,5 @@
 ---
-title : CONFIGURE YOUR ENVIRONMENT VARIIABLES
+title : CONFIGURE YOUR ENVIRONMENT VARIABLES
 categories:
   - configuration
 tags:
@@ -22,15 +22,20 @@ toc_sticky: true
 
 The `.env` file manages the first level of customization. It allows you to override some parameters, set the running mode of your app, set some default colors, set the languages you want, etc...
 
+Those variables are loaded indirectly in `nuxt.config.js`, via the `nuxt_loadConfigs_fromJS.js` file, and then pass through several processes : 
+
+- they are stored in `process.env.CONFIG_APP`, to be usable in the vuex store ;
+
 
 ### The ODAMAP `.env` file location
 
-```
+```shell
 frontend
 │   README.md
 │   .env
 │   .envExample
 │   nuxt.config.js
+│   nuxt_loadConfigs_fromJSjs
 
 ```
 
@@ -39,58 +44,80 @@ frontend
 ## The `.env` file's structure
 
 
+---
 ### Global variables
 
-```env
-### - - - - - - - - - - - - - - - - - - - - - ###
-### GLOBAL ENV VARS
-### - - - - - - - - - - - - - - - - - - - - - ###
-# NUXT_ENV_RUN_MODE : dev | preprod | prod
+To choose the running mode, the port, the host... 
+
+```bash
 NUXT_ENV_RUN_MODE=dev
 NUXT_ENV_HOST=localhost
 NUXT_ENV_PORT_DEV=8000
 NUXT_ENV_APP_TITLE=Aides aux entreprises
 ```
 
+The `NUXT_ENV_RUN_MODE` can have the following values :
+
+- `dev`
+- `preprod`
+- `prod`
+
+---
 ### Overrides variables
 
-```env
-### OVERRIDES
+Overrides the following url's parameters : `iframe`, `noroutetabs`, `nomapscroll`
+
+See more on that topic [here](/configuration/config-url-params)
+
+```bash
 NUXT_ENV_APP_IFRAME_OVERRIDE=no
 NUXT_ENV_APP_ROUTESTABS_OVERRIDE=no
 NUXT_ENV_APP_NOMAPSCROLL_OVERRIDE=no
 ```
 
+---
 ### Locales variables
 
-```env
-### - - - - - - - - - - - - - - - - - - - - - ###
-### LOCALES / i18n
-### - - - - - - - - - - - - - - - - - - - - - ###
+Set the languages your app will use and specify the JSON translation files you'll need to load.
+
+See more on that topic [here](/configuration/config-locales)
+
+```bash
 NUXT_ENV_LANG_DEFAULT_LOCALE=fr
 NUXT_ENV_LANG_DEFAULT_LOCALES=fr:Français:fr-FR.js
 ```
 
+---
 ### Metrics variables
 
-```env
-### - - - - - - - - - - - - - - - - - - - - - ###
-### MATOMO STATS
-### - - - - - - - - - - - - - - - - - - - - - ###
-NUXT_ENV_MATOMO_HOST=https://stats.data.gouv.fr
-NUXT_ENV_MATOMO_SITE_ID=126
+For now it only uses Matomo framework for metrics.
+
+Check [Matomo documentation](https://matomo.org/) for more infos.
+
+```bash
+NUXT_ENV_MATOMO_HOST=<YOUR MATOMO METRICS SERVER/DOMAIN/URL>
+NUXT_ENV_MATOMO_SITE_ID=<YOUR ID NUMBER>
 ```
 
-### Datasets variables
+---
+### Datasets variables / data files
 
-```env
-### - - - - - - - - - - - - - - - - - - - - - ###
-### CONFIGS FROM ...
-### - - - - - - - - - - - - - - - - - - - - - ###
+This part sets up where your datasets are loaded from
+
+```bash
 # NUXT_ENV_CONFIG_FROM : local_js_files (default | undefined) | local_json_files | distant_json_files (distant)
 NUXT_ENV_CONFIG_FROM=local_js_files
 NUXT_ENV_CONFIG_TO_JSON_FOLDER=aides-entreprises
+```
 
+---
+### Datasets variables / config files
+
+This part sets up where your config files are loaded from if you want them to be loaded remotely.
+
+More on that topic [here](/configuration/config-configs)
+
+```bash
 ### ONLY FOR DISTANT FILES
 NUXT_ENV_configs_URLBASE=https://raw.githubusercontent.com/co-demos/ODAMPA-configs/master/AIDES-ENTREPRISES/configs/json/
 NUXT_ENV_configAppUIUX=configAppUIUX.json
@@ -106,21 +133,21 @@ NUXT_ENV_configAppNavbarFooters=configAppNavbarFooters.json
 NUXT_ENV_configAppGlobalButtons=configAppGlobalButtons.json
 ```
 
+---
 ### Routes variables
 
-```env
-### - - - - - - - - - - - - - - - - - - - - - ###
-### GENERATE ROUTES
-### - - - - - - - - - - - - - - - - - - - - - ###
+This part details which routes you want to build at `npm run build` level, for instance for a deployment as SPA in Netlify. This part allows you to avoid any 404 error when deployed as SPA + build.
+
+```bash
 NUXT_ENV_GENERATE_ROUTES=/fds,/pge,/reports
 ```
 
+---
 ### Colors variables
 
-```env
-### - - - - - - - - - - - - - - - - - - - - - ###
-### COLORS
-### - - - - - - - - - - - - - - - - - - - - - ###
+Those variables will override default Vuetify themes colors. Check [Vuetify documentation](https://vuetifyjs.com/en/customization/theme/) for more infos...
+
+```bash
 NUXT_ENV_LOADING_COLOR=#d1335b
 NUXT_ENV_LOADING_HEIGHT=5
 

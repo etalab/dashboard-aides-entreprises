@@ -24,7 +24,7 @@ Your ODAMAP instance is fully configurable. So you can change either the texts, 
 
 ### ODAMAP `frontend/static` folder's structure
 
-```
+```shell
 frontend
 │   README.md
 │   .env
@@ -32,7 +32,7 @@ frontend
 └─── static
     │
     └─── configs
-    │   │ ... <config files for production / JSON files>
+    │   │ ... <config files production / JSON files>
     │
     └─── datasets
         │

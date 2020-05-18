@@ -43,6 +43,8 @@ docs:
     children: 
       - title: "Configuration overview"
         url: /configuration/config-overview
+      - title: "URL parameters"
+        url: /configuration/config-url-params
       - title: "Environment variables"
         url: /configuration/config-envfile
       - title: "Configuration files"
