@@ -24,15 +24,14 @@ The documentation is produced with :
 --------
 
 - Install ruby, Jekyll
-  <br>
 
   ```bash
   brew install ruby
   gem install jekyll
   ```
+<br>
 
 - Install setup (given the `Gemfile`, `Gemfile.lock` and `_config.yml` files)
-  <br>
 
   ```bash
   gem install bundler
@@ -40,21 +39,19 @@ The documentation is produced with :
   bundle install
   bundle update
   ```
+<br>
 
-
-- Launch Jekyll server 
-  <br>
+- Launch Jekyll server
 
   ```bash
-  cd docs
-
   bundle exec jekyll serve
+  
   # or if you want to run the docs server on another port
   bundle exec jekyll serve --port=4001
   ```
+<br>
 
-- then check in your browser : [`127.0.0.1:4000`](127.0.0.1:4000) 
-
+- then check in your browser : [`127.0.0.1:4000`](127.0.0.1:4000)
 
 ------------
 
