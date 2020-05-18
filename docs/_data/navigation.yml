@@ -14,39 +14,41 @@ main:
   # - title: "Collections"
   #   url: /collection-archive/
   - title: "Repo"
-    url: https://github.com/co-demos/apiviz-frontend
+    url: https://github.com/etalab/dashboard-aides-entreprises
 
 
 # documentation links
 docs:
-  - title: The Apiviz project
+  - title: The ODAMAP project
     children:
       - title: "Overview"
         url: /general/overview
       - title: "Screenshots"
         url: /general/screenshots
-      - title: "The Apiviz ecosystem"
-        url: /general/ecosystem
-      - title: "Apiviz backend"
-        url: https://co-demos.github.io/apiviz-backend/
+      # - title: "The Apiviz ecosystem"
+      #   url: /general/ecosystem
+      # - title: "Apiviz backend"
+      #   url: https://co-demos.github.io/apiviz-backend/
       - title: "Gallery"
         url: /general/gallery
-  - title: Dataviz principles
-    children: 
-      - title: "Basis of a datavisualisation project"
-        url: /lexicon/basic-dataviz-project
-      - title: "Inter-operability"
-        url: /lexicon/third-services-integration
-      - title: "Apiviz data flows"
-        url: /lexicon/data-flows
+
+  # - title: Dataviz principles
+  #   children: 
+  #     - title: "Basis of a datavisualisation project"
+  #       url: /lexicon/basic-dataviz-project
+  #     - title: "Inter-operability"
+  #       url: /lexicon/third-services-integration
+  #     - title: "Apiviz data flows"
+  #       url: /lexicon/data-flows
+
   - title: Installation
     children:
       - title: "Installation walkthrough"
         url: /guide/installation
-      - title: "Access the back-office"
-        url: /guide/backoffice
-      - title: "Back-office tutorial"
-        url: /guide/backoffice-tuto
+      # - title: "Access the back-office"
+      #   url: /guide/backoffice
+      # - title: "Back-office tutorial"
+      #   url: /guide/backoffice-tuto
       - title: "Deployment configurations"
         url: /guide/deployment-configs
       - title: "Install the docs"

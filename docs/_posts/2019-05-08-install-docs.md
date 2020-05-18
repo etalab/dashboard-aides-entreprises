@@ -24,32 +24,34 @@ The documentation is produced with :
 --------
 
 - Install ruby, Jekyll
+  <br>
 
-```bash
-brew install ruby
-gem install jekyll
-```
+  ```bash
+  brew install ruby
+  gem install jekyll
+  ```
 
 - Install setup (given the `Gemfile`, `Gemfile.lock` and `_config.yml` files)
+  <br>
 
-```bash
-gem install bundler
-bundle
-bundle install
-bundle update
-```
+  ```bash
+  gem install bundler
+  bundle
+  bundle install
+  bundle update
+  ```
 
 
 - Launch Jekyll server 
+  <br>
 
-```bash
-jekyll serve
+  ```bash
+  cd docs
 
-# or if you want to run the docs server on another port
-jekyll serve --port=4001
-```
+  bundle exec jekyll serve
+  # or if you want to run the docs server on another port
+  bundle exec jekyll serve --port=4001
+  ```
 
-... then check in your browser : 
-
-[`127.0.0.1:4000`](127.0.0.1:4000) 
+- then check in your browser : [`127.0.0.1:4000`](127.0.0.1:4000) 
 

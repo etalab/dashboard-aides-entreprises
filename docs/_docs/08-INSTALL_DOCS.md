@@ -35,6 +35,7 @@ bundle update
 - Launch server 
 
 ``` bash
+cd docs
 bundle exec jekyll serve
 ```
 

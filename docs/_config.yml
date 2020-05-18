@@ -19,14 +19,15 @@ logo : /static/logos/logo_apiviz_icon_15.png
 email: julien.paris@data.gouv.fr
 description: >- # this means to ignore newlines until "baseurl:"
   "official documentation for ODAMAP"
-twitter_username: jparis_py
-github_username: JulienParis
+twitter_username: Etalab
+github_username: Etalab
 repository: "etalab/dashboard-aides-entreprises"
 search: true 
 
 # Build settings
 markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes@4.19.1"
+
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -91,10 +92,10 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/jparis_py"
+      url: "https://twitter.com/Etalab"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/co-demos"
+      url: "https://github.com/etalab"
 
 collections: 
   docs:

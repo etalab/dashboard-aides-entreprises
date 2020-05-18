@@ -10,28 +10,79 @@ toc_label: " contents"
 toc_sticky: true
 ---
 
------
+-------------
+
+### Changelog
+
+-----------------
+date : 18/05/2020
+
+- v.2.0.9 : adding docs
+
+-----------------
+date : 14/05/2020
+
+- v.2.0.8 : no map scroll parameter in .env and/or url
+
+-----------------
+date : 13/05/2020
+
+- v.2.0.7 : fix bug of color and zoom when switching datasets with url params
+
+-----------------
+date : 12/05/2020
+
+- v.2.0.6 : store setup + zoom from url params
+- v.2.0.5 : url parameters for store preload
+- v.2.0.4 : custom color and behaviour for nuxt loading bar
+
+-----------------
+date : 11/05/2020
+
+- v.2.0.3 : fix max-height main window
+- v.2.0.2 : no tabs override from url param or env var
+- v.2.0.1 : pie chart & multiple charts
+
+-----------------
+date : 07/05/2020
+
+- v.2.0.0 : routes/tabs for several datasets
+
+-----------------
+date : 05-06/05/2020
+
+- v.1.14.1 : optimizing build => 
+  - geojson 1000m instead of 100m
+  - fonts from CDN instead of build
+  - analyzer in nuxt script : `nuxt run analyze`
+  - big linting with standardJS 
+  - fetch minified data instead of pretty jsons
+
+-----------------
+date : 04/05/2020
+
+- v.1.13.1 : fix bug coherent colors when rebuilding apexChart
+
+-----------------
+date : 28/04/2020
+
+- v.1.13 : iframing override from from [`.env` file](.envExample)
 
 
+-----------------
+date : 27/04/2020
 
-## features (2019-10-19)
+- v.1.12 : iframing parameter in url to hide navbar
+- v.1.11 : Matomo parameters injection from [`.env` file](.envExample)
 
-- Added export button on every view to get dataset as .csv file
-- Fixed dynamic CSS to implement primary color and others on every main element in views / nnavbar / buttons / etc...
-- Added ApexCharts component to complete dataviz views 
+-----------------
+date : 26/04/2020
 
-## features (2019-08-18)
+- v.1.10 : 
+  - ability to load config files from distant files
+  - can write config js files to json files in statics
 
-- Filters responsiveness
+-----------------
+date : 23/04/2020
 
-## features (2019-06-07)
-
-- Apiviz instance generator
-
-## features (2019-07-02)
-
-- More generic EndpointGenerator
-
-## v.0.1 alpha (2019-05-22)
-
-- First published version of Apiviz frontend as stand-alone nuxt project
+- v.1 : first version (almost stable)
