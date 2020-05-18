@@ -26,7 +26,8 @@ search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: "mmistakes/minimal-mistakes@4.19.1"
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Outputting
 permalink: /:categories/:title/
@@ -36,35 +37,22 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
-  - _docs
+  # - _docs
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-exclude:
+# exclude:
 #   - Gemfile
 #   - Gemfile.lock
-  # - node_modules
-  # - layouts
-  # - dist
-  # - components
-  # - configs
-  # - middleware
-  # - nginx
-  # - assets
-  # - pages
-  # - plugins
-  # - store
-  # - .nuxt
-
-  # - assets
+#   - node_modules
 #   - vendor/bundle/
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
 
-# Plugins (previously gems:)
 plugins:
+  - jekyll-remote-theme
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -86,7 +74,6 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/JulienParis"
-
 
 footer:
   links:
@@ -118,16 +105,16 @@ defaults:
         nav: "docs"
 
   # _docs
-  - scope:
-      path: "_docs"
-      type: docs
-    values:
-      layout: single
-      read_time: true
-      comments: true
-      share: true
-      sidebar:
-        nav: "docs"
+  # - scope:
+  #     path: "_docs"
+  #     type: docs
+  #   values:
+  #     layout: single
+  #     read_time: true
+  #     comments: true
+  #     share: true
+  #     sidebar:
+  #       nav: "docs"
 
   # _pages
   - scope:
