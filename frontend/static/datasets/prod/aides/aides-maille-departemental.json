@@ -3474,144 +3474,6 @@
     "nombre": "26816"
   }, 
   {
-    "dep": "28", 
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "7669926.00", 
-        "nombre": "5931"
-      }, 
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "4121953.00", 
-        "nombre": "2761"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "1947186.00", 
-        "nombre": "1326"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "195312.00", 
-        "nombre": "137"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "1114980.00", 
-        "nombre": "754"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "3552296.00", 
-        "nombre": "2372"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "1187544.00", 
-        "nombre": "775"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "271000.00", 
-        "nombre": "179"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "954709.00", 
-        "nombre": "702"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "19500.00", 
-        "nombre": "13"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "2678775.00", 
-        "nombre": "1971", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "2011898.00", 
-        "nombre": "1577", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "2204959.00", 
-        "nombre": "1526", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1639904.00", 
-        "nombre": "1108", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "1078991.00", 
-        "nombre": "796", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "903879.00", 
-        "nombre": "671", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "692245.00", 
-        "nombre": "521", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "576615.00", 
-        "nombre": "450", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "650565.00", 
-        "nombre": "447", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "558076.00", 
-        "nombre": "425", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "1402019.00", 
-        "nombre": "1038", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Eure-et-Loir", 
-    "montant": "14397926.00", 
-    "nombre": "10530"
-  }, 
-  {
     "dep": "06", 
     "kpi_categorie_juridique": [
       {
@@ -3748,6 +3610,144 @@
     "libelle": "Alpes-Maritimes", 
     "montant": "89847951.50", 
     "nombre": "65976"
+  }, 
+  {
+    "dep": "28", 
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "7669926.00", 
+        "nombre": "5931"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "4121953.00", 
+        "nombre": "2761"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1947186.00", 
+        "nombre": "1326"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "195312.00", 
+        "nombre": "137"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "1114980.00", 
+        "nombre": "754"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "3552296.00", 
+        "nombre": "2372"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "1187544.00", 
+        "nombre": "775"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "271000.00", 
+        "nombre": "179"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "954709.00", 
+        "nombre": "702"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "19500.00", 
+        "nombre": "13"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "2678775.00", 
+        "nombre": "1971", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "2011898.00", 
+        "nombre": "1577", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "2204959.00", 
+        "nombre": "1526", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1639904.00", 
+        "nombre": "1108", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "1078991.00", 
+        "nombre": "796", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "903879.00", 
+        "nombre": "671", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "692245.00", 
+        "nombre": "521", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "576615.00", 
+        "nombre": "450", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "650565.00", 
+        "nombre": "447", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "558076.00", 
+        "nombre": "425", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "1402019.00", 
+        "nombre": "1038", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Eure-et-Loir", 
+    "montant": "14397926.00", 
+    "nombre": "10530"
   }, 
   {
     "dep": "02", 
