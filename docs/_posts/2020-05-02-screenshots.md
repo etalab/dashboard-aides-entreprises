@@ -7,7 +7,6 @@ tags:
   - documentation
   - configuration
   - deployment
-  - ecosystem
 toc: true
 toc_label: " contents"
 toc_sticky: true
@@ -15,47 +14,22 @@ toc_sticky: true
 
 ------------
 
-## MAP VIEW 
-(Sonum client configuration)
+## DESKTOP VIEW 
 
-displays your geolocalized data, given your configuration set in backoffice
-
-{% include figure image_path="/documentation/screenshots/map-view-sonum-03.png" alt="map view" %}
+{% include figure image_path="/static/screenshots/odamap-desktop-01.png" alt="desktop view" %}
 
 
-------------
+## MOBILE VIEW 
 
-## HEATMAP VIEW 
-(Sonum client configuration)
+{% include figure image_path="/static/screenshots/odamap-mobile-02.png" alt="mobile view" %}
 
-(in development) geographical densities of points
 
-{% include figure image_path="/documentation/screenshots/heatmap-view-sonum-02.png" alt="map view" %}
+## AS IFRAME 
+
+{% include figure image_path="/static/screenshots/odamap-iframe-01.png" alt="iframe view" %}
+
 
 ------------
 
-## LIST VIEW 
-(APCIS client configuration)
-
-displays your data as a cards list, given your configuration set in backoffice
-
-{% include figure image_path="/documentation/screenshots/list-view-apcis-01.png" alt="map view" %}
-
-------------
-
-## DETAIL VIEW 
-(Sonum client configation)
-
-displays your data as a detailed pages, given your configuration set in backoffice
-
-{% include figure image_path="/documentation/screenshots/detail-view-sonum-01.png" alt="detail view" %}
-
-------------
-
-## ADMIN / BACKOFFICE 
-(in development)
-
-manage and modify your Apiviz' instance configuration from the back office
-
-{% include figure image_path="/documentation/screenshots/backoffice-sonum-06.png" alt="admin view" %}
-
+<br>
+<br>
