@@ -15,7 +15,7 @@ Pour faire fonctionner le backend, rendez-vous [ici](backend/README.md)
 
 Pour faire fonctionner le frontend, rendez-vous [ici](frontend/README.md)
 
-Pour accéder à la documentation du frontend rende-vous [ici](https://etalab.github.io/dashboard-aides-entreprises/)
+Pour accéder à la documentation du frontend rendez-vous [ici](https://etalab.github.io/dashboard-aides-entreprises/)
 
 
 ### Sites internet
