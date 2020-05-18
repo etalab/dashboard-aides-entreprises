@@ -1,0 +1,747 @@
+{
+  "help": "this file contains the setup for the MapboxGL layout / component",
+  "settingsIds": [
+    {
+      "id": "map-base",
+      "isActivated": true,
+      "titleI18n": "maps.map01.title",
+      "map_options": {
+        "mapStyle": "EtalabUrl",
+        "center": [
+          46.2276,
+          2.2137
+        ],
+        "currentCenter": [
+          46.2276,
+          2.2137
+        ],
+        "zoom": 5,
+        "maxZoom": 18,
+        "minZoom": 2
+      },
+      "sizes": {
+        "desktop": {},
+        "mobile": {}
+      },
+      "sources": [
+        {
+          "id": "regions",
+          "help": "geojson des contours des régions",
+          "from": "url",
+          "url": "/datasets/geodata/regions-100m.geojson",
+          "type": "geojson",
+          "generateId": true,
+          "licence": "open licence",
+          "loadInStore": true,
+          "popupSettings": true
+        },
+        {
+          "id": "regions-aides",
+          "help": "montants des aides au niveau regional - as geojson from raw",
+          "from": "store",
+          "fromId": "regions-aides-raw",
+          "type": "geojson",
+          "generateId": true,
+          "needTransform": true,
+          "transformTo": {
+            "srcKey": "reg",
+            "geoCanvasId": "centers",
+            "canvasKey": {
+              "keyIsFieldName": true,
+              "canvasKeyPrefix": "REG-",
+              "canvasKeySuffix": ""
+            },
+            "properties": [
+              {
+                "propName": "montantMillions",
+                "itemField": "montant",
+                "needFormatting": true,
+                "format": [
+                  {
+                    "utilsFnName": "toMillionsOrElse",
+                    "params": {
+                      "divider": 1000000,
+                      "fixed": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "propName": "montant",
+                "itemField": "montant",
+                "needFormatting": true,
+                "format": [
+                  {
+                    "utilsFnName": "toFloat"
+                  }
+                ]
+              },
+              {
+                "propName": "nombre",
+                "itemField": "nombre"
+              }
+            ],
+            "geometry": {
+              "type": "Point"
+            }
+          },
+          "licence": ""
+        },
+        {
+          "id": "departements",
+          "help": "geojson des contours des départements",
+          "from": "url",
+          "url": "/datasets/geodata/departements-100m.geojson",
+          "type": "geojson",
+          "generateId": true,
+          "licence": "",
+          "loadInStore": true
+        },
+        {
+          "id": "departements-aides",
+          "help": "montants des aides au niveau départemental - as geojson from raw",
+          "from": "store",
+          "fromId": "departements-aides-raw",
+          "type": "geojson",
+          "generateId": false,
+          "needTransform": true,
+          "transformTo": {
+            "srcKey": "dep",
+            "geoCanvasId": "centers",
+            "canvasKey": {
+              "keyIsFieldName": true,
+              "canvasKeyPrefix": "DEP-",
+              "canvasKeySuffix": ""
+            },
+            "properties": [
+              {
+                "propName": "montantMillions",
+                "itemField": "montant",
+                "needFormatting": true,
+                "format": [
+                  {
+                    "utilsFnName": "toMillionsOrElse",
+                    "params": {
+                      "divider": 1000000,
+                      "fixed": 2
+                    }
+                  }
+                ]
+              },
+              {
+                "propName": "montant",
+                "itemField": "montant",
+                "needFormatting": true,
+                "format": [
+                  {
+                    "utilsFnName": "toFloat"
+                  }
+                ]
+              },
+              {
+                "propName": "nombre",
+                "itemField": "nombre"
+              }
+            ],
+            "geometry": {
+              "type": "Point"
+            }
+          },
+          "licence": ""
+        }
+      ],
+      "maps": [
+        {
+          "id": "map-aides-reg",
+          "name": "Carte aides par région",
+          "category": "regional",
+          "properties": "aides",
+          "data": "aides",
+          "layers": [
+            "regions-fill",
+            "regions-lines",
+            "regions-aides",
+            "regions-aides-montants"
+          ],
+          "clicEvents": [
+            {
+              "event": "click",
+              "layer": "regions-fill",
+              "functions": [
+                {
+                  "funcName": "toggleSelectedOn",
+                  "funcParams": {}
+                },
+                {
+                  "funcName": "goToPolygon",
+                  "funcParams": {
+                    "zoomRange": {
+                      "maxZoom": 8.3
+                    },
+                    "propName": "code"
+                  }
+                },
+                {
+                  "funcName": "updateDisplayedData",
+                  "funcParams": {
+                    "zoomRange": {
+                      "maxZoom": 5.2
+                    },
+                    "propName": "code",
+                    "targets": [
+                      {
+                        "from": "store",
+                        "fromPropKey": "code",
+                        "fromStoreData": "initData",
+                        "fromDatasetId": "taxo-regions",
+                        "fromDatasetKey": "reg",
+                        "fromDatasetField": "libelle",
+                        "targetSpecialStoreId": "levelname"
+                      },
+                      {
+                        "from": "store",
+                        "fromPropKey": "code",
+                        "fromStoreData": "initData",
+                        "fromDatasetId": "regions-aides-raw",
+                        "fromDatasetKey": "reg",
+                        "fromDatasetField": "nombre",
+                        "targetSpecialStoreId": "nombre"
+                      },
+                      {
+                        "from": "store",
+                        "fromPropKey": "code",
+                        "fromStoreData": "initData",
+                        "fromDatasetId": "regions-aides-raw",
+                        "fromDatasetKey": "reg",
+                        "fromDatasetField": "montant",
+                        "targetSpecialStoreId": "montant",
+                        "format": [
+                          {
+                            "utilsFnName": "toMillionsOrElse",
+                            "params": {
+                              "divider": 1000000,
+                              "fixed": 2
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "from": "store",
+                        "fromPropKey": "code",
+                        "fromStoreData": "initData",
+                        "fromDatasetId": "regions-aides-raw",
+                        "fromDatasetKey": "reg",
+                        "targetSpecialStoreId": "focusObject"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "funcName": "setChildrenPolygons",
+                  "funcParams": {
+                    "propName": "code",
+                    "zoomRange": {
+                      "maxZoom": 5.3
+                    },
+                    "targets": [
+                      {
+                        "targetSource": "departement",
+                        "targetPropName": "region"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "event": "mousemove",
+              "layer": "regions-fill",
+              "functions": [
+                {
+                  "funcName": "toggleHighlightOn",
+                  "funcParams": {}
+                }
+              ]
+            },
+            {
+              "event": "mouseleave",
+              "layer": "regions-fill",
+              "functions": [
+                {
+                  "funcName": "toggleHighlightOff",
+                  "funcParams": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "map-aides-dep",
+          "name": "Carte aides par departement",
+          "category": "departemental",
+          "properties": "aides",
+          "data": "aides",
+          "layers": [
+            "departements-fill",
+            "departements-lines",
+            "departements-aides",
+            "departements-aides-montants"
+          ],
+          "clicEvents": [
+            {
+              "event": "click",
+              "layer": "departements-fill",
+              "functions": [
+                {
+                  "funcName": "toggleSelectedOn",
+                  "funcParams": {
+                    "zoomRange": {
+                      "minZoom": 5.3
+                    }
+                  }
+                },
+                {
+                  "funcName": "updateDisplayedData",
+                  "funcParams": {
+                    "zoomRange": {
+                      "minZoom": 5.3
+                    },
+                    "propName": "code",
+                    "targets": [
+                      {
+                        "from": "store",
+                        "fromPropKey": "code",
+                        "fromStoreData": "initData",
+                        "fromDatasetId": "taxo-departements",
+                        "fromDatasetKey": "dep",
+                        "fromDatasetField": "libelle",
+                        "targetSpecialStoreId": "levelname"
+                      },
+                      {
+                        "from": "store",
+                        "fromPropKey": "code",
+                        "fromStoreData": "initData",
+                        "fromDatasetId": "departements-aides-raw",
+                        "fromDatasetKey": "dep",
+                        "fromDatasetField": "nombre",
+                        "targetSpecialStoreId": "nombre"
+                      },
+                      {
+                        "from": "store",
+                        "fromPropKey": "code",
+                        "fromStoreData": "initData",
+                        "fromDatasetId": "departements-aides-raw",
+                        "fromDatasetKey": "dep",
+                        "fromDatasetField": "montant",
+                        "targetSpecialStoreId": "montant",
+                        "format": [
+                          {
+                            "utilsFnName": "toMillionsOrElse",
+                            "params": {
+                              "divider": 1000000,
+                              "fixed": 2
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "from": "store",
+                        "fromPropKey": "code",
+                        "fromStoreData": "initData",
+                        "fromDatasetId": "departements-aides-raw",
+                        "fromDatasetKey": "dep",
+                        "targetSpecialStoreId": "focusObject"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "event": "mousemove",
+              "layer": "departements-fill",
+              "functions": [
+                {
+                  "funcName": "toggleHighlightOn",
+                  "funcParams": {}
+                }
+              ]
+            },
+            {
+              "event": "mouseleave",
+              "layer": "departements-fill",
+              "functions": [
+                {
+                  "funcName": "toggleHighlightOff",
+                  "funcParams": {}
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "layers": [
+        {
+          "id": "regions-fill",
+          "type": "fill",
+          "source": "regions",
+          "layout": {
+            "visibility": "visible"
+          },
+          "paint": {
+            "fill-color": [
+              "case",
+              [
+                "boolean",
+                [
+                  "feature-state",
+                  "selected"
+                ],
+                false
+              ],
+              "#572a99",
+              "#526781"
+            ],
+            "fill-outline-color": "#627BC1",
+            "fill-opacity": [
+              "case",
+              [
+                "boolean",
+                [
+                  "feature-state",
+                  "selected"
+                ],
+                [
+                  "feature-state",
+                  "hover"
+                ],
+                false
+              ],
+              0.15,
+              0
+            ]
+          }
+        },
+        {
+          "id": "regions-lines",
+          "type": "line",
+          "source": "regions",
+          "layout": {
+            "visibility": "visible"
+          },
+          "paint": {
+            "line-color": "#627BC1",
+            "line-width": 1
+          }
+        },
+        {
+          "id": "regions-aides",
+          "type": "circle",
+          "source": "regions-aides",
+          "layout": {
+            "visibility": "visible"
+          },
+          "maxzoom": 5.3,
+          "paint": {
+            "circle-opacity": 0.6,
+            "circle-color": "#7373FF",
+            "circle-radius": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "*",
+                [
+                  "sqrt",
+                  [
+                    "number",
+                    [
+                      "get",
+                      "montantMillions"
+                    ]
+                  ]
+                ],
+                6
+              ],
+              0,
+              10,
+              100,
+              60
+            ]
+          }
+        },
+        {
+          "id": "regions-aides-montants",
+          "type": "symbol",
+          "source": "regions-aides",
+          "layout": {
+            "visibility": "visible",
+            "text-field": "{montantMillions} M€",
+            "text-font": [
+              "Open Sans Regular"
+            ],
+            "text-size": 14
+          },
+          "maxzoom": 5.3
+        },
+        {
+          "id": "departements-fill",
+          "type": "fill",
+          "source": "departements",
+          "layout": {},
+          "paint": {
+            "fill-color": [
+              "case",
+              [
+                "boolean",
+                [
+                  "feature-state",
+                  "selected"
+                ],
+                false
+              ],
+              "#572a99",
+              "#526781"
+            ],
+            "fill-outline-color": "#627BC1",
+            "fill-opacity": [
+              "case",
+              [
+                "boolean",
+                [
+                  "feature-state",
+                  "selected"
+                ],
+                [
+                  "feature-state",
+                  "hover"
+                ],
+                false
+              ],
+              0.35,
+              0
+            ]
+          },
+          "minzoom": 5.3
+        },
+        {
+          "id": "departements-lines",
+          "type": "line",
+          "source": "departements",
+          "layout": {},
+          "paint": {
+            "line-color": "#6c87ab",
+            "line-width": 1,
+            "line-dasharray": [
+              2,
+              3
+            ]
+          },
+          "minzoom": 5.3
+        },
+        {
+          "id": "departements-aides",
+          "type": "circle",
+          "source": "departements-aides",
+          "layout": {},
+          "paint": {
+            "circle-opacity": 0.6,
+            "circle-color": "#7373FF",
+            "circle-radius": [
+              "interpolate",
+              [
+                "linear"
+              ],
+              [
+                "*",
+                [
+                  "sqrt",
+                  [
+                    "number",
+                    [
+                      "get",
+                      "montantMillions"
+                    ]
+                  ]
+                ],
+                6
+              ],
+              0,
+              10,
+              100,
+              60
+            ]
+          },
+          "minzoom": 5.3
+        },
+        {
+          "id": "departements-aides-montants",
+          "type": "symbol",
+          "source": "departements-aides",
+          "layout": {
+            "text-field": "{montantMillions} M€",
+            "text-font": [
+              "Open Sans Regular"
+            ],
+            "text-size": 14
+          },
+          "minzoom": 5.3
+        }
+      ],
+      "maps_visibility": {
+        "title": {
+          "fr": "calques"
+        },
+        "is_activated": false,
+        "is_drawer_open": true,
+        "map_switches": [
+          {
+            "id": "regions",
+            "mapId": "map-aides-reg",
+            "label": {
+              "fr": "régions"
+            },
+            "default_visible": true
+          },
+          {
+            "id": "departements",
+            "mapId": "map-aides-dep",
+            "label": {
+              "fr": "départements"
+            },
+            "default_visible": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "map-france-metro",
+      "isActivated": true,
+      "titleI18n": "maps.map01.title",
+      "map_options": {
+        "mapStyle": "EtalabUrl",
+        "center": [
+          46.2276,
+          2.2137
+        ],
+        "currentCenter": [
+          46.2276,
+          2.2137
+        ],
+        "zoom": 4.8,
+        "maxZoom": 9.5,
+        "minZoom": 2
+      },
+      "copySettingsFrom": [
+        {
+          "copyFromId": "map-base",
+          "fieldsToCopy": [
+            "sizes",
+            "sources",
+            "notShownFor",
+            "maps",
+            "layers",
+            "maps_visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "map-guyane",
+      "isActivated": true,
+      "titleI18n": "maps.map01.title",
+      "map_options": {
+        "mapStyle": "EtalabUrl",
+        "center": [
+          46.2276,
+          2.2137
+        ],
+        "currentCenter": [
+          46.2276,
+          2.2137
+        ],
+        "zoom": 5,
+        "maxZoom": 18,
+        "minZoom": 2
+      },
+      "maps_visibility": {
+        "is_activated": false
+      },
+      "copySettingsFrom": [
+        {
+          "copyFromId": "map-base",
+          "fieldsToCopy": [
+            "sources",
+            "maps",
+            "layers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "map-reunion",
+      "isActivated": true,
+      "titleI18n": "maps.map01.title",
+      "map_options": {
+        "mapStyle": "EtalabUrl",
+        "center": [
+          46.2276,
+          2.2137
+        ],
+        "currentCenter": [
+          46.2276,
+          2.2137
+        ],
+        "zoom": 5,
+        "maxZoom": 18,
+        "minZoom": 2
+      },
+      "maps_visibility": {
+        "is_activated": false
+      },
+      "copySettingsFrom": [
+        {
+          "copyFromId": "map-base",
+          "fieldsToCopy": [
+            "sources",
+            "maps",
+            "layers"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "map-autre",
+      "isActivated": true,
+      "titleI18n": "maps.map01.title",
+      "map_options": {
+        "mapStyle": "EtalabUrl",
+        "center": [
+          46.2276,
+          2.2137
+        ],
+        "currentCenter": [
+          46.2276,
+          2.2137
+        ],
+        "zoom": 5,
+        "maxZoom": 18,
+        "minZoom": 2
+      },
+      "maps_visibility": {
+        "is_activated": false
+      },
+      "copySettingsFrom": [
+        {
+          "copyFromId": "map-base",
+          "fieldsToCopy": [
+            "sources",
+            "maps",
+            "layers"
+          ]
+        }
+      ]
+    }
+  ]
+}

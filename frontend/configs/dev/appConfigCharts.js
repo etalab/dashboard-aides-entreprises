@@ -1,140 +1,435 @@
-const KEY_DIVISION_NAF = "division_naf"
-const KEY_DIVISION_NAF_LABEL = "libelle_division_naf"
+// const KEY_DIVISION_NAF = 'division_naf'
+// const KEY_DIVISION_NAF_LABEL = 'libelle_division_naf'
 
-const KEY_SECTION_NAF = "section_naf"
-const KEY_SECTION_NAF_LABEL = "libelle_section_naf"
+const KEY_MONTANT = 'montant'
+
+const KEY_SECTION_NAF = 'section_naf'
+const KEY_SECTION_NAF_LABEL = 'libelle_section_naf'
+
+const KEY_SECTION_EFFECTIF = 'classe_effectif'
+const KEY_SECTION_EFFECTIF_LABEL = 'libelle_classe_effectif'
+
+const KEY_SECTION_CATEGJUR = 'code_cat_juridique'
+const KEY_SECTION_CATEGJUR_LABEL = 'libelle_cat_juridique'
+
+const COMMON_SERIES_MAPPERS = {
+  NafByMontant: {
+    dataFromKey: KEY_MONTANT,
+    serieName: 'montant (M€)',
+    format: [
+      {
+        utilsFnName: 'toMillionsOrElse',
+        params: { divider: 1000000, fixed: 2 }
+      }
+    ],
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_MONTANT,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_NAF, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_NAF_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NAF,
+      matchWithDatasetId: 'taxo-nafs-colors',
+      matchKey: 'code_section',
+      getValueFromKey: 'color_section',
+      fallbackColor: '#808080'
+    }
+  },
+  EffectifByMontant: {
+    dataFromKey: KEY_MONTANT,
+    serieName: 'montant (M€)',
+    format: [
+      {
+        utilsFnName: 'toMillionsOrElse',
+        params: { divider: 1000000, fixed: 2 }
+      }
+    ],
+    sortDataSerieBy: undefined,
+    // sortDataSerieBy: {
+    //   sortByType: 'sortByFieldValue',
+    //   fieldName: KEY_MONTANT,
+    //   toNumber: true,
+    //   sortOrder: 'descending',
+    //   exceptions: {
+    //     putLast: { fieldName: KEY_SECTION_EFFECTIF, value: 'Autres' }
+    //   }
+    // },
+
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_EFFECTIF_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_EFFECTIF,
+      matchWithDatasetId: 'taxo-classes-effectifs',
+      matchKey: 'denomination',
+      getValueFromKey: 'color',
+      fallbackColor: '#808080'
+    }
+  },
+  CategjurByMontant: {
+    dataFromKey: KEY_MONTANT,
+    serieName: 'montant (M€)',
+    format: [
+      {
+        utilsFnName: 'toMillionsOrElse',
+        params: { divider: 1000000, fixed: 2 }
+      }
+    ],
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_MONTANT,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_CATEGJUR, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_CATEGJUR_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_CATEGJUR,
+      matchWithDatasetId: 'taxo-categ-juridiques',
+      matchKey: 'code',
+      getValueFromKey: 'color',
+      fallbackColor: '#808080'
+    }
+  },
+  CategjurByMontantPie: {
+    dataFromKey: KEY_MONTANT,
+    serieName: 'montant (M€)',
+    format: [
+      {
+        utilsFnName: 'toMillionsOrElse',
+        params: { divider: 1000000, fixed: 2 }
+      }
+    ],
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_MONTANT,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_CATEGJUR, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: false,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_CATEGJUR_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildLabels: true,
+    buildLabelsSettings: {
+      fromKey: KEY_SECTION_CATEGJUR_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: false,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_CATEGJUR,
+      matchWithDatasetId: 'taxo-categ-juridiques',
+      matchKey: 'code',
+      getValueFromKey: 'color',
+      fallbackColor: '#808080'
+    }
+  }
+}
+const COMMON_CHART_OPTIONS = {
+  categHorizH300: {
+    chart: {
+      type: 'bar',
+      height: '300px',
+      width: '390px',
+      toolbar: {
+        show: false
+      }
+    },
+    legend: {
+      show: false
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        distributed: true // nerd-pride....
+      }
+    },
+    theme: {
+      mode: 'light'
+    },
+
+    dataLabels: {
+      enabled: true
+    },
+
+    xaxis: {
+      type: 'category',
+      labels: {
+        show: false,
+        style: {
+          fontSize: '9px'
+        }
+      }
+    },
+
+    responsive: [
+      {
+        breakpoint: 960,
+        options: {
+          chart: {
+            // height: "370px",
+            width: '350px'
+          },
+          xaxis: {
+            type: 'numeric',
+            labels: {
+              show: false,
+              style: {
+                fontSize: '9px'
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  categHorizH390: {
+    chart: {
+      type: 'bar',
+      height: '390px',
+      width: '390px',
+      toolbar: {
+        show: false
+      }
+    },
+    legend: {
+      show: false
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        distributed: true // nerd-pride....
+      }
+    },
+    theme: {
+      mode: 'light'
+    },
+
+    dataLabels: {
+      enabled: true
+    },
+
+    xaxis: {
+      type: 'category',
+      labels: {
+        show: false,
+        style: {
+          fontSize: '9px'
+        }
+      }
+    },
+
+    responsive: [
+      {
+        breakpoint: 960,
+        options: {
+          chart: {
+            // height: "370px",
+            width: '350px'
+          },
+          xaxis: {
+            type: 'numeric',
+            labels: {
+              show: false,
+              style: {
+                fontSize: '9px'
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  categHorizH170: {
+    chart: {
+      type: 'bar',
+      height: '170px',
+      width: '390px',
+      toolbar: {
+        show: false
+      }
+    },
+    legend: {
+      show: false
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        distributed: true // nerd-pride....
+      }
+    },
+    theme: {
+      mode: 'light'
+    },
+
+    dataLabels: {
+      enabled: true
+    },
+
+    xaxis: {
+      type: 'category',
+      labels: {
+        show: false,
+        style: {
+          fontSize: '9px'
+        }
+      }
+    },
+
+    responsive: [
+      {
+        breakpoint: 960,
+        options: {
+          chart: {
+            // height: "370px",
+            width: '350px'
+          },
+          xaxis: {
+            type: 'numeric',
+            labels: {
+              show: false,
+              style: {
+                fontSize: '9px'
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  categPieH250: {
+    chart: {
+      type: 'donut',
+      height: '250px',
+      width: '390px',
+      toolbar: {
+        show: false
+      }
+    },
+    legend: {
+      position: 'bottom'
+    },
+    theme: {
+      palette: 'palette7',
+      mode: 'light'
+    },
+
+    dataLabels: {
+      enabled: true
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          size: '45%'
+        }
+      }
+    },
+    responsive: [
+      {
+        breakpoint: 960,
+        options: {
+          chart: {
+            // height: "370px",
+            width: '350px'
+          }
+        }
+      }
+    ]
+  }
+}
 
 export const configAppCharts = {
-  help: "this file contains the setup for the apex charts",
+  help: 'this file contains the setup for the apex charts',
 
   // CHARTS
 
   settingsIds: [
-    // TO DO
-    // CHARTS JS
-    { id: "chartjs-01", help: "APE chart", chartOptions: {} },
-
     // APEX CHARTS
+
+    // ============================================================= //
+    // HOME / FDS
+    // ============================================================= //
     // BAR HORIZ - APE X MONTANTS
     {
-      id: "apexchart-01",
-      serie_id: "stat-bar-horiz",
-      help: "bar horiz / kpi_top_10_naf X montant",
-      titleI18n: "charts.chart01.title",
+      id: 'apexchart-fds',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_naf X montant',
+      titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-        Top 10 des aides par 
-        <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
-          code section NAF</a>
-        (en M€) <br>
-      `,
+          Top 10 des aides du fonds de solidarité 
+          <br>
+          ventilées par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
+            code section NAF</a>
+          (en M€)
+          <br><br>
+        `
       },
-      chartTitleClass: "subtitle-2 text-center",
+      chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
-      titleSuffixSpecialStoreId: "levelname",
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
         after: true,
-        afterHideOnMobile: true,
+        afterHideOnMobile: true
       },
 
       datasetMappers: {
-        specialStoreId: "focusObject",
-        fromDatasetKey: "kpi_top_10_naf",
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_naf',
 
         seriesMappers: [
-          {
-            dataFromKey: "montant",
-            serieName: "montant (M€)",
-            format: [
-              {
-                utilsFnName: "toMillionsOrElse",
-                params: { divider: 1000000, fixed: 2 },
-              },
-            ],
-            sortDataSerieBy: {
-              sortByType: "sortByFieldValue",
-              fieldName: "montant",
-              toNumber: true,
-              sortOrder: "descending",
-              exceptions: {
-                putLast: { fieldName: KEY_SECTION_NAF, value: "Autres" },
-              },
-            },
-            buildAxisCategsX: true,
-            buildAxisCategsXsettings: {
-              fromKey: KEY_SECTION_NAF_LABEL,
-              splitBy: [",", ";"],
-            },
-          },
+          COMMON_SERIES_MAPPERS.NafByMontant
         ],
 
-        chartOptions: {
-          chart: {
-            type: "bar",
-            height: "390px",
-            width: "390px",
-            toolbar: {
-              show: false,
-            },
-          },
-          legend: {
-            show: false,
-          },
-          plotOptions: {
-            bar: {
-              horizontal: true,
-              distributed: true, // nerd-pride....
-            },
-          },
-          theme: {
-            mode: "light",
-            palette: "palette1", // upto palette10
-          },
-
-          dataLabels: {
-            enabled: true,
-          },
-
-          xaxis: {
-            type: "category",
-            labels: {
-              show: false,
-              style: {
-                fontSize: "9px",
-              },
-            },
-          },
-          // yaxis: {
-          //   labels: {
-          //     maxHeight: 180,
-          //   },
-          // },
-
-          responsive: [
-            {
-              breakpoint: 960,
-              options: {
-                chart: {
-                  // height: "370px",
-                  width: "350px",
-                },
-                xaxis: {
-                  type: "numeric",
-                  labels: {
-                    show: false,
-                    style: {
-                      fontSize: "9px",
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+      }
 
       // TO DO ...
 
@@ -150,32 +445,157 @@ export const configAppCharts = {
       //   sourceName : "...",
       // },
     },
-
-    // APEX CHARTS
-    // BAR VERTIC - APE X NOMBRES
+    // BAR HORIZ - CLASSE EFFECTIFS X MONTANTS
     {
-      id: "apexchart-01bis",
-      serie_id: "stat-bar-horiz",
-      help: "bar horiz / kpi_top_10_naf X montant",
-      titleI18n: "charts.chart01.title",
-      chartTitle: { fr: "Top 10 des aides par nombre de demandes <br>" },
-      chartTitleClass: "subtitle-2 text-center",
+      id: 'apexchart-fds-effectifs',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_categorie_juridique X montant',
+      titleI18n: 'charts.chart01.title',
+      // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/methodologie/effectifs-salaries.html">
+      chartTitle: {
+        fr: `
+          Aides du fonds de solidarité 
+          <br>
+          ventilées par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/1896448">
+            classes d'effectifs</a>
+          (en M€)<br>
+          <span class='font-weight-light'>
+            (uniquement entreprises affiliées au régime général)
+          </span>
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
 
       titlePreffixSpecialStoreId: undefined,
-      titleSuffixSpecialStoreId: "levelname",
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
 
       dividers: {
         before: false,
         after: true,
+        afterHideOnMobile: true
       },
 
       datasetMappers: {
-        specialStoreId: "focusObject",
-        fromDatasetKey: "kpi_top_10_naf",
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_classe_effectif',
+
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.EffectifByMontant
+        ],
+
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH300
+      }
+    },
+    // BAR HORIZ - CATEG JURIDIQUE X MONTANTS
+    {
+      id: 'apexchart-fds-categ-jur',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_categorie_juridique X montant',
+      titleI18n: 'charts.chart01.title',
+      // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
+      chartTitle: {
+        fr: `
+          Top 3 des aides du fonds de solidarité 
+          <br>
+          ventilées par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
+            catégories juridiques </a>a>
+          (en M€)
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_categorie_juridique',
+
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.CategjurByMontant
+        ],
+
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH170
+      }
+    },
+    // PIE - CATEG JURIDIQUE X MONTANTS
+    {
+      id: 'apexchart-fds-categ-jur-pie',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_categorie_juridique X montant',
+      titleI18n: 'charts.chart01.title',
+      // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
+      chartTitle: {
+        fr: `
+          Top 3 des aides du fonds de solidarité 
+          <br>
+          ventilées par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
+            catégories juridiques </a>
+          (en M€)
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center pb-4',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_categorie_juridique',
+
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.CategjurByMontantPie
+        ],
+
+        chartOptions: COMMON_CHART_OPTIONS.categPieH250
+      }
+    },
+    // BAR VERTIC - APE X NOMBRES
+    {
+      id: 'apexchart-01bis',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_naf X montant',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: { fr: 'Top 10 des aides par nombre de demandes <br>' },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_naf',
 
         seriesMappers: [
           {
-            dataFromKey: "nombre",
+            dataFromKey: 'nombre',
             serieName: "nombre d'aides",
             // format : [
             //   { utilsFnName : 'toMillionsOrElse',
@@ -183,157 +603,155 @@ export const configAppCharts = {
             //   },
             // ],
             sortDataSerieBy: {
-              sortByType: "sortByFieldValue",
-              fieldName: "nombre",
+              sortByType: 'sortByFieldValue',
+              fieldName: 'nombre',
               toNumber: true,
-              sortOrder: "descending",
+              sortOrder: 'descending',
               exceptions: {
-                putLast: { fieldName: KEY_SECTION_NAF, value: "Autres" },
-              },
+                putLast: { fieldName: KEY_SECTION_NAF, value: 'Autres' }
+              }
             },
             buildAxisCategsX: true,
             buildAxisCategsXsettings: {
-              fromKey: KEY_SECTION_NAF_LABEL,
-            },
-          },
+              fromKey: KEY_SECTION_NAF_LABEL
+            }
+          }
         ],
 
         chartOptions: {
           chart: {
-            type: "bar",
-            height: "700px",
-            width: "490px",
+            type: 'bar',
+            height: '700px',
+            width: '490px',
             toolbar: {
-              show: false,
-            },
+              show: false
+            }
           },
           legend: {
-            show: false,
+            show: false
           },
           plotOptions: {
             bar: {
               horizontal: false,
-              distributed: true, // nerd-pride....
-            },
+              distributed: true // nerd-pride....
+            }
           },
 
           theme: {
-            mode: "light",
-            palette: "palette2", // upto palette10
+            mode: 'light',
+            palette: 'palette2', // upto palette10
             monochrome: {
               enabled: true,
-              color: "#000091",
-              shadeTo: "light", //'light' | 'dark'
-              shadeIntensity: 0.65,
-            },
+              color: '#000091',
+              shadeTo: 'light', // 'light' | 'dark'
+              shadeIntensity: 0.65
+            }
           },
 
           dataLabels: {
             enabled: true,
             style: {
-              fontSize: "10px",
-            },
+              fontSize: '10px'
+            }
           },
 
           xaxis: {
-            type: "category",
+            type: 'category',
             labels: {
               show: true,
               rotate: -75,
-              maxHeight: 500,
-            },
-          },
-        },
-      },
+              maxHeight: 500
+            }
+          }
+        }
+      }
     },
 
-    // BAR VERTIC - SETTINGS EXAMPLE
+    // ============================================================= //
+    // PGE
+    // ============================================================= //
+    // BAR HORIZ - APE X MONTANTS
     {
-      id: "apexchart-02",
-      serie_id: "stat-bar-vertic",
-      help: "bar vertic + stacked example",
-      titleI18n: "charts.chart02.title",
+      id: 'apexchart-pge',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_naf X montant',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Top 10 des prêts garantis par l'Etat 
+          <br>
+          ventilés par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
+            code section NAF</a>
+          (en M€)
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
 
-      loadSeriesFrom: {
-        preload: false,
-        sourceType: "json", // json, api, local
-        sourceName: "...",
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
       },
 
-      loadCategoriesFrom: {
-        preload: false,
-        sourceType: "json", // json, api, local
-        sourceName: "...",
-      },
-
-      series: [
-        {
-          name: "PRODUCT A",
-          data: [44, 55, 41, 67, 22, 43],
-        },
-        {
-          name: "PRODUCT B",
-          data: [13, 23, 20, 8, 13, 27],
-        },
-        {
-          name: "PRODUCT C",
-          data: [11, 17, 15, 15, 21, 14],
-        },
-        {
-          name: "PRODUCT D",
-          data: [21, 7, 25, 13, 22, 8],
-        },
-      ],
-
-      chartOptions: {
-        chart: {
-          type: "bar",
-          height: 350,
-          width: 400,
-          stacked: true,
-          toolbar: {
-            show: true,
-          },
-          zoom: {
-            enabled: true,
-          },
-        },
-        responsive: [
-          {
-            breakpoint: 480,
-            options: {
-              legend: {
-                position: "bottom",
-                offsetX: -10,
-                offsetY: 0,
-              },
-            },
-          },
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_naf',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NafByMontant
         ],
-        plotOptions: {
-          bar: {
-            horizontal: false,
-          },
-        },
-        xaxis: {
-          type: "datetime",
-          categories: [
-            "01/01/2011 GMT",
-            "01/02/2011 GMT",
-            "01/03/2011 GMT",
-            "01/04/2011 GMT",
-            "01/05/2011 GMT",
-            "01/06/2011 GMT",
-          ],
-        },
-        legend: {
-          position: "right",
-          offsetY: 40,
-        },
-        fill: {
-          opacity: 1,
-        },
-      },
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+      }
+
     },
-  ],
+
+    // ============================================================= //
+    // REPORT
+    // ============================================================= //
+    // BAR HORIZ - APE X MONTANTS
+    {
+      id: 'apexchart-report',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_naf X montant',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Top 10 des reports d'échéances fiscales 
+          <br>
+          ventilés par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
+            code section NAF</a>
+          (en M€)
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_naf',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NafByMontant
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+      }
+
+    }
+
+  ]
 }

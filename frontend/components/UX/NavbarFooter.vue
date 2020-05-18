@@ -6,41 +6,42 @@
 </style>
 
 <template>
-  <!-- <div v-if="getCurrentNavbarFooter" :class="`odm-navbar odm-navbar-footer`"> -->
-    <!-- v-show="getCurrentNavbarFooter && getCurrentNavbarFooter.activated" -->
-    <v-footer
-      v-if="getCurrentNavbarFooter && showCurrentNavbarFooter"
-      class="pa-0"
-      fixed
+  <v-footer
+    v-if="getCurrentNavbarFooter && showCurrentNavbarFooter"
+    class="pa-0"
+    fixed
+  >
+    <v-bottom-navigation
+      :id="`navbar-footer-${settings.id}`"
+      :class="`odm-navbar odm-navbar-footer ${settings.navbarFooterClass}`"
+      :trigger="`${trigger}`"
+      :value="bottomNav"
+      :grow="navbarFooterConfig.grow"
+      :height="navbarFooterConfig.height"
+      :shift="navbarFooterConfig.shift"
+      color="primary"
+      :triggerResetNavbarFooter="`${triggerResetNavbarFooter}`"
     >
-      <v-bottom-navigation
-        :id="`navbar-footer-${settings.id}`"
-        :class="`odm-navbar odm-navbar-footer ${settings.navbarFooterClass}`"
-        :trigger="`${trigger}`"
-        :value="bottomNav"
-        :grow="navbarFooterConfig.grow"
-        :height="navbarFooterConfig.height"
-        :shift="navbarFooterConfig.shift"
-        color="primary"
-      >
-        <!-- {{ showCurrentNavbarFooter }} -->
+      <!-- {{ showCurrentNavbarFooter }} -->
+      <!-- {{ triggerResetNavbarFooter }} / {{ bottomNav }} -->
 
-        <v-btn
-          v-for="btn in navbarFooterConfig.buttons"
-          :key="btn.value"
-          :value="btn.value"
-          @click.stop="goToRef(btn)"
-        >
-          <span>
-            {{ btn.title[locale] }}
-          </span>
-          <v-icon>
-            {{ btn.icon }}
-          </v-icon>
-        </v-btn>
-      </v-bottom-navigation>
-    </v-footer>
-  <!-- </div> -->
+      <v-btn
+        v-for="btn in navbarFooterConfig.buttons"
+        :key="btn.value"
+        :value="btn.value"
+        @click.stop="goToRef(btn)"
+      >
+        <span>
+          {{ btn.title[locale] }}
+        </span>
+
+        <v-icon>
+          {{ btn.icon }}
+        </v-icon>
+
+      </v-btn>
+    </v-bottom-navigation>
+  </v-footer>
 </template>
 
 <script>
@@ -59,17 +60,10 @@ export default {
       navbarFooterConfig: undefined,
       bottomNav: undefined,
 
-      // type: 'number',
-      // number: 9999,
-      // selector: '#scroll-with-options',
-      // selected: 'Button',
-      // elements: ['Button', 'Radio group'],
-
       duration: 300,
       offset: 0,
       easing: "easeInOutCubic",
 
-      // easings: Object.keys(easings),
     }
   },
 
@@ -78,16 +72,6 @@ export default {
       this.$store.commit("setCurrentNavbarFooter", next)
     },
     getActivatedCurrentNavbarFooter(next, prev) {
-      this.log &&
-        console.log(
-          "C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... next :",
-          next
-        )
-      this.log &&
-        console.log(
-          "C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... this.getCurrentNavbarFooter :",
-          this.getCurrentNavbarFooter
-        )
       let btnFallback
       if (next) {
         // show navbarFooter => mobile
@@ -100,40 +84,31 @@ export default {
           ? this.getCurrentNavbarFooter.redirectAtBreakNoShow.btnNav
           : 1
       }
-      this.log &&
-        console.log(
-          "C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... btnFallback :",
-          btnFallback
-        )
-      this.log &&
-        console.log(
-          "C-NavbarFooter / watch / getActivatedCurrentNavbarFooter ... this.bottomNav :",
-          this.bottomNav
-        )
       this.changeBottomNav(btnFallback)
     },
+    triggerResetNavbarFooter(next, prev) {
+      this.resetBottomNav()
+    }
   },
 
   beforeMount() {
     // set up view config
     this.navbarFooterConfig = this.getLocalConfig
-    this.log &&
-      console.log(
-        "C-NavbarFooter / beforeMount / this.navbarFooterConfig : ",
-        this.navbarFooterConfig
-      )
   },
 
   mounted() {
     this.log && console.log("C-NavbarFooter / mounted ...")
-    this.bottomNav = this.navbarFooterConfig.defaultBtnNav
+    // this.bottomNav = this.navbarFooterConfig.defaultBtnNav
+    this.resetBottomNav()
   },
 
   computed: {
     ...mapState({
       log: (state) => state.log,
       locale: (state) => state.locale,
+      triggerResetNavbarFooter: (state) => state.triggerResetNavbarFooter,
       trigger: (state) => state.data.triggerChange,
+      mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
     }),
 
     ...mapGetters({
@@ -165,7 +140,8 @@ export default {
       }
     },
     showCurrentNavbarFooter() {
-      let currentNavbarFooterOnSizes = this.getCurrentNavbarFooter.showOnSizes
+      // let currentNavbarFooterOnSizes = this.getCurrentNavbarFooter.showOnSizes
+      let currentNavbarFooterOnSizes = this.mobileBreakpoints
       // this.log && console.log('C-NavbarFooter / showCurrentNavbarFooter / currentNavbarFooterOnSizes : ', currentNavbarFooterOnSizes)
       //   let currentBreakpoint = this.getCurrentBreakpoint(this.windowSize.width)
       let currentBreakpoint = this.$vuetify.breakpoint.name
@@ -194,6 +170,9 @@ export default {
     },
 
     goToRef(btn) {
+
+      this.bottomNav = btn.value
+
       // this.log && console.log('C-NavbarFooter / goToRef / btn : ', btn)
       if (btn.action == "scrollTo") {
         // scroll action
@@ -213,6 +192,12 @@ export default {
     changeBottomNav(val) {
       this.bottomNav = val
     },
+
+    resetBottomNav() {
+      // this.log && console.log("C-NavbarFooter / resetBottomNav ...")
+      // this.log && console.log("C-NavbarFooter / this.navbarFooterConfig :", this.navbarFooterConfig)
+      this.bottomNav = this.navbarFooterConfig.defaultBtnNav
+    }
   },
 }
 </script>

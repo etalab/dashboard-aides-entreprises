@@ -1,12 +1,47 @@
-import { objectFromPath, sortArrayBy, moveArrayElement } from "~/utils/utils.js"
+// import { objectFromPath, sortArrayBy, moveArrayElement } from '~/utils/utils.js'
 
 export const state = () => ({
   // GLOABAL APP ENV
   log: process.env.LOG,
 
-  // ZOOM
+  mapHeight: undefined,
+  showLoader: true,
 
   resetZoomTrigger: -1,
+
+  // ZOOM & CENTER
+  map: undefined,
+  originalCenter: undefined,
+  originalZoom: undefined,
+  currentZoom: undefined,
+
+  fitToPolygon: undefined,
+
+  mapOptions: {
+    mapStyle: undefined,
+    zoom: undefined,
+    maxZoom: undefined,
+    minZoom: undefined,
+    currentZoom: undefined,
+    center: undefined,
+    currentCenter: undefined
+  },
+
+  mapsVisibility: undefined,
+  drawerMapsOpen: undefined,
+
+  // LAYERS & SOURCES
+  sources: undefined,
+
+  maps: undefined,
+  layers: undefined,
+
+  // UX
+  hoveredStateId: {},
+  selectedStateId: {},
+
+  noMapScroll: false
+
 })
 
 export const getters = {
@@ -14,21 +49,39 @@ export const getters = {
 
   getResetZoomTrigger: (state, getters) => {
     return state.resetZoomTrigger
-  },
+  }
 }
 
 export const mutations = {
-  // UPDATE ZOOM TRIGGER
+  // GENERAL SETTER
+  setStateObject (state, fieldAndValue) {
+    state[fieldAndValue.field] = fieldAndValue.value
+  },
 
-  setResetZoomTrigger(state) {
-    // state.log && console.log("\nS-map-M-setResetZoomTrigger ... ")
+  // UPDATE ZOOM TRIGGER
+  setResetZoomTrigger (state) {
+    state.log && console.log('\nS-map-M-setResetZoomTrigger ... ')
     state.resetZoomTrigger = state.resetZoomTrigger * -1
   },
+  setFitToPolygon (state, polygonParams) {
+    state.fitToPolygon = polygonParams
+  },
+
+  // UPDATE SELECTED
+  seSelectedStateId (state, selectedStateId) {
+    state.selectedStateId = selectedStateId
+  },
+
+  // UPDATE NO MAP SCROLL
+  setNoMapScroll (state, noMapScrollBool) {
+    state.noMapScroll = noMapScrollBool
+  }
+
 }
 
 export const actions = {
-  triggerResetZoom({ state, commit }, params) {
+  triggerResetZoom ({ state, commit }, params) {
     // state.log && console.log("\nS-map-A-triggerResetZoom / params :", params)
-    commit("setResetZoomTrigger")
-  },
+    commit('setResetZoomTrigger')
+  }
 }

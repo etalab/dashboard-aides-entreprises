@@ -23,6 +23,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex"
+import { objectToUrlParams } from '~/utils/utils.js'
 
 export default {
   name: "GlobalBtn",
@@ -62,6 +63,8 @@ export default {
       locale: (state) => state.locale,
       trigger: (state) => state.data.triggerChange,
       mobileBreakpoints: (state) => state.configUX.mobileBreakpoints,
+      routeParams: (state) => state.routeParams,
+      queryRouteId: (state) => state.queryRouteId
     }),
 
     ...mapGetters({
@@ -105,16 +108,80 @@ export default {
         // this.log && console.log('C-GlobalButton / runBtnFunctions / fn.funcName : ', fn.funcName )
         let funcParams = fn.funcParams
         switch (fn.funcName) {
+
           case "resetStore":
             this.$store.dispatch("data/resetStore", funcParams)
             break
+
           case "resetMapZoom":
             this.$store.dispatch("maps/triggerResetZoom", funcParams)
+            break
+
+          case 'updateUrlPath' :
+            this.updateUrlPath( funcParams ) ;
+            break
+
+          case 'cleanUrlPath' :
+            this.cleanUrlPath( ) ;
+            break
+
+          case 'resetFitToPolygon' :
+            this.resetFitToPolygon( ) ;
+            break
+
+          case 'resetSelectedPolygons' :
+            this.resetSelectedPolygons( ) ;
             break
         }
       }
       this.$store.commit("buttons/toggleBtnTrigger")
     },
+
+    updateUrlPath(params) {
+      this.log && console.log("\nC-GlobalButton / updateUrlPath  : ", "+ ".repeat(10) )
+      this.log && console.log("\nC-GlobalButton / updateUrlPath ... params : ", params )
+
+      for (let targetParams of params.targets) {
+
+        let targetArgs = { ...targetParams.urlArgs }
+        // this.log && console.log("C-GlobalButton / updateUrlPath ... this.$store.state.data[ targetArgs.datastore ] : ", this.$store.state.data[ targetArgs.datastore ] )
+
+        const routePath = this.$route.path
+        let paramsString = objectToUrlParams(targetArgs)
+        const routeIdString = this.queryRouteId ? `routeId=${this.queryRouteId}` : undefined
+        if (routeIdString) {
+          paramsString = routeIdString + '&' + paramsString
+        }
+        this.log && console.log("C-GlobalButton / updateUrlPath ... paramsString : ", paramsString )
+        
+        this.$store.commit("setRouteParams", paramsString)
+        history.pushState(
+          {},
+          null,
+          routePath + '?' + paramsString
+        )
+      }
+    },
+
+    cleanUrlPath() {
+      this.$store.commit("setRouteParams", undefined)
+      const routePath = this.$route.path
+      // const routeIdString = this.queryRouteId ? `routeId=${this.queryRouteId}` : undefined
+      history.pushState(
+        {},
+        null,
+        routePath
+      )
+    },
+
+    resetFitToPolygon() {
+      this.$store.commit('maps/setFitToPolygon', undefined)
+    },
+
+    resetSelectedPolygons() {
+      this.$store.commit('maps/seSelectedStateId', undefined)
+    }
+
   },
 }
 </script>

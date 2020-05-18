@@ -1,102 +1,234 @@
 export const configAppNavbarFooters = {
-  help: "this file contains the setup for the numbers components",
+  help: 'this file contains the setup for the numbers components',
 
   // NAVBAR FOOTERS
 
   settingsIds: [
     {
-      id: "navbar-footer-01",
-      help: "",
+      id: 'navbar-footer-01',
+      help: '',
 
       activated: true,
 
-      title: { fr: "" },
-      titleI18n: "navbars.footer.title",
-      navbarFooterClass: "",
+      title: { fr: '' },
+      titleI18n: 'navbars.footer.title',
+      navbarFooterClass: '',
 
       height: 70,
       grow: true,
       shift: true,
-      showOnSizes: ["xs", "sm"],
+      showOnSizes: ['xs', 'sm'],
 
-      defaultBtnNav: "map",
-      redirectAtBreakShow: { path: "/map", btnNav: "map" },
-      redirectAtBreakNoShow: { path: "/", btnNav: "home" },
+      defaultBtnNav: 'map',
+      redirectAtBreakShow: { path: '/map', btnNav: 'map' },
+      redirectAtBreakNoShow: { path: '/', btnNav: 'home' },
 
       buttons: [
         {
-          title: { fr: "accueil" },
-          value: "home",
+          title: { fr: 'accueil' },
+          value: 'home',
           showTitle: true,
-          icon: "fas fa-th",
-          action: "toggleDivs", // goToUrl | scrollTo | toggleDivs
+          icon: 'fas fa-th',
+          action: 'toggleDivs', // goToUrl | scrollTo | toggleDivs
           divsToToggle: [
             {
-              routeId: "home",
-              toggle: "on",
-              toggleVisibility: ["isVisibleMobile"],
-              divIds: ["text-01", "text-02"],
+              routeId: 'fds',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-fds-title',
+                'text-fds-infos'
+              ]
             },
             {
-              routeId: "home",
-              toggle: "off",
-              toggleVisibility: ["isVisibleMobile"],
-              divIds: ["map-france-metro", "apexchart-01"],
+              routeId: 'fds',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'apexchart-fds',
+                'apexchart-fds-categ-juridiques',
+                'apexchart-fds-effectifs',
+                'map-france-aides-metro'
+              ]
             },
+            {
+              routeId: 'pge',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-pge-title',
+                'text-pge-infos'
+              ]
+            },
+            {
+              routeId: 'pge',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'apexchart-pge',
+                'map-france-pge-metro'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-report-title',
+                'text-report-infos'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'apexchart-report',
+                'map-france-report-metro'
+              ]
+            }
           ],
           // toUrl: "/",
           // to : '#text-text-01', // for scrollTo
-          offset: 10,
+          offset: 10
         },
         {
-          title: { fr: "carte" },
-          value: "map",
+          title: { fr: 'carte' },
+          value: 'map',
           showTitle: true,
-          icon: "fas fa-map",
-          action: "toggleDivs",
+          icon: 'fas fa-map',
+          action: 'toggleDivs',
           divsToToggle: [
             {
-              routeId: "home",
-              toggle: "on",
-              toggleVisibility: ["isVisibleMobile"],
-              divIds: ["text-01", "map-france-metro"],
+              routeId: 'fds',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-fds-title',
+                'map-france-aides-metro'
+              ]
             },
             {
-              routeId: "home",
-              toggle: "off",
-              toggleVisibility: ["isVisibleMobile"],
-              divIds: ["text-02", "apexchart-01"],
+              routeId: 'fds',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-fds-infos',
+                'apexchart-fds',
+                'apexchart-fds-categ-juridiques',
+                'apexchart-fds-effectifs'
+              ]
             },
+            {
+              routeId: 'pge',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-pge-title',
+                'map-france-pge-metro'
+              ]
+            },
+            {
+              routeId: 'pge',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-pge-infos',
+                'apexchart-pge'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-report-title',
+                'map-france-report-metro'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-report-infos',
+                'apexchart-report'
+              ]
+            }
           ],
           // toUrl: "/map",
           // to : '#map-map-france-metro',
-          offset: 10,
+          offset: 10
         },
         {
-          title: { fr: "graphiques" },
-          value: "charts",
+          title: { fr: 'graphiques' },
+          value: 'charts',
           showTitle: true,
-          icon: "fas fa-chart-bar",
-          action: "toggleDivs",
+          icon: 'fas fa-chart-bar',
+          action: 'toggleDivs',
           divsToToggle: [
             {
-              routeId: "home",
-              toggle: "on",
-              toggleVisibility: ["isVisibleMobile"],
-              divIds: ["text-01", "apexchart-01"],
+              routeId: 'fds',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-fds-title',
+                'apexchart-fds',
+                'apexchart-fds-categ-juridiques',
+                'apexchart-fds-effectifs'
+              ]
             },
             {
-              routeId: "home",
-              toggle: "off",
-              toggleVisibility: ["isVisibleMobile"],
-              divIds: ["text-02", "map-france-metro"],
+              routeId: 'fds',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-fds-infos',
+                'map-france-aides-metro'
+              ]
             },
+            {
+              routeId: 'pge',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-pge-title',
+                'apexchart-pge'
+              ]
+            },
+            {
+              routeId: 'pge',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-pge-infos',
+                'map-france-pge-metro'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-report-title',
+                'apexchart-report'
+              ]
+            },
+            {
+              routeId: 'report',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-report-infos',
+                'map-france-report-metro'
+              ]
+            }
           ],
           // toUrl: "/charts",
           // to : '#apexcharts-apexchart-01',
-          offset: 10,
-        },
-      ],
-    },
-  ],
+          offset: 10
+        }
+      ]
+    }
+  ]
 }

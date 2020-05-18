@@ -3,10 +3,16 @@ body {
   padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
   padding-top: env(safe-area-inset-top); /* iOS 11.2 */
 }
+.no-scroll{
+  overflow: hidden;
+}
 </style>
 
 <template>
-  <v-app>
+  <v-app
+    id="ODAMAP-root"
+    :style="`overflow: hidden; max-height:${isIframe && getIframeMaxHeight ? getIframeMaxHeight : contentWindowHeight}px;`"
+  >
     <!-- DYNAMIC CSS -->
     <DynamicCSS />
 
@@ -16,12 +22,23 @@ body {
     <!-- NAVBAR -->
     <Navbar v-if="!isIframe" />
 
+    <!-- TABS ROUTES -->
+    <TabsRoutes v-if="routesTabs && routesTabs.isActivated" />
+
     <!-- CONTENT LAYOUT -->
-    <v-content id="layout-content">
+    <v-content 
+      id="ODAMAP-layout-content"
+      class="ma-0 pa-0"
+      :style="`height: ${contentWindowHeight}px; padding: 0 0 0 0`"
+      >
       <Filters />
 
       <!-- <FiltersFeedback/> -->
-      <v-container id="layout-container" fluid pa-0>
+      <v-container 
+        id="ODAMAP-layout-container"
+        fluid
+        pa-0
+        >
         <nuxt />
       </v-container>
     </v-content>
@@ -46,7 +63,7 @@ body {
         </v-list>
       </v-navigation-drawer> 
     -->
-
+    
     <!-- FOOTER -->
     <!-- <Footer/> -->
 
@@ -69,6 +86,7 @@ import Filters from "~/components/DataViews/Filters.vue"
 import FiltersFeedback from "~/components/DataViews/FiltersFeedback.vue"
 import Footer from "~/components/UX/Footer.vue"
 import NavbarFooter from "~/components/UX/NavbarFooter.vue"
+import TabsRoutes from "~/components/UX/TabsRoutes.vue"
 
 export default {
   components: {
@@ -79,6 +97,7 @@ export default {
     FiltersFeedback,
     Footer,
     NavbarFooter,
+    TabsRoutes,
   },
 
   data() {
@@ -148,6 +167,7 @@ export default {
 
     ...mapGetters({
       getCurrentLocale: "getCurrentLocale",
+      routesTabs: "getRoutesTabs",
       routeConfig: "getLocalRouteConfig",
       getCurrentNavbarFooter: "getCurrentNavbarFooter",
     }),
@@ -161,6 +181,27 @@ export default {
       let configUX = this.configUX
       return configUX.hasDrawer
     },
+
+    getIframeMaxHeight() {
+      return this.configUX.overrideIframeMaxHeight
+    },
+
+    windowHeight() {
+      let winHeight = window.innerHeight
+      return winHeight
+    },
+
+    contentWindowHeight() {
+      let winHeight = window.innerHeight
+      var docNavbars = document.querySelectorAll(`.odm-navbar`)
+      let docNavbarsArray = Array.prototype.slice.call(docNavbars)
+      let sumNavbarsHeights = docNavbarsArray
+        .map((i) => i.offsetHeight)
+        .reduce((prev, curr) => prev + curr, 0)
+      let height = winHeight - sumNavbarsHeights
+      return height
+    },
+
   },
 
   methods: {},
