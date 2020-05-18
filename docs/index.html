@@ -1,0 +1,413 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+
+  <head>
+    <meta charset="utf-8">
+
+    <!-- begin _includes/seo.html -->
+    
+    <title>from data to dashboards - ODAMAP docs</title>
+    <meta name="description" content="“official documentation for ODAMAP”">
+    <meta name="author" content="Julien Paris">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Apiviz docs">
+    <meta property="og:title" content="from data to dataviz">
+    <meta property="og:url" content="http://localhost:4000/">
+    
+    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="next" href="http://localhost:4000/page2/">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": null,
+        "url": "http://localhost:4000/"
+      }
+    </script>
+
+    <!-- end _includes/seo.html -->
+
+    <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Apiviz docs Feed">
+
+    <!-- https://t.co/dKP3o1e -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+    </script>
+
+    <!-- For all browsers -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--[if IE]>
+    <style>
+      /* old IE unsupported flexbox fixes */
+      .greedy-nav .site-title {
+        padding-right: 3em;
+      }
+      .greedy-nav button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+      }
+    </style>
+    <![endif]-->
+
+    <!-- start custom head snippets -->
+
+    <!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+    <!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--home wide">
+
+    <nav class="skip-links">
+      <h2 class="screen-reader-text">Skip links</h2>
+      <ul>
+        <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+        <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+        <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+      </ul>
+    </nav>
+
+    <!--[if lt IE 9]>
+      <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+    <![endif]-->
+
+    <div class="masthead">
+      <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+          <nav id="site-nav" class="greedy-nav">
+
+            <a class="site-logo" href="/">
+              <img src="/static/logos/logo_apiviz_icon_15.png" alt="">
+            </a>
+
+            <a class="site-title" href="/">
+              ODAMAP docs
+            </a>
+
+            <ul class="visible-links">
+              <li class="masthead__menu-item">
+                <a href="/general/overview" >
+                  Overview
+                </a>
+              </li>
+              <li class="masthead__menu-item">
+                <a href="/guide/installation" >
+                  Quickstart guide
+                </a>
+              </li>
+              <!-- <li class="masthead__menu-item">
+                <a href="/posts/" >
+                  Blog
+                </a>
+              </li> -->
+              <li class="masthead__menu-item">
+                <a href="https://github.com/etalab/dashboard-aides-entreprises" >
+                  Repo
+                </a>
+              </li>
+            </ul>
+            
+            <button class="search__toggle" type="button">
+              <span class="visually-hidden">Toggle search</span>
+              <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+                <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+              </svg>
+            </button>
+            
+            <button class="greedy-nav__toggle hidden" type="button">
+              <span class="visually-hidden">Toggle menu</span>
+              <div class="navicon"></div>
+            </button>
+
+            <ul class="hidden-links hidden"></ul>
+
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="initial-content">
+
+      <div class="page__hero--overlay"
+        style=" background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('/static/screenshots/odamap-map-01.png');"
+        >
+        <div class="wrapper">
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            from data to dashboard
+          </h1>
+          <p>
+            <a href="/general/overview" class="btn btn--light-outline btn--large">
+              What is ODAMAP ?
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div id="main" role="main">
+    
+        <div class="sidebar sticky">
+          <nav class="nav__list">
+            <input id="ac-toc" name="accordion-toc" type="checkbox" />
+            <label for="ac-toc">Toggle Menu</label>
+            <ul class="nav__items">
+              <li>
+                <span class="nav__sub-title">The ODAMAP project</span>
+                <ul>
+                  <li><a href="/general/overview" class="">Overview</a></li>
+                  <li><a href="/general/screenshots" class="">Screenshots</a></li>
+                  <li><a href="/general/gallery" class="">Gallery</a></li>
+                  <li><a href="/general/changelog" class="">Change log</a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="nav__sub-title">Installation</span>
+                <ul>
+                  <li><a href="/guide/installation" class="">Installation walkthrough</a></li>
+                  <li><a href="/guide/deployment-configs" class="">Deployment</a></li>
+                  <li><a href="/guide/install-docs" class="">Install the docs</a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="nav__sub-title">Customization</span>
+                <ul>
+                  <li><a href="/configuration/config-overview" class="">Configuration overview</a></li>
+                  <li><a href="/configuration/config-url-params" class="">URL parameters</a></li>
+                  <li><a href="/configuration/config-envfile" class="">Environment variables</a></li>
+                  <li><a href="/configuration/config-configs" class="">Configuration files</a></li>
+                  <li><a href="/configuration/config-static" class="">Static datasets</a></li>
+                  <li><a href="/configuration/config-locales" class="">Locales</a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="nav__sub-title">Developers</span>
+                <ul>
+                  <li><a href="/dev/maintain" class="">Maintenance</a></li>
+                  <li><a href="/dev/roadmaps" class="">Roadmaps</a></li>
+                  <li><a href="/dev/stack" class="">Stack</a></li>
+                  <li><a href="/dev/contributing" class="">Contributing</a></li>
+                  <li><a href="/dev/guidelines" class="">Guidelines</a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="nav__sub-title">Meta</span>
+                <ul>
+                  <li><a href="/meta/credits" class="">Credits</a></li>
+                  <li><a href="/meta/license" class="">License</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/posts/"><span class="nav__sub-title">Blog</span></a>
+              </li>
+              <li>
+                <a href="/categories/"><span class="nav__sub-title">Categories</span></a>
+              </li>
+              <li>
+                <a href="/tags/"><span class="nav__sub-title">Tags</span></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="archive">
+          <!-- <figure class="">
+            <img 
+              src="/static/logos/logo_odamap_01.png"
+              alt="odamap logo">
+          </figure> -->
+          Visualize your datasets on a customizable dashboard
+          ... and of course it's open source
+          <br><br>
+
+          <p>
+            <a href="https://standardjs.com" rel="nofollow"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="JavaScript Style Guide"></a>
+          </p>
+
+          <div class="language-shell highlighter-rouge">
+            <div class="highlight">
+              <pre class="highlight">
+<code><span class="c">### INSTALLATION</span>
+
+<span class="c">### clone the repository</span>
+git clone https://github.com/etalab/dashboard-aides-entreprises.git
+
+<span class="c">### go to frontend folder and copy default environment variables</span>
+cd frontend
+cp .envExample .env
+
+<span class="c">### shortcut to install ODAMAP</span>
+npm install
+npm run dev</code></pre>
+            </div>
+          </div>
+
+          <br>
+          <p>
+            And then you could open your browser at <br>
+            <a href="http://localhost:8000/" target="_blank">
+              <div class="language-shell highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight"><code>http://localhost:8000/</code></pre>
+                </div>
+              </div>
+            </a>
+            <br>
+            and see ... 
+          </p>
+          <figure class="" style="border-style: solid;border-width: 1px">
+            <img 
+              src="/static/screenshots/odamap-homepage-01.png"
+              alt="ODAMAP homepage">
+          </figure>
+          <br>
+
+          <hr>
+          <h3 class="archive__subtitle">Recent Posts</h3>
+
+          <div class="list__item">
+            <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+              <h2 class="archive__item-title" itemprop="headline">
+                <a href="/meta/changelog/" rel="permalink">
+                  CHANGE LOG
+                </a>
+              </h2>
+              <p class="page__meta">
+                <i class="far fa-clock" aria-hidden="true"></i> 
+                less than 1 minute read
+              </p>
+              <p class="archive__item-excerpt" itemprop="description">
+              </p>
+            </article>
+          </div>
+
+          <div class="list__item">
+            <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+              <h2 class="archive__item-title" itemprop="headline">
+                <a  href="/meta/credits/" rel="permalink">
+                  CREDITS
+                </a>
+              </h2>
+              <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+                less than 1 minute read
+              </p>
+              <p class="archive__item-excerpt" itemprop="description">
+                <!-- ODAMAP team thanks : -->
+              </p>
+            </article>
+          </div>
+
+          <div class="list__item">
+            <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+              <h2 class="archive__item-title" itemprop="headline">
+                <a href="/meta/maintain/" rel="permalink">
+                  MAINTAIN
+                </a>
+              </h2>
+              <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+                less than 1 minute read
+              </p>
+              <p class="archive__item-excerpt" itemprop="description">
+              </p>
+            </article>
+          </div>
+
+          <div class="list__item">
+            <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+              <h2 class="archive__item-title" itemprop="headline">
+                <a href="/dev/guidelines/" rel="permalink">
+                  GUIDELINES FOR DEVELOPMENT
+                </a>
+              </h2>
+              <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+                1 minute read
+              </p>
+              <p class="archive__item-excerpt" itemprop="description">
+                <!-- This project is prone to be developped by several developpers, so we agreed on some basic rules… -->
+              </p>
+            </article>
+          </div>
+
+          <div class="list__item">
+            <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+              <h2 class="archive__item-title" itemprop="headline">
+              <a href="/dev/roadmaps/" rel="permalink">
+                ROADMAP
+              </a>
+              </h2>
+              <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+                less than 1 minute read
+              </p>
+              <p class="archive__item-excerpt" itemprop="description">
+              </p>
+            </article>
+          </div>
+
+          <nav class="pagination">
+            <ul>
+              <li><a href="#" class="disabled"><span aria-hidden="true">Previous</span></a></li>
+              <li><a href="#" class="disabled current">1</a></li>
+              <li><a href="/page2/">2</a></li>
+              <li><a href="/page3/">3</a></li>
+              <li><a href="/page4/">4</a></li>
+              <li><a href="/page2/">Next</a></li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="search-content">
+      <div class="search-content__inner-wrap">
+        <form class="search-content__form" onkeydown="return event.key != 'Enter';">
+          <label class="sr-only" for="search">
+            Enter your search term...
+          </label>
+          <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+        </form>
+      <div id="results" class="results"></div></div>
+    </div>
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+        <!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+          <ul class="social-icons">
+            <li><a href="https://twitter.com/Etalab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+            <li><a href="https://github.com/etalab" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+            <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+          </ul>
+        </div>
+        <div class="page__footer-copyright">
+          &copy; 
+          2020 Etalab docs. 
+          Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>
+          &amp; 
+          <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.
+        </div>
+      </footer>
+    </div>
+
+    <script src="/assets/js/main.min.js"></script>
+    <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+    <script src="/assets/js/lunr/lunr.min.js"></script>
+    <script src="/assets/js/lunr/lunr-store.js"></script>
+    <script src="/assets/js/lunr/lunr-en.js"></script>
+
+  </body>
+</html>

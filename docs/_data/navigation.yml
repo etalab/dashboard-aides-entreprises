@@ -1,0 +1,84 @@
+main:
+  - title: "Overview"
+    url: /general/overview
+  - title: "Quickstart guide"
+    url: /guide/installation
+  # - title: "Blog"
+  #   url: /posts/
+  # - title: "Categories"
+  #   url: /categories/
+  # - title: "Tags"
+  #   url: /tags/
+  # - title: "Pages"
+  #   url: /page-archive/
+  # - title: "Collections"
+  #   url: /collection-archive/
+  - title: "Repo"
+    url: https://github.com/etalab/dashboard-aides-entreprises
+
+
+# documentation links
+docs:
+  - title: The ODAMAP project
+    children:
+      - title: "Overview"
+        url: /general/overview
+      - title: "Screenshots"
+        url: /general/screenshots
+      - title: "Gallery"
+        url: /general/gallery
+      - title: "Change log"
+        url: /general/changelog
+
+  - title: Installation
+    children:
+      - title: "Installation walkthrough"
+        url: /guide/installation
+      - title: "Deployment"
+        url: /guide/deployment-configs
+      - title: "Install the docs"
+        url: /guide/install-docs
+
+  - title: Customization
+    children: 
+      - title: "Configuration overview"
+        url: /configuration/config-overview
+      - title: "URL parameters"
+        url: /configuration/config-url-params
+      - title: "Environment variables"
+        url: /configuration/config-envfile
+      - title: "Configuration files"
+        url: /configuration/config-configs
+      - title: "Static datasets"
+        url: /configuration/config-static
+      - title: "Locales"
+        url: /configuration/config-locales
+
+  - title: Developers
+    children:
+      - title: "Maintenance"
+        url: /dev/maintain
+      - title: "Roadmaps"
+        url: /dev/roadmaps
+      - title: "Stack"
+        url: /dev/stack
+      - title: "Contributing"
+        url: /dev/contributing
+      - title: "Guidelines"
+        url: /dev/guidelines
+
+  - title: Meta
+    children:
+      - title: "Credits"
+        url: /meta/credits
+      - title: "License"
+        url: /meta/license
+
+  - title: Blog
+    url: /posts/
+
+  - title: "Categories"
+    url: /categories/
+
+  - title: "Tags"
+    url: /tags/
