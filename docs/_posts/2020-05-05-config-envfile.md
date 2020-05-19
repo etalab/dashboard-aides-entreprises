@@ -24,7 +24,7 @@ The `.env` file manages the first level of customization. It allows you to overr
 
 Those variables are loaded indirectly in `nuxt.config.js`, via the `nuxt_loadConfigs_fromJS.js` file, and then pass through several processes : 
 
-- they have an influence on how configs JSON files are produced. More on that topic [here](/configuration/config-configs) ;
+- they have an influence on how configs JSON files are produced. More on that topic [here]({{site.baseurl}}/configuration/config-configs) ;
 - they are stored in `process.env.CONFIG_APP`, to be usable in the vuex store later on ;
 
 
@@ -67,7 +67,7 @@ The `NUXT_ENV_RUN_MODE` can have the following values :
 
 Overrides the following url's parameters : `iframe`, `noroutetabs`, `nomapscroll`
 
-See more on that topic [here](/configuration/config-url-params)
+See more on that topic [here]({{site.baseurl}}/configuration/config-url-params)
 
 ```bash
 NUXT_ENV_APP_IFRAME_OVERRIDE=no
@@ -80,7 +80,7 @@ NUXT_ENV_APP_NOMAPSCROLL_OVERRIDE=no
 
 Set the languages your app will use and specify the JSON translation files you'll need to load.
 
-See more on that topic [here](/configuration/config-locales)
+See more on that topic [here]({{site.baseurl}}/configuration/config-locales)
 
 ```bash
 NUXT_ENV_LANG_DEFAULT_LOCALE=fr
@@ -104,7 +104,7 @@ NUXT_ENV_MATOMO_SITE_ID=<YOUR ID NUMBER>
 
 This part sets up where your config files are loaded from if you want them to be loaded remotely.
 
-More on that topic [here](/configuration/config-configs)
+More on that topic [here]({{site.baseurl}}/configuration/config-configs)
 
 ```bash
 NUXT_ENV_CONFIG_FROM=local_js_files
