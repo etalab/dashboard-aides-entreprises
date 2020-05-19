@@ -18,7 +18,7 @@ toc_sticky: true
 
 ### Frontend modules overview
 
-{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-architecture-01.png" alt="" %}
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-architecture-02-en.png" alt="" %}
 
 --------
 
