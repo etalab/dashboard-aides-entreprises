@@ -25,7 +25,7 @@ Your ODAMAP instance uses a router, which you can pass parameters to.
 -------
 ## Global url parameters
 
-Those parameters don't rely on the datasets or connfiguration you will use. They still can be overriden with your `.env` file (more on that topic [here](/configuration/config-envfile) )
+Those parameters don't rely on the datasets or connfiguration you will use. They still can be overriden with your `.env` file (more on that topic [here]({{site.baseurl}}/configuration/config-envfile) )
 
 Those parameters are the following : 
 

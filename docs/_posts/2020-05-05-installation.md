@@ -60,7 +60,7 @@ Okay... you want to take your time, so let's unwrap the pack...
 
 You can create/modify the `.env` file content based on the `.envExample` file :
 
-More on that topic [here](/configuration/config-envfile)
+More on that topic [here]({{site.baseurl}}/configuration/config-envfile)
 
   ```shell
   ### MAIN 

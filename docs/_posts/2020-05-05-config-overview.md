@@ -80,21 +80,22 @@ frontend
 
 ### The URL parameters
 
-- To know more about the URL parameters you can use [click here](/configuration/config-url-params)
+- To know more about the URL parameters you can use [click here]({{site.baseurl}}/configuration/config-url-params)
 
 
 ### The config files
 
-- To know more about the `/frontend/.env` file [click here](/configuration/config-envfile)
-- To know more about the `/frontend/configs` files [click here](/configuration/config-configs)
-- To know more about the `/frontend/static` files [click here](/configuration/config-static)
-- To know more about the `/frontend/locales` files [click here](/configuration/config-locales)
+- To know more about the `/frontend/.env` file [click here]({{site.baseurl}}/configuration/config-envfile)
+- To know more about the `/frontend/configs` files [click here]({{site.baseurl}}/configuration/config-configs)
+- To know more about the `/frontend/static` files [click here]({{site.baseurl}}/configuration/config-static)
+- To know more about the `/frontend/locales` files [click here]({{site.baseurl}}/configuration/config-locales)
 
------
+<!-- -----
 
 - site.baseurl : {{site.baseurl}}/configuration/config-envfile
 - absolute_url : {{ "/configuration/config-envfile" | absolute_url }}
-- relative_url : {{ "/configuration/config-envfile" | relative_url }}
+- relative_url : {{ "/configuration/config-envfile" | relative_url }} -->
+
 
 ------------
 
