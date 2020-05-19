@@ -90,6 +90,12 @@ frontend
 - To know more about the `/frontend/static` files [click here](/configuration/config-static)
 - To know more about the `/frontend/locales` files [click here](/configuration/config-locales)
 
+-----
+
+- site.baseurl : {{site.baseurl}}/configuration/config-envfile
+- absolute_url : {{ "/configuration/config-envfile" | absolute_url }}
+- relative_url : {{ "/configuration/config-envfile" | relative_url }}
+
 
 ------------
 
