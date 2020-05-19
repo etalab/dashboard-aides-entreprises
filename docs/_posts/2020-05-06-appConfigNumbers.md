@@ -17,6 +17,10 @@ toc_sticky: true
 
 --------
 
+## Config files
+
+[Back to config files list]({{site.baseurl}}/configuration/config-configs)
+
 ## File location
 
 ```shell
