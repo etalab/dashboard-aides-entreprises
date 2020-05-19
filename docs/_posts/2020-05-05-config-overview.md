@@ -96,6 +96,11 @@ frontend
 - absolute_url : {{ "/configuration/config-envfile" | absolute_url }}
 - relative_url : {{ "/configuration/config-envfile" | relative_url }} -->
 
+-----
+
+- site.baseurl : {{site.baseurl}}/configuration/config-envfile
+- absolute_url : {{ "/configuration/config-envfile" | absolute_url }}
+- relative_url : {{ "/configuration/config-envfile" | relative_url }}
 
 ------------
 
