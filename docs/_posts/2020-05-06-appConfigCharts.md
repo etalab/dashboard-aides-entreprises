@@ -38,6 +38,16 @@ The `appConfigCharts.js` file manages the charts you will display in your instan
 
 This file contains the settings for :
 
+```shell
+### TO BE WRITTEN ###
+```
+
 ### Global parameters
 
 - `parameter` : explanation
+
+### Example :
+
+```shell
+### TO BE WRITTEN ###
+```

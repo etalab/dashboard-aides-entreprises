@@ -40,6 +40,18 @@ The `appConfigNavbarFooters.js` file manages the footer navbar you will display 
 
 This file contains the settings for :
 
+```shell
+### TO BE WRITTEN ###
+```
+
+
 ### Global parameters
 
 - `parameter` : explanation
+
+
+### Example : 
+
+```shell
+### TO BE WRITTEN ###
+```

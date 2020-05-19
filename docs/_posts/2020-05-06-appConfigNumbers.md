@@ -38,6 +38,16 @@ The `appConfigNumbers.js` file manages the maps you will display in your instanc
 
 This file contains the settings for :
 
+```shell
+### TO BE WRITTEN ###
+```
+
 ### Global parameters
 
 - `parameter` : explanation
+
+### Example :
+
+```shell
+### TO BE WRITTEN ###
+```

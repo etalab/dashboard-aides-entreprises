@@ -39,6 +39,16 @@ The `appConfigGlobalButtons.js` file manages the global buttons you will display
 
 This file contains the settings for :
 
+```shell
+### TO BE WRITTEN ###
+```
+
 ### Global parameters
 
 - `parameter` : explanation
+
+### Example :
+
+```shell
+### TO BE WRITTEN ###
+```

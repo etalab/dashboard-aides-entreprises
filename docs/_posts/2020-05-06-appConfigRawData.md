@@ -38,6 +38,16 @@ The `appConfigRawData.js` file manages the raw data you will display in your ins
 
 This file contains the settings for :
 
+```shell
+### TO BE WRITTEN ###
+```
+
 ### Global parameters
 
 - `parameter` : explanation
+
+### Example : 
+
+```shell
+### TO BE WRITTEN ###
+```

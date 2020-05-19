@@ -38,6 +38,16 @@ The `appConfigTexts.js` file manages the texts you will display in your instance
 
 This file contains the settings for :
 
+```shell
+### TO BE WRITTEN ###
+```
+
 ### Global parameters
 
 - `parameter` : explanation
+
+### Example :
+
+```shell
+### TO BE WRITTEN ###
+```
