@@ -1,5 +1,6 @@
 ---
 title : MANAGE THE DATASETS YOU WANT TO DISPLAY 
+classes: wide
 categories:
   - configuration
 tags:
