@@ -1,5 +1,6 @@
 ---
 title : CONFIGURATION FILE - NUMBERS
+classes: wide
 categories:
   - configfiles
 tags:
@@ -9,7 +10,7 @@ tags:
   - installation
   - dataviz
   - numbers
-toc: true
+toc: false
 toc_label: " contents"
 toc_sticky: true
 ---
