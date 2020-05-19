@@ -49,6 +49,7 @@ frontend
         └─── appConfigGlobalButtons.js
         └─── appConfigMap.js
         └─── appConfigNavbarFooters.js
+        └─── appConfigNumbers.js
         └─── appConfigRawData.js
         └─── appConfigRoutes.js
         └─── appConfigTables.js
@@ -110,17 +111,22 @@ More about how to use this configuration file [following this link]({{site.baseu
 
 ### Charts
 
-The `appConfigCharts.js` file manages the `ApexCharts` components you will display in your ODAMAP instance.
+The `appConfigCharts.js` file manages the `ApexChart` components you will display in your ODAMAP instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigCharts)
+
+### Numbers
+
+The `appConfigNumbers.js` file manages the `Number` components you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigNumbers)
 
 ### Texts
 
-The `appConfigTexts.js` file manages the `Texts` components you will display in your instance.
+The `appConfigTexts.js` file manages the `Text` components you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigTexts)
 
 ### Tables
 
-The `appConfigTables.js` file manages the `Tables` components you will display in your instance.
+The `appConfigTables.js` file manages the `Table` components you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigTables)
 
 
