@@ -45,7 +45,7 @@ frontend
 │   .env
 │   .envExample
 │   nuxt.config.js
-│   nuxt_loadConfigs_fromJSjs
+│   nuxt_loadConfigs_fromJS.js
 │
 └─── ... <nuxt and vue folders>
 │

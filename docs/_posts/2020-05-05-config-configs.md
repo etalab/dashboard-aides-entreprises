@@ -23,7 +23,7 @@ The `.env` file manages the first level of customization. It allows you to overr
 Those variables are loaded indirectly in `nuxt.config.js`, via the `nuxt_loadConfigs_fromJS.js` file, and then pass through several processes : 
 
 - each `.js`config file is translated into a `.json` file and copied in `/frontend/static/configs/` folder ;
-- they are stored in `process.env.CONFIG_APP`, to be usable in the vuex store ;
+- they are then stored in `process.env.CONFIG_APP`, to be usable in the vuex store ;
 
 
 ### ODAMAP folders structure
@@ -33,6 +33,7 @@ frontend
 │   README.md
 │   .env
 │   nuxt.config.js
+│   nuxt_loadConfigs_fromJS.js
 │
 └─── static
 │   │
@@ -56,67 +57,71 @@ frontend
 
 ```
 
+Those files are loaded altogether when you run `npm run dev` and loaded at the `nuxt.config.js` file level.
+
+They will populate the configuration for the several features ODAMAP can count on :
 
 ------
 
-## Charts
+## Global configuration files
 
-The `appConfigCharts.js` file manages the Charts you will need to display in your instance.
+### UIUX
 
-------
+The `appConfigUIUX.js` file manages the UIUX you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigUIUX)
 
-## Data
+### Routes
 
-The `appConfigData.js` file manages the Data you will need to display in your instance.
+The `appConfigRoutes.js` file manages the Routes you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigRoutes)
 
-------
+### NavbarFooters
 
-## GlobalButtons
+The `appConfigNavbarFooters.js` file manages the NavbarFooters you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigNavbarFooters)
 
-The `appConfigGlobalButtons.js` file manages the GlobalButtons you will need to display in your instance.
+### GlobalButtons
 
-------
-
-## Map
-
-The `appConfigMap.js` file manages the Map you will need to display in your instance.
-
-------
-
-## NavbarFooters
-
-The `appConfigNavbarFooters.js` file manages the NavbarFooters you will need to display in your instance.
+The `appConfigGlobalButtons.js` file manages the GlobalButtons you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigGlobalButtons)
 
 ------
 
-## RawData
+## Data configuration files
 
-The `appConfigRawData.js` file manages the RawData you will need to display in your instance.
+### Data
 
-------
+The `appConfigData.js` file manages the Data you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigData)
 
-## Routes
+### RawData
 
-The `appConfigRoutes.js` file manages the Routes you will need to display in your instance.
-
-------
-
-## Tables
-
-The `appConfigTables.js` file manages the Tables you will need to display in your instance.
+The `appConfigRawData.js` file manages the RawData you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigRawData)
 
 ------
 
-## Texts
+## Datavisualisation configuration files
 
-The `appConfigTexts.js` file manages the Texts you will need to display in your instance.
+### Map
 
-------
+The `appConfigMap.js` file manages the `Map` components you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigMap)
 
-## UIUX
+### Charts
 
-The `appConfigUIUX.js` file manages the UIUX you will need to display in your instance.
+The `appConfigCharts.js` file manages the `ApexCharts` components you will display in your ODAMAP instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigCharts)
 
+### Texts
+
+The `appConfigTexts.js` file manages the `Texts` components you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigTexts)
+
+### Tables
+
+The `appConfigTables.js` file manages the `Tables` components you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigTables)
 
 
 ------------
