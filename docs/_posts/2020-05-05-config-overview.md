@@ -1,5 +1,6 @@
 ---
 title : CONFIGURATION OVERVIEW
+classes: wide
 categories:
   - configuration
 tags:
