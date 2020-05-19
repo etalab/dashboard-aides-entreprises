@@ -26,7 +26,7 @@ Those variables are loaded indirectly in `nuxt.config.js`, via the `nuxt_loadCon
 - they are then stored in `process.env.CONFIG_APP`, to be usable in the vuex store ;
 
 
-### ODAMAP folders structure
+### ODAMAP `configs/dev` folder structure
 
 ```shell
 frontend
