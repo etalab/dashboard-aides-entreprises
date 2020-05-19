@@ -18,7 +18,7 @@ toc_sticky: true
 
 ### Frontend modules overview
 
-{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-architecture-01.png" alt="" %}
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-architecture-02-en.png" alt="" %}
 
 --------
 
@@ -45,7 +45,7 @@ frontend
 │   .env
 │   .envExample
 │   nuxt.config.js
-│   nuxt_loadConfigs_fromJSjs
+│   nuxt_loadConfigs_fromJS.js
 │
 └─── ... <nuxt and vue folders>
 │
