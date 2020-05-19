@@ -47,21 +47,23 @@ This file contains the settings for :
 ### UX parameters
 
 - `UX_config` : some UX parameters you can play with for the whole ODAMAP instance, such as :
-  - `hasDrawer`: 
-  - `mobileBreakpoints`: 
-  - `overrideIframeMaxHeight`: 
-  - `navbar`: 
-  - `tabsRoutes`: 
-  - `filters`: 
+
+  - `hasDrawer`: left drawer **- in development** ;
+  - `mobileBreakpoints`: Vuetify breakpoint names list to switch to mobile ;
+  - `overrideIframeMaxHeight`: set the max height of the app in iframe mode **- in development** ;
+  - `navbar`: Those settings will be processed by the `frontend/components/UX/Navbar.vue` component ;
+  - `tabsRoutes`: defines the tabs to switch routes (upper navbar). Those settings will be processed by the `frontend/components/UX/TabsRoutes.vue` component ;
+  - `filters`: hide / display filters **- in development**;
 
 ### UX parameters
 
 - `UI_config` : some UX parameters you can play with for the whole ODAMAP instance, such as :
-  - `isDarkTheme`: 
-  - `navbar`: 
-  - `filters`: 
-  - `themes`: 
-  - `map`: 
-  - `typos`: 
-  - `customCSS`: 
+
+  - `isDarkTheme`: set as dark theme for Vuetify ; 
+  - `navbar`: defines the UI of the navbar. Check the  ; 
+  - `filters`: UI parameters for the filters **- in development** ; 
+  - `themes`: drak and light themes Vuetify compatible ; 
+  - `map`: some UI parameters for the map component (loader mainly) ; 
+  - `typos`: fonts to use **- in development** ; 
+  - `customCSS`: some custom CSS classes you want to add. Those settings will be processed by the `frontend/components/UI/DynamicCSS.vue` component ;
 
