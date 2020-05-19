@@ -41,8 +41,6 @@ Every route is described in an object ODAMAP will analyze later in its middlewar
 
 The most important part of a route is described under the `pageRows` field. This field is [more precisely described below here]({{site.baseurl}}/configfiles/appConfigRoutes/#the-pagerows-field).
 
-This file contains the settings for :
-
 ### Routes objects
 
 - `routes` : **list** of the routes your ODAMAP instance could serve. Every route is described in an object as follows :
@@ -73,89 +71,90 @@ This schema corresponds to the following `pageRows` settings in a route object :
 
 ```json
 {
-"pageRows": [
-  {
-    "id": 'row1',
-    "rowNumber": 1,
-    "activated": true,
-    "help": '',
-    "columns": [
-      {
-        "id": 'col1',
-        "colName": 'Numbers and tables',
-        "activated": true,
-        "colClass": 'col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4',
-        "hasScrollbar": true,
-        "smallScreenVerticalOrder": undefined,
-        "colRows": [
-          {
-            "component": 'text',
-            "activated": true,
-            "smallScreenVerticalOrder": 1,
-            "justify": 'center',
-            "align": 'center',
-            "settings": {
-              "id": 'text-fds-title',
-              "containerClass": 'pt-2 pb-0',
-              "mobileIsVisibleDefault": true,
-              "desktopIsVisibleDefault": true
+  "pageRows": [
+    {
+      "id": 'row1',
+      "rowNumber": 1,
+      "activated": true,
+      "help": '',
+      "columns": [
+        {
+          "id": 'col1',
+          "colName": 'Numbers and tables',
+          "activated": true,
+          "colClass": 'col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4',
+          "hasScrollbar": true,
+          "smallScreenVerticalOrder": undefined,
+          "colRows": [
+            {
+              "component": 'text',
+              "activated": true,
+              "smallScreenVerticalOrder": 1,
+              "justify": 'center',
+              "align": 'center',
+              "settings": {
+                "id": 'text-fds-title',
+                "containerClass": 'pt-2 pb-0',
+                "mobileIsVisibleDefault": true,
+                "desktopIsVisibleDefault": true
+              }
+            },
+            {
+              "component": 'numbers',
+              "activated": true,
+              "smallScreenVerticalOrder": 3,
+              "justify": 'center',
+              "align": 'center',
+              "settings": {
+                "id": 'numbers-01',
+                "containerClass": 'py-0',
+                "mobileIsVisibleDefault": true,
+                "desktopIsVisibleDefault": true
+              }
+            },
+            {
+              "component": 'globalButtons',
+              "activated": true,
+              "smallScreenVerticalOrder": 1,
+              "justify": 'center',
+              "align": 'center',
+              "settings": {
+                "id": 'global-button-fds',
+                "containerClass": 'py-0 my-0',
+                "mobileIsVisibleDefault": true,
+                "desktopIsVisibleDefault": true
+              }
+            },
+            {
+              "component": 'apexchart',
+              "activated": true,
+              "smallScreenVerticalOrder": 4,
+              "justify": 'center',
+              "align": 'center',
+              "settings": {
+                "id": 'apexchart-fds',
+                "containerClass": 'mt-4 pt-3 pb-0',
+                "mobileIsVisibleDefault": false,
+                "desktopIsVisibleDefault": true
+              }
+            },
+            {
+              "component": 'text',
+              "activated": true,
+              "smallScreenVerticalOrder": 1,
+              "justify": 'center',
+              "align": 'center',
+              "settings": {
+                "id": 'text-fds-infos',
+                "containerClass": 'pb-0',
+                "mobileIsVisibleDefault": false,
+                "desktopIsVisibleDefault": true
+              }
             }
-          },
-          {
-            "component": 'numbers',
-            "activated": true,
-            "smallScreenVerticalOrder": 3,
-            "justify": 'center',
-            "align": 'center',
-            "settings": {
-              "id": 'numbers-01',
-              "containerClass": 'py-0',
-              "mobileIsVisibleDefault": true,
-              "desktopIsVisibleDefault": true
-            }
-          },
-          {
-            "component": 'globalButtons',
-            "activated": true,
-            "smallScreenVerticalOrder": 1,
-            "justify": 'center',
-            "align": 'center',
-            "settings": {
-              "id": 'global-button-fds',
-              "containerClass": 'py-0 my-0',
-              "mobileIsVisibleDefault": true,
-              "desktopIsVisibleDefault": true
-            }
-          },
-          {
-            "component": 'apexchart',
-            "activated": true,
-            "smallScreenVerticalOrder": 4,
-            "justify": 'center',
-            "align": 'center',
-            "settings": {
-              "id": 'apexchart-fds',
-              "containerClass": 'mt-4 pt-3 pb-0',
-              "mobileIsVisibleDefault": false,
-              "desktopIsVisibleDefault": true
-            }
-          },
-          {
-            "component": 'text',
-            "activated": true,
-            "smallScreenVerticalOrder": 1,
-            "justify": 'center',
-            "align": 'center',
-            "settings": {
-              "id": 'text-fds-infos',
-              "containerClass": 'pb-0',
-              "mobileIsVisibleDefault": false,
-              "desktopIsVisibleDefault": true
-            }
-          }
-        ]
-      },
-    ]
-  }
+          ]
+        },
+      ]
+    }
+  ]
 }
 ```

@@ -68,29 +68,35 @@ They will populate the configuration for the several features ODAMAP can count o
 
 ### UIUX
 
+```shell
+DOCUMENTATION_DRAFT=v.1
+```
 The `appConfigUIUX.js` file manages the UIUX you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigUIUX)
 
 ### Routes
 
+```shell
+DOCUMENTATION_DRAFT=v.1
+```
 The `appConfigRoutes.js` file manages the Routes you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigRoutes)
 
 ### NavbarFooters
 
-The `appConfigNavbarFooters.js` file manages the NavbarFooters you will display in your instance.
-More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigNavbarFooters)
 ```shell
 ### TO BE WRITTEN ###
 ```
+The `appConfigNavbarFooters.js` file manages the NavbarFooters you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigNavbarFooters)
 
 ### GlobalButtons
 
-The `appConfigGlobalButtons.js` file manages the GlobalButtons you will display in your instance.
-More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigGlobalButtons)
 ```shell
 ### TO BE WRITTEN ###
 ```
+The `appConfigGlobalButtons.js` file manages the GlobalButtons you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigGlobalButtons)
 
 ------
 
@@ -98,19 +104,19 @@ More about how to use this configuration file [following this link]({{site.baseu
 
 ### Data
 
+```shell
+DOCUMENTATION_DRAFT=v.1
+```
 The `appConfigData.js` file manages the Data you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigData)
-```shell
-### TO BE WRITTEN ###
-```
 
 ### RawData
 
-The `appConfigRawData.js` file manages the RawData you will display in your instance.
-More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigRawData)
 ```shell
 ### TO BE WRITTEN ###
 ```
+The `appConfigRawData.js` file manages the RawData you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigRawData)
 
 ------
 
@@ -118,43 +124,43 @@ More about how to use this configuration file [following this link]({{site.baseu
 
 ### Map
 
-The `appConfigMap.js` file manages the `Map` components you will display in your instance.
-More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigMap)
 ```shell
 ### TO BE WRITTEN ###
 ```
+The `appConfigMap.js` file manages the `Map` components you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigMap)
 
 ### Charts
 
-The `appConfigCharts.js` file manages the `ApexChart` components you will display in your ODAMAP instance.
-More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigCharts)
 ```shell
 ### TO BE WRITTEN ###
 ```
+The `appConfigCharts.js` file manages the `ApexChart` components you will display in your ODAMAP instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigCharts)
 
 ### Numbers
 
-The `appConfigNumbers.js` file manages the `Number` components you will display in your instance.
-More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigNumbers)
 ```shell
 ### TO BE WRITTEN ###
 ```
+The `appConfigNumbers.js` file manages the `Number` components you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigNumbers)
 
 ### Texts
 
-The `appConfigTexts.js` file manages the `Text` components you will display in your instance.
-More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigTexts)
 ```shell
 ### TO BE WRITTEN ###
 ```
+The `appConfigTexts.js` file manages the `Text` components you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigTexts)
 
 ### Tables
 
-The `appConfigTables.js` file manages the `Table` components you will display in your instance.
-More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigTables)
 ```shell
 ### TO BE WRITTEN ###
 ```
+The `appConfigTables.js` file manages the `Table` components you will display in your instance.
+More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigTables)
 
 
 ------------
