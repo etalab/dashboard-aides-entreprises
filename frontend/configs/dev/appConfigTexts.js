@@ -4,7 +4,7 @@ const COMMON_TEXTS_HTML = {
     textClass: 'text-left mx-4 pt-4 pb-5 mb-5',
     textContent: {
       fr: `
-        Cette tableau de bord a été créé par le département Etalab de la
+        Ce tableau de bord a été créé par le département Etalab de la
         <a target="_blank" href="https://www.numerique.gouv.fr">
           Direction Interministérielle du Numérique (DINUM)</a>
         et son
