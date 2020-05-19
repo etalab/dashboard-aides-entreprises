@@ -1,5 +1,6 @@
 ---
 title : CONFIGURATION FILE - DATASETS
+classes: wide
 categories:
   - configfiles
 tags:
@@ -8,7 +9,7 @@ tags:
   - configuration
   - installation
   - data
-toc: true
+toc: false
 toc_label: " contents"
 toc_sticky: true
 ---

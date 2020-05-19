@@ -1,5 +1,6 @@
 ---
 title : CONFIGURATION FILE - TEXTS
+classes: wide
 categories:
   - configfiles
 tags:
@@ -9,7 +10,7 @@ tags:
   - installation
   - dataviz
   - texts
-toc: true
+toc: false
 toc_label: " contents"
 toc_sticky: true
 ---

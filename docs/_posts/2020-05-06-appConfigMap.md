@@ -1,5 +1,6 @@
 ---
 title : CONFIGURATION FILE - MAPS
+classes: wide
 categories:
   - configfiles
 tags:
@@ -9,7 +10,7 @@ tags:
   - installation
   - dataviz
   - map
-toc: true
+toc: false
 toc_label: " contents"
 toc_sticky: true
 ---

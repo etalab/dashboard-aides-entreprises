@@ -1,5 +1,6 @@
 ---
 title : CONFIGURATION FILE - NAVBAR FOOTER
+classes: wide
 categories:
   - configfiles
 tags:
@@ -11,7 +12,7 @@ tags:
   - UX
   - navbar
   - footer
-toc: true
+toc: false
 toc_label: " contents"
 toc_sticky: true
 ---

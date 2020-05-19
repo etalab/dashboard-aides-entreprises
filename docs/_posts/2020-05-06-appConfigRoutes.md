@@ -1,5 +1,6 @@
 ---
 title : CONFIGURATION FILE - ROUTES
+classes: wide
 categories:
   - configfiles
 tags:
@@ -10,7 +11,7 @@ tags:
   - global
   - UX
   - routes
-toc: true
+toc: false
 toc_label: " contents"
 toc_sticky: true
 ---
