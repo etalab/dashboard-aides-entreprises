@@ -8,8 +8,11 @@ tags:
   - configuration
   - global
   - UX
+  - UI
   - navbar
   - footer
+  - schema
+  - buttons
 toc: false
 toc_label: " contents"
 toc_sticky: true

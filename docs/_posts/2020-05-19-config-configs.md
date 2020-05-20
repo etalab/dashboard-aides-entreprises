@@ -6,6 +6,7 @@ tags:
   - tutorial
   - configuration
   - installation
+  - schema
 toc: true
 toc_label: " contents"
 toc_sticky: true

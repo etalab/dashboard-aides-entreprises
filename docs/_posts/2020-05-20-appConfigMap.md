@@ -9,6 +9,8 @@ tags:
   - dataviz
   - map
   - mapbox-gl
+  - UI
+  - schema
 toc: false
 toc_label: " contents"
 toc_sticky: true

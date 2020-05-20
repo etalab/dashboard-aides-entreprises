@@ -5,9 +5,9 @@ categories:
   - general
 tags:
   - examples
-  - gallery
   - deployment
   - overview
+  - iframe
 toc: true
 toc_label: " contents"
 toc_sticky: true

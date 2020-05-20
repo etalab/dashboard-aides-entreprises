@@ -8,6 +8,9 @@ tags:
   - configuration
   - dataviz
   - charts
+  - UI
+  - schema
+  - apexchart
 toc: false
 toc_label: " contents"
 toc_sticky: true

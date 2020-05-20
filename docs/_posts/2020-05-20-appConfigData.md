@@ -8,6 +8,7 @@ tags:
   - configuration
   - data
   - global
+  - schema
 toc: false
 toc_label: " contents"
 toc_sticky: true

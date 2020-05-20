@@ -7,8 +7,10 @@ tags:
   - tutorial
   - configuration
   - global
+  - navbar
   - UI
   - UX
+  - routes
 toc: false
 toc_label: " contents"
 toc_sticky: true

@@ -8,7 +8,9 @@ tags:
   - configuration
   - dataviz
   - numbers
+  - UI
   - data
+  - schema
 toc: false
 toc_label: " contents"
 toc_sticky: true

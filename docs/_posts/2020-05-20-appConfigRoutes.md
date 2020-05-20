@@ -9,6 +9,7 @@ tags:
   - global
   - UX
   - routes
+  - schema
 toc: false
 toc_label: " contents"
 toc_sticky: true
