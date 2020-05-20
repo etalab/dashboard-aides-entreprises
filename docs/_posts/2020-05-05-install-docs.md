@@ -7,7 +7,15 @@ tags:
   - configuration
   - installation
   - Jekyll
+toc: true
+toc_label: " contents"
+toc_sticky: true
+header:
+  overlay_image: /static/screenshots/odamap-map-01.png
+  overlay_filter: .15 # same as adding an opacity of 0.5 to a black background
 ---
+
+Deploy the present documentation
 
 --------
 
@@ -19,9 +27,7 @@ The documentation is produced with :
 
 --------
 
-#### For a local deployment of the documentation project (Jekyll + MMistakes template)
-
---------
+## Local deployment of the documentation project
 
 - Install ruby, Jekyll
 
@@ -53,7 +59,16 @@ The documentation is produced with :
 
 - then check in your browser : [`127.0.0.1:4000`](127.0.0.1:4000)
 
-------------
+---
+
+## Deployment on Github pages
+
+Check the following links :
+
+- [Jekyll / gh-pages](https://jekyllrb.com/docs/github-pages/)
+- [MMiistakes / gh-pages](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
+
+----
 
 <br>
 <br>

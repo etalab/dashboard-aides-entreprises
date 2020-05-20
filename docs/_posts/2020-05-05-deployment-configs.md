@@ -14,6 +14,10 @@ toc: true
 toc_label: " contents"
 toc_sticky: true
 
+header:
+  overlay_image: /static/screenshots/odamap-map-01.png
+  overlay_filter: .15 # same as adding an opacity of 0.5 to a black background
+
 legends:
   - url: /documentation/configurations/APIVIZ-CONFIGURATIONS-export-legends.jpg
     image_path: /documentation/configurations/APIVIZ-CONFIGURATIONS-export-legends.jpg
@@ -55,8 +59,8 @@ sovereign:
 #     title: "main data flows"
 ---
 
+Deploy your ODAMAP instance as a Single Page App
 
----------
 ## Deployment on Netlify
 
 ### section `Build & deploy ` : 
