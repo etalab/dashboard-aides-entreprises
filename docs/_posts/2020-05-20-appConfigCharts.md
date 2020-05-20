@@ -4,10 +4,8 @@ classes: wide
 categories:
   - configfiles
 tags:
-  - documentation
   - tutorial
   - configuration
-  - installation
   - dataviz
   - charts
 toc: false

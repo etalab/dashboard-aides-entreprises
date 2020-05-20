@@ -3,7 +3,6 @@ title : INSTALLATION WALKTHROUGH
 categories:
   - guide
 tags:
-  - documentation
   - tutorial
   - configuration
   - installation

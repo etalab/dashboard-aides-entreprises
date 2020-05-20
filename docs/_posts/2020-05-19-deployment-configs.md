@@ -4,11 +4,11 @@ title : DEPLOYMENT CONFIGURATIONS
 categories:
   - guide
 tags:
-  - documentation
+  - tutorial
   - configuration
+  - installation
   - schema
   - principles
-  - installation
   - deployment
 toc: true
 toc_label: " contents"

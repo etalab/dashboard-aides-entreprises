@@ -3,7 +3,6 @@ title : CONFIGURE YOUR ODAMAP INSTANCE
 categories:
   - configuration
 tags:
-  - documentation
   - tutorial
   - configuration
   - installation

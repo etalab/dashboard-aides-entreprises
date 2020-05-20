@@ -3,10 +3,8 @@ title : CONFIGURE YOUR LOCALES
 categories:
   - configuration
 tags:
-  - documentation
   - tutorial
   - configuration
-  - installation
   - internationalization
 toc: true
 toc_label: " contents"

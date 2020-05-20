@@ -4,8 +4,9 @@ categories:
   - guide
 tags:
   - documentation
-  - configuration
+  - tutorial
   - installation
+  - deployment
   - Jekyll
 toc: true
 toc_label: " contents"

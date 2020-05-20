@@ -4,9 +4,9 @@ categories:
   - dev
 tags:
   - tech
-  - roadmap
   - guidelines
-  - stack
+  - contribute
+  - maintain
 toc: true
 toc_label: " contents"
 toc_sticky: true

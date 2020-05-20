@@ -4,8 +4,9 @@ categories:
   - dev
 tags:
   - tech
-  - stack
   - credits
+  - contribute
+  - maintain
 toc: true
 toc_label: " contents"
 toc_sticky: true

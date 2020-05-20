@@ -4,11 +4,10 @@ classes: wide
 categories:
   - configfiles
 tags:
-  - documentation
   - tutorial
   - configuration
-  - installation
   - data
+  - global
 toc: false
 toc_label: " contents"
 toc_sticky: true

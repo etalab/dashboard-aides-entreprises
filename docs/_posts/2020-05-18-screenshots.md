@@ -4,9 +4,10 @@ classes: wide
 categories:
   - general
 tags:
-  - documentation
-  - configuration
+  - examples
+  - gallery
   - deployment
+  - overview
 toc: true
 toc_label: " contents"
 toc_sticky: true
