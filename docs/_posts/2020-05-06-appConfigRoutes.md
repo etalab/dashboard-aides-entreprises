@@ -1,5 +1,5 @@
 ---
-title : CONFIGURATION FILE - ROUTES
+title : CONFIGURATION - ROUTES
 classes: wide
 categories:
   - configfiles

@@ -1,5 +1,5 @@
 ---
-title : CONFIGURATION FILE - MAPS
+title : CONFIGURATION - MAPS
 classes: wide
 categories:
   - configfiles
@@ -41,7 +41,9 @@ frontend
 
 The `appConfigMap.js` file manages the maps you will display in your instance.
 
-This file contains the settings for the Map component. 
+This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`.
+
+The ODAMAP's Map component heavily relies on [Mapbox-GL.js API](https://docs.mapbox.com/mapbox-gl-js/api/) and uses the [vue-mapbox wrapper](https://soal.github.io/vue-mapbox/) for Vue.js. Please read their documentation.
 
 The most important parts of a map setting are the following : 
 
@@ -102,7 +104,9 @@ The most important parts of a map setting are the following :
 
 ### The `sources` field
 
-In this section your map component will know which dataset it will need to load. 
+In the `sources` section your map component will know which dataset it will need to load onto the map. 
+
+[For data sources loading in general you can see this page]({{site.baseurl}}/configfiles/appConfigData)
 
 The component can load external sources (like a distant geojson file or a geojson file in the static folder), OR can load data from the vuex store and transform it to geodata (like changing a list of rows in a csv to a marker on the map).
 
@@ -158,11 +162,44 @@ The component can load external sources (like a distant geojson file or a geojso
 
 ### The `maps` field
 
+In the `maps` section your map component will know how layers should behave when clicked upon...
+
 ```json
 {
   "maps" : [
-    {
 
+    ### example of a map
+    {
+      "id": 'map-aides-reg',
+      "name": 'Carte aides par région',
+      "category": 'regional',
+      "properties": 'aides',
+      "data": 'aides',
+      "layers": [
+        # **list** of layers id 
+        'regions-fill',
+        'regions-lines',
+        'regions-aides',
+        'regions-aides-montants'
+      ],
+      "clicEvents" : [
+        # **list** of clic events/functions
+
+        # example of a clic event description
+        {
+          "funcName": 'goToPolygon',
+          "help": 'fly to polygon',
+          "funcParams": {
+            "zoomRange": {
+              "minZoom": undefined,
+              "maxZoom": 9
+            },
+            "propName": 'code'
+          }
+        },
+        # end of clic event example 
+
+      ]
     }
   ]
 }
@@ -171,12 +208,56 @@ The component can load external sources (like a distant geojson file or a geojso
 
 ### The `layers` field
 
+In the `layers` section your map component will apply styling to your data and geodata...
+
+Please [read the mapbox-gl documentation about layers](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/) to understand the how to customize your maps.
+
 ```json
 {
   "layers" : [
-    {
 
-    }
+    ### example of a mapbox-gl layer settings
+    {
+      "id": "regions-fill",
+      "type": "fill",
+      "source": "regions",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": [
+          "case",
+          [
+            "boolean",
+            [
+              "feature-state",
+              "selected"
+            ],
+            false
+          ],
+          "#572a99",
+          "#526781"
+        ],
+        "fill-outline-color": "#627BC1",
+        "fill-opacity": [
+          "case",
+          [
+            "boolean",
+            [
+              "feature-state",
+              "selected"
+            ],
+            [
+              "feature-state",
+              "hover"
+            ],
+            false
+          ],
+          0.15,
+          0
+        ]
+      }
+    },
   ]
 }
 

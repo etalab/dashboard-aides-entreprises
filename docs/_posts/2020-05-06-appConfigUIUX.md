@@ -1,5 +1,5 @@
 ---
-title : CONFIGURATION FILE - UI-UX
+title : CONFIGURATION - UI-UX
 classes: wide
 categories:
   - configfiles
