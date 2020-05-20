@@ -34,13 +34,16 @@ if (process.env.NUXT_ENV_RUN_MODE === 'dev') {
   for (const conf of configsJS.configsReferences) {
     const jsonFilename = conf.field + '.json'
     console.log(
-      '>>> nuxt.config.js / copyConfigsToJSON / jsonFilename : ',
+      '\n>>> nuxt.config.js / copyConfigsToJSON / start ... jsonFilename : ',
       jsonFilename
     )
     try {
       const jsonStr = JSON.stringify(conf.data, null, 2)
-      // console.log('>>> nuxt.config.js / copyConfigsToJSON / jsonStr : ', jsonStr)
       fs.writeFileSync(`${staticJSONpath}/${jsonFilename}`, jsonStr, 'utf8')
+      console.log(
+        '>>> nuxt.config.js / copyConfigsToJSON / end ... jsonFilename : ',
+        jsonFilename
+      )
     } catch (error) {
       console.log(
         '>>> nuxt.config.js / copyConfigsToJSON / ... error : ',

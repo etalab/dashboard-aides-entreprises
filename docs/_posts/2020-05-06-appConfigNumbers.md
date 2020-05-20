@@ -41,15 +41,17 @@ frontend
 
 The `appConfigNumbers.js` file manages the maps you will display in your instance.
 
-This file contains the settings for :
+This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`.
 
-```shell
-### TO BE WRITTEN ###
-```
 
 ### Global parameters
 
-- `parameter` : explanation
+```json
+{
+  
+}
+
+```
 
 ### Example :
 

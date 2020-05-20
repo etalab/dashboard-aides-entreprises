@@ -41,15 +41,16 @@ frontend
 
 The `appConfigTables.js` file manages the tables you will display in your instance.
 
-This file contains the settings for :
-
-```shell
-### TO BE WRITTEN ###
-```
+This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`.
 
 ### Global parameters
 
-- `parameter` : explanation
+```json
+{
+  
+}
+
+```
 
 ### Example :
 

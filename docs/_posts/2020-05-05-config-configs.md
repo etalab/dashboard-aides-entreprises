@@ -133,7 +133,7 @@ More about how to use this configuration file [following this link]({{site.baseu
 ### Charts
 
 ```shell
-### TO BE WRITTEN ###
+DOCUMENTATION_DRAFT=v.1
 ```
 The `appConfigCharts.js` file manages the `ApexChart` components you will display in your ODAMAP instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigCharts)
