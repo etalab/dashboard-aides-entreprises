@@ -27,6 +27,20 @@ ODAMAP relies heavily on the [Nuxt framework](https://nuxtjs.org/), and uses var
 
 {% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-architecture-02-en.png" alt="" %}
 
+The global idea here is the following : 
+
+1. The environment variables load the configuration files of your custom ODAMAP instance ; 
+1. Every route you load in the browser triggers a serie of middlewares ; 
+    - `getConfigsInit.js`: fetch config files (distant or local) ;
+    - `setConfigsInit.js`: set configuration in the store ;
+    - `setLocales.js`: set locales from url params if any ;
+    - `getDataInit.js`: fetch datasets (distant or local) for a global use ;
+    - `getRouteConfig.js`: fetch config (distant or local) for a specific route ; 
+    - `getRouteData.js`: fetch datasets (distant or local) for a specific route use ; 
+    - `setRouteViews.js`: set UX for a specific route ;
+1. Once the middlewares finished to load your page populate the many frontend components it will need (see next section).
+
+
 ### Frontend components basic setup
 
 From the client point of view the page loaded in the browser will be constituted by a serie of `components`, themselves mounted given :
