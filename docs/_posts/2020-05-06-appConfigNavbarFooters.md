@@ -1,5 +1,5 @@
 ---
-title : CONFIGURATION FILE - NAVBAR FOOTER
+title : CONFIGURATION - NAVBAR FOOTER
 classes: wide
 categories:
   - configfiles
@@ -43,7 +43,11 @@ frontend
 
 The `appConfigNavbarFooters.js` file manages the footer navbar you will display in your instance.
 
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-navbarfooter-01.png" alt="" %}
+
 This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`.
+
+This navbar only appears on mobile sizes (specified in UI-UX config file). You can configure the actions for each buttons. It could be really usefull to toggle the visibility of some identified divs, so it could have a more fluid UX on mobiles.
 
 ### Global parameters
 
@@ -87,6 +91,9 @@ This `.js` file can be changed in development mode, but it will usually be trans
           "icon": "fas fa-th",
           "action": "toggleDivs",
           "divsToToggle": [
+
+            # list the div you want to toggle 
+            # for a specific route id
             {
               "routeId": "fds",
               "toggle": "on",

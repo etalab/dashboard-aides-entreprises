@@ -1,5 +1,5 @@
 ---
-title : CONFIGURATION FILE - TABLES
+title : CONFIGURATION - TABLES
 classes: wide
 categories:
   - configfiles

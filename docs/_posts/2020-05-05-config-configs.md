@@ -122,6 +122,10 @@ More about how to use this configuration file [following this link]({{site.baseu
 
 ## Datavisualisation configuration files
 
+Those configuration files are setting the components visible by the client. The following schema shows a basic setup containing 
+
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-overview-01.png" alt="" %}
+
 ### Map
 
 ```shell
