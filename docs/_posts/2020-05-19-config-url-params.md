@@ -3,10 +3,9 @@ title : URL PARAMETERS
 categories:
   - configuration
 tags:
-  - documentation
   - tutorial
   - configuration
-  - installation
+  - parameters
 toc: true
 toc_label: " contents"
 toc_sticky: true

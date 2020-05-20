@@ -4,12 +4,11 @@ classes: wide
 categories:
   - configfiles
 tags:
-  - documentation
   - tutorial
   - configuration
-  - installation
   - dataviz
   - map
+  - mapbox-gl
 toc: false
 toc_label: " contents"
 toc_sticky: true

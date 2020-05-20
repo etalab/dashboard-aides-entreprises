@@ -4,10 +4,9 @@ classes: wide
 categories:
   - configuration
 tags:
-  - documentation
+  - overview
   - tutorial
   - configuration
-  - installation
 toc: true
 toc_label: " contents"
 toc_sticky: true

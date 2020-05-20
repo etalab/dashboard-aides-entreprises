@@ -3,10 +3,9 @@ title : CONFIGURE YOUR ENVIRONMENT VARIABLES
 categories:
   - configuration
 tags:
-  - documentation
   - tutorial
   - configuration
-  - installation
+  - environment
 toc: true
 toc_label: " contents"
 toc_sticky: true
