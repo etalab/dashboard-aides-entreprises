@@ -43,17 +43,11 @@ The `appConfigTables.js` file manages the tables you will display in your instan
 
 This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`.
 
-### Global parameters
+#### Global parameters
 
 ```json
 {
-  
+### TO BE WRITTEN ###
 }
 
-```
-
-### Example :
-
-```shell
-### TO BE WRITTEN ###
 ```
