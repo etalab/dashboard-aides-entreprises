@@ -19,7 +19,26 @@ toc_sticky: true
 
 ### Frontend modules overview
 
+ODAMAP relies heavily on the [Nuxt framework](https://nuxtjs.org/), and uses various standard components you could find in any nuxt project : 
+
+- `middlewares` : loaded before mounting pages ;
+- `store` : vuex standard module stores ; 
+- `components` : standard vue.js components.
+
 {% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-architecture-02-en.png" alt="" %}
+
+### Frontend components basic setup
+
+From the client point of view the page loaded in the browser will be constituted by a serie of `components`, themselves mounted given :
+
+- the configuration files [relative to the UX-UI and routes]({{site.baseurl}}/configuration/config-configs/#uiux) ;
+- the configuration files [for each component]({{site.baseurl}}/configuration/config-configs/#datavisualisation-configuration-files) (chart, map, number, etc...) ; 
+- the data [loaded and stored in the vuex store]({{site.baseurl}}/configuration/config-configs/#data-configuration-files).
+
+The CSS/vue framework is [Vuetify](vuetifyjs.com/).
+
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-overview-01.png" alt="" %}
+
 
 --------
 
@@ -81,7 +100,7 @@ frontend
 
 ### The URL parameters
 
-- To know more about the URL parameters you can use [click here]({{site.baseurl}}/configuration/config-url-params)
+- To know more about the URL parameters [click here]({{site.baseurl}}/configuration/config-url-params)
 
 
 ### The config files
