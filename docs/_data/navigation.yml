@@ -76,12 +76,6 @@ docs:
       - title: "License"
         url: /meta/license
 
-  - title: Blog
-    url: /posts/
-
-  - title: "Categories"
-    url: /categories/
-
   - title: "Tags"
     url: /tags/
 
@@ -109,3 +103,9 @@ docs:
         url: /configfiles/appConfigTexts
       - title: "# appConfigTables.js"
         url: /configfiles/appConfigTables
+
+  - title: "Categories"
+    url: /categories/
+
+  - title: Blog
+    url: /posts/

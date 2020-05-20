@@ -12,24 +12,31 @@ toc_label: " contents"
 toc_sticky: true
 ---
 
-------------
+---
 
-## DESKTOP VIEW 
+## DESKTOP VIEW
 
-{% include figure image_path="/static/screenshots/odamap-desktop-01.png" alt="desktop view" %}
+The most common way to run your ODAMAP app in the browser should give you the following result (here in `dev` mode) :
 
+{% include figure image_path="/static/screenshots/odamap-desktop-02.png" alt="desktop view" %}
 
-## MOBILE VIEW 
+---
+
+## MOBILE VIEW
+
+ODAMAP is designed to be mobile-friendly and should give you the following (here without the navbar) :
 
 {% include figure image_path="/static/screenshots/odamap-mobile-02.png" alt="mobile view" %}
 
+---
 
-## AS IFRAME 
+## AS IFRAME
+
+ODAMAP is designed to simplify iframe integration (here without the navbar and the routes tabs) :
 
 {% include figure image_path="/static/screenshots/odamap-iframe-01.png" alt="iframe view" %}
 
-
-------------
+---
 
 <br>
 <br>

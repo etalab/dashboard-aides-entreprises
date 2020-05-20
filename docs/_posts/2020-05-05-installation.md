@@ -121,7 +121,9 @@ Other options for deployment :
 
 ### Linting
 
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+For now ODAMAP prefered linter is [StandardJS][standardjs].
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)][standardjs]
 
 Check for linting errors :
 
@@ -133,6 +135,8 @@ Try to lint and fix what could be :
   ```shell
   npx standard --fix
   ```
+
+[standardjs]: https://github.com/standard/standard
 
 <br>
 

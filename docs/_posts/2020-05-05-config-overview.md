@@ -19,7 +19,40 @@ toc_sticky: true
 
 ### Frontend modules overview
 
+ODAMAP relies heavily on the [Nuxt framework](https://nuxtjs.org/), and uses various standard components you could find in any nuxt project : 
+
+- `middlewares` : loaded before mounting pages ;
+- `store` : vuex standard module stores ; 
+- `components` : standard vue.js components.
+
 {% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-architecture-02-en.png" alt="" %}
+
+The global idea here is the following : 
+
+1. The environment variables load the configuration files of your custom ODAMAP instance ; 
+1. Every route you load in the browser triggers a serie of middlewares ; 
+    - `getConfigsInit.js`: fetch config files (distant or local) ;
+    - `setConfigsInit.js`: set configuration in the store ;
+    - `setLocales.js`: set locales from url params if any ;
+    - `getDataInit.js`: fetch datasets (distant or local) for a global use ;
+    - `getRouteConfig.js`: fetch config (distant or local) for a specific route ; 
+    - `getRouteData.js`: fetch datasets (distant or local) for a specific route use ; 
+    - `setRouteViews.js`: set UX for a specific route ;
+1. Once the middlewares finished to load your page populate the many frontend components it will need (see next section).
+
+
+### Frontend components basic setup
+
+From the client point of view the page loaded in the browser will be constituted by a serie of `components`, themselves mounted given :
+
+- the configuration files [relative to the UX-UI and routes]({{site.baseurl}}/configuration/config-configs/#uiux) ;
+- the configuration files [for each component]({{site.baseurl}}/configuration/config-configs/#datavisualisation-configuration-files) (chart, map, number, etc...) ; 
+- the data [loaded and stored in the vuex store]({{site.baseurl}}/configuration/config-configs/#data-configuration-files).
+
+The CSS/vue framework globally used iin ODAMAP is [Vuetify](vuetifyjs.com/).
+
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-overview-01.png" alt="" %}
+
 
 --------
 
@@ -33,9 +66,9 @@ To configure your instance you need to differenciate the following folders in th
 
 As a developper you'll mainly have to use and modify :
 
-- `/frontend/.env` file
-- `/frontend/configs/dev` folder
-- `/frontend/static/` folder
+- the `/frontend/.env` file - [more here][env_file]
+- the `/frontend/configs/dev` folder - [more here][config_folder]
+- the `/frontend/static/` folder - [more here][static_folder]
 
 ### ODAMAP folders structure
 
@@ -81,22 +114,29 @@ frontend
 
 ### The URL parameters
 
-- To know more about the URL parameters you can use [click here]({{site.baseurl}}/configuration/config-url-params)
+- To know more about the URL parameters [click here][url_params]
 
 
 ### The config files
 
-- To know more about the `/frontend/.env` file [click here]({{site.baseurl}}/configuration/config-envfile)
-- To know more about the `/frontend/configs` files [click here]({{site.baseurl}}/configuration/config-configs)
-- To know more about the `/frontend/static` files [click here]({{site.baseurl}}/configuration/config-static)
-- To know more about the `/frontend/locales` files [click here]({{site.baseurl}}/configuration/config-locales)
+- To know more about the `/frontend/.env` file [click here][env_file]
+- To know more about the `/frontend/configs` files [click here][config_folder]
+- To know more about the `/frontend/static` files [click here][static_folder]
+- To know more about the `/frontend/locales` files [click here][locales]
 
-<!-- -----
+[url_params]: {{site.baseurl}}/configuration/config-url-params
+[env_file]: {{site.baseurl}}/configuration/config-envfile
+[config_folder]: {{site.baseurl}}/configuration/config-configs
+[static_folder]: {{site.baseurl}}/configuration/config-static
+[locales]: {{site.baseurl}}/configuration/config-locales
+
+<!--
+-----
 
 - site.baseurl : {{site.baseurl}}/configuration/config-envfile
 - absolute_url : {{ "/configuration/config-envfile" | absolute_url }}
-- relative_url : {{ "/configuration/config-envfile" | relative_url }} -->
-
+- relative_url : {{ "/configuration/config-envfile" | relative_url }} 
+-->
 
 ------------
 

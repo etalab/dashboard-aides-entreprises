@@ -61,25 +61,27 @@ sovereign:
 
 ### section `Build & deploy ` : 
 
-#### `Continuous Deployment / Build settings`
+#### - `Continuous Deployment / Build settings`
 
-  ```bash
-  Repository : github.com/etalab/dashboard-aides-entreprises
-  Build command : npm run build
-  Publish directory : dist
-  ```
+```bash
+Repository : github.com/etalab/dashboard-aides-entreprises
+Build command : npm run build
+Publish directory : dist
+```
 
-#### `Continuous Deployment / Deply contexts`
+#### - `Continuous Deployment / Deploy contexts`
 
-  ```bash
-  Production branch : master
-  ```
+```bash
+Production branch : master
+```
 
-#### `Environment / Environment variables `
+#### - `Environment / Environment variables `
 
-  ```bash
-  ### copy your variables from your .env file
-  ```
+```bash
+### copy your variables from your .env file
+```
+
+More on that topic [here]({{site.baseurl}}/configuration/config-envfile/)...
 
 ---------
 
