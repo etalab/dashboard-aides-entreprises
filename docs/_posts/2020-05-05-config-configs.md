@@ -141,7 +141,7 @@ More about how to use this configuration file [following this link]({{site.baseu
 ### Numbers
 
 ```shell
-### TO BE WRITTEN ###
+DOCUMENTATION_DRAFT=v.1
 ```
 The `appConfigNumbers.js` file manages the `Number` components you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigNumbers)
@@ -149,7 +149,7 @@ More about how to use this configuration file [following this link]({{site.baseu
 ### Texts
 
 ```shell
-### TO BE WRITTEN ###
+DOCUMENTATION_DRAFT=v.1
 ```
 The `appConfigTexts.js` file manages the `Text` components you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigTexts)
