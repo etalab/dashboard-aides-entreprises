@@ -3,7 +3,6 @@ title : CHANGE LOG & VERSIONS
 categories:
   - general
 tags:
-  - log
   - versions
 toc: true
 toc_label: " contents"

@@ -7,6 +7,7 @@ tags:
   - configuration
   - installation
   - schema
+  - principles
 toc: true
 toc_label: " contents"
 toc_sticky: true

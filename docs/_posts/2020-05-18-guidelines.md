@@ -7,6 +7,7 @@ tags:
   - guidelines
   - contribute
   - maintain
+  - principles
 toc: true
 toc_label: " contents"
 toc_sticky: true

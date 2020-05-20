@@ -10,6 +10,7 @@ tags:
   - map
   - mapbox-gl
   - UI
+  - data
   - schema
 toc: false
 toc_label: " contents"
