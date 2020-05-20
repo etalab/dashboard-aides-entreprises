@@ -1,5 +1,5 @@
 ---
-title : CONFIGURATION FILE - ROUTES
+title : CONFIGURATION - ROUTES
 classes: wide
 categories:
   - configfiles
@@ -42,29 +42,64 @@ frontend
 
 The `appConfigRoutes.js` file manages the routes you will display in your instance.
 
+This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`
+
 Every route is described in an object ODAMAP will analyze later in its middlewares and components. If you want to have a look on how those settings are processed in middlewares check the `frontend/middleware` folder, particularly `getRouteConfig.js` and `getRouteData.js` middlewares.
 
 The most important part of a route is described under the `pageRows` field. This field is [more precisely described below here]({{site.baseurl}}/configfiles/appConfigRoutes/#the-pagerows-field).
 
 ### Routes objects
 
-- `routes` : **list** of the routes your ODAMAP instance could serve. Every route is described in an object as follows :
-  - `id`: route **unique** id;
-  - `name`: name you want to give to this route (appears in the browser's tab);
-  - `help`: help string for developpers ;
-  - `title`: the title you'll give to this route (depends on the locale);
-  - `titleI18n`: if you want to use your locales i18n files to give a title to this route (depends on the locale) ;
-  - `urls`: **list** of urls this route is assoxiated with. You can use the same route settings for several urls, for instance you can display the same settings for the `/` and `/home` urls ;
-  - `sourcesIds`: **list** the data source ids associated with this route. More on this topic ;
-  - `rawHtml`: load external html **- in development** ;
-  - `navbarFooter`: settings of the footer you want to display in mobile mode. Refers to an `id` of a navbar footer. More on that topic [here]({{site.baseurl}}/configfiles/appConfigNavbarFooter) ;
-    - `activated` : activate footer or not ;
-    - `settings` : contains among other things the `id` of the navbar footer you need ;
-  - `pageRows`: the main part of a **list** of the rows and columns, the components you will use in the page... See below for a more complete descriptioin;
-  - `setUpRouteViews`: ;
-    - `urlArgs` : **list** paramters arguments the route can check in the client's url ;
-    - `functions` : **list** of functions to run before mounting the route;
+```json
+{
+  "routes" : [
+    ### **list** of the routes your ODAMAP instance could serve. 
+    ### Every route is described in an object as follows :
 
+    ### Example of a route description
+    {
+      "id" : route **unique** id,
+      "name" : name you want to give to this route (appears in the browser's tab),
+      "help" : help string for developpers ,
+      "title" : the title you'll give to this route (depends on the locale),
+      "titleI18n" : if you want to use your locales i18n files 
+        # to give a title to this route (depends on the locale) ,
+      "urls" : [
+        # **list** of urls this route is assoxiated with. 
+        # You can use the same route settings for several urls, 
+        # for instance you can display the same settings for the `/` and `/home` urls 
+      ],
+      "sourcesIds" : [
+        # **list** the data source ids associated with this route.
+        #  More on this topic ...
+      ],
+      "rawHtml" : load external html **- in development** ,
+      "navbarFooter" : {
+        # settings of the footer you want to display in mobile mode.
+        # Refers to an `id` of a navbar footer. 
+        # More on that topic at /configfiles/appConfigNavbarFooter)
+
+        "activated" : activate footer or not,
+        "settings" : contains among other things the `id` of the navbar footer you need ,
+      },
+      "pageRows" : [
+        # **list** of the rows and columns for this route, 
+        # the components you will use in the page...
+        # See below for a more complete description;
+      ],
+      "setUpRouteViews" : {
+        "urlArgs" : **list** paramters arguments the route can check in the client's url ,
+        "functions" : **list** of functions to run before mounting the route,
+      }
+    },
+    ### end of the route example
+
+    ... 
+
+  ]
+}
+
+```
 
 ### The `pageRows` field
 
@@ -158,8 +193,32 @@ This schema corresponds to the following `pageRows` settings in a route object :
             }
           ]
         },
+        {
+          "id": 'col2',
+          "colName": 'main map',
+          "activated": true,
+          "colClass": 'col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8',
+          "hasScrollbar": false,
+          "smallScreenVerticalOrder": undefined,
+          "colRows": [
+            {
+              "component": 'map',
+              "activated": true,
+              "smallScreenVerticalOrder": 2,
+              "justify": 'center',
+              "align": 'center',
+              "settings": {
+                "id" : 'map-france-aides-metro',
+                "containerClass": 'pb-0',
+                "mobileIsVisibleDefault": true,
+                "desktopIsVisibleDefault": true
+              }
+            }
+          ]
+        }
       ]
     }
   ]
 }
+
 ```
