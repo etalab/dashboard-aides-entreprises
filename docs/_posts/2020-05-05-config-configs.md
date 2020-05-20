@@ -69,7 +69,7 @@ They will populate the configuration for the several features ODAMAP can count o
 ### UIUX
 
 ```shell
-DOCUMENTATION_DRAFT=v.1
+DOCUMENTATION_DRAFT=v.2
 ```
 The `appConfigUIUX.js` file manages the UIUX you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigUIUX)
@@ -77,7 +77,7 @@ More about how to use this configuration file [following this link]({{site.baseu
 ### Routes
 
 ```shell
-DOCUMENTATION_DRAFT=v.1
+DOCUMENTATION_DRAFT=v.2
 ```
 The `appConfigRoutes.js` file manages the Routes you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigRoutes)
@@ -105,7 +105,7 @@ More about how to use this configuration file [following this link]({{site.baseu
 ### Data
 
 ```shell
-DOCUMENTATION_DRAFT=v.1
+DOCUMENTATION_DRAFT=v.2
 ```
 The `appConfigData.js` file manages the Data you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigData)
@@ -125,7 +125,7 @@ More about how to use this configuration file [following this link]({{site.baseu
 ### Map
 
 ```shell
-### TO BE WRITTEN ###
+DOCUMENTATION_DRAFT=v.1
 ```
 The `appConfigMap.js` file manages the `Map` components you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigMap)

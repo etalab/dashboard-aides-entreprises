@@ -41,18 +41,78 @@ frontend
 
 The `appConfigMap.js` file manages the maps you will display in your instance.
 
-This file contains the settings for :
+This file contains the settings for the Map component. 
 
-```shell
-### TO BE WRITTEN ###
-```
+The most important parts of a map setting are the following : 
+
+ - the `sources` field. This field is [more precisely described below here]({{site.baseurl}}/configfiles/appConfigMap/#the-sources-field).
+ - the `maps` field. This field is [more precisely described below here]({{site.baseurl}}/configfiles/appConfigMap/#the-maps-field).
+ - the `layers` field. This field is [more precisely described below here]({{site.baseurl}}/configfiles/appConfigMap/#the-layers-field).
+
 
 ### Global parameters
 
-- `parameter` : explanation
-
-### Example :
-
-```shell
-### TO BE WRITTEN ###
+```json
+{
+  "help" : help string for developpers,
+  "settingsIds" : **list** of <map settings>,
+}
 ```
+
+### Structure of a <map settings> :
+
+Every map is described with a common structure.
+
+```json
+{
+  "id" : '',
+  "isActivated" : '',
+  "titleI18n" : '',
+  "map_options" : '',
+  "sizes" : sizes ,
+  "sources" : [ 
+    list of sources... see paragraph below
+  ],
+  "maps" : [ 
+    list of layers groups and clic events... see paragraph below
+  ]',
+  "layers" : [ 
+    list of layers... see paragraph below
+  ],
+  "maps_visibility" : 
+  {
+    "title" :  ,
+    "is_activated" : ,
+    "is_drawer_open" : ,
+    "map_switches" : ,
+  },
+}
+```
+
+### The `sources` field
+
+```json
+{
+
+}
+
+```
+
+### The `maps` field
+
+```json
+{
+
+}
+
+```
+
+### The `layers` field
+
+```json
+{
+
+}
+
+```
+
