@@ -1,5 +1,5 @@
 ---
-title : CHANGE LOG
+title : CHANGE LOG & VERSIONS
 categories:
   - general
 tags:
@@ -8,9 +8,12 @@ tags:
 toc: true
 toc_label: " contents"
 toc_sticky: true
+header:
+  overlay_image: /static/screenshots/odamap-map-01.png
+  overlay_filter: .15 # same as adding an opacity of 0.5 to a black background
 ---
 
--------------
+ODAMAP is evolving, check the new features here
 
 ### Version 2
 
