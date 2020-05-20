@@ -85,7 +85,7 @@ More about how to use this configuration file [following this link]({{site.baseu
 ### NavbarFooters
 
 ```shell
-### TO BE WRITTEN ###
+DOCUMENTATION_DRAFT=v.1
 ```
 The `appConfigNavbarFooters.js` file manages the NavbarFooters you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigNavbarFooters)

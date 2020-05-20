@@ -49,13 +49,76 @@ This `.js` file can be changed in development mode, but it will usually be trans
 
 ```json
 {
-  
+  "help" : help string for developpers,
+  "settingsIds" : [
+    ### **list** of <navbar footer settings>
+
+    {
+      "id": "navbar-footer-01",
+      "help": "",
+      "activated": true,
+      "title": {
+        "fr": ""
+      },
+      "titleI18n": "navbars.footer.title",
+      "navbarFooterClass": "",
+      "height": 70,
+      "grow": true,
+      "shift": true,
+      "defaultBtnNav": "map",
+      "redirectAtBreakShow": {
+        "path": "/map",
+        "btnNav": "map"
+      },
+      "redirectAtBreakNoShow": {
+        "path": "/",
+        "btnNav": "home"
+      },
+      "buttons": [
+        # **list** of buttons of your navbar
+
+        # example of a button
+        {
+          "title": {
+            "fr": "accueil"
+          },
+          "value": "home",
+          "showTitle": true,
+          "icon": "fas fa-th",
+          "action": "toggleDivs",
+          "divsToToggle": [
+            {
+              "routeId": "fds",
+              "toggle": "on",
+              "toggleVisibility": [
+                "isVisibleMobile"
+              ],
+              "divIds": [
+                "text-fds-title",
+                "text-fds-infos"
+              ]
+            },
+            {
+              "routeId": "fds",
+              "toggle": "off",
+              "toggleVisibility": [
+                "isVisibleMobile"
+              ],
+              "divIds": [
+                "apexchart-fds",
+                "apexchart-fds-categ-jur-pie",
+                "apexchart-fds-effectifs",
+                "map-france-aides-metro"
+              ]
+            },
+          ],
+          "offset": 10
+        },
+
+      ]
+    }
+
+  ]
 }
 
-```
-
-### Example : 
-
-```shell
-### TO BE WRITTEN ###
 ```
