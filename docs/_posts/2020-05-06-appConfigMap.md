@@ -41,6 +41,8 @@ frontend
 
 The `appConfigMap.js` file manages the maps you will display in your instance.
 
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-map-01.png" alt="" %}
+
 This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`.
 
 The ODAMAP's Map component heavily relies on [Mapbox-GL.js API](https://docs.mapbox.com/mapbox-gl-js/api/) and uses the [vue-mapbox wrapper](https://soal.github.io/vue-mapbox/) for Vue.js. Please read their documentation.

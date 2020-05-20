@@ -85,7 +85,7 @@ More about how to use this configuration file [following this link]({{site.baseu
 ### NavbarFooters
 
 ```shell
-### TO BE WRITTEN ###
+DOCUMENTATION_DRAFT=v.1
 ```
 The `appConfigNavbarFooters.js` file manages the NavbarFooters you will display in your instance.
 More about how to use this configuration file [following this link]({{site.baseurl}}/configfiles/appConfigNavbarFooters)
@@ -121,6 +121,10 @@ More about how to use this configuration file [following this link]({{site.baseu
 ------
 
 ## Datavisualisation configuration files
+
+Those configuration files are setting the components visible by the client. The following schema shows a basic setup containing 
+
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-overview-01.png" alt="" %}
 
 ### Map
 

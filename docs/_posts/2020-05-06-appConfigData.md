@@ -40,6 +40,8 @@ frontend
 
 The `appConfigData.js` file manages the data you will display in your instance.
 
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-data-01.png" alt="" %}
+
 This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`
 
 

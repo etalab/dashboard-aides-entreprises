@@ -1,5 +1,5 @@
 ---
-title : CONFIGURATION FILE - TEXTS
+title : CONFIGURATION - TEXTS
 classes: wide
 categories:
   - configfiles
@@ -40,6 +40,8 @@ frontend
 ## The TEXTS configuration file
 
 The `appConfigTexts.js` file manages the texts you will display in your instance.
+
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-texts-01.png" alt="" %}
 
 This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`.
 

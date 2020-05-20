@@ -1,5 +1,5 @@
 ---
-title : CONFIGURATION FILE - NUMBERS
+title : CONFIGURATION - NUMBERS
 classes: wide
 categories:
   - configfiles
@@ -40,6 +40,8 @@ frontend
 ## The NUMBERS configuration file
 
 The `appConfigNumbers.js` file manages the maps you will display in your instance.
+
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-numbers-01.png" alt="" %}
 
 This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`.
 

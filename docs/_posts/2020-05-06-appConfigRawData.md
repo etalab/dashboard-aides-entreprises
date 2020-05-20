@@ -1,5 +1,5 @@
 ---
-title : CONFIGURATION FILE - DATASETS RAW
+title : CONFIGURATION - DATASETS RAW
 classes: wide
 categories:
   - configfiles

@@ -41,6 +41,8 @@ frontend
 
 The `appConfigCharts.js` file manages the charts you will display in your instance.
 
+{% include figure image_path="/static/schemas/DASHBOARD_WIREFRAME-charts-01.png" alt="" %}
+
 This `.js` file can be changed in development mode, but it will usually be transformed into a `.json` file. The later will be stored in `frontend/static/configs/`
 
 The ODAMAP's Map component heavily relies on [Apecharts API](https://apexcharts.com/docs/) and uses the [vue-apexcharts wrapper](https://apexcharts.com/docs/vue-charts/) for Vue.js. Please read their documentation.
