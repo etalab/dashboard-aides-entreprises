@@ -13,6 +13,11 @@ toc_sticky: true
 header:
   overlay_image: /static/screenshots/odamap-map-01.png
   overlay_filter: .15 # same as adding an opacity of 0.5 to a black background
+  actions:
+    - label: "ODAMAP overview"
+      url: "/general/overview"
+    - label: "why ODAMAP ?"
+      url: "/general/history"
 ---
 
 Some previews of what your custom ODAMAP instance should look like...
