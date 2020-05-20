@@ -7,7 +7,10 @@ tags:
   - tutorial
   - configuration
   - dataviz
+  - UI
   - texts
+  - schema
+  - data
 toc: false
 toc_label: " contents"
 toc_sticky: true

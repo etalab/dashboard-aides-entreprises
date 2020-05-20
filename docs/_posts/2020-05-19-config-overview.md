@@ -7,6 +7,11 @@ tags:
   - overview
   - tutorial
   - configuration
+  - introduction
+  - installation
+  - schema
+  - principles
+  - environment
 toc: true
 toc_label: " contents"
 toc_sticky: true

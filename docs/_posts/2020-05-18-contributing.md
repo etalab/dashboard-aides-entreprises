@@ -7,6 +7,8 @@ tags:
   - credits
   - contribute
   - maintain
+  - guidelines
+  - principles
 toc: true
 toc_label: " contents"
 toc_sticky: true

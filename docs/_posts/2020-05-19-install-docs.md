@@ -3,9 +3,7 @@ title : INSTALL THE DOCS WITH JEKYLL
 categories:
   - guide
 tags:
-  - documentation
   - tutorial
-  - installation
   - deployment
   - Jekyll
 toc: true

@@ -6,6 +6,8 @@ tags:
   - tutorial
   - configuration
   - installation
+  - introduction
+  - environment
 toc: true
 toc_label: " contents"
 toc_sticky: true
