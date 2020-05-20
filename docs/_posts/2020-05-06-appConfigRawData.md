@@ -47,13 +47,7 @@ This `.js` file can be changed in development mode, but it will usually be trans
 
 ```json
 {
-  
+### TO BE WRITTEN ###
 }
 
-```
-
-### Example : 
-
-```shell
-### TO BE WRITTEN ###
 ```
