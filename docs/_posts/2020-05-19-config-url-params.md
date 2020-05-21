@@ -8,6 +8,7 @@ tags:
   - parameters
   - iframe
   - principles
+  - mobile
 toc: true
 toc_label: " contents"
 toc_sticky: true

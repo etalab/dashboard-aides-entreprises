@@ -8,6 +8,7 @@ tags:
   - deployment
   - overview
   - iframe
+  - mobile
 toc: true
 toc_label: " contents"
 toc_sticky: true
