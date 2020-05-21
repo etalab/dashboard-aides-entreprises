@@ -9,6 +9,9 @@ tags:
   - overview
   - iframe
   - mobile
+  - map
+  - charts
+  - footer
 toc: true
 toc_label: " contents"
 toc_sticky: true
