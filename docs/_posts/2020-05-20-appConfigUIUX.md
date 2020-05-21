@@ -11,6 +11,7 @@ tags:
   - UI
   - UX
   - routes
+  - mobile
 toc: false
 toc_label: " contents"
 toc_sticky: true

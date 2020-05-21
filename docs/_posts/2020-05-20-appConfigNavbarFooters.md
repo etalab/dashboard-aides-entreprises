@@ -13,6 +13,7 @@ tags:
   - footer
   - schema
   - buttons
+  - mobile
 toc: false
 toc_label: " contents"
 toc_sticky: true
