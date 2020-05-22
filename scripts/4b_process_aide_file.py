@@ -22,7 +22,8 @@ Xlsx2csv("../data/aides/xlsx/"+daytoprocess+".XLSX", outputencoding="utf-8").con
 print("CSV généré")
 
 df = pd.read_csv("../data/aides/csv/"+daytoprocess+".csv", dtype={"Période":str,"SIREN":str,"Cde postal": str,"Pays":str,"Montant":float,"Dev.":str,"Date paiement":str})
-df = df.dropna(subset=['SIREN'])
+df = df.dropna(subset=['Date paiement'])
+df.fillna({'SIREN':'WALLISETFUTUNA'}, inplace=True)
 
 print("Dataframe aide chargé")
 
