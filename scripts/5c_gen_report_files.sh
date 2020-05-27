@@ -1,3 +1,5 @@
+#!/bin/bash
+
 curl http://localhost:5000/stat/report > ../backend/json/report/report-maille-national.json
 curl http://localhost:5000/stat/report/reg > ../backend/json/report/report-maille-regional.json
 curl http://localhost:5000/stat/report/dep > ../backend/json/report/report-maille-departemental.json
@@ -26,6 +28,6 @@ sudo mv /tmp/reports-echeances-departemental-naf-latest.csv ../published-data/
 
 python 5d_gen_xlsx_report.py
 
-mkdir ../published-data/reports-$output
-cp ../published-data/reports-*.csv ../published-data/reports-$output/
-cp ../published-data/reports-*.xlsx ../published-data/reports-$output/
+mkdir ../published-data/reports-echeances/reports-$output
+cp ../published-data/reports-*.csv ../published-data/reports-echeances/reports-$output/
+cp ../published-data/reports-*.xlsx ../published-data/reports-echeances/reports-$output/
