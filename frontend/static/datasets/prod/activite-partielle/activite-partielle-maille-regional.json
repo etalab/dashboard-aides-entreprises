@@ -45,7 +45,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "1175.00", 
         "nombre_etablissements_concernes": "1145.00", 
         "nombre_heures_demandees": "3868535.00", 
@@ -61,7 +61,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "555.00", 
         "nombre_etablissements_concernes": "540.00", 
         "nombre_heures_demandees": "1570365.00", 
@@ -77,7 +77,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "290.00", 
         "nombre_etablissements_concernes": "290.00", 
         "nombre_heures_demandees": "1065745.00", 
@@ -85,7 +85,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "285.00", 
         "nombre_etablissements_concernes": "280.00", 
         "nombre_heures_demandees": "795505.00", 
@@ -127,7 +127,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "215.00", 
         "nombre_etablissements_concernes": "195.00", 
         "nombre_heures_demandees": "704685.00", 
@@ -150,20 +150,20 @@
         "nombre_salaries_concernes": "915.00"
       }, 
       {
-        "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
-        "nombre_demandes_deposees": "145.00", 
-        "nombre_etablissements_concernes": "120.00", 
-        "nombre_heures_demandees": "721930.00", 
-        "nombre_salaries_concernes": "1905.00"
-      }, 
-      {
         "code_section_nace17": "HZ", 
         "libelle_section_nace17": "Transports et entreposage", 
         "nombre_demandes_deposees": "140.00", 
         "nombre_etablissements_concernes": "120.00", 
         "nombre_heures_demandees": "594900.00", 
         "nombre_salaries_concernes": "1110.00"
+      }, 
+      {
+        "code_section_nace17": "OQ", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
+        "nombre_demandes_deposees": "145.00", 
+        "nombre_etablissements_concernes": "120.00", 
+        "nombre_heures_demandees": "721930.00", 
+        "nombre_salaries_concernes": "1905.00"
       }, 
       {
         "code_section_nace17": "RU", 
@@ -175,7 +175,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "65.00", 
         "nombre_etablissements_concernes": "60.00", 
         "nombre_heures_demandees": "267570.00", 
@@ -183,7 +183,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "40.00", 
         "nombre_etablissements_concernes": "35.00", 
         "nombre_heures_demandees": "266310.00", 
@@ -233,7 +233,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "15370.00", 
         "nombre_etablissements_concernes": "14425.00", 
         "nombre_heures_demandees": "64158600.00", 
@@ -257,7 +257,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "9050.00", 
         "nombre_etablissements_concernes": "8380.00", 
         "nombre_heures_demandees": "27152710.00", 
@@ -265,7 +265,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "5470.00", 
         "nombre_etablissements_concernes": "5055.00", 
         "nombre_heures_demandees": "44223220.00", 
@@ -273,7 +273,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "3620.00", 
         "nombre_etablissements_concernes": "3420.00", 
         "nombre_heures_demandees": "7545770.00", 
@@ -289,7 +289,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "2925.00", 
         "nombre_etablissements_concernes": "2790.00", 
         "nombre_heures_demandees": "11316580.00", 
@@ -331,7 +331,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "5865.00", 
         "nombre_etablissements_concernes": "5500.00", 
         "nombre_heures_demandees": "24432660.00", 
@@ -355,7 +355,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "3830.00", 
         "nombre_etablissements_concernes": "3570.00", 
         "nombre_heures_demandees": "9470640.00", 
@@ -363,7 +363,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "3100.00", 
         "nombre_etablissements_concernes": "2850.00", 
         "nombre_heures_demandees": "32345545.00", 
@@ -379,7 +379,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "1310.00", 
         "nombre_etablissements_concernes": "1245.00", 
         "nombre_heures_demandees": "4201415.00", 
@@ -387,7 +387,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "1305.00", 
         "nombre_etablissements_concernes": "1225.00", 
         "nombre_heures_demandees": "1998270.00", 
@@ -421,7 +421,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "425.00", 
         "nombre_etablissements_concernes": "390.00", 
         "nombre_heures_demandees": "1210450.00", 
@@ -453,7 +453,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "280.00", 
         "nombre_etablissements_concernes": "230.00", 
         "nombre_heures_demandees": "759395.00", 
@@ -461,7 +461,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "220.00", 
         "nombre_etablissements_concernes": "195.00", 
         "nombre_heures_demandees": "586210.00", 
@@ -477,7 +477,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "85.00", 
         "nombre_etablissements_concernes": "75.00", 
         "nombre_heures_demandees": "135735.00", 
@@ -519,7 +519,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "1580.00", 
         "nombre_etablissements_concernes": "1480.00", 
         "nombre_heures_demandees": "3983970.00", 
@@ -543,7 +543,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "765.00", 
         "nombre_etablissements_concernes": "720.00", 
         "nombre_heures_demandees": "2331885.00", 
@@ -559,7 +559,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "505.00", 
         "nombre_etablissements_concernes": "475.00", 
         "nombre_heures_demandees": "1425670.00", 
@@ -575,7 +575,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "390.00", 
         "nombre_etablissements_concernes": "370.00", 
         "nombre_heures_demandees": "906650.00", 
@@ -583,7 +583,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "270.00", 
         "nombre_etablissements_concernes": "260.00", 
         "nombre_heures_demandees": "471935.00", 
@@ -625,7 +625,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "16010.00", 
         "nombre_etablissements_concernes": "15130.00", 
         "nombre_heures_demandees": "74593725.00", 
@@ -649,7 +649,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "9700.00", 
         "nombre_etablissements_concernes": "9080.00", 
         "nombre_heures_demandees": "31436505.00", 
@@ -657,7 +657,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "4730.00", 
         "nombre_etablissements_concernes": "4425.00", 
         "nombre_heures_demandees": "35424620.00", 
@@ -665,7 +665,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "3505.00", 
         "nombre_etablissements_concernes": "3345.00", 
         "nombre_heures_demandees": "7942430.00", 
@@ -681,7 +681,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "2880.00", 
         "nombre_etablissements_concernes": "2760.00", 
         "nombre_heures_demandees": "10083255.00", 
@@ -715,7 +715,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "12040.00", 
         "nombre_etablissements_concernes": "11225.00", 
         "nombre_heures_demandees": "68708235.00", 
@@ -747,7 +747,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "7375.00", 
         "nombre_etablissements_concernes": "6860.00", 
         "nombre_heures_demandees": "25811505.00", 
@@ -755,7 +755,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "4580.00", 
         "nombre_etablissements_concernes": "4165.00", 
         "nombre_heures_demandees": "61607145.00", 
@@ -771,7 +771,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "2560.00", 
         "nombre_etablissements_concernes": "2425.00", 
         "nombre_heures_demandees": "4882750.00", 
@@ -779,7 +779,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "1700.00", 
         "nombre_etablissements_concernes": "1635.00", 
         "nombre_heures_demandees": "9163835.00", 
@@ -813,7 +813,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "23945.00", 
         "nombre_etablissements_concernes": "22345.00", 
         "nombre_heures_demandees": "104280775.00", 
@@ -845,7 +845,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "12500.00", 
         "nombre_etablissements_concernes": "11735.00", 
         "nombre_heures_demandees": "34772695.00", 
@@ -853,7 +853,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "9770.00", 
         "nombre_etablissements_concernes": "9095.00", 
         "nombre_heures_demandees": "83405200.00", 
@@ -869,7 +869,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "4605.00", 
         "nombre_etablissements_concernes": "4340.00", 
         "nombre_heures_demandees": "8609855.00", 
@@ -877,7 +877,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "3760.00", 
         "nombre_etablissements_concernes": "3585.00", 
         "nombre_heures_demandees": "12408835.00", 
@@ -911,7 +911,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "17495.00", 
         "nombre_etablissements_concernes": "16240.00", 
         "nombre_heures_demandees": "66632780.00", 
@@ -943,7 +943,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "9710.00", 
         "nombre_etablissements_concernes": "8985.00", 
         "nombre_heures_demandees": "27495830.00", 
@@ -951,7 +951,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "4110.00", 
         "nombre_etablissements_concernes": "3795.00", 
         "nombre_heures_demandees": "20137350.00", 
@@ -975,7 +975,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "3175.00", 
         "nombre_etablissements_concernes": "2980.00", 
         "nombre_heures_demandees": "4791010.00", 
@@ -1009,7 +1009,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "46515.00", 
         "nombre_etablissements_concernes": "42335.00", 
         "nombre_heures_demandees": "297049470.00", 
@@ -1041,7 +1041,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "17700.00", 
         "nombre_etablissements_concernes": "16305.00", 
         "nombre_heures_demandees": "60430995.00", 
@@ -1073,7 +1073,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "7440.00", 
         "nombre_etablissements_concernes": "6725.00", 
         "nombre_heures_demandees": "47106750.00", 
@@ -1107,7 +1107,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "9990.00", 
         "nombre_etablissements_concernes": "9495.00", 
         "nombre_heures_demandees": "58345150.00", 
@@ -1139,7 +1139,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "5485.00", 
         "nombre_etablissements_concernes": "5090.00", 
         "nombre_heures_demandees": "18546715.00", 
@@ -1147,7 +1147,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "3840.00", 
         "nombre_etablissements_concernes": "3590.00", 
         "nombre_heures_demandees": "46403535.00", 
@@ -1155,7 +1155,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "1990.00", 
         "nombre_etablissements_concernes": "1880.00", 
         "nombre_heures_demandees": "4405065.00", 
@@ -1171,7 +1171,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "1665.00", 
         "nombre_etablissements_concernes": "1600.00", 
         "nombre_heures_demandees": "10347545.00", 
@@ -1213,7 +1213,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "1800.00", 
         "nombre_etablissements_concernes": "1710.00", 
         "nombre_heures_demandees": "6484245.00", 
@@ -1221,7 +1221,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "1560.00", 
         "nombre_etablissements_concernes": "1485.00", 
         "nombre_heures_demandees": "4348015.00", 
@@ -1245,7 +1245,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "790.00", 
         "nombre_etablissements_concernes": "745.00", 
         "nombre_heures_demandees": "3046740.00", 
@@ -1261,7 +1261,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "495.00", 
         "nombre_etablissements_concernes": "470.00", 
         "nombre_heures_demandees": "991005.00", 
@@ -1269,7 +1269,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "460.00", 
         "nombre_etablissements_concernes": "440.00", 
         "nombre_heures_demandees": "1972260.00", 
@@ -1311,7 +1311,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "12170.00", 
         "nombre_etablissements_concernes": "11480.00", 
         "nombre_heures_demandees": "53635550.00", 
@@ -1335,7 +1335,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "8970.00", 
         "nombre_etablissements_concernes": "8365.00", 
         "nombre_heures_demandees": "29384390.00", 
@@ -1343,7 +1343,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "5110.00", 
         "nombre_etablissements_concernes": "4780.00", 
         "nombre_heures_demandees": "57081640.00", 
@@ -1359,7 +1359,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "2625.00", 
         "nombre_etablissements_concernes": "2515.00", 
         "nombre_heures_demandees": "4387530.00", 
@@ -1367,7 +1367,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "2490.00", 
         "nombre_etablissements_concernes": "2380.00", 
         "nombre_heures_demandees": "11717615.00", 
@@ -1409,7 +1409,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "7050.00", 
         "nombre_etablissements_concernes": "6560.00", 
         "nombre_heures_demandees": "34743700.00", 
@@ -1433,7 +1433,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "4205.00", 
         "nombre_etablissements_concernes": "3905.00", 
         "nombre_heures_demandees": "13102835.00", 
@@ -1441,7 +1441,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "2665.00", 
         "nombre_etablissements_concernes": "2460.00", 
         "nombre_heures_demandees": "31238160.00", 
@@ -1457,7 +1457,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "1500.00", 
         "nombre_etablissements_concernes": "1435.00", 
         "nombre_heures_demandees": "5216740.00", 
@@ -1465,7 +1465,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "1525.00", 
         "nombre_etablissements_concernes": "1425.00", 
         "nombre_heures_demandees": "2853735.00", 
@@ -1507,7 +1507,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "8075.00", 
         "nombre_etablissements_concernes": "7615.00", 
         "nombre_heures_demandees": "37167655.00", 
@@ -1531,7 +1531,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "4600.00", 
         "nombre_etablissements_concernes": "4335.00", 
         "nombre_heures_demandees": "11905880.00", 
@@ -1539,7 +1539,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "2545.00", 
         "nombre_etablissements_concernes": "2380.00", 
         "nombre_heures_demandees": "21963115.00", 
@@ -1547,7 +1547,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "1690.00", 
         "nombre_etablissements_concernes": "1625.00", 
         "nombre_heures_demandees": "11560745.00", 
@@ -1555,7 +1555,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "1655.00", 
         "nombre_etablissements_concernes": "1595.00", 
         "nombre_heures_demandees": "5165610.00", 
@@ -1605,7 +1605,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "5390.00", 
         "nombre_etablissements_concernes": "5110.00", 
         "nombre_heures_demandees": "23546255.00", 
@@ -1629,7 +1629,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "3285.00", 
         "nombre_etablissements_concernes": "3085.00", 
         "nombre_heures_demandees": "8855145.00", 
@@ -1637,7 +1637,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "2310.00", 
         "nombre_etablissements_concernes": "2185.00", 
         "nombre_heures_demandees": "21344580.00", 
@@ -1653,7 +1653,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "1150.00", 
         "nombre_etablissements_concernes": "1095.00", 
         "nombre_heures_demandees": "1942550.00", 
@@ -1661,7 +1661,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "950.00", 
         "nombre_etablissements_concernes": "915.00", 
         "nombre_heures_demandees": "3821925.00", 
@@ -1695,7 +1695,7 @@
       }, 
       {
         "code_section_nace17": "MN", 
-        "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien", 
+        "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien", 
         "nombre_demandes_deposees": "1205.00", 
         "nombre_etablissements_concernes": "1090.00", 
         "nombre_heures_demandees": "3929870.00", 
@@ -1727,7 +1727,7 @@
       }, 
       {
         "code_section_nace17": "OQ", 
-        "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale", 
+        "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale", 
         "nombre_demandes_deposees": "595.00", 
         "nombre_etablissements_concernes": "560.00", 
         "nombre_heures_demandees": "1637310.00", 
@@ -1743,7 +1743,7 @@
       }, 
       {
         "code_section_nace17": "C5", 
-        "libelle_section_nace17": "Fabrication d'autres produits industriels", 
+        "libelle_section_nace17": "Fabrication d'autres produits indus.", 
         "nombre_demandes_deposees": "420.00", 
         "nombre_etablissements_concernes": "385.00", 
         "nombre_heures_demandees": "1256320.00", 
@@ -1751,7 +1751,7 @@
       }, 
       {
         "code_section_nace17": "KZ", 
-        "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance", 
+        "libelle_section_nace17": "Act. financi\u00e8res et d'assurance", 
         "nombre_demandes_deposees": "270.00", 
         "nombre_etablissements_concernes": "250.00", 
         "nombre_heures_demandees": "475220.00", 
@@ -1759,7 +1759,7 @@
       }, 
       {
         "code_section_nace17": "C1", 
-        "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac", 
+        "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac", 
         "nombre_demandes_deposees": "220.00", 
         "nombre_etablissements_concernes": "205.00", 
         "nombre_heures_demandees": "676445.00", 

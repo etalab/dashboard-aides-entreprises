@@ -5,11 +5,6 @@
     "libelle_section_nace17": "Industries extractives"
   }, 
   {
-    "code_section_nace17": "C5", 
-    "color_section": "#5C6BC0", 
-    "libelle_section_nace17": "Fabrication d'autres produits industriels"
-  }, 
-  {
     "code_section_nace17": "AZ", 
     "color_section": "#E53935", 
     "libelle_section_nace17": "Agriculture, sylviculture et p\u00eache"
@@ -20,6 +15,11 @@
     "libelle_section_nace17": "Information et communication"
   }, 
   {
+    "code_section_nace17": "KZ", 
+    "color_section": "#AFB42B", 
+    "libelle_section_nace17": "Act. financi\u00e8res et d'assurance"
+  }, 
+  {
     "code_section_nace17": "GZ", 
     "color_section": "#006064", 
     "libelle_section_nace17": "Commerce"
@@ -27,17 +27,27 @@
   {
     "code_section_nace17": "C3", 
     "color_section": "#8E24AA", 
-    "libelle_section_nace17": "Fabrication d'\u00e9quipements \u00e9lectriques, \u00e9lectroniques, informatiques ; fabrication de machines"
-  }, 
-  {
-    "code_section_nace17": "KZ", 
-    "color_section": "#AFB42B", 
-    "libelle_section_nace17": "Activit\u00e9s financi\u00e8res et d'assurance"
+    "libelle_section_nace17": "Fabr. d'\u00e9quipements ; fabrication de machines"
   }, 
   {
     "code_section_nace17": "RU", 
     "color_section": "#F4511E", 
     "libelle_section_nace17": "Autres activit\u00e9s de services"
+  }, 
+  {
+    "code_section_nace17": "C1", 
+    "color_section": "#D81B60", 
+    "libelle_section_nace17": "Fabr. de denr\u00e9es alimentaires - boissons et prod. \u00e0 base de tabac de boissons et de produits \u00e0 base de tabac"
+  }, 
+  {
+    "code_section_nace17": "MN", 
+    "color_section": "#FF8F00", 
+    "libelle_section_nace17": "Act. scientif. et tech. ; services admin. et de soutien"
+  }, 
+  {
+    "code_section_nace17": "OQ", 
+    "color_section": "#EF6C00", 
+    "libelle_section_nace17": "Admin. publique - enseignement, sant\u00e9 humaine et action sociale"
   }, 
   {
     "code_section_nace17": "IZ", 
@@ -55,9 +65,9 @@
     "libelle_section_nace17": "Cok\u00e9faction et raffinage"
   }, 
   {
-    "code_section_nace17": "MN", 
-    "color_section": "#FF8F00", 
-    "libelle_section_nace17": "Activit\u00e9s scientifiques et techniques ; services administratifs et de soutien"
+    "code_section_nace17": "C5", 
+    "color_section": "#5C6BC0", 
+    "libelle_section_nace17": "Fabrication d'autres produits indus."
   }, 
   {
     "code_section_nace17": "HZ", 
@@ -68,16 +78,6 @@
     "code_section_nace17": "LZ", 
     "color_section": "#F57F17", 
     "libelle_section_nace17": "Activit\u00e9s immobili\u00e8res"
-  }, 
-  {
-    "code_section_nace17": "OQ", 
-    "color_section": "#EF6C00", 
-    "libelle_section_nace17": "Administration publique, enseignement, sant\u00e9 humaine et action sociale"
-  }, 
-  {
-    "code_section_nace17": "C1", 
-    "color_section": "#D81B60", 
-    "libelle_section_nace17": "Fabrication de denr\u00e9es alimentaires, de boissons et de produits \u00e0 base de tabac"
   }, 
   {
     "code_section_nace17": "C4", 
