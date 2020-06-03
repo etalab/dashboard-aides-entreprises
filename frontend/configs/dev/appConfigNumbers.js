@@ -76,7 +76,7 @@ export const configAppNumbers = {
           columns: [
            {
               colName: '',
-              colTitle: { fr: 'nombre_salaries_concernes' },
+              colTitle: { fr: 'Nombre de salariés' },
               titleI18n: 'numbers.numbers01.total',
               colClass: '',
               cols: 6,
@@ -85,7 +85,7 @@ export const configAppNumbers = {
               sizeDesktop: 'title',
               sizeMobile: 'mb-1 body-2',
               legendClass: '',
-              unit: { fr: 'aides' },
+              unit: { fr: '' },
               legend: { fr: '' },
               textPrefix: { fr: '' },
               textSuffix: { fr: '' },
@@ -95,7 +95,7 @@ export const configAppNumbers = {
 
             {
               colName: '',
-              colTitle: { fr: 'nombre_etablissements_concernes' },
+              colTitle: { fr: 'Nombre d\'entreprises' },
               titleI18n: 'numbers.numbers01.total',
               colClass: '',
               cols: 6,
@@ -104,7 +104,7 @@ export const configAppNumbers = {
               sizeDesktop: 'title',
               sizeMobile: 'mb-1 body-2',
               legendClass: '',
-              unit: { fr: 'aides' },
+              unit: { fr: '' },
               legend: { fr: '' },
               textPrefix: { fr: '' },
               textSuffix: { fr: '' },

@@ -110,7 +110,7 @@ const circlePaintACTIVITEPARTIELLE = {
   'circle-radius': [
     'interpolate',
     ['linear'],
-    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
+    ['*', ['sqrt', ['number', ['get', 'nombreSalaries']]], 6],
     0,
     10,
     100,
@@ -141,6 +141,20 @@ const aidesProperties = [
     format: [{ utilsFnName: 'toFloat', params: undefined }]
   },
   { propName: 'nombre', itemField: 'nombre' }
+]
+
+const activitepartielleProperties = [
+  {
+    propName: 'nombreSalaries',
+    itemField: 'nombre_salaries_concernes',
+    needFormatting: true,
+    format: [
+      {
+        utilsFnName: 'toMillionsOrElse',
+        params: { divider: 1, fixed: 0 }
+      }
+    ]
+  }
 ]
 
 // - - - - - - - - - - - - - - - - - - - - - //
@@ -1897,7 +1911,7 @@ export const configAppMap = {
               canvasKeyPrefix: 'REG-',
               canvasKeySuffix: ''
             },
-            properties: aidesProperties,
+            properties: activitepartielleProperties,
             geometry: {
               type: 'Point'
             }
@@ -1922,7 +1936,7 @@ export const configAppMap = {
               canvasKeyPrefix: 'DEP-',
               canvasKeySuffix: ''
             },
-            properties: aidesProperties,
+            properties: activitepartielleProperties,
             geometry: {
               type: 'Point'
             }
@@ -1945,7 +1959,7 @@ export const configAppMap = {
             'regions-fill',
             'regions-lines',
             'regions-activitepartielle',
-            'regions-activitepartielle-montants'
+            'regions-activitepartielle-nombre'
           ],
           clicEvents: [
             {
@@ -2041,7 +2055,7 @@ export const configAppMap = {
             'departements-fill',
             'departements-lines',
             'departements-activitepartielle',
-            'departements-activitepartielle-montants'
+            'departements-activitepartielle-nombre'
           ],
           clicEvents: [
             {
@@ -2140,15 +2154,15 @@ export const configAppMap = {
             visibility: 'visible'
           },
           maxzoom: ZOOM_THRESHOLD,
-          paint: circlePaintPGE
+          paint: circlePaintACTIVITEPARTIELLE
         },
         {
-          id: 'regions-activitepartielle-montants',
+          id: 'regions-activitepartielle-nombre',
           type: 'symbol',
           source: 'regions-activitepartielle',
           layout: {
             visibility: 'visible',
-            'text-field': '',
+            'text-field': '{nombreSalaries}\nsalariés',
             'text-font': ['Open Sans Regular'], // OK
             'text-size': 14
           },
@@ -2165,16 +2179,16 @@ export const configAppMap = {
           layout: {
             // visibility: 'none'
           },
-          paint: circlePaintPGE,
+          paint: circlePaintACTIVITEPARTIELLE,
           minzoom: ZOOM_THRESHOLD
         },
         {
-          id: 'departements-activitepartielle-montants',
+          id: 'departements-activitepartielle-nombre',
           type: 'symbol',
           source: 'departements-activitepartielle',
           layout: {
             // visibility: 'none',
-            'text-field': '',
+            'text-field': '{nombreSalaries}\nsalariés',
             'text-font': ['Open Sans Regular'],
             'text-size': 14
           },

@@ -4,6 +4,8 @@
 const KEY_MONTANT = 'montant'
 
 const KEY_ETABLISSEMENTS = 'nombre_etablissements_concernes'
+const KEY_SALARIES = 'nombre_salaries_concernes'
+const KEY_HEURES = 'nombre_heures_demandees'
 
 const KEY_SECTION_NACE = 'code_section_nace17'
 const KEY_SECTION_NACE_LABEL = 'libelle_section_nace17'
@@ -171,9 +173,75 @@ const COMMON_SERIES_MAPPERS = {
       fallbackColor: '#808080'
     }
   },
-  NaceByNombre: {
+  NaceByNombreEntreprise: {
     dataFromKey: KEY_ETABLISSEMENTS,
-    serieName: ' (en nombre)',
+    serieName: 'Nombre d\'entreprises ',
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_ETABLISSEMENTS,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_NACE, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_NACE_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NACE,
+      matchWithDatasetId: 'taxo-nace17-colors',
+      matchKey: 'code_section_nace17',
+      getValueFromKey: 'color_section',
+      fallbackColor: '#808080'
+    }
+  },
+  NaceByNombreSalaries: {
+    dataFromKey: KEY_SALARIES,
+    serieName: 'Nombre de salariés ',
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_ETABLISSEMENTS,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_NACE, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_NACE_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NACE,
+      matchWithDatasetId: 'taxo-nace17-colors',
+      matchKey: 'code_section_nace17',
+      getValueFromKey: 'color_section',
+      fallbackColor: '#808080'
+    }
+  },
+  NaceByNombreHeures: {
+    dataFromKey: KEY_HEURES,
+    serieName: 'Nombre d\'heures (en millions) ',
+    format: [
+      {
+        utilsFnName: 'toMillionsOrElse',
+        params: { divider: 1000000, fixed: 2 }
+      }
+    ],
     sortDataSerieBy: {
       sortByType: 'sortByFieldValue',
       fieldName: KEY_ETABLISSEMENTS,
@@ -799,12 +867,11 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Top 10 du nombre d'activité partielle 
+          Nombre d'entreprises concernées par l'activité partielle
           <br>
           ventilés par 
           <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
             code section NACE 17</a>
-          (en M€)
           <br><br>
         `
       },
@@ -824,12 +891,87 @@ export const configAppCharts = {
         specialStoreId: 'focusObject',
         fromDatasetKey: 'kpi_top_10_nace17',
         seriesMappers: [
-          COMMON_SERIES_MAPPERS.NaceByNombre
+          COMMON_SERIES_MAPPERS.NaceByNombreEntreprise
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+      }
+
+    },
+    {
+      id: 'apexchart-activitepartielle-02',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_nace17 X nombre salaries',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Nombre de salariés concernées par l'activité partielle
+          <br>
+          ventilés par 
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
+            code section NACE 17</a>
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_nace17',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NaceByNombreSalaries
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+      }
+
+    },
+    {
+      id: 'apexchart-activitepartielle-03',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_nace17 X nombre salaries',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Nombre d'heures demandées d'activité partielle
+          <br>
+          ventilés par 
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
+            code section NACE 17</a> (en millions d'heures)
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_nace17',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NaceByNombreHeures
         ],
         chartOptions: COMMON_CHART_OPTIONS.categHorizH390
       }
 
     }
+    
 
   ]
 }
