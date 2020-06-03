@@ -826,7 +826,7 @@ def getStatActivitePartielleNationalSectionNACE17():
             dataDict2['nombre_salaries_concernes'] = str(autressalaries)
             dataDict2['nombre_heures_demandees'] = str(autresheures)
             dataDict2['nombre_etablissements_concernes'] = str(autresetablissements)
-            dataDict2['libelle_section_naf'] = "Autres sections NACE 17"
+            dataDict2['libelle_section_nace17'] = "Autres sections NACE 17"
             dataDict['kpi_top_10_nace17'].append(dataDict2)
 
             dataJson.append(dataDict)
