@@ -20,6 +20,7 @@ const OUTLINECOLOR2 = '#6c87ab'
 const FILLCOLOR_FDS = '#7373FF'
 const FILLCOLOR_PGE = '#00A17F'
 const FILLCOLOR_REPORT = '#D66200'
+const FILLCOLOR_ACTIVITEPARTIELLE = '#C95DC9'
 
 // layer fonts : ["Open Sans Regular","Arial Unicode MS Regular"]
 
@@ -93,6 +94,19 @@ const circlePaintPGE = {
 const circlePaintREPORT = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_REPORT,
+  'circle-radius': [
+    'interpolate',
+    ['linear'],
+    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
+    0,
+    10,
+    100,
+    50
+  ]
+}
+const circlePaintACTIVITEPARTIELLE = {
+  'circle-opacity': 0.6,
+  'circle-color': FILLCOLOR_ACTIVITEPARTIELLE,
   'circle-radius': [
     'interpolate',
     ['linear'],
@@ -1841,7 +1855,477 @@ export const configAppMap = {
           ]
         }
       ]
-    }
+    },
+
+
+
+
+    // ====================================== //
+    // === DATASET : ACTIVITE PARTIELLE ==================== //
+    // ====================================== //
+
+    // FRANCE METRO
+    {
+      id: 'map-france-activitepartielle-metro',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMetro,
+
+      sizes: COMMON_SIZES.defaultSizes,
+
+      // - - - - - - - - - - - - - - - - - - //
+      // SOURCES LOADED AT MAP LOADED
+      // - - - - - - - - - - - - - - - - - - //
+      sources: [
+        COMMON_SOURCES.FranceRegions,
+        COMMON_SOURCES.FranceDepartements,
+        {
+          id: 'regions-activitepartielle',
+          help: 'nombre d activite partielle au niveau regional - as geojson from raw',
+          from: 'store',
+          fromId: 'regions-activitepartielle-raw',
+          type: 'geojson',
+          generateId: true,
+          needTransform: true,
+          transformTo: {
+            srcKey: 'reg',
+            geoCanvasId: 'centers',
+            canvasKey: {
+              keyIsFieldName: true,
+              field: undefined,
+              canvasKeyPrefix: 'REG-',
+              canvasKeySuffix: ''
+            },
+            properties: aidesProperties,
+            geometry: {
+              type: 'Point'
+            }
+          },
+          licence: ''
+        },
+        {
+          id: 'departements-activitepartielle',
+          help:
+            'nombre d activite partielle au niveau départemental - as geojson from raw',
+          from: 'store',
+          fromId: 'departements-activitepartielle-raw',
+          type: 'geojson',
+          generateId: false,
+          needTransform: true,
+          transformTo: {
+            srcKey: 'dep',
+            geoCanvasId: 'centers',
+            canvasKey: {
+              keyIsFieldName: true,
+              field: undefined,
+              canvasKeyPrefix: 'DEP-',
+              canvasKeySuffix: ''
+            },
+            properties: aidesProperties,
+            geometry: {
+              type: 'Point'
+            }
+          },
+          licence: ''
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // MAPS
+      // - - - - - - - - - - - - - - - - - - //
+      maps: [
+        {
+          id: 'map-activitepartielle-reg',
+          name: 'Carte activite partielle par région',
+          category: 'regional',
+          properties: 'activitepartielle',
+          data: 'activitepartielle',
+          layers: [
+            'regions-fill',
+            'regions-lines',
+            'regions-activitepartielle',
+            'regions-activitepartielle-montants'
+          ],
+          clicEvents: [
+            {
+              event: 'click',
+              layer: 'regions-fill',
+              // zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
+              functions: [
+                COMMON_CLICK_EVENTS.toggleSelectedOn,
+                COMMON_CLICK_EVENTS.goToPolygonPlus,
+                {
+                  funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
+                  funcParams: {
+                    zoomRange: {
+                      minZoom: undefined,
+                      maxZoom: ZOOM_THRESHOLD - 0.1
+                    },
+                    propName: 'code',
+                    targets: [
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code',
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'taxo-regions',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'libelle',
+                        targetSpecialStoreId: 'levelname'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'nombre_etablissements_concernes',
+                        targetSpecialStoreId: 'nombre_etablissements_concernes'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'nombre_salaries_concernes',
+                        targetSpecialStoreId: 'nombre_salaries_concernes'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: undefined,
+                        targetSpecialStoreId: 'focusObject'
+                      }
+                    ]
+                  }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathRegions
+
+              ]
+            },
+
+            {
+              event: 'mousemove',
+              layer: 'regions-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOn
+              ]
+            },
+
+            {
+              event: 'mouseleave',
+              layer: 'regions-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOff
+              ]
+            }
+          ]
+        },
+
+        {
+          id: 'map-activitepartielle-dep',
+          name: 'Carte activite partielle par departement',
+          category: 'departemental',
+          properties: 'activitepartielle',
+          data: 'activitepartielle',
+          layers: [
+            'departements-fill',
+            'departements-lines',
+            'departements-activitepartielle',
+            'departements-activitepartielle-montants'
+          ],
+          clicEvents: [
+            {
+              event: 'click',
+              layer: 'departements-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleSelectedOn,
+                {
+                  funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
+                  funcParams: {
+                    zoomRange: {
+                      minZoom: ZOOM_THRESHOLD,
+                      maxZoom: undefined
+                    },
+                    propName: 'code',
+                    targets: [
+                      {
+                        from: 'store',
+                        fromPropKey: 'code',
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'taxo-departements',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'libelle',
+                        targetSpecialStoreId: 'levelname'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-activitepartielle-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'nombre_etablissements_concernes',
+                        targetSpecialStoreId: 'nombre_etablissements_concernes'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-activitepartielle-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'nombre_salaries_concernes',
+                        targetSpecialStoreId: 'nombre_salaries_concernes'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-activitepartielle-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: undefined,
+                        targetSpecialStoreId: 'focusObject'
+                      }
+                    ]
+                  }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathDepartements
+              ]
+            },
+
+            {
+              event: 'mousemove',
+              layer: 'departements-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOn
+              ]
+            },
+
+            {
+              event: 'mouseleave',
+              layer: 'departements-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOff
+              ]
+            }
+          ]
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // LAYERS
+      // - - - - - - - - - - - - - - - - - - //
+      layers: [
+
+        // REGIONS
+        COMMON_LAYERS.FranceRegionsFill,
+        COMMON_LAYERS.FranceRegionsLines,
+        {
+          id: 'regions-activitepartielle',
+          type: 'circle',
+          source: 'regions-activitepartielle',
+          layout: {
+            visibility: 'visible'
+          },
+          maxzoom: ZOOM_THRESHOLD,
+          paint: circlePaintPGE
+        },
+        {
+          id: 'regions-activitepartielle-montants',
+          type: 'symbol',
+          source: 'regions-activitepartielle',
+          layout: {
+            visibility: 'visible',
+            'text-field': '',
+            'text-font': ['Open Sans Regular'], // OK
+            'text-size': 14
+          },
+          maxzoom: ZOOM_THRESHOLD
+        },
+
+        // DEPARTEMENTS
+        COMMON_LAYERS.FranceDepartementsFill,
+        COMMON_LAYERS.FranceDepartementsLines,
+        {
+          id: 'departements-activitepartielle',
+          type: 'circle',
+          source: 'departements-activitepartielle',
+          layout: {
+            // visibility: 'none'
+          },
+          paint: circlePaintPGE,
+          minzoom: ZOOM_THRESHOLD
+        },
+        {
+          id: 'departements-activitepartielle-montants',
+          type: 'symbol',
+          source: 'departements-activitepartielle',
+          layout: {
+            // visibility: 'none',
+            'text-field': '',
+            'text-font': ['Open Sans Regular'],
+            'text-size': 14
+          },
+          minzoom: ZOOM_THRESHOLD
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // LAYERS VISIBILITY DRAWER
+      // - - - - - - - - - - - - - - - - - - //
+      maps_visibility: {
+        title: { fr: 'calques' },
+        is_activated: false,
+        is_drawer_open: true,
+        map_switches: [
+          {
+            id: 'regions',
+            mapId: 'map-activitepartielle-reg',
+            label: { fr: 'régions' },
+            default_visible: true
+          },
+          {
+            id: 'departements',
+            mapId: 'map-activitepartielle-dep',
+            label: { fr: 'départements' },
+            default_visible: false
+          }
+        ]
+      }
+    },
+    // GUYANE
+    {
+      id: 'map-france-activitepartielle-guyane',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuyane,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-activitepartielle-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // GUADELOUPE
+    {
+      id: 'map-france-activitepartielle-guadeloupe',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuadeloupe,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-activitepartielle-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MARTINIQUE
+    {
+      id: 'map-france-activitepartielle-martinique',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMartinique,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-activitepartielle-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // LA REUNION
+    {
+      id: 'map-france-activitepartielle-la-reunion',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceReunion,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-activitepartielle-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MAYOTTE
+    {
+      id: 'map-france-activitepartielle-mayotte',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMayotte,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-activitepartielle-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+
 
   ]
 }

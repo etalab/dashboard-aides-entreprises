@@ -58,6 +58,62 @@ export const configAppNumbers = {
           ]
         }
       ]
+    },
+
+    {
+      id: 'numbers-02',
+      help: '',
+      title: { fr: '' },
+      titleI18n: 'numbers.numbers02.title',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+           {
+              colName: '',
+              colTitle: { fr: 'nombre_salaries_concernes' },
+              titleI18n: 'numbers.numbers01.total',
+              colClass: '',
+              cols: 6,
+              titleClass: '',
+              numberClass: 'font-weight-bold',
+              sizeDesktop: 'title',
+              sizeMobile: 'mb-1 body-2',
+              legendClass: '',
+              unit: { fr: 'aides' },
+              legend: { fr: '' },
+              textPrefix: { fr: '' },
+              textSuffix: { fr: '' },
+              specialStoreId: 'nombre_salaries_concernes',
+              format: { type: 'integer', sepThousands: ' ' }
+            },
+
+            {
+              colName: '',
+              colTitle: { fr: 'nombre_etablissements_concernes' },
+              titleI18n: 'numbers.numbers01.total',
+              colClass: '',
+              cols: 6,
+              titleClass: '',
+              numberClass: 'font-weight-bold',
+              sizeDesktop: 'title',
+              sizeMobile: 'mb-1 body-2',
+              legendClass: '',
+              unit: { fr: 'aides' },
+              legend: { fr: '' },
+              textPrefix: { fr: '' },
+              textSuffix: { fr: '' },
+              specialStoreId: 'nombre_etablissements_concernes',
+              format: { type: 'integer', sepThousands: ' ' }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

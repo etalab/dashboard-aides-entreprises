@@ -139,6 +139,35 @@ const COMMON_TARGETS = {
       targetSpecialStoreId: 'focusObject'
     }
   ],
+  setObjectsRegionsACTIVITEPARTIELLE: [
+    {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-activitepartielle-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'nombre_etablissements_concernes',
+      targetSpecialStoreId: 'nombre_etablissements_concernes'
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-activitepartielle-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'nombre_salaries_concernes',
+      targetSpecialStoreId: 'nombre_salaries_concernes'
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-activitepartielle-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: undefined,
+      targetSpecialStoreId: 'focusObject'
+    }
+  ],
 
   // OBJECTS - DEPARTEMENTS
   setObjectsDepartementsFDS: [
@@ -241,6 +270,35 @@ const COMMON_TARGETS = {
       fromQueryKey: 'code',
       fromStoreData: 'initData',
       fromDatasetId: 'departements-report-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: undefined,
+      targetSpecialStoreId: 'focusObject'
+    }
+  ],
+  setObjectsDepartementsACTIVITEPARTIELLE: [
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-activitepartielle-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'nombre_etablissements_concernes',
+      targetSpecialStoreId: 'nombre_etablissements_concernes'
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-activitepartielle-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'nombre_salaries_concernes',
+      targetSpecialStoreId: 'nombre_salaries_concernes'
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-activitepartielle-raw',
       fromDatasetKey: 'dep',
       fromDatasetField: undefined,
       targetSpecialStoreId: 'focusObject'
@@ -375,6 +433,46 @@ const COMMON_URL_FOCUS = {
             COMMON_TARGETS.setLibelleDepartement,
             ...COMMON_TARGETS.setObjectsRegionsREPORT,
             ...COMMON_TARGETS.setObjectsDepartementsREPORT
+          ]
+        }
+      },
+      {
+        funcName: 'goToPolygon',
+        help: 'set map zoom',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setMapZoomRegions,
+            // COMMON_TARGETS.setMapZoomDepartements,
+            COMMON_TARGETS.setMapZoomByCenter
+          ]
+        }
+      },
+      {
+        funcName: 'toggleSelected',
+        help: 'set selected polygon on map',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setSelectedPolygons
+          ]
+        }
+      }
+    ]
+  },
+  setFocusObjectsACTIVITEPARTIELLE: {
+    urlArgs: [
+      ...COMMONN_URL_ARGS.objectArgs,
+      ...COMMONN_URL_ARGS.mapArgs
+    ],
+    functions: [
+      {
+        funcName: 'updateDataStore',
+        help: 'set store/data/specialStore',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setLibelleRegion,
+            COMMON_TARGETS.setLibelleDepartement,
+            ...COMMON_TARGETS.setObjectsRegionsACTIVITEPARTIELLE,
+            ...COMMON_TARGETS.setObjectsDepartementsACTIVITEPARTIELLE
           ]
         }
       },
@@ -927,6 +1025,173 @@ export const configAppRoutes = {
         }
       ],
       setUpRouteViews: COMMON_URL_FOCUS.setFocusObjectsREPORT
+
+    },
+
+
+        // ============================================================= //
+    // ACTIVITE PARTIELLE
+    // ============================================================= //
+    {
+      id: 'activitepartielle',
+      name: 'activite partielle page',
+      help: 'route view for activite partielle dataset',
+      title: { fr: '' },
+      titleI18n: 'routes.activitepartielle.title',
+      urls: ['/activitepartielle', '/activitepartielle/'],
+      sourcesIds: [
+        'national-activitepartielle-raw',
+        'regions-activitepartielle-raw',
+        'departements-activitepartielle-raw'
+      ],
+      rawHtml: undefined,
+      navbarFooter: {
+        activated: true,
+        settings: {
+          id: 'navbar-footer-01'
+        }
+      },
+      pageRows: [
+        {
+          id: 'row1',
+          rowNumber: 1,
+          activated: true,
+          help: '',
+          columns: [
+            {
+              id: 'col1',
+              colName: 'Numbers and tables',
+              activated: true,
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4',
+              hasScrollbar: true,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-activitepartielle-title',
+                    containerClass: 'pt-2 pb-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'numbers',
+                  activated: true,
+                  smallScreenVerticalOrder: 3,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'numbers-02',
+                    containerClass: 'py-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'globalButtons',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'global-button-activitepartielle',
+                    containerClass: 'py-0 my-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'apexchart',
+                  activated: true,
+                  smallScreenVerticalOrder: 4,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'apexchart-activitepartielle',
+                    containerClass: 'mt-4 pt-3 pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-activitepartielle-infos',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            },
+
+            {
+              id: 'col2',
+              colName: 'main map',
+              activated: true,
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8',
+              hasScrollbar: false,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                {
+                  component: 'map',
+                  activated: true,
+                  smallScreenVerticalOrder: 2,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'map-france-activitepartielle-metro',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'row2',
+          rowNumber: 2,
+          activated: false,
+          help: '',
+          columns: [
+            {
+              id: 'col1',
+              colName: 'text',
+              activated: true,
+              colClass: '',
+              hasScrollbar: false,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: undefined,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-03',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      setUpRouteViews: COMMON_URL_FOCUS.setFocusObjectsACTIVITEPARTIELLE
 
     },
 

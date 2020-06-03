@@ -3,6 +3,11 @@
 
 const KEY_MONTANT = 'montant'
 
+const KEY_ETABLISSEMENTS = 'nombre_etablissements_concernes'
+
+const KEY_SECTION_NACE = 'code_section_nace17'
+const KEY_SECTION_NACE_LABEL = 'libelle_section_nace17'
+
 const KEY_SECTION_NAF = 'section_naf'
 const KEY_SECTION_NAF_LABEL = 'libelle_section_naf'
 
@@ -163,6 +168,36 @@ const COMMON_SERIES_MAPPERS = {
       matchWithDatasetId: 'taxo-categ-juridiques',
       matchKey: 'code',
       getValueFromKey: 'color',
+      fallbackColor: '#808080'
+    }
+  },
+  NaceByNombre: {
+    dataFromKey: KEY_ETABLISSEMENTS,
+    serieName: ' (en nombre)',
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_ETABLISSEMENTS,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_NACE, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_NACE_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NACE,
+      matchWithDatasetId: 'taxo-nace17-colors',
+      matchKey: 'code_section_nace17',
+      getValueFromKey: 'color_section',
       fallbackColor: '#808080'
     }
   }
@@ -747,6 +782,49 @@ export const configAppCharts = {
         fromDatasetKey: 'kpi_top_10_naf',
         seriesMappers: [
           COMMON_SERIES_MAPPERS.NafByMontant
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+      }
+
+    },
+
+    // ============================================================= //
+    // ACTIVITE PARTIELLE
+    // ============================================================= //
+    // BAR HORIZ - APE X MONTANTS
+    {
+      id: 'apexchart-activitepartielle',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_nace17 X nombre',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Top 10 du nombre d'activité partielle 
+          <br>
+          ventilés par 
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
+            code section NACE 17</a>
+          (en M€)
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_nace17',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NaceByNombre
         ],
         chartOptions: COMMON_CHART_OPTIONS.categHorizH390
       }
