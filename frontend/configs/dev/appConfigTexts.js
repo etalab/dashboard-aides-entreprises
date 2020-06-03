@@ -529,7 +529,7 @@ export const configAppTexts = {
               subTextClass: '',
               sizeDesktop: 'headline mb-0',
               sizeMobile: 'subtitle-1',
-              textPrefix: { fr: "Activité Partielle: " },
+              textPrefix: { fr: "Activité Partielle : " },
               textPrefixClass: 'font-weight-regular',
               textSuffix: { fr: '' },
               textSuffixClass: undefined,
