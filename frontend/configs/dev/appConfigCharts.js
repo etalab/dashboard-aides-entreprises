@@ -904,7 +904,7 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Nombre de salariés concernées par l'activité partielle
+          Nombre de salariés concernés par l'activité partielle
           <br>
           ventilés par 
           <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">

@@ -114,7 +114,7 @@ export const configAppNumbers = {
 
             {
               colName: '',
-              colTitle: { fr: 'Nombre d\'heures' },
+              colTitle: { fr: 'Heures demandées' },
               titleI18n: 'numbers.numbers01.total',
               colClass: '',
               cols: 4,
