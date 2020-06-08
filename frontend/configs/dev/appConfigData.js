@@ -497,6 +497,13 @@ export const configAppData = {
               help: 'copy to another dataset (id) in displayedData | initData',
               toSpecialStore: 'nombre_etablissements_concernes',
               format: undefined
+            },
+            {
+              fieldToCopy: 'nombre_heures_demandees',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'nombre_heures_demandees',
+              format: undefined
             }
           ]
         },

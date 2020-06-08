@@ -208,7 +208,7 @@ const COMMON_SERIES_MAPPERS = {
     serieName: 'Nombre de salariés ',
     sortDataSerieBy: {
       sortByType: 'sortByFieldValue',
-      fieldName: KEY_ETABLISSEMENTS,
+      fieldName: KEY_SALARIES,
       toNumber: true,
       sortOrder: 'descending',
       exceptions: {
@@ -244,7 +244,7 @@ const COMMON_SERIES_MAPPERS = {
     ],
     sortDataSerieBy: {
       sortByType: 'sortByFieldValue',
-      fieldName: KEY_ETABLISSEMENTS,
+      fieldName: KEY_HEURES,
       toNumber: true,
       sortOrder: 'descending',
       exceptions: {
@@ -971,7 +971,6 @@ export const configAppCharts = {
       }
 
     }
-    
 
   ]
 }

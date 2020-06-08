@@ -79,7 +79,7 @@ export const configAppNumbers = {
               colTitle: { fr: 'Nombre de salariés' },
               titleI18n: 'numbers.numbers01.total',
               colClass: '',
-              cols: 6,
+              cols: 4,
               titleClass: '',
               numberClass: 'font-weight-bold',
               sizeDesktop: 'title',
@@ -98,7 +98,7 @@ export const configAppNumbers = {
               colTitle: { fr: 'Nombre d\'entreprises' },
               titleI18n: 'numbers.numbers01.total',
               colClass: '',
-              cols: 6,
+              cols: 4,
               titleClass: '',
               numberClass: 'font-weight-bold',
               sizeDesktop: 'title',
@@ -110,7 +110,27 @@ export const configAppNumbers = {
               textSuffix: { fr: '' },
               specialStoreId: 'nombre_etablissements_concernes',
               format: { type: 'integer', sepThousands: ' ' }
+            },
+
+            {
+              colName: '',
+              colTitle: { fr: 'Nombre d\'heures' },
+              titleI18n: 'numbers.numbers01.total',
+              colClass: '',
+              cols: 4,
+              titleClass: '',
+              numberClass: 'font-weight-bold',
+              sizeDesktop: 'title',
+              sizeMobile: 'mb-1 body-2',
+              legendClass: '',
+              unit: { fr: 'h' },
+              legend: { fr: '' },
+              textPrefix: { fr: '' },
+              textSuffix: { fr: '' },
+              specialStoreId: 'nombre_heures_demandees',
+              format: { type: 'float', sepThousands: ' ', sepComma: ',' }
             }
+
           ]
         }
       ]

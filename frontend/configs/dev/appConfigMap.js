@@ -122,7 +122,7 @@ const circlePaintPGE = {
 }
 
 const maxRegREPORT = 1000
-const maxDepREPORT = 500
+const maxDepREPORT = 350
 const circlePaintREPORT = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_REPORT,
@@ -148,7 +148,7 @@ const circlePaintREPORT = {
 }
 
 const maxRegACTIVITEPARTIELLE = 3500000
-const maxDepACTIVITEPARTIELLE = 1000000
+const maxDepACTIVITEPARTIELLE = 950000
 const circlePaintACTIVITEPARTIELLE = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_ACTIVITEPARTIELLE,
@@ -228,7 +228,11 @@ const COMMON_TEXTS = {
     ['format',
       ['number-format',
         ['number', ['get', 'montantMillions']],
-        { locale: 'fr-FR', 'max-fraction-digits': 0 }
+        {
+          locale: 'fr-FR',
+          'min-fraction-digits': 0,
+          'max-fraction-digits': 0
+        }
       ], {},
       ' M€', { 'font-scale': 0.8 }
     ],
@@ -237,10 +241,17 @@ const COMMON_TEXTS = {
   },
   salaries: {
     'text-field':
-    ['format',
+    // 'let',
+    // 'numberValue',
+    // ['number', ['get', 'nombreSalaries']],
+    [
+      'format',
       ['number-format',
+        // 'numberValue',
         ['number', ['get', 'nombreSalaries']],
-        { locale: 'fr-FR' }
+        {
+          locale: 'fr-FR'
+        }
       ], {},
       '\nsalariés', { 'font-scale': 0.8 }
     ],
