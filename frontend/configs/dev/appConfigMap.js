@@ -66,10 +66,11 @@ const fillPaintDepartements = {
 }
 
 const minCircleSize = 15
+const minCircleSizeBis = 20
 const maxCircleSize = 60
 
 const maxRegFDS = 1000
-const maxDepFDS = 500
+const maxDepFDS = 300
 const circlePaintFDS = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_FDS,
@@ -85,9 +86,10 @@ const circlePaintFDS = {
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
-      ['exponential', 10],
+      ['linear'],
+      // ['exponential', 10],
       ['number', ['get', 'montantMillions']],
-      0, minCircleSize,
+      0, minCircleSizeBis,
       maxDepFDS, maxCircleSize
     ]
   ]
@@ -110,9 +112,10 @@ const circlePaintPGE = {
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
-      ['exponential', 10],
+      ['linear'],
+      // ['exponential', 10],
       ['number', ['get', 'montantMillions']],
-      0, minCircleSize,
+      0, minCircleSizeBis,
       maxDepPGE, maxCircleSize
     ]
   ]
@@ -135,9 +138,10 @@ const circlePaintREPORT = {
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
-      ['exponential', 10],
+      ['linear'],
+      // ['exponential', 10],
       ['number', ['get', 'montantMillions']],
-      0, minCircleSize,
+      0, minCircleSizeBis,
       maxDepREPORT, maxCircleSize
     ]
   ]
@@ -160,9 +164,10 @@ const circlePaintACTIVITEPARTIELLE = {
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
-      ['exponential', 10],
+      ['linear'],
+      // ['exponential', 10],
       ['number', ['get', 'nombreSalaries']],
-      0, minCircleSize,
+      0, minCircleSizeBis,
       maxDepACTIVITEPARTIELLE, maxCircleSize
     ]
   ]
@@ -206,6 +211,38 @@ const activitepartielleProperties = [
     ]
   }
 ]
+
+// - - - - - - - - - - - - - - - - - - - - - //
+// COMMON FORMATTED TEXTS
+// - - - - - - - - - - - - - - - - - - - - - //
+
+const COMMON_TEXTS = {
+  millions: {
+    'text-field':
+    // '{montantMillions} M€',
+    ['format',
+      ['number-format',
+        ['number', ['get', 'montantMillions']],
+        { locale: 'fr-FR', 'max-fraction-digits': 0 }
+      ], {},
+      ' M€', { 'font-scale': 0.8 }
+    ],
+    'text-font': ['Open Sans Regular'],
+    'text-size': 14
+  },
+  salaries: {
+    'text-field':
+    ['format',
+      ['number-format',
+        ['number', ['get', 'nombreSalaries']],
+        { locale: 'fr-FR' }
+      ], {},
+      '\nsalariés', { 'font-scale': 0.8 }
+    ],
+    'text-font': ['Open Sans Regular'],
+    'text-size': 14
+  }
+}
 
 // - - - - - - - - - - - - - - - - - - - - - //
 // COMMON GEOJSON SOUURCES
@@ -788,10 +825,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'regions-aides',
           layout: {
-            visibility: 'visible',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'], // OK
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           maxzoom: ZOOM_THRESHOLD
         },
@@ -814,10 +848,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'departements-aides',
           layout: {
-            // visibility: 'none',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'],
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           minzoom: ZOOM_THRESHOLD
         }
@@ -1266,10 +1297,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'regions-pge',
           layout: {
-            visibility: 'visible',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'], // OK
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           maxzoom: ZOOM_THRESHOLD
         },
@@ -1292,10 +1320,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'departements-pge',
           layout: {
-            // visibility: 'none',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'],
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           minzoom: ZOOM_THRESHOLD
         }
@@ -1742,10 +1767,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'regions-report',
           layout: {
-            visibility: 'visible',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'], // OK
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           maxzoom: ZOOM_THRESHOLD
         },
@@ -1768,10 +1790,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'departements-report',
           layout: {
-            // visibility: 'none',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'],
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           minzoom: ZOOM_THRESHOLD
         }
@@ -2208,10 +2227,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'regions-activitepartielle',
           layout: {
-            visibility: 'visible',
-            'text-field': '{nombreSalaries}\nsalariés',
-            'text-font': ['Open Sans Regular'], // OK
-            'text-size': 14
+            ...COMMON_TEXTS.salaries
           },
           maxzoom: ZOOM_THRESHOLD
         },
@@ -2235,9 +2251,10 @@ export const configAppMap = {
           source: 'departements-activitepartielle',
           layout: {
             // visibility: 'none',
-            'text-field': '{nombreSalaries}\nsalariés',
-            'text-font': ['Open Sans Regular'],
-            'text-size': 14
+            // 'text-field': '{nombreSalaries}\nsalariés',
+            // 'text-font': ['Open Sans Regular'],
+            // 'text-size': 14
+            ...COMMON_TEXTS.salaries
           },
           minzoom: ZOOM_THRESHOLD
         }
