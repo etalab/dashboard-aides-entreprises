@@ -266,6 +266,9 @@ export function numberToString (number, format) {
   if (format && format.sepComma) {
     number = number.replace('.', format.sepComma)
   }
+  if (format && format.preffix) {
+    number = `${format.preffix} ${number}`
+  }
   if (format && format.unit) {
     number = `${number} ${format.unit}`
   }
