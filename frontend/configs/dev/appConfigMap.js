@@ -185,7 +185,7 @@ const aidesProperties = [
     format: [
       {
         utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 1 }
+        params: { divider: 1000000, fixed: 0 }
       }
     ]
   },
@@ -215,17 +215,6 @@ const activitepartielleProperties = [
       }
     ]
   }
-  // {
-  //   propName: 'nombreHeures',
-  //   itemField: 'nombre_heures_demandees',
-  //   needFormatting: true,
-  //   format: [
-  //     {
-  //       utilsFnName: 'toMillionsOrElse',
-  //       params: { divider: 1, fixed: 0 }
-  //     }
-  //   ]
-  // }
 ]
 
 // - - - - - - - - - - - - - - - - - - - - - //
@@ -240,7 +229,7 @@ const COMMON_TEXTS = {
       ['number-format',
         ['number', ['get', 'montantMillions']],
         {
-          locale: 'fr-FR',
+          locale: 'fr-CA',
           'min-fraction-digits': 0,
           'max-fraction-digits': 0
         }
@@ -252,16 +241,12 @@ const COMMON_TEXTS = {
   },
   salaries: {
     'text-field':
-    // 'let',
-    // 'numberValue',
-    // ['number', ['get', 'nombreSalaries']],
     [
       'format',
       ['number-format',
-        // 'numberValue',
         ['number', ['get', 'nombreSalaries']],
         {
-          locale: 'fr-FR'
+          locale: 'fr-CA'
         }
       ], {},
       '\nsalariés', { 'font-scale': 0.8 }
