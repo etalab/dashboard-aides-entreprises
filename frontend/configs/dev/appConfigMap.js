@@ -215,6 +215,17 @@ const activitepartielleProperties = [
       }
     ]
   }
+  // {
+  //   propName: 'nombreHeures',
+  //   itemField: 'nombre_heures_demandees',
+  //   needFormatting: true,
+  //   format: [
+  //     {
+  //       utilsFnName: 'toMillionsOrElse',
+  //       params: { divider: 1, fixed: 0 }
+  //     }
+  //   ]
+  // }
 ]
 
 // - - - - - - - - - - - - - - - - - - - - - //
@@ -2098,6 +2109,16 @@ export const configAppMap = {
                         fromStoreData: 'initData',
                         fromDatasetId: 'regions-activitepartielle-raw',
                         fromDatasetKey: 'reg',
+                        fromDatasetField: 'nombre_heures_demandees',
+                        targetSpecialStoreId: 'nombre_heures_demandees'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetKey: 'reg',
                         fromDatasetField: undefined,
                         targetSpecialStoreId: 'focusObject'
                       }
@@ -2167,7 +2188,7 @@ export const configAppMap = {
 
                       {
                         from: 'store',
-                        fromPropKey: 'code', // use props region code
+                        fromPropKey: 'code', // use props dep code
                         fromStoreData: 'initData',
                         fromDatasetId: 'departements-activitepartielle-raw',
                         fromDatasetKey: 'dep',
@@ -2177,7 +2198,7 @@ export const configAppMap = {
 
                       {
                         from: 'store',
-                        fromPropKey: 'code', // use props region code
+                        fromPropKey: 'code', // use props dep code
                         fromStoreData: 'initData',
                         fromDatasetId: 'departements-activitepartielle-raw',
                         fromDatasetKey: 'dep',
@@ -2187,7 +2208,17 @@ export const configAppMap = {
 
                       {
                         from: 'store',
-                        fromPropKey: 'code', // use props region code
+                        fromPropKey: 'code', // use props dep code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-activitepartielle-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'nombre_heures_demandees',
+                        targetSpecialStoreId: 'nombre_heures_demandees'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props dep code
                         fromStoreData: 'initData',
                         fromDatasetId: 'departements-activitepartielle-raw',
                         fromDatasetKey: 'dep',
@@ -2266,10 +2297,6 @@ export const configAppMap = {
           type: 'symbol',
           source: 'departements-activitepartielle',
           layout: {
-            // visibility: 'none',
-            // 'text-field': '{nombreSalaries}\nsalariés',
-            // 'text-font': ['Open Sans Regular'],
-            // 'text-size': 14
             ...COMMON_TEXTS.salaries
           },
           minzoom: ZOOM_THRESHOLD
