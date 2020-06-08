@@ -6,7 +6,7 @@
 
 // switch between facts on region / departement level
 const ZOOM_THRESHOLD = 5.3
-// const ZOOM_THRESHOLD_BIS = 5.4
+const ZOOM_THRESHOLD_BIS = ZOOM_THRESHOLD - 0.1
 
 // colors
 // const FR_GOUV_BLUE = '#000091'
@@ -84,7 +84,7 @@ const circlePaintFDS = {
       0, minCircleSize,
       maxRegFDS, maxCircleSize
     ],
-    ZOOM_THRESHOLD, [
+    ZOOM_THRESHOLD_BIS, [
       'interpolate',
       ['linear'],
       // ['exponential', 10],
@@ -110,7 +110,7 @@ const circlePaintPGE = {
       0, minCircleSize,
       maxRegPGE, maxCircleSize
     ],
-    ZOOM_THRESHOLD, [
+    ZOOM_THRESHOLD_BIS, [
       'interpolate',
       ['linear'],
       // ['exponential', 10],
@@ -136,7 +136,7 @@ const circlePaintREPORT = {
       0, minCircleSize,
       maxRegREPORT, maxCircleSize
     ],
-    ZOOM_THRESHOLD, [
+    ZOOM_THRESHOLD_BIS, [
       'interpolate',
       ['linear'],
       // ['exponential', 10],
@@ -162,7 +162,7 @@ const circlePaintACTIVITEPARTIELLE = {
       0, minCircleSize,
       maxRegACTIVITEPARTIELLE, maxCircleSize
     ],
-    ZOOM_THRESHOLD, [
+    ZOOM_THRESHOLD_BIS, [
       'interpolate',
       ['linear'],
       // ['exponential', 10],
@@ -185,7 +185,7 @@ const aidesProperties = [
     format: [
       {
         utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
+        params: { divider: 1000000, fixed: 1 }
       }
     ]
   },
@@ -193,7 +193,12 @@ const aidesProperties = [
     propName: 'montant',
     itemField: 'montant',
     needFormatting: true,
-    format: [{ utilsFnName: 'toFloat', params: undefined }]
+    format: [
+      {
+        utilsFnName: 'toFloat',
+        params: undefined
+      }
+    ]
   },
   { propName: 'nombre', itemField: 'nombre' }
 ]
@@ -457,7 +462,7 @@ const COMMON_CLICK_EVENTS = {
     funcParams: {
       zoomRange: {
         minZoom: undefined,
-        maxZoom: ZOOM_THRESHOLD - 0.1
+        maxZoom: ZOOM_THRESHOLD_BIS
       },
       propName: 'code',
       targets: [
@@ -478,7 +483,7 @@ const COMMON_CLICK_EVENTS = {
     help: 'update url path without reloading page for constant focus object form dataset to dataset',
     funcParams: {
       zoomRange: {
-        minZoom: ZOOM_THRESHOLD - 0.1,
+        minZoom: ZOOM_THRESHOLD_BIS,
         maxZoom: undefined
       },
       propName: 'code',
@@ -611,7 +616,7 @@ export const configAppMap = {
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
-                      maxZoom: ZOOM_THRESHOLD - 0.1
+                      maxZoom: ZOOM_THRESHOLD_BIS
                     },
                     propName: 'code',
                     targets: [
@@ -1099,7 +1104,7 @@ export const configAppMap = {
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
-                      maxZoom: ZOOM_THRESHOLD - 0.1
+                      maxZoom: ZOOM_THRESHOLD_BIS
                     },
                     propName: 'code',
                     targets: [
@@ -1570,7 +1575,7 @@ export const configAppMap = {
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
-                      maxZoom: ZOOM_THRESHOLD - 0.1
+                      maxZoom: ZOOM_THRESHOLD_BIS
                     },
                     propName: 'code',
                     targets: [
@@ -2041,7 +2046,7 @@ export const configAppMap = {
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
-                      maxZoom: ZOOM_THRESHOLD - 0.1
+                      maxZoom: ZOOM_THRESHOLD_BIS
                     },
                     propName: 'code',
                     targets: [
