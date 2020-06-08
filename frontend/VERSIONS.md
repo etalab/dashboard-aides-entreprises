@@ -14,6 +14,11 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 [wireframe_pdf]: ../screenshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
 
 -----------------
+date : 09/06/2020
+
+- v.2.1.2 : fixing some geocenters
+
+-----------------
 date : 18/05/2020
 
 - v.2.1.0 : adding docs
