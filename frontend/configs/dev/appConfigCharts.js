@@ -856,7 +856,7 @@ export const configAppCharts = {
         fr: `
           Nombre d'entreprises concernées par l'activité partielle
           <br>
-          ventilés par 
+          ventilées par 
           <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
             code section NACE 17</a>
           <br><br>
@@ -932,9 +932,9 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Nombre d'heures demandées d'activité partielle
+          Nombre d'heures d'activité partielle demandées
           <br>
-          ventilés par 
+          ventilées par 
           <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
             code section NACE 17</a> (en millions d'heures)
           <br><br>
