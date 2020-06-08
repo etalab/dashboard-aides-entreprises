@@ -40,6 +40,7 @@
             <span v-if="isMobileWidth" class="caption">
               {{ col.colTitle[locale] }} :
             </span>
+            <br v-if="(isMobileWidth && col.breakMobile) || (!isMobileWidth && col.breakDesktop)">
             <span
               v-html="
                 numToString(getSpecialStore[col.specialStoreId], col.format)
