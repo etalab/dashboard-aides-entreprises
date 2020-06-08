@@ -1,3 +1,5 @@
+#!/bin/bash
+
 curl http://localhost:5000/stat/pge > ../backend/json/pge/pge-maille-national.json
 curl http://localhost:5000/stat/pge/reg > ../backend/json/pge/pge-maille-regional.json
 curl http://localhost:5000/stat/pge/dep > ../backend/json/pge/pge-maille-departemental.json
@@ -26,6 +28,6 @@ sudo mv /tmp/pge-departemental-naf-latest.csv ../published-data/
 
 python 6d_gen_xlsx_pge.py
 
-mkdir ../published-data/pge-$output
-cp ../published-data/pge-*.csv ../published-data/pge-$output/
-cp ../published-data/pge-*.xlsx ../published-data/pge-$output/
+mkdir ../published-data/pge/pge-$output
+cp ../published-data/pge-*.csv ../published-data/pge/pge-$output/
+cp ../published-data/pge-*.xlsx ../published-data/pge/pge-$output/

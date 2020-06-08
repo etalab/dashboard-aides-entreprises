@@ -1,3 +1,5 @@
+#!/bin/bash
+
 curl http://localhost:5000/stat/aide > ../backend/json/aides/aides-maille-national.json
 curl http://localhost:5000/stat/aide/reg > ../backend/json/aides/aides-maille-regional.json
 curl http://localhost:5000/stat/aide/dep > ../backend/json/aides/aides-maille-departemental.json
@@ -7,9 +9,9 @@ json-minify ../backend/json/aides/aides-maille-regional.json > ../backend/json/a
 json-minify ../backend/json/aides/aides-maille-departemental.json > ../backend/json/aides/aides-maille-departemental-minify.json
 
 output=`curl http://localhost:5000/lastupdate | head -n 1| cut -d $' ' -f2`
-mkdir ../backend/json/aides/$output
+mkdir ../backend/json/aides/fds-$output
 
-cp ../backend/json/aides/aides* ../backend/json/aides/$output
+cp ../backend/json/aides/aides* ../backend/json/aides/fds-$output
 cp ../backend/json/aides/aides* ../frontend/static/datasets/prod/aides/
 
 curl http://localhost:5000/lastupdatehtml > ../backend/json/aides/last_update_data.txt
@@ -40,6 +42,6 @@ sudo mv /tmp/fonds-solidarite-volet-1-departemental-classe-effectif-latest.csv .
 
 python gen-xlsx.py
 
-mkdir ../published-data/$output
-cp ../published-data/*.csv ../published-data/$output/
-cp ../published-data/*.xlsx ../published-data/$output/
+mkdir ../published-data/fonds-solidarite/fds-$output
+cp ../published-data/*.csv ../published-data/fonds-solidarite/fds-$output/
+cp ../published-data/*.xlsx ../published-data/fonds-solidarite/fds-$output/

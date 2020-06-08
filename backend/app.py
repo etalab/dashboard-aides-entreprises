@@ -100,6 +100,25 @@ def getSectionNafs():
         return jsonify(dataJson)
 
 
+@app.route('/sectionnace17', methods=['GET'])
+def getSectionNace17():
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "SELECT distinct code_section_nace17, libelle, color from nace17;"
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['code_section_nace17'] = str(data[i][0]) 
+            dataDict['libelle_section_nace17'] = str(data[i][1]) 
+            dataDict['color_section'] = str(data[i][2])
+            dataJson.append(dataDict)
+
+        return jsonify(dataJson)
+
+
+
 @app.route('/categoriejuridique', methods=['GET'])
 def getCategorieJuridique():
     # GET a specific data by id
@@ -756,6 +775,201 @@ def getLastUpdateHtmlPGE():
             lastupdate = str(data[i][0])
             lastupdate = datetime.datetime.strptime(lastupdate, "%Y-%m-%d").strftime("%d/%m/%Y")
         return "Données au "+str(lastupdate)
+
+
+
+
+################## ACTIVITE PARTIELLE ##############
+
+@app.route('/stat/activitepartielle', methods=['GET'])
+def getStatActivitePartielleNationalSectionNACE17():
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "select sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES from activitepartielle A;"
+
+    
+        my_query_2 = "select A.code_section_nace17, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, N.libelle from activitepartielle A LEFT JOIN nace17 N ON N.code_section_nace17 = A.code_section_nace17 GROUP BY A.code_section_nace17, N.libelle ORDER BY TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES DESC;"
+
+        data = db.session.execute(my_query).fetchall()
+        data2 = db.session.execute(my_query_2).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['nombre_demandes_deposees'] = str(data[i][0]) 
+            dataDict['nombre_salaries_concernes'] = str(data[i][1]) 
+            dataDict['nombre_heures_demandees'] = str(data[i][2]) 
+            dataDict['nombre_etablissements_concernes'] = str(data[i][3]) 
+            dataDict['kpi_top_10_nace17'] = []
+            autresdemandes = 0
+            autressalaries = 0
+            autresheures = 0
+            autresetablissements = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['code_section_nace17'] = str(data2[j][0]) 
+                    dataDict2['nombre_demandes_deposees'] = str(data2[j][1]) 
+                    dataDict2['nombre_salaries_concernes'] = str(data2[j][2])
+                    dataDict2['nombre_heures_demandees'] = str(data2[j][3])
+                    dataDict2['nombre_etablissements_concernes'] = str(data2[j][4])
+                    dataDict2['libelle_section_nace17'] = str(data2[j][5]) 
+                    dataDict['kpi_top_10_nace17'].append(dataDict2)
+                else:
+                    autresdemandes = autresdemandes + data2[j][1]
+                    autressalaries = autressalaries + data2[j][2]   
+                    autresheures = autresheures + data2[j][3]   
+                    autresetablissements = autresetablissements + data2[j][4]           
+            dataDict2 = {}
+            dataDict2['code_section_nace17'] = "Autres" 
+            dataDict2['nombre_demandes_deposees'] = str(autresdemandes)
+            dataDict2['nombre_salaries_concernes'] = str(autressalaries)
+            dataDict2['nombre_heures_demandees'] = str(autresheures)
+            dataDict2['nombre_etablissements_concernes'] = str(autresetablissements)
+            dataDict2['libelle_section_nace17'] = "Autres sections NACE 17"
+            dataDict['kpi_top_10_nace17'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+@app.route('/stat/activitepartielle/reg', methods=['GET'])
+def getStatActivitePartielleReg():
+    # GET a specific data by id
+    if request.method == 'GET':
+
+        my_query = "select A.reg, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, R.libelle from activitepartielle A LEFT JOIN region R ON R.reg = A.reg GROUP BY A.reg, R.libelle;"
+
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['reg'] = str(data[i][0]) 
+            dataDict['nombre_demandes_deposees'] = str(data[i][1]) 
+            dataDict['nombre_salaries_concernes'] = str(data[i][2])
+            dataDict['nombre_heures_demandees'] = str(data[i][3])
+            dataDict['nombre_etablissements_concernes'] = str(data[i][4])
+            dataDict['libelle'] = str(data[i][5]) 
+
+            my_query_2 = "select A.code_section_nace17, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, N.libelle from activitepartielle A LEFT JOIN nace17 N ON N.code_section_nace17 = A.code_section_nace17 WHERE A.reg = '"+str(data[i][0])+"' GROUP BY A.code_section_nace17, N.libelle ORDER BY TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES DESC;"
+
+            data2 = db.session.execute(my_query_2).fetchall()
+
+            dataDict['kpi_top_10_nace17'] = []
+
+            autresdemandes = 0
+            autressalaries = 0
+            autresheures = 0
+            autresetablissements = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['code_section_nace17'] = str(data2[j][0]) 
+                    dataDict2['nombre_demandes_deposees'] = str(data2[j][1]) 
+                    dataDict2['nombre_salaries_concernes'] = str(data2[j][2])
+                    dataDict2['nombre_heures_demandees'] = str(data2[j][3])
+                    dataDict2['nombre_etablissements_concernes'] = str(data2[j][4])
+                    dataDict2['libelle_section_nace17'] = str(data2[j][5]) 
+                    dataDict['kpi_top_10_nace17'].append(dataDict2)
+                else:
+                    autresdemandes = autresdemandes + data2[j][1]
+                    autressalaries = autressalaries + data2[j][2]      
+                    autresheures = autresheures + data2[j][3]      
+                    autresetablissements = autresetablissements + data2[j][4]           
+            dataDict2 = {}
+            dataDict2['code_section_nace17'] = "Autres" 
+            dataDict2['nombre_demandes_deposees'] = str(autresdemandes)
+            dataDict2['nombre_salaries_concernes'] = str(autressalaries)
+            dataDict2['nombre_heures_demandees'] = str(autresheures)
+            dataDict2['nombre_etablissements_concernes'] = str(autresetablissements)
+            dataDict2['libelle_section_nace17'] = "Autres sections NACE 17"
+            dataDict['kpi_top_10_nace17'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+@app.route('/stat/activitepartielle/dep', methods=['GET'])
+def getStatActivitePartielleDepartementalSectionNACE17():
+    # GET a specific data by id
+    if request.method == 'GET':
+
+
+        my_query = "select A.dep, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, D.libelle from activitepartielle A LEFT JOIN departement D ON D.dep = A.dep GROUP BY A.dep, D.libelle;"
+
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['dep'] = str(data[i][0]) 
+            dataDict['nombre_demandes_deposees'] = str(data[i][1]) 
+            dataDict['nombre_salaries_concernes'] = str(data[i][2])
+            dataDict['nombre_heures_demandees'] = str(data[i][3])
+            dataDict['nombre_etablissements_concernes'] = str(data[i][4])
+            dataDict['libelle'] = str(data[i][5]) 
+
+
+
+            my_query_2 = "select A.code_section_nace17, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, N.libelle from activitepartielle A LEFT JOIN nace17 N ON N.code_section_nace17 = A.code_section_nace17 WHERE A.dep = '"+str(data[i][0])+"' GROUP BY A.code_section_nace17, N.libelle ORDER BY TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES DESC;"
+
+            data2 = db.session.execute(my_query_2).fetchall()
+
+            dataDict['kpi_top_10_nace17'] = []
+            
+            autresdemandes = 0
+            autressalaries = 0
+            autresheures = 0
+            autresetablissements = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['code_section_nace17'] = str(data2[j][0]) 
+                    dataDict2['nombre_demandes_deposees'] = str(data2[j][1]) 
+                    dataDict2['nombre_salaries_concernes'] = str(data2[j][2])
+                    dataDict2['nombre_heures_demandees'] = str(data2[j][3])
+                    dataDict2['nombre_etablissements_concernes'] = str(data2[j][4])
+                    dataDict2['libelle_section_nace17'] = str(data2[j][5]) 
+                    dataDict['kpi_top_10_nace17'].append(dataDict2)
+                else:
+                    autresdemandes = autresdemandes + data2[j][1]
+                    autressalaries = autressalaries + data2[j][2]      
+                    autresheures = autresheures + data2[j][3]      
+                    autresetablissements = autresetablissements + data2[j][4]           
+            dataDict2 = {}
+            dataDict2['code_section_nace17'] = "Autres" 
+            dataDict2['nombre_demandes_deposees'] = str(autresdemandes)
+            dataDict2['nombre_salaries_concernes'] = str(autressalaries)
+            dataDict2['nombre_heures_demandees'] = str(autresheures)
+            dataDict2['nombre_etablissements_concernes'] = str(autresetablissements)
+            dataDict2['libelle_section_nace17'] = "Autres sections NACE 17"
+            dataDict['kpi_top_10_nace17'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+
+@app.route('/lastupdate/activitepartielle', methods=['GET'])
+def getLastUpdateDateActivitePartielle():
+    if request.method == 'GET':
+        my_query = "select MAX(last_update) FROM activitepartielle;"
+        data = db.session.execute(my_query).fetchall()
+        for i in range(len(data)):
+            lastupdate = str(data[i][0])
+        return str(lastupdate)
+
+@app.route('/lastupdatehtml/activitepartielle', methods=['GET'])
+def getLastUpdateHtmlActivitePartielle():
+    if request.method == 'GET':
+        my_query = "select MAX(last_update) FROM activitepartielle;"
+        data = db.session.execute(my_query).fetchall()
+        for i in range(len(data)):
+            lastupdate = str(data[i][0])
+            lastupdate = datetime.datetime.strptime(lastupdate, "%Y-%m-%d").strftime("%d/%m/%Y")
+        return "Données au "+str(lastupdate)
+
+
 
 
 
