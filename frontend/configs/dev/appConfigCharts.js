@@ -19,16 +19,37 @@ const KEY_SECTION_EFFECTIF_LABEL = 'libelle_classe_effectif'
 const KEY_SECTION_CATEGJUR = 'code_cat_juridique'
 const KEY_SECTION_CATEGJUR_LABEL = 'libelle_cat_juridique'
 
+const COMMON_FORMATTERS = {
+
+  millionsEuros: {
+    type: 'float',
+    sepThousands: ' ',
+    sepComma: ',',
+    unit: 'M€'
+  },
+  toMillionsWithComma: [
+    {
+      utilsFnName: 'toMillionsOrElse',
+      params: { divider: 1000000, fixed: 1 }
+    }
+  ],
+  toMillionsWithoutComma: [
+    {
+      utilsFnName: 'toMillionsOrElse',
+      params: { divider: 1000000, fixed: 0 }
+    }
+  ],
+  integerEuropeanFormat: {
+    type: 'integer',
+    sepThousands: ' '
+  }
+}
+
 const COMMON_SERIES_MAPPERS = {
   NafByMontant: {
     dataFromKey: KEY_MONTANT,
     serieName: 'montant (M€)',
-    format: [
-      {
-        utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
-      }
-    ],
+    format: COMMON_FORMATTERS.toMillionsWithComma,
     sortDataSerieBy: {
       sortByType: 'sortByFieldValue',
       fieldName: KEY_MONTANT,
@@ -59,12 +80,7 @@ const COMMON_SERIES_MAPPERS = {
   EffectifByMontant: {
     dataFromKey: KEY_MONTANT,
     serieName: 'montant (M€)',
-    format: [
-      {
-        utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
-      }
-    ],
+    format: COMMON_FORMATTERS.toMillionsWithComma,
     sortDataSerieBy: undefined,
     // sortDataSerieBy: {
     //   sortByType: 'sortByFieldValue',
@@ -96,12 +112,7 @@ const COMMON_SERIES_MAPPERS = {
   CategjurByMontant: {
     dataFromKey: KEY_MONTANT,
     serieName: 'montant (M€)',
-    format: [
-      {
-        utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
-      }
-    ],
+    format: COMMON_FORMATTERS.toMillionsWithComma,
     sortDataSerieBy: {
       sortByType: 'sortByFieldValue',
       fieldName: KEY_MONTANT,
@@ -132,12 +143,7 @@ const COMMON_SERIES_MAPPERS = {
   CategjurByMontantPie: {
     dataFromKey: KEY_MONTANT,
     serieName: 'montant (M€)',
-    format: [
-      {
-        utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
-      }
-    ],
+    format: COMMON_FORMATTERS.toMillionsWithComma,
     sortDataSerieBy: {
       sortByType: 'sortByFieldValue',
       fieldName: KEY_MONTANT,
@@ -236,12 +242,7 @@ const COMMON_SERIES_MAPPERS = {
   NaceByNombreHeures: {
     dataFromKey: KEY_HEURES,
     serieName: 'Nombre d\'heures (en millions) ',
-    format: [
-      {
-        utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
-      }
-    ],
+    format: COMMON_FORMATTERS.toMillionsWithoutComma,
     sortDataSerieBy: {
       sortByType: 'sortByFieldValue',
       fieldName: KEY_HEURES,
@@ -531,22 +532,9 @@ export const configAppCharts = {
           COMMON_SERIES_MAPPERS.NafByMontant
         ],
 
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.millionsEuros
       }
-
-      // TO DO ...
-
-      // loadSeriesFrom : {
-      //   preload : false,
-      //   sourceType : "json", // json, api, local
-      //   sourceName : "...",
-      // },
-
-      // loadCategoriesFrom : {
-      //   preload : false,
-      //   sourceType : "json", // json, api, local
-      //   sourceName : "...",
-      // },
     },
     // BAR HORIZ - CLASSE EFFECTIFS X MONTANTS
     {
@@ -589,7 +577,8 @@ export const configAppCharts = {
           COMMON_SERIES_MAPPERS.EffectifByMontant
         ],
 
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH300
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH300,
+        format: COMMON_FORMATTERS.millionsEuros
       }
     },
     // BAR HORIZ - CATEG JURIDIQUE X MONTANTS
@@ -630,7 +619,8 @@ export const configAppCharts = {
           COMMON_SERIES_MAPPERS.CategjurByMontant
         ],
 
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH170
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH170,
+        format: COMMON_FORMATTERS.millionsEuros
       }
     },
     // PIE - CATEG JURIDIQUE X MONTANTS
@@ -700,11 +690,6 @@ export const configAppCharts = {
           {
             dataFromKey: 'nombre',
             serieName: "nombre d'aides",
-            // format : [
-            //   { utilsFnName : 'toMillionsOrElse',
-            //     params : { divider: 1000000, fixed:2 },
-            //   },
-            // ],
             sortDataSerieBy: {
               sortByType: 'sortByFieldValue',
               fieldName: 'nombre',
@@ -808,7 +793,8 @@ export const configAppCharts = {
         seriesMappers: [
           COMMON_SERIES_MAPPERS.NafByMontant
         ],
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.millionsEuros
       }
 
     },
@@ -851,7 +837,8 @@ export const configAppCharts = {
         seriesMappers: [
           COMMON_SERIES_MAPPERS.NafByMontant
         ],
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.millionsEuros
       }
 
     },
@@ -859,7 +846,7 @@ export const configAppCharts = {
     // ============================================================= //
     // ACTIVITE PARTIELLE
     // ============================================================= //
-    // BAR HORIZ - APE X MONTANTS
+    // BAR HORIZ - APE X NBR ENTREPRISES
     {
       id: 'apexchart-activitepartielle',
       serie_id: 'stat-bar-horiz',
@@ -893,10 +880,12 @@ export const configAppCharts = {
         seriesMappers: [
           COMMON_SERIES_MAPPERS.NaceByNombreEntreprise
         ],
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.integerEuropeanFormat
       }
 
     },
+    // BAR HORIZ - APE X NBR SALARIES
     {
       id: 'apexchart-activitepartielle-02',
       serie_id: 'stat-bar-horiz',
@@ -930,10 +919,12 @@ export const configAppCharts = {
         seriesMappers: [
           COMMON_SERIES_MAPPERS.NaceByNombreSalaries
         ],
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.integerEuropeanFormat
       }
 
     },
+    // BAR HORIZ - APE X NBR HEURES
     {
       id: 'apexchart-activitepartielle-03',
       serie_id: 'stat-bar-horiz',
@@ -967,7 +958,8 @@ export const configAppCharts = {
         seriesMappers: [
           COMMON_SERIES_MAPPERS.NaceByNombreHeures
         ],
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: { ...COMMON_FORMATTERS.integerEuropeanFormat, unit: 'Mh' }
       }
 
     }

@@ -64,7 +64,7 @@
 
 <script>
 import { mapState, mapGetters } from "vuex"
-import { switchFormatFunctions, splitMulti } from "~/utils/utils.js"
+import { switchFormatFunctions, splitMulti, numberToString } from "~/utils/utils.js"
 
 // ONLY DISPLAY DATA FROM data.specialStore
 
@@ -129,6 +129,7 @@ export default {
     this.localSeries = newSeries && newSeries.dataSeries
     this.updateOptionsColor(newSeries.colors)
     this.updateOptionsLabels(newSeries.labels)
+    this.updateOptionsFormatter()
   },
 
   computed: {
@@ -329,6 +330,16 @@ export default {
     updateOptionsLabels(labels) {
       if (labels.length > 0) {
         this.localChartOptions = { ...this.localChartOptions, labels: labels }
+      }
+    },
+    updateOptionsFormatter() {
+      const formatterOpts = this.datasetMappers.format
+      if (formatterOpts) {
+        let localChartOptions = { ...this.localChartOptions }
+        localChartOptions.dataLabels.formatter = function (val, opts) {
+          return numberToString(val, formatterOpts)
+        }
+        this.localChartOptions = localChartOptions
       }
     },
 

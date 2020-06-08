@@ -245,6 +245,32 @@ export function setDeep (
 // FORMAT VALUES
 // - - - - - - - - - - - - - - - - - - - //
 
+export function numberToString (number, format) {
+  if (format) {
+    switch (format.type) {
+      case 'float':
+        number = parseFloat(number)
+        break
+      case 'integer':
+        number = parseInt(number)
+        break
+    }
+  }
+  number = number.toString()
+  if (format && format.sepThousands) {
+    number = number.replace(
+      /(\d)(?=(\d{3})+(?!\d))/g,
+      '$1' + format.sepThousands
+    )
+  }
+  if (format && format.sepComma) {
+    number = number.replace('.', format.sepComma)
+  }
+  if (format && format.unit) {
+    number = `${number} ${format.unit}`
+  }
+  return number
+}
 export function toMillionsOrElse (x, params = { divider: 1000000, fixed: 2 }) {
   // console.log( "=== toMillions / x ", x )
   return parseFloat((parseFloat(x) / params.divider).toFixed(params.fixed))
