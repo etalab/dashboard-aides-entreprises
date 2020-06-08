@@ -442,6 +442,17 @@ export const configAppGlobalButtons = {
                     fromDatasetId: 'national-activitepartielle-raw',
                     fromDatasetKey: undefined,
                     fromDatasetIndex: 0,
+                    fromDatasetField: 'nombre_heures_demandees',
+                    targetSpecialStoreId: 'nombre_heures_demandees'
+                  },
+                  {
+                    from: 'store',
+                    fromPropKey: undefined,
+                    fromPropValue: undefined,
+                    fromStoreData: 'initData',
+                    fromDatasetId: 'national-activitepartielle-raw',
+                    fromDatasetKey: undefined,
+                    fromDatasetIndex: 0,
                     fromDatasetField: undefined,
                     targetSpecialStoreId: 'focusObject'
                   }
