@@ -74,7 +74,7 @@ export const configAppNumbers = {
           rowNumber: 1,
           help: '',
           columns: [
-           {
+            {
               colName: '',
               colTitle: { fr: 'Nombre de salariés' },
               titleI18n: 'numbers.numbers01.total',

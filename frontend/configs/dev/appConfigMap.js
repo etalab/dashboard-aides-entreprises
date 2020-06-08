@@ -10,7 +10,7 @@ const ZOOM_THRESHOLD = 5.3
 
 // colors
 // const FR_GOUV_BLUE = '#000091'
-const PRIMARYFILLCOLOR = '#7373FF'
+// const PRIMARYFILLCOLOR = '#7373FF'
 const SECONDARYFILLCOLOR = '#526781'
 const HIGHLIGHTCOLOR = '#572a99'
 
@@ -65,56 +65,106 @@ const fillPaintDepartements = {
   ]
 }
 
+const minCircleSize = 15
+const maxCircleSize = 60
+
+const maxRegFDS = 1000
+const maxDepFDS = 500
 const circlePaintFDS = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_FDS,
   'circle-radius': [
-    'interpolate',
-    ['linear'],
-    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
-    0,
-    10,
-    100,
-    60
+    'step',
+    ['zoom'],
+    [
+      'interpolate',
+      ['linear'],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSize,
+      maxRegFDS, maxCircleSize
+    ],
+    ZOOM_THRESHOLD, [
+      'interpolate',
+      ['exponential', 10],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSize,
+      maxDepFDS, maxCircleSize
+    ]
   ]
 }
+
+const maxRegPGE = 40000
+const maxDepPGE = 11000
 const circlePaintPGE = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_PGE,
   'circle-radius': [
-    'interpolate',
-    ['linear'],
-    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
-    0,
-    10,
-    100,
-    40
+    'step',
+    ['zoom'],
+    [
+      'interpolate',
+      ['linear'],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSize,
+      maxRegPGE, maxCircleSize
+    ],
+    ZOOM_THRESHOLD, [
+      'interpolate',
+      ['exponential', 10],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSize,
+      maxDepPGE, maxCircleSize
+    ]
   ]
 }
+
+const maxRegREPORT = 1000
+const maxDepREPORT = 500
 const circlePaintREPORT = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_REPORT,
   'circle-radius': [
-    'interpolate',
-    ['linear'],
-    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
-    0,
-    10,
-    100,
-    50
+    'step',
+    ['zoom'],
+    [
+      'interpolate',
+      ['linear'],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSize,
+      maxRegREPORT, maxCircleSize
+    ],
+    ZOOM_THRESHOLD, [
+      'interpolate',
+      ['exponential', 10],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSize,
+      maxDepREPORT, maxCircleSize
+    ]
   ]
 }
+
+const maxRegACTIVITEPARTIELLE = 3500000
+const maxDepACTIVITEPARTIELLE = 1000000
 const circlePaintACTIVITEPARTIELLE = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_ACTIVITEPARTIELLE,
   'circle-radius': [
-    'interpolate',
-    ['linear'],
-    ['*', ['sqrt', ['number', ['get', 'nombreSalaries']]], 6],
-    0,
-    10,
-    100,
-    50
+    'step',
+    ['zoom'],
+    [
+      'interpolate',
+      ['linear'],
+      ['number', ['get', 'nombreSalaries']],
+      0, minCircleSize,
+      maxRegACTIVITEPARTIELLE, maxCircleSize
+    ],
+    ZOOM_THRESHOLD, [
+      'interpolate',
+      ['exponential', 10],
+      ['number', ['get', 'nombreSalaries']],
+      0, minCircleSize,
+      maxDepACTIVITEPARTIELLE, maxCircleSize
+    ]
   ]
 }
 
@@ -1871,11 +1921,8 @@ export const configAppMap = {
       ]
     },
 
-
-
-
     // ====================================== //
-    // === DATASET : ACTIVITE PARTIELLE ==================== //
+    // === DATASET : ACTIVITE PARTIELLE ===== //
     // ====================================== //
 
     // FRANCE METRO
@@ -2338,8 +2385,7 @@ export const configAppMap = {
           ]
         }
       ]
-    },
-
+    }
 
   ]
 }
