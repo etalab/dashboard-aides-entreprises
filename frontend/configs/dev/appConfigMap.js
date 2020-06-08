@@ -84,7 +84,7 @@ const circlePaintFDS = {
       0, minCircleSize,
       maxRegFDS, maxCircleSize
     ],
-    ZOOM_THRESHOLD_BIS, [
+    ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
       // ['exponential', 10],
@@ -110,7 +110,7 @@ const circlePaintPGE = {
       0, minCircleSize,
       maxRegPGE, maxCircleSize
     ],
-    ZOOM_THRESHOLD_BIS, [
+    ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
       // ['exponential', 10],
@@ -136,7 +136,7 @@ const circlePaintREPORT = {
       0, minCircleSize,
       maxRegREPORT, maxCircleSize
     ],
-    ZOOM_THRESHOLD_BIS, [
+    ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
       // ['exponential', 10],
@@ -162,7 +162,7 @@ const circlePaintACTIVITEPARTIELLE = {
       0, minCircleSize,
       maxRegACTIVITEPARTIELLE, maxCircleSize
     ],
-    ZOOM_THRESHOLD_BIS, [
+    ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
       // ['exponential', 10],
