@@ -28,6 +28,15 @@ export const configAppData = {
         return: 'list',
         subArgs: null
       },
+      {
+        arg: 'nace17',
+        id: 'list_nace17',
+        argType: 'const',
+        help: 'Liste de tous les codes NACE 17 ',
+        jsonFile: 'sections-nace17.json',
+        return: 'list',
+        subArgs: null
+      },
 
       {
         arg: 'departement',
@@ -125,6 +134,21 @@ export const configAppData = {
       options: [
         { value: '0', label: { fr: 'naf_1' } },
         { value: '1', label: { fr: 'naf_2' } }
+      ]
+    },
+
+    {
+      arg: 'nace17',
+      filterCode: 'NACE17',
+      filterType: 'checkbox',
+      isActivated: true,
+      name: {
+        fr: 'codes nace17'
+      },
+      populate: 'from_options',
+      options: [
+        { value: '0', label: { fr: 'nace17_1' } },
+        { value: '1', label: { fr: 'nace17_2' } }
       ]
     }
   ],
@@ -224,6 +248,14 @@ export const configAppData = {
           from: 'static',
           url: `${DATASETS_REPO_BASE}/taxonomies/sections-naf-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/sections-naf.json`,
+          displayed: false
+        },
+        {
+          id: 'taxo-nace17-colors',
+          help: '',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/taxonomies/sections-nace17-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/sections-nace17.json`,
           displayed: false
         },
         {
@@ -431,6 +463,60 @@ export const configAppData = {
           from: 'static',
           url: `${DATASETS_REPO_BASE}/report/report-maille-departemental-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/report/report-maille-departemental.json`,
+          displayed: false
+        },
+
+
+        // ============================================================= //
+        // === DATASET : ACTIVITE PARTIELLE
+        // ============================================================= //
+        {
+          id: 'national-activitepartielle-raw',
+          dataset: 'activitepartielle',
+          help: 'serie chiffres activite partielle à la maille nationale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/activite-partielle/activite-partielle-maille-national-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/activite-partielle/activite-partielle-maille-national.json`,
+          displayed: true,
+          copyTo: [
+            {
+              fieldToCopy: undefined,
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'focusObject',
+              format: undefined
+            },
+            {
+              fieldToCopy: 'nombre_salaries_concernes',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'nombre_salaries_concernes'
+            },
+            {
+              fieldToCopy: 'nombre_etablissements_concernes',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'nombre_etablissements_concernes',
+              format: undefined
+            }
+          ]
+        },
+        {
+          id: 'regions-activitepartielle-raw',
+          dataset: 'activitepartielle',
+          help: 'serie chiffres activite partielle à la maille regionale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/activite-partielle/activite-partielle-maille-regional-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/activite-partielle/activite-partielle-maille-regional.json`,
+          displayed: true
+        },
+        {
+          id: 'departements-activitepartielle-raw',
+          dataset: 'activitepartielle',
+          help: 'serie chiffres activite partielle à la maille departementale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/activite-partielle/activite-partielle-maille-departemental-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/activite-partielle/activite-partielle-maille-departemental.json`,
           displayed: false
         }
       ]
