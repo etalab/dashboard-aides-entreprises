@@ -65,9 +65,9 @@ const fillPaintDepartements = {
   ]
 }
 
-const minCircleSize = 15
-const minCircleSizeBis = 20
-const maxCircleSize = 60
+const maxCircleSize = 55
+const minCircleSize = 10
+const minCircleSizeBis = 12
 
 const maxRegFDS = Math.sqrt(1000)
 const maxDepFDS = Math.sqrt(300)
