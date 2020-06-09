@@ -274,8 +274,10 @@ export const configAppData = {
           id: 'centers',
           help: 'geo centres régions et départements',
           from: 'static',
-          url: `${DATASETS_FOLDER}/geodata/centers.json`,
-          backupUrl: `${DATASETS_FOLDER}/geodata/centers.json`,
+          // url: `${DATASETS_FOLDER}/geodata/centers.json`,
+          // backupUrl: `${DATASETS_FOLDER}/geodata/centers.json`,
+          url: `${DATASETS_FOLDER}/geodata/centers_corrected.json`,
+          backupUrl: `${DATASETS_FOLDER}/geodata/centers_corrected.json`,
           displayed: true
         }
 
