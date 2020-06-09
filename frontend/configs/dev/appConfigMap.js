@@ -4,8 +4,6 @@
 
 // CONSTANTS
 
-// const PI = Math.PI
-
 // switch between facts on region / departement level
 const ZOOM_THRESHOLD = 5.3
 const ZOOM_THRESHOLD_BIS = ZOOM_THRESHOLD - 0.1
@@ -67,9 +65,42 @@ const fillPaintDepartements = {
   ]
 }
 
-const maxCircleRadius = 50
-// const minCircleRadius = 15
-// const minCircleRadiusBis = 20
+const maxCircleRadius = 60
+const minCircleRadius = 2
+const minCircleRadiusBis = 4
+
+// const PI = Math.PI
+// const maxSup = PI * (maxCircleRadius ** 2)
+// const minSup = PI * (minCircleRadius ** 2)
+// const maxSupDelta = maxSup - minSup
+
+// function getRadius (val, maxVal, maxRad, minRad) {
+//   const deltaRad = maxRad - minRad
+//   return (val * deltaRad / maxVal)
+// }
+
+// function getRadiusFull (val, maxVal, maxRad, minRad) {
+//   return minRad + getRadius (val, maxVal, maxRad, minRad)
+// }
+
+/*
+const formula =
+  ['sqrt',
+    ['+',
+      ['*',
+        ['/',
+          ['number', ['get', 'montantMillions']],
+          maxVal
+        ],
+        ['-',
+          maxRad,
+          minRad
+        ]
+      ],
+      minRad
+    ]
+  ]
+*/
 
 // const maxRegFDS = 1000
 // const maxDepFDS = 300
@@ -85,14 +116,14 @@ const circlePaintFDS = {
       'interpolate',
       ['linear'],
       ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, 0,
+      0, minCircleRadius,
       maxRegFDS, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
       ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, 0,
+      0, minCircleRadiusBis,
       maxDepFDS, maxCircleRadius
     ]
   ]
@@ -112,14 +143,14 @@ const circlePaintPGE = {
       'interpolate',
       ['linear'],
       ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, 0,
+      0, minCircleRadius,
       maxRegPGE, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
       ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, 0,
+      0, minCircleRadiusBis,
       maxDepPGE, maxCircleRadius
     ]
   ]
@@ -139,14 +170,14 @@ const circlePaintREPORT = {
       'interpolate',
       ['linear'],
       ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, 0,
+      0, minCircleRadius,
       maxRegREPORT, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
       ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, 0,
+      0, minCircleRadiusBis,
       maxDepREPORT, maxCircleRadius
     ]
   ]
@@ -166,14 +197,14 @@ const circlePaintACTIVITEPARTIELLE = {
       'interpolate',
       ['linear'],
       ['sqrt', ['number', ['get', 'nombreSalaries']]],
-      0, 0,
+      0, minCircleRadius,
       maxRegACTIVITEPARTIELLE, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
       ['sqrt', ['number', ['get', 'nombreSalaries']]],
-      0, 0,
+      0, minCircleRadiusBis,
       maxDepACTIVITEPARTIELLE, maxCircleRadius
     ]
   ]
