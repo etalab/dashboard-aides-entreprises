@@ -4,6 +4,8 @@
 
 // CONSTANTS
 
+// const PI = Math.PI
+
 // switch between facts on region / departement level
 const ZOOM_THRESHOLD = 5.3
 const ZOOM_THRESHOLD_BIS = ZOOM_THRESHOLD - 0.1
@@ -65,12 +67,14 @@ const fillPaintDepartements = {
   ]
 }
 
-const minCircleSize = 15
-const minCircleSizeBis = 20
-const maxCircleSize = 60
+const maxCircleRadius = 50
+// const minCircleRadius = 15
+// const minCircleRadiusBis = 20
 
-const maxRegFDS = 1000
-const maxDepFDS = 300
+// const maxRegFDS = 1000
+// const maxDepFDS = 300
+const maxRegFDS = Math.sqrt(1000)
+const maxDepFDS = Math.sqrt(300)
 const circlePaintFDS = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_FDS,
@@ -80,23 +84,24 @@ const circlePaintFDS = {
     [
       'interpolate',
       ['linear'],
-      ['number', ['get', 'montantMillions']],
-      0, minCircleSize,
-      maxRegFDS, maxCircleSize
+      ['sqrt', ['number', ['get', 'montantMillions']]],
+      0, 0,
+      maxRegFDS, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
-      // ['exponential', 10],
-      ['number', ['get', 'montantMillions']],
-      0, minCircleSizeBis,
-      maxDepFDS, maxCircleSize
+      ['sqrt', ['number', ['get', 'montantMillions']]],
+      0, 0,
+      maxDepFDS, maxCircleRadius
     ]
   ]
 }
 
-const maxRegPGE = 40000
-const maxDepPGE = 11000
+// const maxRegPGE = 40000
+// const maxDepPGE = 11000
+const maxRegPGE = Math.sqrt(40000)
+const maxDepPGE = Math.sqrt(11000)
 const circlePaintPGE = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_PGE,
@@ -106,23 +111,24 @@ const circlePaintPGE = {
     [
       'interpolate',
       ['linear'],
-      ['number', ['get', 'montantMillions']],
-      0, minCircleSize,
-      maxRegPGE, maxCircleSize
+      ['sqrt', ['number', ['get', 'montantMillions']]],
+      0, 0,
+      maxRegPGE, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
-      // ['exponential', 10],
-      ['number', ['get', 'montantMillions']],
-      0, minCircleSizeBis,
-      maxDepPGE, maxCircleSize
+      ['sqrt', ['number', ['get', 'montantMillions']]],
+      0, 0,
+      maxDepPGE, maxCircleRadius
     ]
   ]
 }
 
-const maxRegREPORT = 1000
-const maxDepREPORT = 350
+// const maxRegREPORT = 1000
+// const maxDepREPORT = 350
+const maxRegREPORT = Math.sqrt(1000)
+const maxDepREPORT = Math.sqrt(350)
 const circlePaintREPORT = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_REPORT,
@@ -132,23 +138,24 @@ const circlePaintREPORT = {
     [
       'interpolate',
       ['linear'],
-      ['number', ['get', 'montantMillions']],
-      0, minCircleSize,
-      maxRegREPORT, maxCircleSize
+      ['sqrt', ['number', ['get', 'montantMillions']]],
+      0, 0,
+      maxRegREPORT, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
-      // ['exponential', 10],
-      ['number', ['get', 'montantMillions']],
-      0, minCircleSizeBis,
-      maxDepREPORT, maxCircleSize
+      ['sqrt', ['number', ['get', 'montantMillions']]],
+      0, 0,
+      maxDepREPORT, maxCircleRadius
     ]
   ]
 }
 
-const maxRegACTIVITEPARTIELLE = 3500000
-const maxDepACTIVITEPARTIELLE = 950000
+// const maxRegACTIVITEPARTIELLE = 3500000
+// const maxDepACTIVITEPARTIELLE = 950000
+const maxRegACTIVITEPARTIELLE = Math.sqrt(3500000)
+const maxDepACTIVITEPARTIELLE = Math.sqrt(950000)
 const circlePaintACTIVITEPARTIELLE = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_ACTIVITEPARTIELLE,
@@ -158,17 +165,16 @@ const circlePaintACTIVITEPARTIELLE = {
     [
       'interpolate',
       ['linear'],
-      ['number', ['get', 'nombreSalaries']],
-      0, minCircleSize,
-      maxRegACTIVITEPARTIELLE, maxCircleSize
+      ['sqrt', ['number', ['get', 'nombreSalaries']]],
+      0, 0,
+      maxRegACTIVITEPARTIELLE, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
-      // ['exponential', 10],
-      ['number', ['get', 'nombreSalaries']],
-      0, minCircleSizeBis,
-      maxDepACTIVITEPARTIELLE, maxCircleSize
+      ['sqrt', ['number', ['get', 'nombreSalaries']]],
+      0, 0,
+      maxDepACTIVITEPARTIELLE, maxCircleRadius
     ]
   ]
 }
