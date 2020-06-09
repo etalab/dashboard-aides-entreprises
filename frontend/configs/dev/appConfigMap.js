@@ -7,6 +7,7 @@
 // switch between facts on region / departement level
 const ZOOM_THRESHOLD = 5.3
 const ZOOM_THRESHOLD_BIS = ZOOM_THRESHOLD - 0.1
+// const ZOOM_THRESHOLD_TER = ZOOM_THRESHOLD + 0.1
 
 // colors
 // const FR_GOUV_BLUE = '#000091'
@@ -65,47 +66,47 @@ const fillPaintDepartements = {
   ]
 }
 
-const maxCircleRadius = 60
-const minCircleRadius = 2
-const minCircleRadiusBis = 4
+const maxCircleRadius = 55
+const minCircleRadius = 7
+// const minCircleRadiusBis = 4
 
-// const PI = Math.PI
-// const maxSup = PI * (maxCircleRadius ** 2)
-// const minSup = PI * (minCircleRadius ** 2)
-// const maxSupDelta = maxSup - minSup
+function getRadius (val, maxVal) {
+  const deltaRad = maxCircleRadius - minCircleRadius
+  return (val * deltaRad / maxVal)
+}
 
-// function getRadius (val, maxVal, maxRad, minRad) {
-//   const deltaRad = maxRad - minRad
-//   return (val * deltaRad / maxVal)
-// }
+function getRadiusFull (val, maxVal) {
+  return minCircleRadius + getRadius(val, maxVal)
+}
 
-// function getRadiusFull (val, maxVal, maxRad, minRad) {
-//   return minRad + getRadius (val, maxVal, maxRad, minRad)
-// }
+function getRadiusFullSqrt (val, valMax) {
+  return Math.sqrt(getRadiusFull(val, valMax))
+}
 
-/*
-const formula =
-  ['sqrt',
+function donutRadiusFormula (valName, maxVal) {
+  const fullRadius = [
+    'sqrt',
     ['+',
       ['*',
         ['/',
-          ['number', ['get', 'montantMillions']],
+          ['number', ['get', valName]],
           maxVal
         ],
         ['-',
-          maxRad,
-          minRad
+          maxCircleRadius,
+          minCircleRadius
         ]
       ],
-      minRad
+      minCircleRadius
     ]
   ]
-*/
+  return fullRadius
+}
 
-// const maxRegFDS = 1000
-// const maxDepFDS = 300
-const maxRegFDS = Math.sqrt(1000)
-const maxDepFDS = Math.sqrt(300)
+const maxRegFDS = 1000
+const maxDepFDS = 300
+const maxRadRegFDS = getRadiusFullSqrt(maxRegFDS, maxRegFDS)
+const maxRadDepFDS = getRadiusFullSqrt(maxDepFDS, maxDepFDS)
 const circlePaintFDS = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_FDS,
@@ -115,24 +116,26 @@ const circlePaintFDS = {
     [
       'interpolate',
       ['linear'],
-      ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, minCircleRadius,
-      maxRegFDS, maxCircleRadius
+      // ['sqrt', ['number', ['get', 'montantMillions']]],
+      donutRadiusFormula('montantMillions', maxRegFDS),
+      getRadiusFullSqrt(0, maxRegFDS), minCircleRadius,
+      maxRadRegFDS, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
-      ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, minCircleRadiusBis,
-      maxDepFDS, maxCircleRadius
+      // ['sqrt', ['number', ['get', 'montantMillions']]],
+      donutRadiusFormula('montantMillions', maxDepFDS),
+      getRadiusFullSqrt(0, maxDepFDS), minCircleRadius,
+      maxRadDepFDS, maxCircleRadius
     ]
   ]
 }
 
-// const maxRegPGE = 40000
-// const maxDepPGE = 11000
-const maxRegPGE = Math.sqrt(40000)
-const maxDepPGE = Math.sqrt(11000)
+const maxRegPGE = 40000
+const maxDepPGE = 11000
+const maxRadRegPGE = getRadiusFullSqrt(maxRegPGE, maxRegPGE)
+const maxRadDepPGE = getRadiusFullSqrt(maxDepPGE, maxDepPGE)
 const circlePaintPGE = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_PGE,
@@ -142,24 +145,26 @@ const circlePaintPGE = {
     [
       'interpolate',
       ['linear'],
-      ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, minCircleRadius,
-      maxRegPGE, maxCircleRadius
+      // ['sqrt', ['number', ['get', 'montantMillions']]],
+      donutRadiusFormula('montantMillions', maxRegPGE),
+      getRadiusFullSqrt(0, maxRegPGE), minCircleRadius,
+      maxRadRegPGE, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
-      ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, minCircleRadiusBis,
-      maxDepPGE, maxCircleRadius
+      // ['sqrt', ['number', ['get', 'montantMillions']]],
+      donutRadiusFormula('montantMillions', maxDepPGE),
+      getRadiusFullSqrt(0, maxDepPGE), minCircleRadius,
+      maxRadDepPGE, maxCircleRadius
     ]
   ]
 }
 
-// const maxRegREPORT = 1000
-// const maxDepREPORT = 350
-const maxRegREPORT = Math.sqrt(1000)
-const maxDepREPORT = Math.sqrt(350)
+const maxRegREPORT = 1000
+const maxDepREPORT = 350
+const maxRadRegREPORT = getRadiusFullSqrt(maxRegREPORT, maxRegREPORT)
+const maxRadDepREPORT = getRadiusFullSqrt(maxDepREPORT, maxDepREPORT)
 const circlePaintREPORT = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_REPORT,
@@ -169,24 +174,26 @@ const circlePaintREPORT = {
     [
       'interpolate',
       ['linear'],
-      ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, minCircleRadius,
-      maxRegREPORT, maxCircleRadius
+      // ['sqrt', ['number', ['get', 'montantMillions']]],
+      donutRadiusFormula('montantMillions', maxRegREPORT),
+      getRadiusFullSqrt(0, maxRegREPORT), minCircleRadius,
+      maxRadRegREPORT, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
-      ['sqrt', ['number', ['get', 'montantMillions']]],
-      0, minCircleRadiusBis,
-      maxDepREPORT, maxCircleRadius
+      // ['sqrt', ['number', ['get', 'montantMillions']]],
+      donutRadiusFormula('montantMillions', maxDepREPORT),
+      getRadiusFullSqrt(0, maxDepREPORT), minCircleRadius,
+      maxRadDepREPORT, maxCircleRadius
     ]
   ]
 }
 
-// const maxRegACTIVITEPARTIELLE = 3500000
-// const maxDepACTIVITEPARTIELLE = 950000
-const maxRegACTIVITEPARTIELLE = Math.sqrt(3500000)
-const maxDepACTIVITEPARTIELLE = Math.sqrt(950000)
+const maxRegACTIVITEPARTIELLE = 3500000
+const maxDepACTIVITEPARTIELLE = 950000
+const maxRadRegACTIVITEPARTIELLE = getRadiusFullSqrt(maxRegACTIVITEPARTIELLE, maxRegACTIVITEPARTIELLE)
+const maxRadDepACTIVITEPARTIELLE = getRadiusFullSqrt(maxDepACTIVITEPARTIELLE, maxDepACTIVITEPARTIELLE)
 const circlePaintACTIVITEPARTIELLE = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_ACTIVITEPARTIELLE,
@@ -196,16 +203,18 @@ const circlePaintACTIVITEPARTIELLE = {
     [
       'interpolate',
       ['linear'],
-      ['sqrt', ['number', ['get', 'nombreSalaries']]],
-      0, minCircleRadius,
-      maxRegACTIVITEPARTIELLE, maxCircleRadius
+      // ['sqrt', ['number', ['get', 'nombreSalaries']]],
+      donutRadiusFormula('nombreSalaries', maxRegACTIVITEPARTIELLE),
+      getRadiusFullSqrt(0, maxRegACTIVITEPARTIELLE), minCircleRadius,
+      maxRadRegACTIVITEPARTIELLE, maxCircleRadius
     ],
     ZOOM_THRESHOLD, [
       'interpolate',
       ['linear'],
-      ['sqrt', ['number', ['get', 'nombreSalaries']]],
-      0, minCircleRadiusBis,
-      maxDepACTIVITEPARTIELLE, maxCircleRadius
+      // ['sqrt', ['number', ['get', 'nombreSalaries']]],
+      donutRadiusFormula('nombreSalaries', maxDepACTIVITEPARTIELLE),
+      getRadiusFullSqrt(0, maxDepACTIVITEPARTIELLE), minCircleRadius,
+      maxRadDepACTIVITEPARTIELLE, maxCircleRadius
     ]
   ]
 }
