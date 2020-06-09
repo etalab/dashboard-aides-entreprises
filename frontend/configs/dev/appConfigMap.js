@@ -65,12 +65,12 @@ const fillPaintDepartements = {
   ]
 }
 
-const minCircleSize = 15
-const minCircleSizeBis = 20
-const maxCircleSize = 60
+const maxCircleSize = 55
+const minCircleSize = 5
+const minCircleSizeBis = 8
 
-const maxRegFDS = 1000
-const maxDepFDS = 300
+const maxRegFDS = Math.sqrt(1000)
+const maxDepFDS = Math.sqrt(300)
 const circlePaintFDS = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_FDS,
@@ -80,7 +80,7 @@ const circlePaintFDS = {
     [
       'interpolate',
       ['linear'],
-      ['number', ['get', 'montantMillions']],
+      ['sqrt', ['number', ['get', 'montantMillions']]],
       0, minCircleSize,
       maxRegFDS, maxCircleSize
     ],
@@ -88,15 +88,15 @@ const circlePaintFDS = {
       'interpolate',
       ['linear'],
       // ['exponential', 10],
-      ['number', ['get', 'montantMillions']],
+      ['sqrt', ['number', ['get', 'montantMillions']]],
       0, minCircleSizeBis,
       maxDepFDS, maxCircleSize
     ]
   ]
 }
 
-const maxRegPGE = 40000
-const maxDepPGE = 11000
+const maxRegPGE = Math.sqrt(40000)
+const maxDepPGE = Math.sqrt(11000)
 const circlePaintPGE = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_PGE,
@@ -106,7 +106,7 @@ const circlePaintPGE = {
     [
       'interpolate',
       ['linear'],
-      ['number', ['get', 'montantMillions']],
+      ['sqrt', ['number', ['get', 'montantMillions']]],
       0, minCircleSize,
       maxRegPGE, maxCircleSize
     ],
@@ -114,15 +114,15 @@ const circlePaintPGE = {
       'interpolate',
       ['linear'],
       // ['exponential', 10],
-      ['number', ['get', 'montantMillions']],
+      ['sqrt', ['number', ['get', 'montantMillions']]],
       0, minCircleSizeBis,
       maxDepPGE, maxCircleSize
     ]
   ]
 }
 
-const maxRegREPORT = 1000
-const maxDepREPORT = 350
+const maxRegREPORT = Math.sqrt(1000)
+const maxDepREPORT = Math.sqrt(350)
 const circlePaintREPORT = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_REPORT,
@@ -132,7 +132,7 @@ const circlePaintREPORT = {
     [
       'interpolate',
       ['linear'],
-      ['number', ['get', 'montantMillions']],
+      ['sqrt', ['number', ['get', 'montantMillions']]],
       0, minCircleSize,
       maxRegREPORT, maxCircleSize
     ],
@@ -140,15 +140,15 @@ const circlePaintREPORT = {
       'interpolate',
       ['linear'],
       // ['exponential', 10],
-      ['number', ['get', 'montantMillions']],
+      ['sqrt', ['number', ['get', 'montantMillions']]],
       0, minCircleSizeBis,
       maxDepREPORT, maxCircleSize
     ]
   ]
 }
 
-const maxRegACTIVITEPARTIELLE = 3500000
-const maxDepACTIVITEPARTIELLE = 950000
+const maxRegACTIVITEPARTIELLE = Math.sqrt(3500000)
+const maxDepACTIVITEPARTIELLE = Math.sqrt(950000)
 const circlePaintACTIVITEPARTIELLE = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_ACTIVITEPARTIELLE,
@@ -158,7 +158,7 @@ const circlePaintACTIVITEPARTIELLE = {
     [
       'interpolate',
       ['linear'],
-      ['number', ['get', 'nombreSalaries']],
+      ['sqrt', ['number', ['get', 'nombreSalaries']]],
       0, minCircleSize,
       maxRegACTIVITEPARTIELLE, maxCircleSize
     ],
@@ -166,7 +166,7 @@ const circlePaintACTIVITEPARTIELLE = {
       'interpolate',
       ['linear'],
       // ['exponential', 10],
-      ['number', ['get', 'nombreSalaries']],
+      ['sqrt', ['number', ['get', 'nombreSalaries']]],
       0, minCircleSizeBis,
       maxDepACTIVITEPARTIELLE, maxCircleSize
     ]
