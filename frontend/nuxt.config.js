@@ -11,7 +11,7 @@ console.log(
   process.env.NUXT_ENV_APP_TITLE
 )
 
-const APP_VERSION = 'v.2.1.0 - adding docs'
+const APP_VERSION = 'v.2.1.1 - adding activite partielle configs'
 
 // - - - - - - - - - - - - - - - - - - - - - - - -
 // CONFIGS FROM...

@@ -6,11 +6,11 @@
 
 // switch between facts on region / departement level
 const ZOOM_THRESHOLD = 5.3
-// const ZOOM_THRESHOLD_BIS = 5.4
+const ZOOM_THRESHOLD_BIS = ZOOM_THRESHOLD - 0.1
 
 // colors
 // const FR_GOUV_BLUE = '#000091'
-const PRIMARYFILLCOLOR = '#7373FF'
+// const PRIMARYFILLCOLOR = '#7373FF'
 const SECONDARYFILLCOLOR = '#526781'
 const HIGHLIGHTCOLOR = '#572a99'
 
@@ -20,6 +20,7 @@ const OUTLINECOLOR2 = '#6c87ab'
 const FILLCOLOR_FDS = '#7373FF'
 const FILLCOLOR_PGE = '#00A17F'
 const FILLCOLOR_REPORT = '#D66200'
+const FILLCOLOR_ACTIVITEPARTIELLE = '#C95DC9'
 
 // layer fonts : ["Open Sans Regular","Arial Unicode MS Regular"]
 
@@ -64,43 +65,111 @@ const fillPaintDepartements = {
   ]
 }
 
+const minCircleSize = 15
+const minCircleSizeBis = 20
+const maxCircleSize = 60
+
+const maxRegFDS = 1000
+const maxDepFDS = 300
 const circlePaintFDS = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_FDS,
   'circle-radius': [
-    'interpolate',
-    ['linear'],
-    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
-    0,
-    10,
-    100,
-    60
+    'step',
+    ['zoom'],
+    [
+      'interpolate',
+      ['linear'],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSize,
+      maxRegFDS, maxCircleSize
+    ],
+    ZOOM_THRESHOLD, [
+      'interpolate',
+      ['linear'],
+      // ['exponential', 10],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSizeBis,
+      maxDepFDS, maxCircleSize
+    ]
   ]
 }
+
+const maxRegPGE = 40000
+const maxDepPGE = 11000
 const circlePaintPGE = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_PGE,
   'circle-radius': [
-    'interpolate',
-    ['linear'],
-    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
-    0,
-    10,
-    100,
-    40
+    'step',
+    ['zoom'],
+    [
+      'interpolate',
+      ['linear'],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSize,
+      maxRegPGE, maxCircleSize
+    ],
+    ZOOM_THRESHOLD, [
+      'interpolate',
+      ['linear'],
+      // ['exponential', 10],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSizeBis,
+      maxDepPGE, maxCircleSize
+    ]
   ]
 }
+
+const maxRegREPORT = 1000
+const maxDepREPORT = 350
 const circlePaintREPORT = {
   'circle-opacity': 0.6,
   'circle-color': FILLCOLOR_REPORT,
   'circle-radius': [
-    'interpolate',
-    ['linear'],
-    ['*', ['sqrt', ['number', ['get', 'montantMillions']]], 6],
-    0,
-    10,
-    100,
-    50
+    'step',
+    ['zoom'],
+    [
+      'interpolate',
+      ['linear'],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSize,
+      maxRegREPORT, maxCircleSize
+    ],
+    ZOOM_THRESHOLD, [
+      'interpolate',
+      ['linear'],
+      // ['exponential', 10],
+      ['number', ['get', 'montantMillions']],
+      0, minCircleSizeBis,
+      maxDepREPORT, maxCircleSize
+    ]
+  ]
+}
+
+const maxRegACTIVITEPARTIELLE = 3500000
+const maxDepACTIVITEPARTIELLE = 950000
+const circlePaintACTIVITEPARTIELLE = {
+  'circle-opacity': 0.6,
+  'circle-color': FILLCOLOR_ACTIVITEPARTIELLE,
+  'circle-radius': [
+    'step',
+    ['zoom'],
+    [
+      'interpolate',
+      ['linear'],
+      ['number', ['get', 'nombreSalaries']],
+      0, minCircleSize,
+      maxRegACTIVITEPARTIELLE, maxCircleSize
+    ],
+    ZOOM_THRESHOLD, [
+      'interpolate',
+      ['linear'],
+      // ['exponential', 10],
+      ['number', ['get', 'nombreSalaries']],
+      0, minCircleSizeBis,
+      maxDepACTIVITEPARTIELLE, maxCircleSize
+    ]
   ]
 }
 
@@ -116,7 +185,7 @@ const aidesProperties = [
     format: [
       {
         utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
+        params: { divider: 1000000, fixed: 0 }
       }
     ]
   },
@@ -124,10 +193,68 @@ const aidesProperties = [
     propName: 'montant',
     itemField: 'montant',
     needFormatting: true,
-    format: [{ utilsFnName: 'toFloat', params: undefined }]
+    format: [
+      {
+        utilsFnName: 'toFloat',
+        params: undefined
+      }
+    ]
   },
   { propName: 'nombre', itemField: 'nombre' }
 ]
+
+const activitepartielleProperties = [
+  {
+    propName: 'nombreSalaries',
+    itemField: 'nombre_salaries_concernes',
+    needFormatting: true,
+    format: [
+      {
+        utilsFnName: 'toMillionsOrElse',
+        params: { divider: 1, fixed: 0 }
+      }
+    ]
+  }
+]
+
+// - - - - - - - - - - - - - - - - - - - - - //
+// COMMON FORMATTED TEXTS
+// - - - - - - - - - - - - - - - - - - - - - //
+
+const COMMON_TEXTS = {
+  millions: {
+    'text-field':
+    // '{montantMillions} M€',
+    ['format',
+      ['number-format',
+        ['number', ['get', 'montantMillions']],
+        {
+          locale: 'fr-CA',
+          'min-fraction-digits': 0,
+          'max-fraction-digits': 0
+        }
+      ], {},
+      ' M€', { 'font-scale': 0.8 }
+    ],
+    'text-font': ['Open Sans Regular'],
+    'text-size': 14
+  },
+  salaries: {
+    'text-field':
+    [
+      'format',
+      ['number-format',
+        ['number', ['get', 'nombreSalaries']],
+        {
+          locale: 'fr-CA'
+        }
+      ], {},
+      '\nsalariés', { 'font-scale': 0.8 }
+    ],
+    'text-font': ['Open Sans Regular'],
+    'text-size': 14
+  }
+}
 
 // - - - - - - - - - - - - - - - - - - - - - //
 // COMMON GEOJSON SOUURCES
@@ -342,7 +469,7 @@ const COMMON_CLICK_EVENTS = {
     funcParams: {
       zoomRange: {
         minZoom: undefined,
-        maxZoom: ZOOM_THRESHOLD - 0.1
+        maxZoom: ZOOM_THRESHOLD_BIS
       },
       propName: 'code',
       targets: [
@@ -363,7 +490,7 @@ const COMMON_CLICK_EVENTS = {
     help: 'update url path without reloading page for constant focus object form dataset to dataset',
     funcParams: {
       zoomRange: {
-        minZoom: ZOOM_THRESHOLD - 0.1,
+        minZoom: ZOOM_THRESHOLD_BIS,
         maxZoom: undefined
       },
       propName: 'code',
@@ -496,7 +623,7 @@ export const configAppMap = {
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
-                      maxZoom: ZOOM_THRESHOLD - 0.1
+                      maxZoom: ZOOM_THRESHOLD_BIS
                     },
                     propName: 'code',
                     targets: [
@@ -710,10 +837,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'regions-aides',
           layout: {
-            visibility: 'visible',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'], // OK
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           maxzoom: ZOOM_THRESHOLD
         },
@@ -736,10 +860,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'departements-aides',
           layout: {
-            // visibility: 'none',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'],
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           minzoom: ZOOM_THRESHOLD
         }
@@ -990,7 +1111,7 @@ export const configAppMap = {
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
-                      maxZoom: ZOOM_THRESHOLD - 0.1
+                      maxZoom: ZOOM_THRESHOLD_BIS
                     },
                     propName: 'code',
                     targets: [
@@ -1188,10 +1309,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'regions-pge',
           layout: {
-            visibility: 'visible',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'], // OK
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           maxzoom: ZOOM_THRESHOLD
         },
@@ -1214,10 +1332,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'departements-pge',
           layout: {
-            // visibility: 'none',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'],
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           minzoom: ZOOM_THRESHOLD
         }
@@ -1467,7 +1582,7 @@ export const configAppMap = {
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
-                      maxZoom: ZOOM_THRESHOLD - 0.1
+                      maxZoom: ZOOM_THRESHOLD_BIS
                     },
                     propName: 'code',
                     targets: [
@@ -1664,10 +1779,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'regions-report',
           layout: {
-            visibility: 'visible',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'], // OK
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           maxzoom: ZOOM_THRESHOLD
         },
@@ -1690,10 +1802,7 @@ export const configAppMap = {
           type: 'symbol',
           source: 'departements-report',
           layout: {
-            // visibility: 'none',
-            'text-field': '{montantMillions} M€',
-            'text-font': ['Open Sans Regular'],
-            'text-size': 14
+            ...COMMON_TEXTS.millions
           },
           minzoom: ZOOM_THRESHOLD
         }
@@ -1833,6 +1942,486 @@ export const configAppMap = {
       copySettingsFrom: [
         {
           copyFromId: 'map-france-report-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+
+    // ====================================== //
+    // === DATASET : ACTIVITE PARTIELLE ===== //
+    // ====================================== //
+
+    // FRANCE METRO
+    {
+      id: 'map-france-activitepartielle-metro',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMetro,
+
+      sizes: COMMON_SIZES.defaultSizes,
+
+      // - - - - - - - - - - - - - - - - - - //
+      // SOURCES LOADED AT MAP LOADED
+      // - - - - - - - - - - - - - - - - - - //
+      sources: [
+        COMMON_SOURCES.FranceRegions,
+        COMMON_SOURCES.FranceDepartements,
+        {
+          id: 'regions-activitepartielle',
+          help: 'nombre d activite partielle au niveau regional - as geojson from raw',
+          from: 'store',
+          fromId: 'regions-activitepartielle-raw',
+          type: 'geojson',
+          generateId: true,
+          needTransform: true,
+          transformTo: {
+            srcKey: 'reg',
+            geoCanvasId: 'centers',
+            canvasKey: {
+              keyIsFieldName: true,
+              field: undefined,
+              canvasKeyPrefix: 'REG-',
+              canvasKeySuffix: ''
+            },
+            properties: activitepartielleProperties,
+            geometry: {
+              type: 'Point'
+            }
+          },
+          licence: ''
+        },
+        {
+          id: 'departements-activitepartielle',
+          help:
+            'nombre d activite partielle au niveau départemental - as geojson from raw',
+          from: 'store',
+          fromId: 'departements-activitepartielle-raw',
+          type: 'geojson',
+          generateId: false,
+          needTransform: true,
+          transformTo: {
+            srcKey: 'dep',
+            geoCanvasId: 'centers',
+            canvasKey: {
+              keyIsFieldName: true,
+              field: undefined,
+              canvasKeyPrefix: 'DEP-',
+              canvasKeySuffix: ''
+            },
+            properties: activitepartielleProperties,
+            geometry: {
+              type: 'Point'
+            }
+          },
+          licence: ''
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // MAPS
+      // - - - - - - - - - - - - - - - - - - //
+      maps: [
+        {
+          id: 'map-activitepartielle-reg',
+          name: 'Carte activite partielle par région',
+          category: 'regional',
+          properties: 'activitepartielle',
+          data: 'activitepartielle',
+          layers: [
+            'regions-fill',
+            'regions-lines',
+            'regions-activitepartielle',
+            'regions-activitepartielle-nombre'
+          ],
+          clicEvents: [
+            {
+              event: 'click',
+              layer: 'regions-fill',
+              // zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
+              functions: [
+                COMMON_CLICK_EVENTS.toggleSelectedOn,
+                COMMON_CLICK_EVENTS.goToPolygonPlus,
+                {
+                  funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
+                  funcParams: {
+                    zoomRange: {
+                      minZoom: undefined,
+                      maxZoom: ZOOM_THRESHOLD_BIS
+                    },
+                    propName: 'code',
+                    targets: [
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code',
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'taxo-regions',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'libelle',
+                        targetSpecialStoreId: 'levelname'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'nombre_etablissements_concernes',
+                        targetSpecialStoreId: 'nombre_etablissements_concernes'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'nombre_salaries_concernes',
+                        targetSpecialStoreId: 'nombre_salaries_concernes'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'nombre_heures_demandees',
+                        targetSpecialStoreId: 'nombre_heures_demandees'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: undefined,
+                        targetSpecialStoreId: 'focusObject'
+                      }
+                    ]
+                  }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathRegions
+
+              ]
+            },
+
+            {
+              event: 'mousemove',
+              layer: 'regions-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOn
+              ]
+            },
+
+            {
+              event: 'mouseleave',
+              layer: 'regions-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOff
+              ]
+            }
+          ]
+        },
+
+        {
+          id: 'map-activitepartielle-dep',
+          name: 'Carte activite partielle par departement',
+          category: 'departemental',
+          properties: 'activitepartielle',
+          data: 'activitepartielle',
+          layers: [
+            'departements-fill',
+            'departements-lines',
+            'departements-activitepartielle',
+            'departements-activitepartielle-nombre'
+          ],
+          clicEvents: [
+            {
+              event: 'click',
+              layer: 'departements-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleSelectedOn,
+                {
+                  funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
+                  funcParams: {
+                    zoomRange: {
+                      minZoom: ZOOM_THRESHOLD,
+                      maxZoom: undefined
+                    },
+                    propName: 'code',
+                    targets: [
+                      {
+                        from: 'store',
+                        fromPropKey: 'code',
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'taxo-departements',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'libelle',
+                        targetSpecialStoreId: 'levelname'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props dep code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-activitepartielle-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'nombre_etablissements_concernes',
+                        targetSpecialStoreId: 'nombre_etablissements_concernes'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props dep code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-activitepartielle-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'nombre_salaries_concernes',
+                        targetSpecialStoreId: 'nombre_salaries_concernes'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props dep code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-activitepartielle-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'nombre_heures_demandees',
+                        targetSpecialStoreId: 'nombre_heures_demandees'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props dep code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-activitepartielle-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: undefined,
+                        targetSpecialStoreId: 'focusObject'
+                      }
+                    ]
+                  }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathDepartements
+              ]
+            },
+
+            {
+              event: 'mousemove',
+              layer: 'departements-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOn
+              ]
+            },
+
+            {
+              event: 'mouseleave',
+              layer: 'departements-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOff
+              ]
+            }
+          ]
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // LAYERS
+      // - - - - - - - - - - - - - - - - - - //
+      layers: [
+
+        // REGIONS
+        COMMON_LAYERS.FranceRegionsFill,
+        COMMON_LAYERS.FranceRegionsLines,
+        {
+          id: 'regions-activitepartielle',
+          type: 'circle',
+          source: 'regions-activitepartielle',
+          layout: {
+            visibility: 'visible'
+          },
+          maxzoom: ZOOM_THRESHOLD,
+          paint: circlePaintACTIVITEPARTIELLE
+        },
+        {
+          id: 'regions-activitepartielle-nombre',
+          type: 'symbol',
+          source: 'regions-activitepartielle',
+          layout: {
+            ...COMMON_TEXTS.salaries
+          },
+          maxzoom: ZOOM_THRESHOLD
+        },
+
+        // DEPARTEMENTS
+        COMMON_LAYERS.FranceDepartementsFill,
+        COMMON_LAYERS.FranceDepartementsLines,
+        {
+          id: 'departements-activitepartielle',
+          type: 'circle',
+          source: 'departements-activitepartielle',
+          layout: {
+            // visibility: 'none'
+          },
+          paint: circlePaintACTIVITEPARTIELLE,
+          minzoom: ZOOM_THRESHOLD
+        },
+        {
+          id: 'departements-activitepartielle-nombre',
+          type: 'symbol',
+          source: 'departements-activitepartielle',
+          layout: {
+            ...COMMON_TEXTS.salaries
+          },
+          minzoom: ZOOM_THRESHOLD
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // LAYERS VISIBILITY DRAWER
+      // - - - - - - - - - - - - - - - - - - //
+      maps_visibility: {
+        title: { fr: 'calques' },
+        is_activated: false,
+        is_drawer_open: true,
+        map_switches: [
+          {
+            id: 'regions',
+            mapId: 'map-activitepartielle-reg',
+            label: { fr: 'régions' },
+            default_visible: true
+          },
+          {
+            id: 'departements',
+            mapId: 'map-activitepartielle-dep',
+            label: { fr: 'départements' },
+            default_visible: false
+          }
+        ]
+      }
+    },
+    // GUYANE
+    {
+      id: 'map-france-activitepartielle-guyane',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuyane,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-activitepartielle-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // GUADELOUPE
+    {
+      id: 'map-france-activitepartielle-guadeloupe',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuadeloupe,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-activitepartielle-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MARTINIQUE
+    {
+      id: 'map-france-activitepartielle-martinique',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMartinique,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-activitepartielle-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // LA REUNION
+    {
+      id: 'map-france-activitepartielle-la-reunion',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceReunion,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-activitepartielle-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MAYOTTE
+    {
+      id: 'map-france-activitepartielle-mayotte',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMayotte,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-activitepartielle-metro',
           fieldsToCopy: [
             'sources',
             'maps',

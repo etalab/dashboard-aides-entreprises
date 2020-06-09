@@ -57,6 +57,16 @@ const COMMON_TEXTS_HTML = {
     fromUrl: {
       fr: undefined
     }
+  },
+  moreInfosACTIVITEPARTIELLE: {
+    id: 'more-infos-activitepartielle',
+    textClass: 'text-left mx-4 pt-4',
+    textContent: {
+      fr: ``
+    },
+    fromUrl: {
+      fr: undefined
+    }
   }
 }
 
@@ -484,6 +494,103 @@ export const configAppTexts = {
                   fromUrl: {
                     fr:
                       'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/report/last_update_data.txt'
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    // ============================================================= //
+    // ACTIVITE PARTIELLE
+    // ============================================================= //
+    {
+      id: 'text-activitepartielle-title',
+      help: '',
+      title: { fr: '' },
+      titleI18n: 'texts.text01.title',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+            {
+              colName: '',
+              colTitle: { fr: '' },
+              colTitleClass: '',
+              cols: 12,
+              textClass: '',
+              subTextClass: '',
+              sizeDesktop: 'headline mb-0',
+              sizeMobile: 'subtitle-1',
+              textPrefix: { fr: "Activité Partielle : " },
+              textPrefixClass: 'font-weight-regular',
+              textSuffix: { fr: '' },
+              textSuffixClass: undefined,
+              specialStoreId: 'levelname',
+              specialStoreIdClass: 'font-weight-medium'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'text-activitepartielle-infos',
+      help: '',
+      title: { fr: '' },
+      titleI18n: 'texts.text01.title',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+            {
+              colName: '',
+              colTitle: { fr: "Activité Partielle" },
+              colTitleClass: 'my-5',
+              cols: 12,
+              textClass: '',
+              subTextClass: '',
+              sizeDesktop: '',
+              sizeMobile: 'body-2',
+              textPrefix: { fr: undefined },
+              textPrefixClass: undefined,
+              textSuffix: { fr: undefined },
+              textSuffixClass: undefined,
+              specialStoreId: undefined,
+              specialStoreIdClass: undefined,
+              textsHtml: [
+                {
+                  id: 'activitepartielle-intro',
+                  textClass: 'text-left mx-4 pt-4',
+                  textContent: {
+                    fr: `
+                      
+                    `
+                  },
+                  fromUrl: {
+                    fr: undefined
+                  }
+                },
+                COMMON_TEXTS_HTML.moreInfosACTIVITEPARTIELLE,
+                COMMON_TEXTS_HTML.dashboardIntro,
+                {
+                  id: 'miseAJour',
+                  textClass: 'justify-center mx-4 pt-3 pb-5 mb-5',
+                  textContent: undefined,
+                  fromUrl: {
+                    fr:
+                      'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/activite-partielle/last_update_data.txt'
                   }
                 }
               ]
