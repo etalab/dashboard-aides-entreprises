@@ -289,7 +289,8 @@ export default {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/fr-gouv-favicon-64.png' },
       { href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', rel: 'stylesheet' }
     ]
   },
