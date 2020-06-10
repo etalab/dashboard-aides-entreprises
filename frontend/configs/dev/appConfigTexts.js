@@ -482,7 +482,7 @@ export const configAppTexts = {
                       et régional avec une ventilation par secteur d'activité.
                       <br><br>
                       Les données utilisées pour ce tableau de bord sont 
-                      mises à jour de manière hebdomadaire
+                      mises à jour de manière hebdomadaire.
                     `
                   },
                   fromUrl: {
@@ -622,7 +622,7 @@ export const configAppTexts = {
                       <br><br>
                       Les données utilisées pour ce tableau de bord sont 
                       mises à jour de manière 
-                      mensuelle
+                      mensuelle.
                     `
                   },
                   fromUrl: {
