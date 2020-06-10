@@ -101,8 +101,10 @@ export const configAppNavbarFooters = {
               toggle: 'off',
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
+                'map-france-activitepartielle-metro',
                 'apexchart-activitepartielle',
-                'map-france-activitepartielle-metro'
+                'apexchart-activitepartielle-02',
+                'apexchart-activitepartielle-03'
               ]
             }
           ],
@@ -188,7 +190,9 @@ export const configAppNavbarFooters = {
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'text-activitepartielle-infos',
-                'apexchart-activitepartielle'
+                'apexchart-activitepartielle',
+                'apexchart-activitepartielle-02',
+                'apexchart-activitepartielle-03'
               ]
             }
           ],
@@ -265,7 +269,9 @@ export const configAppNavbarFooters = {
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'text-activitepartielle-title',
-                'apexchart-activitepartielle'
+                'apexchart-activitepartielle',
+                'apexchart-activitepartielle-02',
+                'apexchart-activitepartielle-03'
               ]
             },
             {
