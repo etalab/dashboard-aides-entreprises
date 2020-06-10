@@ -62,7 +62,11 @@ const COMMON_TEXTS_HTML = {
     id: 'more-infos-activitepartielle',
     textClass: 'text-left mx-4 pt-4',
     textContent: {
-      fr: ``
+      fr: `
+        Les données utilisées sur ce tableau de bord
+        <a target="_blank" href="https://www.data.gouv.fr/fr">
+          sont disponibles en open data sur data.gouv.fr</a>.
+      `
     },
     fromUrl: {
       fr: undefined
@@ -529,7 +533,7 @@ export const configAppTexts = {
               subTextClass: '',
               sizeDesktop: 'headline mb-0',
               sizeMobile: 'subtitle-1',
-              textPrefix: { fr: "Activité Partielle : " },
+              textPrefix: { fr: 'Activité Partielle : ' },
               textPrefixClass: 'font-weight-regular',
               textSuffix: { fr: '' },
               textSuffixClass: undefined,
@@ -556,7 +560,7 @@ export const configAppTexts = {
           columns: [
             {
               colName: '',
-              colTitle: { fr: "Activité Partielle" },
+              colTitle: { fr: 'Activité Partielle' },
               colTitleClass: 'my-5',
               cols: 12,
               textClass: '',
@@ -575,7 +579,50 @@ export const configAppTexts = {
                   textClass: 'text-left mx-4 pt-4',
                   textContent: {
                     fr: `
-                      
+                      Face à l’ampleur de la crise sanitaire liée au COVID-19, 
+                      le Gouvernement a décidé de transformer structurellement 
+                      le dispositif d’activité partielle, pour doter la France du système 
+                      le plus protecteur d’Europe.
+                      <br><br>
+                      L’activité partielle est un outil au service de la politique publique 
+                      de prévention des licenciements économiques qui permet à l’employeur 
+                      en difficulté de faire prendre en charge tout ou partie 
+                      du coût de la rémunération de ses salariés.
+                      <br><br>
+                      L’activité partielle s’adresse à tous les salariés qui subissent une baisse de rémunération imputable  :
+                      <br><br>
+                      <ul>
+                        <li>
+                        soit à une réduction de l’horaire de travail pratiqué dans l’établissement ou partie de l’établissement en deçà de la durée légale de travail ;
+                        </li>
+                        <li>
+                        soit à une fermeture temporaire de tout ou partie de l’établissement.
+                        </li>
+                      </ul>
+                      <br>
+                      Pendant la période d’activité partielle :
+                      <br><br>
+                      <ul>
+                        <li>
+                        L’employeur reçoit de l’Agence de services et de paiement (ASP) une allocation équivalent à une part de la rémunération horaire du salarié placé en activité partielle ;
+                        </li>
+                        <li>
+                        Le salarié reçoit de son employeur une indemnité d’activité partielle, en lieu et place de son salaire pour la période durant laquelle il est placé en activité partielle.
+                        </li>
+                      </ul>
+                      <br><br>
+                      Plus d'informations sur la prise en charge de l'activité partielle sur
+                      <a href="https://travail-emploi.gouv.fr/le-ministere-en-action/coronavirus-covid-19/questions-reponses-par-theme/faq-chomage-partiel-activite-partielle" target="_blank">
+                        la page des FAQ
+                      </a>
+                      ainsi que sur 
+                      <a href="https://activitepartielle.emploi.gouv.fr/apart/" target="_blank">
+                        le portail officiel
+                      </a>
+                      <br><br>
+                      Les données utilisées pour ce tableau de bord sont 
+                      mises à jour de manière 
+                      mensuelle
                     `
                   },
                   fromUrl: {
