@@ -618,11 +618,11 @@ export const configAppTexts = {
                       ainsi que sur 
                       <a href="https://activitepartielle.emploi.gouv.fr/apart/" target="_blank">
                         le portail officiel
-                      </a>
+                      </a>.
                       <br><br>
                       Les données utilisées pour ce tableau de bord sont 
                       mises à jour de manière 
-                      mensuelle.
+                      hebdomadaire.
                     `
                   },
                   fromUrl: {
