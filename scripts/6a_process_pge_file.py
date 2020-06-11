@@ -14,8 +14,9 @@ print("Process file and concat info in one dataframe")
 dffinal = pd.DataFrame(columns=['nombre', 'montant', 'code_section','code_departement'])
 for sheet in sheet_names:
     if(sheet != 'Récap'):
+        print(sheet)
         df = xls_file.parse(sheet)
-        dfnaf = df[26:47]
+        dfnaf = df[28:49]
         dfnaf = dfnaf.rename(columns={dfnaf.columns[0]:"section_naf",dfnaf.columns[1]:"nombre",dfnaf.columns[3]:"montant"})
         dfnaf = dfnaf[['section_naf','nombre','montant']]
         dfnaf['montant'] = dfnaf['montant'].apply(lambda x: 0 if x == 'ND' else x * 1000000)
