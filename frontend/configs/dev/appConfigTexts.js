@@ -64,7 +64,7 @@ const COMMON_TEXTS_HTML = {
     textContent: {
       fr: `
         Les données utilisées sur ce tableau de bord
-        <a target="_blank" href="https://www.data.gouv.fr/fr">
+        <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-au-dispositif-dactivite-partielle-mis-en-oeuvre-dans-le-cadre-de-lepidemie-de-covid-19/">
           sont disponibles en open data sur data.gouv.fr</a>.
       `
     },
