@@ -3,6 +3,13 @@
 
 const KEY_MONTANT = 'montant'
 
+const KEY_ETABLISSEMENTS = 'nombre_etablissements_concernes'
+const KEY_SALARIES = 'nombre_salaries_concernes'
+const KEY_HEURES = 'nombre_heures_demandees'
+
+const KEY_SECTION_NACE = 'code_section_nace17'
+const KEY_SECTION_NACE_LABEL = 'libelle_section_nace17'
+
 const KEY_SECTION_NAF = 'section_naf'
 const KEY_SECTION_NAF_LABEL = 'libelle_section_naf'
 
@@ -12,16 +19,37 @@ const KEY_SECTION_EFFECTIF_LABEL = 'libelle_classe_effectif'
 const KEY_SECTION_CATEGJUR = 'code_cat_juridique'
 const KEY_SECTION_CATEGJUR_LABEL = 'libelle_cat_juridique'
 
+const COMMON_FORMATTERS = {
+
+  millionsEuros: {
+    type: 'float',
+    sepThousands: ' ',
+    sepComma: ',',
+    unit: 'M€'
+  },
+  toMillionsWithComma: [
+    {
+      utilsFnName: 'toMillionsOrElse',
+      params: { divider: 1000000, fixed: 1 }
+    }
+  ],
+  toMillionsWithoutComma: [
+    {
+      utilsFnName: 'toMillionsOrElse',
+      params: { divider: 1000000, fixed: 0 }
+    }
+  ],
+  integerEuropeanFormat: {
+    type: 'integer',
+    sepThousands: ' '
+  }
+}
+
 const COMMON_SERIES_MAPPERS = {
   NafByMontant: {
     dataFromKey: KEY_MONTANT,
     serieName: 'montant (M€)',
-    format: [
-      {
-        utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
-      }
-    ],
+    format: COMMON_FORMATTERS.toMillionsWithComma,
     sortDataSerieBy: {
       sortByType: 'sortByFieldValue',
       fieldName: KEY_MONTANT,
@@ -52,12 +80,7 @@ const COMMON_SERIES_MAPPERS = {
   EffectifByMontant: {
     dataFromKey: KEY_MONTANT,
     serieName: 'montant (M€)',
-    format: [
-      {
-        utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
-      }
-    ],
+    format: COMMON_FORMATTERS.toMillionsWithComma,
     sortDataSerieBy: undefined,
     // sortDataSerieBy: {
     //   sortByType: 'sortByFieldValue',
@@ -89,12 +112,7 @@ const COMMON_SERIES_MAPPERS = {
   CategjurByMontant: {
     dataFromKey: KEY_MONTANT,
     serieName: 'montant (M€)',
-    format: [
-      {
-        utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
-      }
-    ],
+    format: COMMON_FORMATTERS.toMillionsWithComma,
     sortDataSerieBy: {
       sortByType: 'sortByFieldValue',
       fieldName: KEY_MONTANT,
@@ -125,12 +143,7 @@ const COMMON_SERIES_MAPPERS = {
   CategjurByMontantPie: {
     dataFromKey: KEY_MONTANT,
     serieName: 'montant (M€)',
-    format: [
-      {
-        utilsFnName: 'toMillionsOrElse',
-        params: { divider: 1000000, fixed: 2 }
-      }
-    ],
+    format: COMMON_FORMATTERS.toMillionsWithComma,
     sortDataSerieBy: {
       sortByType: 'sortByFieldValue',
       fieldName: KEY_MONTANT,
@@ -163,6 +176,97 @@ const COMMON_SERIES_MAPPERS = {
       matchWithDatasetId: 'taxo-categ-juridiques',
       matchKey: 'code',
       getValueFromKey: 'color',
+      fallbackColor: '#808080'
+    }
+  },
+  NaceByNombreEntreprise: {
+    dataFromKey: KEY_ETABLISSEMENTS,
+    serieName: 'Nombre d\'entreprises ',
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_ETABLISSEMENTS,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_NACE, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_NACE_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NACE,
+      matchWithDatasetId: 'taxo-nace17-colors',
+      matchKey: 'code_section_nace17',
+      getValueFromKey: 'color_section',
+      fallbackColor: '#808080'
+    }
+  },
+  NaceByNombreSalaries: {
+    dataFromKey: KEY_SALARIES,
+    serieName: 'Nombre de salariés ',
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_SALARIES,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_NACE, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_NACE_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NACE,
+      matchWithDatasetId: 'taxo-nace17-colors',
+      matchKey: 'code_section_nace17',
+      getValueFromKey: 'color_section',
+      fallbackColor: '#808080'
+    }
+  },
+  NaceByNombreHeures: {
+    dataFromKey: KEY_HEURES,
+    serieName: 'Nombre d\'heures (en millions) ',
+    format: COMMON_FORMATTERS.toMillionsWithoutComma,
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_HEURES,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_NACE, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_NACE_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NACE,
+      matchWithDatasetId: 'taxo-nace17-colors',
+      matchKey: 'code_section_nace17',
+      getValueFromKey: 'color_section',
       fallbackColor: '#808080'
     }
   }
@@ -428,22 +532,9 @@ export const configAppCharts = {
           COMMON_SERIES_MAPPERS.NafByMontant
         ],
 
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.millionsEuros
       }
-
-      // TO DO ...
-
-      // loadSeriesFrom : {
-      //   preload : false,
-      //   sourceType : "json", // json, api, local
-      //   sourceName : "...",
-      // },
-
-      // loadCategoriesFrom : {
-      //   preload : false,
-      //   sourceType : "json", // json, api, local
-      //   sourceName : "...",
-      // },
     },
     // BAR HORIZ - CLASSE EFFECTIFS X MONTANTS
     {
@@ -486,7 +577,8 @@ export const configAppCharts = {
           COMMON_SERIES_MAPPERS.EffectifByMontant
         ],
 
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH300
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH300,
+        format: COMMON_FORMATTERS.millionsEuros
       }
     },
     // BAR HORIZ - CATEG JURIDIQUE X MONTANTS
@@ -527,7 +619,8 @@ export const configAppCharts = {
           COMMON_SERIES_MAPPERS.CategjurByMontant
         ],
 
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH170
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH170,
+        format: COMMON_FORMATTERS.millionsEuros
       }
     },
     // PIE - CATEG JURIDIQUE X MONTANTS
@@ -597,11 +690,6 @@ export const configAppCharts = {
           {
             dataFromKey: 'nombre',
             serieName: "nombre d'aides",
-            // format : [
-            //   { utilsFnName : 'toMillionsOrElse',
-            //     params : { divider: 1000000, fixed:2 },
-            //   },
-            // ],
             sortDataSerieBy: {
               sortByType: 'sortByFieldValue',
               fieldName: 'nombre',
@@ -705,7 +793,8 @@ export const configAppCharts = {
         seriesMappers: [
           COMMON_SERIES_MAPPERS.NafByMontant
         ],
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.millionsEuros
       }
 
     },
@@ -748,7 +837,129 @@ export const configAppCharts = {
         seriesMappers: [
           COMMON_SERIES_MAPPERS.NafByMontant
         ],
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH390
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.millionsEuros
+      }
+
+    },
+
+    // ============================================================= //
+    // ACTIVITE PARTIELLE
+    // ============================================================= //
+    // BAR HORIZ - APE X NBR ENTREPRISES
+    {
+      id: 'apexchart-activitepartielle',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_nace17 X nombre',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Nombre d'entreprises concernées par l'activité partielle
+          <br>
+          ventilées par 
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
+            code section NACE 17</a>
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_nace17',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NaceByNombreEntreprise
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.integerEuropeanFormat
+      }
+
+    },
+    // BAR HORIZ - APE X NBR SALARIES
+    {
+      id: 'apexchart-activitepartielle-02',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_nace17 X nombre salaries',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Nombre de salariés concernés par l'activité partielle
+          <br>
+          ventilés par 
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
+            code section NACE 17</a>
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_nace17',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NaceByNombreSalaries
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.integerEuropeanFormat
+      }
+
+    },
+    // BAR HORIZ - APE X NBR HEURES
+    {
+      id: 'apexchart-activitepartielle-03',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_nace17 X nombre salaries',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Nombre d'heures d'activité partielle demandées
+          <br>
+          ventilées par 
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
+            code section NACE 17</a> (en millions d'heures)
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_nace17',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NaceByNombreHeures
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: { ...COMMON_FORMATTERS.integerEuropeanFormat, unit: 'Mh' }
       }
 
     }

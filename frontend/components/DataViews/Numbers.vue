@@ -40,6 +40,7 @@
             <span v-if="isMobileWidth" class="caption">
               {{ col.colTitle[locale] }} :
             </span>
+            <br v-if="(isMobileWidth && col.breakMobile) || (!isMobileWidth && col.breakDesktop)">
             <span
               v-html="
                 numToString(getSpecialStore[col.specialStoreId], col.format)
@@ -62,6 +63,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from "vuex"
+import { numberToString } from "~/utils/utils.js"
 
 export default {
   name: "Numbers",
@@ -151,30 +153,7 @@ export default {
     },
 
     numToString(data, format) {
-      let number = data
-      // this.log && console.log("C-Numbers / numToString / format : ", format)
-      if (format) {
-        switch (format.type) {
-          case "float":
-            number = parseFloat(number)
-            break
-          case "integer":
-            number = parseInt(number)
-            break
-        }
-      }
-      // number = number.toLocaleString()
-      number = number.toString()
-      if (format && format.sepThousands) {
-        number = number.replace(
-          /(\d)(?=(\d{3})+(?!\d))/g,
-          "$1" + format.sepThousands
-        )
-      }
-      if (format && format.sepComma) {
-        number = number.replace(".", format.sepComma)
-      }
-      // this.log && console.log("C-Numbers / numToString / number : ", number)
+      let number = numberToString( data, format )
       return number
     },
   },

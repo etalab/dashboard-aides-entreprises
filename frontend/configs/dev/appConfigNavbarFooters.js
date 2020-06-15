@@ -86,6 +86,26 @@ export const configAppNavbarFooters = {
                 'apexchart-report',
                 'map-france-report-metro'
               ]
+            },
+            {
+              routeId: 'activitepartielle',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-activitepartielle-title',
+                'text-activitepartielle-infos'
+              ]
+            },
+            {
+              routeId: 'activitepartielle',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'map-france-activitepartielle-metro',
+                'apexchart-activitepartielle',
+                'apexchart-activitepartielle-02',
+                'apexchart-activitepartielle-03'
+              ]
             }
           ],
           // toUrl: "/",
@@ -154,6 +174,26 @@ export const configAppNavbarFooters = {
                 'text-report-infos',
                 'apexchart-report'
               ]
+            },
+            {
+              routeId: 'activitepartielle',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-activitepartielle-title',
+                'map-france-activitepartielle-metro'
+              ]
+            },
+            {
+              routeId: 'activitepartielle',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-activitepartielle-infos',
+                'apexchart-activitepartielle',
+                'apexchart-activitepartielle-02',
+                'apexchart-activitepartielle-03'
+              ]
             }
           ],
           // toUrl: "/map",
@@ -221,6 +261,26 @@ export const configAppNavbarFooters = {
               divIds: [
                 'text-report-infos',
                 'map-france-report-metro'
+              ]
+            },
+            {
+              routeId: 'activitepartielle',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-activitepartielle-title',
+                'apexchart-activitepartielle',
+                'apexchart-activitepartielle-02',
+                'apexchart-activitepartielle-03'
+              ]
+            },
+            {
+              routeId: 'activitepartielle',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-activitepartielle-infos',
+                'map-france-activitepartielle-metro'
               ]
             }
           ],
