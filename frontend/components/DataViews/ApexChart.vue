@@ -64,7 +64,7 @@
 
 <script>
 import { mapState, mapGetters } from "vuex"
-import { switchFormatFunctions, splitMulti } from "~/utils/utils.js"
+import { switchFormatFunctions, splitMulti, numberToString } from "~/utils/utils.js"
 
 // ONLY DISPLAY DATA FROM data.specialStore
 
@@ -129,6 +129,7 @@ export default {
     this.localSeries = newSeries && newSeries.dataSeries
     this.updateOptionsColor(newSeries.colors)
     this.updateOptionsLabels(newSeries.labels)
+    this.updateOptionsFormatter()
   },
 
   computed: {
@@ -180,9 +181,10 @@ export default {
 
     getSeries() {
       this.log && console.log("C-ApexChart / getSeries ... ")
-      let specialStoreId = this.datasetMappers.specialStoreId
-      let fromDatasetKey = this.datasetMappers.fromDatasetKey
-      let seriesMappers = this.datasetMappers.seriesMappers
+      const specialStoreId = this.datasetMappers.specialStoreId
+      const fromDatasetKey = this.datasetMappers.fromDatasetKey
+      const seriesMappers = this.datasetMappers.seriesMappers
+      const formatterOpts = this.datasetMappers.format
 
       const chartOptions = this.localChartOptions
       const pieChartTypes = ['donut', 'pie']
@@ -236,6 +238,10 @@ export default {
             if (value && mapper.format) {
               value = switchFormatFunctions(value, mapper.format)
             }
+            // if (value && formatterOpts) {
+            //   this.log && console.log('\nC-ApexChart / getSeries / formatterOpts : ', formatterOpts )
+            //   value = numberToString(value, formatterOpts)
+            // }
             // this.log && console.log('C-ApexChart / getSeries / value : ', value )
 
             // 2bis - rebuild categories on x-axis
@@ -275,11 +281,12 @@ export default {
                   label = label.join("")
                 }
               }
-              // this.log && console.log('C-ApexChart / getSeries / label : ', label )
+              this.log && console.log('C-ApexChart / getSeries / label : ', label )
               let newLabel = label
               dataLabels.push(newLabel)
             }
 
+            // this.log && console.log('\nC-ApexChart / getSeries / value (bis) : ', value )
             tempSerie.push(value)
 
             // 2ter - rebuild colors on x-axis
@@ -299,12 +306,13 @@ export default {
             }
           })
 
+          // this.log && console.log('\nC-ApexChart / getSeries / tempSerie : ', tempSerie )
           valuesSerie = tempSerie
         } else {
           valuesSerie = rawDataSerie
         }
 
-        // this.log && console.log('C-ApexChart / getSeries / valuesSerie (1) : ', valuesSerie )
+        this.log && console.log('C-ApexChart / getSeries / valuesSerie (1) : ', valuesSerie )
 
         let dataSerie = {
           name: mapper.serieName,
@@ -329,6 +337,16 @@ export default {
     updateOptionsLabels(labels) {
       if (labels.length > 0) {
         this.localChartOptions = { ...this.localChartOptions, labels: labels }
+      }
+    },
+    updateOptionsFormatter() {
+      const formatterOpts = this.datasetMappers.format
+      if (formatterOpts) {
+        let localChartOptions = { ...this.localChartOptions }
+        localChartOptions.dataLabels.formatter = function (val, opts) {
+          return numberToString(val, formatterOpts)
+        }
+        this.localChartOptions = localChartOptions
       }
     },
 

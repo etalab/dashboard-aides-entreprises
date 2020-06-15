@@ -13,6 +13,12 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 [wireframe_slides]: https://docs.google.com/presentation/d/1j_0xaJzPIjmuDSQG-nNYzADad4pFaf8E3VBkggFu1FY/edit?usp=sharing
 [wireframe_pdf]: ../screenshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
 
+
+-----------------
+date : 08/06/2020
+
+- v.2.1.1 : adding activite partielle config files
+
 -----------------
 date : 18/05/2020
 

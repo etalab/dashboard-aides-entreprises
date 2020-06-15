@@ -140,6 +140,18 @@ export const configAppUIUX = {
           tooltip: { fr: "reports d'échéances fiscales" },
           isNuxtLink: false,
           addUrlParams: true
+        },
+        {
+          to: '/?routeId=activitepartielle',
+          href: '/activitepartielle',
+          // href: '/?routeId=activitepartielle',
+          isVisible: true,
+          icon: undefined,
+          title: { fr: "Activité partielle" },
+          titleMobile: { fr: "Activité partielle" },
+          tooltip: { fr: "activité partielle" },
+          isNuxtLink: false,
+          addUrlParams: true
         }
 
       ]

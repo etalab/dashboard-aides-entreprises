@@ -12,6 +12,7 @@ tags:
   - map
   - charts
   - footer
+  - navbar
 toc: true
 toc_label: " contents"
 toc_sticky: true

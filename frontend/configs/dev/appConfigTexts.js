@@ -57,6 +57,20 @@ const COMMON_TEXTS_HTML = {
     fromUrl: {
       fr: undefined
     }
+  },
+  moreInfosACTIVITEPARTIELLE: {
+    id: 'more-infos-activitepartielle',
+    textClass: 'text-left mx-4 pt-4',
+    textContent: {
+      fr: `
+        Les données utilisées sur ce tableau de bord
+        <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-au-dispositif-dactivite-partielle-mis-en-oeuvre-dans-le-cadre-de-lepidemie-de-covid-19/">
+          sont disponibles en open data sur data.gouv.fr</a>.
+      `
+    },
+    fromUrl: {
+      fr: undefined
+    }
   }
 }
 
@@ -468,7 +482,7 @@ export const configAppTexts = {
                       et régional avec une ventilation par secteur d'activité.
                       <br><br>
                       Les données utilisées pour ce tableau de bord sont 
-                      mises à jour de manière hebdomadaire
+                      mises à jour de manière hebdomadaire.
                     `
                   },
                   fromUrl: {
@@ -484,6 +498,146 @@ export const configAppTexts = {
                   fromUrl: {
                     fr:
                       'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/report/last_update_data.txt'
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    // ============================================================= //
+    // ACTIVITE PARTIELLE
+    // ============================================================= //
+    {
+      id: 'text-activitepartielle-title',
+      help: '',
+      title: { fr: '' },
+      titleI18n: 'texts.text01.title',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+            {
+              colName: '',
+              colTitle: { fr: '' },
+              colTitleClass: '',
+              cols: 12,
+              textClass: '',
+              subTextClass: '',
+              sizeDesktop: 'headline mb-0',
+              sizeMobile: 'subtitle-1',
+              textPrefix: { fr: 'Activité Partielle : ' },
+              textPrefixClass: 'font-weight-regular',
+              textSuffix: { fr: '' },
+              textSuffixClass: undefined,
+              specialStoreId: 'levelname',
+              specialStoreIdClass: 'font-weight-medium'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'text-activitepartielle-infos',
+      help: '',
+      title: { fr: '' },
+      titleI18n: 'texts.text01.title',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+            {
+              colName: '',
+              colTitle: { fr: 'Activité Partielle' },
+              colTitleClass: 'my-5',
+              cols: 12,
+              textClass: '',
+              subTextClass: '',
+              sizeDesktop: '',
+              sizeMobile: 'body-2',
+              textPrefix: { fr: undefined },
+              textPrefixClass: undefined,
+              textSuffix: { fr: undefined },
+              textSuffixClass: undefined,
+              specialStoreId: undefined,
+              specialStoreIdClass: undefined,
+              textsHtml: [
+                {
+                  id: 'activitepartielle-intro',
+                  textClass: 'text-left mx-4 pt-4',
+                  textContent: {
+                    fr: `
+                      Face à l’ampleur de la crise sanitaire liée au COVID-19, 
+                      le Gouvernement a décidé de transformer structurellement 
+                      le dispositif d’activité partielle, pour doter la France du système 
+                      le plus protecteur d’Europe.
+                      <br><br>
+                      L’activité partielle est un outil au service de la politique publique 
+                      de prévention des licenciements économiques qui permet à l’employeur 
+                      en difficulté de faire prendre en charge tout ou partie 
+                      du coût de la rémunération de ses salariés.
+                      <br><br>
+                      L’activité partielle s’adresse à tous les salariés qui subissent une baisse de rémunération imputable  :
+                      <br><br>
+                      <ul>
+                        <li>
+                        soit à une réduction de l’horaire de travail pratiqué dans l’établissement ou partie de l’établissement en deçà de la durée légale de travail ;
+                        </li>
+                        <li>
+                        soit à une fermeture temporaire de tout ou partie de l’établissement.
+                        </li>
+                      </ul>
+                      <br>
+                      Pendant la période d’activité partielle :
+                      <br><br>
+                      <ul>
+                        <li>
+                        L’employeur reçoit de l’Agence de services et de paiement (ASP) une allocation équivalent à une part de la rémunération horaire du salarié placé en activité partielle ;
+                        </li>
+                        <li>
+                        Le salarié reçoit de son employeur une indemnité d’activité partielle, en lieu et place de son salaire pour la période durant laquelle il est placé en activité partielle.
+                        </li>
+                      </ul>
+                      <br><br>
+                      Plus d'informations sur la prise en charge de l'activité partielle sur
+                      <a href="https://travail-emploi.gouv.fr/le-ministere-en-action/coronavirus-covid-19/questions-reponses-par-theme/faq-chomage-partiel-activite-partielle" target="_blank">
+                        la page des FAQ
+                      </a>
+                      ainsi que sur 
+                      <a href="https://activitepartielle.emploi.gouv.fr/apart/" target="_blank">
+                        le portail officiel
+                      </a>.
+                      <br><br>
+                      Les données utilisées pour ce tableau de bord sont 
+                      mises à jour de manière 
+                      hebdomadaire.
+                    `
+                  },
+                  fromUrl: {
+                    fr: undefined
+                  }
+                },
+                COMMON_TEXTS_HTML.moreInfosACTIVITEPARTIELLE,
+                COMMON_TEXTS_HTML.dashboardIntro,
+                {
+                  id: 'miseAJour',
+                  textClass: 'justify-center mx-4 pt-3 pb-5 mb-5',
+                  textContent: undefined,
+                  fromUrl: {
+                    fr:
+                      'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/activite-partielle/last_update_data.txt'
                   }
                 }
               ]
