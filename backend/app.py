@@ -972,6 +972,166 @@ def getLastUpdateHtmlActivitePartielle():
 
 
 
+################## CPSTI ##############
+
+@app.route('/stat/cpsti', methods=['GET'])
+def getStatCPSTINationalSectionAPE():
+    # GET a specific data by id
+    if request.method == 'GET':
+        my_query = "SELECT SUM(C.montant) AS TotalMontant, SUM(C.nombre) AS TotalSiren FROM cpsti C;"
+        
+        my_query_2 = "SELECT C.code_section, SUM(C.montant) as montant, SUM(C.nombre) as nombre, N.libelle_section from cpsti C LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = C.code_section GROUP BY C.code_section, N.libelle_section ORDER BY montant DESC;"
+
+        data = db.session.execute(my_query).fetchall()
+        data2 = db.session.execute(my_query_2).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['montant'] = str(data[i][0]) 
+            dataDict['nombre'] = str(data[i][1]) 
+            dataDict['kpi_top_10_naf'] = []
+            autresmontant = 0
+            autresnombre = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['section_naf'] = str(data2[j][0]) 
+                    dataDict2['montant'] = str(data2[j][1]) 
+                    dataDict2['nombre'] = str(data2[j][2])
+                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict['kpi_top_10_naf'].append(dataDict2)
+                else:
+                    autresmontant = autresmontant + data2[j][1]
+                    autresnombre = autresnombre + data2[j][2]           
+            dataDict2 = {}
+            dataDict2['section_naf'] = "Autres" 
+            dataDict2['montant'] = str(autresmontant)
+            dataDict2['nombre'] = str(autresnombre)
+            dataDict2['libelle_section_naf'] = "Autres sections NAF"
+            dataDict['kpi_top_10_naf'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+@app.route('/stat/cpsti/reg', methods=['GET'])
+def getStatCPSTIReg():
+    # GET a specific data by id
+    if request.method == 'GET':
+
+        my_query = "SELECT C.reg, SUM(C.montant) AS TotalMontant, SUM(C.nombre) AS TotalSiren, REG.libelle FROM cpsti C LEFT JOIN region AS REG ON C.reg = REG.reg GROUP BY C.reg, REG.libelle;"
+
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['reg'] = str(data[i][0]) 
+            dataDict['montant'] = str(data[i][1]) 
+            dataDict['nombre'] = str(data[i][2])
+            dataDict['libelle'] = str(data[i][3]) 
+
+
+            my_query_2 = "SELECT C.code_section, SUM(C.montant) as montant, SUM(C.nombre) as nombre, N.libelle_section from cpsti C LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = C.code_section WHERE C.reg = '"+str(data[i][0])+"' GROUP BY C.code_section, N.libelle_section ORDER BY montant DESC;"
+
+            data2 = db.session.execute(my_query_2).fetchall()
+
+            dataDict['kpi_top_10_naf'] = []
+
+            autresmontant = 0
+            autresnombre = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['section_naf'] = str(data2[j][0]) 
+                    dataDict2['montant'] = str(data2[j][1]) 
+                    dataDict2['nombre'] = str(data2[j][2])
+                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict['kpi_top_10_naf'].append(dataDict2)
+                else:
+                    autresmontant = autresmontant + data2[j][1]
+                    autresnombre = autresnombre + data2[j][2]           
+            dataDict2 = {}
+            dataDict2['section_naf'] = "Autres" 
+            dataDict2['montant'] = str(autresmontant)
+            dataDict2['nombre'] = str(autresnombre)
+            dataDict2['libelle_section_naf'] = "Autres sections NAF"
+            dataDict['kpi_top_10_naf'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+@app.route('/stat/cpsti/dep', methods=['GET'])
+def getStatCPSTIDepartementalSectionAPE():
+    # GET a specific data by id
+    if request.method == 'GET':
+
+
+        my_query = "SELECT C.dep, SUM(C.montant) AS TotalMontant, SUM(C.nombre) AS TotalSiren, D.libelle FROM cpsti C LEFT JOIN departement AS D ON C.dep = D.dep GROUP BY C.dep, D.libelle;"
+
+        data = db.session.execute(my_query).fetchall()
+        app.logger.info(data)
+        dataJson = []
+        for i in range(len(data)):
+            dataDict = {}
+            dataDict['dep'] = str(data[i][0]) 
+            dataDict['montant'] = str(data[i][1]) 
+            dataDict['nombre'] = str(data[i][2])
+            dataDict['libelle'] = str(data[i][3]) 
+
+            my_query_2 = "SELECT C.code_section, SUM(C.montant) as montant, SUM(C.nombre) as nombre, N.libelle_section from cpsti C LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = C.code_section WHERE C.dep = '"+str(data[i][0])+"' GROUP BY C.code_section, N.libelle_section ORDER BY montant DESC;"
+
+            data2 = db.session.execute(my_query_2).fetchall()
+
+            dataDict['kpi_top_10_naf'] = []
+            
+            autresmontant = 0
+            autresnombre = 0
+            for j in range(len(data2)):
+                if(j < 10):
+                    dataDict2 = {}
+                    dataDict2['section_naf'] = str(data2[j][0]) 
+                    dataDict2['montant'] = str(data2[j][1]) 
+                    dataDict2['nombre'] = str(data2[j][2])
+                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict['kpi_top_10_naf'].append(dataDict2)
+                else:
+                    autresmontant = autresmontant + data2[j][1]
+                    autresnombre = autresnombre + data2[j][2]           
+            dataDict2 = {}
+            dataDict2['section_naf'] = "Autres" 
+            dataDict2['montant'] = str(autresmontant)
+            dataDict2['nombre'] = str(autresnombre)
+            dataDict2['libelle_section_naf'] = "Autres sections NAF"
+            dataDict['kpi_top_10_naf'].append(dataDict2)
+
+            dataJson.append(dataDict)
+        return jsonify(dataJson)
+
+
+
+@app.route('/lastupdate/cpsti', methods=['GET'])
+def getLastUpdateDateCPSTI():
+    if request.method == 'GET':
+        my_query = "select MAX(last_update) FROM cpsti;"
+        data = db.session.execute(my_query).fetchall()
+        for i in range(len(data)):
+            lastupdate = str(data[i][0])
+        return str(lastupdate)
+
+@app.route('/lastupdatehtml/cpsti', methods=['GET'])
+def getLastUpdateHtmlCPSTI():
+    if request.method == 'GET':
+        my_query = "select MAX(last_update) FROM cpsti;"
+        data = db.session.execute(my_query).fetchall()
+        for i in range(len(data)):
+            lastupdate = str(data[i][0])
+            lastupdate = datetime.datetime.strptime(lastupdate, "%Y-%m-%d").strftime("%d/%m/%Y")
+        return "Données au "+str(lastupdate)
+
+
+
 
 '''
 
