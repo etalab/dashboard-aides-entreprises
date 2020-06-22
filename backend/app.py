@@ -161,13 +161,13 @@ def getClasseEffectifs():
 def getStatAideNationalSectionAPE():
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren FROM aide A;"
+        my_query = "SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;"
         
-        my_query_2 = "SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;"
+        my_query_2 = "SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, SUM(TotalUniqueSiren) AS SectionTotalUniqueSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;"
 
-        my_query_3 = "SELECT * FROM (SELECT A.classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif C ON A.classe_effectif = C.denomination WHERE A.classe_effectif IS NOT NULL GROUP BY A.classe_effectif, C.libelle) tbl WHERE totalsiren > 2 ORDER BY classe_effectif;"
+        my_query_3 = "SELECT * FROM (SELECT A.classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif C ON A.classe_effectif = C.denomination WHERE A.classe_effectif IS NOT NULL GROUP BY A.classe_effectif, C.libelle) tbl WHERE totalsiren > 2 ORDER BY classe_effectif;"
 
-        my_query_4 = "SELECT * FROM (SELECT SUBSTR(A.categoriejuridiqueunitelegale,1,2) AS code_categorie_juridique, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A LEFT JOIN categoriejuridique C ON SUBSTR(A.categoriejuridiqueunitelegale,1,2) = C.code WHERE A.categoriejuridiqueunitelegale IS NOT NULL GROUP BY SUBSTR(A.categoriejuridiqueunitelegale,1,2), C.libelle) tbl WHERE totalsiren > 2 ORDER BY totalmontant DESC;"
+        my_query_4 = "SELECT * FROM (SELECT SUBSTR(A.categoriejuridiqueunitelegale,1,2) AS code_categorie_juridique, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN categoriejuridique C ON SUBSTR(A.categoriejuridiqueunitelegale,1,2) = C.code WHERE A.categoriejuridiqueunitelegale IS NOT NULL GROUP BY SUBSTR(A.categoriejuridiqueunitelegale,1,2), C.libelle) tbl WHERE totalsiren > 2 ORDER BY totalmontant DESC;"
 
         data = db.session.execute(my_query).fetchall()
         data2 = db.session.execute(my_query_2).fetchall()
@@ -179,66 +179,79 @@ def getStatAideNationalSectionAPE():
             dataDict = {}
             dataDict['montant'] = str(data[i][0]) 
             dataDict['nombre'] = str(data[i][1]) 
+            dataDict['nombre_siren'] = str(data[i][2]) 
             dataDict['kpi_top_10_naf'] = []
             dataDict['kpi_classe_effectif'] = []
             dataDict['kpi_categorie_juridique'] = []
             autresmontant = 0
             autresnombre = 0
+            autresnombresiren = 0
             for j in range(len(data2)):
                 if(j < 10):
                     dataDict2 = {}
                     dataDict2['section_naf'] = str(data2[j][0]) 
                     dataDict2['montant'] = str(data2[j][1]) 
                     dataDict2['nombre'] = str(data2[j][2])
-                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict2['nombre_siren'] = str(data2[j][3])
+                    dataDict2['libelle_section_naf'] = str(data2[j][4]) 
                     dataDict['kpi_top_10_naf'].append(dataDict2)
                 else:
                     autresmontant = autresmontant + data2[j][1]
                     autresnombre = autresnombre + data2[j][2] 
+                    autresnombresiren = autresnombresiren + data2[j][3] 
             dataDict2 = {}
             dataDict2['section_naf'] = "Autres" 
             dataDict2['montant'] = str(autresmontant)
             dataDict2['nombre'] = str(autresnombre)
+            dataDict2['nombre_siren'] = str(autresnombresiren)
             dataDict2['libelle_section_naf'] = "Autres sections NAF"
             dataDict['kpi_top_10_naf'].append(dataDict2)
 
             autresmontant = 0
             autresnombre = 0
+            autresnombresiren = 0
             for k in range(len(data3)):
                 if((k < 4) | (str(data3[k][0]) == 'NN')):
                     dataDict3 = {}
                     dataDict3['classe_effectif'] = str(data3[k][0]) 
                     dataDict3['montant'] = str(data3[k][1]) 
                     dataDict3['nombre'] = str(data3[k][2])
-                    dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
+                    dataDict3['nombre_siren'] = str(data3[k][3])
+                    dataDict3['libelle_classe_effectif'] = str(data3[k][4]) 
                     dataDict['kpi_classe_effectif'].append(dataDict3)
                 else:
                     autresmontant = autresmontant + data3[k][1]
                     autresnombre = autresnombre + data3[k][2] 
+                    autresnombresiren = autresnombresiren + data3[k][3] 
             dataDict3 = {}
             dataDict3['classe_effectif'] = "Autres" 
             dataDict3['montant'] = str(autresmontant)
             dataDict3['nombre'] = str(autresnombre)
+            dataDict3['nombre_siren'] = str(autresnombresiren)
             dataDict3['libelle_classe_effectif'] = "Autres Classes d'Effectifs"
             dataDict['kpi_classe_effectif'].append(dataDict3)
 
             autresmontant = 0
             autresnombre = 0
+            autresnombresiren = 0
             for l in range(len(data4)):
                 if(l<3):   
                     dataDict4 = {}
                     dataDict4['code_cat_juridique'] = str(data4[l][0]) 
                     dataDict4['montant'] = str(data4[l][1]) 
                     dataDict4['nombre'] = str(data4[l][2])
-                    dataDict4['libelle_cat_juridique'] = str(data4[l][3]) 
+                    dataDict4['nombre_siren'] = str(data4[l][3])
+                    dataDict4['libelle_cat_juridique'] = str(data4[l][4]) 
                     dataDict['kpi_categorie_juridique'].append(dataDict4)
                 else:
                     autresmontant = autresmontant + data4[l][1]
                     autresnombre = autresnombre + data4[l][2] 
+                    autresnombresiren = autresnombresiren + data4[l][3] 
             dataDict4 = {}
             dataDict4['code_cat_juridique'] = "Autres" 
             dataDict4['montant'] = str(autresmontant)
             dataDict4['nombre'] = str(autresnombre)
+            dataDict4['nombre_siren'] = str(autresnombresiren)
             dataDict4['libelle_cat_juridique'] = "Autres Catégories Juridiques"
             dataDict['kpi_categorie_juridique'].append(dataDict4)
 
@@ -250,7 +263,7 @@ def getStatAideNationalSectionAPE():
 def getStatAideRegionalSectionAPE():
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;"
+        my_query = "SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;"
         data = db.session.execute(my_query).fetchall()
         app.logger.info(data)
         dataJson = []
@@ -259,13 +272,14 @@ def getStatAideRegionalSectionAPE():
             dataDict['reg'] = str(data[i][0]) 
             dataDict['montant'] = str(data[i][1]) 
             dataDict['nombre'] = str(data[i][2])
-            dataDict['libelle'] = str(data[i][3]) 
+            dataDict['nombre_siren'] = str(data[i][3])
+            dataDict['libelle'] = str(data[i][4]) 
 
-            my_query_2 = "SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division WHERE A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;"
+            my_query_2 = "SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, SUM(TotalUniqueSiren) AS SectionTotalUniqueSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division WHERE A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;"
 
-            my_query_3 = "SELECT * FROM (SELECT A.classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif C ON A.classe_effectif = C.denomination WHERE A.classe_effectif IS NOT NULL AND A.reg = '"+str(data[i][0])+"' GROUP BY A.classe_effectif, C.libelle) tbl WHERE totalsiren > 2 ORDER BY classe_effectif;"
+            my_query_3 = "SELECT * FROM (SELECT A.classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif C ON A.classe_effectif = C.denomination WHERE A.classe_effectif IS NOT NULL AND A.reg = '"+str(data[i][0])+"' GROUP BY A.classe_effectif, C.libelle) tbl WHERE totalsiren > 2 ORDER BY classe_effectif;"
             
-            my_query_4 = "SELECT * FROM (SELECT SUBSTR(A.categoriejuridiqueunitelegale,1,2) AS code_categorie_juridique, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A LEFT JOIN categoriejuridique C ON SUBSTR(A.categoriejuridiqueunitelegale,1,2) = C.code WHERE A.categoriejuridiqueunitelegale IS NOT NULL AND A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.categoriejuridiqueunitelegale,1,2), C.libelle) tbl WHERE totalsiren > 2 ORDER BY totalmontant DESC;"
+            my_query_4 = "SELECT * FROM (SELECT SUBSTR(A.categoriejuridiqueunitelegale,1,2) AS code_categorie_juridique, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN categoriejuridique C ON SUBSTR(A.categoriejuridiqueunitelegale,1,2) = C.code WHERE A.categoriejuridiqueunitelegale IS NOT NULL AND A.reg = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.categoriejuridiqueunitelegale,1,2), C.libelle) tbl WHERE totalsiren > 2 ORDER BY totalmontant DESC;"
 
             data2 = db.session.execute(my_query_2).fetchall()
             data3 = db.session.execute(my_query_3).fetchall()
@@ -277,63 +291,75 @@ def getStatAideRegionalSectionAPE():
 
             autresmontant = 0
             autresnombre = 0
+            autresnombresiren = 0
             for j in range(len(data2)):
                 if(j < 10):
                     dataDict2 = {}
                     dataDict2['section_naf'] = str(data2[j][0]) 
                     dataDict2['montant'] = str(data2[j][1]) 
                     dataDict2['nombre'] = str(data2[j][2])
-                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict2['nombre_siren'] = str(data2[j][3])
+                    dataDict2['libelle_section_naf'] = str(data2[j][4]) 
                     dataDict['kpi_top_10_naf'].append(dataDict2)
                 else:
                     autresmontant = autresmontant + data2[j][1]
                     autresnombre = autresnombre + data2[j][2]           
+                    autresnombresiren = autresnombresiren + data2[j][3]           
             dataDict2 = {}
             dataDict2['section_naf'] = "Autres" 
             dataDict2['montant'] = str(autresmontant)
             dataDict2['nombre'] = str(autresnombre)
+            dataDict2['nombre_siren'] = str(autresnombresiren)
             dataDict2['libelle_section_naf'] = "Autres sections NAF"
             dataDict['kpi_top_10_naf'].append(dataDict2)
             
 
             autresmontant = 0
             autresnombre = 0
+            autresnombresiren = 0
             for k in range(len(data3)):
                 if((k < 4) | (str(data3[k][0]) == 'NN')):
                     dataDict3 = {}
                     dataDict3['classe_effectif'] = str(data3[k][0]) 
                     dataDict3['montant'] = str(data3[k][1]) 
                     dataDict3['nombre'] = str(data3[k][2])
-                    dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
+                    dataDict3['nombre_siren'] = str(data3[k][3])
+                    dataDict3['libelle_classe_effectif'] = str(data3[k][4]) 
                     dataDict['kpi_classe_effectif'].append(dataDict3)
                 else:
                     autresmontant = autresmontant + data3[k][1]
                     autresnombre = autresnombre + data3[k][2] 
+                    autresnombresiren = autresnombresiren + data3[k][3] 
             dataDict3 = {}
             dataDict3['classe_effectif'] = "Autres" 
             dataDict3['montant'] = str(autresmontant)
             dataDict3['nombre'] = str(autresnombre)
+            dataDict3['nombre_siren'] = str(autresnombresiren)
             dataDict3['libelle_classe_effectif'] = "Autres Classes d'Effectifs"
             dataDict['kpi_classe_effectif'].append(dataDict3)
 
 
             autresmontant = 0
             autresnombre = 0
+            autresnombresiren = 0
             for l in range(len(data4)):
                 if(l<3):   
                     dataDict4 = {}
                     dataDict4['code_cat_juridique'] = str(data4[l][0]) 
                     dataDict4['montant'] = str(data4[l][1]) 
                     dataDict4['nombre'] = str(data4[l][2])
-                    dataDict4['libelle_cat_juridique'] = str(data4[l][3]) 
+                    dataDict4['nombre_siren'] = str(data4[l][3])
+                    dataDict4['libelle_cat_juridique'] = str(data4[l][4]) 
                     dataDict['kpi_categorie_juridique'].append(dataDict4)
                 else:
                     autresmontant = autresmontant + data4[l][1]
                     autresnombre = autresnombre + data4[l][2] 
+                    autresnombresiren = autresnombresiren + data4[l][3] 
             dataDict4 = {}
             dataDict4['code_cat_juridique'] = "Autres" 
             dataDict4['montant'] = str(autresmontant)
             dataDict4['nombre'] = str(autresnombre)
+            dataDict4['nombre_siren'] = str(autresnombresiren)
             dataDict4['libelle_cat_juridique'] = "Autres Catégories Juridiques"
             dataDict['kpi_categorie_juridique'].append(dataDict4)
 
@@ -345,7 +371,7 @@ def getStatAideRegionalSectionAPE():
 def getStatAideDepartementalSectionAPE():
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, D.libelle FROM aide AS A LEFT JOIN departement AS D ON A.dep = D.dep GROUP BY A.dep, D.libelle;"
+        my_query = "SELECT A.dep, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, D.libelle FROM aide AS A LEFT JOIN departement AS D ON A.dep = D.dep GROUP BY A.dep, D.libelle;"
         data = db.session.execute(my_query).fetchall()
         app.logger.info(data)
         dataJson = []
@@ -354,14 +380,15 @@ def getStatAideDepartementalSectionAPE():
             dataDict['dep'] = str(data[i][0]) 
             dataDict['montant'] = str(data[i][1]) 
             dataDict['nombre'] = str(data[i][2])
-            dataDict['libelle'] = str(data[i][3]) 
+            dataDict['nombre_siren'] = str(data[i][3])
+            dataDict['libelle'] = str(data[i][4]) 
 
 
-            my_query_2 = "SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division WHERE A.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;"
+            my_query_2 = "SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, SUM(TotalUniqueSiren) AS SectionTotalUniqueSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division WHERE A.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;"
 
-            my_query_3 = "SELECT * FROM (SELECT A.classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif C ON A.classe_effectif = C.denomination WHERE A.classe_effectif IS NOT NULL AND A.dep = '"+str(data[i][0])+"' GROUP BY A.classe_effectif, C.libelle) tbl WHERE totalsiren > 2 ORDER BY classe_effectif;"
+            my_query_3 = "SELECT * FROM (SELECT A.classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif C ON A.classe_effectif = C.denomination WHERE A.classe_effectif IS NOT NULL AND A.dep = '"+str(data[i][0])+"' GROUP BY A.classe_effectif, C.libelle) tbl WHERE totalsiren > 2 ORDER BY classe_effectif;"
 
-            my_query_4 = "SELECT * FROM (SELECT SUBSTR(A.categoriejuridiqueunitelegale,1,2) AS code_categorie_juridique, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, C.libelle FROM aide AS A LEFT JOIN categoriejuridique C ON SUBSTR(A.categoriejuridiqueunitelegale,1,2) = C.code WHERE A.categoriejuridiqueunitelegale IS NOT NULL AND A.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.categoriejuridiqueunitelegale,1,2), C.libelle) tbl WHERE totalsiren > 2 ORDER BY totalmontant DESC;"
+            my_query_4 = "SELECT * FROM (SELECT SUBSTR(A.categoriejuridiqueunitelegale,1,2) AS code_categorie_juridique, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN categoriejuridique C ON SUBSTR(A.categoriejuridiqueunitelegale,1,2) = C.code WHERE A.categoriejuridiqueunitelegale IS NOT NULL AND A.dep = '"+str(data[i][0])+"' GROUP BY SUBSTR(A.categoriejuridiqueunitelegale,1,2), C.libelle) tbl WHERE totalsiren > 2 ORDER BY totalmontant DESC;"
 
             data2 = db.session.execute(my_query_2).fetchall()
             data3 = db.session.execute(my_query_3).fetchall()
@@ -374,62 +401,74 @@ def getStatAideDepartementalSectionAPE():
 
             autresmontant = 0
             autresnombre = 0
+            autresnombresiren = 0
             for j in range(len(data2)):
                 if(j < 10):
                     dataDict2 = {}
                     dataDict2['section_naf'] = str(data2[j][0]) 
                     dataDict2['montant'] = str(data2[j][1]) 
                     dataDict2['nombre'] = str(data2[j][2])
-                    dataDict2['libelle_section_naf'] = str(data2[j][3]) 
+                    dataDict2['nombre_siren'] = str(data2[j][3])
+                    dataDict2['libelle_section_naf'] = str(data2[j][4]) 
                     dataDict['kpi_top_10_naf'].append(dataDict2)
                 else:
                     autresmontant = autresmontant + data2[j][1]
                     autresnombre = autresnombre + data2[j][2]           
+                    autresnombresiren = autresnombresiren + data2[j][3]           
             dataDict2 = {}
             dataDict2['section_naf'] = "Autres" 
             dataDict2['montant'] = str(autresmontant)
             dataDict2['nombre'] = str(autresnombre)
+            dataDict2['nombre_siren'] = str(autresnombresiren)
             dataDict2['libelle_section_naf'] = "Autres sections NAF"
             dataDict['kpi_top_10_naf'].append(dataDict2)
 
             autresmontant = 0
             autresnombre = 0
+            autresnombresiren = 0
             for k in range(len(data3)):
                 if((k < 4) | (str(data3[k][0]) == 'NN')):
                     dataDict3 = {}
                     dataDict3['classe_effectif'] = str(data3[k][0]) 
                     dataDict3['montant'] = str(data3[k][1]) 
                     dataDict3['nombre'] = str(data3[k][2])
-                    dataDict3['libelle_classe_effectif'] = str(data3[k][3]) 
+                    dataDict3['nombre_siren'] = str(data3[k][3])
+                    dataDict3['libelle_classe_effectif'] = str(data3[k][4]) 
                     dataDict['kpi_classe_effectif'].append(dataDict3)
                 else:
                     autresmontant = autresmontant + data3[k][1]
                     autresnombre = autresnombre + data3[k][2] 
+                    autresnombresiren = autresnombresiren + data3[k][3] 
             dataDict3 = {}
             dataDict3['classe_effectif'] = "Autres" 
             dataDict3['montant'] = str(autresmontant)
             dataDict3['nombre'] = str(autresnombre)
+            dataDict3['nombre_siren'] = str(autresnombresiren)
             dataDict3['libelle_classe_effectif'] = "Autres Classes d'Effectifs"
             dataDict['kpi_classe_effectif'].append(dataDict3)
 
 
             autresmontant = 0
             autresnombre = 0
+            autresnombresiren = 0
             for l in range(len(data4)):
                 if(l<3):   
                     dataDict4 = {}
                     dataDict4['code_cat_juridique'] = str(data4[l][0]) 
                     dataDict4['montant'] = str(data4[l][1]) 
                     dataDict4['nombre'] = str(data4[l][2])
-                    dataDict4['libelle_cat_juridique'] = str(data4[l][3]) 
+                    dataDict4['nombre_siren'] = str(data4[l][3])
+                    dataDict4['libelle_cat_juridique'] = str(data4[l][4]) 
                     dataDict['kpi_categorie_juridique'].append(dataDict4)
                 else:
                     autresmontant = autresmontant + data4[l][1]
                     autresnombre = autresnombre + data4[l][2] 
+                    autresnombresiren = autresnombresiren + data4[l][3] 
             dataDict4 = {}
             dataDict4['code_cat_juridique'] = "Autres" 
             dataDict4['montant'] = str(autresmontant)
             dataDict4['nombre'] = str(autresnombre)
+            dataDict4['nombre_siren'] = str(autresnombresiren)
             dataDict4['libelle_cat_juridique'] = "Autres Catégories Juridiques"
             dataDict['kpi_categorie_juridique'].append(dataDict4)
 
