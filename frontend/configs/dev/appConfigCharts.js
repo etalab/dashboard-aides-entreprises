@@ -843,6 +843,51 @@ export const configAppCharts = {
 
     },
 
+
+    // ============================================================= //
+    // CPSTI
+    // ============================================================= //
+    // BAR HORIZ - APE X MONTANTS
+    {
+      id: 'apexchart-cpsti',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_naf X montant',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Top 10 des aides CPSTI
+          <br>
+          ventilés par 
+          <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
+            code section NAF</a>
+          (en M€)
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_naf',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NafByMontant
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.millionsEuros
+      }
+
+    },
+
     // ============================================================= //
     // ACTIVITE PARTIELLE
     // ============================================================= //

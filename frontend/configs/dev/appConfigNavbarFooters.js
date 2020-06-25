@@ -88,6 +88,24 @@ export const configAppNavbarFooters = {
               ]
             },
             {
+              routeId: 'cpsti',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-title',
+                'text-cpsti-infos'
+              ]
+            },
+            {
+              routeId: 'cpsti',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'apexchart-cpsti',
+                'map-france-cpsti-metro'
+              ]
+            },
+            {
               routeId: 'activitepartielle',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
