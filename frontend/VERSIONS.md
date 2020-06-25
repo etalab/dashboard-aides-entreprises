@@ -15,6 +15,11 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 
 
 -----------------
+date : 27/06/2020
+
+- v.2.1.2 : adding CPSTI config files and data
+
+-----------------
 date : 08/06/2020
 
 - v.2.1.1 : adding activite partielle config files
