@@ -142,6 +142,18 @@ export const configAppUIUX = {
           addUrlParams: true
         },
         {
+          to: '/?routeId=cpsti',
+          href: '/cpsti',
+          // href: '/?routeId=reports',
+          isVisible: true,
+          icon: undefined,
+          title: { fr: "Aides artisans / commerçants" },
+          titleMobile: { fr: "Aides artisans / commerçants" },
+          tooltip: { fr: "Aides artisans / commerçants" },
+          isNuxtLink: false,
+          addUrlParams: true
+        },
+        {
           to: '/?routeId=activitepartielle',
           href: '/activitepartielle',
           // href: '/?routeId=activitepartielle',

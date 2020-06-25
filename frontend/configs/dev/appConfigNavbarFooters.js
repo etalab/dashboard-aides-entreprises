@@ -88,6 +88,24 @@ export const configAppNavbarFooters = {
               ]
             },
             {
+              routeId: 'cpsti',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-title',
+                'text-cpsti-infos'
+              ]
+            },
+            {
+              routeId: 'cpsti',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'apexchart-cpsti',
+                'map-france-cpsti-metro'
+              ]
+            },
+            {
               routeId: 'activitepartielle',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
@@ -176,6 +194,24 @@ export const configAppNavbarFooters = {
               ]
             },
             {
+              routeId: 'cpsti',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-title',
+                'map-france-cpsti-metro'
+              ]
+            },
+            {
+              routeId: 'cpsti',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-infos',
+                'apexchart-cpsti'
+              ]
+            },
+            {
               routeId: 'activitepartielle',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
@@ -261,6 +297,24 @@ export const configAppNavbarFooters = {
               divIds: [
                 'text-report-infos',
                 'map-france-report-metro'
+              ]
+            },
+            {
+              routeId: 'cpsti',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-title',
+                'apexchart-cpsti'
+              ]
+            },
+            {
+              routeId: 'cpsti',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-infos',
+                'map-france-cpsti-metro'
               ]
             },
             {

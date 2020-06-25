@@ -467,6 +467,65 @@ export const configAppData = {
           backupUrl: `${DATASETS_FOLDER}/prod/report/report-maille-departemental.json`,
           displayed: false
         },
+        
+        // ============================================================= //
+        // === DATASET : CPSTI
+        // ============================================================= //
+        {
+          id: 'national-cpsti-raw',
+          dataset: 'cpsti',
+          help: 'serie chiffres cpsti à la maille nationale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/cpsti/cpsti-maille-national-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/cpsti/cpsti-maille-national.json`,
+          displayed: true,
+          copyTo: [
+            {
+              fieldToCopy: undefined,
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'focusObject',
+              format: undefined
+            },
+            {
+              fieldToCopy: 'montant',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'montant',
+              format: [
+                {
+                  utilsFnName: 'toMillionsOrElse',
+                  params: { divider: 1000000, fixed: 2 }
+                }
+              ]
+            },
+            {
+              fieldToCopy: 'nombre',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'nombre',
+              format: undefined
+            }
+          ]
+        },
+        {
+          id: 'regions-cpsti-raw',
+          dataset: 'cpsti',
+          help: 'serie chiffres cpsti à la maille regionale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/cpsti/cpsti-maille-regional-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/cpsti/cpsti-maille-regional.json`,
+          displayed: true
+        },
+        {
+          id: 'departements-cpsti-raw',
+          dataset: 'cpsti',
+          help: 'serie chiffres cpsti à la maille departementale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/cpsti/cpsti-maille-departemental-minify.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/cpsti/cpsti-maille-departemental.json`,
+          displayed: false
+        },
 
         // ============================================================= //
         // === DATASET : ACTIVITE PARTIELLE
