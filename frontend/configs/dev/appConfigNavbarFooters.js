@@ -111,6 +111,7 @@ export const configAppNavbarFooters = {
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'text-activitepartielle-title',
+                'text-activitepartielle-note',
                 'text-activitepartielle-infos'
               ]
             },
@@ -226,6 +227,7 @@ export const configAppNavbarFooters = {
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'text-activitepartielle-infos',
+                'text-activitepartielle-note',
                 'apexchart-activitepartielle',
                 'apexchart-activitepartielle-02',
                 'apexchart-activitepartielle-03'
@@ -323,6 +325,7 @@ export const configAppNavbarFooters = {
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'text-activitepartielle-title',
+                'text-activitepartielle-note',
                 'apexchart-activitepartielle',
                 'apexchart-activitepartielle-02',
                 'apexchart-activitepartielle-03'

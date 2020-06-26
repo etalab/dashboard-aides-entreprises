@@ -682,6 +682,57 @@ export const configAppTexts = {
       ]
     },
     {
+      id: 'text-activitepartielle-note',
+      help: '',
+      title: { fr: '' },
+      titleI18n: '',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+            {
+              colName: '',
+              colTitle: undefined,
+              colTitleClass: 'my-2',
+              cols: 12,
+              textClass: 'text-center',
+              subTextClass: '',
+              sizeDesktop: '',
+              sizeMobile: 'body-2',
+              textPrefix: undefined ,
+              textPrefixClass: undefined,
+              textSuffix: undefined,
+              textSuffixClass: undefined,
+              specialStoreId: undefined,
+              specialStoreIdClass: undefined,
+              textsHtml: [
+                {
+                  id: 'activitepartielle-note',
+                  textClass: 'font-weight-light caption mx-4 pt-2',
+                  textContent: {
+                    fr: `
+                      <em>
+                      nota : les chiffres indiqués représentent les valeurs cumulées 
+                      depuis le début de la crise sanitaire COVID-19
+                      </em>
+                      `
+                  },
+                  fromUrl: {
+                    fr: undefined
+                  }
+                }
+              ],
+            }
+          ]
+        }
+      ]
+    },
+    {
       id: 'text-activitepartielle-infos',
       help: '',
       title: { fr: '' },
@@ -748,13 +799,14 @@ export const configAppTexts = {
                         </li>
                       </ul>
                       <br><br>
-                      Plus d'informations sur la prise en charge de l'activité partielle sur
-                      <a href="https://travail-emploi.gouv.fr/le-ministere-en-action/coronavirus-covid-19/questions-reponses-par-theme/faq-chomage-partiel-activite-partielle" target="_blank">
-                        la page des FAQ
+                      Ces données sont tirées des tableaux de bords mis en place par la DARES. 
+                      Plus d'informations sur 
+                      <a href="https://dares.travail-emploi.gouv.fr/dares-etudes-et-statistiques/tableaux-de-bord/le-marche-du-travail-pendant-le-covid-19/tableaux-de-bord-hebdomadaires" target="_blank">
+                        le portail de la DARES
                       </a>
                       ainsi que sur 
                       <a href="https://activitepartielle.emploi.gouv.fr/apart/" target="_blank">
-                        le portail officiel
+                        le portail officiel du gouvernement
                       </a>.
                       <br><br>
                       Les données utilisées pour ce tableau de bord sont 
@@ -766,7 +818,7 @@ export const configAppTexts = {
                     fr: undefined
                   }
                 },
-                COMMON_TEXTS_HTML.moreInfosACTIVITEPARTIELLE,
+                // COMMON_TEXTS_HTML.moreInfosACTIVITEPARTIELLE,
                 COMMON_TEXTS_HTML.dashboardIntro,
                 {
                   id: 'miseAJour',

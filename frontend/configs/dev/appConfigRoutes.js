@@ -1382,6 +1382,19 @@ export const configAppRoutes = {
                   }
                 },
                 {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-activitepartielle-note',
+                    containerClass: 'pt-0 pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
                   component: 'apexchart',
                   activated: true,
                   smallScreenVerticalOrder: 4,
