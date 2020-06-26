@@ -1390,7 +1390,7 @@ export const configAppRoutes = {
                   settings: {
                     id: 'text-activitepartielle-note',
                     containerClass: 'pt-0 pb-0',
-                    mobileIsVisibleDefault: false,
+                    mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true
                   }
                 },
