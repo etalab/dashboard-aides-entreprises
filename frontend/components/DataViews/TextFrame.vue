@@ -24,13 +24,15 @@
       >
         <!-- TITLE -->
         <v-layout :class="`justify-center`">
+
           <!-- TEXT TITLE -->
-          <h3 :class="`${isMobileWidth ? 'mb-0' : ''} ${col.colTitleClass} `">
+          <h3 v-if="col.colTitle" :class="`${isMobileWidth ? 'mb-0' : ''} ${col.colTitleClass} `">
             {{ col.colTitle[locale] }}
           </h3>
 
           <!-- TEXT FROM DISPLAYED DATA -->
           <p
+            v-if="col.textPrefix || col.specialStoreId || col.textSuffix"
             :class="`${col.textClass} ${
               isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
             }`"
@@ -62,26 +64,24 @@
             :class="`${txt.textClass}`"
           >
             <!-- TEXT FROM DISPLAYED DATA -->
-            <div v-if="!txt.fromUrl[locale]">
-              <p
-                :class="`${col.textClass} ${
-                  isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
-                }`"
-              >
-                <span v-if="txt.textContent" v-html="txt.textContent[locale]" />
-              </p>
-            </div>
+            <p 
+              v-if="!txt.fromUrl || !txt.fromUrl[locale]"
+              :class="`${col.textClass} ${
+                isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
+              }`"
+            >
+              <span v-if="txt.textContent" v-html="txt.textContent[locale]" />
+            </p>
 
             <!-- TEXT FROM DISTANT HTML FILE -->
-            <div v-show="txt.fromUrl[locale]">
-              <p
-                :class="`${col.textClass} ${
-                  isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
-                }`"
-              >
-                <RawHtml :template-u-r-l="txt.fromUrl[locale]" />
-              </p>
-            </div>
+            <p 
+              v-show="txt.fromUrl[locale]"
+              :class="`${col.textClass} ${
+                isMobileWidth ? 'mb-0 ' + col.sizeMobile : col.sizeDesktop
+              }`"
+            >
+              <RawHtml :template-u-r-l="txt.fromUrl[locale]" />
+            </p>
           </v-layout>
         </template>
       </v-col>

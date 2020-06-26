@@ -21,6 +21,7 @@ const OUTLINECOLOR2 = '#6c87ab'
 const FILLCOLOR_FDS = '#7373FF'
 const FILLCOLOR_PGE = '#00A17F'
 const FILLCOLOR_REPORT = '#D66200'
+const FILLCOLOR_CPSTI = '#1E88E5'
 const FILLCOLOR_ACTIVITEPARTIELLE = '#C95DC9'
 
 // layer fonts : ["Open Sans Regular","Arial Unicode MS Regular"]
@@ -192,6 +193,37 @@ const circlePaintREPORT = {
       donutRadiusFormula('montantMillions', maxDepREPORT),
       getRadiusFullSqrt(0, maxDepREPORT), minCircleRadius,
       maxRadDepREPORT, maxCircleRadius
+    ]
+  ]
+}
+
+const maxRegCPSTI = 200
+const maxDepCPSTI = 45
+const maxRadRegCPSTI = getRadiusFullSqrt(maxRegCPSTI, maxRegCPSTI)
+const maxRadDepCPSTI = getRadiusFullSqrt(maxDepCPSTI, maxDepCPSTI)
+// const maxRadRegREPORT = Math.sqrt(maxRegREPORT)
+// const maxRadDepREPORT = Math.sqrt(maxDepREPORT)
+const circlePaintCPSTI = {
+  'circle-opacity': 0.6,
+  'circle-color': FILLCOLOR_CPSTI,
+  'circle-radius': [
+    'step',
+    ['zoom'],
+    [
+      'interpolate',
+      ['linear'],
+      // ['sqrt', ['number', ['get', 'montantMillions']]],
+      donutRadiusFormula('montantMillions', maxRegCPSTI),
+      getRadiusFullSqrt(0, maxRegCPSTI), minCircleRadius,
+      maxRadRegCPSTI, maxCircleRadius
+    ],
+    ZOOM_THRESHOLD + zoomRectifier, [
+      'interpolate',
+      ['linear'],
+      // ['sqrt', ['number', ['get', 'montantMillions']]],
+      donutRadiusFormula('montantMillions', maxDepCPSTI),
+      getRadiusFullSqrt(0, maxDepCPSTI), minCircleRadius,
+      maxRadDepCPSTI, maxCircleRadius
     ]
   ]
 }
@@ -715,6 +747,15 @@ export const configAppMap = {
                         fromStoreData: 'initData',
                         fromDatasetId: 'regions-aides-raw',
                         fromDatasetKey: 'reg',
+                        fromDatasetField: 'nombre_siren',
+                        targetSpecialStoreId: 'nombre_siren'
+                      },
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-aides-raw',
+                        fromDatasetKey: 'reg',
                         fromDatasetField: 'montant',
                         targetSpecialStoreId: 'montant',
                         format: [
@@ -817,6 +858,15 @@ export const configAppMap = {
                         fromDatasetKey: 'dep',
                         fromDatasetField: 'nombre',
                         targetSpecialStoreId: 'nombre'
+                      },
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-aides-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'nombre_siren',
+                        targetSpecialStoreId: 'nombre_siren'
                       },
                       {
                         from: 'store',
@@ -1996,6 +2046,477 @@ export const configAppMap = {
       copySettingsFrom: [
         {
           copyFromId: 'map-france-report-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+
+    
+    // ====================================== //
+    // === DATASET : CPSTI ================ //
+    // ====================================== //
+
+    // FRANCE METRO
+    {
+      id: 'map-france-cpsti-metro',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMetro,
+
+      sizes: COMMON_SIZES.defaultSizes,
+
+      // - - - - - - - - - - - - - - - - - - //
+      // SOURCES LOADED AT MAP LOADED
+      // - - - - - - - - - - - - - - - - - - //
+      sources: [
+        COMMON_SOURCES.FranceRegions,
+        COMMON_SOURCES.FranceDepartements,
+        {
+          id: 'regions-cpsti',
+          help: 'montants des cpsti au niveau regional - as geojson from raw',
+          from: 'store',
+          fromId: 'regions-cpsti-raw',
+          type: 'geojson',
+          generateId: true,
+          needTransform: true,
+          transformTo: {
+            srcKey: 'reg',
+            geoCanvasId: 'centers',
+            canvasKey: {
+              keyIsFieldName: true,
+              field: undefined,
+              canvasKeyPrefix: 'REG-',
+              canvasKeySuffix: ''
+            },
+            properties: aidesProperties,
+            geometry: {
+              type: 'Point'
+            }
+          },
+          licence: ''
+        },
+        {
+          id: 'departements-cpsti',
+          help:
+            'montants des cpsti au niveau départemental - as geojson from raw',
+          from: 'store',
+          fromId: 'departements-cpsti-raw',
+          type: 'geojson',
+          generateId: false,
+          needTransform: true,
+          transformTo: {
+            srcKey: 'dep',
+            geoCanvasId: 'centers',
+            canvasKey: {
+              keyIsFieldName: true,
+              field: undefined,
+              canvasKeyPrefix: 'DEP-',
+              canvasKeySuffix: ''
+            },
+            properties: aidesProperties,
+            geometry: {
+              type: 'Point'
+            }
+          },
+          licence: ''
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // MAPS
+      // - - - - - - - - - - - - - - - - - - //
+      maps: [
+        {
+          id: 'map-cpsti-reg',
+          name: 'Carte cpsti par région',
+          category: 'regional',
+          properties: 'cpsti',
+          data: 'cpsti',
+          layers: [
+            'regions-fill',
+            'regions-lines',
+            'regions-cpsti',
+            'regions-cpsti-montants'
+          ],
+          clicEvents: [
+            {
+              event: 'click',
+              layer: 'regions-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleSelectedOn,
+                COMMON_CLICK_EVENTS.goToPolygonPlus,
+                {
+                  funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
+                  funcParams: {
+                    zoomRange: {
+                      minZoom: undefined,
+                      maxZoom: ZOOM_THRESHOLD_BIS
+                    },
+                    propName: 'code',
+                    targets: [
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code',
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'taxo-regions',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'libelle',
+                        targetSpecialStoreId: 'levelname'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-cpsti-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'nombre',
+                        targetSpecialStoreId: 'nombre'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-cpsti-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'montant',
+                        targetSpecialStoreId: 'montant',
+                        format: [
+                          {
+                            utilsFnName: 'toMillionsOrElse',
+                            params: { divider: 1000000, fixed: 2 }
+                          }
+                        ]
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-cpsti-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: undefined,
+                        targetSpecialStoreId: 'focusObject'
+                      }
+                    ]
+                  }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathRegions
+
+              ]
+            },
+
+            {
+              event: 'mousemove',
+              layer: 'regions-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOn
+              ]
+            },
+
+            {
+              event: 'mouseleave',
+              layer: 'regions-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOff
+              ]
+            }
+          ]
+        },
+
+        {
+          id: 'map-cpsti-dep',
+          name: 'Carte cpsti par departement',
+          category: 'departemental',
+          properties: 'cpsti',
+          data: 'cpsti',
+          layers: [
+            'departements-fill',
+            'departements-lines',
+            'departements-cpsti',
+            'departements-cpsti-montants'
+          ],
+          clicEvents: [
+            {
+              event: 'click',
+              layer: 'departements-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleSelectedOn,
+                {
+                  funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
+                  funcParams: {
+                    zoomRange: {
+                      minZoom: ZOOM_THRESHOLD,
+                      maxZoom: undefined
+                    },
+                    propName: 'code',
+                    targets: [
+                      {
+                        from: 'store',
+                        fromPropKey: 'code',
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'taxo-departements',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'libelle',
+                        targetSpecialStoreId: 'levelname'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-cpsti-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'nombre',
+                        targetSpecialStoreId: 'nombre'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-cpsti-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'montant',
+                        targetSpecialStoreId: 'montant',
+                        format: [
+                          {
+                            utilsFnName: 'toMillionsOrElse',
+                            params: { divider: 1000000, fixed: 2 }
+                          }
+                        ]
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-cpsti-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: undefined,
+                        targetSpecialStoreId: 'focusObject'
+                      }
+                    ]
+                  }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathDepartements
+              ]
+            },
+
+            {
+              event: 'mousemove',
+              layer: 'departements-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOn
+              ]
+            },
+
+            {
+              event: 'mouseleave',
+              layer: 'departements-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOff
+              ]
+            }
+          ]
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // LAYERS
+      // - - - - - - - - - - - - - - - - - - //
+      layers: [
+        // REGIONS
+        COMMON_LAYERS.FranceRegionsFill,
+        COMMON_LAYERS.FranceRegionsLines,
+        {
+          id: 'regions-cpsti',
+          type: 'circle',
+          source: 'regions-cpsti',
+          layout: {
+            visibility: 'visible'
+          },
+          maxzoom: ZOOM_THRESHOLD,
+          paint: circlePaintCPSTI
+        },
+        {
+          id: 'regions-cpsti-montants',
+          type: 'symbol',
+          source: 'regions-cpsti',
+          layout: {
+            ...COMMON_TEXTS.millions
+          },
+          maxzoom: ZOOM_THRESHOLD
+        },
+
+        // DEPARTEMENTS
+        COMMON_LAYERS.FranceDepartementsFill,
+        COMMON_LAYERS.FranceDepartementsLines,
+        {
+          id: 'departements-cpsti',
+          type: 'circle',
+          source: 'departements-cpsti',
+          layout: {
+            // visibility: 'none'
+          },
+          paint: circlePaintCPSTI,
+          minzoom: ZOOM_THRESHOLD
+        },
+        {
+          id: 'departements-cpsti-montants',
+          type: 'symbol',
+          source: 'departements-cpsti',
+          layout: {
+            ...COMMON_TEXTS.millions
+          },
+          minzoom: ZOOM_THRESHOLD
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // LAYERS VISIBILITY DRAWER
+      // - - - - - - - - - - - - - - - - - - //
+      maps_visibility: {
+        title: { fr: 'calques' },
+        is_activated: false,
+        is_drawer_open: true,
+        map_switches: [
+          {
+            id: 'regions',
+            mapId: 'map-cpsti-reg',
+            label: { fr: 'régions' },
+            default_visible: true
+          },
+          {
+            id: 'departements',
+            mapId: 'map-cpsti-dep',
+            label: { fr: 'départements' },
+            default_visible: false
+          }
+        ]
+      }
+    },
+    // GUYANE
+    {
+      id: 'map-france-cpsti-guyane',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuyane,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-cpsti-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // GUADELOUPE
+    {
+      id: 'map-france-cpsti-guadeloupe',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuadeloupe,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-cpsti-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MARTINIQUE
+    {
+      id: 'map-france-cpsti-martinique',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMartinique,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-cpsti-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // LA REUNION
+    {
+      id: 'map-france-cpsti-la-reunion',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceReunion,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-cpsti-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MAYOTTE
+    {
+      id: 'map-france-cpsti-mayotte',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMayotte,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-cpsti-metro',
           fieldsToCopy: [
             'sources',
             'maps',

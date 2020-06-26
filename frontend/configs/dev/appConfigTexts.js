@@ -58,6 +58,21 @@ const COMMON_TEXTS_HTML = {
       fr: undefined
     }
   },
+  moreInfosCPSTI: {
+    id: 'more-infos-cpsti',
+    textClass: 'text-left mx-4 pt-4',
+    textContent: {
+      fr: `
+        Les données utilisées sur ce tableau de bord 
+        <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-aides-exceptionnelles-aux-artisans-et-commercants-dans-le-cadre-de-lepidemie-de-covid-19/">
+          sont disponibles en open data sur data.gouv.fr</a>.
+        
+      `
+    },
+    fromUrl: {
+      fr: undefined
+    }
+  },
   moreInfosACTIVITEPARTIELLE: {
     id: 'more-infos-activitepartielle',
     textClass: 'text-left mx-4 pt-4',
@@ -100,7 +115,7 @@ export const configAppTexts = {
             {
               colName: '',
               colTitle: { fr: '' },
-              colTitleClass: '',
+              colTitleClass: 'text-center',
               cols: 12,
               textClass: '',
               subTextClass: '',
@@ -256,7 +271,7 @@ export const configAppTexts = {
               colTitle: { fr: '' },
               colTitleClass: '',
               cols: 12,
-              textClass: '',
+              textClass: 'text-center',
               subTextClass: '',
               sizeDesktop: 'headline mb-0',
               sizeMobile: 'subtitle-1',
@@ -391,7 +406,7 @@ export const configAppTexts = {
               colTitle: { fr: '' },
               colTitleClass: '',
               cols: 12,
-              textClass: '',
+              textClass: 'text-center',
               subTextClass: '',
               sizeDesktop: 'headline mb-0',
               sizeMobile: 'subtitle-1',
@@ -449,21 +464,21 @@ export const configAppTexts = {
                       <br><br>
                       <ul>
                         <li>
-                        Les entreprises ou les experts-comptables qui 
-                        interviennent pour des clients, pour qui il est possible 
-                        de demander au service des impôts des entreprises 
-                        le report sans pénalité du règlement de leurs prochaines 
-                        échéances d'impôts directs 
+                          Les entreprises ou les experts-comptables qui 
+                          interviennent pour des clients, pour qui il est possible 
+                          de demander au service des impôts des entreprises 
+                          le report sans pénalité du règlement de leurs prochaines 
+                          échéances d'impôts directs 
                         (acompte d'impôt sur les sociétés, taxe sur les salaires).
                         </li>
                         <li>
-                        Les travailleurs indépendants qui peuvent moduler à 
-                        tout moment le taux et les acomptes de prélèvement à la source. 
-                        Il est aussi possible de reporter le paiement 
-                        des acomptes de prélèvement à la source sur les revenus 
-                        professionnels d’un mois sur l’autre, jusqu’à trois fois 
-                        si les acomptes sont mensuels, ou d’un trimestre sur l’autre 
-                        si les acomptes sont trimestriels.
+                          Les travailleurs indépendants qui peuvent moduler à 
+                          tout moment le taux et les acomptes de prélèvement à la source. 
+                          Il est aussi possible de reporter le paiement 
+                          des acomptes de prélèvement à la source sur les revenus 
+                          professionnels d’un mois sur l’autre, jusqu’à trois fois 
+                          si les acomptes sont mensuels, ou d’un trimestre sur l’autre 
+                          si les acomptes sont trimestriels.
                         </li>
                       </ul>
                       <br>
@@ -508,6 +523,128 @@ export const configAppTexts = {
     },
 
     // ============================================================= //
+    // CPSTI
+    // ============================================================= //
+    {
+      id: 'text-cpsti-title',
+      help: '',
+      title: { fr: '' },
+      titleI18n: 'texts.text01.title',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+            {
+              colName: '',
+              colTitle: { fr: '' },
+              colTitleClass: '',
+              cols: 12,
+              textClass: 'text-center',
+              subTextClass: '',
+              sizeDesktop: 'headline mb-0',
+              sizeMobile: 'subtitle-1',
+              textPrefix: { fr: "Aides artisans / commerçants : " },
+              textPrefixClass: 'font-weight-regular',
+              textSuffix: { fr: '' },
+              textSuffixClass: undefined,
+              specialStoreId: 'levelname',
+              specialStoreIdClass: 'font-weight-medium'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'text-cpsti-infos',
+      help: '',
+      title: { fr: '' },
+      titleI18n: 'texts.text01.title',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+            {
+              colName: '',
+              colTitle: { fr: "Aides exceptionnelles aux artisans et commerçants" },
+              colTitleClass: 'my-5',
+              cols: 12,
+              textClass: '',
+              subTextClass: '',
+              sizeDesktop: '',
+              sizeMobile: 'body-2',
+              textPrefix: { fr: undefined },
+              textPrefixClass: undefined,
+              textSuffix: { fr: undefined },
+              textSuffixClass: undefined,
+              specialStoreId: undefined,
+              specialStoreIdClass: undefined,
+              textsHtml: [
+                {
+                  id: 'cpsti-intro',
+                  textClass: 'text-left mx-4 pt-4',
+                  textContent: {
+                    fr: `
+                      <p>
+                        Le Conseil de la protection sociale des travailleurs indépendants (CPSTI) met en place une aide financière exceptionnelle à destination de tous les commerçants et les artisans qui :
+                      <p>
+                      <ul>
+                        <li>sont en activité au 15 mars 2020</li>
+                        <li>ont été immatriculés avant le 1er janvier 2019.</li>
+                      </ul>
+                      <br>
+                      <p>
+                        L'aide correspond au montant des cotisations de retraite complémentaire versées 
+                        par les artisans et les commerçants sur la base de leurs revenus de 2018 et pourra aller jusqu'à 1250 €.
+                      </p>
+                      <p>
+                        Cette aide est versée de manière automatique par les Urssaf et ne nécessite aucune démarche 
+                        des travailleurs indépendants concernés.
+                      </p>
+                      <p>
+                        Le montant de cette aide est par ailleurs exonéré d'impôt sur le revenu ainsi 
+                        que de cotisations et de contributions sociales.
+                      </p>
+                      <p>
+                        Cette aide exceptionnelle s'ajoute à l'ensemble des mesures prises en faveur des 
+                        travailleurs indépendants par le Gouvernement depuis le début de la crise. 
+                        Elle complète un dispositif massif de soutien à l'activité économique des artisans 
+                        et des commerçants afin de maintenir leur activité et permettre une reprise rapide et forte de l'économie.
+                      </p>
+                    `
+                  },
+                  fromUrl: {
+                    fr: undefined
+                  }
+                },
+                COMMON_TEXTS_HTML.moreInfosCPSTI,
+                COMMON_TEXTS_HTML.dashboardIntro,
+                {
+                  id: 'miseAJour',
+                  textClass: 'justify-center mx-4 pt-3 pb-5 mb-5',
+                  textContent: undefined,
+                  fromUrl: {
+                    fr:
+                      'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/cpsti/last_update_data.txt'
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    // ============================================================= //
     // ACTIVITE PARTIELLE
     // ============================================================= //
     {
@@ -529,7 +666,7 @@ export const configAppTexts = {
               colTitle: { fr: '' },
               colTitleClass: '',
               cols: 12,
-              textClass: '',
+              textClass: 'text-center',
               subTextClass: '',
               sizeDesktop: 'headline mb-0',
               sizeMobile: 'subtitle-1',
@@ -539,6 +676,58 @@ export const configAppTexts = {
               textSuffixClass: undefined,
               specialStoreId: 'levelname',
               specialStoreIdClass: 'font-weight-medium'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'text-activitepartielle-note',
+      help: '',
+      title: { fr: '' },
+      titleI18n: '',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+            {
+              colName: '',
+              colTitle: undefined,
+              colTitleClass: 'my-2',
+              cols: 12,
+              textClass: 'text-center',
+              subTextClass: '',
+              sizeDesktop: '',
+              sizeMobile: 'body-2',
+              textPrefix: undefined ,
+              textPrefixClass: undefined,
+              textSuffix: undefined,
+              textSuffixClass: undefined,
+              specialStoreId: undefined,
+              specialStoreIdClass: undefined,
+              textsHtml: [
+                {
+                  id: 'activitepartielle-note',
+                  textClass: 'justify-center font-weight-light caption mx-4 pt-2',
+                  textContent: {
+                    fr: `
+                      <em>
+                      nota : les chiffres indiqués représentent les valeurs cumulées
+                      <br>
+                      depuis le début de la crise sanitaire COVID-19
+                      </em>
+                      `
+                  },
+                  fromUrl: {
+                    fr: undefined
+                  }
+                }
+              ],
             }
           ]
         }
@@ -611,13 +800,14 @@ export const configAppTexts = {
                         </li>
                       </ul>
                       <br><br>
-                      Plus d'informations sur la prise en charge de l'activité partielle sur
-                      <a href="https://travail-emploi.gouv.fr/le-ministere-en-action/coronavirus-covid-19/questions-reponses-par-theme/faq-chomage-partiel-activite-partielle" target="_blank">
-                        la page des FAQ
+                      Ces données sont tirées des tableaux de bords mis en place par la DARES. 
+                      Plus d'informations sur 
+                      <a href="https://dares.travail-emploi.gouv.fr/dares-etudes-et-statistiques/tableaux-de-bord/le-marche-du-travail-pendant-le-covid-19/tableaux-de-bord-hebdomadaires" target="_blank">
+                        le portail de la DARES
                       </a>
                       ainsi que sur 
                       <a href="https://activitepartielle.emploi.gouv.fr/apart/" target="_blank">
-                        le portail officiel
+                        le portail officiel du gouvernement
                       </a>.
                       <br><br>
                       Les données utilisées pour ce tableau de bord sont 
@@ -629,7 +819,7 @@ export const configAppTexts = {
                     fr: undefined
                   }
                 },
-                COMMON_TEXTS_HTML.moreInfosACTIVITEPARTIELLE,
+                // COMMON_TEXTS_HTML.moreInfosACTIVITEPARTIELLE,
                 COMMON_TEXTS_HTML.dashboardIntro,
                 {
                   id: 'miseAJour',

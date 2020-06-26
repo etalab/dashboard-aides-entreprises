@@ -13,6 +13,11 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 [wireframe_slides]: https://docs.google.com/presentation/d/1j_0xaJzPIjmuDSQG-nNYzADad4pFaf8E3VBkggFu1FY/edit?usp=sharing
 [wireframe_pdf]: ../screenshots/DASHBOARD_WIREFRAME_v.1.0-2.0.pdf
 
+-----------------
+date : 22/06/2020
+
+- v.2.1.3 : adding CPSTI config files and data
+- v.2.1.2 : adding siren number to FDS dataset view
 
 -----------------
 date : 08/06/2020
