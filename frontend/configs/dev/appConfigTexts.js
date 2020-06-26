@@ -713,11 +713,12 @@ export const configAppTexts = {
               textsHtml: [
                 {
                   id: 'activitepartielle-note',
-                  textClass: 'font-weight-light caption mx-4 pt-2',
+                  textClass: 'justify-center font-weight-light caption mx-4 pt-2',
                   textContent: {
                     fr: `
                       <em>
-                      nota : les chiffres indiqués représentent les valeurs cumulées 
+                      nota : les chiffres indiqués représentent les valeurs cumulées
+                      <br>
                       depuis le début de la crise sanitaire COVID-19
                       </em>
                       `
