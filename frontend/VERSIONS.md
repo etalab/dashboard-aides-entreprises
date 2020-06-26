@@ -16,12 +16,8 @@ You can also check the [wireframe document online][wireframe_slides] or the [wir
 -----------------
 date : 22/06/2020
 
+- v.2.1.3 : adding CPSTI config files and data
 - v.2.1.2 : adding siren number to FDS dataset view
-
------------------
-date : 27/06/2020
-
-- v.2.1.2 : adding CPSTI config files and data
 
 -----------------
 date : 08/06/2020
