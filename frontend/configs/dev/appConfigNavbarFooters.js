@@ -218,6 +218,7 @@ export const configAppNavbarFooters = {
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'text-activitepartielle-title',
+                'text-activitepartielle-note',
                 'map-france-activitepartielle-metro'
               ]
             },
@@ -227,7 +228,7 @@ export const configAppNavbarFooters = {
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'text-activitepartielle-infos',
-                'text-activitepartielle-note',
+                // 'text-activitepartielle-note',
                 'apexchart-activitepartielle',
                 'apexchart-activitepartielle-02',
                 'apexchart-activitepartielle-03'
