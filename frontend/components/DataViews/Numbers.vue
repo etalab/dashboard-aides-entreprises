@@ -37,7 +37,7 @@
             }`"
           >
             <!-- NUMBER TITLE -->
-            <span v-if="isMobileWidth" class="caption">
+            <span v-if="isMobileWidth" :class="`caption`">
               {{ col.colTitle[locale] }} :
             </span>
             <br v-if="(isMobileWidth && col.breakMobile) || (!isMobileWidth && col.breakDesktop)">
