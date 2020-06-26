@@ -747,6 +747,15 @@ export const configAppMap = {
                         fromStoreData: 'initData',
                         fromDatasetId: 'regions-aides-raw',
                         fromDatasetKey: 'reg',
+                        fromDatasetField: 'nombre_siren',
+                        targetSpecialStoreId: 'nombre_siren'
+                      },
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'regions-aides-raw',
+                        fromDatasetKey: 'reg',
                         fromDatasetField: 'montant',
                         targetSpecialStoreId: 'montant',
                         format: [
@@ -849,6 +858,15 @@ export const configAppMap = {
                         fromDatasetKey: 'dep',
                         fromDatasetField: 'nombre',
                         targetSpecialStoreId: 'nombre'
+                      },
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'departements-aides-raw',
+                        fromDatasetKey: 'dep',
+                        fromDatasetField: 'nombre_siren',
+                        targetSpecialStoreId: 'nombre_siren'
                       },
                       {
                         from: 'store',

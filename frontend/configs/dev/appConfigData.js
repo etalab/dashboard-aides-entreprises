@@ -328,6 +328,13 @@ export const configAppData = {
               help: 'copy to another dataset (id) in displayedData | initData',
               toSpecialStore: 'nombre',
               format: undefined
+            },
+            {
+              fieldToCopy: 'nombre_siren',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'nombre_siren',
+              format: undefined
             }
           ]
         },

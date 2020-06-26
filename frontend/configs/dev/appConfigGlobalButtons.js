@@ -116,6 +116,17 @@ export const configAppGlobalButtons = {
                     fromDatasetId: 'national-aides-raw',
                     fromDatasetKey: undefined,
                     fromDatasetIndex: 0,
+                    fromDatasetField: 'nombre_siren',
+                    targetSpecialStoreId: 'nombre_siren'
+                  },
+                  {
+                    from: 'store',
+                    fromPropKey: undefined,
+                    fromPropValue: undefined,
+                    fromStoreData: 'initData',
+                    fromDatasetId: 'national-aides-raw',
+                    fromDatasetKey: undefined,
+                    fromDatasetIndex: 0,
                     fromDatasetField: 'montant',
                     targetSpecialStoreId: 'montant',
                     format: [
