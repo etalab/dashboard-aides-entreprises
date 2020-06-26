@@ -380,6 +380,112 @@ export const configAppGlobalButtons = {
       ]
     },
 
+    
+    // ============================================================= //
+    // === BTN : CPSTI
+    // ============================================================= //
+    {
+      id: 'global-button-cpsti',
+      help: '',
+      title: { fr: '' },
+      titleI18n: 'buttons.button01.title',
+      dividers: {
+        before: false,
+        after: false
+      },
+
+      btnsRowClass: 'align-center justify-center',
+      btnsRowClassMobile: 'mt-0 pt-0 mb-2',
+
+      componentButtons: [
+        {
+          id: 'first-button',
+          title: { fr: 'retour au niveau national' },
+          titleI18n: 'buttons.button01.title',
+
+          btnClass: 'justify-center btn-gouv',
+
+          block: false,
+          icon: undefined,
+          outlined: true,
+          fab: false,
+          color: 'primary',
+          large: false,
+          small: false,
+          dark: false,
+          tile: true,
+          rounded: false,
+          disabled: false,
+
+          activatedIf: undefined,
+          functions: [
+            {
+              funcName: 'resetStore',
+              funcParams: {
+                targets: [
+                  COMMONS_TARGETS.resetLevelName,
+                  {
+                    from: 'store',
+                    fromPropKey: undefined,
+                    fromPropValue: undefined,
+                    fromStoreData: 'initData',
+                    fromDatasetId: 'national-cpsti-raw',
+                    fromDatasetKey: undefined,
+                    fromDatasetIndex: 0,
+                    fromDatasetField: 'nombre',
+                    targetSpecialStoreId: 'nombre'
+                  },
+                  {
+                    from: 'store',
+                    fromPropKey: undefined,
+                    fromPropValue: undefined,
+                    fromStoreData: 'initData',
+                    fromDatasetId: 'national-cpsti-raw',
+                    fromDatasetKey: undefined,
+                    fromDatasetIndex: 0,
+                    fromDatasetField: 'montant',
+                    targetSpecialStoreId: 'montant',
+                    format: [
+                      {
+                        utilsFnName: 'toMillionsOrElse',
+                        params: { divider: 1000000, fixed: 2 }
+                      }
+                    ]
+                  },
+                  {
+                    from: 'store',
+                    fromPropKey: undefined,
+                    fromPropValue: undefined,
+                    fromStoreData: 'initData',
+                    fromDatasetId: 'national-cpsti-raw',
+                    fromDatasetKey: undefined,
+                    fromDatasetIndex: 0,
+                    fromDatasetField: undefined,
+                    targetSpecialStoreId: 'focusObject'
+                  }
+                ]
+              }
+            },
+            {
+              funcName: 'resetMapZoom',
+              funcParams: {
+                targets: [
+                  COMMONS_TARGETS.resetMapZoom
+                ]
+              }
+            },
+            COMMON_FUNCTIONS.resetUrlPath,
+            COMMON_FUNCTIONS.resetFitToPolygon,
+            COMMON_FUNCTIONS.resetSelectedPolygons
+          ],
+
+          hideIfs: [
+            { specialStoreId: 'levelname', value: 'échelle nationale' }
+          ]
+        }
+      ]
+    },
+
     // ============================================================= //
     // === BTN : ACTIVITE PARTIELLE
     // ============================================================= //

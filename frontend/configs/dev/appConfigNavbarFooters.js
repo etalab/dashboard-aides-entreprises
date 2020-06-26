@@ -88,11 +88,30 @@ export const configAppNavbarFooters = {
               ]
             },
             {
+              routeId: 'cpsti',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-title',
+                'text-cpsti-infos'
+              ]
+            },
+            {
+              routeId: 'cpsti',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'apexchart-cpsti',
+                'map-france-cpsti-metro'
+              ]
+            },
+            {
               routeId: 'activitepartielle',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'text-activitepartielle-title',
+                'text-activitepartielle-note',
                 'text-activitepartielle-infos'
               ]
             },
@@ -176,6 +195,24 @@ export const configAppNavbarFooters = {
               ]
             },
             {
+              routeId: 'cpsti',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-title',
+                'map-france-cpsti-metro'
+              ]
+            },
+            {
+              routeId: 'cpsti',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-infos',
+                'apexchart-cpsti'
+              ]
+            },
+            {
               routeId: 'activitepartielle',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
@@ -190,6 +227,7 @@ export const configAppNavbarFooters = {
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'text-activitepartielle-infos',
+                'text-activitepartielle-note',
                 'apexchart-activitepartielle',
                 'apexchart-activitepartielle-02',
                 'apexchart-activitepartielle-03'
@@ -264,11 +302,30 @@ export const configAppNavbarFooters = {
               ]
             },
             {
+              routeId: 'cpsti',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-title',
+                'apexchart-cpsti'
+              ]
+            },
+            {
+              routeId: 'cpsti',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-cpsti-infos',
+                'map-france-cpsti-metro'
+              ]
+            },
+            {
               routeId: 'activitepartielle',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
               divIds: [
                 'text-activitepartielle-title',
+                'text-activitepartielle-note',
                 'apexchart-activitepartielle',
                 'apexchart-activitepartielle-02',
                 'apexchart-activitepartielle-03'
