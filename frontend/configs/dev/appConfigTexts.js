@@ -702,8 +702,8 @@ export const configAppTexts = {
               cols: 12,
               textClass: 'text-center',
               subTextClass: '',
-              sizeDesktop: '',
-              sizeMobile: 'body-2',
+              sizeDesktop: 'pt-2',
+              sizeMobile: 'pb-2 body-2',
               textPrefix: undefined ,
               textPrefixClass: undefined,
               textSuffix: undefined,
@@ -713,12 +713,11 @@ export const configAppTexts = {
               textsHtml: [
                 {
                   id: 'activitepartielle-note',
-                  textClass: 'justify-center font-weight-light caption mx-4 pt-2',
+                  textClass: 'justify-center font-weight-light caption mx-4',
                   textContent: {
                     fr: `
                       <em>
                       nota : les chiffres indiqués représentent les valeurs cumulées
-                      <br>
                       depuis le début de la crise sanitaire COVID-19
                       </em>
                       `
