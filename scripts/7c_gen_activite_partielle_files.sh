@@ -1,20 +1,20 @@
 #!/bin/bash
 
-curl http://localhost:5000/stat/activitepartielle > ../backend/json/activite-partielle/activite-partielle-maille-national.json
-curl http://localhost:5000/stat/activitepartielle/reg > ../backend/json/activite-partielle/activite-partielle-maille-regional.json
-curl http://localhost:5000/stat/activitepartielle/dep > ../backend/json/activite-partielle/activite-partielle-maille-departemental.json
+curl http://localhost:5050/stat/activitepartielle > ../backend/json/activite-partielle/activite-partielle-maille-national.json
+curl http://localhost:5050/stat/activitepartielle/reg > ../backend/json/activite-partielle/activite-partielle-maille-regional.json
+curl http://localhost:5050/stat/activitepartielle/dep > ../backend/json/activite-partielle/activite-partielle-maille-departemental.json
 
 json-minify ../backend/json/activite-partielle/activite-partielle-maille-national.json > ../backend/json/activite-partielle/activite-partielle-maille-national-minify.json
 json-minify ../backend/json/activite-partielle/activite-partielle-maille-regional.json > ../backend/json/activite-partielle/activite-partielle-maille-regional-minify.json
 json-minify ../backend/json/activite-partielle/activite-partielle-maille-departemental.json > ../backend/json/activite-partielle/activite-partielle-maille-departemental-minify.json
 
-output=`curl http://localhost:5000/lastupdate/activitepartielle | head -n 1| cut -d $' ' -f2`
+output=`curl http://localhost:5050/lastupdate/activitepartielle | head -n 1| cut -d $' ' -f2`
 mkdir ../backend/json/activite-partielle/$output
 
 cp ../backend/json/activite-partielle/activite-partielle* ../backend/json/activite-partielle/$output
 cp ../backend/json/activite-partielle/activite-partielle* ../frontend/static/datasets/prod/activite-partielle/
 
-curl http://localhost:5000/lastupdatehtml/activitepartielle > ../backend/json/activite-partielle/last_update_data.txt
+curl http://localhost:5050/lastupdatehtml/activitepartielle > ../backend/json/activite-partielle/last_update_data.txt
 
 cp ../backend/json/activite-partielle/last_update_data.txt ../frontend/static/datasets/prod/activite-partielle/
 
@@ -26,7 +26,7 @@ psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Activite Partielle' as dispo
 mv /tmp/activite-partielle-departemental-nace17-latest.csv ../published-data/
 mv /tmp/activite-partielle-regional-nace17-latest.csv ../published-data/
 
-python 7d_gen_xlsx_activite_partielle.py
+python3 7d_gen_xlsx_activite_partielle.py
 
 mkdir ../published-data/activite-partielle/activite-partielle-$output
 cp ../published-data/activite-partielle-*.csv ../published-data/activite-partielle/activite-partielle-$output/

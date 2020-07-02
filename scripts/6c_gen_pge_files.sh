@@ -1,20 +1,20 @@
 #!/bin/bash
 
-curl http://localhost:5000/stat/pge > ../backend/json/pge/pge-maille-national.json
-curl http://localhost:5000/stat/pge/reg > ../backend/json/pge/pge-maille-regional.json
-curl http://localhost:5000/stat/pge/dep > ../backend/json/pge/pge-maille-departemental.json
+curl http://localhost:5050/stat/pge > ../backend/json/pge/pge-maille-national.json
+curl http://localhost:5050/stat/pge/reg > ../backend/json/pge/pge-maille-regional.json
+curl http://localhost:5050/stat/pge/dep > ../backend/json/pge/pge-maille-departemental.json
 
 json-minify ../backend/json/pge/pge-maille-national.json > ../backend/json/pge/pge-maille-national-minify.json
 json-minify ../backend/json/pge/pge-maille-regional.json > ../backend/json/pge/pge-maille-regional-minify.json
 json-minify ../backend/json/pge/pge-maille-departemental.json > ../backend/json/pge/pge-maille-departemental-minify.json
 
-output=`curl http://localhost:5000/lastupdate/pge | head -n 1| cut -d $' ' -f2`
+output=`curl http://localhost:5050/lastupdate/pge | head -n 1| cut -d $' ' -f2`
 mkdir ../backend/json/pge/$output
 
 cp ../backend/json/pge/pge* ../backend/json/pge/$output
 cp ../backend/json/pge/pge* ../frontend/static/datasets/prod/pge/
 
-curl http://localhost:5000/lastupdatehtml/pge > ../backend/json/pge/last_update_data.txt
+curl http://localhost:5050/lastupdatehtml/pge > ../backend/json/pge/last_update_data.txt
 
 cp ../backend/json/pge/last_update_data.txt ../frontend/static/datasets/prod/pge/
 
@@ -26,7 +26,7 @@ psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Prêts garantis par l''Etat'
 
 mv /tmp/pge-departemental-naf-latest.csv ../published-data/
 
-python 6d_gen_xlsx_pge.py
+python3 6d_gen_xlsx_pge.py
 
 mkdir ../published-data/pge/pge-$output
 cp ../published-data/pge-*.csv ../published-data/pge/pge-$output/

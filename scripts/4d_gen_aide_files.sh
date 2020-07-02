@@ -1,20 +1,20 @@
 #!/bin/bash
 
-curl http://localhost:5000/stat/aide > ../backend/json/aides/aides-maille-national.json
-curl http://localhost:5000/stat/aide/reg > ../backend/json/aides/aides-maille-regional.json
-curl http://localhost:5000/stat/aide/dep > ../backend/json/aides/aides-maille-departemental.json
+curl http://localhost:5050/stat/aide > ../backend/json/aides/aides-maille-national.json
+curl http://localhost:5050/stat/aide/reg > ../backend/json/aides/aides-maille-regional.json
+curl http://localhost:5050/stat/aide/dep > ../backend/json/aides/aides-maille-departemental.json
 
 json-minify ../backend/json/aides/aides-maille-national.json > ../backend/json/aides/aides-maille-national-minify.json
 json-minify ../backend/json/aides/aides-maille-regional.json > ../backend/json/aides/aides-maille-regional-minify.json
 json-minify ../backend/json/aides/aides-maille-departemental.json > ../backend/json/aides/aides-maille-departemental-minify.json
 
-output=`curl http://localhost:5000/lastupdate | head -n 1| cut -d $' ' -f2`
+output=`curl http://localhost:5050/lastupdate | head -n 1| cut -d $' ' -f2`
 mkdir ../backend/json/aides/fds-$output
 
 cp ../backend/json/aides/aides* ../backend/json/aides/fds-$output
 cp ../backend/json/aides/aides* ../frontend/static/datasets/prod/aides/
 
-curl http://localhost:5000/lastupdatehtml > ../backend/json/aides/last_update_data.txt
+curl http://localhost:5050/lastupdatehtml > ../backend/json/aides/last_update_data.txt
 
 cp ../backend/json/aides/last_update_data.txt ../frontend/static/datasets/prod/
 
@@ -51,7 +51,7 @@ psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Fonds de solidarité' As dis
 mv /tmp/fonds-solidarite-volet-2-regional-classe-effectif-latest.csv ../published-data/
 
 
-python 4e_gen-xlsx.py
+python3 4e_gen-xlsx.py
 
 mkdir ../published-data/fonds-solidarite/fds-$output
 cp ../published-data/*.csv ../published-data/fonds-solidarite/fds-$output/
