@@ -4,7 +4,7 @@ import os, sys
 path = "../data/0-brut/"
 input_folder = os.listdir(path)
 
-dfcom =  pd.read_csv("../utils/communes-2019.csv", dtype={'reg':str, 'dep':str, 'arr':str,'com':str})
+dfcom =  pd.read_csv("../utils/communes-2019.csv", dtype=str)
 dfcom = dfcom[dfcom['reg'].notna() & dfcom['dep'].notna()]
 dfcom = dfcom.drop_duplicates(subset=['com','reg','dep'])
 dfcom.rename(columns={'com':'codeCommuneEtablissement'},inplace=True)

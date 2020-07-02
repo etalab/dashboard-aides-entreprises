@@ -19,12 +19,12 @@ curl http://localhost:5000/lastupdatehtml/cpsti > ../backend/json/cpsti/last_upd
 cp ../backend/json/cpsti/last_update_data.txt ../frontend/static/datasets/prod/cpsti/
 
 
-sudo -u postgres psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Aide CPSTI' as dispositif, sum(C.nombre) as nombre_beneficiaires, sum(C.montant) as montant_total, C.reg, REG.libelle as libelle_region, C.code_section, N.libelle_section, MAX(C.last_update) as date_maj FROM cpsti C LEFT JOIN region REG ON REG.reg = C.reg LEFT JOIN (SELECT DISTINCT code_section, libelle_section FROM naf) N ON C.code_section = N.code_section GROUP BY C.reg, REG.libelle, C.code_section, N.libelle_section ORDER BY REG.libelle, C.code_section) tbl WHERE nombre_beneficiaires > 2) TO '/tmp/cpsti-regional-naf-latest.csv' DELIMITER ',' CSV HEADER;"
-sudo mv /tmp/cpsti-regional-naf-latest.csv ../published-data/
+psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Aide CPSTI' as dispositif, sum(C.nombre) as nombre_beneficiaires, sum(C.montant) as montant_total, C.reg, REG.libelle as libelle_region, C.code_section, N.libelle_section, MAX(C.last_update) as date_maj FROM cpsti C LEFT JOIN region REG ON REG.reg = C.reg LEFT JOIN (SELECT DISTINCT code_section, libelle_section FROM naf) N ON C.code_section = N.code_section GROUP BY C.reg, REG.libelle, C.code_section, N.libelle_section ORDER BY REG.libelle, C.code_section) tbl WHERE nombre_beneficiaires > 2) TO '/tmp/cpsti-regional-naf-latest.csv' DELIMITER ',' CSV HEADER;"
+mv /tmp/cpsti-regional-naf-latest.csv ../published-data/
 
-sudo -u postgres psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Aide CPSTI' as dispositif, sum(C.nombre) as nombre_beneficiaires, sum(C.montant) as montant_total, C.reg, REG.libelle as libelle_region, C.dep, D.libelle AS libelle_departement, C.code_section, N.libelle_section, MAX(C.last_update) as date_maj FROM cpsti C LEFT JOIN region REG ON REG.reg = C.reg LEFT JOIN departement D ON D.dep = C.dep LEFT JOIN (SELECT DISTINCT code_section, libelle_section FROM naf) N ON C.code_section = N.code_section GROUP BY C.reg, REG.libelle, C.dep, D.libelle, C.code_section, N.libelle_section ORDER BY REG.libelle, D.libelle, C.code_section) tbl WHERE nombre_beneficiaires > 2) TO '/tmp/cpsti-departemental-naf-latest.csv' DELIMITER ',' CSV HEADER;"
+psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Aide CPSTI' as dispositif, sum(C.nombre) as nombre_beneficiaires, sum(C.montant) as montant_total, C.reg, REG.libelle as libelle_region, C.dep, D.libelle AS libelle_departement, C.code_section, N.libelle_section, MAX(C.last_update) as date_maj FROM cpsti C LEFT JOIN region REG ON REG.reg = C.reg LEFT JOIN departement D ON D.dep = C.dep LEFT JOIN (SELECT DISTINCT code_section, libelle_section FROM naf) N ON C.code_section = N.code_section GROUP BY C.reg, REG.libelle, C.dep, D.libelle, C.code_section, N.libelle_section ORDER BY REG.libelle, D.libelle, C.code_section) tbl WHERE nombre_beneficiaires > 2) TO '/tmp/cpsti-departemental-naf-latest.csv' DELIMITER ',' CSV HEADER;"
 
-sudo mv /tmp/cpsti-departemental-naf-latest.csv ../published-data/
+mv /tmp/cpsti-departemental-naf-latest.csv ../published-data/
 
 python 8d_gen_xlsx_cpsti.py
 
