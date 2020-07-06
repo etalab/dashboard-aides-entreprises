@@ -6,7 +6,7 @@ daytoprocess = sys.argv[1]
 
 xls_file = pd.ExcelFile("../data/activite-partielle/xlsx/"+daytoprocess+".xlsx")
 
-df = xls_file.parse('Annexe 3',dtype=str,header=3)
+df = xls_file.parse('Annexe 3',dtype=str,header=0)
 
 df = df[:-5]
 
