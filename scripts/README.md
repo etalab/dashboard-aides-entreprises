@@ -28,3 +28,4 @@ Description des différentes étapes déroulées par les scripts :
 | 7 | Etapes pour la gestion des données de l'activité partielle : <br>a) Création de la base <br> b) processing du fichier de la semaine <br> c) Insertion des données processées dans postgres <br> d) génération des outputs json, csv et xls depuis le backend Flask |
 | 8 | Etapes pour la gestion des données des aides exceptionnelles aux artisans et commerçants : <br>a) Création de la base <br> b) processing du fichier de la semaine <br> c) Insertion des données processées dans postgres <br> d) génération des outputs json, csv et xls depuis le backend Flask |
 
+La structure des tables de la base postgres est décrite dans les fichiers du dossier sql/
