@@ -7998,3 +7998,283 @@ INFO:sqlalchemy.engine.base.Engine:select MAX(date_paiement) FROM aide;
 INFO:sqlalchemy.engine.base.Engine:{}
 INFO:sqlalchemy.engine.base.Engine:ROLLBACK
 INFO:werkzeug:127.0.0.1 - - [09/Jul/2020 10:21:27] "[37mGET /lastupdatehtml HTTP/1.1[0m" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:select sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES from activitepartielle A;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:select A.code_section_nace17, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, N.libelle from activitepartielle A LEFT JOIN nace17 N ON N.code_section_nace17 = A.code_section_nace17 GROUP BY A.code_section_nace17, N.libelle ORDER BY TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:app:[(Decimal('2830930.00'), Decimal('27232050.00'), Decimal('11975827530.00'), Decimal('2546020.00'))]
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [09/Jul/2020 17:46:51] "[37mGET /stat/activitepartielle HTTP/1.1[0m" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT SUM(P.montant) AS TotalMontant, SUM(P.nombre) AS TotalSiren FROM pgenaf P;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:app:[(Decimal('126337332.00'), Decimal('2386.00'))]
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [09/Jul/2020 17:50:28] "[37mGET /stat/pge HTTP/1.1[0m" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT P.reg, SUM(P.montant) AS TotalMontant, SUM(P.nombre) AS TotalSiren, REG.libelle FROM pgenaf P LEFT JOIN region AS REG ON P.reg = REG.reg GROUP BY P.reg, REG.libelle;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:app:[(None, Decimal('0.00'), Decimal('0.00'), None), ('93', Decimal('11277210.00'), Decimal('211.00'), "Provence-Alpes-Côte d'Azur"), ('94', Decimal('920000.00'), Decimal('11.00'), 'Corse'), ('11', Decimal('28113743.00'), Decimal('423.00'), 'Île-de-France'), ('52', Decimal('5808258.00'), Decimal('131.00'), 'Pays de la Loire'), ('06', Decimal('291750.00'), Decimal('6.00'), 'Mayotte'), ('04', Decimal('293400.00'), Decimal('4.00'), 'La Réunion'), ('75', Decimal('10855951.00'), Decimal('214.00'), 'Nouvelle-Aquitaine'), ('27', Decimal('5276500.00'), Decimal('121.00'), 'Bourgogne-Franche-Comté'), ('03', Decimal('0.00'), Decimal('0.00'), 'Guyane'), ('01', Decimal('0.00'), Decimal('0.00'), 'Guadeloupe'), ('44', Decimal('8506577.00'), Decimal('129.00'), 'Grand Est'), ('76', Decimal('13283220.00'), Decimal('299.00'), 'Occitanie'), ('28', Decimal('5772245.00'), Decimal('116.00'), 'Normandie'), ('53', Decimal('6540200.00'), Decimal('145.00'), 'Bretagne'), ('24', Decimal('3341850.00'), Decimal('81.00'), 'Centre-Val de Loire'), ('32', Decimal('6670447.00'), Decimal('137.00'), 'Hauts-de-France'), ('02', Decimal('0.00'), Decimal('0.00'), 'Martinique'), ('84', Decimal('19385981.00'), Decimal('358.00'), 'Auvergne-Rhône-Alpes')]
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = 'None' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '93' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '94' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '11' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '52' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '06' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '04' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '75' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '27' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '03' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '01' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '44' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '76' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '28' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '53' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '24' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '32' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '02' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.reg = '84' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [09/Jul/2020 17:50:28] "[37mGET /stat/pge/reg HTTP/1.1[0m" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:SELECT P.dep, SUM(P.montant) AS TotalMontant, SUM(P.nombre) AS TotalSiren, D.libelle FROM pgenaf P LEFT JOIN departement AS D ON P.dep = D.dep GROUP BY P.dep, D.libelle;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:app:[('63', Decimal('1592500.00'), Decimal('30.00'), 'Puy-de-Dôme'), ('18', Decimal('268000.00'), Decimal('6.00'), 'Cher'), ('974', Decimal('293400.00'), Decimal('4.00'), 'La Réunion'), ('78', Decimal('1838634.00'), Decimal('37.00'), 'Yvelines'), ('80', Decimal('697000.00'), Decimal('17.00'), 'Somme'), ('2B', Decimal('0.00'), Decimal('0.00'), 'Haute-Corse'), ('52', Decimal('0.00'), Decimal('0.00'), 'Haute-Marne'), ('40', Decimal('388000.00'), Decimal('9.00'), 'Landes'), ('19', Decimal('776000.00'), Decimal('18.00'), 'Corrèze'), ('68', Decimal('1527000.00'), Decimal('16.00'), 'Haut-Rhin'), ('38', Decimal('3543393.00'), Decimal('60.00'), 'Isère'), ('31', Decimal('3183309.00'), Decimal('64.00'), 'Haute-Garonne'), ('73', Decimal('1458800.00'), Decimal('26.00'), 'Savoie'), ('09', Decimal('505000.00'), Decimal('10.00'), 'Ariège'), ('67', Decimal('2530000.00'), Decimal('36.00'), 'Bas-Rhin'), ('27', Decimal('1099000.00'), Decimal('19.00'), 'Eure'), ('81', Decimal('601800.00'), Decimal('19.00'), 'Tarn'), ('972', Decimal('0.00'), Decimal('0.00'), 'Martinique'), ('973', Decimal('0.00'), Decimal('0.00'), 'Guyane'), ('28', Decimal('0.00'), Decimal('0.00'), 'Eure-et-Loir'), ('06', Decimal('3684260.00'), Decimal('44.00'), 'Alpes-Maritimes'), ('84', Decimal('972000.00'), Decimal('23.00'), 'Vaucluse'), ('01', Decimal('908000.00'), Decimal('19.00'), 'Ain'), ('33', Decimal('4394601.00'), Decimal('61.00'), 'Gironde'), ('02', Decimal('454000.00'), Decimal('11.00'), 'Aisne'), ('35', Decimal('1896680.00'), Decimal('49.00'), 'Ille-et-Vilaine'), ('05', Decimal('583000.00'), Decimal('12.00'), 'Hautes-Alpes'), ('22', Decimal('794001.00'), Decimal('19.00'), "Côtes-d'Armor"), ('46', Decimal('906421.00'), Decimal('14.00'), 'Lot'), ('85', Decimal('1418608.00'), Decimal('31.00'), 'Vendée'), ('79', Decimal('442500.00'), Decimal('9.00'), 'Deux-Sèvres'), ('971', Decimal('0.00'), Decimal('0.00'), 'Guadeloupe'), ('93', Decimal('1788982.00'), Decimal('31.00'), 'Seine-Saint-Denis'), ('34', Decimal('3247990.00'), Decimal('78.00'), 'Hérault'), ('30', Decimal('1480400.00'), Decimal('38.00'), 'Gard'), ('13', Decimal('3107450.00'), Decimal('71.00'), 'Bouches-du-Rhône'), ('94', Decimal('2593431.00'), Decimal('32.00'), 'Val-de-Marne'), ('12', Decimal('478000.00'), Decimal('11.00'), 'Aveyron'), ('87', Decimal('767000.00'), Decimal('17.00'), 'Haute-Vienne'), ('91', Decimal('1419574.00'), Decimal('27.00'), 'Essonne'), ('88', Decimal('618000.00'), Decimal('11.00'), 'Vosges'), ('50', Decimal('401000.00'), Decimal('16.00'), 'Manche'), ('77', Decimal('2250945.00'), Decimal('40.00'), 'Seine-et-Marne'), ('95', Decimal('1291063.00'), Decimal('26.00'), "Val-d'Oise"), ('32', Decimal('175000.00'), Decimal('4.00'), 'Gers'), ('04', Decimal('543000.00'), Decimal('10.00'), 'Alpes-de-Haute-Provence'), ('62', Decimal('2288000.00'), Decimal('43.00'), 'Pas-de-Calais'), ('36', Decimal('338000.00'), Decimal('8.00'), 'Indre'), ('03', Decimal('1310000.00'), Decimal('15.00'), 'Allier'), ('60', Decimal('700000.00'), Decimal('15.00'), 'Oise'), ('51', Decimal('694477.00'), Decimal('14.00'), 'Marne'), ('39', Decimal('485000.00'), Decimal('12.00'), 'Jura'), ('11', Decimal('1138000.00'), Decimal('19.00'), 'Aude'), ('49', Decimal('1348650.00'), Decimal('27.00'), 'Maine-et-Loire'), ('54', Decimal('1273400.00'), Decimal('17.00'), 'Meurthe-et-Moselle'), ('59', Decimal('2531447.00'), Decimal('51.00'), 'Nord'), ('55', Decimal('0.00'), Decimal('0.00'), 'Meuse'), ('14', Decimal('1810100.00'), Decimal('38.00'), 'Calvados'), ('42', Decimal('1349216.00'), Decimal('27.00'), 'Loire'), ('10', Decimal('404000.00'), Decimal('7.00'), 'Aube'), ('86', Decimal('527000.00'), Decimal('14.00'), 'Vienne'), ('26', Decimal('1899000.00'), Decimal('27.00'), 'Drôme'), ('53', Decimal('160000.00'), Decimal('7.00'), 'Mayenne'), ('64', Decimal('821500.00'), Decimal('21.00'), 'Pyrénées-Atlantiques'), ('48', Decimal('167000.00'), Decimal('3.00'), 'Lozère'), ('07', Decimal('720000.00'), Decimal('16.00'), 'Ardèche'), ('2A', Decimal('920000.00'), Decimal('11.00'), 'Corse-du-Sud'), ('56', Decimal('2526000.00'), Decimal('38.00'), 'Morbihan'), ('65', Decimal('220000.00'), Decimal('7.00'), 'Hautes-Pyrénées'), ('37', Decimal('1675300.00'), Decimal('37.00'), 'Indre-et-Loire'), ('70', Decimal('299000.00'), Decimal('9.00'), 'Haute-Saône'), ('976', Decimal('291750.00'), Decimal('6.00'), 'Mayotte'), ('25', Decimal('1171800.00'), Decimal('23.00'), 'Doubs'), ('47', Decimal('734600.00'), Decimal('15.00'), 'Lot-et-Garonne'), ('44', Decimal('2111000.00'), Decimal('55.00'), 'Loire-Atlantique'), ('71', Decimal('837000.00'), Decimal('21.00'), 'Saône-et-Loire'), ('45', Decimal('843550.00'), Decimal('23.00'), 'Loiret'), ('92', Decimal('4615475.00'), Decimal('60.00'), 'Hauts-de-Seine'), ('83', Decimal('2387500.00'), Decimal('51.00'), 'Var'), ('69', Decimal('3171572.00'), Decimal('70.00'), 'Rhône'), ('23', Decimal('0.00'), Decimal('0.00'), 'Creuse'), ('08', Decimal('288000.00'), Decimal('6.00'), 'Ardennes'), ('57', Decimal('1171700.00'), Decimal('22.00'), 'Moselle'), ('29', Decimal('1323519.00'), Decimal('39.00'), 'Finistère'), ('75', Decimal('12315639.00'), Decimal('170.00'), 'Paris'), ('74', Decimal('2939500.00'), Decimal('56.00'), 'Haute-Savoie'), ('72', Decimal('770000.00'), Decimal('11.00'), 'Sarthe'), ('66', Decimal('1180300.00'), Decimal('32.00'), 'Pyrénées-Orientales'), ('61', Decimal('400000.00'), Decimal('7.00'), 'Orne'), ('975', Decimal('0.00'), Decimal('0.00'), None), ('24', Decimal('339000.00'), Decimal('11.00'), 'Dordogne'), ('89', Decimal('624700.00'), Decimal('13.00'), 'Yonne'), ('17', Decimal('977750.00'), Decimal('23.00'), 'Charente-Maritime'), ('43', Decimal('494000.00'), Decimal('12.00'), 'Haute-Loire'), ('16', Decimal('688000.00'), Decimal('16.00'), 'Charente'), ('21', Decimal('1359000.00'), Decimal('29.00'), "Côte-d'Or"), ('82', Decimal('0.00'), Decimal('0.00'), 'Tarn-et-Garonne'), ('58', Decimal('327000.00'), Decimal('8.00'), 'Nièvre'), ('15', Decimal('0.00'), Decimal('0.00'), 'Cantal'), ('76', Decimal('2062145.00'), Decimal('36.00'), 'Seine-Maritime'), ('90', Decimal('173000.00'), Decimal('6.00'), 'Territoire de Belfort'), ('41', Decimal('217000.00'), Decimal('7.00'), 'Loir-et-Cher')]
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '63' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '18' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '974' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '78' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '80' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '2B' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '52' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '40' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '19' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '68' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '38' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '31' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '73' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '09' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '67' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '27' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '81' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '972' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '973' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '28' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '06' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '84' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '01' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '33' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '02' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '35' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '05' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '22' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '46' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '85' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '79' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '971' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '93' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '34' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '30' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '13' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '94' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '12' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '87' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '91' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '88' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '50' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '77' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '95' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '32' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '04' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '62' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '36' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '03' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '60' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '51' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '39' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '11' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '49' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '54' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '59' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '55' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '14' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '42' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '10' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '86' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '26' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '53' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '64' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '48' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '07' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '2A' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '56' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '65' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '37' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '70' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '976' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '25' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '47' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '44' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '71' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '45' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '92' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '83' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '69' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '23' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '08' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '57' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '29' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '75' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '74' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '72' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '66' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '61' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '975' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '24' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '89' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '17' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '43' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '16' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '21' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '82' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '58' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '15' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '76' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '90' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:SELECT P.code_section, SUM(P.montant) as montant, SUM(P.nombre) as nombre, N.libelle_section from pgenaf P LEFT JOIN (SELECT DISTINCT code_section, libelle_section from naf) N ON N.code_section = P.code_section WHERE P.dep = '41' GROUP BY P.code_section, N.libelle_section ORDER BY montant DESC;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [09/Jul/2020 17:50:28] "[37mGET /stat/pge/dep HTTP/1.1[0m" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:select MAX(last_update) FROM pgenaf;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [09/Jul/2020 17:50:28] "[37mGET /lastupdate/pge HTTP/1.1[0m" 200 -
+INFO:sqlalchemy.engine.base.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.base.Engine:select MAX(last_update) FROM pgenaf;
+INFO:sqlalchemy.engine.base.Engine:{}
+INFO:sqlalchemy.engine.base.Engine:ROLLBACK
+INFO:werkzeug:127.0.0.1 - - [09/Jul/2020 17:50:28] "[37mGET /lastupdatehtml/pge HTTP/1.1[0m" 200 -
