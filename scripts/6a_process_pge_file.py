@@ -84,9 +84,9 @@ print("Clean dataframe")
 dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '971' if x == '951' else '972' if x == '953' else '973' if x == '952' else '974' if x == '957' else '976' if x == '954' else x)
 
 # PATCH TMP
-dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '999' if x == '972' else x)
-dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '972' if x == '973' else x)
-dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '973' if x == '999' else x)
+#dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '999' if x == '972' else x)
+#dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '972' if x == '973' else x)
+#dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '973' if x == '999' else x)
 
 
 dffinal = dffinal[['code_departement','code_section','nombre','montant']]
