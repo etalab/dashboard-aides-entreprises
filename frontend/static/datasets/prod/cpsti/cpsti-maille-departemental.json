@@ -14,6 +14,80 @@
     "nombre": "278.00"
   }, 
   {
+    "dep": "63", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "2550008.00", 
+        "nombre": "2714.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "2213839.00", 
+        "nombre": "2648.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1124034.00", 
+        "nombre": "1328.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "983641.00", 
+        "nombre": "1215.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "941861.00", 
+        "nombre": "1289.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "559827.00", 
+        "nombre": "523.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "388527.00", 
+        "nombre": "414.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "370895.00", 
+        "nombre": "391.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "250371.00", 
+        "nombre": "359.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "202817.00", 
+        "nombre": "291.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "557729.00", 
+        "nombre": "714.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Puy-de-D\u00f4me", 
+    "montant": "10143549.00", 
+    "nombre": "11886.00"
+  }, 
+  {
     "dep": "18", 
     "kpi_top_10_naf": [
       {
@@ -86,6 +160,154 @@
     "libelle": "Cher", 
     "montant": "4137478.00", 
     "nombre": "4943.00"
+  }, 
+  {
+    "dep": "974", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "1929090.00", 
+        "nombre": "2514.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1219243.00", 
+        "nombre": "1476.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "717317.00", 
+        "nombre": "903.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "665915.00", 
+        "nombre": "906.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "569826.00", 
+        "nombre": "852.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "504614.00", 
+        "nombre": "539.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "456132.00", 
+        "nombre": "463.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "321838.00", 
+        "nombre": "442.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "218216.00", 
+        "nombre": "323.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "204599.00", 
+        "nombre": "217.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "593829.00", 
+        "nombre": "789.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "La R\u00e9union", 
+    "montant": "7400619.00", 
+    "nombre": "9424.00"
+  }, 
+  {
+    "dep": "78", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "2713476.00", 
+        "nombre": "2855.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "2464464.00", 
+        "nombre": "2917.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "1504549.00", 
+        "nombre": "1381.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "1131099.00", 
+        "nombre": "1355.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1094891.00", 
+        "nombre": "1511.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "726802.00", 
+        "nombre": "964.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "682610.00", 
+        "nombre": "721.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "626765.00", 
+        "nombre": "671.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "584840.00", 
+        "nombre": "814.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "554667.00", 
+        "nombre": "765.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "932909.00", 
+        "nombre": "1222.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Yvelines", 
+    "montant": "13017072.00", 
+    "nombre": "15176.00"
   }, 
   {
     "dep": "80", 
@@ -236,6 +458,80 @@
     "nombre": "3960.00"
   }, 
   {
+    "dep": "52", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "576162.00", 
+        "nombre": "615.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "519606.00", 
+        "nombre": "674.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "258398.00", 
+        "nombre": "347.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "252271.00", 
+        "nombre": "296.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "192658.00", 
+        "nombre": "236.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "130990.00", 
+        "nombre": "127.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "83963.00", 
+        "nombre": "78.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "53588.00", 
+        "nombre": "62.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "46466.00", 
+        "nombre": "58.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "31672.00", 
+        "nombre": "56.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "107071.00", 
+        "nombre": "160.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Haute-Marne", 
+    "montant": "2252845.00", 
+    "nombre": "2709.00"
+  }, 
+  {
     "dep": "40", 
     "kpi_top_10_naf": [
       {
@@ -384,6 +680,80 @@
     "nombre": "4668.00"
   }, 
   {
+    "dep": "68", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "2028583.00", 
+        "nombre": "2458.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1835922.00", 
+        "nombre": "1886.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "921342.00", 
+        "nombre": "1321.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "879581.00", 
+        "nombre": "957.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "720472.00", 
+        "nombre": "843.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "627419.00", 
+        "nombre": "581.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "364495.00", 
+        "nombre": "373.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "283353.00", 
+        "nombre": "375.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "263755.00", 
+        "nombre": "390.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "181224.00", 
+        "nombre": "183.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "421874.00", 
+        "nombre": "579.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Haut-Rhin", 
+    "montant": "8528020.00", 
+    "nombre": "9946.00"
+  }, 
+  {
     "dep": "38", 
     "kpi_top_10_naf": [
       {
@@ -456,6 +826,80 @@
     "libelle": "Is\u00e8re", 
     "montant": "20667443.00", 
     "nombre": "23720.00"
+  }, 
+  {
+    "dep": "31", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "4714551.00", 
+        "nombre": "5069.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "3910953.00", 
+        "nombre": "4776.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1701710.00", 
+        "nombre": "2459.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "1418321.00", 
+        "nombre": "1365.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "1409652.00", 
+        "nombre": "1755.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1360778.00", 
+        "nombre": "1620.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "994132.00", 
+        "nombre": "1030.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "809243.00", 
+        "nombre": "1191.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "786339.00", 
+        "nombre": "872.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "596305.00", 
+        "nombre": "869.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "1272477.00", 
+        "nombre": "1635.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Haute-Garonne", 
+    "montant": "18974461.00", 
+    "nombre": "22641.00"
   }, 
   {
     "dep": "73", 
@@ -532,6 +976,80 @@
     "nombre": "11926.00"
   }, 
   {
+    "dep": "09", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "678580.00", 
+        "nombre": "797.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "492123.00", 
+        "nombre": "651.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "223245.00", 
+        "nombre": "313.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "221898.00", 
+        "nombre": "333.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "211841.00", 
+        "nombre": "318.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "203614.00", 
+        "nombre": "198.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "75338.00", 
+        "nombre": "84.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "54058.00", 
+        "nombre": "51.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "47052.00", 
+        "nombre": "81.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "34110.00", 
+        "nombre": "52.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "110606.00", 
+        "nombre": "155.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Ari\u00e8ge", 
+    "montant": "2352465.00", 
+    "nombre": "3033.00"
+  }, 
+  {
     "dep": "67", 
     "kpi_top_10_naf": [
       {
@@ -606,6 +1124,80 @@
     "nombre": "16091.00"
   }, 
   {
+    "dep": "27", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "2415996.00", 
+        "nombre": "2498.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "1637803.00", 
+        "nombre": "2024.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "818949.00", 
+        "nombre": "1164.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "817023.00", 
+        "nombre": "915.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "630175.00", 
+        "nombre": "729.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "378067.00", 
+        "nombre": "358.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "323035.00", 
+        "nombre": "307.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "234270.00", 
+        "nombre": "256.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "207713.00", 
+        "nombre": "332.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "169488.00", 
+        "nombre": "238.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "437593.00", 
+        "nombre": "617.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Eure", 
+    "montant": "8070112.00", 
+    "nombre": "9438.00"
+  }, 
+  {
     "dep": "81", 
     "kpi_top_10_naf": [
       {
@@ -678,6 +1270,80 @@
     "libelle": "Tarn", 
     "montant": "6496125.00", 
     "nombre": "7570.00"
+  }, 
+  {
+    "dep": "972", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "458192.00", 
+        "nombre": "616.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "391033.00", 
+        "nombre": "499.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "274922.00", 
+        "nombre": "322.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "229531.00", 
+        "nombre": "314.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "222692.00", 
+        "nombre": "215.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "178922.00", 
+        "nombre": "301.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "164136.00", 
+        "nombre": "211.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "155473.00", 
+        "nombre": "214.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "94286.00", 
+        "nombre": "138.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "57572.00", 
+        "nombre": "65.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "149282.00", 
+        "nombre": "205.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Martinique", 
+    "montant": "2376041.00", 
+    "nombre": "3100.00"
   }, 
   {
     "dep": "973", 
@@ -976,6 +1642,80 @@
     "nombre": "13445.00"
   }, 
   {
+    "dep": "01", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "2826295.00", 
+        "nombre": "2836.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "2067933.00", 
+        "nombre": "2380.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "1059506.00", 
+        "nombre": "1175.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "952006.00", 
+        "nombre": "1275.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "772745.00", 
+        "nombre": "693.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "768997.00", 
+        "nombre": "845.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "347061.00", 
+        "nombre": "360.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "338068.00", 
+        "nombre": "498.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "320978.00", 
+        "nombre": "311.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "233850.00", 
+        "nombre": "312.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "446894.00", 
+        "nombre": "632.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Ain", 
+    "montant": "10134333.00", 
+    "nombre": "11317.00"
+  }, 
+  {
     "dep": "33", 
     "kpi_top_10_naf": [
       {
@@ -1124,6 +1864,80 @@
     "nombre": "6580.00"
   }, 
   {
+    "dep": "35", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "4028090.00", 
+        "nombre": "3798.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "3941804.00", 
+        "nombre": "4254.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "2138435.00", 
+        "nombre": "2258.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "1720595.00", 
+        "nombre": "1936.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1492503.00", 
+        "nombre": "1833.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "1194298.00", 
+        "nombre": "1108.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "764278.00", 
+        "nombre": "749.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "595404.00", 
+        "nombre": "604.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "503031.00", 
+        "nombre": "625.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "442326.00", 
+        "nombre": "578.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "1153501.00", 
+        "nombre": "1373.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Ille-et-Vilaine", 
+    "montant": "17974265.00", 
+    "nombre": "19116.00"
+  }, 
+  {
     "dep": "05", 
     "kpi_top_10_naf": [
       {
@@ -1270,6 +2084,80 @@
     "libelle": "C\u00f4tes-d'Armor", 
     "montant": "11715530.00", 
     "nombre": "12684.00"
+  }, 
+  {
+    "dep": "46", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1030228.00", 
+        "nombre": "1124.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "797735.00", 
+        "nombre": "962.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "415887.00", 
+        "nombre": "537.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "338311.00", 
+        "nombre": "460.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "307805.00", 
+        "nombre": "430.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "207387.00", 
+        "nombre": "201.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "108058.00", 
+        "nombre": "120.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "81107.00", 
+        "nombre": "76.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "75476.00", 
+        "nombre": "138.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "61065.00", 
+        "nombre": "79.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "167681.00", 
+        "nombre": "246.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Lot", 
+    "montant": "3590740.00", 
+    "nombre": "4373.00"
   }, 
   {
     "dep": "85", 
@@ -1492,6 +2380,80 @@
     "libelle": "Guadeloupe", 
     "montant": "2591246.00", 
     "nombre": "3713.00"
+  }, 
+  {
+    "dep": "93", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "2264156.00", 
+        "nombre": "3285.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1949298.00", 
+        "nombre": "2368.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "1924954.00", 
+        "nombre": "2928.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "744962.00", 
+        "nombre": "684.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "483688.00", 
+        "nombre": "633.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "483028.00", 
+        "nombre": "803.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "432492.00", 
+        "nombre": "514.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "357527.00", 
+        "nombre": "535.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "357012.00", 
+        "nombre": "586.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Information et communication", 
+        "montant": "277943.00", 
+        "nombre": "415.00", 
+        "section_naf": "J"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "610136.00", 
+        "nombre": "779.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Seine-Saint-Denis", 
+    "montant": "9885196.00", 
+    "nombre": "13530.00"
   }, 
   {
     "dep": "34", 
@@ -1864,6 +2826,80 @@
     "nombre": "6811.00"
   }, 
   {
+    "dep": "87", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1251172.00", 
+        "nombre": "1359.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "1031280.00", 
+        "nombre": "1298.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "632756.00", 
+        "nombre": "847.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "490601.00", 
+        "nombre": "651.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "468648.00", 
+        "nombre": "607.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "281979.00", 
+        "nombre": "269.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "182462.00", 
+        "nombre": "192.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "157960.00", 
+        "nombre": "152.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "147476.00", 
+        "nombre": "223.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "111539.00", 
+        "nombre": "154.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "293924.00", 
+        "nombre": "383.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Haute-Vienne", 
+    "montant": "5049797.00", 
+    "nombre": "6135.00"
+  }, 
+  {
     "dep": "88", 
     "kpi_top_10_naf": [
       {
@@ -2084,2596 +3120,6 @@
     "libelle": "Manche", 
     "montant": "8800248.00", 
     "nombre": "9808.00"
-  }, 
-  {
-    "dep": "62", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "3340170.00", 
-        "nombre": "4296.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "3312196.00", 
-        "nombre": "3446.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1716124.00", 
-        "nombre": "2577.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1637715.00", 
-        "nombre": "1878.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "1150695.00", 
-        "nombre": "1352.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "1033183.00", 
-        "nombre": "965.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "532343.00", 
-        "nombre": "517.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "372696.00", 
-        "nombre": "398.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "362862.00", 
-        "nombre": "546.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "322408.00", 
-        "nombre": "444.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "777183.00", 
-        "nombre": "1043.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Pas-de-Calais", 
-    "montant": "14557575.00", 
-    "nombre": "17462.00"
-  }, 
-  {
-    "dep": "51", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1692335.00", 
-        "nombre": "1803.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1468006.00", 
-        "nombre": "1823.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "766663.00", 
-        "nombre": "1074.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "707491.00", 
-        "nombre": "796.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "587987.00", 
-        "nombre": "549.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "585556.00", 
-        "nombre": "692.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "300852.00", 
-        "nombre": "311.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "208801.00", 
-        "nombre": "208.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "186629.00", 
-        "nombre": "281.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "185857.00", 
-        "nombre": "252.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "474530.00", 
-        "nombre": "623.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Marne", 
-    "montant": "7164707.00", 
-    "nombre": "8412.00"
-  }, 
-  {
-    "dep": "39", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "909085.00", 
-        "nombre": "938.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "873275.00", 
-        "nombre": "1050.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "475054.00", 
-        "nombre": "583.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "397018.00", 
-        "nombre": "464.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "374060.00", 
-        "nombre": "501.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "231065.00", 
-        "nombre": "222.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "138023.00", 
-        "nombre": "128.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "117965.00", 
-        "nombre": "168.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "111638.00", 
-        "nombre": "127.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "75644.00", 
-        "nombre": "100.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "230102.00", 
-        "nombre": "322.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Jura", 
-    "montant": "3932929.00", 
-    "nombre": "4603.00"
-  }, 
-  {
-    "dep": "49", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "3180661.00", 
-        "nombre": "3118.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "2487269.00", 
-        "nombre": "2801.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "1525967.00", 
-        "nombre": "1366.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "1344297.00", 
-        "nombre": "1486.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1226630.00", 
-        "nombre": "1485.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1155960.00", 
-        "nombre": "1274.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "489193.00", 
-        "nombre": "494.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "397503.00", 
-        "nombre": "371.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "316242.00", 
-        "nombre": "419.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "307646.00", 
-        "nombre": "398.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "778288.00", 
-        "nombre": "971.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Maine-et-Loire", 
-    "montant": "13209656.00", 
-    "nombre": "14183.00"
-  }, 
-  {
-    "dep": "10", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1081505.00", 
-        "nombre": "1135.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "777150.00", 
-        "nombre": "1025.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "425804.00", 
-        "nombre": "610.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "376737.00", 
-        "nombre": "349.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "365733.00", 
-        "nombre": "437.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "360792.00", 
-        "nombre": "423.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "147969.00", 
-        "nombre": "140.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "106272.00", 
-        "nombre": "111.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "102647.00", 
-        "nombre": "163.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "72091.00", 
-        "nombre": "101.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "254979.00", 
-        "nombre": "363.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Aube", 
-    "montant": "4071679.00", 
-    "nombre": "4857.00"
-  }, 
-  {
-    "dep": "26", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "2361876.00", 
-        "nombre": "2614.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "2045875.00", 
-        "nombre": "2556.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "897762.00", 
-        "nombre": "1186.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "828629.00", 
-        "nombre": "1025.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "783707.00", 
-        "nombre": "1151.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "560089.00", 
-        "nombre": "524.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "330971.00", 
-        "nombre": "362.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "276377.00", 
-        "nombre": "437.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "208759.00", 
-        "nombre": "289.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "198204.00", 
-        "nombre": "197.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "476659.00", 
-        "nombre": "674.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Dr\u00f4me", 
-    "montant": "8968908.00", 
-    "nombre": "11015.00"
-  }, 
-  {
-    "dep": "53", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1181568.00", 
-        "nombre": "1155.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1011377.00", 
-        "nombre": "1111.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "489231.00", 
-        "nombre": "528.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "477764.00", 
-        "nombre": "551.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "462665.00", 
-        "nombre": "518.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "413644.00", 
-        "nombre": "370.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "156713.00", 
-        "nombre": "147.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "134159.00", 
-        "nombre": "131.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "96256.00", 
-        "nombre": "111.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "91902.00", 
-        "nombre": "122.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "310481.00", 
-        "nombre": "374.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Mayenne", 
-    "montant": "4825760.00", 
-    "nombre": "5118.00"
-  }, 
-  {
-    "dep": "64", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "3411941.00", 
-        "nombre": "3508.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "2610021.00", 
-        "nombre": "3080.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1330490.00", 
-        "nombre": "1490.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "1197421.00", 
-        "nombre": "1117.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1193531.00", 
-        "nombre": "1636.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "1105156.00", 
-        "nombre": "1352.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "635160.00", 
-        "nombre": "671.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "457320.00", 
-        "nombre": "451.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "372777.00", 
-        "nombre": "545.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "302622.00", 
-        "nombre": "428.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "723614.00", 
-        "nombre": "966.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Pyr\u00e9n\u00e9es-Atlantiques", 
-    "montant": "13340053.00", 
-    "nombre": "15244.00"
-  }, 
-  {
-    "dep": "2A", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "880479.00", 
-        "nombre": "1088.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "625842.00", 
-        "nombre": "754.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "459247.00", 
-        "nombre": "520.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "189717.00", 
-        "nombre": "292.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "186507.00", 
-        "nombre": "337.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "135807.00", 
-        "nombre": "213.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "132445.00", 
-        "nombre": "127.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "100240.00", 
-        "nombre": "114.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "67351.00", 
-        "nombre": "104.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "65922.00", 
-        "nombre": "77.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "89570.00", 
-        "nombre": "129.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Corse-du-Sud", 
-    "montant": "2933127.00", 
-    "nombre": "3755.00"
-  }, 
-  {
-    "dep": "65", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1106832.00", 
-        "nombre": "1228.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "875348.00", 
-        "nombre": "1065.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "569787.00", 
-        "nombre": "657.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "358376.00", 
-        "nombre": "517.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "311591.00", 
-        "nombre": "296.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "293249.00", 
-        "nombre": "371.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "141814.00", 
-        "nombre": "176.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "115544.00", 
-        "nombre": "173.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "103788.00", 
-        "nombre": "107.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "77334.00", 
-        "nombre": "106.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "188483.00", 
-        "nombre": "267.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Hautes-Pyr\u00e9n\u00e9es", 
-    "montant": "4142146.00", 
-    "nombre": "4963.00"
-  }, 
-  {
-    "dep": "71", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "2227746.00", 
-        "nombre": "2194.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1997344.00", 
-        "nombre": "2329.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "938152.00", 
-        "nombre": "1071.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "924583.00", 
-        "nombre": "1051.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "910086.00", 
-        "nombre": "1108.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "640935.00", 
-        "nombre": "590.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "264673.00", 
-        "nombre": "242.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "238971.00", 
-        "nombre": "247.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "196154.00", 
-        "nombre": "285.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "167138.00", 
-        "nombre": "214.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "409850.00", 
-        "nombre": "573.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Sa\u00f4ne-et-Loire", 
-    "montant": "8915632.00", 
-    "nombre": "9904.00"
-  }, 
-  {
-    "dep": "83", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "5907587.00", 
-        "nombre": "6740.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "4674635.00", 
-        "nombre": "6176.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "2049145.00", 
-        "nombre": "2398.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1805009.00", 
-        "nombre": "2908.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "1525844.00", 
-        "nombre": "2050.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "1041031.00", 
-        "nombre": "1606.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "1031123.00", 
-        "nombre": "1012.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "940591.00", 
-        "nombre": "1030.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "534904.00", 
-        "nombre": "563.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "499132.00", 
-        "nombre": "751.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "906758.00", 
-        "nombre": "1288.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Var", 
-    "montant": "20915759.00", 
-    "nombre": "26522.00"
-  }, 
-  {
-    "dep": "69", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "6201050.00", 
-        "nombre": "7172.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "5660218.00", 
-        "nombre": "5728.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "2360902.00", 
-        "nombre": "2692.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "2208661.00", 
-        "nombre": "2921.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "2072939.00", 
-        "nombre": "2276.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "2071964.00", 
-        "nombre": "1921.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "1316192.00", 
-        "nombre": "1765.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "1313983.00", 
-        "nombre": "1624.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "1276774.00", 
-        "nombre": "1307.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "1171536.00", 
-        "nombre": "1475.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "1992315.00", 
-        "nombre": "2527.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Rh\u00f4ne", 
-    "montant": "27646534.00", 
-    "nombre": "31408.00"
-  }, 
-  {
-    "dep": "08", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "803626.00", 
-        "nombre": "886.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "609462.00", 
-        "nombre": "869.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "368855.00", 
-        "nombre": "421.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "361067.00", 
-        "nombre": "334.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "318677.00", 
-        "nombre": "499.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "282786.00", 
-        "nombre": "376.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "120989.00", 
-        "nombre": "122.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "60807.00", 
-        "nombre": "66.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "58745.00", 
-        "nombre": "117.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "55668.00", 
-        "nombre": "80.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "162444.00", 
-        "nombre": "263.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Ardennes", 
-    "montant": "3203126.00", 
-    "nombre": "4033.00"
-  }, 
-  {
-    "dep": "66", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "2071562.00", 
-        "nombre": "2390.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1626287.00", 
-        "nombre": "2234.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "807495.00", 
-        "nombre": "992.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "704039.00", 
-        "nombre": "1077.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "550034.00", 
-        "nombre": "708.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "433973.00", 
-        "nombre": "436.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "371837.00", 
-        "nombre": "441.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "241647.00", 
-        "nombre": "414.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "183346.00", 
-        "nombre": "193.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "156794.00", 
-        "nombre": "239.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "409986.00", 
-        "nombre": "567.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Pyr\u00e9n\u00e9es-Orientales", 
-    "montant": "7557000.00", 
-    "nombre": "9691.00"
-  }, 
-  {
-    "dep": "24", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "2400274.00", 
-        "nombre": "2679.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1729343.00", 
-        "nombre": "2329.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "980314.00", 
-        "nombre": "1350.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "782590.00", 
-        "nombre": "1018.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "764251.00", 
-        "nombre": "1147.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "353947.00", 
-        "nombre": "358.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "234745.00", 
-        "nombre": "453.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "227518.00", 
-        "nombre": "284.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "226776.00", 
-        "nombre": "224.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "131248.00", 
-        "nombre": "198.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "380921.00", 
-        "nombre": "507.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Dordogne", 
-    "montant": "8211927.00", 
-    "nombre": "10547.00"
-  }, 
-  {
-    "dep": "17", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "3734988.00", 
-        "nombre": "3897.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "3150439.00", 
-        "nombre": "3792.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1498425.00", 
-        "nombre": "1702.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "1212706.00", 
-        "nombre": "1506.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1170888.00", 
-        "nombre": "1631.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "748480.00", 
-        "nombre": "735.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "675950.00", 
-        "nombre": "730.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "356413.00", 
-        "nombre": "546.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "308203.00", 
-        "nombre": "303.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "268690.00", 
-        "nombre": "372.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "686234.00", 
-        "nombre": "966.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Charente-Maritime", 
-    "montant": "13811416.00", 
-    "nombre": "16180.00"
-  }, 
-  {
-    "dep": "16", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1639610.00", 
-        "nombre": "1789.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1256595.00", 
-        "nombre": "1570.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "583911.00", 
-        "nombre": "840.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "582520.00", 
-        "nombre": "712.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "463583.00", 
-        "nombre": "611.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "365255.00", 
-        "nombre": "334.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "163518.00", 
-        "nombre": "167.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "163452.00", 
-        "nombre": "160.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "130003.00", 
-        "nombre": "270.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "100683.00", 
-        "nombre": "143.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "307879.00", 
-        "nombre": "427.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Charente", 
-    "montant": "5757009.00", 
-    "nombre": "7023.00"
-  }, 
-  {
-    "dep": "21", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "2128524.00", 
-        "nombre": "2113.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "2012457.00", 
-        "nombre": "2339.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "801512.00", 
-        "nombre": "903.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "753956.00", 
-        "nombre": "963.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "714610.00", 
-        "nombre": "842.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "465632.00", 
-        "nombre": "426.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "339710.00", 
-        "nombre": "333.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "315697.00", 
-        "nombre": "311.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "270026.00", 
-        "nombre": "368.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "219527.00", 
-        "nombre": "290.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "502638.00", 
-        "nombre": "635.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "C\u00f4te-d'Or", 
-    "montant": "8524289.00", 
-    "nombre": "9523.00"
-  }, 
-  {
-    "dep": "58", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "751888.00", 
-        "nombre": "770.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "596228.00", 
-        "nombre": "745.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "367262.00", 
-        "nombre": "425.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "298627.00", 
-        "nombre": "358.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "297580.00", 
-        "nombre": "388.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "128201.00", 
-        "nombre": "117.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "116735.00", 
-        "nombre": "104.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "73639.00", 
-        "nombre": "80.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "54749.00", 
-        "nombre": "86.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "47030.00", 
-        "nombre": "66.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "150199.00", 
-        "nombre": "208.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Ni\u00e8vre", 
-    "montant": "2882138.00", 
-    "nombre": "3347.00"
-  }, 
-  {
-    "dep": "76", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "3374276.00", 
-        "nombre": "4178.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "3147150.00", 
-        "nombre": "3184.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1511224.00", 
-        "nombre": "1639.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1481746.00", 
-        "nombre": "2100.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "1423513.00", 
-        "nombre": "1574.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "730450.00", 
-        "nombre": "668.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "643379.00", 
-        "nombre": "634.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "529583.00", 
-        "nombre": "550.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "396477.00", 
-        "nombre": "528.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "324455.00", 
-        "nombre": "482.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "825718.00", 
-        "nombre": "1077.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Seine-Maritime", 
-    "montant": "14387971.00", 
-    "nombre": "16614.00"
-  }, 
-  {
-    "dep": "63", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "2550008.00", 
-        "nombre": "2714.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "2213839.00", 
-        "nombre": "2648.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1124034.00", 
-        "nombre": "1328.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "983641.00", 
-        "nombre": "1215.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "941861.00", 
-        "nombre": "1289.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "559827.00", 
-        "nombre": "523.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "388527.00", 
-        "nombre": "414.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "370895.00", 
-        "nombre": "391.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "250371.00", 
-        "nombre": "359.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "202817.00", 
-        "nombre": "291.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "557729.00", 
-        "nombre": "714.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Puy-de-D\u00f4me", 
-    "montant": "10143549.00", 
-    "nombre": "11886.00"
-  }, 
-  {
-    "dep": "974", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1929090.00", 
-        "nombre": "2514.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1219243.00", 
-        "nombre": "1476.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "717317.00", 
-        "nombre": "903.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "665915.00", 
-        "nombre": "906.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "569826.00", 
-        "nombre": "852.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "504614.00", 
-        "nombre": "539.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "456132.00", 
-        "nombre": "463.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "321838.00", 
-        "nombre": "442.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "218216.00", 
-        "nombre": "323.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "204599.00", 
-        "nombre": "217.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "593829.00", 
-        "nombre": "789.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "La R\u00e9union", 
-    "montant": "7400619.00", 
-    "nombre": "9424.00"
-  }, 
-  {
-    "dep": "78", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "2713476.00", 
-        "nombre": "2855.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "2464464.00", 
-        "nombre": "2917.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "1504549.00", 
-        "nombre": "1381.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "1131099.00", 
-        "nombre": "1355.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1094891.00", 
-        "nombre": "1511.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "726802.00", 
-        "nombre": "964.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "682610.00", 
-        "nombre": "721.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "626765.00", 
-        "nombre": "671.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "584840.00", 
-        "nombre": "814.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "554667.00", 
-        "nombre": "765.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "932909.00", 
-        "nombre": "1222.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Yvelines", 
-    "montant": "13017072.00", 
-    "nombre": "15176.00"
-  }, 
-  {
-    "dep": "52", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "576162.00", 
-        "nombre": "615.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "519606.00", 
-        "nombre": "674.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "258398.00", 
-        "nombre": "347.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "252271.00", 
-        "nombre": "296.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "192658.00", 
-        "nombre": "236.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "130990.00", 
-        "nombre": "127.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "83963.00", 
-        "nombre": "78.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "53588.00", 
-        "nombre": "62.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "46466.00", 
-        "nombre": "58.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "31672.00", 
-        "nombre": "56.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "107071.00", 
-        "nombre": "160.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Haute-Marne", 
-    "montant": "2252845.00", 
-    "nombre": "2709.00"
-  }, 
-  {
-    "dep": "68", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "2028583.00", 
-        "nombre": "2458.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1835922.00", 
-        "nombre": "1886.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "921342.00", 
-        "nombre": "1321.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "879581.00", 
-        "nombre": "957.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "720472.00", 
-        "nombre": "843.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "627419.00", 
-        "nombre": "581.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "364495.00", 
-        "nombre": "373.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "283353.00", 
-        "nombre": "375.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "263755.00", 
-        "nombre": "390.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "181224.00", 
-        "nombre": "183.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "421874.00", 
-        "nombre": "579.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Haut-Rhin", 
-    "montant": "8528020.00", 
-    "nombre": "9946.00"
-  }, 
-  {
-    "dep": "31", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "4714551.00", 
-        "nombre": "5069.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "3910953.00", 
-        "nombre": "4776.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1701710.00", 
-        "nombre": "2459.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "1418321.00", 
-        "nombre": "1365.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "1409652.00", 
-        "nombre": "1755.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1360778.00", 
-        "nombre": "1620.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "994132.00", 
-        "nombre": "1030.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "809243.00", 
-        "nombre": "1191.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "786339.00", 
-        "nombre": "872.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "596305.00", 
-        "nombre": "869.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "1272477.00", 
-        "nombre": "1635.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Haute-Garonne", 
-    "montant": "18974461.00", 
-    "nombre": "22641.00"
-  }, 
-  {
-    "dep": "09", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "678580.00", 
-        "nombre": "797.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "492123.00", 
-        "nombre": "651.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "223245.00", 
-        "nombre": "313.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "221898.00", 
-        "nombre": "333.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "211841.00", 
-        "nombre": "318.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "203614.00", 
-        "nombre": "198.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "75338.00", 
-        "nombre": "84.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "54058.00", 
-        "nombre": "51.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "47052.00", 
-        "nombre": "81.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "34110.00", 
-        "nombre": "52.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "110606.00", 
-        "nombre": "155.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Ari\u00e8ge", 
-    "montant": "2352465.00", 
-    "nombre": "3033.00"
-  }, 
-  {
-    "dep": "27", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "2415996.00", 
-        "nombre": "2498.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1637803.00", 
-        "nombre": "2024.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "818949.00", 
-        "nombre": "1164.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "817023.00", 
-        "nombre": "915.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "630175.00", 
-        "nombre": "729.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "378067.00", 
-        "nombre": "358.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "323035.00", 
-        "nombre": "307.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "234270.00", 
-        "nombre": "256.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "207713.00", 
-        "nombre": "332.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "169488.00", 
-        "nombre": "238.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "437593.00", 
-        "nombre": "617.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Eure", 
-    "montant": "8070112.00", 
-    "nombre": "9438.00"
-  }, 
-  {
-    "dep": "972", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "458192.00", 
-        "nombre": "616.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "391033.00", 
-        "nombre": "499.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "274922.00", 
-        "nombre": "322.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "229531.00", 
-        "nombre": "314.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "222692.00", 
-        "nombre": "215.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "178922.00", 
-        "nombre": "301.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "164136.00", 
-        "nombre": "211.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "155473.00", 
-        "nombre": "214.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "94286.00", 
-        "nombre": "138.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "57572.00", 
-        "nombre": "65.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "149282.00", 
-        "nombre": "205.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Martinique", 
-    "montant": "2376041.00", 
-    "nombre": "3100.00"
-  }, 
-  {
-    "dep": "01", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "2826295.00", 
-        "nombre": "2836.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "2067933.00", 
-        "nombre": "2380.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "1059506.00", 
-        "nombre": "1175.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "952006.00", 
-        "nombre": "1275.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "772745.00", 
-        "nombre": "693.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "768997.00", 
-        "nombre": "845.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "347061.00", 
-        "nombre": "360.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "338068.00", 
-        "nombre": "498.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "320978.00", 
-        "nombre": "311.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "233850.00", 
-        "nombre": "312.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "446894.00", 
-        "nombre": "632.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Ain", 
-    "montant": "10134333.00", 
-    "nombre": "11317.00"
-  }, 
-  {
-    "dep": "35", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "4028090.00", 
-        "nombre": "3798.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "3941804.00", 
-        "nombre": "4254.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "2138435.00", 
-        "nombre": "2258.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "1720595.00", 
-        "nombre": "1936.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1492503.00", 
-        "nombre": "1833.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "1194298.00", 
-        "nombre": "1108.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "764278.00", 
-        "nombre": "749.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "595404.00", 
-        "nombre": "604.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "503031.00", 
-        "nombre": "625.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "442326.00", 
-        "nombre": "578.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "1153501.00", 
-        "nombre": "1373.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Ille-et-Vilaine", 
-    "montant": "17974265.00", 
-    "nombre": "19116.00"
-  }, 
-  {
-    "dep": "46", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1030228.00", 
-        "nombre": "1124.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "797735.00", 
-        "nombre": "962.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "415887.00", 
-        "nombre": "537.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "338311.00", 
-        "nombre": "460.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "307805.00", 
-        "nombre": "430.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "207387.00", 
-        "nombre": "201.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "108058.00", 
-        "nombre": "120.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "81107.00", 
-        "nombre": "76.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "75476.00", 
-        "nombre": "138.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "61065.00", 
-        "nombre": "79.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "167681.00", 
-        "nombre": "246.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Lot", 
-    "montant": "3590740.00", 
-    "nombre": "4373.00"
-  }, 
-  {
-    "dep": "93", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "2264156.00", 
-        "nombre": "3285.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1949298.00", 
-        "nombre": "2368.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1924954.00", 
-        "nombre": "2928.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "744962.00", 
-        "nombre": "684.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "483688.00", 
-        "nombre": "633.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "483028.00", 
-        "nombre": "803.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "432492.00", 
-        "nombre": "514.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "357527.00", 
-        "nombre": "535.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "357012.00", 
-        "nombre": "586.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Information et communication", 
-        "montant": "277943.00", 
-        "nombre": "415.00", 
-        "section_naf": "J"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "610136.00", 
-        "nombre": "779.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Seine-Saint-Denis", 
-    "montant": "9885196.00", 
-    "nombre": "13530.00"
-  }, 
-  {
-    "dep": "87", 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "1251172.00", 
-        "nombre": "1359.00", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1031280.00", 
-        "nombre": "1298.00", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "632756.00", 
-        "nombre": "847.00", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "490601.00", 
-        "nombre": "651.00", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "468648.00", 
-        "nombre": "607.00", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Non connu", 
-        "montant": "281979.00", 
-        "nombre": "269.00", 
-        "section_naf": "Z"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "182462.00", 
-        "nombre": "192.00", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "157960.00", 
-        "nombre": "152.00", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "147476.00", 
-        "nombre": "223.00", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "111539.00", 
-        "nombre": "154.00", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "293924.00", 
-        "nombre": "383.00", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Haute-Vienne", 
-    "montant": "5049797.00", 
-    "nombre": "6135.00"
   }, 
   {
     "dep": "77", 
@@ -4972,6 +3418,80 @@
     "nombre": "4314.00"
   }, 
   {
+    "dep": "62", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "3340170.00", 
+        "nombre": "4296.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "3312196.00", 
+        "nombre": "3446.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1716124.00", 
+        "nombre": "2577.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1637715.00", 
+        "nombre": "1878.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "1150695.00", 
+        "nombre": "1352.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "1033183.00", 
+        "nombre": "965.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "532343.00", 
+        "nombre": "517.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "372696.00", 
+        "nombre": "398.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "362862.00", 
+        "nombre": "546.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "322408.00", 
+        "nombre": "444.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "777183.00", 
+        "nombre": "1043.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Pas-de-Calais", 
+    "montant": "14557575.00", 
+    "nombre": "17462.00"
+  }, 
+  {
     "dep": "36", 
     "kpi_top_10_naf": [
       {
@@ -5194,6 +3714,154 @@
     "nombre": "10400.00"
   }, 
   {
+    "dep": "51", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1692335.00", 
+        "nombre": "1803.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "1468006.00", 
+        "nombre": "1823.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "766663.00", 
+        "nombre": "1074.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "707491.00", 
+        "nombre": "796.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "587987.00", 
+        "nombre": "549.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "585556.00", 
+        "nombre": "692.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "300852.00", 
+        "nombre": "311.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "208801.00", 
+        "nombre": "208.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "186629.00", 
+        "nombre": "281.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "185857.00", 
+        "nombre": "252.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "474530.00", 
+        "nombre": "623.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Marne", 
+    "montant": "7164707.00", 
+    "nombre": "8412.00"
+  }, 
+  {
+    "dep": "39", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "909085.00", 
+        "nombre": "938.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "873275.00", 
+        "nombre": "1050.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "475054.00", 
+        "nombre": "583.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "397018.00", 
+        "nombre": "464.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "374060.00", 
+        "nombre": "501.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "231065.00", 
+        "nombre": "222.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "138023.00", 
+        "nombre": "128.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "117965.00", 
+        "nombre": "168.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "111638.00", 
+        "nombre": "127.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "75644.00", 
+        "nombre": "100.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "230102.00", 
+        "nombre": "322.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Jura", 
+    "montant": "3932929.00", 
+    "nombre": "4603.00"
+  }, 
+  {
     "dep": "11", 
     "kpi_top_10_naf": [
       {
@@ -5266,6 +3934,80 @@
     "libelle": "Aude", 
     "montant": "5533251.00", 
     "nombre": "7436.00"
+  }, 
+  {
+    "dep": "49", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "3180661.00", 
+        "nombre": "3118.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "2487269.00", 
+        "nombre": "2801.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "1525967.00", 
+        "nombre": "1366.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "1344297.00", 
+        "nombre": "1486.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1226630.00", 
+        "nombre": "1485.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1155960.00", 
+        "nombre": "1274.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "489193.00", 
+        "nombre": "494.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "397503.00", 
+        "nombre": "371.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "316242.00", 
+        "nombre": "419.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "307646.00", 
+        "nombre": "398.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "778288.00", 
+        "nombre": "971.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Maine-et-Loire", 
+    "montant": "13209656.00", 
+    "nombre": "14183.00"
   }, 
   {
     "dep": "54", 
@@ -5638,6 +4380,80 @@
     "nombre": "13629.00"
   }, 
   {
+    "dep": "10", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1081505.00", 
+        "nombre": "1135.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "777150.00", 
+        "nombre": "1025.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "425804.00", 
+        "nombre": "610.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "376737.00", 
+        "nombre": "349.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "365733.00", 
+        "nombre": "437.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "360792.00", 
+        "nombre": "423.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "147969.00", 
+        "nombre": "140.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "106272.00", 
+        "nombre": "111.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "102647.00", 
+        "nombre": "163.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "72091.00", 
+        "nombre": "101.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "254979.00", 
+        "nombre": "363.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Aube", 
+    "montant": "4071679.00", 
+    "nombre": "4857.00"
+  }, 
+  {
     "dep": "86", 
     "kpi_top_10_naf": [
       {
@@ -5710,6 +4526,228 @@
     "libelle": "Vienne", 
     "montant": "5956742.00", 
     "nombre": "7024.00"
+  }, 
+  {
+    "dep": "26", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "2361876.00", 
+        "nombre": "2614.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "2045875.00", 
+        "nombre": "2556.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "897762.00", 
+        "nombre": "1186.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "828629.00", 
+        "nombre": "1025.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "783707.00", 
+        "nombre": "1151.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "560089.00", 
+        "nombre": "524.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "330971.00", 
+        "nombre": "362.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "276377.00", 
+        "nombre": "437.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "208759.00", 
+        "nombre": "289.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "198204.00", 
+        "nombre": "197.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "476659.00", 
+        "nombre": "674.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Dr\u00f4me", 
+    "montant": "8968908.00", 
+    "nombre": "11015.00"
+  }, 
+  {
+    "dep": "53", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1181568.00", 
+        "nombre": "1155.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "1011377.00", 
+        "nombre": "1111.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "489231.00", 
+        "nombre": "528.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "477764.00", 
+        "nombre": "551.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "462665.00", 
+        "nombre": "518.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "413644.00", 
+        "nombre": "370.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "156713.00", 
+        "nombre": "147.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "134159.00", 
+        "nombre": "131.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "96256.00", 
+        "nombre": "111.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "91902.00", 
+        "nombre": "122.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "310481.00", 
+        "nombre": "374.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Mayenne", 
+    "montant": "4825760.00", 
+    "nombre": "5118.00"
+  }, 
+  {
+    "dep": "64", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "3411941.00", 
+        "nombre": "3508.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "2610021.00", 
+        "nombre": "3080.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1330490.00", 
+        "nombre": "1490.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "1197421.00", 
+        "nombre": "1117.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1193531.00", 
+        "nombre": "1636.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "1105156.00", 
+        "nombre": "1352.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "635160.00", 
+        "nombre": "671.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "457320.00", 
+        "nombre": "451.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "372777.00", 
+        "nombre": "545.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "302622.00", 
+        "nombre": "428.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "723614.00", 
+        "nombre": "966.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Pyr\u00e9n\u00e9es-Atlantiques", 
+    "montant": "13340053.00", 
+    "nombre": "15244.00"
   }, 
   {
     "dep": "48", 
@@ -5860,6 +4898,80 @@
     "nombre": "7724.00"
   }, 
   {
+    "dep": "2A", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "880479.00", 
+        "nombre": "1088.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "625842.00", 
+        "nombre": "754.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "459247.00", 
+        "nombre": "520.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "189717.00", 
+        "nombre": "292.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "186507.00", 
+        "nombre": "337.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "135807.00", 
+        "nombre": "213.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "132445.00", 
+        "nombre": "127.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "100240.00", 
+        "nombre": "114.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "67351.00", 
+        "nombre": "104.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "65922.00", 
+        "nombre": "77.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "89570.00", 
+        "nombre": "129.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Corse-du-Sud", 
+    "montant": "2933127.00", 
+    "nombre": "3755.00"
+  }, 
+  {
     "dep": "56", 
     "kpi_top_10_naf": [
       {
@@ -5932,6 +5044,80 @@
     "libelle": "Morbihan", 
     "montant": "14975788.00", 
     "nombre": "16407.00"
+  }, 
+  {
+    "dep": "65", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1106832.00", 
+        "nombre": "1228.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "875348.00", 
+        "nombre": "1065.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "569787.00", 
+        "nombre": "657.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "358376.00", 
+        "nombre": "517.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "311591.00", 
+        "nombre": "296.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "293249.00", 
+        "nombre": "371.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "141814.00", 
+        "nombre": "176.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "115544.00", 
+        "nombre": "173.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "103788.00", 
+        "nombre": "107.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "77334.00", 
+        "nombre": "106.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "188483.00", 
+        "nombre": "267.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Hautes-Pyr\u00e9n\u00e9es", 
+    "montant": "4142146.00", 
+    "nombre": "4963.00"
   }, 
   {
     "dep": "37", 
@@ -6304,6 +5490,80 @@
     "nombre": "25438.00"
   }, 
   {
+    "dep": "71", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "2227746.00", 
+        "nombre": "2194.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "1997344.00", 
+        "nombre": "2329.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "938152.00", 
+        "nombre": "1071.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "924583.00", 
+        "nombre": "1051.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "910086.00", 
+        "nombre": "1108.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "640935.00", 
+        "nombre": "590.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "264673.00", 
+        "nombre": "242.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "238971.00", 
+        "nombre": "247.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "196154.00", 
+        "nombre": "285.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "167138.00", 
+        "nombre": "214.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "409850.00", 
+        "nombre": "573.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Sa\u00f4ne-et-Loire", 
+    "montant": "8915632.00", 
+    "nombre": "9904.00"
+  }, 
+  {
     "dep": "45", 
     "kpi_top_10_naf": [
       {
@@ -6452,6 +5712,154 @@
     "nombre": "16372.00"
   }, 
   {
+    "dep": "83", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "5907587.00", 
+        "nombre": "6740.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "4674635.00", 
+        "nombre": "6176.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "2049145.00", 
+        "nombre": "2398.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1805009.00", 
+        "nombre": "2908.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "1525844.00", 
+        "nombre": "2050.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "1041031.00", 
+        "nombre": "1606.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "1031123.00", 
+        "nombre": "1012.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "940591.00", 
+        "nombre": "1030.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "534904.00", 
+        "nombre": "563.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "499132.00", 
+        "nombre": "751.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "906758.00", 
+        "nombre": "1288.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Var", 
+    "montant": "20915759.00", 
+    "nombre": "26522.00"
+  }, 
+  {
+    "dep": "69", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "6201050.00", 
+        "nombre": "7172.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "5660218.00", 
+        "nombre": "5728.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "2360902.00", 
+        "nombre": "2692.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "2208661.00", 
+        "nombre": "2921.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "2072939.00", 
+        "nombre": "2276.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "2071964.00", 
+        "nombre": "1921.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "1316192.00", 
+        "nombre": "1765.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "1313983.00", 
+        "nombre": "1624.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "1276774.00", 
+        "nombre": "1307.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "1171536.00", 
+        "nombre": "1475.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "1992315.00", 
+        "nombre": "2527.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Rh\u00f4ne", 
+    "montant": "27646534.00", 
+    "nombre": "31408.00"
+  }, 
+  {
     "dep": "23", 
     "kpi_top_10_naf": [
       {
@@ -6524,6 +5932,80 @@
     "libelle": "Creuse", 
     "montant": "1603234.00", 
     "nombre": "2046.00"
+  }, 
+  {
+    "dep": "08", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "803626.00", 
+        "nombre": "886.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "609462.00", 
+        "nombre": "869.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "368855.00", 
+        "nombre": "421.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "361067.00", 
+        "nombre": "334.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "318677.00", 
+        "nombre": "499.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "282786.00", 
+        "nombre": "376.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "120989.00", 
+        "nombre": "122.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "60807.00", 
+        "nombre": "66.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "58745.00", 
+        "nombre": "117.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "55668.00", 
+        "nombre": "80.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "162444.00", 
+        "nombre": "263.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Ardennes", 
+    "montant": "3203126.00", 
+    "nombre": "4033.00"
   }, 
   {
     "dep": "29", 
@@ -6896,6 +6378,80 @@
     "nombre": "8239.00"
   }, 
   {
+    "dep": "66", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "2071562.00", 
+        "nombre": "2390.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "1626287.00", 
+        "nombre": "2234.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "807495.00", 
+        "nombre": "992.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "704039.00", 
+        "nombre": "1077.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "550034.00", 
+        "nombre": "708.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "433973.00", 
+        "nombre": "436.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "371837.00", 
+        "nombre": "441.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "241647.00", 
+        "nombre": "414.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "183346.00", 
+        "nombre": "193.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "156794.00", 
+        "nombre": "239.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "409986.00", 
+        "nombre": "567.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Pyr\u00e9n\u00e9es-Orientales", 
+    "montant": "7557000.00", 
+    "nombre": "9691.00"
+  }, 
+  {
     "dep": "61", 
     "kpi_top_10_naf": [
       {
@@ -6968,6 +6524,80 @@
     "libelle": "Orne", 
     "montant": "4713436.00", 
     "nombre": "5337.00"
+  }, 
+  {
+    "dep": "24", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "2400274.00", 
+        "nombre": "2679.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "1729343.00", 
+        "nombre": "2329.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "980314.00", 
+        "nombre": "1350.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "782590.00", 
+        "nombre": "1018.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "764251.00", 
+        "nombre": "1147.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "353947.00", 
+        "nombre": "358.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "234745.00", 
+        "nombre": "453.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "227518.00", 
+        "nombre": "284.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "226776.00", 
+        "nombre": "224.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "131248.00", 
+        "nombre": "198.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "380921.00", 
+        "nombre": "507.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Dordogne", 
+    "montant": "8211927.00", 
+    "nombre": "10547.00"
   }, 
   {
     "dep": "89", 
@@ -7044,6 +6674,80 @@
     "nombre": "5406.00"
   }, 
   {
+    "dep": "17", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "3734988.00", 
+        "nombre": "3897.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "3150439.00", 
+        "nombre": "3792.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1498425.00", 
+        "nombre": "1702.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "1212706.00", 
+        "nombre": "1506.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1170888.00", 
+        "nombre": "1631.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "748480.00", 
+        "nombre": "735.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "675950.00", 
+        "nombre": "730.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "356413.00", 
+        "nombre": "546.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "308203.00", 
+        "nombre": "303.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "268690.00", 
+        "nombre": "372.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "686234.00", 
+        "nombre": "966.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Charente-Maritime", 
+    "montant": "13811416.00", 
+    "nombre": "16180.00"
+  }, 
+  {
     "dep": "43", 
     "kpi_top_10_naf": [
       {
@@ -7116,6 +6820,154 @@
     "libelle": "Haute-Loire", 
     "montant": "4585599.00", 
     "nombre": "5130.00"
+  }, 
+  {
+    "dep": "16", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "1639610.00", 
+        "nombre": "1789.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "1256595.00", 
+        "nombre": "1570.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "583911.00", 
+        "nombre": "840.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "582520.00", 
+        "nombre": "712.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "463583.00", 
+        "nombre": "611.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "365255.00", 
+        "nombre": "334.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "163518.00", 
+        "nombre": "167.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "163452.00", 
+        "nombre": "160.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "130003.00", 
+        "nombre": "270.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "100683.00", 
+        "nombre": "143.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "307879.00", 
+        "nombre": "427.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Charente", 
+    "montant": "5757009.00", 
+    "nombre": "7023.00"
+  }, 
+  {
+    "dep": "21", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "2128524.00", 
+        "nombre": "2113.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "2012457.00", 
+        "nombre": "2339.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "801512.00", 
+        "nombre": "903.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "753956.00", 
+        "nombre": "963.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "714610.00", 
+        "nombre": "842.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "465632.00", 
+        "nombre": "426.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "339710.00", 
+        "nombre": "333.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "315697.00", 
+        "nombre": "311.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "270026.00", 
+        "nombre": "368.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "219527.00", 
+        "nombre": "290.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "502638.00", 
+        "nombre": "635.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "C\u00f4te-d'Or", 
+    "montant": "8524289.00", 
+    "nombre": "9523.00"
   }, 
   {
     "dep": "82", 
@@ -7192,6 +7044,80 @@
     "nombre": "4985.00"
   }, 
   {
+    "dep": "58", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "751888.00", 
+        "nombre": "770.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "596228.00", 
+        "nombre": "745.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "367262.00", 
+        "nombre": "425.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "298627.00", 
+        "nombre": "358.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "297580.00", 
+        "nombre": "388.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "128201.00", 
+        "nombre": "117.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "116735.00", 
+        "nombre": "104.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "73639.00", 
+        "nombre": "80.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "54749.00", 
+        "nombre": "86.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "47030.00", 
+        "nombre": "66.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "150199.00", 
+        "nombre": "208.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Ni\u00e8vre", 
+    "montant": "2882138.00", 
+    "nombre": "3347.00"
+  }, 
+  {
     "dep": "15", 
     "kpi_top_10_naf": [
       {
@@ -7264,6 +7190,80 @@
     "libelle": "Cantal", 
     "montant": "2887024.00", 
     "nombre": "3170.00"
+  }, 
+  {
+    "dep": "76", 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "3374276.00", 
+        "nombre": "4178.00", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "3147150.00", 
+        "nombre": "3184.00", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1511224.00", 
+        "nombre": "1639.00", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1481746.00", 
+        "nombre": "2100.00", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "1423513.00", 
+        "nombre": "1574.00", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Non connu", 
+        "montant": "730450.00", 
+        "nombre": "668.00", 
+        "section_naf": "Z"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "643379.00", 
+        "nombre": "634.00", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "529583.00", 
+        "nombre": "550.00", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "396477.00", 
+        "nombre": "528.00", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "324455.00", 
+        "nombre": "482.00", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "825718.00", 
+        "nombre": "1077.00", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Seine-Maritime", 
+    "montant": "14387971.00", 
+    "nombre": "16614.00"
   }, 
   {
     "dep": "90", 

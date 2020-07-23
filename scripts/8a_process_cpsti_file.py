@@ -3,11 +3,14 @@ from xlsx2csv import Xlsx2csv
 import sys
 
 daytoprocess = sys.argv[1]
-print("Read XLSX")
-xls_file = pd.ExcelFile("../data/cpsti/xlsx/"+daytoprocess+".xlsx")
-sheet_names = xls_file.sheet_names
+#print("Read XLSX")
+#xls_file = pd.ExcelFile("../data/cpsti/xlsx/"+daytoprocess+".xls")
+#sheet_names = xls_file.sheet_names
 
-df = xls_file.parse("OPEND_AIDE_CPSTI")
+#df = xls_file.parse("OPEND_AIDE_CPSTI")
+
+df = pd.read_csv("../data/cpsti/csv/"+daytoprocess+".csv",dtype=str,sep=";")
+
 print("Processing")
 df = df[['Code région','Code département','Code NA21','Nombre de bénéficiaires','Montant total de l\'aide']]
 
