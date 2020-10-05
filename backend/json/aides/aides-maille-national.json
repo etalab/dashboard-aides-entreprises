@@ -1,160 +1,653 @@
-[
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "3389450934.81", 
-        "nombre": "2639340", 
-        "nombre_siren": "1033265"
-      }, 
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "1520527781.06", 
-        "nombre": "1011808", 
-        "nombre_siren": "412438"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "873209465.25", 
-        "nombre": "585957", 
-        "nombre_siren": "213469"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "147657888.11", 
-        "nombre": "103007", 
-        "nombre_siren": "39474"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "462245795.81", 
-        "nombre": "316427", 
-        "nombre_siren": "126618"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "1189403667.75", 
-        "nombre": "792703", 
-        "nombre_siren": "328939"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "434467023.51", 
-        "nombre": "279485", 
-        "nombre_siren": "120812"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "129672464.26", 
-        "nombre": "81406", 
-        "nombre_siren": "35405"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "405595771.15", 
-        "nombre": "301438", 
-        "nombre_siren": "121187"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "32683355.95", 
-        "nombre": "19828", 
-        "nombre_siren": "8841"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "937944395.62", 
-        "nombre": "693682", 
-        "nombre_siren": "278185", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "813791136.99", 
-        "nombre": "542651", 
-        "nombre_siren": "168190", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "643877330.44", 
-        "nombre": "446416", 
-        "nombre_siren": "212772", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "586430752.39", 
-        "nombre": "428349", 
-        "nombre_siren": "174715", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "496389887.03", 
-        "nombre": "404350", 
-        "nombre_siren": "171030", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "539975202.36", 
-        "nombre": "375025", 
-        "nombre_siren": "100243", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "451934502.58", 
-        "nombre": "337729", 
-        "nombre_siren": "163722", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "343260762.79", 
-        "nombre": "272316", 
-        "nombre_siren": "81164", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "272893183.34", 
-        "nombre": "222751", 
-        "nombre_siren": "78836", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "250317657.15", 
-        "nombre": "189307", 
-        "nombre_siren": "71136", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "792047545.26", 
-        "nombre": "591620", 
-        "nombre_siren": "252287", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "montant": "6128862355.95", 
-    "nombre": "4504196", 
-    "nombre_siren": "1737612"
-  }
-]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>sqlalchemy.exc.OperationalError: (psycopg2.errors.AdminShutdown) terminating connection due to administrator command
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;]
+(Background on this error at: http://sqlalche.me/e/e3q8) // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css"
+        type="text/css">
+    <!-- We need to make sure this has a favicon so that the debugger does
+         not by accident trigger a request to /favicon.ico which might
+         change the application state. -->
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=jquery.js"></script>
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script type="text/javascript">
+      var TRACEBACK = 139625457150720,
+          CONSOLE_MODE = false,
+          EVALEX = true,
+          EVALEX_TRUSTED = false,
+          SECRET = "7Dy0bDMulRMPFDzpP024";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>sqlalchemy.exc.OperationalError</h1>
+<div class="detail">
+  <p class="errormsg">sqlalchemy.exc.OperationalError: (psycopg2.errors.AdminShutdown) terminating connection due to administrator command
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;]
+(Background on this error at: http://sqlalche.me/e/e3q8)</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  
+  <ul><li><div class="frame" id="frame-139625457150048">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1284</em>,
+      in <code class="function">_execute_context</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                        </span>if fn(cursor, statement, parameters, context):</pre>
+<pre class="line before"><span class="ws">                            </span>evt_handled = True</pre>
+<pre class="line before"><span class="ws">                            </span>break</pre>
+<pre class="line before"><span class="ws">                </span>if not evt_handled:</pre>
+<pre class="line before"><span class="ws">                    </span>self.dialect.do_execute(</pre>
+<pre class="line current"><span class="ws">                        </span>cursor, statement, parameters, context</pre>
+<pre class="line after"><span class="ws">                    </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>if self._has_events or self.engine._has_events:</pre>
+<pre class="line after"><span class="ws">                </span>self.dispatch.after_cursor_execute(</pre>
+<pre class="line after"><span class="ws">                    </span>self,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457150776">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/default.py"</cite>,
+      line <em class="line">590</em>,
+      in <code class="function">do_execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def do_executemany(self, cursor, statement, parameters, context=None):</pre>
+<pre class="line before"><span class="ws">        </span>cursor.executemany(statement, parameters)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def do_execute(self, cursor, statement, parameters, context=None):</pre>
+<pre class="line current"><span class="ws">        </span>cursor.execute(statement, parameters)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def do_execute_no_params(self, cursor, statement, context=None):</pre>
+<pre class="line after"><span class="ws">        </span>cursor.execute(statement)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def is_disconnect(self, e, connection, cursor):</pre></div>
+</div>
+
+<li><div class="exc-divider">The above exception was the direct cause of the following exception:</div>
+<li><div class="frame" id="frame-139625457150888">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">2464</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source "><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def __call__(self, environ, start_response):</pre>
+<pre class="line before"><span class="ws">        </span>&quot;&quot;&quot;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app` which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to applying middleware.&quot;&quot;&quot;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def __repr__(self):</pre>
+<pre class="line after"><span class="ws">        </span>return &quot;&lt;%s %r&gt;&quot; % (self.__class__.__name__, self.name)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457149600">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">2450</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457150832">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask_cors/extension.py"</cite>,
+      line <em class="line">161</em>,
+      in <code class="function">wrapped_function</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">        </span># Wrap exception handlers with cross_origin</pre>
+<pre class="line before"><span class="ws">        </span># These error handlers will still respect the behavior of the route</pre>
+<pre class="line before"><span class="ws">        </span>if options.get('intercept_exceptions', True):</pre>
+<pre class="line before"><span class="ws">            </span>def _after_request_decorator(f):</pre>
+<pre class="line before"><span class="ws">                </span>def wrapped_function(*args, **kwargs):</pre>
+<pre class="line current"><span class="ws">                    </span>return cors_after_request(app.make_response(f(*args, **kwargs)))</pre>
+<pre class="line after"><span class="ws">                </span>return wrapped_function</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>if hasattr(app, 'handle_exception'):</pre>
+<pre class="line after"><span class="ws">                </span>app.handle_exception = _after_request_decorator(</pre>
+<pre class="line after"><span class="ws">                    </span>app.handle_exception)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457148872">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1867</em>,
+      in <code class="function">handle_exception</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">            </span># if we want to repropagate the exception, we can attempt to</pre>
+<pre class="line before"><span class="ws">            </span># raise it with the whole traceback in case we can do that</pre>
+<pre class="line before"><span class="ws">            </span># (the function was actually called from the except part)</pre>
+<pre class="line before"><span class="ws">            </span># otherwise, we just raise the error again</pre>
+<pre class="line before"><span class="ws">            </span>if exc_value is e:</pre>
+<pre class="line current"><span class="ws">                </span>reraise(exc_type, exc_value, tb)</pre>
+<pre class="line after"><span class="ws">            </span>else:</pre>
+<pre class="line after"><span class="ws">                </span>raise e</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>self.log_exception((exc_type, exc_value, tb))</pre>
+<pre class="line after"><span class="ws">        </span>server_error = InternalServerError()</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457151112">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask/_compat.py"</cite>,
+      line <em class="line">39</em>,
+      in <code class="function">reraise</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">    </span>import collections.abc as collections_abc</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def reraise(tp, value, tb=None):</pre>
+<pre class="line before"><span class="ws">        </span>if value.__traceback__ is not tb:</pre>
+<pre class="line before"><span class="ws">            </span>raise value.with_traceback(tb)</pre>
+<pre class="line current"><span class="ws">        </span>raise value</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>implements_to_string = _identity</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>else:</pre>
+<pre class="line after"><span class="ws">    </span>iterkeys = lambda d: d.iterkeys()</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457148200">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">2447</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457148256">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1952</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">            </span>request_started.send(self)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(self, rv, from_error_handler=False):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Given the return value from a view function this finalizes</pre>
+<pre class="line after"><span class="ws">        </span>the request by converting it into a response and invoking the</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457150272">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask_cors/extension.py"</cite>,
+      line <em class="line">161</em>,
+      in <code class="function">wrapped_function</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">        </span># Wrap exception handlers with cross_origin</pre>
+<pre class="line before"><span class="ws">        </span># These error handlers will still respect the behavior of the route</pre>
+<pre class="line before"><span class="ws">        </span>if options.get('intercept_exceptions', True):</pre>
+<pre class="line before"><span class="ws">            </span>def _after_request_decorator(f):</pre>
+<pre class="line before"><span class="ws">                </span>def wrapped_function(*args, **kwargs):</pre>
+<pre class="line current"><span class="ws">                    </span>return cors_after_request(app.make_response(f(*args, **kwargs)))</pre>
+<pre class="line after"><span class="ws">                </span>return wrapped_function</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>if hasattr(app, 'handle_exception'):</pre>
+<pre class="line after"><span class="ws">                </span>app.handle_exception = _after_request_decorator(</pre>
+<pre class="line after"><span class="ws">                    </span>app.handle_exception)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457149992">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1821</em>,
+      in <code class="function">handle_user_exception</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">            </span>return self.handle_http_exception(e)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>handler = self._find_error_handler(e)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>if handler is None:</pre>
+<pre class="line current"><span class="ws">            </span>reraise(exc_type, exc_value, tb)</pre>
+<pre class="line after"><span class="ws">        </span>return handler(e)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def handle_exception(self, e):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Handle an exception that did not have an error handler</pre>
+<pre class="line after"><span class="ws">        </span>associated with it, or that was raised from an error handler.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457148648">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask/_compat.py"</cite>,
+      line <em class="line">39</em>,
+      in <code class="function">reraise</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">    </span>import collections.abc as collections_abc</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def reraise(tp, value, tb=None):</pre>
+<pre class="line before"><span class="ws">        </span>if value.__traceback__ is not tb:</pre>
+<pre class="line before"><span class="ws">            </span>raise value.with_traceback(tb)</pre>
+<pre class="line current"><span class="ws">        </span>raise value</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>implements_to_string = _identity</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>else:</pre>
+<pre class="line after"><span class="ws">    </span>iterkeys = lambda d: d.iterkeys()</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457147976">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1950</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">        </span>self.try_trigger_before_first_request_functions()</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(self, rv, from_error_handler=False):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457151392">
+  <h4>File <cite class="filename">"/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1936</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">            </span>getattr(rule, &quot;provide_automatic_options&quot;, False)</pre>
+<pre class="line before"><span class="ws">            </span>and req.method == &quot;OPTIONS&quot;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line current"><span class="ws">        </span>return self.view_functions[rule.endpoint](**req.view_args)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457150944">
+  <h4>File <cite class="filename">"/srv/dashboard/dashboard-aides-entreprises/backend/app.py"</cite>,
+      line <em class="line">172</em>,
+      in <code class="function">getStatAideNationalSectionAPE</code></h4>
+  <div class="source "><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>my_query_3 = &quot;SELECT * FROM (SELECT A.classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif C ON A.classe_effectif = C.denomination WHERE A.classe_effectif IS NOT NULL GROUP BY A.classe_effectif, C.libelle) tbl WHERE totalsiren &gt; 2 ORDER BY classe_effectif;&quot;</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>my_query_4 = &quot;SELECT * FROM (SELECT SUBSTR(A.categoriejuridiqueunitelegale,1,2) AS code_categorie_juridique, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN categoriejuridique C ON SUBSTR(A.categoriejuridiqueunitelegale,1,2) = C.code WHERE A.categoriejuridiqueunitelegale IS NOT NULL GROUP BY SUBSTR(A.categoriejuridiqueunitelegale,1,2), C.libelle) tbl WHERE totalsiren &gt; 2 ORDER BY totalmontant DESC;&quot;</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">        </span>data = db.session.execute(my_query).fetchall()</pre>
+<pre class="line after"><span class="ws">        </span>data2 = db.session.execute(my_query_2).fetchall()</pre>
+<pre class="line after"><span class="ws">        </span>data3 = db.session.execute(my_query_3).fetchall()</pre>
+<pre class="line after"><span class="ws">        </span>data4 = db.session.execute(my_query_4).fetchall()</pre>
+<pre class="line after"><span class="ws">        </span>app.logger.info(data)</pre>
+<pre class="line after"><span class="ws">        </span>dataJson = []</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457148312">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/orm/scoping.py"</cite>,
+      line <em class="line">163</em>,
+      in <code class="function">do</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span>&quot;&quot;&quot;Old name for backwards compatibility.&quot;&quot;&quot;</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span>def instrument(name):</pre>
+<pre class="line before"><span class="ws">    </span>def do(self, *args, **kwargs):</pre>
+<pre class="line current"><span class="ws">        </span>return getattr(self.registry(), name)(*args, **kwargs)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>return do</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>for meth in Session.public_methods:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457150216">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/orm/session.py"</cite>,
+      line <em class="line">1292</em>,
+      in <code class="function">execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>if bind is None:</pre>
+<pre class="line before"><span class="ws">            </span>bind = self.get_bind(mapper, clause=clause, **kw)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>return self._connection_for_bind(bind, close_with_result=True).execute(</pre>
+<pre class="line current"><span class="ws">            </span>clause, params or {}</pre>
+<pre class="line after"><span class="ws">        </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def scalar(self, clause, params=None, mapper=None, bind=None, **kw):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Like :meth:`~.Session.execute` but return a scalar result.&quot;&quot;&quot;</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457150328">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1020</em>,
+      in <code class="function">execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>except AttributeError as err:</pre>
+<pre class="line before"><span class="ws">            </span>util.raise_(</pre>
+<pre class="line before"><span class="ws">                </span>exc.ObjectNotExecutableError(object_), replace_context=err</pre>
+<pre class="line before"><span class="ws">            </span>)</pre>
+<pre class="line before"><span class="ws">        </span>else:</pre>
+<pre class="line current"><span class="ws">            </span>return meth(self, multiparams, params)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def _execute_function(self, func, multiparams, params):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Execute a sql.FunctionElement object.&quot;&quot;&quot;</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>return self._execute_clauseelement(func.select(), multiparams, params)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457148536">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/sql/elements.py"</cite>,
+      line <em class="line">298</em>,
+      in <code class="function">_execute_on_connection</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span># self</pre>
+<pre class="line before"><span class="ws">            </span>return self</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def _execute_on_connection(self, connection, multiparams, params):</pre>
+<pre class="line before"><span class="ws">        </span>if self.supports_execution:</pre>
+<pre class="line current"><span class="ws">            </span>return connection._execute_clauseelement(self, multiparams, params)</pre>
+<pre class="line after"><span class="ws">        </span>else:</pre>
+<pre class="line after"><span class="ws">            </span>raise exc.ObjectNotExecutableError(self)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def unique_params(self, *optionaldict, **kwargs):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Return a copy with :func:`bindparam()` elements replaced.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457150496">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1139</em>,
+      in <code class="function">_execute_clauseelement</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>dialect,</pre>
+<pre class="line before"><span class="ws">            </span>dialect.execution_ctx_cls._init_compiled,</pre>
+<pre class="line before"><span class="ws">            </span>compiled_sql,</pre>
+<pre class="line before"><span class="ws">            </span>distilled_params,</pre>
+<pre class="line before"><span class="ws">            </span>compiled_sql,</pre>
+<pre class="line current"><span class="ws">            </span>distilled_params,</pre>
+<pre class="line after"><span class="ws">        </span>)</pre>
+<pre class="line after"><span class="ws">        </span>if self._has_events or self.engine._has_events:</pre>
+<pre class="line after"><span class="ws">            </span>self.dispatch.after_execute(self, elem, multiparams, params, ret)</pre>
+<pre class="line after"><span class="ws">        </span>return ret</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457149656">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1324</em>,
+      in <code class="function">_execute_context</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                    </span># rows to fetch.</pre>
+<pre class="line before"><span class="ws">                    </span>result._autoclose_connection = True</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>except BaseException as e:</pre>
+<pre class="line before"><span class="ws">            </span>self._handle_dbapi_exception(</pre>
+<pre class="line current"><span class="ws">                </span>e, statement, parameters, cursor, context</pre>
+<pre class="line after"><span class="ws">            </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>return result</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def _cursor_execute(self, cursor, statement, parameters, context=None):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457151672">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1518</em>,
+      in <code class="function">_handle_dbapi_exception</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">            </span>if newraise:</pre>
+<pre class="line before"><span class="ws">                </span>util.raise_(newraise, with_traceback=exc_info[2], from_=e)</pre>
+<pre class="line before"><span class="ws">            </span>elif should_wrap:</pre>
+<pre class="line before"><span class="ws">                </span>util.raise_(</pre>
+<pre class="line current"><span class="ws">                    </span>sqlalchemy_exception, with_traceback=exc_info[2], from_=e</pre>
+<pre class="line after"><span class="ws">                </span>)</pre>
+<pre class="line after"><span class="ws">            </span>else:</pre>
+<pre class="line after"><span class="ws">                </span>util.raise_(exc_info[1], with_traceback=exc_info[2])</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457151000">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/util/compat.py"</cite>,
+      line <em class="line">178</em>,
+      in <code class="function">raise_</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span># intermediary exception does not change, but we can't figure</pre>
+<pre class="line before"><span class="ws">            </span># that out.</pre>
+<pre class="line before"><span class="ws">            </span>exception.__cause__ = replace_context</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line current"><span class="ws">            </span>raise exception</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre>
+<pre class="line after"><span class="ws">            </span># credit to</pre>
+<pre class="line after"><span class="ws">            </span># https://cosmicpercolator.com/2016/01/13/exception-leaks-in-python-2-and-3/</pre>
+<pre class="line after"><span class="ws">            </span># as the __traceback__ object creates a cycle</pre>
+<pre class="line after"><span class="ws">            </span>del exception, replace_context, from_, with_traceback</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457151056">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1284</em>,
+      in <code class="function">_execute_context</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                        </span>if fn(cursor, statement, parameters, context):</pre>
+<pre class="line before"><span class="ws">                            </span>evt_handled = True</pre>
+<pre class="line before"><span class="ws">                            </span>break</pre>
+<pre class="line before"><span class="ws">                </span>if not evt_handled:</pre>
+<pre class="line before"><span class="ws">                    </span>self.dialect.do_execute(</pre>
+<pre class="line current"><span class="ws">                        </span>cursor, statement, parameters, context</pre>
+<pre class="line after"><span class="ws">                    </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>if self._has_events or self.engine._has_events:</pre>
+<pre class="line after"><span class="ws">                </span>self.dispatch.after_cursor_execute(</pre>
+<pre class="line after"><span class="ws">                    </span>self,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139625457148480">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/default.py"</cite>,
+      line <em class="line">590</em>,
+      in <code class="function">do_execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def do_executemany(self, cursor, statement, parameters, context=None):</pre>
+<pre class="line before"><span class="ws">        </span>cursor.executemany(statement, parameters)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def do_execute(self, cursor, statement, parameters, context=None):</pre>
+<pre class="line current"><span class="ws">        </span>cursor.execute(statement, parameters)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def do_execute_no_params(self, cursor, statement, context=None):</pre>
+<pre class="line after"><span class="ws">        </span>cursor.execute(statement)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def is_disconnect(self, e, connection, cursor):</pre></div>
+</div>
+</ul>
+  <blockquote>sqlalchemy.exc.OperationalError: (psycopg2.errors.AdminShutdown) terminating connection due to administrator command
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;]
+(Background on this error at: http://sqlalche.me/e/e3q8)</blockquote>
+</div>
+
+<div class="plain">
+  <form action="/?__debugger__=yes&amp;cmd=paste" method="post">
+    <p>
+      <input type="hidden" name="language" value="pytb">
+      This is the Copy/Paste friendly version of the traceback.  <span
+      class="pastemessage">You can also paste this traceback into
+      a <a href="https://gist.github.com/">gist</a>:
+      <input type="submit" value="create paste"></span>
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py&quot;, line 1284, in _execute_context
+    cursor, statement, parameters, context
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/default.py&quot;, line 590, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.AdminShutdown: terminating connection due to administrator command
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py&quot;, line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py&quot;, line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask_cors/extension.py&quot;, line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py&quot;, line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask/_compat.py&quot;, line 39, in reraise
+    raise value
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py&quot;, line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py&quot;, line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask_cors/extension.py&quot;, line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py&quot;, line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask/_compat.py&quot;, line 39, in reraise
+    raise value
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py&quot;, line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &quot;/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py&quot;, line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File &quot;/srv/dashboard/dashboard-aides-entreprises/backend/app.py&quot;, line 172, in getStatAideNationalSectionAPE
+    data = db.session.execute(my_query).fetchall()
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/orm/scoping.py&quot;, line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/orm/session.py&quot;, line 1292, in execute
+    clause, params or {}
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py&quot;, line 1020, in execute
+    return meth(self, multiparams, params)
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/sql/elements.py&quot;, line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py&quot;, line 1139, in _execute_clauseelement
+    distilled_params,
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py&quot;, line 1324, in _execute_context
+    e, statement, parameters, cursor, context
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py&quot;, line 1518, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/util/compat.py&quot;, line 178, in raise_
+    raise exception
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py&quot;, line 1284, in _execute_context
+    cursor, statement, parameters, context
+  File &quot;/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/default.py&quot;, line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (psycopg2.errors.AdminShutdown) terminating connection due to administrator command
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;]
+(Background on this error at: http://sqlalche.me/e/e3q8)</textarea>
+  </form>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py", line 1284, in _execute_context
+    cursor, statement, parameters, context
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.AdminShutdown: terminating connection due to administrator command
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/dashboard/.local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/dashboard/dashboard-aides-entreprises/backend/app.py", line 172, in getStatAideNationalSectionAPE
+    data = db.session.execute(my_query).fetchall()
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/orm/scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/orm/session.py", line 1292, in execute
+    clause, params or {}
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py", line 1020, in execute
+    return meth(self, multiparams, params)
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py", line 1139, in _execute_clauseelement
+    distilled_params,
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py", line 1324, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py", line 1518, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/base.py", line 1284, in _execute_context
+    cursor, statement, parameters, context
+  File "/usr/local/lib/python3.7/dist-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (psycopg2.errors.AdminShutdown) terminating connection due to administrator command
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+
+-->
