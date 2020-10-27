@@ -12,13 +12,13 @@ daytoprocess = sys.argv[1]
 df = pd.read_csv("../data/cpsti/csv/"+daytoprocess+".csv",dtype=str,sep=";")
 
 print("Processing")
-df = df[['Code région','Code département','Code NA21','Nombre de bénéficiaires','Montant total de l\'aide']]
+df = df[['code_region','code_departement','code_na21','nombre_de_beneficiaires','montant_total_de_l_aide']]
 
-df['Code NA21'] = df['Code NA21'].apply(lambda x: 'Z' if x == 'nca' else x)
+df['code_na21'] = df['code_na21'].apply(lambda x: 'Z' if x == 'nca' else x)
 
-df['Code département'] = df['Code département'].apply(lambda x: None if x == 'nca' else x)
+df['code_departement'] = df['code_departement'].apply(lambda x: None if x == 'nca' else x)
 
-df['Code région'] = df['Code région'].apply(lambda x: None if x == 'nca' else x)
+df['code_region'] = df['code_region'].apply(lambda x: None if x == 'nca' else x)
 
 df['last_update'] = daytoprocess
 
