@@ -2,6 +2,7 @@ CREATE TABLE activitepartielle
 (
 	id_activitepartielle SERIAL PRIMARY KEY NOT NULL,
     reg CHARACTER VARYING,
+    mois CHARACTER VARYING,
     code_section_nace17 CHARACTER VARYING,
     nombre_demandes_deposees DECIMAL(15,2),
     nombre_salaries_concernes DECIMAL(15,2),

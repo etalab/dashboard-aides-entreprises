@@ -10,9 +10,9 @@ df = xls_file.parse('Annexe 1',dtype=str,header=2)
 
 df = df[:-4]
 
-df = df.rename(columns={'a17':'code_section_nace17','Nombre de DI':'nombre_demandes_deposees','Effectif en DI':'nombre_salarie_concernes','Heures en DI':'nombre_heures_demandees'})
+df = df.rename(columns={'DI_MOIS_ANNEE':'mois','a17':'code_section_nace17','Nombre de DI':'nombre_demandes_deposees','Effectif en DI':'nombre_salarie_concernes','Heures en DI':'nombre_heures_demandees'})
 
-df = df[['reg','code_section_nace17','nombre_demandes_deposees','nombre_salarie_concernes','nombre_heures_demandees']]
+df = df[['reg','mois','code_section_nace17','nombre_demandes_deposees','nombre_salarie_concernes','nombre_heures_demandees']]
 
 df['last_update'] = '2020-10-27'
 
