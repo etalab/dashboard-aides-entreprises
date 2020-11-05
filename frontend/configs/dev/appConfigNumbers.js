@@ -155,7 +155,7 @@ export const configAppNumbers = {
           columns: [
             {
               colName: '',
-              colTitle: { fr: 'Nombre d\'entreprises' },
+              colTitle: { fr: 'Nombre de demandes' },
               titleI18n: 'numbers.numbers01.total',
               colClass: '',
               cols: 4,
