@@ -560,10 +560,10 @@ export const configAppData = {
               toSpecialStore: 'nombre_salaries_concernes'
             },
             {
-              fieldToCopy: 'nombre_etablissements_concernes',
+              fieldToCopy: 'nombre_demandes_deposees',
               from: { objectRef: 0 },
               help: 'copy to another dataset (id) in displayedData | initData',
-              toSpecialStore: 'nombre_etablissements_concernes',
+              toSpecialStore: 'nombre_demandes_deposees',
               format: undefined
             },
             {

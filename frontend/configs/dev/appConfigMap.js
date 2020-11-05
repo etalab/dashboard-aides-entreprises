@@ -2649,8 +2649,8 @@ export const configAppMap = {
                         fromStoreData: 'initData',
                         fromDatasetId: 'regions-activitepartielle-raw',
                         fromDatasetKey: 'reg',
-                        fromDatasetField: 'nombre_etablissements_concernes',
-                        targetSpecialStoreId: 'nombre_etablissements_concernes'
+                        fromDatasetField: 'nombre_demandes_deposees',
+                        targetSpecialStoreId: 'nombre_demandes_deposees'
                       },
 
                       {
@@ -2752,8 +2752,8 @@ export const configAppMap = {
                         fromStoreData: 'initData',
                         fromDatasetId: 'departements-activitepartielle-raw',
                         fromDatasetKey: 'dep',
-                        fromDatasetField: 'nombre_etablissements_concernes',
-                        targetSpecialStoreId: 'nombre_etablissements_concernes'
+                        fromDatasetField: 'nombre_demandes_deposees',
+                        targetSpecialStoreId: 'nombre_demandes_deposees'
                       },
 
                       {

@@ -537,8 +537,8 @@ export const configAppGlobalButtons = {
                     fromDatasetId: 'national-activitepartielle-raw',
                     fromDatasetKey: undefined,
                     fromDatasetIndex: 0,
-                    fromDatasetField: 'nombre_etablissements_concernes',
-                    targetSpecialStoreId: 'nombre_etablissements_concernes'
+                    fromDatasetField: 'nombre_demandes_deposees',
+                    targetSpecialStoreId: 'nombre_demandes_deposees'
                   },
                   {
                     from: 'store',

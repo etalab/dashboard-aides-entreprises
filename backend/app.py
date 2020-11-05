@@ -824,10 +824,10 @@ def getLastUpdateHtmlPGE():
 def getStatActivitePartielleNationalSectionNACE17():
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "select sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES from activitepartielle A;"
+        my_query = "select sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES from activitepartielle A;"
 
     
-        my_query_2 = "select A.code_section_nace17, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, N.libelle from activitepartielle A LEFT JOIN nace17 N ON N.code_section_nace17 = A.code_section_nace17 GROUP BY A.code_section_nace17, N.libelle ORDER BY TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES DESC;"
+        my_query_2 = "select A.code_section_nace17, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES, N.libelle from activitepartielle A LEFT JOIN nace17 N ON N.code_section_nace17 = A.code_section_nace17 GROUP BY A.code_section_nace17, N.libelle ORDER BY TOTAL_NOMBRE_SALARIES_CONCERNES DESC;"
 
         data = db.session.execute(my_query).fetchall()
         data2 = db.session.execute(my_query_2).fetchall()
@@ -838,12 +838,10 @@ def getStatActivitePartielleNationalSectionNACE17():
             dataDict['nombre_demandes_deposees'] = str(data[i][0]) 
             dataDict['nombre_salaries_concernes'] = str(data[i][1]) 
             dataDict['nombre_heures_demandees'] = str(data[i][2]) 
-            dataDict['nombre_etablissements_concernes'] = str(data[i][3]) 
             dataDict['kpi_top_10_nace17'] = []
             autresdemandes = 0
             autressalaries = 0
             autresheures = 0
-            autresetablissements = 0
             for j in range(len(data2)):
                 if(j < 10):
                     dataDict2 = {}
@@ -851,20 +849,17 @@ def getStatActivitePartielleNationalSectionNACE17():
                     dataDict2['nombre_demandes_deposees'] = str(data2[j][1]) 
                     dataDict2['nombre_salaries_concernes'] = str(data2[j][2])
                     dataDict2['nombre_heures_demandees'] = str(data2[j][3])
-                    dataDict2['nombre_etablissements_concernes'] = str(data2[j][4])
-                    dataDict2['libelle_section_nace17'] = str(data2[j][5]) 
+                    dataDict2['libelle_section_nace17'] = str(data2[j][4]) 
                     dataDict['kpi_top_10_nace17'].append(dataDict2)
                 else:
                     autresdemandes = autresdemandes + data2[j][1]
                     autressalaries = autressalaries + data2[j][2]   
-                    autresheures = autresheures + data2[j][3]   
-                    autresetablissements = autresetablissements + data2[j][4]           
+                    autresheures = autresheures + data2[j][3]         
             dataDict2 = {}
             dataDict2['code_section_nace17'] = "Autres" 
             dataDict2['nombre_demandes_deposees'] = str(autresdemandes)
             dataDict2['nombre_salaries_concernes'] = str(autressalaries)
             dataDict2['nombre_heures_demandees'] = str(autresheures)
-            dataDict2['nombre_etablissements_concernes'] = str(autresetablissements)
             dataDict2['libelle_section_nace17'] = "Autres sections NACE 17"
             dataDict['kpi_top_10_nace17'].append(dataDict2)
 
@@ -876,7 +871,7 @@ def getStatActivitePartielleReg():
     # GET a specific data by id
     if request.method == 'GET':
 
-        my_query = "select A.reg, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, R.libelle from activitepartielle A LEFT JOIN region R ON R.reg = A.reg GROUP BY A.reg, R.libelle;"
+        my_query = "select A.reg, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES, R.libelle from activitepartielle A LEFT JOIN region R ON R.reg = A.reg GROUP BY A.reg, R.libelle;"
 
         data = db.session.execute(my_query).fetchall()
         app.logger.info(data)
@@ -887,10 +882,9 @@ def getStatActivitePartielleReg():
             dataDict['nombre_demandes_deposees'] = str(data[i][1]) 
             dataDict['nombre_salaries_concernes'] = str(data[i][2])
             dataDict['nombre_heures_demandees'] = str(data[i][3])
-            dataDict['nombre_etablissements_concernes'] = str(data[i][4])
-            dataDict['libelle'] = str(data[i][5]) 
+            dataDict['libelle'] = str(data[i][4]) 
 
-            my_query_2 = "select A.code_section_nace17, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, N.libelle from activitepartielle A LEFT JOIN nace17 N ON N.code_section_nace17 = A.code_section_nace17 WHERE A.reg = '"+str(data[i][0])+"' GROUP BY A.code_section_nace17, N.libelle ORDER BY TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES DESC;"
+            my_query_2 = "select A.code_section_nace17, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES, N.libelle from activitepartielle A LEFT JOIN nace17 N ON N.code_section_nace17 = A.code_section_nace17 WHERE A.reg = '"+str(data[i][0])+"' GROUP BY A.code_section_nace17, N.libelle ORDER BY TOTAL_NOMBRE_SALARIES_CONCERNES DESC;"
 
             data2 = db.session.execute(my_query_2).fetchall()
 
@@ -899,7 +893,6 @@ def getStatActivitePartielleReg():
             autresdemandes = 0
             autressalaries = 0
             autresheures = 0
-            autresetablissements = 0
             for j in range(len(data2)):
                 if(j < 10):
                     dataDict2 = {}
@@ -907,20 +900,17 @@ def getStatActivitePartielleReg():
                     dataDict2['nombre_demandes_deposees'] = str(data2[j][1]) 
                     dataDict2['nombre_salaries_concernes'] = str(data2[j][2])
                     dataDict2['nombre_heures_demandees'] = str(data2[j][3])
-                    dataDict2['nombre_etablissements_concernes'] = str(data2[j][4])
-                    dataDict2['libelle_section_nace17'] = str(data2[j][5]) 
+                    dataDict2['libelle_section_nace17'] = str(data2[j][4]) 
                     dataDict['kpi_top_10_nace17'].append(dataDict2)
                 else:
                     autresdemandes = autresdemandes + data2[j][1]
                     autressalaries = autressalaries + data2[j][2]      
-                    autresheures = autresheures + data2[j][3]      
-                    autresetablissements = autresetablissements + data2[j][4]           
+                    autresheures = autresheures + data2[j][3]               
             dataDict2 = {}
             dataDict2['code_section_nace17'] = "Autres" 
             dataDict2['nombre_demandes_deposees'] = str(autresdemandes)
             dataDict2['nombre_salaries_concernes'] = str(autressalaries)
             dataDict2['nombre_heures_demandees'] = str(autresheures)
-            dataDict2['nombre_etablissements_concernes'] = str(autresetablissements)
             dataDict2['libelle_section_nace17'] = "Autres sections NACE 17"
             dataDict['kpi_top_10_nace17'].append(dataDict2)
 
@@ -933,58 +923,7 @@ def getStatActivitePartielleDepartementalSectionNACE17():
     # GET a specific data by id
     if request.method == 'GET':
 
-
-        my_query = "select A.dep, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, D.libelle from activitepartielle A LEFT JOIN departement D ON D.dep = A.dep GROUP BY A.dep, D.libelle;"
-
-        data = db.session.execute(my_query).fetchall()
-        app.logger.info(data)
         dataJson = []
-        for i in range(len(data)):
-            dataDict = {}
-            dataDict['dep'] = str(data[i][0]) 
-            dataDict['nombre_demandes_deposees'] = str(data[i][1]) 
-            dataDict['nombre_salaries_concernes'] = str(data[i][2])
-            dataDict['nombre_heures_demandees'] = str(data[i][3])
-            dataDict['nombre_etablissements_concernes'] = str(data[i][4])
-            dataDict['libelle'] = str(data[i][5]) 
-
-
-
-            my_query_2 = "select A.code_section_nace17, sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES,sum(A.nombre_etablissements_concernes) AS TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES, N.libelle from activitepartielle A LEFT JOIN nace17 N ON N.code_section_nace17 = A.code_section_nace17 WHERE A.dep = '"+str(data[i][0])+"' GROUP BY A.code_section_nace17, N.libelle ORDER BY TOTAL_NOMBRE_ETABLISSEMENTS_CONCERNES DESC;"
-
-            data2 = db.session.execute(my_query_2).fetchall()
-
-            dataDict['kpi_top_10_nace17'] = []
-            
-            autresdemandes = 0
-            autressalaries = 0
-            autresheures = 0
-            autresetablissements = 0
-            for j in range(len(data2)):
-                if(j < 10):
-                    dataDict2 = {}
-                    dataDict2['code_section_nace17'] = str(data2[j][0]) 
-                    dataDict2['nombre_demandes_deposees'] = str(data2[j][1]) 
-                    dataDict2['nombre_salaries_concernes'] = str(data2[j][2])
-                    dataDict2['nombre_heures_demandees'] = str(data2[j][3])
-                    dataDict2['nombre_etablissements_concernes'] = str(data2[j][4])
-                    dataDict2['libelle_section_nace17'] = str(data2[j][5]) 
-                    dataDict['kpi_top_10_nace17'].append(dataDict2)
-                else:
-                    autresdemandes = autresdemandes + data2[j][1]
-                    autressalaries = autressalaries + data2[j][2]      
-                    autresheures = autresheures + data2[j][3]      
-                    autresetablissements = autresetablissements + data2[j][4]           
-            dataDict2 = {}
-            dataDict2['code_section_nace17'] = "Autres" 
-            dataDict2['nombre_demandes_deposees'] = str(autresdemandes)
-            dataDict2['nombre_salaries_concernes'] = str(autressalaries)
-            dataDict2['nombre_heures_demandees'] = str(autresheures)
-            dataDict2['nombre_etablissements_concernes'] = str(autresetablissements)
-            dataDict2['libelle_section_nace17'] = "Autres sections NACE 17"
-            dataDict['kpi_top_10_nace17'].append(dataDict2)
-
-            dataJson.append(dataDict)
         return jsonify(dataJson)
 
 

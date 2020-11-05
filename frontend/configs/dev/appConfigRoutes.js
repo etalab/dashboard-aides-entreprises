@@ -181,15 +181,6 @@ const COMMON_TARGETS = {
       fromStoreData: 'initData',
       fromDatasetId: 'regions-activitepartielle-raw',
       fromDatasetKey: 'reg',
-      fromDatasetField: 'nombre_etablissements_concernes',
-      targetSpecialStoreId: 'nombre_etablissements_concernes'
-    },
-    {
-      ifQuery: [{ field: 'datasetid', val: 'regions' }],
-      fromQueryKey: 'code',
-      fromStoreData: 'initData',
-      fromDatasetId: 'regions-activitepartielle-raw',
-      fromDatasetKey: 'reg',
       fromDatasetField: 'nombre_salaries_concernes',
       targetSpecialStoreId: 'nombre_salaries_concernes'
     },
@@ -346,15 +337,6 @@ const COMMON_TARGETS = {
     }
   ],
   setObjectsDepartementsACTIVITEPARTIELLE: [
-    {
-      ifQuery: [{ field: 'datasetid', val: 'departements' }],
-      fromQueryKey: 'code',
-      fromStoreData: 'initData',
-      fromDatasetId: 'departements-activitepartielle-raw',
-      fromDatasetKey: 'dep',
-      fromDatasetField: 'nombre_etablissements_concernes',
-      targetSpecialStoreId: 'nombre_etablissements_concernes'
-    },
     {
       ifQuery: [{ field: 'datasetid', val: 'departements' }],
       fromQueryKey: 'code',
@@ -1401,7 +1383,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'apexchart-activitepartielle',
+                    id: 'apexchart-activitepartielle-02',
                     containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
@@ -1414,7 +1396,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'apexchart-activitepartielle-02',
+                    id: 'apexchart-activitepartielle',
                     containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
