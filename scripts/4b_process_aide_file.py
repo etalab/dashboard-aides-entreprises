@@ -29,8 +29,8 @@ print("Dataframe aide chargé")
 
 print(str(df.shape[0])+" lignes")
 
-df['mois'] = df['Période'].apply(lambda x: x.split("-")[0])
-df['volet'] = df['Période'].apply(lambda x: x.split("-")[1])
+df['mois'] = df['Période'].apply(lambda x: '' if len(x.split("-")) == 1 else x.split("-")[0])
+df['volet'] = df['Période'].apply(lambda x: x.split("-")[0] if len(x.split("-")) == 1 else x.split("-")[1])
 df = df.rename(columns={'SIREN': 'siren'})
 
 print("Premiers enrichissements ok")
