@@ -129,11 +129,13 @@ export default {
 
   beforeMount() {
     // set up view config
-    // this.log && console.log("C-ApexChart / beforeMount ... ")
+    this.log && console.log("C-ApexChart / beforeMount ... ")
 
     this.viewConfig = this.getLocalConfig
     this.datasetMappers = this.viewConfig.datasetMappers
     this.localChartOptions = this.datasetMappers.chartOptions
+
+    this.log && console.log("C-ApexChart / this.datasetMappers : ", this.datasetMappers)
   },
 
   mounted() {
@@ -216,7 +218,7 @@ export default {
           sortParams: mapper.sortDataSerieBy,
         })
         this.rawDataSerie = rawDataSerie
-        // this.log && console.log('C-ApexChart / getSeries / rawDataSerie : ', rawDataSerie )
+        this.log && console.log('C-ApexChart / getSeries / rawDataSerie : ', rawDataSerie )
         let dataFromKey = mapper.dataFromKey
         let valuesSerie
 
@@ -240,7 +242,7 @@ export default {
           )
           colorsReferences =
             colorsReferencesDataset && colorsReferencesDataset.data
-          // this.log && console.log('C-ApexChart / getSeries / colorsReferences : ', colorsReferences )
+          this.log && console.log('C-ApexChart / getSeries / colorsReferences : ', colorsReferences )
         }
 
         if (rawDataSerie && dataFromKey) {
@@ -248,7 +250,7 @@ export default {
 
           // 2 - get serie
           rawDataSerie.forEach((i) => {
-            // this.log && console.log('\nC-ApexChart / getSeries / i : ', i )
+            this.log && console.log('\nC-ApexChart / getSeries / i : ', i )
             let value = i[dataFromKey]
             if (value && mapper.format) {
               value = switchFormatFunctions(value, mapper.format)
@@ -321,7 +323,7 @@ export default {
             }
           })
 
-          // this.log && console.log('\nC-ApexChart / getSeries / tempSerie : ', tempSerie )
+          this.log && console.log('\nC-ApexChart / getSeries / tempSerie : ', tempSerie )
           valuesSerie = tempSerie
         } else {
           valuesSerie = rawDataSerie

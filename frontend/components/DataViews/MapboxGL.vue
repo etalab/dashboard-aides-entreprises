@@ -201,7 +201,7 @@ export default {
     map(next, prev) {
       this.handleResize()
       if (next && !prev) {
-        this.log && console.log("C-MapboxGL / watch - map - is created ")
+        // this.log && console.log("C-MapboxGL / watch - map - is created ")
         let storeSourcesArray = this.sources.filter((s) => s.from === "store")
         let urlSourcesArray = this.sources.filter((s) => s.from === "url")
         this.loadStoreSources(storeSourcesArray)
@@ -233,7 +233,7 @@ export default {
     },
 
     getResetZoomTrigger(next, prev) {
-      this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
+      // this.log && console.log('C-MapboxGL / watch - getResetZoomTrigger / next :', next)
       this.handleResize()
       this.resetZoom()
       this.resetAllSelected()
@@ -258,9 +258,9 @@ export default {
   },
 
   beforeMount() {
-    this.log &&
-      console.log("\n- + - MapboxGL component - + - + - + - + - + - + ")
-    this.log && console.log("C-MapboxGL / beforeMount ... ")
+    // this.log &&
+    //   console.log("\n- + - MapboxGL component - + - + - + - + - + - + ")
+    // this.log && console.log("C-MapboxGL / beforeMount ... ")
 
     // set up view config
     this.viewConfig = this.getLocalConfig
@@ -459,7 +459,7 @@ export default {
     // INITIIALIZATION - - - - - - - - - - - - - - - - - - //
 
     onMapLoaded(event) {
-      this.log && console.log("C-MapboxGL / onMapLoaded ... ")
+      // this.log && console.log("C-MapboxGL / onMapLoaded ... ")
 
       // store in component
       // this.map = event.map
@@ -542,7 +542,7 @@ export default {
       }
     },
     loadUrlSources(sourcesArray) {
-      this.log && console.log("\nC-MapboxGL / loadUrlSources ", "... ".repeat(10))
+      // this.log && console.log("\nC-MapboxGL / loadUrlSources ", "... ".repeat(10))
       // let mapbox = this.map
       let mapbox = _map
       let store = this.$store
@@ -610,8 +610,8 @@ export default {
     loadClicEvents(mapsArray) {
       // let mapbox = this.map
       let mapbox = _map
-      this.log &&
-        console.log("\nC-MapboxGL / loadClicEvents ", "... ".repeat(10))
+      // this.log &&
+      //   console.log("\nC-MapboxGL / loadClicEvents ", "... ".repeat(10))
 
       // let sourcesList = mapbox.getStyle().sources
       // this.log && console.log("\nC-MapboxGL / loadClicEvents ... sourcesList : ", sourcesList)
@@ -622,13 +622,13 @@ export default {
       for (let mapRef of mapsArray) {
         if (mapRef.clicEvents) {
           for (const clicEvent of mapRef.clicEvents) {
-            this.log &&
-              console.log(
-                "\nC-MapboxGL / loadClicEvents ... clicEvent.layer : ",
-                clicEvent.layer,
-                " / event :",
-                clicEvent.event
-              )
+            // this.log &&
+            //   console.log(
+            //     "\nC-MapboxGL / loadClicEvents ... clicEvent.layer : ",
+            //     clicEvent.layer,
+            //     " / event :",
+            //     clicEvent.event
+            //   )
             // this.log && console.log("C-MapboxGL / loadClicEvents ... clicEvent : ", clicEvent)
 
             let clicFunctions = clicEvent.functions
@@ -879,7 +879,7 @@ export default {
       }
     },
     resetZoom() {
-      this.log && console.log("\nC-MapboxGL / resetZoom ... " )
+      // this.log && console.log("\nC-MapboxGL / resetZoom ... " )
       this.flyTo(this.originalCenter, this.originalZoom)
     },
 
@@ -920,7 +920,7 @@ export default {
 
     // SELECTED POLYGONS
     resetAllSelected() {
-      this.log && console.log('C-MapboxGL / resetAllSelected ... this.selectedStateId : ', this.selectedStateId )
+      // this.log && console.log('C-MapboxGL / resetAllSelected ... this.selectedStateId : ', this.selectedStateId )
       for (let source in this.selectedStateId) {
         let featureId = this.selectedStateId[source]
         this.resetSelectedPolygons(source, featureId)
