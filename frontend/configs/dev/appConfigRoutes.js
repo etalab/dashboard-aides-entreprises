@@ -1138,7 +1138,6 @@ export const configAppRoutes = {
 
     },
 
-    
     // ============================================================= //
     // CPSTI
     // ============================================================= //
@@ -1401,38 +1400,51 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'apexchart-activitepartielle',
+                    id: 'apexchart-activitepartielle-time-serie-01',
                     containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
                   }
                 },
-                {
-                  component: 'apexchart',
-                  activated: true,
-                  smallScreenVerticalOrder: 4,
-                  justify: 'center',
-                  align: 'center',
-                  settings: {
-                    id: 'apexchart-activitepartielle-02',
-                    containerClass: 'mt-4 pt-3 pb-0',
-                    mobileIsVisibleDefault: false,
-                    desktopIsVisibleDefault: true
-                  }
-                },
-                {
-                  component: 'apexchart',
-                  activated: true,
-                  smallScreenVerticalOrder: 4,
-                  justify: 'center',
-                  align: 'center',
-                  settings: {
-                    id: 'apexchart-activitepartielle-03',
-                    containerClass: 'mt-4 pt-3 pb-0',
-                    mobileIsVisibleDefault: false,
-                    desktopIsVisibleDefault: true
-                  }
-                },
+                // {
+                //   component: 'apexchart',
+                //   activated: true,
+                //   smallScreenVerticalOrder: 4,
+                //   justify: 'center',
+                //   align: 'center',
+                //   settings: {
+                //     id: 'apexchart-activitepartielle',
+                //     containerClass: 'mt-4 pt-3 pb-0',
+                //     mobileIsVisibleDefault: false,
+                //     desktopIsVisibleDefault: true
+                //   }
+                // },
+                // {
+                //   component: 'apexchart',
+                //   activated: true,
+                //   smallScreenVerticalOrder: 4,
+                //   justify: 'center',
+                //   align: 'center',
+                //   settings: {
+                //     id: 'apexchart-activitepartielle-02',
+                //     containerClass: 'mt-4 pt-3 pb-0',
+                //     mobileIsVisibleDefault: false,
+                //     desktopIsVisibleDefault: true
+                //   }
+                // },
+                // {
+                //   component: 'apexchart',
+                //   activated: true,
+                //   smallScreenVerticalOrder: 4,
+                //   justify: 'center',
+                //   align: 'center',
+                //   settings: {
+                //     id: 'apexchart-activitepartielle-03',
+                //     containerClass: 'mt-4 pt-3 pb-0',
+                //     mobileIsVisibleDefault: false,
+                //     desktopIsVisibleDefault: true
+                //   }
+                // },
                 {
                   component: 'text',
                   activated: true,

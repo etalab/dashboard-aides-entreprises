@@ -893,6 +893,45 @@ export const configAppCharts = {
     // ============================================================= //
     // BAR HORIZ - APE X NBR ENTREPRISES
     {
+      id: 'apexchart-activitepartielle-time-serie-01',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_nace17 X nombre',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Nombre d'entreprises concernées par l'activité partielle
+          <br>
+          ventilées par 
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
+            code section NACE 17</a>
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'kpi_top_10_nace17',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NaceByNombreEntreprise
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.integerEuropeanFormat
+      }
+
+    },
+    // BAR HORIZ - APE X NBR ENTREPRISES
+    {
       id: 'apexchart-activitepartielle',
       serie_id: 'stat-bar-horiz',
       help: 'bar horiz / kpi_top_10_nace17 X nombre',
