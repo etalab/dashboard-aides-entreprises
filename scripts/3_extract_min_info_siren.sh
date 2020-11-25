@@ -1,2 +1,2 @@
-sudo -u postgres psql -d dashboard -c "\copy (select siren, siret, reg, dep, codecommuneetablissement, activiteprincipaleetablissement from siret where etatadministratifetablissement = 'A') TO '/tmp/extract-siren.csv' DELIMITER ',' CSV HEADER;"
-sudo mv /tmp/extract-siren.csv ../data/extracts/
+psql -d dashboard -c "\copy (select siren, siret, reg, dep, codecommuneetablissement, activiteprincipaleetablissement from siret where etatadministratifetablissement = 'A') TO '/tmp/extract-siren.csv' DELIMITER ',' CSV HEADER;"
+mv /tmp/extract-siren.csv ../data/extracts/

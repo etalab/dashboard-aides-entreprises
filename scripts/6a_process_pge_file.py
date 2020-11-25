@@ -16,13 +16,17 @@ for sheet in sheet_names:
     if(sheet != 'Récap'):
         print(sheet)
         df = xls_file.parse(sheet)
-        dfnaf = df[28:49]
+        #PATCH
+        #dfnaf = df[28:49]
+        dfnaf = df[28:50]
         dfnaf = dfnaf.rename(columns={dfnaf.columns[0]:"section_naf",dfnaf.columns[1]:"nombre",dfnaf.columns[3]:"montant"})
         dfnaf = dfnaf[['section_naf','nombre','montant']]
         dfnaf['montant'] = dfnaf['montant'].apply(lambda x: 0 if x == 'ND' else x * 1000000)
         dfnaf = dfnaf.reset_index()
         dfnaf = dfnaf.drop(columns={'index'})
-        sectioncode = "ABCDEFGHIJKLMNOPQRSZX"
+        # PATCH
+        #sectioncode = "ABCDEFGHIJKLMNOPQRSZX"
+        sectioncode = "ABCDEFGHIJKLMNOPQRSTZX"
         i = 0
         naf = []
         for index,row in dfnaf.iterrows():
@@ -78,6 +82,12 @@ for sheet in sheet_names:
 print("Clean dataframe")
 
 dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '971' if x == '951' else '972' if x == '953' else '973' if x == '952' else '974' if x == '957' else '976' if x == '954' else x)
+
+# PATCH TMP
+#dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '999' if x == '972' else x)
+#dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '972' if x == '973' else x)
+#dffinal['code_departement'] = dffinal['code_departement'].apply(lambda x : '973' if x == '999' else x)
+
 
 dffinal = dffinal[['code_departement','code_section','nombre','montant']]
 
