@@ -2551,7 +2551,8 @@ export const configAppMap = {
           id: 'regions-activitepartielle',
           help: 'nombre d activite partielle au niveau regional - as geojson from raw',
           from: 'store',
-          fromId: 'regions-activitepartielle-raw',
+          // fromId: 'regions-activitepartielle-raw',
+          fromId: 'regions-activitepartielle-raw-3',
           type: 'geojson',
           generateId: true,
           needTransform: true,
@@ -2576,7 +2577,8 @@ export const configAppMap = {
           help:
             'nombre d activite partielle au niveau départemental - as geojson from raw',
           from: 'store',
-          fromId: 'departements-activitepartielle-raw',
+          // fromId: 'departements-activitepartielle-raw',
+          fromId: 'departements-activitepartielle-raw-3',
           type: 'geojson',
           generateId: false,
           needTransform: true,
@@ -2649,7 +2651,8 @@ export const configAppMap = {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
                         fromStoreData: 'initData',
-                        fromDatasetId: 'regions-activitepartielle-raw',
+                        // fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetId: 'regions-activitepartielle-raw-3',
                         fromDatasetKey: 'reg',
                         fromDatasetField: 'nombre_demandes_deposees',
                         targetSpecialStoreId: 'nombre_demandes_deposees'
@@ -2659,7 +2662,8 @@ export const configAppMap = {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
                         fromStoreData: 'initData',
-                        fromDatasetId: 'regions-activitepartielle-raw',
+                        // fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetId: 'regions-activitepartielle-raw-3',
                         fromDatasetKey: 'reg',
                         fromDatasetField: 'nombre_salaries_concernes',
                         targetSpecialStoreId: 'nombre_salaries_concernes'
@@ -2669,7 +2673,8 @@ export const configAppMap = {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
                         fromStoreData: 'initData',
-                        fromDatasetId: 'regions-activitepartielle-raw',
+                        // fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetId: 'regions-activitepartielle-raw-3',
                         fromDatasetKey: 'reg',
                         fromDatasetField: 'nombre_heures_demandees',
                         targetSpecialStoreId: 'nombre_heures_demandees'
@@ -2679,7 +2684,8 @@ export const configAppMap = {
                         from: 'store',
                         fromPropKey: 'code', // use props region code
                         fromStoreData: 'initData',
-                        fromDatasetId: 'regions-activitepartielle-raw',
+                        // fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetId: 'regions-activitepartielle-raw-3',
                         fromDatasetKey: 'reg',
                         fromDatasetField: undefined,
                         targetSpecialStoreId: 'focusObject'

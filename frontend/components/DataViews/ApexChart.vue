@@ -40,10 +40,9 @@
     </v-layout>
 
     <!-- DEBUG -->
-    <v-layout justify-center>
+    <!-- <v-layout justify-center>
       <div
         >
-        <!-- v-if="canShow && localChartOptions && localSeries" -->
         localSeries : <br>
         <code>
           <pre>
@@ -51,7 +50,7 @@
           </pre>
         </code>
       </div>
-    </v-layout>
+    </v-layout> -->
 
      <!-- CHART -->
      <v-layout justify-center :class="`custom-min-height`">
@@ -203,6 +202,10 @@ export default {
       const seriesMappers = this.datasetMappers.seriesMappers
       const formatterOpts = this.datasetMappers.format
 
+      const datasetDataToStackSerie = this.datasetMappers.datasetDataToStackSerie
+      const fromDatasetKey_serieNamesFrom = this.datasetMappers.fromDatasetKey_serieNamesFrom
+      const fromDatasetKey_serieDataFrom = this.datasetMappers.fromDatasetKey_serieDataFrom
+
       const chartOptions = this.localChartOptions
       const pieChartTypes = ['donut', 'pie']
 
@@ -212,14 +215,16 @@ export default {
 
       for (let mapper of seriesMappers) {
         // get serie values
+        // this.log && console.log('C-ApexChart / getSeries / mapper : ', mapper )
         let rawDataSerie = this.getSpecialStoreData({
           id: specialStoreId,
           key: fromDatasetKey,
           sortParams: mapper.sortDataSerieBy,
         })
         this.rawDataSerie = rawDataSerie
-        this.log && console.log('C-ApexChart / getSeries / rawDataSerie : ', rawDataSerie )
+        // this.log && console.log('C-ApexChart / getSeries / rawDataSerie : ', rawDataSerie )
         let dataFromKey = mapper.dataFromKey
+        // this.log && console.log('C-ApexChart / getSeries / dataFromKey : ', dataFromKey )
         let valuesSerie
 
         let settingsColors,
@@ -250,16 +255,31 @@ export default {
 
           // 2 - get serie
           rawDataSerie.forEach((i) => {
-            this.log && console.log('\nC-ApexChart / getSeries / i : ', i )
-            let value = i[dataFromKey]
+            // this.log && console.log('\nC-ApexChart / getSeries / rawDataSerie loop => i : ', i )
+
+            let tempSerieStack = []
+
+            // this.log && console.log('C-ApexChart / getSeries / fromDatasetKey_serieDataFrom : ', fromDatasetKey_serieDataFrom )
+            let value = fromDatasetKey_serieDataFrom ? i[fromDatasetKey_serieDataFrom] : i[dataFromKey]
+            // this.log && console.log('C-ApexChart / getSeries / value - A1 : ', value )
+
             if (value && mapper.format) {
-              value = switchFormatFunctions(value, mapper.format)
+              if (!datasetDataToStackSerie) {
+                value = switchFormatFunctions(value, mapper.format)
+              } else {
+                tempSerieStack = value.map( v => switchFormatFunctions(v[dataFromKey], mapper.format) )
+                // this.log && console.log('C-ApexChart / getSeries / tempSerieStack : ', tempSerieStack )
+                let newStackSerie = {
+                  name: i[fromDatasetKey_serieNamesFrom],
+                  data : tempSerieStack
+                }
+                // this.log && console.log('C-ApexChart / getSeries / newStackSerie : ', newStackSerie )
+                dataSeries.push(newStackSerie)
+                // value = tempSerieStack
+                // this.log && console.log('C-ApexChart / getSeries / value - A2 : ', value )
+              }
             }
-            // if (value && formatterOpts) {
-            //   this.log && console.log('\nC-ApexChart / getSeries / formatterOpts : ', formatterOpts )
-            //   value = numberToString(value, formatterOpts)
-            // }
-            this.log && console.log('C-ApexChart / getSeries / value : ', value )
+            // this.log && console.log('C-ApexChart / getSeries / value - B : ', value )
 
             // 2bis - rebuild categories on x-axis
             if (mapper.buildAxisCategsX) {
@@ -304,7 +324,9 @@ export default {
             }
 
             // this.log && console.log('\nC-ApexChart / getSeries / value (bis) : ', value )
-            tempSerie.push(value)
+            if (!datasetDataToStackSerie) {
+              tempSerie.push(value)
+            }
 
             // 2ter - rebuild colors on x-axis
             if (mapper.buildColorsAxisX) {
@@ -323,19 +345,21 @@ export default {
             }
           })
 
-          this.log && console.log('\nC-ApexChart / getSeries / tempSerie : ', tempSerie )
+          // this.log && console.log('\nC-ApexChart / getSeries / tempSerie : ', tempSerie )
           valuesSerie = tempSerie
         } else {
           valuesSerie = rawDataSerie
         }
 
-        this.log && console.log('C-ApexChart / getSeries / valuesSerie (1) : ', valuesSerie )
+        // this.log && console.log('C-ApexChart / getSeries / valuesSerie (1) : ', valuesSerie )
 
-        let dataSerie = {
-          name: mapper.serieName,
-          data: valuesSerie,
-        }
-        dataSeries.push(dataSerie)
+        if (!datasetDataToStackSerie) {
+          let dataSerie = {
+            name: mapper.serieName,
+            data: valuesSerie,
+          }
+          dataSeries.push(dataSerie)
+        } 
       }
 
       // flatten dataSeries if chart type needs only one
@@ -343,6 +367,8 @@ export default {
         let dataSeriesFirst = dataSeries[0]
         dataSeries = dataSeriesFirst.data
       }
+
+      this.log && console.log('C-ApexChart / getSeries / dataSeries : ', dataSeries )
       return { dataSeries: dataSeries, colors: newColors, labels: dataLabels }
     },
 
@@ -358,8 +384,10 @@ export default {
     },
     updateOptionsFormatter() {
       const formatterOpts = this.datasetMappers.format
+      // this.log && console.log('C-ApexChart / updateOptionsFormatter / formatterOpts : ', formatterOpts )
       if (formatterOpts) {
         let localChartOptions = { ...this.localChartOptions }
+        // this.log && console.log('C-ApexChart / updateOptionsFormatter / localChartOptions : ', localChartOptions )
         localChartOptions.dataLabels.formatter = function (val, opts) {
           return numberToString(val, formatterOpts)
         }

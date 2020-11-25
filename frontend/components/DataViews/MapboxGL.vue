@@ -249,7 +249,7 @@ export default {
   },
 
   created() {
-    this.log && console.log("C-MapboxGL / created ...")
+    // this.log && console.log("C-MapboxGL / created ...")
     window.addEventListener("resize", this.handleResize)
   },
 
@@ -779,8 +779,8 @@ export default {
       // this.log && console.log('\nC-MapboxGL / updateUrlPath ... isFnInZoomRange : ', isFnInZoomRange )
 
       if (isFnInZoomRange) {
-        this.log && console.log('\nC-MapboxGL / updateUrlPath  : ', '+ '.repeat(10) )
-        this.log && console.log('\nC-MapboxGL / updateUrlPath ... params : ', params )
+        // this.log && console.log('\nC-MapboxGL / updateUrlPath  : ', '+ '.repeat(10) )
+        // this.log && console.log('\nC-MapboxGL / updateUrlPath ... params : ', params )
 
         for (let targetParams of params.targets) {
           // 1 - get data for the update

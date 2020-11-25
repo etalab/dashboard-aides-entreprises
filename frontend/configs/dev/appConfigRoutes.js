@@ -179,7 +179,8 @@ const COMMON_TARGETS = {
       ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
-      fromDatasetId: 'regions-activitepartielle-raw',
+      // fromDatasetId: 'regions-activitepartielle-raw',
+      fromDatasetId: 'regions-activitepartielle-raw-3',
       fromDatasetKey: 'reg',
       fromDatasetField: 'nombre_salaries_concernes',
       targetSpecialStoreId: 'nombre_salaries_concernes'
@@ -188,7 +189,8 @@ const COMMON_TARGETS = {
       ifQuery: [{ field: 'datasetid', val: 'regions' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
-      fromDatasetId: 'regions-activitepartielle-raw',
+      // fromDatasetId: 'regions-activitepartielle-raw',
+      fromDatasetId: 'regions-activitepartielle-raw-3',
       fromDatasetKey: 'reg',
       fromDatasetField: undefined,
       targetSpecialStoreId: 'focusObject'
@@ -341,7 +343,8 @@ const COMMON_TARGETS = {
       ifQuery: [{ field: 'datasetid', val: 'departements' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
-      fromDatasetId: 'departements-activitepartielle-raw',
+      // fromDatasetId: 'departements-activitepartielle-raw',
+      fromDatasetId: 'departements-activitepartielle-raw-3',
       fromDatasetKey: 'dep',
       fromDatasetField: 'nombre_salaries_concernes',
       targetSpecialStoreId: 'nombre_salaries_concernes'
@@ -350,7 +353,8 @@ const COMMON_TARGETS = {
       ifQuery: [{ field: 'datasetid', val: 'departements' }],
       fromQueryKey: 'code',
       fromStoreData: 'initData',
-      fromDatasetId: 'departements-activitepartielle-raw',
+      // fromDatasetId: 'departements-activitepartielle-raw',
+      fromDatasetId: 'departements-activitepartielle-raw-3',
       fromDatasetKey: 'dep',
       fromDatasetField: undefined,
       targetSpecialStoreId: 'focusObject'
@@ -1297,9 +1301,18 @@ export const configAppRoutes = {
       titleI18n: 'routes.activitepartielle.title',
       urls: ['/activitepartielle', '/activitepartielle/'],
       sourcesIds: [
-        'national-activitepartielle-raw',
-        'regions-activitepartielle-raw',
-        'departements-activitepartielle-raw'
+        // 'national-activitepartielle-raw',
+        // 'regions-activitepartielle-raw',
+        // 'departements-activitepartielle-raw',
+
+        // 'national-activitepartielle-raw-2',
+        // 'regions-activitepartielle-raw-2',
+        // 'departements-activitepartielle-raw-2',
+
+        'national-activitepartielle-raw-3',
+        'regions-activitepartielle-raw-3',
+        'departements-activitepartielle-raw-3',
+
       ],
       rawHtml: undefined,
       navbarFooter: {
@@ -1383,6 +1396,19 @@ export const configAppRoutes = {
                   align: 'center',
                   settings: {
                     id: 'apexchart-activitepartielle-time-serie-01',
+                    containerClass: 'mt-4 pt-3 pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'apexchart',
+                  activated: true,
+                  smallScreenVerticalOrder: 4,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'apexchart-activitepartielle-time-serie-02',
                     containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true
