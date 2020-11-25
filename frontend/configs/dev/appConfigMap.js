@@ -2056,7 +2056,7 @@ export const configAppMap = {
       ]
     },
 
-    
+
     // ====================================== //
     // === DATASET : CPSTI ================ //
     // ====================================== //
@@ -2628,7 +2628,9 @@ export const configAppMap = {
                   funcParams: {
                     zoomRange: {
                       minZoom: undefined,
-                      maxZoom: ZOOM_THRESHOLD_BIS
+                      // overidden to account for region -> region navigation
+                      // vs region -> department
+                      maxZoom: 7
                     },
                     propName: 'code',
                     targets: [
@@ -2649,8 +2651,8 @@ export const configAppMap = {
                         fromStoreData: 'initData',
                         fromDatasetId: 'regions-activitepartielle-raw',
                         fromDatasetKey: 'reg',
-                        fromDatasetField: 'nombre_etablissements_concernes',
-                        targetSpecialStoreId: 'nombre_etablissements_concernes'
+                        fromDatasetField: 'nombre_demandes_deposees',
+                        targetSpecialStoreId: 'nombre_demandes_deposees'
                       },
 
                       {
@@ -2701,108 +2703,6 @@ export const configAppMap = {
             {
               event: 'mouseleave',
               layer: 'regions-fill',
-              functions: [
-                COMMON_CLICK_EVENTS.toggleHighlightOff
-              ]
-            }
-          ]
-        },
-
-        {
-          id: 'map-activitepartielle-dep',
-          name: 'Carte activite partielle par departement',
-          category: 'departemental',
-          properties: 'activitepartielle',
-          data: 'activitepartielle',
-          layers: [
-            'departements-fill',
-            'departements-lines',
-            'departements-activitepartielle',
-            'departements-activitepartielle-nombre'
-          ],
-          clicEvents: [
-            {
-              event: 'click',
-              layer: 'departements-fill',
-              functions: [
-                COMMON_CLICK_EVENTS.toggleSelectedOn,
-                {
-                  funcName: 'updateDisplayedData',
-                  help: 'update several data (targets) from store',
-                  funcParams: {
-                    zoomRange: {
-                      minZoom: ZOOM_THRESHOLD,
-                      maxZoom: undefined
-                    },
-                    propName: 'code',
-                    targets: [
-                      {
-                        from: 'store',
-                        fromPropKey: 'code',
-                        fromStoreData: 'initData',
-                        fromDatasetId: 'taxo-departements',
-                        fromDatasetKey: 'dep',
-                        fromDatasetField: 'libelle',
-                        targetSpecialStoreId: 'levelname'
-                      },
-
-                      {
-                        from: 'store',
-                        fromPropKey: 'code', // use props dep code
-                        fromStoreData: 'initData',
-                        fromDatasetId: 'departements-activitepartielle-raw',
-                        fromDatasetKey: 'dep',
-                        fromDatasetField: 'nombre_etablissements_concernes',
-                        targetSpecialStoreId: 'nombre_etablissements_concernes'
-                      },
-
-                      {
-                        from: 'store',
-                        fromPropKey: 'code', // use props dep code
-                        fromStoreData: 'initData',
-                        fromDatasetId: 'departements-activitepartielle-raw',
-                        fromDatasetKey: 'dep',
-                        fromDatasetField: 'nombre_salaries_concernes',
-                        targetSpecialStoreId: 'nombre_salaries_concernes'
-                      },
-
-                      {
-                        from: 'store',
-                        fromPropKey: 'code', // use props dep code
-                        fromStoreData: 'initData',
-                        fromDatasetId: 'departements-activitepartielle-raw',
-                        fromDatasetKey: 'dep',
-                        fromDatasetField: 'nombre_heures_demandees',
-                        targetSpecialStoreId: 'nombre_heures_demandees'
-                      },
-
-                      {
-                        from: 'store',
-                        fromPropKey: 'code', // use props dep code
-                        fromStoreData: 'initData',
-                        fromDatasetId: 'departements-activitepartielle-raw',
-                        fromDatasetKey: 'dep',
-                        fromDatasetField: undefined,
-                        targetSpecialStoreId: 'focusObject'
-                      }
-                    ]
-                  }
-                },
-                COMMON_CLICK_EVENTS.updateUrlPathDepartements
-              ]
-            },
-
-            {
-              event: 'mousemove',
-              layer: 'departements-fill',
-              functions: [
-                COMMON_CLICK_EVENTS.toggleHighlightOn
-              ]
-            },
-
-            {
-              event: 'mouseleave',
-              layer: 'departements-fill',
               functions: [
                 COMMON_CLICK_EVENTS.toggleHighlightOff
               ]
@@ -2876,12 +2776,6 @@ export const configAppMap = {
             mapId: 'map-activitepartielle-reg',
             label: { fr: 'régions' },
             default_visible: true
-          },
-          {
-            id: 'departements',
-            mapId: 'map-activitepartielle-dep',
-            label: { fr: 'départements' },
-            default_visible: false
           }
         ]
       }

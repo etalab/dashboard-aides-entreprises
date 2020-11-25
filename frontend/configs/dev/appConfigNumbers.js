@@ -155,6 +155,26 @@ export const configAppNumbers = {
           columns: [
             {
               colName: '',
+              colTitle: { fr: 'Nombre de demandes' },
+              titleI18n: 'numbers.numbers01.total',
+              colClass: '',
+              cols: 4,
+              titleClass: '',
+              numberClass: 'font-weight-bold',
+              sizeDesktop: 'title',
+              sizeMobile: 'mb-1 caption text-center',
+              breakDesktop: false,
+              breakMobile: true,
+              legendClass: '',
+              unit: { fr: '' },
+              legend: { fr: '' },
+              textPrefix: { fr: '' },
+              textSuffix: { fr: '' },
+              specialStoreId: 'nombre_demandes_deposees',
+              format: { type: 'integer', sepThousands: ' ' }
+            },
+            {
+              colName: '',
               colTitle: { fr: 'Nombre de salariés' },
               titleI18n: 'numbers.numbers01.total',
               colClass: '',
@@ -173,28 +193,6 @@ export const configAppNumbers = {
               specialStoreId: 'nombre_salaries_concernes',
               format: { type: 'integer', sepThousands: ' ' }
             },
-
-            {
-              colName: '',
-              colTitle: { fr: 'Nombre d\'entreprises' },
-              titleI18n: 'numbers.numbers01.total',
-              colClass: '',
-              cols: 4,
-              titleClass: '',
-              numberClass: 'font-weight-bold',
-              sizeDesktop: 'title',
-              sizeMobile: 'mb-1 caption text-center',
-              breakDesktop: false,
-              breakMobile: true,
-              legendClass: '',
-              unit: { fr: '' },
-              legend: { fr: '' },
-              textPrefix: { fr: '' },
-              textSuffix: { fr: '' },
-              specialStoreId: 'nombre_etablissements_concernes',
-              format: { type: 'integer', sepThousands: ' ' }
-            },
-
             {
               colName: '',
               colTitle: { fr: 'Heures demandées' },

@@ -938,7 +938,7 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Nombre d'entreprises concernées par l'activité partielle
+          Nombre de demandes d'activité partielle réalisées par les entreprises
           <br>
           ventilées par 
           <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
