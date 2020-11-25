@@ -52,7 +52,7 @@ export default {
   },
 
   mounted() {
-    this.log && console.log("C-GlobalButtons / mounted ...")
+    // this.log && console.log("C-GlobalButtons / mounted ...")
   },
 
   computed: {

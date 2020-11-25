@@ -4,21 +4,21 @@ import axios from 'axios'
 
 export default function ({ store, route }) {
   const log = store.state.log
-  log && console.log('\n', '+ '.repeat(20))
-  log && console.log('-MW- getRouteData / ... ')
+  // log && console.log('\n', '+ '.repeat(20))
+  // log && console.log('-MW- getRouteData / ... ')
 
   const currentRouteConfig = store.getters.getLocalRouteConfig
-  log && console.log('-MW- getRouteData / currentRouteConfig.id :', currentRouteConfig.id)
+  // log && console.log('-MW- getRouteData / currentRouteConfig.id :', currentRouteConfig.id)
 
   const promisesArray = []
   const callableFrom = ['url', 'static']
 
   // STORE DATASETS
   const routeNeedDataReset = store.getters.getRouteNeedDataReset
-  log && console.log('-MW- getRouteData / routeNeedDataReset :', routeNeedDataReset)
+  // log && console.log('-MW- getRouteData / routeNeedDataReset :', routeNeedDataReset)
 
   if (routeNeedDataReset) {
-    log && console.log('\n-MW- getRouteData / routeNeedDataReset ...')
+    // log && console.log('\n-MW- getRouteData / routeNeedDataReset ...')
 
     const currentRouteConfigDatasets = currentRouteConfig.sourcesIds
     // log && console.log('\n-MW- getRouteData / currentRouteConfigDatasets :', currentRouteConfigDatasets)
@@ -32,7 +32,7 @@ export default function ({ store, route }) {
     // log && console.log('-MW- getRouteData / routeNeedDataReset / dataToStoreAtInitList :', dataToStoreAtInitList)
 
     for (const dataRef of dataToStoreAtInitList) {
-      log && console.log('\n-MW- getRouteData / dataRef.id :', dataRef.id)
+      // log && console.log('\n-MW- getRouteData / dataRef.id :', dataRef.id)
       // log && console.log('-MW- getRouteData / dataRef :', dataRef)
       // log && console.log('-MW- getRouteData / is callable :', callableFrom.includes( dataRef.from ))
 
@@ -44,18 +44,18 @@ export default function ({ store, route }) {
       // PROMISE FOR DATA FROM RAWOBJECT
 
       if (dataRef.from === 'rawObject') {
-        log && console.log('-MW- getRouteData / dataRef.from :', dataRef.from)
+        // log && console.log('-MW- getRouteData / dataRef.from :', dataRef.from)
 
         const initDataFromObjectPromise = new Promise((resolve) => {
           resolve(dataRef.rawObject)
         }).then((resp) => {
-          log &&
-            console.log(
-              '-MW- getRouteData / dataset.id',
-              dataset.id,
-              ' / res :',
-              resp
-            )
+          // log &&
+          //   console.log(
+          //     '-MW- getRouteData / dataset.id',
+          //     dataset.id,
+          //     ' / res :',
+          //     resp
+          //   )
           dataset.data = resp
           store.commit('data/pushToInitData', dataset)
           // COPY IT TO data/displayedData
@@ -73,7 +73,7 @@ export default function ({ store, route }) {
 
       // if ( dataRef.from == 'url' || dataRef == 'static' ) {
       if (callableFrom.includes(dataRef.from)) {
-        log && console.log('-MW- getRouteData / dataRef.from :', dataRef.from)
+        // log && console.log('-MW- getRouteData / dataRef.from :', dataRef.from)
 
         // GET DATA AND STORE TO data/initData
         const initDataFromUrlPromise = axios
@@ -106,6 +106,6 @@ export default function ({ store, route }) {
   }
 
   // WAIT FOR ALL PROMISES TO RETURN
-  log && console.log('\n')
+  // log && console.log('\n')
   return Promise.all(promisesArray)
 }

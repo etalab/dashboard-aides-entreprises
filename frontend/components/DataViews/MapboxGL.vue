@@ -309,7 +309,7 @@ export default {
   },
 
   mounted() {
-    this.log && console.log("C-MapboxGL / mounted ...")
+    // this.log && console.log("C-MapboxGL / mounted ...")
     this.handleResize()
     this.getCanShow()
   },
@@ -550,16 +550,16 @@ export default {
       // URL SOURCES
       let promisesArray = []
       for (let source of sourcesArray) {
-        this.log &&
-          console.log(
-            "\nC-MapboxGL / loadUrlSources - url ... source.id : ",
-            source.id
-          )
-        this.log &&
-          console.log(
-            "C-MapboxGL / loadUrlSources - url ... source.help : ",
-            source.help
-          )
+        // this.log &&
+        //   console.log(
+        //     "\nC-MapboxGL / loadUrlSources - url ... source.id : ",
+        //     source.id
+        //   )
+        // this.log &&
+        //   console.log(
+        //     "C-MapboxGL / loadUrlSources - url ... source.help : ",
+        //     source.help
+        //   )
         let mapBoxSrcObj = {
           type: source.type,
         }

@@ -3,11 +3,11 @@ import { updateDataStore, setMapView, setSelectedPolygons } from '~/utils/utilsS
 
 export default function ({ store, route }) {
   const log = store.state.log
-  log && console.log('\n', '+ '.repeat(20))
-  log && console.log('-MW- setRouteViews / ... ')
+  // log && console.log('\n', '+ '.repeat(20))
+  // log && console.log('-MW- setRouteViews / ... ')
 
   const currentRouteConfig = store.getters.getLocalRouteConfig
-  log && console.log('-MW- setRouteViews / currentRouteConfig.id :', currentRouteConfig.id)
+  // log && console.log('-MW- setRouteViews / currentRouteConfig.id :', currentRouteConfig.id)
 
   // GET ROUTE PARAMS IF ANY IN ROUTE && ROUTE_CONNFIG
   const setUpRouteViews = currentRouteConfig.setUpRouteViews

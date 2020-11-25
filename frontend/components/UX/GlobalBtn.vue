@@ -53,7 +53,7 @@ export default {
   },
 
   mounted() {
-    this.log && console.log("C-GlobalButton / mounted ...")
+    // this.log && console.log("C-GlobalButton / mounted ...")
     this.getCanShow()
   },
 

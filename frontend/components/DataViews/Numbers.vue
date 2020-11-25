@@ -92,7 +92,7 @@ export default {
   },
 
   mounted() {
-    this.log && console.log("C-Numbers / mounted ...")
+    // this.log && console.log("C-Numbers / mounted ...")
     this.getCanShow()
   },
 

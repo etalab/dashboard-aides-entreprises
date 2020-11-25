@@ -269,7 +269,38 @@ const COMMON_SERIES_MAPPERS = {
       getValueFromKey: 'color_section',
       fallbackColor: '#808080'
     }
-  }
+  },
+
+  NaceByNombreEntrepriseStack: {
+    dataFromKey: KEY_ETABLISSEMENTS,
+    serieName: 'Nombre d\'entreprises ',
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_ETABLISSEMENTS,
+      toNumber: true,
+      sortOrder: 'descending',
+      exceptions: {
+        putLast: { fieldName: KEY_SECTION_NACE, value: 'Autres' }
+      }
+    },
+
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_SECTION_NACE_LABEL,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NACE,
+      matchWithDatasetId: 'taxo-nace17-colors',
+      matchKey: 'code_section_nace17',
+      getValueFromKey: 'color_section',
+      fallbackColor: '#808080'
+    }
+  },
 }
 const COMMON_CHART_OPTIONS = {
   categHorizH300: {
@@ -481,7 +512,68 @@ const COMMON_CHART_OPTIONS = {
         }
       }
     ]
-  }
+  },
+
+  // stack
+  categHorizH390Stack: {
+    // cf : https://apexcharts.com/javascript-chart-demos/bar-charts/stacked/
+    chart: {
+      type: 'bar',
+      height: '390px',
+      width: '390px',
+      // stacked: true,
+      toolbar: {
+        show: false
+      }
+    },
+    legend: {
+      show: false
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        distributed: true // nerd-pride....
+      }
+    },
+    theme: {
+      mode: 'light'
+    },
+
+    dataLabels: {
+      enabled: true
+    },
+
+    xaxis: {
+      type: 'category',
+      labels: {
+        show: false,
+        style: {
+          fontSize: '9px'
+        }
+      }
+    },
+
+    responsive: [
+      {
+        breakpoint: 960,
+        options: {
+          chart: {
+            // height: "370px",
+            width: '350px'
+          },
+          xaxis: {
+            type: 'numeric',
+            labels: {
+              show: false,
+              style: {
+                fontSize: '9px'
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
 }
 
 export const configAppCharts = {
@@ -922,10 +1014,13 @@ export const configAppCharts = {
       datasetMappers: {
         specialStoreId: 'focusObject',
         fromDatasetKey: 'kpi_top_10_nace17',
+        // fromDatasetKey: 'mois', // stack
         seriesMappers: [
-          COMMON_SERIES_MAPPERS.NaceByNombreEntreprise
+          // COMMON_SERIES_MAPPERS.NaceByNombreEntreprise
+          COMMON_SERIES_MAPPERS.NaceByNombreEntrepriseStack // stack
         ],
-        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        // chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390Stack, // stack
         format: COMMON_FORMATTERS.integerEuropeanFormat
       }
 

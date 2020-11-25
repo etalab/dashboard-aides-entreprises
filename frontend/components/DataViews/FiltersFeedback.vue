@@ -30,7 +30,7 @@ export default {
   watch: {},
 
   mounted() {
-    this.log && console.log("C-FiltersFeedback / mounted ...")
+    // this.log && console.log("C-FiltersFeedback / mounted ...")
   },
 
   computed: {

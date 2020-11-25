@@ -188,14 +188,14 @@ export const getters = {
 
 export const mutations = {
   setConfigData (state, configData) {
-    state.log && console.log('S-data-M-setConfigData / configData.help  : ', configData.help)
+    // state.log && console.log('S-data-M-setConfigData / configData.help  : ', configData.help)
     state.dataSource = configData.dataSource
     state.defaultDataSetup = configData.defaultDataSetup
     state.routesData = configData.routesData
     state.filters = configData.filters
   },
   setConfigBackendUrl (state, backendApi) {
-    state.log && console.log('S-data-M-setConfigBackendUrl / backendApi  : ', backendApi)
+    // state.log && console.log('S-data-M-setConfigBackendUrl / backendApi  : ', backendApi)
     state.backendApi = backendApi
   },
 
@@ -255,8 +255,8 @@ export const mutations = {
 
 export const actions = {
   setUpConfigData ({ state, commit, getters, rootGetters }) {
-    state.log && console.log('\n', '- '.repeat(20))
-    state.log && console.log('S-data-A-setUpConfigData / ... ')
+    // state.log && console.log('\n', '- '.repeat(20))
+    // state.log && console.log('S-data-A-setUpConfigData / ... ')
 
     const configData = rootGetters['configs/getConfigField']('configAppData')
     // state.log && console.log('S-data-A-setUpConfigData / configData :', configData)

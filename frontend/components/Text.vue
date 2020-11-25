@@ -23,7 +23,7 @@ export default {
   watch: {},
 
   mounted() {
-    this.log && console.log("C-Text / mounted ...")
+    // this.log && console.log("C-Text / mounted ...")
   },
 
   computed: {

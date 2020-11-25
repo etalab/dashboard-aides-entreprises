@@ -39,7 +39,22 @@
       </div>
     </v-layout>
 
-    <v-layout justify-center :class="`custom-min-height`">
+    <!-- DEBUG -->
+    <v-layout justify-center>
+      <div
+        >
+        <!-- v-if="canShow && localChartOptions && localSeries" -->
+        localSeries : <br>
+        <code>
+          <pre>
+            {{ localSeries }}
+          </pre>
+        </code>
+      </div>
+    </v-layout>
+
+     <!-- CHART -->
+     <v-layout justify-center :class="`custom-min-height`">
       <apexchart
         v-if="canShow && localChartOptions && localSeries"
         :ref="settings.id"
@@ -114,7 +129,7 @@ export default {
 
   beforeMount() {
     // set up view config
-    this.log && console.log("C-ApexChart / beforeMount ... ")
+    // this.log && console.log("C-ApexChart / beforeMount ... ")
 
     this.viewConfig = this.getLocalConfig
     this.datasetMappers = this.viewConfig.datasetMappers
@@ -242,7 +257,7 @@ export default {
             //   this.log && console.log('\nC-ApexChart / getSeries / formatterOpts : ', formatterOpts )
             //   value = numberToString(value, formatterOpts)
             // }
-            // this.log && console.log('C-ApexChart / getSeries / value : ', value )
+            this.log && console.log('C-ApexChart / getSeries / value : ', value )
 
             // 2bis - rebuild categories on x-axis
             if (mapper.buildAxisCategsX) {
