@@ -1,0 +1,2 @@
+psql -d dashboard -c "\copy (select date_paiement, count(*) as nombre, sum(montant) as montant from aide group by date_paiement) TO '/tmp/extract-stats.csv' DELIMITER ',' CSV HEADER;"
+mv /tmp/extract-stats.csv ../../data/stats/
