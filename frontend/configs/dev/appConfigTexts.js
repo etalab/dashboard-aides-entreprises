@@ -63,9 +63,11 @@ const COMMON_TEXTS_HTML = {
     textClass: 'text-left mx-4 pt-4',
     textContent: {
       fr: `
-        Les données utilisées sur ce tableau de bord 
+        Les données utilisées sur ce tableau de bord<a target="_blank" href="https://open.urssaf.fr/explore/dataset/aide-exceptionnelle-cpsti-covid-19">
+         sont disponibles sur le portail open data de l'Urssaf</a>
+         et
         <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-aides-exceptionnelles-aux-artisans-et-commercants-dans-le-cadre-de-lepidemie-de-covid-19/">
-          sont disponibles en open data sur data.gouv.fr</a>.
+          sur data.gouv.fr</a>.
         
       `
     },
