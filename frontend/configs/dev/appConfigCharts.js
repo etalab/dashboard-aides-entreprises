@@ -566,7 +566,7 @@ const COMMON_CHART_OPTIONS = {
       }
     },
     legend: {
-      position: 'top',
+      position: 'bottom',
       horizontalAlign: 'left',
       offsetX: 0
     },
@@ -589,7 +589,7 @@ const COMMON_CHART_OPTIONS = {
       categories: [
         'mars 2020',
         'avril 2020',
-        'mai 2020-03',
+        'mai 2020',
         'juin 2020',
         'juillet 2020',
         'août 2020',
