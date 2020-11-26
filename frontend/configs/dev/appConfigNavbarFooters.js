@@ -122,6 +122,7 @@ export const configAppNavbarFooters = {
               divIds: [
                 'map-france-activitepartielle-metro',
                 'apexchart-activitepartielle-time-serie-01',
+                'apexchart-activitepartielle-time-serie-02',
                 // 'apexchart-activitepartielle',
                 // 'apexchart-activitepartielle-02',
                 // 'apexchart-activitepartielle-03'
@@ -231,6 +232,7 @@ export const configAppNavbarFooters = {
                 'text-activitepartielle-infos',
                 // 'text-activitepartielle-note',
                 'apexchart-activitepartielle-time-serie-01',
+                'apexchart-activitepartielle-time-serie-02',
                 // 'apexchart-activitepartielle',
                 // 'apexchart-activitepartielle-02',
                 // 'apexchart-activitepartielle-03'
@@ -330,6 +332,7 @@ export const configAppNavbarFooters = {
                 'text-activitepartielle-title',
                 'text-activitepartielle-note',
                 'apexchart-activitepartielle-time-serie-01',
+                'apexchart-activitepartielle-time-serie-02',
                 // 'apexchart-activitepartielle',
                 // 'apexchart-activitepartielle-02',
                 // 'apexchart-activitepartielle-03'
