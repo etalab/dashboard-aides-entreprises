@@ -719,8 +719,8 @@ export const configAppTexts = {
                   textContent: {
                     fr: `
                       <em>
-                      nota : les chiffres indiqués représentent les valeurs cumulées
-                      depuis le début de la crise sanitaire COVID-19
+                      nota : les chiffres indiqués représentent les valeurs
+                      au dernier mois disponible (septembre 2020)
                       </em>
                       `
                   },
