@@ -2732,7 +2732,7 @@ export const configAppMap = {
           layout: {
             visibility: 'visible'
           },
-          maxzoom: ZOOM_THRESHOLD,
+          maxzoom: 11,
           paint: circlePaintACTIVITEPARTIELLE
         },
         {
@@ -2742,31 +2742,9 @@ export const configAppMap = {
           layout: {
             ...COMMON_TEXTS.salaries
           },
-          maxzoom: ZOOM_THRESHOLD
+          maxzoom: 11
         },
 
-        // DEPARTEMENTS
-        COMMON_LAYERS.FranceDepartementsFill,
-        COMMON_LAYERS.FranceDepartementsLines,
-        {
-          id: 'departements-activitepartielle',
-          type: 'circle',
-          source: 'departements-activitepartielle',
-          layout: {
-            // visibility: 'none'
-          },
-          paint: circlePaintACTIVITEPARTIELLE,
-          minzoom: ZOOM_THRESHOLD
-        },
-        {
-          id: 'departements-activitepartielle-nombre',
-          type: 'symbol',
-          source: 'departements-activitepartielle',
-          layout: {
-            ...COMMON_TEXTS.salaries
-          },
-          minzoom: ZOOM_THRESHOLD
-        }
       ],
 
       // - - - - - - - - - - - - - - - - - - //
