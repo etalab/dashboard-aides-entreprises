@@ -68,7 +68,7 @@ const COMMON_TEXTS_HTML = {
          et
         <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-aides-exceptionnelles-aux-artisans-et-commercants-dans-le-cadre-de-lepidemie-de-covid-19/">
           sur data.gouv.fr</a>.
-        
+
       `
     },
     fromUrl: {
@@ -169,48 +169,48 @@ export const configAppTexts = {
                   textClass: 'text-left mx-4 pt-4',
                   textContent: {
                     fr: `
-                      L’État et les Régions ont mis en place un fonds de solidarité pour 
-                      aider les petites entreprises les plus touchées par la crise. 
-                      Les intercommunalités et les grandes entreprises pourront contribuer 
-                      au financement du fonds. Les compagnies d’assurance ont déjà annoncé 
+                      L’État et les Régions ont mis en place un fonds de solidarité pour
+                      aider les petites entreprises les plus touchées par la crise.
+                      Les intercommunalités et les grandes entreprises pourront contribuer
+                      au financement du fonds. Les compagnies d’assurance ont déjà annoncé
                       une contribution de 400 millions d’euros.
                       <br><br>
-                      Sont concernés par cette aide pouvant aller jusqu’à 1 500 €, 
-                      les TPE, indépendants, micro-entrepreneurs et professions 
-                      libérales qui ont 10 salariés au plus, qui font moins d’1 million 
-                      d’euros de chiffre d’affaires ainsi qu’un bénéfice annuel 
-                      imposable inférieur à 60 000 € et qui : 
+                      Sont concernés par cette aide pouvant aller jusqu’à 1 500 €,
+                      les TPE, indépendants, micro-entrepreneurs et professions
+                      libérales qui ont 10 salariés au plus, qui font moins d’1 million
+                      d’euros de chiffre d’affaires ainsi qu’un bénéfice annuel
+                      imposable inférieur à 60 000 € et qui :
                       <br><br>
                       <ul>
                         <li>
-                          subissent une interdiction d’accueil du public selon l’article 
-                          8 du décret du 23 mars 2020 même s’il y a une activité résiduelle 
+                          subissent une interdiction d’accueil du public selon l’article
+                          8 du décret du 23 mars 2020 même s’il y a une activité résiduelle
                           telle que la vente à emporter, la livraison et les retraits de commandes, « room service »
                         </li>
                         <br>
                         OU
                         <br><br>
                         <li>
-                          Pour l’aide versée au titre du mois de mars : 
-                          qui connaissent une perte de chiffre d'affaires d’au moins 50 % au mois de mars 2020 
+                          Pour l’aide versée au titre du mois de mars :
+                          qui connaissent une perte de chiffre d'affaires d’au moins 50 % au mois de mars 2020
                           par rapport au mois de mars 2019 ;
                         </li>
                         <li>
-                          Pour l’aide versée au titre du mois d’avril : 
-                          qui connaissent une perte de chiffre d'affaires d’au moins 50 % au mois d’avril 2020 
-                          par rapport au mois d’avril 2019 ou au chiffre d’affaires mensuel moyen sur 2019.                  
+                          Pour l’aide versée au titre du mois d’avril :
+                          qui connaissent une perte de chiffre d'affaires d’au moins 50 % au mois d’avril 2020
+                          par rapport au mois d’avril 2019 ou au chiffre d’affaires mensuel moyen sur 2019.
                         </li>
                       </ul>
                       <br>
-                      Par ailleurs, Bruno Le Maire, ministre de l’Économie et des Finances, 
-                      a annoncé mercredi 15 avril 2020 que les agriculteurs membres d’un 
-                      groupement agricole d’exploitation en commun (GAEC), 
-                      les artistes-auteurs, et les entreprises en redressement judiciaire 
-                      ou en procédure de sauvegarde pourront également bénéficier 
+                      Par ailleurs, Bruno Le Maire, ministre de l’Économie et des Finances,
+                      a annoncé mercredi 15 avril 2020 que les agriculteurs membres d’un
+                      groupement agricole d’exploitation en commun (GAEC),
+                      les artistes-auteurs, et les entreprises en redressement judiciaire
+                      ou en procédure de sauvegarde pourront également bénéficier
                       du fonds de solidarité.
                       <br><br>
-                      Pour les situations les plus difficiles, 
-                      un soutien complémentaire d'un montant de 2000 à 5 000 € 
+                      Pour les situations les plus difficiles,
+                      un soutien complémentaire d'un montant de 2000 à 5 000 €
                       pourra être octroyé aux entreprises qui :
                       <br><br>
                       <ul>
@@ -220,9 +220,9 @@ export const configAppTexts = {
                         <li>ont vu leur demande d'un prêt de trésorerie faite depuis le 1er mars 2020, auprès d'une banque dont elles étaient clientes à cette date, refusée ou restée sans réponse passé un délai de dix jours.</li>
                       </ul>
                       <br>
-                      Cette cartographie présente les montants attribués dans le cadre du fonds de solidarité 
-                      projetés au niveau départemental et régional 
-                      avec une ventilation par secteur d'activité, structure juridique et 
+                      Cette cartographie présente les montants attribués dans le cadre du fonds de solidarité
+                      projetés au niveau départemental et régional
+                      avec une ventilation par secteur d'activité, structure juridique et
                       tranche d'effectifs (effectifs pour les entreprises affiliées au régime général).
                       Les données concernent uniquement les entreprises affiliées au régime général
                       <br><br>
@@ -323,44 +323,44 @@ export const configAppTexts = {
                   textClass: 'text-left mx-4 pt-4',
                   textContent: {
                     fr: `
-                      Le Gouvernement met en œuvre un dispositif exceptionnel de garanties 
-                      permettant de soutenir le financement bancaire des entreprises, 
+                      Le Gouvernement met en œuvre un dispositif exceptionnel de garanties
+                      permettant de soutenir le financement bancaire des entreprises,
                       à hauteur de 300 milliards d’euros.
                       <br><br>
-                      Jusqu’au 31 décembre prochain, les entreprises de toute taille, 
-                      quelle que soit la forme juridique de l’entreprise 
-                      (notamment sociétés, commerçants, artisans, exploitants agricoles, 
-                        professions libérales, micro-entrepreneurs, associations et fondations 
+                      Jusqu’au 31 décembre prochain, les entreprises de toute taille,
+                      quelle que soit la forme juridique de l’entreprise
+                      (notamment sociétés, commerçants, artisans, exploitants agricoles,
+                        professions libérales, micro-entrepreneurs, associations et fondations
                         ayant une activité économique
-                      ), 
-                      à l’exception des sociétés civiles immobilières, des établissements de crédit 
-                      et des sociétés de financement, pourront demander à leur banque habituelle 
+                      ),
+                      à l’exception des sociétés civiles immobilières, des établissements de crédit
+                      et des sociétés de financement, pourront demander à leur banque habituelle
                       un prêt garanti par l’État pour soutenir leur trésorerie.
                       <br><br>
-                      Ce prêt pourra représenter jusqu’à 3 mois de chiffre d'affaires 2019, 
-                      ou deux années de masse salariale pour les entreprises innovantes 
-                      ou créées depuis le 1er janvier 2019. 
-                      Aucun remboursement ne sera exigé la première année ; 
+                      Ce prêt pourra représenter jusqu’à 3 mois de chiffre d'affaires 2019,
+                      ou deux années de masse salariale pour les entreprises innovantes
+                      ou créées depuis le 1er janvier 2019.
+                      Aucun remboursement ne sera exigé la première année ;
                       l’entreprise pourra choisir d’amortir le prêt sur une durée maximale de cinq ans.
                       <br><br>
-                      Les banques s’engagent à examiner toutes les demandes qui leur seront adressées 
-                      et à leur donner une réponse rapide. 
-                      Elles s’engagent à distribuer massivement, à prix coûtant, 
-                      les prêts garantis par l’État pour soulager sans délai la trésorerie 
+                      Les banques s’engagent à examiner toutes les demandes qui leur seront adressées
+                      et à leur donner une réponse rapide.
+                      Elles s’engagent à distribuer massivement, à prix coûtant,
+                      les prêts garantis par l’État pour soulager sans délai la trésorerie
                       des entreprises et des professionnels.
                       <br><br>
-                      Néanmoins, toutes les entreprises, en particulier les plus grandes, 
-                      qui ne respecteraient pas leurs obligations en termes de délais de paiement, 
+                      Néanmoins, toutes les entreprises, en particulier les plus grandes,
+                      qui ne respecteraient pas leurs obligations en termes de délais de paiement,
                       n'auront pas accès à cette garantie de l'État pour leurs crédits bancaires.
                       <br><br>
-                      Par ailleurs, les banques françaises se sont engagées à reporter 
+                      Par ailleurs, les banques françaises se sont engagées à reporter
                       jusqu’à 6 mois le remboursement de crédits des entreprises, sans frais.
                       <br><br>
-                      Cette cartographie présente les montants de prêts garantis Etat 
-                      projetés au niveau départemental et régional avec une ventilation 
+                      Cette cartographie présente les montants de prêts garantis Etat
+                      projetés au niveau départemental et régional avec une ventilation
                       par secteur d'activité.
                       <br><br>
-                      Les données sous-jacentes sont mises à jour 
+                      Les données sous-jacentes sont mises à jour
                       de manière hebdomadaire.
                     `
                   },
@@ -458,47 +458,47 @@ export const configAppTexts = {
                   textClass: 'text-left mx-4 pt-4',
                   textContent: {
                     fr: `
-                      Le Gouvernement a annoncé le report des principales 
-                      échéances fiscales des professionnels afin de tenir 
+                      Le Gouvernement a annoncé le report des principales
+                      échéances fiscales des professionnels afin de tenir
                       compte de leurs difficultés liées à la crise sanitaire du coronavirus.
                       <br><br>
                       Le report fiscal concerne :
                       <br><br>
                       <ul>
                         <li>
-                          Les entreprises ou les experts-comptables qui 
-                          interviennent pour des clients, pour qui il est possible 
-                          de demander au service des impôts des entreprises 
-                          le report sans pénalité du règlement de leurs prochaines 
-                          échéances d'impôts directs 
+                          Les entreprises ou les experts-comptables qui
+                          interviennent pour des clients, pour qui il est possible
+                          de demander au service des impôts des entreprises
+                          le report sans pénalité du règlement de leurs prochaines
+                          échéances d'impôts directs
                         (acompte d'impôt sur les sociétés, taxe sur les salaires).
                         </li>
                         <li>
-                          Les travailleurs indépendants qui peuvent moduler à 
-                          tout moment le taux et les acomptes de prélèvement à la source. 
-                          Il est aussi possible de reporter le paiement 
-                          des acomptes de prélèvement à la source sur les revenus 
-                          professionnels d’un mois sur l’autre, jusqu’à trois fois 
-                          si les acomptes sont mensuels, ou d’un trimestre sur l’autre 
+                          Les travailleurs indépendants qui peuvent moduler à
+                          tout moment le taux et les acomptes de prélèvement à la source.
+                          Il est aussi possible de reporter le paiement
+                          des acomptes de prélèvement à la source sur les revenus
+                          professionnels d’un mois sur l’autre, jusqu’à trois fois
+                          si les acomptes sont mensuels, ou d’un trimestre sur l’autre
                           si les acomptes sont trimestriels.
                         </li>
                       </ul>
                       <br>
-                      Afin d'apporter une aide financière aux entreprises 
-                      en difficulté, une procédure accélérée de remboursement 
-                      des créances d'impôt sur les sociétés restituables en 2020 
+                      Afin d'apporter une aide financière aux entreprises
+                      en difficulté, une procédure accélérée de remboursement
+                      des créances d'impôt sur les sociétés restituables en 2020
                       est mise en œuvre.
                       <br><br>
-                      Enfin, la Commission des chefs de services financiers (CCSF) 
-                      peut accorder aux entreprises qui rencontrent des difficultés 
-                      financières des délais de paiement pour s’acquitter de 
+                      Enfin, la Commission des chefs de services financiers (CCSF)
+                      peut accorder aux entreprises qui rencontrent des difficultés
+                      financières des délais de paiement pour s’acquitter de
                       leurs dettes fiscales et sociales en toute confidentialité.
                       <br><br>
-                      Cette cartographie présente les montants associés 
-                      aux reports d'échéances fiscales projetés au niveau départemental 
+                      Cette cartographie présente les montants associés
+                      aux reports d'échéances fiscales projetés au niveau départemental
                       et régional avec une ventilation par secteur d'activité.
                       <br><br>
-                      Les données utilisées pour ce tableau de bord sont 
+                      Les données utilisées pour ce tableau de bord sont
                       mises à jour de manière hebdomadaire.
                     `
                   },
@@ -605,21 +605,21 @@ export const configAppTexts = {
                       </ul>
                       <br>
                       <p>
-                        L'aide correspond au montant des cotisations de retraite complémentaire versées 
+                        L'aide correspond au montant des cotisations de retraite complémentaire versées
                         par les artisans et les commerçants sur la base de leurs revenus de 2018 et pourra aller jusqu'à 1250 €.
                       </p>
                       <p>
-                        Cette aide est versée de manière automatique par les Urssaf et ne nécessite aucune démarche 
+                        Cette aide est versée de manière automatique par les Urssaf et ne nécessite aucune démarche
                         des travailleurs indépendants concernés.
                       </p>
                       <p>
-                        Le montant de cette aide est par ailleurs exonéré d'impôt sur le revenu ainsi 
+                        Le montant de cette aide est par ailleurs exonéré d'impôt sur le revenu ainsi
                         que de cotisations et de contributions sociales.
                       </p>
                       <p>
-                        Cette aide exceptionnelle s'ajoute à l'ensemble des mesures prises en faveur des 
-                        travailleurs indépendants par le Gouvernement depuis le début de la crise. 
-                        Elle complète un dispositif massif de soutien à l'activité économique des artisans 
+                        Cette aide exceptionnelle s'ajoute à l'ensemble des mesures prises en faveur des
+                        travailleurs indépendants par le Gouvernement depuis le début de la crise.
+                        Elle complète un dispositif massif de soutien à l'activité économique des artisans
                         et des commerçants afin de maintenir leur activité et permettre une reprise rapide et forte de l'économie.
                       </p>
                     `
@@ -719,7 +719,7 @@ export const configAppTexts = {
                   textContent: {
                     fr: `
                       <em>
-                      nota : les chiffres indiqués représentent les valeurs
+                      nota : les chiffres indiqués ci-dessus et sur la carte représentent les valeurs
                       au dernier mois disponible (septembre 2020)
                       </em>
                       `
@@ -769,14 +769,14 @@ export const configAppTexts = {
                   textClass: 'text-left mx-4 pt-4',
                   textContent: {
                     fr: `
-                      Face à l’ampleur de la crise sanitaire liée au COVID-19, 
-                      le Gouvernement a décidé de transformer structurellement 
-                      le dispositif d’activité partielle, pour doter la France du système 
+                      Face à l’ampleur de la crise sanitaire liée au COVID-19,
+                      le Gouvernement a décidé de transformer structurellement
+                      le dispositif d’activité partielle, pour doter la France du système
                       le plus protecteur d’Europe.
                       <br><br>
-                      L’activité partielle est un outil au service de la politique publique 
-                      de prévention des licenciements économiques qui permet à l’employeur 
-                      en difficulté de faire prendre en charge tout ou partie 
+                      L’activité partielle est un outil au service de la politique publique
+                      de prévention des licenciements économiques qui permet à l’employeur
+                      en difficulté de faire prendre en charge tout ou partie
                       du coût de la rémunération de ses salariés.
                       <br><br>
                       L’activité partielle s’adresse à tous les salariés qui subissent une baisse de rémunération imputable  :
@@ -801,18 +801,18 @@ export const configAppTexts = {
                         </li>
                       </ul>
                       <br><br>
-                      Ces données sont tirées des tableaux de bords mis en place par la DARES. 
-                      Plus d'informations sur 
+                      Ces données sont tirées des tableaux de bords mis en place par la DARES.
+                      Plus d'informations sur
                       <a href="https://dares.travail-emploi.gouv.fr/dares-etudes-et-statistiques/tableaux-de-bord/le-marche-du-travail-pendant-le-covid-19/tableaux-de-bord-hebdomadaires" target="_blank">
                         le portail de la DARES
                       </a>
-                      ainsi que sur 
+                      ainsi que sur
                       <a href="https://activitepartielle.emploi.gouv.fr/apart/" target="_blank">
                         le portail officiel du gouvernement
                       </a>.
                       <br><br>
-                      Les données utilisées pour ce tableau de bord sont 
-                      mises à jour de manière 
+                      Les données utilisées pour ce tableau de bord sont
+                      mises à jour de manière
                       hebdomadaire.
                     `
                   },
