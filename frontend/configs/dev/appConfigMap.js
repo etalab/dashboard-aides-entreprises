@@ -197,8 +197,8 @@ const circlePaintREPORT = {
   ]
 }
 
-const maxRegCPSTI = 200
-const maxDepCPSTI = 45
+const maxRegCPSTI = 170
+const maxDepCPSTI = 40
 const maxRadRegCPSTI = getRadiusFullSqrt(maxRegCPSTI, maxRegCPSTI)
 const maxRadDepCPSTI = getRadiusFullSqrt(maxDepCPSTI, maxDepCPSTI)
 // const maxRadRegREPORT = Math.sqrt(maxRegREPORT)
