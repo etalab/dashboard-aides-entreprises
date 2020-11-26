@@ -2541,6 +2541,12 @@ export const configAppMap = {
 
       sizes: COMMON_SIZES.defaultSizes,
 
+      legend: {
+        activated: true,
+        legend_title: 'Nombre de salariés concernés par l\'activité partielle',
+        legend_subtitle: 'au mois de septembre 2020',
+      },
+
       // - - - - - - - - - - - - - - - - - - //
       // SOURCES LOADED AT MAP LOADED
       // - - - - - - - - - - - - - - - - - - //

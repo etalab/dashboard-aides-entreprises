@@ -57,16 +57,6 @@
       id="legend"
       :class="`legend-block legend-bottom-right`"
     >
-      <!-- DEBUGGING -->
-      <div class="content mx-4" v-if="log">
-        <p><code>version :<br> {{ appVersion }}</code></p>
-        <!-- <p><code>selectedStateId :<br> {{ selectedStateId }}</code></p> -->
-        <p><code>routeParams :<br> {{ routeParams }}</code></p>
-        <!-- <p><code>currentZoom : {{ currentZoom }}</code></p> -->
-        <!-- <p><code>getCurrentZoom() : {{ getCurrentZoom() }}</code></p> -->
-        
-        <!-- this.$device.isMobileOrTablet : <b>{{ $device.isMobileOrTablet }}</b> -->
-      </div>
 
       <!-- LAYERS SWITCH -->
       <div
@@ -103,6 +93,28 @@
         </div>
       </div>
     </v-layout>
+
+    <!-- MAP LEGEND -->
+    <v-layout
+      v-if="map && legendActivated"
+      id="legend"
+      :class="`legend legend-block legend-bottom-right`"
+      >
+      <div
+        id="map-legend"
+        class="content mx-1 body-2"
+        >
+        <p class="mb-0 font-weight-medium"
+          v-html="legendTitle"
+          >
+        </p>
+        <p class="mb-0"
+          v-html="legendSubTitle"
+          >
+        </p>
+      </div>
+    </v-layout>
+
 
     <!-- MAP WITH MAPBOX GL -->
     <no-ssr>
@@ -209,7 +221,7 @@ export default {
           this.loadLayers(this.layers)
           this.loadClicEvents(this.maps)
 
-          // set up view 
+          // set up view
           if (this.fitToPolygon) {
             // this.log && console.log("C-MapboxGL / watch - map / this.fitToPolygon : ", this.fitToPolygon)
             if (this.fitToPolygon.zoomBy === 'polygon') {
@@ -306,6 +318,11 @@ export default {
     this.mapsVisibility = this.viewConfig.maps_visibility
     this.drawerMapsOpen =
       this.mapsVisibility && this.mapsVisibility.is_drawer_open
+
+    // setup legend
+    this.legendActivated = this.viewConfig.legend && this.viewConfig.legend.activated
+    this.legendTitle = this.viewConfig.legend && this.viewConfig.legend.legend_title
+    this.legendSubTitle = this.viewConfig.legend && this.viewConfig.legend.legend_subtitle
   },
 
   mounted() {
@@ -392,9 +409,9 @@ export default {
     },
     handleResize() {
       let winHeight = window.innerHeight
-      let ODAMAP_height = document.getElementById('ODAMAP-root') ? document.getElementById('ODAMAP-root').clientHeight : undefined 
+      let ODAMAP_height = document.getElementById('ODAMAP-root') ? document.getElementById('ODAMAP-root').clientHeight : undefined
       // this.log && console.log("C-MapboxGL / handleResize ... winHeight : ", winHeight )
-      winHeight = ODAMAP_height ? ODAMAP_height : winHeight 
+      winHeight = ODAMAP_height ? ODAMAP_height : winHeight
 
       let mapHeight = winHeight
 
@@ -470,7 +487,7 @@ export default {
       // in store => WARNING : object too complex to be stored/mutated in vuex so far
       // check : https://ypereirareis.github.io/blog/2017/04/25/vuejs-two-way-data-binding-state-management-vuex-strict-mode/
 
-      // disable scroll zoom if 
+      // disable scroll zoom if
       if (this.noMapScroll || this.mapOptions.noScroll ) {
         _map.scrollZoom.disable()
       }
@@ -805,7 +822,7 @@ export default {
           // this.log && console.log('C-MapboxGL / updateUrlPath ... this.selectedStateId : ', this.selectedStateId )
           let selectedTranslated = []
           for ( let key in this.selectedStateId ) {
-            selectedTranslated.push( `${key}:${this.selectedStateId[key]}` ) 
+            selectedTranslated.push( `${key}:${this.selectedStateId[key]}` )
           }
           // this.log && console.log('C-MapboxGL / updateUrlPath ... selectedTranslated : ', selectedTranslated )
           targetArgs.selected = selectedTranslated
