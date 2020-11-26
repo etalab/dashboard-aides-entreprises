@@ -105,8 +105,8 @@ function donutRadiusFormula (valName, maxVal) {
   return fullRadius
 }
 
-const maxRegFDS = 1000
-const maxDepFDS = 300
+const maxRegFDS = 2000
+const maxDepFDS = 700
 const maxRadRegFDS = getRadiusFullSqrt(maxRegFDS, maxRegFDS)
 const maxRadDepFDS = getRadiusFullSqrt(maxDepFDS, maxDepFDS)
 // const maxRadRegFDS = Math.sqrt(maxRegFDS)
