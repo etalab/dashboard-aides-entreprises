@@ -557,7 +557,7 @@ const COMMON_CHART_OPTIONS = {
     // cf : https://apexcharts.com/javascript-chart-demos/bar-charts/stacked/
     chart: {
       type: 'bar',
-      height: '450px',
+      height: '350px',
       width: '470px',
       stacked: true,
       stackedType: '100%',
