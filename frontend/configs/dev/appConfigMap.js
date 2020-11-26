@@ -136,8 +136,8 @@ const circlePaintFDS = {
   ]
 }
 
-const maxRegPGE = 40000
-const maxDepPGE = 11000
+const maxRegPGE = 50000
+const maxDepPGE = 15000
 const maxRadRegPGE = getRadiusFullSqrt(maxRegPGE, maxRegPGE)
 const maxRadDepPGE = getRadiusFullSqrt(maxDepPGE, maxDepPGE)
 // const maxRadRegPGE = Math.sqrt(maxRegPGE)
@@ -166,8 +166,8 @@ const circlePaintPGE = {
   ]
 }
 
-const maxRegREPORT = 1000
-const maxDepREPORT = 350
+const maxRegREPORT = 1100
+const maxDepREPORT = 420
 const maxRadRegREPORT = getRadiusFullSqrt(maxRegREPORT, maxRegREPORT)
 const maxRadDepREPORT = getRadiusFullSqrt(maxDepREPORT, maxDepREPORT)
 // const maxRadRegREPORT = Math.sqrt(maxRegREPORT)
