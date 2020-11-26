@@ -1114,7 +1114,7 @@ def getLastUpdateHtmlActivitePartielle2():
 def getStatactivitepartielle3NationalSectionNACE17():
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "select sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES from activitepartielle A;"
+        my_query = "select sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES, mois from activitepartielle A WHERE mois = (SELECT MAX(mois) FROM activitepartielle) GROUP BY mois;"
 
     
         my_query_2 = "select DISTINCT A.mois from activitepartielle A ORDER BY A.mois;"
@@ -1182,9 +1182,8 @@ def getStatactivitepartielle3NationalSectionNACE17():
 def getStatactivitepartielle3Reg():
     # GET a specific data by id
     if request.method == 'GET':
-        my_query = "select sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES, A.reg, R.libelle from activitepartielle A LEFT JOIN region R ON R.reg = A.reg GROUP BY A.reg, R.libelle ORDER BY R.libelle;"
+        my_query = "select sum(A.nombre_demandes_deposees) AS TOTAL_NOMBRE_DEMANDES_DEPOSEES,sum(A.nombre_salaries_concernes) AS TOTAL_NOMBRE_SALARIES_CONCERNES,sum(A.nombre_heures_demandees) AS TOTAL_NOMBRE_HEURES_DEMANDEES, A.reg, R.libelle, A.mois from activitepartielle A LEFT JOIN region R ON R.reg = A.reg WHERE A.mois = (SELECT MAX(mois) FROM activitepartielle) GROUP BY A.reg, R.libelle, A.mois ORDER BY R.libelle;"
 
-    
         my_query_2 = "select DISTINCT A.mois from activitepartielle A ORDER BY A.mois;"
 
         my_query_3 = "SELECT A.code_section_nace17, N.libelle FROM activitepartielle A LEFT JOIN nace17 N ON N.code_section_nace17 = A.code_section_nace17 GROUP BY A.code_section_nace17, N.libelle ORDER BY SUM(A.nombre_salaries_concernes) DESC;"
