@@ -2632,7 +2632,7 @@ export const configAppMap = {
                       minZoom: undefined,
                       // overidden to account for region -> region navigation
                       // vs region -> department
-                      maxZoom: 7
+                      maxZoom: 9
                     },
                     propName: 'code',
                     targets: [
