@@ -287,14 +287,14 @@ const COMMON_SERIES_MAPPERS = {
     //   splitGlue: '- ',
     //   capitalize: true
     // },
-    buildColorsAxisX: false,
-    // buildColorsAxisXsettings: {
-    //   fromKey: KEY_SECTION_NACE,
-    //   matchWithDatasetId: 'taxo-nace17-colors',
-    //   matchKey: 'code_section_nace17',
-    //   getValueFromKey: 'color_section',
-    //   fallbackColor: '#808080'
-    // }
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NACE,
+      matchWithDatasetId: 'taxo-nace17-colors',
+      matchKey: 'code_section_nace17',
+      getValueFromKey: 'color_section',
+      fallbackColor: '#808080'
+    }
   },
   NaceByNombreSalariesStack: {
     dataFromKey: KEY_SALARIES,
@@ -308,14 +308,14 @@ const COMMON_SERIES_MAPPERS = {
     //   splitGlue: '- ',
     //   capitalize: true
     // },
-    buildColorsAxisX: false,
-    // buildColorsAxisXsettings: {
-    //   fromKey: KEY_SECTION_NACE,
-    //   matchWithDatasetId: 'taxo-nace17-colors',
-    //   matchKey: 'code_section_nace17',
-    //   getValueFromKey: 'color_section',
-    //   fallbackColor: '#808080'
-    // }
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NACE,
+      matchWithDatasetId: 'taxo-nace17-colors',
+      matchKey: 'code_section_nace17',
+      getValueFromKey: 'color_section',
+      fallbackColor: '#808080'
+    }
   },
   NaceByNombreDemandesStack: {
     dataFromKey: KEY_DEMANDES,
@@ -645,9 +645,9 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Top 10 des aides du fonds de solidarité 
+          Top 10 des aides du fonds de solidarité
           <br>
-          ventilées par 
+          ventilées par
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
           (en M€)
@@ -687,9 +687,9 @@ export const configAppCharts = {
       // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/methodologie/effectifs-salaries.html">
       chartTitle: {
         fr: `
-          Aides du fonds de solidarité 
+          Aides du fonds de solidarité
           <br>
-          ventilées par 
+          ventilées par
           <a target="_blank" href="https://www.insee.fr/fr/information/1896448">
             classes d'effectifs</a>
           (en M€)<br>
@@ -732,9 +732,9 @@ export const configAppCharts = {
       // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
       chartTitle: {
         fr: `
-          Top 3 des aides du fonds de solidarité 
+          Top 3 des aides du fonds de solidarité
           <br>
-          ventilées par 
+          ventilées par
           <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
             catégories juridiques </a>a>
           (en M€)
@@ -774,9 +774,9 @@ export const configAppCharts = {
       // <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/categories-juridiques.html">
       chartTitle: {
         fr: `
-          Top 3 des aides du fonds de solidarité 
+          Top 3 des aides du fonds de solidarité
           <br>
-          ventilées par 
+          ventilées par
           <a target="_blank" href="https://www.insee.fr/fr/information/2028129">
             catégories juridiques </a>
           (en M€)
@@ -908,9 +908,9 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Top 10 des prêts garantis par l'Etat 
+          Top 10 des prêts garantis par l'Etat
           <br>
-          ventilés par 
+          ventilés par
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
           (en M€)
@@ -952,9 +952,9 @@ export const configAppCharts = {
       titleI18n: 'charts.chart01.title',
       chartTitle: {
         fr: `
-          Top 10 des reports d'échéances fiscales 
+          Top 10 des reports d'échéances fiscales
           <br>
-          ventilés par 
+          ventilés par
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
           (en M€)
@@ -999,7 +999,7 @@ export const configAppCharts = {
         fr: `
           Top 10 des aides CPSTI
           <br>
-          ventilés par 
+          ventilés par
           <a target="_blank" href="https://www.insee.fr/fr/information/2406147">
             code section NAF</a>
           (en M€)
@@ -1043,7 +1043,7 @@ export const configAppCharts = {
         fr: `
           Nombre d'heures d'activité partielle
           <br>
-          ventilées par 
+          ventilées par
           <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
             code section NACE 17</a>
           <br><br>
@@ -1082,7 +1082,7 @@ export const configAppCharts = {
         fr: `
           Nombre de salariés concernés par l'activité partielle
           <br>
-          ventilées par 
+          ventilées par
           <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
             code section NACE 17</a>
           <br><br>
@@ -1123,7 +1123,7 @@ export const configAppCharts = {
     //     fr: `
     //       Nombre de demandes d'activité partielle réalisées par les entreprises
     //       <br>
-    //       ventilées par 
+    //       ventilées par
     //       <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
     //         code section NACE 17</a>
     //       <br><br>
@@ -1162,7 +1162,7 @@ export const configAppCharts = {
     //     fr: `
     //       Nombre de salariés concernés par l'activité partielle
     //       <br>
-    //       ventilés par 
+    //       ventilés par
     //       <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
     //         code section NACE 17</a>
     //       <br><br>
@@ -1201,7 +1201,7 @@ export const configAppCharts = {
     //     fr: `
     //       Nombre d'heures d'activité partielle demandées
     //       <br>
-    //       ventilées par 
+    //       ventilées par
     //       <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
     //         code section NACE 17</a> (en millions d'heures)
     //       <br><br>
