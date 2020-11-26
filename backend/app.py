@@ -1136,7 +1136,7 @@ def getStatactivitepartielle3NationalSectionNACE17():
             cpt = 0
             for k in range(len(data3)):
                 dataDict2 = {}
-                if(k < 10):
+                if(k < 5):
                     dataDict2['code_section_nace17'] = str(data3[k][0])
                     mylist.append(str(data3[k][0]))
                     dataDict2['libelle'] = str(data3[k][1])
@@ -1205,7 +1205,7 @@ def getStatactivitepartielle3Reg():
             mylist = []
             cpt = 0
             for k in range(len(data3)):
-                if(k < 10):
+                if(k < 5):
                     dataDict2 = {}
                     dataDict2['code_section_nace17'] = str(data3[k][0])
                     mylist.append(str(data3[k][0]))
