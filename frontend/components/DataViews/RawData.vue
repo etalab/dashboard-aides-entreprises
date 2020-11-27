@@ -36,7 +36,7 @@ export default {
   },
 
   mounted() {
-    this.log && console.log("C-RawData / mounted ...")
+    // this.log && console.log("C-RawData / mounted ...")
   },
 
   computed: {

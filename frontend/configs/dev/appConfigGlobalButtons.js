@@ -529,23 +529,113 @@ export const configAppGlobalButtons = {
               funcParams: {
                 targets: [
                   COMMONS_TARGETS.resetLevelName,
+                  // {
+                  //   from: 'store',
+                  //   fromPropKey: undefined,
+                  //   fromPropValue: undefined,
+                  //   fromStoreData: 'initData',
+                  //   fromDatasetId: 'national-activitepartielle-raw',
+                  //   fromDatasetKey: undefined,
+                  //   fromDatasetIndex: 0,
+                  //   fromDatasetField: 'nombre_demandes_deposees',
+                  //   targetSpecialStoreId: 'nombre_demandes_deposees'
+                  // },
+                  // {
+                  //   from: 'store',
+                  //   fromPropKey: undefined,
+                  //   fromPropValue: undefined,
+                  //   fromStoreData: 'initData',
+                  //   fromDatasetId: 'national-activitepartielle-raw',
+                  //   fromDatasetKey: undefined,
+                  //   fromDatasetIndex: 0,
+                  //   fromDatasetField: 'nombre_salaries_concernes',
+                  //   targetSpecialStoreId: 'nombre_salaries_concernes'
+                  // },
+                  // {
+                  //   from: 'store',
+                  //   fromPropKey: undefined,
+                  //   fromPropValue: undefined,
+                  //   fromStoreData: 'initData',
+                  //   fromDatasetId: 'national-activitepartielle-raw',
+                  //   fromDatasetKey: undefined,
+                  //   fromDatasetIndex: 0,
+                  //   fromDatasetField: 'nombre_heures_demandees',
+                  //   targetSpecialStoreId: 'nombre_heures_demandees'
+                  // },
+                  // {
+                  //   from: 'store',
+                  //   fromPropKey: undefined,
+                  //   fromPropValue: undefined,
+                  //   fromStoreData: 'initData',
+                  //   fromDatasetId: 'national-activitepartielle-raw',
+                  //   fromDatasetKey: undefined,
+                  //   fromDatasetIndex: 0,
+                  //   fromDatasetField: undefined,
+                  //   targetSpecialStoreId: 'focusObject'
+                  // },
+
+                  // {
+                  //   from: 'store',
+                  //   fromPropKey: undefined,
+                  //   fromPropValue: undefined,
+                  //   fromStoreData: 'initData',
+                  //   fromDatasetId: 'national-activitepartielle-raw-2',
+                  //   fromDatasetKey: undefined,
+                  //   fromDatasetIndex: 0,
+                  //   fromDatasetField: 'nombre_demandes_deposees',
+                  //   targetSpecialStoreId: 'nombre_demandes_deposees'
+                  // },
+                  // {
+                  //   from: 'store',
+                  //   fromPropKey: undefined,
+                  //   fromPropValue: undefined,
+                  //   fromStoreData: 'initData',
+                  //   fromDatasetId: 'national-activitepartielle-raw-2',
+                  //   fromDatasetKey: undefined,
+                  //   fromDatasetIndex: 0,
+                  //   fromDatasetField: 'nombre_salaries_concernes',
+                  //   targetSpecialStoreId: 'nombre_salaries_concernes'
+                  // },
+                  // {
+                  //   from: 'store',
+                  //   fromPropKey: undefined,
+                  //   fromPropValue: undefined,
+                  //   fromStoreData: 'initData',
+                  //   fromDatasetId: 'national-activitepartielle-raw-2',
+                  //   fromDatasetKey: undefined,
+                  //   fromDatasetIndex: 0,
+                  //   fromDatasetField: 'nombre_heures_demandees',
+                  //   targetSpecialStoreId: 'nombre_heures_demandees'
+                  // },
+                  // {
+                  //   from: 'store',
+                  //   fromPropKey: undefined,
+                  //   fromPropValue: undefined,
+                  //   fromStoreData: 'initData',
+                  //   fromDatasetId: 'national-activitepartielle-raw-2',
+                  //   fromDatasetKey: undefined,
+                  //   fromDatasetIndex: 0,
+                  //   fromDatasetField: undefined,
+                  //   targetSpecialStoreId: 'focusObject'
+                  // },
+
                   {
                     from: 'store',
                     fromPropKey: undefined,
                     fromPropValue: undefined,
                     fromStoreData: 'initData',
-                    fromDatasetId: 'national-activitepartielle-raw',
+                    fromDatasetId: 'national-activitepartielle-raw-3',
                     fromDatasetKey: undefined,
                     fromDatasetIndex: 0,
-                    fromDatasetField: 'nombre_etablissements_concernes',
-                    targetSpecialStoreId: 'nombre_etablissements_concernes'
+                    fromDatasetField: 'nombre_demandes_deposees',
+                    targetSpecialStoreId: 'nombre_demandes_deposees'
                   },
                   {
                     from: 'store',
                     fromPropKey: undefined,
                     fromPropValue: undefined,
                     fromStoreData: 'initData',
-                    fromDatasetId: 'national-activitepartielle-raw',
+                    fromDatasetId: 'national-activitepartielle-raw-3',
                     fromDatasetKey: undefined,
                     fromDatasetIndex: 0,
                     fromDatasetField: 'nombre_salaries_concernes',
@@ -556,7 +646,7 @@ export const configAppGlobalButtons = {
                     fromPropKey: undefined,
                     fromPropValue: undefined,
                     fromStoreData: 'initData',
-                    fromDatasetId: 'national-activitepartielle-raw',
+                    fromDatasetId: 'national-activitepartielle-raw-3',
                     fromDatasetKey: undefined,
                     fromDatasetIndex: 0,
                     fromDatasetField: 'nombre_heures_demandees',
@@ -567,7 +657,7 @@ export const configAppGlobalButtons = {
                     fromPropKey: undefined,
                     fromPropValue: undefined,
                     fromStoreData: 'initData',
-                    fromDatasetId: 'national-activitepartielle-raw',
+                    fromDatasetId: 'national-activitepartielle-raw-3',
                     fromDatasetKey: undefined,
                     fromDatasetIndex: 0,
                     fromDatasetField: undefined,

@@ -209,7 +209,7 @@ export const getters = {
 export const mutations = {
   // CONFIGS
   setRootConfigs (state, configs) {
-    state.log && console.log('S-index-M-setRootConfigs / configs : ', configs)
+    // state.log && console.log('S-index-M-setRootConfigs / configs : ', configs)
 
     state.appTitle = configs.UIUX_config.appTitle
 
@@ -231,8 +231,8 @@ export const mutations = {
       navbarFooters: configs.UX_navbarFooters.settingsIds,
       globalButtons: configs.UX_globalButtons.settingsIds
     }
-    state.log &&
-      console.log('S-index-M-setRootConfigs / configsData : ', configsData)
+    // state.log &&
+    //   console.log('S-index-M-setRootConfigs / configsData : ', configsData)
     state.configsData = configsData
   },
 
@@ -312,7 +312,7 @@ export const mutations = {
   },
 
   initLocales (state) {
-    state.log && console.log('S-index-M-initLocales ... ')
+    // state.log && console.log('S-index-M-initLocales ... ')
 
     const localesBuild = process.env.CONFIG_APP.localesBuild
     state.locales = localesBuild
@@ -325,11 +325,11 @@ export const mutations = {
 
 export const actions = {
   setUpConfigs ({ state, commit, rootGetters }) {
-    state.log && console.log('\n', '- '.repeat(20))
-    state.log && console.log('S-index-A-setUpConfigs / ... ')
+    // state.log && console.log('\n', '- '.repeat(20))
+    // state.log && console.log('S-index-A-setUpConfigs / ... ')
     const allConfigs = rootGetters['configs/getAllConfigs']
-    state.log &&
-      console.log('S-index-A-setUpConfigs / allConfigs :', allConfigs)
+    // state.log &&
+    //   console.log('S-index-A-setUpConfigs / allConfigs :', allConfigs)
     commit('setRootConfigs', allConfigs)
   },
 

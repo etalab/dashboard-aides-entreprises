@@ -7,31 +7,31 @@ export default function ({ store, env }) {
 
   const promisesArray = []
 
-  log && console.log('\n', '+ '.repeat(20))
-  log && console.log('-MW- getConfigInit ... ')
+  // log && console.log('\n', '+ '.repeat(20))
+  // log && console.log('-MW- getConfigInit ... ')
 
   if (!configsAreSet) {
     // begin to load config files
-    log && console.log('-MW- getConfigInit / !configsAreSet ... ')
+    // log && console.log('-MW- getConfigInit / !configsAreSet ... ')
 
     const configsReferences = env.CONFIG_APP.configsReferences
     const configsFrom = env.CONFIG_APP.configsFrom
     store.commit('configs/setConfigsFrom', configsFrom)
 
-    log &&
-      console.log(
-        '-MW- getConfigInit / configsReferences : ',
-        configsReferences
-      )
-    log && console.log('-MW- getConfigInit / configsFrom : ', configsFrom)
+    // log &&
+    //   console.log(
+    //     '-MW- getConfigInit / configsReferences : ',
+    //     configsReferences
+    //   )
+    // log && console.log('-MW- getConfigInit / configsFrom : ', configsFrom)
 
     const getDistant = ['local_json_files', 'distant_json_files']
 
     // loop config urls
     for (const configRef of configsReferences) {
       if (getDistant.includes(configsFrom)) {
-        log &&
-          console.log('-MW- getConfigInit / configRef.url : ', configRef.url)
+        // log &&
+        //   console.log('-MW- getConfigInit / configRef.url : ', configRef.url)
         const initConfigFromURL = axios
           .get(configRef.url)
           .then((resp) => {
@@ -55,7 +55,7 @@ export default function ({ store, env }) {
           })
         promisesArray.push(initConfigFromURL)
       } else if (configsFrom === 'local_js_files') {
-        log && console.log('-MW- getConfigInit / configRef.data.help : ', configRef.data.help)
+        // log && console.log('-MW- getConfigInit / configRef.data.help : ', configRef.data.help)
         const initConfigFromJSfile = new Promise((resolve) => {
           const resp = configRef.data
           resolve(resp)
@@ -80,6 +80,6 @@ export default function ({ store, env }) {
   }
 
   // WAIT FOR ALL PROMISES TO RETURN
-  log && console.log('\n')
+  // log && console.log('\n')
   return Promise.all(promisesArray)
 }

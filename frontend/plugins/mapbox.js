@@ -10,7 +10,7 @@ import {
 } from 'vue-mapbox'
 import Mapbox from 'mapbox-gl'
 
-console.log('+ + + plugins/mapbox... ')
+// console.log('+ + + plugins/mapbox... ')
 
 Vue.component('MglMap', MglMap)
 

@@ -129,7 +129,7 @@ export default {
   },
 
   mounted() {
-    this.log && console.log("C-TextFrame / mounted ...")
+    // this.log && console.log("C-TextFrame / mounted ...")
     this.getCanShow()
   },
 

@@ -100,7 +100,7 @@ export default {
   watch: {},
 
   mounted() {
-    this.log && console.log("C-TabsRoutes / mounted ...")
+    // this.log && console.log("C-TabsRoutes / mounted ...")
   },
 
   computed: {

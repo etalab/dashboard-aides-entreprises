@@ -42,26 +42,26 @@ export const getters = {
 
 export const mutations = {
   setConfigField (state, configRef) {
-    state.log && console.log('S-configs-M-setConfigField / configRef.field :', configRef.field)
+    // state.log && console.log('S-configs-M-setConfigField / configRef.field :', configRef.field)
     state[configRef.field] = configRef.data
   },
   setConfigsFrom (state, configsFrom) {
-    state.log && console.log('S-configs-M-setConfigsFrom / configsFrom :', configsFrom)
+    // state.log && console.log('S-configs-M-setConfigsFrom / configsFrom :', configsFrom)
     state.configsFrom = configsFrom
   },
   setConfigsAreSet (state) {
-    state.log && console.log('S-configs-M-setConfigsAreSet ...')
+    // state.log && console.log('S-configs-M-setConfigsAreSet ...')
     state.configsAreSet = true
   },
   setVuetifyThemeIsSet (state) {
-    state.log && console.log('S-configs-M-setVuetifyThemeIsSet ...')
+    // state.log && console.log('S-configs-M-setVuetifyThemeIsSet ...')
     state.vuetifyThemeIsSet = true
   }
 }
 
 export const actions = {
   setRootConfigs ({ state, dispatch }) {
-    state.log && console.log('S-configs-A-setRootConfigs ...')
+    // state.log && console.log('S-configs-A-setRootConfigs ...')
 
     // correctly set up store data @ store/index.js
     dispatch('setUpConfigs', null, { root: true })

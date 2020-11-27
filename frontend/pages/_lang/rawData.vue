@@ -94,7 +94,7 @@ export default {
   watch: {},
 
   mounted() {
-    this.log && console.log("P-PageRawData / mounted ...")
+    // this.log && console.log("P-PageRawData / mounted ...")
   },
 
   computed: {

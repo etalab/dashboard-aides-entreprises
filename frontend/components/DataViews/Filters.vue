@@ -59,7 +59,7 @@ export default {
   watch: {},
 
   mounted() {
-    this.log && console.log("C-Filters / mounted ...")
+    // this.log && console.log("C-Filters / mounted ...")
   },
 
   computed: {

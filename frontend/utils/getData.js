@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-console.log('+ + + utils/getData.js... ')
+// console.log('+ + + utils/getData.js... ')
 
 // - - - - - - - - - - - - - - - - - - - //
 // API UTILS

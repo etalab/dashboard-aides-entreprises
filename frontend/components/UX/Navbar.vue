@@ -75,7 +75,7 @@ export default {
   watch: {},
 
   mounted() {
-    this.log && console.log("C-Navbar / mounted ...")
+    // this.log && console.log("C-Navbar / mounted ...")
   },
 
   computed: {

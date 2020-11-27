@@ -135,16 +135,16 @@ export default {
 
   watch: {
     getActivatedCurrentNavbarFooter(next, prev) {
-      this.log &&
-        console.log(
-          "\nP-Homepage / watch / getActivatedCurrentNavbarFooter ... next :",
-          next
-        )
-      this.log &&
-        console.log(
-          "P-Homepage / watch / getActivatedCurrentNavbarFooter ... prev :",
-          prev
-        )
+      // this.log &&
+      //   console.log(
+      //     "\nP-Homepage / watch / getActivatedCurrentNavbarFooter ... next :",
+      //     next
+      //   )
+      // this.log &&
+      //   console.log(
+      //     "P-Homepage / watch / getActivatedCurrentNavbarFooter ... prev :",
+      //     prev
+      //   )
       // this.log && console.log('P-Homepage / watch / getActivatedCurrentNavbarFooter ... this.getCurrentNavbarFooter :', this.getCurrentNavbarFooter)
 
       // if (typeof prev !== 'undefined'){
@@ -160,18 +160,18 @@ export default {
           ? this.getCurrentNavbarFooter.redirectAtBreakNoShow.path
           : "/"
       }
-      this.log &&
-        console.log(
-          "P-Homepage / watch / getActivatedCurrentNavbarFooter ... fallback :",
-          fallback
-        )
+      // this.log &&
+      //   console.log(
+      //     "P-Homepage / watch / getActivatedCurrentNavbarFooter ... fallback :",
+      //     fallback
+      //   )
       // this.$router.push(fallback)
       // }
     },
   },
 
   created() {
-    this.log && console.log("P-Homepage / created ...")
+    // this.log && console.log("P-Homepage / created ...")
     window.addEventListener("resize", this.handleResize)
     this.handleResize()
   },
@@ -185,7 +185,7 @@ export default {
   },
 
   mounted() {
-    this.log && console.log("P-Homepage / mounted ...")
+    // this.log && console.log("P-Homepage / mounted ...")
   },
 
   computed: {

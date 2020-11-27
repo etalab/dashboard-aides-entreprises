@@ -97,7 +97,7 @@ export default {
   },
 
   mounted() {
-    this.log && console.log("C-NavbarFooter / mounted ...")
+    // this.log && console.log("C-NavbarFooter / mounted ...")
     // this.bottomNav = this.navbarFooterConfig.defaultBtnNav
     this.resetBottomNav()
   },

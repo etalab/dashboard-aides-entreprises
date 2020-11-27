@@ -1,7 +1,7 @@
 export default function ({ req, store, app, redirect }) {
   const log = store.state.log
-  log && console.log('\n', '+ '.repeat(20))
-  log && console.log('-MW- setLocales...')
+  // log && console.log('\n', '+ '.repeat(20))
+  // log && console.log('-MW- setLocales...')
   const hasLocales = store.state.locales
 
   if (!hasLocales) {

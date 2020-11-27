@@ -105,8 +105,8 @@ export default {
   },
 
   beforeMount() {
-    this.log && console.log("\n", ". ".repeat(20))
-    this.log && console.log("L-default / beforeMount ...")
+    // this.log && console.log("\n", ". ".repeat(20))
+    // this.log && console.log("L-default / beforeMount ...")
 
     // NOT WORKING IN SPA MODE !!!
     // cf : ref on stackoverflow...

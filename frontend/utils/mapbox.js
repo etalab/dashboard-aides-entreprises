@@ -7,7 +7,7 @@ import {
   switchFormatFunctions
 } from '~/utils/utils.js'
 
-console.log('+ + + utils/mapbox... ')
+// console.log('+ + + utils/mapbox... ')
 
 // - - - - - - - - - - - - - - - - - - - - - //
 // - - - SOURCES - - - //

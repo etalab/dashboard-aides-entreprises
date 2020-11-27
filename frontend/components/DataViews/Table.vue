@@ -148,7 +148,7 @@ export default {
   },
 
   mounted() {
-    this.log && console.log("C-Table / mounted ...")
+    // this.log && console.log("C-Table / mounted ...")
   },
 
   computed: {
