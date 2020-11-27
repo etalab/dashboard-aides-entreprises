@@ -3,7 +3,7 @@
 const DATASETS_REPO_BASE =
   'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/' // in repo folder
 const DATASETS_REPO_BASE_TEMP =
-  'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/new-activite-partielle/backend/json/' // in repo folder
+  'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/julien/update-activite-partielle/backend/json/' // in repo folder
 const DATASETS_FOLDER = '/datasets' // in static folder
 
 export const configAppData = {
