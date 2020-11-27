@@ -611,15 +611,6 @@ const COMMON_CHART_OPTIONS = {
             // height: "370px",
             width: '350px'
           },
-          xaxis: {
-            type: 'numeric',
-            labels: {
-              show: false,
-              style: {
-                fontSize: '9px'
-              }
-            }
-          }
         }
       }
     ]
