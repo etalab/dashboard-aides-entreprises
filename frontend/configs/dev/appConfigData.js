@@ -1,9 +1,6 @@
 // const DATASETS_REPO_BASE = 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/frontend/static/' // in repo folder
-// FIXME:
 const DATASETS_REPO_BASE =
   'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/' // in repo folder
-const DATASETS_REPO_BASE_TEMP =
-  'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/julien/update-activite-partielle/backend/json/' // in repo folder
 const DATASETS_FOLDER = '/datasets' // in static folder
 
 export const configAppData = {
@@ -546,7 +543,7 @@ export const configAppData = {
         //   help: 'serie chiffres activite partielle à la maille nationale',
         //   from: 'static',
         //   // url: `${DATASETS_REPO_BASE}/activite-partielle/activite-partielle-maille-national-minify.json`,
-        //   url: `${DATASETS_REPO_BASE_TEMP}/activite-partielle/activite-partielle-maille-national-minify.json`,
+        //   url: `${DATASETS_REPO_BASE}/activite-partielle/activite-partielle-maille-national-minify.json`,
         //   backupUrl: `${DATASETS_FOLDER}/prod/activite-partielle/activite-partielle-maille-national.json`,
         //   displayed: true,
         //   copyTo: [
@@ -585,7 +582,7 @@ export const configAppData = {
         //   help: 'serie chiffres activite partielle à la maille regionale',
         //   from: 'static',
         //   // url: `${DATASETS_REPO_BASE}/activite-partielle/activite-partielle-maille-regional-minify.json`,
-        //   url: `${DATASETS_REPO_BASE_TEMP}/activite-partielle/activite-partielle-maille-regional-minify.json`,
+        //   url: `${DATASETS_REPO_BASE}/activite-partielle/activite-partielle-maille-regional-minify.json`,
         //   backupUrl: `${DATASETS_FOLDER}/prod/activite-partielle/activite-partielle-maille-regional.json`,
         //   displayed: true
         // },
@@ -595,7 +592,7 @@ export const configAppData = {
         //   help: 'serie chiffres activite partielle à la maille departementale',
         //   from: 'static',
         //   // url: `${DATASETS_REPO_BASE}/activite-partielle/activite-partielle-maille-departemental-minify.json`,
-        //   url: `${DATASETS_REPO_BASE_TEMP}/activite-partielle/activite-partielle-maille-departemental-minify.json`,
+        //   url: `${DATASETS_REPO_BASE}/activite-partielle/activite-partielle-maille-departemental-minify.json`,
         //   backupUrl: `${DATASETS_FOLDER}/prod/activite-partielle/activite-partielle-maille-departemental.json`,
         //   displayed: false
         // },
@@ -606,7 +603,7 @@ export const configAppData = {
           help: 'serie chiffres activite partielle à la maille nationale - time stack',
           from: 'static',
           // url: `${DATASETS_REPO_BASE}/activite-partielle3/activite-partielle-3-maille-national-minify.json`,
-          url: `${DATASETS_REPO_BASE_TEMP}/activite-partielle3/activite-partielle-3-maille-national-minify.json`,
+          url: `${DATASETS_REPO_BASE}/activite-partielle3/activite-partielle-3-maille-national-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/activite-partielle3/activite-partielle-3-maille-national.json`,
           displayed: true,
           copyTo: [
@@ -645,7 +642,7 @@ export const configAppData = {
           help: 'serie chiffres activite partielle à la maille regionale',
           from: 'static',
           // url: `${DATASETS_REPO_BASE}/activite-partielle3/activite-partielle-3-maille-regional-minify.json`,
-          url: `${DATASETS_REPO_BASE_TEMP}/activite-partielle3/activite-partielle-3-maille-regional-minify.json`,
+          url: `${DATASETS_REPO_BASE}/activite-partielle3/activite-partielle-3-maille-regional-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/activite-partielle3/activite-partielle-3-maille-regional.json`,
           displayed: true
         },
@@ -655,7 +652,7 @@ export const configAppData = {
           help: 'serie chiffres activite partielle à la maille departementale',
           from: 'static',
           // url: `${DATASETS_REPO_BASE}/activite-partielle3/activite-partielle-3-maille-departemental-minify.json`,
-          url: `${DATASETS_REPO_BASE_TEMP}/activite-partielle3/activite-partielle-3-maille-departemental-minify.json`,
+          url: `${DATASETS_REPO_BASE}/activite-partielle3/activite-partielle-3-maille-departemental-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/activite-partielle3/activite-partielle-3-maille-departemental.json`,
           displayed: false
         },
