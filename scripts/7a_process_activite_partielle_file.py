@@ -14,6 +14,6 @@ df = df.rename(columns={'DI_MOIS_ANNEE':'mois','a17':'code_section_nace17','Nomb
 
 df = df[['reg','mois','code_section_nace17','nombre_demandes_deposees','nombre_salarie_concernes','nombre_heures_demandees']]
 
-df['last_update'] = '2020-10-27'
+df['last_update'] = daytoprocess
 
 df.to_csv("../data/activite-partielle/activite-partielle-"+daytoprocess+".csv",index=False)
