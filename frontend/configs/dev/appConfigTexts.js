@@ -828,7 +828,7 @@ export const configAppTexts = {
                   textContent: undefined,
                   fromUrl: {
                     fr:
-                      'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/activite-partielle/last_update_data.txt'
+                      'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/activite-partielle3/last_update_data.txt'
                   }
                 }
               ]
