@@ -1395,6 +1395,19 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
+                    id: 'apexchart-activitepartielle-time-serie-02',
+                    containerClass: 'mt-4 pt-3 pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'apexchart',
+                  activated: true,
+                  smallScreenVerticalOrder: 4,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
                     id: 'apexchart-activitepartielle-time-serie-01',
                     containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
@@ -1408,7 +1421,7 @@ export const configAppRoutes = {
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'apexchart-activitepartielle-time-serie-02',
+                    id: 'apexchart-activitepartielle-time-serie-03',
                     containerClass: 'mt-4 pt-3 pb-0',
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: true

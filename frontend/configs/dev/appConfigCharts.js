@@ -329,14 +329,14 @@ const COMMON_SERIES_MAPPERS = {
     //   splitGlue: '- ',
     //   capitalize: true
     // },
-    buildColorsAxisX: false,
-    // buildColorsAxisXsettings: {
-    //   fromKey: KEY_SECTION_NACE,
-    //   matchWithDatasetId: 'taxo-nace17-colors',
-    //   matchKey: 'code_section_nace17',
-    //   getValueFromKey: 'color_section',
-    //   fallbackColor: '#808080'
-    // }
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_SECTION_NACE,
+      matchWithDatasetId: 'taxo-nace17-colors',
+      matchKey: 'code_section_nace17',
+      getValueFromKey: 'color_section',
+      fallbackColor: '#808080'
+    }
   },
 
 }
@@ -1097,6 +1097,44 @@ export const configAppCharts = {
         fromDatasetKey_serieNamesFrom: 'libelle', // stack
         seriesMappers: [
           COMMON_SERIES_MAPPERS.NaceByNombreSalariesStack // stack
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390Stack, // stack
+        format: COMMON_FORMATTERS.integerEuropeanFormat
+      }
+    },
+    // BAR HORIZ - APE X NBR SALARIES - STACK
+    {
+      id: 'apexchart-activitepartielle-time-serie-03',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / kpi_top_10_nace17 X nombre',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Nombre de demandes dactivité partielle déposées par les entreprises
+          <br>
+          ventilées par
+          <a target="_blank" href="https://www.acoss.fr/home/observatoire-economique/sources-et-methodologie/nomenclatures/secteurs-dactivite.html">
+            code section NACE 17</a>
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'nace17', // stack
+        datasetDataToStackSerie: true,
+        fromDatasetKey_serieDataFrom: 'data', // stack
+        fromDatasetKey_serieNamesFrom: 'libelle', // stack
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.NaceByNombreDemandesStack // stack
         ],
         chartOptions: COMMON_CHART_OPTIONS.categHorizH390Stack, // stack
         format: COMMON_FORMATTERS.integerEuropeanFormat
