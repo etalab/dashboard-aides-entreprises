@@ -1156,7 +1156,7 @@ def getStatactivitepartielle3NationalSectionNACE17():
                         cpt = 1
                         dataDict2['code_section_nace17'] = "Autres"
                         mylist.append(str(data3[k][0]))
-                        dataDict2['libelle'] = "Autres section NACE 17"
+                        dataDict2['libelle'] = "Autres sections NACE 17"
                         dataDict2["data"] = []
                         for j in range(len(data2)):
                             mystr = ''
