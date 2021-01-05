@@ -154,6 +154,18 @@ export const configAppUIUX = {
           addUrlParams: true
         },
         {
+          to: '/?routeId=arpb',
+          href: '/arpb',
+          // href: '/?routeId=reports',
+          isVisible: true,
+          icon: undefined,
+          title: { fr: "Prêts directs de l'Etat" },
+          titleMobile: { fr: "Prêts directs de l'Etat" },
+          tooltip: { fr: "Prêts directs de l'Etat" },
+          isNuxtLink: false,
+          addUrlParams: true
+        },
+        {
           to: '/?routeId=activitepartielle',
           href: '/activitepartielle',
           // href: '/?routeId=activitepartielle',

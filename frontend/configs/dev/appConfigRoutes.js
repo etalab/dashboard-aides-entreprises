@@ -174,6 +174,50 @@ const COMMON_TARGETS = {
       targetSpecialStoreId: 'focusObject'
     }
   ],
+  setObjectsRegionsARPB: [
+    {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-arpb-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'nombre',
+      targetSpecialStoreId: 'nombre'
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-arpb-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'montant',
+      targetSpecialStoreId: 'montant',
+      format: [
+        {
+          utilsFnName: 'toMillionsOrElse',
+          params: { divider: 1000000, fixed: 2 }
+        }
+      ]
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-arpb-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: 'effectifs',
+      targetSpecialStoreId: 'effectifs'
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'regions' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'regions-arpb-raw',
+      fromDatasetKey: 'reg',
+      fromDatasetField: undefined,
+      targetSpecialStoreId: 'focusObject'
+    }
+  ],
   setObjectsRegionsACTIVITEPARTIELLE: [
     {
       ifQuery: [{ field: 'datasetid', val: 'regions' }],
@@ -327,6 +371,50 @@ const COMMON_TARGETS = {
           params: { divider: 1000000, fixed: 2 }
         }
       ]
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-cpsti-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: undefined,
+      targetSpecialStoreId: 'focusObject'
+    }
+  ],
+  setObjectsDepartementsARPB: [
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-arpb-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'nombre',
+      targetSpecialStoreId: 'nombre'
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-arpb-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'montant',
+      targetSpecialStoreId: 'montant',
+      format: [
+        {
+          utilsFnName: 'toMillionsOrElse',
+          params: { divider: 1000000, fixed: 2 }
+        }
+      ]
+    },
+    {
+      ifQuery: [{ field: 'datasetid', val: 'departements' }],
+      fromQueryKey: 'code',
+      fromStoreData: 'initData',
+      fromDatasetId: 'departements-arpb-raw',
+      fromDatasetKey: 'dep',
+      fromDatasetField: 'effectifs',
+      targetSpecialStoreId: 'effectifs'
     },
     {
       ifQuery: [{ field: 'datasetid', val: 'departements' }],
@@ -554,6 +642,48 @@ const COMMON_URL_FOCUS = {
       }
     ]
   },
+  
+  setFocusObjectsARPB: {
+    urlArgs: [
+      ...COMMONN_URL_ARGS.objectArgs,
+      ...COMMONN_URL_ARGS.mapArgs
+    ],
+    functions: [
+      {
+        funcName: 'updateDataStore',
+        help: 'set store/data/specialStore',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setLibelleRegion,
+            COMMON_TARGETS.setLibelleDepartement,
+            ...COMMON_TARGETS.setObjectsRegionsARPB,
+            ...COMMON_TARGETS.setObjectsDepartementsARPB
+          ]
+        }
+      },
+      {
+        funcName: 'goToPolygon',
+        help: 'set map zoom',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setMapZoomRegions,
+            // COMMON_TARGETS.setMapZoomDepartements,
+            COMMON_TARGETS.setMapZoomByCenter
+          ]
+        }
+      },
+      {
+        funcName: 'toggleSelected',
+        help: 'set selected polygon on map',
+        funcParams: {
+          targets: [
+            COMMON_TARGETS.setSelectedPolygons
+          ]
+        }
+      }
+    ]
+  },
+  
   setFocusObjectsACTIVITEPARTIELLE: {
     urlArgs: [
       ...COMMONN_URL_ARGS.objectArgs,
@@ -1287,6 +1417,174 @@ export const configAppRoutes = {
         }
       ],
       setUpRouteViews: COMMON_URL_FOCUS.setFocusObjectsCPSTI
+
+    },
+
+    // ============================================================= //
+    // ARPB
+    // ============================================================= //
+    {
+      id: 'arpb',
+      name: 'arpb page',
+      help: 'route view for arpb dataset',
+      title: { fr: '' },
+      titleI18n: 'routes.arpb.title',
+      urls: ['/arpb', '/arpb/'],
+      sourcesIds: [
+        'national-arpb-raw',
+        'regions-arpb-raw',
+        'departements-arpb-raw'
+      ],
+      rawHtml: undefined,
+      navbarFooter: {
+        activated: true,
+        settings: {
+          id: 'navbar-footer-01'
+        }
+      },
+      pageRows: [
+        {
+          id: 'row1',
+          rowNumber: 1,
+          activated: true,
+          help: '',
+          columns: [
+            {
+              id: 'col1',
+              colName: 'Numbers and tables',
+              activated: true,
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4',
+              hasScrollbar: true,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-arpb-title',
+                    containerClass: 'pt-2 pb-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'numbers',
+                  activated: true,
+                  smallScreenVerticalOrder: 3,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'numbers-03',
+                    containerClass: 'py-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'apexchart',
+                  activated: true,
+                  smallScreenVerticalOrder: 4,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'apexchart-arpb',
+                    containerClass: 'mt-4 pt-3 pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-arpb-infos',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: true
+                  }
+                }
+                /*
+                {
+                  component: 'globalButtons',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'global-button-cpsti',
+                    containerClass: 'py-0 my-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                }*/
+              ]
+            },
+
+            {
+              id: 'col2',
+              colName: 'main map',
+              activated: true,
+              colClass: 'col-12 col-sm-12 col-md-6 col-lg-7 col-xl-8',
+              hasScrollbar: false,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                /*{
+                  component: 'map',
+                  activated: true,
+                  smallScreenVerticalOrder: 2,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'map-france-cpsti-metro',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                }*/
+              ]
+            }
+          ]
+        },
+        {
+          id: 'row2',
+          rowNumber: 2,
+          activated: false,
+          help: '',
+          columns: [
+            {
+              id: 'col1',
+              colName: 'text',
+              activated: true,
+              colClass: '',
+              hasScrollbar: false,
+              smallScreenVerticalOrder: undefined,
+              colRows: [
+                /*{
+                  component: 'text',
+                  activated: true,
+                  smallScreenVerticalOrder: undefined,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'text-03',
+                    containerClass: 'pb-0',
+                    mobileIsVisibleDefault: false,
+                    desktopIsVisibleDefault: false
+                  }
+                }*/
+              ]
+            }
+          ]
+        }
+      ],
+      setUpRouteViews: COMMON_URL_FOCUS.setFocusObjectsAPRB
 
     },
 

@@ -21,6 +21,8 @@ const KEY_SECTION_EFFECTIF_LABEL = 'libelle_classe_effectif'
 const KEY_SECTION_CATEGJUR = 'code_cat_juridique'
 const KEY_SECTION_CATEGJUR_LABEL = 'libelle_cat_juridique'
 
+const KEY_TYPE_PRET = 'libelle'
+
 const COMMON_FORMATTERS = {
 
   millionsEuros: {
@@ -50,6 +52,33 @@ const COMMON_FORMATTERS = {
 }
 
 const COMMON_SERIES_MAPPERS = {
+  
+  TypeByMontant: {
+    dataFromKey: KEY_MONTANT,
+    serieName: 'montant (M€)',
+    format: COMMON_FORMATTERS.toMillionsWithComma,
+    sortDataSerieBy: {
+      sortByType: 'sortByFieldValue',
+      fieldName: KEY_MONTANT,
+      toNumber: true,
+      sortOrder: 'descending'
+    },
+    buildAxisCategsX: true,
+    buildAxisCategsXsettings: {
+      fromKey: KEY_TYPE_PRET,
+      splitBy: [',', ';'],
+      splitGlue: '- ',
+      capitalize: true
+    },
+    buildColorsAxisX: true,
+    buildColorsAxisXsettings: {
+      fromKey: KEY_TYPE_PRET,
+      matchWithDatasetId: 'taxo-arpb-colors',
+      matchKey: 'arpb',
+      getValueFromKey: 'color_arpb',
+      fallbackColor: '#808080'
+    }
+  }, 
   NafByMontant: {
     dataFromKey: KEY_MONTANT,
     serieName: 'montant (M€)',
@@ -1015,6 +1044,47 @@ export const configAppCharts = {
         fromDatasetKey: 'kpi_top_10_naf',
         seriesMappers: [
           COMMON_SERIES_MAPPERS.NafByMontant
+        ],
+        chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
+        format: COMMON_FORMATTERS.millionsEuros
+      }
+
+    },
+
+
+    // ============================================================= //
+    // ARPB
+    // ============================================================= //
+    // BAR HORIZ - APE X MONTANTS
+    {
+      id: 'apexchart-arpb',
+      serie_id: 'stat-bar-horiz',
+      help: 'bar horiz / type X montant',
+      titleI18n: 'charts.chart01.title',
+      chartTitle: {
+        fr: `
+          Montant des aides ventilés par type de prêts directs
+          (en M€)
+          <br><br>
+        `
+      },
+      chartTitleClass: 'subtitle-2 text-center',
+
+      titlePreffixSpecialStoreId: undefined,
+      titleSuffixSpecialStoreId: 'levelname',
+      titleSuffixClass: 'accent--text',
+
+      dividers: {
+        before: false,
+        after: true,
+        afterHideOnMobile: true
+      },
+
+      datasetMappers: {
+        specialStoreId: 'focusObject',
+        fromDatasetKey: 'type',
+        seriesMappers: [
+          COMMON_SERIES_MAPPERS.TypeByMontant
         ],
         chartOptions: COMMON_CHART_OPTIONS.categHorizH390,
         format: COMMON_FORMATTERS.millionsEuros
