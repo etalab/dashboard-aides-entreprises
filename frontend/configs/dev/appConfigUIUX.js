@@ -130,6 +130,18 @@ export const configAppUIUX = {
           addUrlParams: true
         },
         {
+          to: '/?routeId=arpb',
+          href: '/arpb',
+          // href: '/?routeId=reports',
+          isVisible: true,
+          icon: undefined,
+          title: { fr: "Prêts directs de l'Etat" },
+          titleMobile: { fr: "Prêts directs de l'Etat" },
+          tooltip: { fr: "Prêts directs de l'Etat" },
+          isNuxtLink: false,
+          addUrlParams: true
+        },
+        {
           to: '/?routeId=reports',
           href: '/reports',
           // href: '/?routeId=reports',
@@ -150,18 +162,6 @@ export const configAppUIUX = {
           title: { fr: "Aides artisans / commerçants" },
           titleMobile: { fr: "Aides artisans / commerçants" },
           tooltip: { fr: "Aides artisans / commerçants" },
-          isNuxtLink: false,
-          addUrlParams: true
-        },
-        {
-          to: '/?routeId=arpb',
-          href: '/arpb',
-          // href: '/?routeId=reports',
-          isVisible: true,
-          icon: undefined,
-          title: { fr: "Prêts directs de l'Etat" },
-          titleMobile: { fr: "Prêts directs de l'Etat" },
-          tooltip: { fr: "Prêts directs de l'Etat" },
           isNuxtLink: false,
           addUrlParams: true
         },

@@ -272,7 +272,7 @@ export const configAppData = {
           id: 'taxo-arpb-colors',
           help: '',
           from: 'static',
-          url: `${TEST_REPO}/taxonomies/arpb-minify.json`,
+          url: `${TEST_REPO}/taxonomies/arpb.json`,
           backupUrl: `${TEST_REPO}/prod/taxonomies/arpb.json`,
           displayed: false
         },
@@ -550,7 +550,7 @@ export const configAppData = {
         {
           id: 'national-arpb-raw',
           dataset: 'arpb',
-          help: 'serie chiffres cpsti à la maille nationale',
+          help: 'serie chiffres arpb à la maille nationale',
           from: 'static',
           url: `${TEST_REPO}/arpb/arpb-maille-national.json`,
           backupUrl: `${TEST_REPO}/prod/arpb/arpb-maille-national.json`,
@@ -592,21 +592,21 @@ export const configAppData = {
           ]
         },
         {
-          id: 'regions-cpsti-raw',
-          dataset: 'cpsti',
-          help: 'serie chiffres cpsti à la maille regionale',
+          id: 'regions-arpb-raw',
+          dataset: 'arpb',
+          help: 'serie chiffres arpb à la maille regionale',
           from: 'static',
-          url: `${DATASETS_REPO_BASE}/cpsti/cpsti-maille-regional-minify.json`,
-          backupUrl: `${DATASETS_FOLDER}/prod/cpsti/cpsti-maille-regional.json`,
+          url: `${TEST_REPO}/arpb/arpb-maille-regional.json`,
+          backupUrl: `${TEST_REPO}/prod/arpb/arpb-maille-regional.json`,
           displayed: true
         },
         {
-          id: 'departements-cpsti-raw',
-          dataset: 'cpsti',
-          help: 'serie chiffres cpsti à la maille departementale',
+          id: 'departements-arpb-raw',
+          dataset: 'arpb',
+          help: 'serie chiffres arpb à la maille departementale',
           from: 'static',
-          url: `${DATASETS_REPO_BASE}/cpsti/cpsti-maille-departemental-minify.json`,
-          backupUrl: `${DATASETS_FOLDER}/prod/cpsti/cpsti-maille-departemental.json`,
+          url: `${TEST_REPO}/arpb/arpb-maille-departemental.json`,
+          backupUrl: `${TEST_REPO}/prod/arpb/arpb-maille-departemental.json`,
           displayed: false
         },
         // ============================================================= //

@@ -23,6 +23,7 @@ const FILLCOLOR_PGE = '#00A17F'
 const FILLCOLOR_REPORT = '#D66200'
 const FILLCOLOR_CPSTI = '#1E88E5'
 const FILLCOLOR_ACTIVITEPARTIELLE = '#C95DC9'
+const FILLCOLOR_ARPB = '#8EC5F5'
 
 // layer fonts : ["Open Sans Regular","Arial Unicode MS Regular"]
 
@@ -255,6 +256,38 @@ const circlePaintACTIVITEPARTIELLE = {
       donutRadiusFormula('nombreSalaries', maxDepACTIVITEPARTIELLE),
       getRadiusFullSqrt(0, maxDepACTIVITEPARTIELLE), minCircleRadius,
       maxRadDepACTIVITEPARTIELLE, maxCircleRadius
+    ]
+  ]
+}
+
+
+const maxRegARPB = 8
+const maxDepARPB = 4
+const maxRadRegARPB = getRadiusFullSqrt(maxRegARPB, maxRegARPB)
+const maxRadDepARPB = getRadiusFullSqrt(maxDepARPB, maxDepARPB)
+// const maxRadRegREPORT = Math.sqrt(maxRegREPORT)
+// const maxRadDepREPORT = Math.sqrt(maxDepREPORT)
+const circlePaintARPB = {
+  'circle-opacity': 0.6,
+  'circle-color': FILLCOLOR_ARPB,
+  'circle-radius': [
+    'step',
+    ['zoom'],
+    [
+      'interpolate',
+      ['linear'],
+      // ['sqrt', ['number', ['get', 'montantMillions']]],
+      donutRadiusFormula('montantMillions', maxRegARPB),
+      getRadiusFullSqrt(0, maxRegARPB), minCircleRadius,
+      maxRadRegARPB, maxCircleRadius
+    ],
+    ZOOM_THRESHOLD + zoomRectifier, [
+      'interpolate',
+      ['linear'],
+      // ['sqrt', ['number', ['get', 'montantMillions']]],
+      donutRadiusFormula('montantMillions', maxDepARPB),
+      getRadiusFullSqrt(0, maxDepARPB), minCircleRadius,
+      maxRadDepARPB, maxCircleRadius
     ]
   ]
 }
@@ -1586,6 +1619,378 @@ export const configAppMap = {
       ]
     },
 
+
+    // ====================================== //
+    // === DATASET : ARPB               ===== //
+    // ====================================== //
+
+    // FRANCE METRO
+    {
+      id: 'map-france-arpb-metro',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMetro,
+
+      sizes: COMMON_SIZES.defaultSizes,
+
+      legend: {
+        activated: true,
+        legend_title: 'Montant des prêts directs de l\'Etat',
+        legend_subtitle: '',
+      },
+
+      // - - - - - - - - - - - - - - - - - - //
+      // SOURCES LOADED AT MAP LOADED
+      // - - - - - - - - - - - - - - - - - - //
+      sources: [
+        COMMON_SOURCES.FranceRegions,
+        COMMON_SOURCES.FranceDepartements,
+        {
+          id: 'regions-arpb',
+          help: 'montant prets - as geojson from raw',
+          from: 'store',
+          // fromId: 'regions-activitepartielle-raw',
+          fromId: 'regions-arpb-raw',
+          type: 'geojson',
+          generateId: true,
+          needTransform: true,
+          transformTo: {
+            srcKey: 'reg',
+            geoCanvasId: 'centers',
+            canvasKey: {
+              keyIsFieldName: true,
+              field: undefined,
+              canvasKeyPrefix: 'REG-',
+              canvasKeySuffix: ''
+            },
+            properties: aidesProperties,
+            geometry: {
+              type: 'Point'
+            }
+          },
+          licence: ''
+        },
+        {
+          id: 'departements-arpb',
+          help:
+            'montant pret - as geojson from raw',
+          from: 'store',
+          // fromId: 'departements-activitepartielle-raw',
+          fromId: 'departements-arpb-raw',
+          type: 'geojson',
+          generateId: false,
+          needTransform: true,
+          transformTo: {
+            srcKey: 'dep',
+            geoCanvasId: 'centers',
+            canvasKey: {
+              keyIsFieldName: true,
+              field: undefined,
+              canvasKeyPrefix: 'DEP-',
+              canvasKeySuffix: ''
+            },
+            properties: aidesProperties,
+            geometry: {
+              type: 'Point'
+            }
+          },
+          licence: ''
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // MAPS
+      // - - - - - - - - - - - - - - - - - - //
+      maps: [
+        {
+          id: 'map-arpb-reg',
+          name: 'Carte prets directs par l\'Etat par région',
+          category: 'regional',
+          properties: 'arpb',
+          data: 'arpb',
+          layers: [
+            'regions-fill',
+            'regions-lines',
+            'regions-arpb',
+            'regions-arpb-montants'
+          ],
+          clicEvents: [
+            {
+              event: 'click',
+              layer: 'regions-fill',
+              // zoomRange : { minZoom : undefined, maxZoom : ZOOM_THRESHOLD },
+              functions: [
+                COMMON_CLICK_EVENTS.toggleSelectedOn,
+                COMMON_CLICK_EVENTS.goToPolygonPlus,
+                {
+                  funcName: 'updateDisplayedData',
+                  help: 'update several data (targets) from store',
+                  funcParams: {
+                    zoomRange: {
+                      minZoom: undefined,
+                      // overidden to account for region -> region navigation
+                      // vs region -> department
+                      maxZoom: 9
+                    },
+                    propName: 'code',
+                    targets: [
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code',
+                        fromStoreData: 'initData',
+                        fromDatasetId: 'taxo-regions',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'libelle',
+                        targetSpecialStoreId: 'levelname'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        // fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetId: 'regions-arpb-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'montant',
+                        targetSpecialStoreId: 'montant',
+                        format: [
+                          {
+                            utilsFnName: 'toMillionsOrElse',
+                            params: { divider: 1000000, fixed: 2 }
+                          }
+                        ]
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        // fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetId: 'regions-arpb-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'nombre',
+                        targetSpecialStoreId: 'nombre'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        // fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetId: 'regions-arpb-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: 'effectifs',
+                        targetSpecialStoreId: 'effectifs'
+                      },
+
+                      {
+                        from: 'store',
+                        fromPropKey: 'code', // use props region code
+                        fromStoreData: 'initData',
+                        // fromDatasetId: 'regions-activitepartielle-raw',
+                        fromDatasetId: 'regions-arpb-raw',
+                        fromDatasetKey: 'reg',
+                        fromDatasetField: undefined,
+                        targetSpecialStoreId: 'focusObject'
+                      }
+                    ]
+                  }
+                },
+                COMMON_CLICK_EVENTS.updateUrlPathRegions
+
+              ]
+            },
+
+            {
+              event: 'mousemove',
+              layer: 'regions-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOn
+              ]
+            },
+
+            {
+              event: 'mouseleave',
+              layer: 'regions-fill',
+              functions: [
+                COMMON_CLICK_EVENTS.toggleHighlightOff
+              ]
+            }
+          ]
+        }
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // LAYERS
+      // - - - - - - - - - - - - - - - - - - //
+      layers: [
+
+        // REGIONS
+        COMMON_LAYERS.FranceRegionsFill,
+        COMMON_LAYERS.FranceRegionsLines,
+        {
+          id: 'regions-arpb',
+          type: 'circle',
+          source: 'regions-arpb',
+          layout: {
+            visibility: 'visible'
+          },
+          maxzoom: 11,
+          paint: circlePaintARPB
+        },
+        {
+          id: 'regions-arpb-montants',
+          type: 'symbol',
+          source: 'regions-arpb',
+          layout: {
+            ...COMMON_TEXTS.millions
+          },
+          maxzoom: 11
+        },
+
+      ],
+
+      // - - - - - - - - - - - - - - - - - - //
+      // LAYERS VISIBILITY DRAWER
+      // - - - - - - - - - - - - - - - - - - //
+      maps_visibility: {
+        title: { fr: 'calques' },
+        is_activated: false,
+        is_drawer_open: true,
+        map_switches: [
+          {
+            id: 'regions',
+            mapId: 'map-arpb-reg',
+            label: { fr: 'régions' },
+            default_visible: true
+          }
+        ]
+      }
+    },
+    // GUYANE
+    {
+      id: 'map-france-arpb-guyane',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuyane,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-arpb-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // GUADELOUPE
+    {
+      id: 'map-france-arpb-guadeloupe',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceGuadeloupe,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-arpb-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MARTINIQUE
+    {
+      id: 'map-france-arpb-martinique',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMartinique,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-arpb-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // LA REUNION
+    {
+      id: 'map-france-arpb-la-reunion',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceReunion,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-arpb-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+    // MAYOTTE
+    {
+      id: 'map-france-arpb-mayotte',
+      isActivated: true,
+      titleI18n: 'maps.map01.title',
+
+      map_options: COMMON_OPTIONS.FranceMayotte,
+
+      maps_visibility: {
+        is_activated: false
+      },
+
+      copySettingsFrom: [
+        {
+          copyFromId: 'map-france-arpb-metro',
+          fieldsToCopy: [
+            'sources',
+            'maps',
+            'layers',
+            'maps_visibility'
+          ]
+        }
+      ]
+    },
+
+
     // ====================================== //
     // === DATASET : REPORTS ================ //
     // ====================================== //
@@ -2526,6 +2931,7 @@ export const configAppMap = {
         }
       ]
     },
+
 
     // ====================================== //
     // === DATASET : ACTIVITE PARTIELLE ===== //

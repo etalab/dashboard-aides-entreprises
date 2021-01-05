@@ -75,7 +75,7 @@ const COMMON_SERIES_MAPPERS = {
       fromKey: KEY_TYPE_PRET,
       matchWithDatasetId: 'taxo-arpb-colors',
       matchKey: 'arpb',
-      getValueFromKey: 'color_arpb',
+      getValueFromKey: 'arpb-color',
       fallbackColor: '#808080'
     }
   }, 

@@ -1484,6 +1484,19 @@ export const configAppRoutes = {
                   }
                 },
                 {
+                  component: 'globalButtons',
+                  activated: true,
+                  smallScreenVerticalOrder: 1,
+                  justify: 'center',
+                  align: 'center',
+                  settings: {
+                    id: 'global-button-arpb',
+                    containerClass: 'py-0 my-0',
+                    mobileIsVisibleDefault: true,
+                    desktopIsVisibleDefault: true
+                  }
+                },
+                {
                   component: 'apexchart',
                   activated: true,
                   smallScreenVerticalOrder: 4,
@@ -1509,21 +1522,6 @@ export const configAppRoutes = {
                     desktopIsVisibleDefault: true
                   }
                 }
-                /*
-                {
-                  component: 'globalButtons',
-                  activated: true,
-                  smallScreenVerticalOrder: 1,
-                  justify: 'center',
-                  align: 'center',
-                  settings: {
-                    id: 'global-button-cpsti',
-                    containerClass: 'py-0 my-0',
-                    mobileIsVisibleDefault: true,
-                    desktopIsVisibleDefault: true
-                  }
-                },
-                }*/
               ]
             },
 
@@ -1535,19 +1533,19 @@ export const configAppRoutes = {
               hasScrollbar: false,
               smallScreenVerticalOrder: undefined,
               colRows: [
-                /*{
+                {
                   component: 'map',
                   activated: true,
                   smallScreenVerticalOrder: 2,
                   justify: 'center',
                   align: 'center',
                   settings: {
-                    id: 'map-france-cpsti-metro',
+                    id: 'map-france-arpb-metro',
                     containerClass: 'pb-0',
                     mobileIsVisibleDefault: true,
                     desktopIsVisibleDefault: true
                   }
-                }*/
+                }
               ]
             }
           ]
@@ -1566,7 +1564,7 @@ export const configAppRoutes = {
               hasScrollbar: false,
               smallScreenVerticalOrder: undefined,
               colRows: [
-                /*{
+                {
                   component: 'text',
                   activated: true,
                   smallScreenVerticalOrder: undefined,
@@ -1578,7 +1576,7 @@ export const configAppRoutes = {
                     mobileIsVisibleDefault: false,
                     desktopIsVisibleDefault: false
                   }
-                }*/
+                }
               ]
             }
           ]
