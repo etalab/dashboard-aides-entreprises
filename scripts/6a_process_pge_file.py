@@ -21,7 +21,7 @@ for sheet in sheet_names:
         dfnaf = df[28:50]
         dfnaf = dfnaf.rename(columns={dfnaf.columns[0]:"section_naf",dfnaf.columns[1]:"nombre",dfnaf.columns[3]:"montant"})
         dfnaf = dfnaf[['section_naf','nombre','montant']]
-        dfnaf['montant'] = dfnaf['montant'].apply(lambda x: 0 if x == 'ND' else x * 1000000)
+        dfnaf['montant'] = dfnaf['montant'].apply(lambda x: 0 if x == 'ND' else 0 if x == 'NC' else x * 1000000)
         dfnaf = dfnaf.reset_index()
         dfnaf = dfnaf.drop(columns={'index'})
         # PATCH
@@ -42,6 +42,8 @@ for sheet in sheet_names:
         arr = []
         for index,row in newdfnaf.iterrows():
             if(row['nombre'] == 'ND'):
+                row['nombre'] = 0
+            if(row['nombre'] == 'NC'):
                 row['nombre'] = 0
             if(row['nombre'] !=  row['nombre']):
                 row['nombre'] = 0
