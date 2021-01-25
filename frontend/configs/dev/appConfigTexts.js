@@ -743,7 +743,7 @@ export const configAppTexts = {
                       <li>Ils s'adressent aux PME qui font état de perspectives réelles de redressement ou retour à la rentabilité, démontrées par un plan d’affaires, éventuellement audité.</li>
                       <li>Les aides sont accordées après avoir recherché une contribution équilibrée des différents partenaires financiers de l’entreprise : apurement du passif auprès des créanciers publics (CCSF) et privés, apport des actionnaires.</li>
                     </ul>
-                    
+                    <br>
                     <p>Les préfets au nom des comités départementaux d’examen des problèmes de financement des entreprises (CODEFI) ou les commissaires aux restructurations et à la prévention des difficultés d’entreprises (CRP) sont compétents pour proposer ces mesures aux entreprises qui y sont éligibles. Les décisions finales sont prises par la Direction générale des entreprises (DGE) par arrêté ministériel publiés au Journal Officiel.</p>         
                     `
                   },
