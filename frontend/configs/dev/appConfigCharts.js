@@ -595,6 +595,7 @@ const COMMON_CHART_OPTIONS = {
         'août 2020',
         'septembre 2020',
         'octobre 2020',
+        'novembre 2020'
       ],
       labels: {
         show: true,

@@ -720,7 +720,7 @@ export const configAppTexts = {
                     fr: `
                       <em>
                       nota : les chiffres indiqués ci-dessus et sur la carte représentent les valeurs
-                      au dernier mois disponible (octobre 2020)
+                      au dernier mois disponible (novembre 2020)
                       </em>
                       `
                   },
