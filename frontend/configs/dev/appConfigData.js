@@ -1,8 +1,7 @@
 // const DATASETS_REPO_BASE = 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/frontend/static/' // in repo folder
 const DATASETS_REPO_BASE =
   'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/' // in repo folder
-const TEST_REPO =
-  'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/geoffrey/arpb/backend/json/' // in repo folder
+  
 const DATASETS_FOLDER = '/datasets' // in static folder
 
 export const configAppData = {
@@ -272,8 +271,8 @@ export const configAppData = {
           id: 'taxo-arpb-colors',
           help: '',
           from: 'static',
-          url: `${TEST_REPO}/taxonomies/arpb.json`,
-          backupUrl: `${TEST_REPO}/prod/taxonomies/arpb.json`,
+          url: `${DATASETS_REPO_BASE}/taxonomies/arpb.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/arpb.json`,
           displayed: false
         },
 
@@ -552,8 +551,8 @@ export const configAppData = {
           dataset: 'arpb',
           help: 'serie chiffres arpb à la maille nationale',
           from: 'static',
-          url: `${TEST_REPO}/arpb/arpb-maille-national.json`,
-          backupUrl: `${TEST_REPO}/prod/arpb/arpb-maille-national.json`,
+          url: `${DATASETS_REPO_BASE}/arpb/arpb-maille-national.json`,
+          backupUrl: `${DATASETS_REPO_BASE}/prod/arpb/arpb-maille-national.json`,
           displayed: true,
           copyTo: [
             {
@@ -596,8 +595,8 @@ export const configAppData = {
           dataset: 'arpb',
           help: 'serie chiffres arpb à la maille regionale',
           from: 'static',
-          url: `${TEST_REPO}/arpb/arpb-maille-regional.json`,
-          backupUrl: `${TEST_REPO}/prod/arpb/arpb-maille-regional.json`,
+          url: `${DATASETS_REPO_BASE}/arpb/arpb-maille-regional.json`,
+          backupUrl: `${DATASETS_REPO_BASE}/prod/arpb/arpb-maille-regional.json`,
           displayed: true
         },
         {
@@ -605,8 +604,8 @@ export const configAppData = {
           dataset: 'arpb',
           help: 'serie chiffres arpb à la maille departementale',
           from: 'static',
-          url: `${TEST_REPO}/arpb/arpb-maille-departemental.json`,
-          backupUrl: `${TEST_REPO}/prod/arpb/arpb-maille-departemental.json`,
+          url: `${DATASETS_REPO_BASE}/arpb/arpb-maille-departemental.json`,
+          backupUrl: `${DATASETS_REPO_BASE}/prod/arpb/arpb-maille-departemental.json`,
           displayed: false
         },
         // ============================================================= //

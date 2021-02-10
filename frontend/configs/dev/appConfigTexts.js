@@ -77,12 +77,12 @@ const COMMON_TEXTS_HTML = {
   },
 
   moreInfosARPB: {
-    id: 'more-infos-cpsti',
+    id: 'more-infos-arpb',
     textClass: 'text-left mx-4 pt-4',
     textContent: {
       fr: `
       Les données utilisées sur ce tableau de bord
-      <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-reports-decheances-fiscales-accordes-dans-le-cadre-de-lepidemie-de-covid-19/">
+      <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-prets-directs-de-letat-mis-en-place-dans-le-cadre-de-lepidemie-de-covid-19/">
         sont disponibles en open data sur data.gouv.fr</a>.
       `
     },
