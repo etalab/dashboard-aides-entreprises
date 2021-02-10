@@ -75,6 +75,21 @@ const COMMON_TEXTS_HTML = {
       fr: undefined
     }
   },
+
+  moreInfosARPB: {
+    id: 'more-infos-arpb',
+    textClass: 'text-left mx-4 pt-4',
+    textContent: {
+      fr: `
+      Les données utilisées sur ce tableau de bord
+      <a target="_blank" href="https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-prets-directs-de-letat-mis-en-place-dans-le-cadre-de-lepidemie-de-covid-19/">
+        sont disponibles en open data sur data.gouv.fr</a>.
+      `
+    },
+    fromUrl: {
+      fr: undefined
+    }
+  },
   moreInfosACTIVITEPARTIELLE: {
     id: 'more-infos-activitepartielle',
     textClass: 'text-left mx-4 pt-4',
@@ -629,6 +644,114 @@ export const configAppTexts = {
                   }
                 },
                 COMMON_TEXTS_HTML.moreInfosCPSTI,
+                COMMON_TEXTS_HTML.dashboardIntro,
+                {
+                  id: 'miseAJour',
+                  textClass: 'justify-center mx-4 pt-3 pb-5 mb-5',
+                  textContent: undefined,
+                  fromUrl: {
+                    fr:
+                      'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/cpsti/last_update_data.txt'
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+
+    // ============================================================= //
+    // ARPB
+    // ============================================================= //
+    {
+      id: 'text-arpb-title',
+      help: '',
+      title: { fr: '' },
+      titleI18n: 'texts.text01.title',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+            {
+              colName: '',
+              colTitle: { fr: '' },
+              colTitleClass: '',
+              cols: 12,
+              textClass: 'text-center',
+              subTextClass: '',
+              sizeDesktop: 'headline mb-0',
+              sizeMobile: 'subtitle-1',
+              textPrefix: { fr: "Prêts directs de l'Etat : " },
+              textPrefixClass: 'font-weight-regular',
+              textSuffix: { fr: '' },
+              textSuffixClass: undefined,
+              specialStoreId: 'levelname',
+              specialStoreIdClass: 'font-weight-medium'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'text-arpb-infos',
+      help: '',
+      title: { fr: '' },
+      titleI18n: 'texts.text01.title',
+      dividers: {
+        before: false,
+        after: false
+      },
+      componentRows: [
+        {
+          rowNumber: 1,
+          help: '',
+          columns: [
+            {
+              colName: '',
+              colTitle: { fr: "Avances remboursables et prêts à taux bonifiés" },
+              colTitleClass: 'my-5',
+              cols: 12,
+              textClass: '',
+              subTextClass: '',
+              sizeDesktop: '',
+              sizeMobile: 'body-2',
+              textPrefix: { fr: undefined },
+              textPrefixClass: undefined,
+              textSuffix: { fr: undefined },
+              textSuffixClass: undefined,
+              specialStoreId: undefined,
+              specialStoreIdClass: undefined,
+              textsHtml: [
+                {
+                  id: 'arpb-intro',
+                  textClass: 'text-left mx-4 pt-4',
+                  textContent: {
+                    fr: `
+                    <p>Des mesures spécifiques, sous forme de crédits d’intervention directs de l’Etat, ont été prévues afin de soutenir les entreprises pour lesquelles le recours aux autres dispositifs exceptionnels (Fonds de solidarité, PGE, report des échéances fiscales et sociales, activité partielle, etc.) se révèle inopérant ou insuffisant.</p>
+
+                    <p>Ces prêts visent le sauvetage d’une entreprise présentant un intérêt stratégique en raison notamment de son impact territorial ou de son positionnement industriel.</p>
+                    
+                    <ul>
+                      <li>Ils s’adressent aux PME de 50 à 250 salariés, ou à titre dérogatoire pour les moins de 50 salariés, qui nécessitent un soutien en trésorerie et une restructuration de leur bilan et opérations, et qui ne sont pas ou plus soutenus par leurs financeurs privés ou bancaires.</li>
+                      <li>Ils s'adressent aux PME qui font état de perspectives réelles de redressement ou retour à la rentabilité, démontrées par un plan d’affaires, éventuellement audité.</li>
+                      <li>Les aides sont accordées après avoir recherché une contribution équilibrée des différents partenaires financiers de l’entreprise : apurement du passif auprès des créanciers publics (CCSF) et privés, apport des actionnaires.</li>
+                    </ul>
+                    <br>
+                    <p>Les préfets au nom des comités départementaux d’examen des problèmes de financement des entreprises (CODEFI) ou les commissaires aux restructurations et à la prévention des difficultés d’entreprises (CRP) sont compétents pour proposer ces mesures aux entreprises qui y sont éligibles. Les décisions finales sont prises par la Direction générale des entreprises (DGE) par arrêté ministériel publiés au Journal Officiel.</p>         
+                    `
+                  },
+                  fromUrl: {
+                    fr: undefined
+                  }
+                },
+                COMMON_TEXTS_HTML.moreInfosARPB,
                 COMMON_TEXTS_HTML.dashboardIntro,
                 {
                   id: 'miseAJour',

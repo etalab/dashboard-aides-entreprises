@@ -1,6 +1,7 @@
 // const DATASETS_REPO_BASE = 'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/frontend/static/' // in repo folder
 const DATASETS_REPO_BASE =
   'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/' // in repo folder
+  
 const DATASETS_FOLDER = '/datasets' // in static folder
 
 export const configAppData = {
@@ -264,6 +265,14 @@ export const configAppData = {
           from: 'static',
           url: `${DATASETS_REPO_BASE}/taxonomies/categories-juridiques-minify.json`,
           backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/categories-juridiques.json`,
+          displayed: false
+        },
+        {
+          id: 'taxo-arpb-colors',
+          help: '',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/taxonomies/arpb.json`,
+          backupUrl: `${DATASETS_FOLDER}/prod/taxonomies/arpb.json`,
           displayed: false
         },
 
@@ -534,6 +543,71 @@ export const configAppData = {
           displayed: false
         },
 
+        // ============================================================= //
+        // === DATASET : ARPB
+        // ============================================================= //
+        {
+          id: 'national-arpb-raw',
+          dataset: 'arpb',
+          help: 'serie chiffres arpb à la maille nationale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/arpb/arpb-maille-national.json`,
+          backupUrl: `${DATASETS_REPO_BASE}/prod/arpb/arpb-maille-national.json`,
+          displayed: true,
+          copyTo: [
+            {
+              fieldToCopy: undefined,
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'focusObject',
+              format: undefined
+            },
+            {
+              fieldToCopy: 'montant',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'montant',
+              format: [
+                {
+                  utilsFnName: 'toMillionsOrElse',
+                  params: { divider: 1000000, fixed: 2 }
+                }
+              ]
+            },
+            {
+              fieldToCopy: 'nombre',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'nombre',
+              format: undefined
+            },
+            {
+              fieldToCopy: 'effectifs',
+              from: { objectRef: 0 },
+              help: 'copy to another dataset (id) in displayedData | initData',
+              toSpecialStore: 'effectifs',
+              format: undefined
+            }
+          ]
+        },
+        {
+          id: 'regions-arpb-raw',
+          dataset: 'arpb',
+          help: 'serie chiffres arpb à la maille regionale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/arpb/arpb-maille-regional.json`,
+          backupUrl: `${DATASETS_REPO_BASE}/prod/arpb/arpb-maille-regional.json`,
+          displayed: true
+        },
+        {
+          id: 'departements-arpb-raw',
+          dataset: 'arpb',
+          help: 'serie chiffres arpb à la maille departementale',
+          from: 'static',
+          url: `${DATASETS_REPO_BASE}/arpb/arpb-maille-departemental.json`,
+          backupUrl: `${DATASETS_REPO_BASE}/prod/arpb/arpb-maille-departemental.json`,
+          displayed: false
+        },
         // ============================================================= //
         // === DATASET : ACTIVITE PARTIELLE
         // ============================================================= //

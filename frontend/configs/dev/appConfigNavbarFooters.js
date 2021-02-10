@@ -325,6 +325,24 @@ export const configAppNavbarFooters = {
               ]
             },
             {
+              routeId: 'arpb',
+              toggle: 'on',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-arpb-title',
+                'apexchart-arpb'
+              ]
+            },
+            {
+              routeId: 'arpb',
+              toggle: 'off',
+              toggleVisibility: ['isVisibleMobile'],
+              divIds: [
+                'text-arpb-infos',
+                'map-france-arpb-metro'
+              ]
+            },
+            {
               routeId: 'activitepartielle',
               toggle: 'on',
               toggleVisibility: ['isVisibleMobile'],
