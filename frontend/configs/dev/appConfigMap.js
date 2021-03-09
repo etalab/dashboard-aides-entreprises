@@ -2950,7 +2950,7 @@ export const configAppMap = {
       legend: {
         activated: true,
         legend_title: 'Nombre de salariés concernés par l\'activité partielle',
-        legend_subtitle: 'au mois de novembre 2020',
+        legend_subtitle: 'au mois de janvier 2021',
       },
 
       // - - - - - - - - - - - - - - - - - - //

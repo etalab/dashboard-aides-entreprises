@@ -2,61 +2,145 @@
   {
     "nace17": [
       {
+        "code_section_nace17": "IZ", 
+        "data": [
+          {
+            "mois": "2020-03", 
+            "nombre_demandes_deposees": "143360.00", 
+            "nombre_heures_demandees": "46984585.00", 
+            "nombre_salaries_concernes": "847550.00"
+          }, 
+          {
+            "mois": "2020-04", 
+            "nombre_demandes_deposees": "152105.00", 
+            "nombre_heures_demandees": "114745425.00", 
+            "nombre_salaries_concernes": "933645.00"
+          }, 
+          {
+            "mois": "2020-05", 
+            "nombre_demandes_deposees": "144310.00", 
+            "nombre_heures_demandees": "84037685.00", 
+            "nombre_salaries_concernes": "864615.00"
+          }, 
+          {
+            "mois": "2020-06", 
+            "nombre_demandes_deposees": "98785.00", 
+            "nombre_heures_demandees": "41079290.00", 
+            "nombre_salaries_concernes": "560115.00"
+          }, 
+          {
+            "mois": "2020-07", 
+            "nombre_demandes_deposees": "69565.00", 
+            "nombre_heures_demandees": "25896000.00", 
+            "nombre_salaries_concernes": "352590.00"
+          }, 
+          {
+            "mois": "2020-08", 
+            "nombre_demandes_deposees": "50010.00", 
+            "nombre_heures_demandees": "16035025.00", 
+            "nombre_salaries_concernes": "241200.00"
+          }, 
+          {
+            "mois": "2020-09", 
+            "nombre_demandes_deposees": "57965.00", 
+            "nombre_heures_demandees": "17904790.00", 
+            "nombre_salaries_concernes": "280305.00"
+          }, 
+          {
+            "mois": "2020-10", 
+            "nombre_demandes_deposees": "98360.00", 
+            "nombre_heures_demandees": "24408040.00", 
+            "nombre_salaries_concernes": "497620.00"
+          }, 
+          {
+            "mois": "2020-11", 
+            "nombre_demandes_deposees": "128490.00", 
+            "nombre_heures_demandees": "70420085.00", 
+            "nombre_salaries_concernes": "719830.00"
+          }, 
+          {
+            "mois": "2020-12", 
+            "nombre_demandes_deposees": "132435.00", 
+            "nombre_heures_demandees": "74046605.00", 
+            "nombre_salaries_concernes": "694465.00"
+          }, 
+          {
+            "mois": "2021-01", 
+            "nombre_demandes_deposees": "93020.00", 
+            "nombre_heures_demandees": "49077140.00", 
+            "nombre_salaries_concernes": "498475.00"
+          }
+        ], 
+        "libelle": "H\u00e9bergement et restauration"
+      }, 
+      {
         "code_section_nace17": "GZ", 
         "data": [
           {
             "mois": "2020-03", 
-            "nombre_demandes_deposees": "239975.00", 
-            "nombre_heures_demandees": "64189270.00", 
-            "nombre_salaries_concernes": "1245975.00"
+            "nombre_demandes_deposees": "240320.00", 
+            "nombre_heures_demandees": "64271580.00", 
+            "nombre_salaries_concernes": "1247615.00"
           }, 
           {
             "mois": "2020-04", 
-            "nombre_demandes_deposees": "270585.00", 
-            "nombre_heures_demandees": "167980410.00", 
-            "nombre_salaries_concernes": "1536995.00"
+            "nombre_demandes_deposees": "270975.00", 
+            "nombre_heures_demandees": "168179430.00", 
+            "nombre_salaries_concernes": "1539280.00"
           }, 
           {
             "mois": "2020-05", 
-            "nombre_demandes_deposees": "249840.00", 
-            "nombre_heures_demandees": "70109855.00", 
-            "nombre_salaries_concernes": "1259520.00"
+            "nombre_demandes_deposees": "250370.00", 
+            "nombre_heures_demandees": "70288365.00", 
+            "nombre_salaries_concernes": "1262850.00"
           }, 
           {
             "mois": "2020-06", 
-            "nombre_demandes_deposees": "96865.00", 
-            "nombre_heures_demandees": "21853655.00", 
-            "nombre_salaries_concernes": "380570.00"
+            "nombre_demandes_deposees": "97285.00", 
+            "nombre_heures_demandees": "21948725.00", 
+            "nombre_salaries_concernes": "382400.00"
           }, 
           {
             "mois": "2020-07", 
-            "nombre_demandes_deposees": "47240.00", 
-            "nombre_heures_demandees": "10044130.00", 
-            "nombre_salaries_concernes": "172540.00"
+            "nombre_demandes_deposees": "47750.00", 
+            "nombre_heures_demandees": "10137225.00", 
+            "nombre_salaries_concernes": "174290.00"
           }, 
           {
             "mois": "2020-08", 
-            "nombre_demandes_deposees": "26090.00", 
-            "nombre_heures_demandees": "4962635.00", 
-            "nombre_salaries_concernes": "91740.00"
+            "nombre_demandes_deposees": "26420.00", 
+            "nombre_heures_demandees": "5023775.00", 
+            "nombre_salaries_concernes": "92890.00"
           }, 
           {
             "mois": "2020-09", 
-            "nombre_demandes_deposees": "24445.00", 
-            "nombre_heures_demandees": "5220085.00", 
-            "nombre_salaries_concernes": "90455.00"
+            "nombre_demandes_deposees": "25020.00", 
+            "nombre_heures_demandees": "5314845.00", 
+            "nombre_salaries_concernes": "92475.00"
           }, 
           {
             "mois": "2020-10", 
-            "nombre_demandes_deposees": "57350.00", 
-            "nombre_heures_demandees": "6093415.00", 
-            "nombre_salaries_concernes": "201000.00"
+            "nombre_demandes_deposees": "62515.00", 
+            "nombre_heures_demandees": "6517035.00", 
+            "nombre_salaries_concernes": "228875.00"
           }, 
           {
             "mois": "2020-11", 
-            "nombre_demandes_deposees": "113330.00", 
-            "nombre_heures_demandees": "37687535.00", 
-            "nombre_salaries_concernes": "494610.00"
+            "nombre_demandes_deposees": "126905.00", 
+            "nombre_heures_demandees": "45164345.00", 
+            "nombre_salaries_concernes": "600035.00"
+          }, 
+          {
+            "mois": "2020-12", 
+            "nombre_demandes_deposees": "56390.00", 
+            "nombre_heures_demandees": "13858770.00", 
+            "nombre_salaries_concernes": "213175.00"
+          }, 
+          {
+            "mois": "2021-01", 
+            "nombre_demandes_deposees": "32715.00", 
+            "nombre_heures_demandees": "6730085.00", 
+            "nombre_salaries_concernes": "111430.00"
           }
         ], 
         "libelle": "Commerce"
@@ -66,237 +150,213 @@
         "data": [
           {
             "mois": "2020-03", 
-            "nombre_demandes_deposees": "132120.00", 
-            "nombre_heures_demandees": "45236215.00", 
-            "nombre_salaries_concernes": "1115165.00"
+            "nombre_demandes_deposees": "132195.00", 
+            "nombre_heures_demandees": "45288850.00", 
+            "nombre_salaries_concernes": "1116505.00"
           }, 
           {
             "mois": "2020-04", 
-            "nombre_demandes_deposees": "160610.00", 
-            "nombre_heures_demandees": "114727255.00", 
-            "nombre_salaries_concernes": "1352005.00"
+            "nombre_demandes_deposees": "160805.00", 
+            "nombre_heures_demandees": "115066120.00", 
+            "nombre_salaries_concernes": "1356735.00"
           }, 
           {
             "mois": "2020-05", 
-            "nombre_demandes_deposees": "145815.00", 
-            "nombre_heures_demandees": "64665200.00", 
-            "nombre_salaries_concernes": "1109760.00"
+            "nombre_demandes_deposees": "146190.00", 
+            "nombre_heures_demandees": "65011990.00", 
+            "nombre_salaries_concernes": "1115600.00"
           }, 
           {
             "mois": "2020-06", 
-            "nombre_demandes_deposees": "75065.00", 
-            "nombre_heures_demandees": "33594420.00", 
-            "nombre_salaries_concernes": "521175.00"
+            "nombre_demandes_deposees": "75920.00", 
+            "nombre_heures_demandees": "34150795.00", 
+            "nombre_salaries_concernes": "530240.00"
           }, 
           {
             "mois": "2020-07", 
-            "nombre_demandes_deposees": "47725.00", 
-            "nombre_heures_demandees": "20861320.00", 
-            "nombre_salaries_concernes": "318945.00"
+            "nombre_demandes_deposees": "48665.00", 
+            "nombre_heures_demandees": "21277065.00", 
+            "nombre_salaries_concernes": "326920.00"
           }, 
           {
             "mois": "2020-08", 
-            "nombre_demandes_deposees": "32715.00", 
-            "nombre_heures_demandees": "11458055.00", 
-            "nombre_salaries_concernes": "203400.00"
+            "nombre_demandes_deposees": "33410.00", 
+            "nombre_heures_demandees": "11713785.00", 
+            "nombre_salaries_concernes": "208390.00"
           }, 
           {
             "mois": "2020-09", 
-            "nombre_demandes_deposees": "31085.00", 
-            "nombre_heures_demandees": "13213740.00", 
-            "nombre_salaries_concernes": "200565.00"
+            "nombre_demandes_deposees": "32045.00", 
+            "nombre_heures_demandees": "13647305.00", 
+            "nombre_salaries_concernes": "209610.00"
           }, 
           {
             "mois": "2020-10", 
-            "nombre_demandes_deposees": "28560.00", 
-            "nombre_heures_demandees": "10855040.00", 
-            "nombre_salaries_concernes": "179305.00"
+            "nombre_demandes_deposees": "30060.00", 
+            "nombre_heures_demandees": "11528275.00", 
+            "nombre_salaries_concernes": "195960.00"
           }, 
           {
             "mois": "2020-11", 
-            "nombre_demandes_deposees": "43225.00", 
-            "nombre_heures_demandees": "17497280.00", 
-            "nombre_salaries_concernes": "256795.00"
+            "nombre_demandes_deposees": "48140.00", 
+            "nombre_heures_demandees": "20961235.00", 
+            "nombre_salaries_concernes": "318980.00"
+          }, 
+          {
+            "mois": "2020-12", 
+            "nombre_demandes_deposees": "39700.00", 
+            "nombre_heures_demandees": "15989570.00", 
+            "nombre_salaries_concernes": "226285.00"
+          }, 
+          {
+            "mois": "2021-01", 
+            "nombre_demandes_deposees": "20865.00", 
+            "nombre_heures_demandees": "8015790.00", 
+            "nombre_salaries_concernes": "107640.00"
           }
         ], 
         "libelle": "Act. scientif. et tech. ; services admin. et de soutien"
       }, 
       {
-        "code_section_nace17": "IZ", 
+        "code_section_nace17": "RU", 
         "data": [
           {
             "mois": "2020-03", 
-            "nombre_demandes_deposees": "143200.00", 
-            "nombre_heures_demandees": "46959095.00", 
-            "nombre_salaries_concernes": "847030.00"
+            "nombre_demandes_deposees": "103990.00", 
+            "nombre_heures_demandees": "20421810.00", 
+            "nombre_salaries_concernes": "437375.00"
           }, 
           {
             "mois": "2020-04", 
-            "nombre_demandes_deposees": "151910.00", 
-            "nombre_heures_demandees": "114685315.00", 
-            "nombre_salaries_concernes": "932960.00"
+            "nombre_demandes_deposees": "121115.00", 
+            "nombre_heures_demandees": "53370850.00", 
+            "nombre_salaries_concernes": "544875.00"
           }, 
           {
             "mois": "2020-05", 
-            "nombre_demandes_deposees": "144085.00", 
-            "nombre_heures_demandees": "83948835.00", 
-            "nombre_salaries_concernes": "863590.00"
+            "nombre_demandes_deposees": "115820.00", 
+            "nombre_heures_demandees": "30037185.00", 
+            "nombre_salaries_concernes": "508955.00"
           }, 
           {
             "mois": "2020-06", 
-            "nombre_demandes_deposees": "98505.00", 
-            "nombre_heures_demandees": "41013335.00", 
-            "nombre_salaries_concernes": "558955.00"
+            "nombre_demandes_deposees": "54480.00", 
+            "nombre_heures_demandees": "15320670.00", 
+            "nombre_salaries_concernes": "261585.00"
           }, 
           {
             "mois": "2020-07", 
-            "nombre_demandes_deposees": "69270.00", 
-            "nombre_heures_demandees": "25832050.00", 
-            "nombre_salaries_concernes": "351285.00"
+            "nombre_demandes_deposees": "29990.00", 
+            "nombre_heures_demandees": "7555820.00", 
+            "nombre_salaries_concernes": "133070.00"
           }, 
           {
             "mois": "2020-08", 
-            "nombre_demandes_deposees": "49750.00", 
-            "nombre_heures_demandees": "15863045.00", 
-            "nombre_salaries_concernes": "238540.00"
+            "nombre_demandes_deposees": "17775.00", 
+            "nombre_heures_demandees": "3920390.00", 
+            "nombre_salaries_concernes": "70445.00"
           }, 
           {
             "mois": "2020-09", 
-            "nombre_demandes_deposees": "57250.00", 
-            "nombre_heures_demandees": "17761120.00", 
-            "nombre_salaries_concernes": "277445.00"
+            "nombre_demandes_deposees": "18505.00", 
+            "nombre_heures_demandees": "4148740.00", 
+            "nombre_salaries_concernes": "74615.00"
           }, 
           {
             "mois": "2020-10", 
-            "nombre_demandes_deposees": "95715.00", 
-            "nombre_heures_demandees": "23932590.00", 
-            "nombre_salaries_concernes": "483735.00"
+            "nombre_demandes_deposees": "55405.00", 
+            "nombre_heures_demandees": "6512515.00", 
+            "nombre_salaries_concernes": "188080.00"
           }, 
           {
             "mois": "2020-11", 
-            "nombre_demandes_deposees": "122010.00", 
-            "nombre_heures_demandees": "66033365.00", 
-            "nombre_salaries_concernes": "667970.00"
+            "nombre_demandes_deposees": "96490.00", 
+            "nombre_heures_demandees": "29631345.00", 
+            "nombre_salaries_concernes": "357210.00"
+          }, 
+          {
+            "mois": "2020-12", 
+            "nombre_demandes_deposees": "52185.00", 
+            "nombre_heures_demandees": "15503590.00", 
+            "nombre_salaries_concernes": "222295.00"
+          }, 
+          {
+            "mois": "2021-01", 
+            "nombre_demandes_deposees": "34605.00", 
+            "nombre_heures_demandees": "8547850.00", 
+            "nombre_salaries_concernes": "137315.00"
           }
         ], 
-        "libelle": "H\u00e9bergement et restauration"
-      }, 
-      {
-        "code_section_nace17": "FZ", 
-        "data": [
-          {
-            "mois": "2020-03", 
-            "nombre_demandes_deposees": "149050.00", 
-            "nombre_heures_demandees": "45200595.00", 
-            "nombre_salaries_concernes": "888100.00"
-          }, 
-          {
-            "mois": "2020-04", 
-            "nombre_demandes_deposees": "159200.00", 
-            "nombre_heures_demandees": "108621320.00", 
-            "nombre_salaries_concernes": "1049625.00"
-          }, 
-          {
-            "mois": "2020-05", 
-            "nombre_demandes_deposees": "115425.00", 
-            "nombre_heures_demandees": "33308235.00", 
-            "nombre_salaries_concernes": "559585.00"
-          }, 
-          {
-            "mois": "2020-06", 
-            "nombre_demandes_deposees": "32925.00", 
-            "nombre_heures_demandees": "8106195.00", 
-            "nombre_salaries_concernes": "108125.00"
-          }, 
-          {
-            "mois": "2020-07", 
-            "nombre_demandes_deposees": "14790.00", 
-            "nombre_heures_demandees": "3686960.00", 
-            "nombre_salaries_concernes": "44170.00"
-          }, 
-          {
-            "mois": "2020-08", 
-            "nombre_demandes_deposees": "7250.00", 
-            "nombre_heures_demandees": "1716190.00", 
-            "nombre_salaries_concernes": "20740.00"
-          }, 
-          {
-            "mois": "2020-09", 
-            "nombre_demandes_deposees": "6830.00", 
-            "nombre_heures_demandees": "1622800.00", 
-            "nombre_salaries_concernes": "21035.00"
-          }, 
-          {
-            "mois": "2020-10", 
-            "nombre_demandes_deposees": "5760.00", 
-            "nombre_heures_demandees": "1343040.00", 
-            "nombre_salaries_concernes": "17205.00"
-          }, 
-          {
-            "mois": "2020-11", 
-            "nombre_demandes_deposees": "10900.00", 
-            "nombre_heures_demandees": "2591800.00", 
-            "nombre_salaries_concernes": "29715.00"
-          }
-        ], 
-        "libelle": "Construction"
+        "libelle": "Autres activit\u00e9s de services"
       }, 
       {
         "code_section_nace17": "C5", 
         "data": [
           {
             "mois": "2020-03", 
-            "nombre_demandes_deposees": "43955.00", 
-            "nombre_heures_demandees": "24029685.00", 
-            "nombre_salaries_concernes": "535140.00"
+            "nombre_demandes_deposees": "43990.00", 
+            "nombre_heures_demandees": "24070240.00", 
+            "nombre_salaries_concernes": "536280.00"
           }, 
           {
             "mois": "2020-04", 
-            "nombre_demandes_deposees": "50220.00", 
-            "nombre_heures_demandees": "60733055.00", 
-            "nombre_salaries_concernes": "682640.00"
+            "nombre_demandes_deposees": "50285.00", 
+            "nombre_heures_demandees": "60894195.00", 
+            "nombre_salaries_concernes": "684370.00"
           }, 
           {
             "mois": "2020-05", 
-            "nombre_demandes_deposees": "45705.00", 
-            "nombre_heures_demandees": "28830340.00", 
-            "nombre_salaries_concernes": "521495.00"
+            "nombre_demandes_deposees": "45835.00", 
+            "nombre_heures_demandees": "28963155.00", 
+            "nombre_salaries_concernes": "524090.00"
           }, 
           {
             "mois": "2020-06", 
-            "nombre_demandes_deposees": "24665.00", 
-            "nombre_heures_demandees": "14220175.00", 
-            "nombre_salaries_concernes": "283140.00"
+            "nombre_demandes_deposees": "24825.00", 
+            "nombre_heures_demandees": "14301670.00", 
+            "nombre_salaries_concernes": "285360.00"
           }, 
           {
             "mois": "2020-07", 
-            "nombre_demandes_deposees": "15805.00", 
-            "nombre_heures_demandees": "8451920.00", 
-            "nombre_salaries_concernes": "181670.00"
+            "nombre_demandes_deposees": "15970.00", 
+            "nombre_heures_demandees": "8544625.00", 
+            "nombre_salaries_concernes": "184465.00"
           }, 
           {
             "mois": "2020-08", 
-            "nombre_demandes_deposees": "9145.00", 
-            "nombre_heures_demandees": "3140645.00", 
-            "nombre_salaries_concernes": "87980.00"
+            "nombre_demandes_deposees": "9245.00", 
+            "nombre_heures_demandees": "3196030.00", 
+            "nombre_salaries_concernes": "89725.00"
           }, 
           {
             "mois": "2020-09", 
-            "nombre_demandes_deposees": "10505.00", 
-            "nombre_heures_demandees": "5459990.00", 
-            "nombre_salaries_concernes": "125090.00"
+            "nombre_demandes_deposees": "10745.00", 
+            "nombre_heures_demandees": "5604435.00", 
+            "nombre_salaries_concernes": "128960.00"
           }, 
           {
             "mois": "2020-10", 
-            "nombre_demandes_deposees": "9295.00", 
-            "nombre_heures_demandees": "4140360.00", 
-            "nombre_salaries_concernes": "98870.00"
+            "nombre_demandes_deposees": "9720.00", 
+            "nombre_heures_demandees": "4428230.00", 
+            "nombre_salaries_concernes": "107405.00"
           }, 
           {
             "mois": "2020-11", 
-            "nombre_demandes_deposees": "13085.00", 
-            "nombre_heures_demandees": "5142555.00", 
-            "nombre_salaries_concernes": "104850.00"
+            "nombre_demandes_deposees": "14340.00", 
+            "nombre_heures_demandees": "5965755.00", 
+            "nombre_salaries_concernes": "125745.00"
+          }, 
+          {
+            "mois": "2020-12", 
+            "nombre_demandes_deposees": "11360.00", 
+            "nombre_heures_demandees": "4636090.00", 
+            "nombre_salaries_concernes": "102335.00"
+          }, 
+          {
+            "mois": "2021-01", 
+            "nombre_demandes_deposees": "6165.00", 
+            "nombre_heures_demandees": "2233855.00", 
+            "nombre_salaries_concernes": "48465.00"
           }
         ], 
         "libelle": "Fabrication d'autres produits indus."
@@ -306,64 +366,76 @@
         "data": [
           {
             "mois": "2020-03", 
-            "nombre_demandes_deposees": "211040.00", 
-            "nombre_heures_demandees": "67083210.00", 
-            "nombre_salaries_concernes": "1617630.00"
+            "nombre_demandes_deposees": "211300.00", 
+            "nombre_heures_demandees": "67188395.00", 
+            "nombre_salaries_concernes": "1620450.00"
           }, 
           {
             "mois": "2020-04", 
-            "nombre_demandes_deposees": "258295.00", 
-            "nombre_heures_demandees": "188744905.00", 
-            "nombre_salaries_concernes": "2240705.00"
+            "nombre_demandes_deposees": "258830.00", 
+            "nombre_heures_demandees": "189099635.00", 
+            "nombre_salaries_concernes": "2246810.00"
           }, 
           {
             "mois": "2020-05", 
-            "nombre_demandes_deposees": "245210.00", 
-            "nombre_heures_demandees": "110237640.00", 
-            "nombre_salaries_concernes": "1993115.00"
+            "nombre_demandes_deposees": "246070.00", 
+            "nombre_heures_demandees": "110731965.00", 
+            "nombre_salaries_concernes": "2003150.00"
           }, 
           {
             "mois": "2020-06", 
-            "nombre_demandes_deposees": "112395.00", 
-            "nombre_heures_demandees": "52785770.00", 
-            "nombre_salaries_concernes": "935955.00"
+            "nombre_demandes_deposees": "113230.00", 
+            "nombre_heures_demandees": "53105455.00", 
+            "nombre_salaries_concernes": "944310.00"
           }, 
           {
             "mois": "2020-07", 
-            "nombre_demandes_deposees": "63970.00", 
-            "nombre_heures_demandees": "29075375.00", 
-            "nombre_salaries_concernes": "529865.00"
+            "nombre_demandes_deposees": "64750.00", 
+            "nombre_heures_demandees": "29281730.00", 
+            "nombre_salaries_concernes": "533740.00"
           }, 
           {
             "mois": "2020-08", 
-            "nombre_demandes_deposees": "38815.00", 
-            "nombre_heures_demandees": "15709710.00", 
-            "nombre_salaries_concernes": "316980.00"
+            "nombre_demandes_deposees": "39325.00", 
+            "nombre_heures_demandees": "16010800.00", 
+            "nombre_salaries_concernes": "322065.00"
           }, 
           {
             "mois": "2020-09", 
-            "nombre_demandes_deposees": "33905.00", 
-            "nombre_heures_demandees": "17092160.00", 
-            "nombre_salaries_concernes": "316320.00"
+            "nombre_demandes_deposees": "35150.00", 
+            "nombre_heures_demandees": "17538670.00", 
+            "nombre_salaries_concernes": "326580.00"
           }, 
           {
             "mois": "2020-10", 
-            "nombre_demandes_deposees": "34780.00", 
-            "nombre_heures_demandees": "13480285.00", 
-            "nombre_salaries_concernes": "269175.00"
+            "nombre_demandes_deposees": "36830.00", 
+            "nombre_heures_demandees": "14552075.00", 
+            "nombre_salaries_concernes": "296630.00"
           }, 
           {
             "mois": "2020-11", 
-            "nombre_demandes_deposees": "73780.00", 
-            "nombre_heures_demandees": "24872835.00", 
-            "nombre_salaries_concernes": "381490.00"
+            "nombre_demandes_deposees": "81370.00", 
+            "nombre_heures_demandees": "30435500.00", 
+            "nombre_salaries_concernes": "489410.00"
+          }, 
+          {
+            "mois": "2020-12", 
+            "nombre_demandes_deposees": "56830.00", 
+            "nombre_heures_demandees": "21285815.00", 
+            "nombre_salaries_concernes": "362770.00"
+          }, 
+          {
+            "mois": "2021-01", 
+            "nombre_demandes_deposees": "28560.00", 
+            "nombre_heures_demandees": "9380110.00", 
+            "nombre_salaries_concernes": "135615.00"
           }
         ], 
         "libelle": "Autres sections NACE 17"
       }
     ], 
-    "nombre_demandes_deposees": "466450.00", 
-    "nombre_heures_demandees": "181488985.00", 
-    "nombre_salaries_concernes": "2264685.00"
+    "nombre_demandes_deposees": "220860.00", 
+    "nombre_heures_demandees": "85295185.00", 
+    "nombre_salaries_concernes": "1054345.00"
   }
 ]
