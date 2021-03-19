@@ -26,7 +26,7 @@ psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Aide CPSTI' as dispositif, s
 
 mv /tmp/cpsti-departemental-naf-latest.csv ../published-data/
 
-python3 8d_gen_xlsx_cpsti.py
+/srv/dashboard/venv/bin/python3 8d_gen_xlsx_cpsti.py
 
 mkdir ../published-data/cpsti/cpsti-$output
 cp ../published-data/cpsti-*.csv ../published-data/cpsti/cpsti-$output/

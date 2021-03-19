@@ -26,7 +26,7 @@ psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Reports d''échéances fisca
 
 mv /tmp/reports-echeances-departemental-naf-latest.csv ../published-data/
 
-python3 5d_gen_xlsx_report.py
+/srv/dashboard/venv/bin/python3 5d_gen_xlsx_report.py
 
 mkdir ../published-data/reports-echeances/reports-$output
 cp ../published-data/reports-*.csv ../published-data/reports-echeances/reports-$output/

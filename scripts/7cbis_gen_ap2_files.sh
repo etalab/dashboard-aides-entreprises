@@ -44,7 +44,7 @@ psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Activite Partielle' as dispo
 
 mv /tmp/activite-partielle-3-regional-nace17-latest.csv ../published-data/
 
-python3 7d_gen_xlsx_ap2.py
+/srv/dashboard/venv/bin/python3 7d_gen_xlsx_ap2.py
 
 mkdir ../published-data/activite-partielle2/activite-partielle-2-$output
 cp ../published-data/activite-partielle-2-*.csv ../published-data/activite-partielle2/activite-partielle-2-$output/

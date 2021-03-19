@@ -26,7 +26,7 @@ psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Prêts garantis par l''Etat'
 
 mv /tmp/pge-departemental-naf-latest.csv ../published-data/
 
-python3 6d_gen_xlsx_pge.py
+/srv/dashboard/venv/bin/python3 6d_gen_xlsx_pge.py
 
 mkdir ../published-data/pge/pge-$output
 cp ../published-data/pge-*.csv ../published-data/pge/pge-$output/
