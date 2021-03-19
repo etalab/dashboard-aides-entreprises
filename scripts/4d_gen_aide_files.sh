@@ -52,7 +52,7 @@ psql -d dashboard -c "\copy (SELECT * FROM (SELECT 'Fonds de solidarité' As dis
 mv /tmp/fonds-solidarite-volet-2-regional-classe-effectif-latest.csv ../published-data/
 
 
-python3 4e_gen-xlsx.py
+/srv/dashboard/venv/bin/python3 4e_gen-xlsx.py
 
 mkdir ../published-data/fonds-solidarite/fds-$output
 cp ../published-data/*.csv ../published-data/fonds-solidarite/fds-$output/
