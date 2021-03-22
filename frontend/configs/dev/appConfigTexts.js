@@ -759,7 +759,7 @@ export const configAppTexts = {
                   textContent: undefined,
                   fromUrl: {
                     fr:
-                      'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/cpsti/last_update_data.txt'
+                      'https://raw.githubusercontent.com/etalab/dashboard-aides-entreprises/master/backend/json/arpb/last_update_data.txt'
                   }
                 }
               ]
