@@ -1,0 +1,2909 @@
+[
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "82150655.53", 
+        "nombre": "52470", 
+        "nombre_siren": "12064"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "29086202.31", 
+        "nombre": "12539", 
+        "nombre_siren": "3178"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "23602436.67", 
+        "nombre": "11750", 
+        "nombre_siren": "2705"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "3086993.85", 
+        "nombre": "1614", 
+        "nombre_siren": "412"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "5771777.28", 
+        "nombre": "3123", 
+        "nombre_siren": "774"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "20503982.75", 
+        "nombre": "10318", 
+        "nombre_siren": "2750"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "8324252.78", 
+        "nombre": "3473", 
+        "nombre_siren": "1001"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "3701957.40", 
+        "nombre": "1162", 
+        "nombre_siren": "360"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "17873495.00", 
+        "nombre": "11237", 
+        "nombre_siren": "2598"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "3409513.00", 
+        "nombre": "448", 
+        "nombre_siren": "126"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "27549594.53", 
+        "nombre": "13022", 
+        "nombre_siren": "2019", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
+        "montant": "19640634.95", 
+        "nombre": "12308", 
+        "nombre_siren": "2537", 
+        "section_naf": "A"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "19684983.17", 
+        "nombre": "11880", 
+        "nombre_siren": "3109", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "14216407.04", 
+        "nombre": "6811", 
+        "nombre_siren": "1358", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "9930219.71", 
+        "nombre": "6409", 
+        "nombre_siren": "2139", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "7649162.50", 
+        "nombre": "4491", 
+        "nombre_siren": "1239", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "7561050.95", 
+        "nombre": "4461", 
+        "nombre_siren": "1180", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "5739059.85", 
+        "nombre": "4002", 
+        "nombre_siren": "1114", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "6780136.00", 
+        "nombre": "3749", 
+        "nombre_siren": "724", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "6193427.94", 
+        "nombre": "2936", 
+        "nombre_siren": "476", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "13217989.72", 
+        "nombre": "8510", 
+        "nombre_siren": "2525", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Guadeloupe", 
+    "montant": "138162666.36", 
+    "nombre": "78579", 
+    "nombre_siren": "18392", 
+    "reg": "01"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "44442905.00", 
+        "nombre": "28705", 
+        "nombre_siren": "7034"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "30902173.81", 
+        "nombre": "12076", 
+        "nombre_siren": "3141"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "19505775.35", 
+        "nombre": "8614", 
+        "nombre_siren": "2048"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "2435799.00", 
+        "nombre": "1050", 
+        "nombre_siren": "286"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "5641396.00", 
+        "nombre": "2674", 
+        "nombre_siren": "684"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "19626127.34", 
+        "nombre": "8467", 
+        "nombre_siren": "2213"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "8675894.60", 
+        "nombre": "3040", 
+        "nombre_siren": "934"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "3807290.00", 
+        "nombre": "1149", 
+        "nombre_siren": "359"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "8769192.00", 
+        "nombre": "5765", 
+        "nombre_siren": "1405"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "4075622.00", 
+        "nombre": "539", 
+        "nombre_siren": "184"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "17100472.00", 
+        "nombre": "8705", 
+        "nombre_siren": "2186", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "18279807.34", 
+        "nombre": "6797", 
+        "nombre_siren": "1238", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "7501239.00", 
+        "nombre": "4512", 
+        "nombre_siren": "1051", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "9020300.60", 
+        "nombre": "4338", 
+        "nombre_siren": "918", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "6439912.00", 
+        "nombre": "3966", 
+        "nombre_siren": "1366", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "7183539.00", 
+        "nombre": "3925", 
+        "nombre_siren": "1087", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "6928751.22", 
+        "nombre": "3362", 
+        "nombre_siren": "710", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "5145811.00", 
+        "nombre": "3050", 
+        "nombre_siren": "819", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
+        "montant": "4192837.00", 
+        "nombre": "3030", 
+        "nombre_siren": "765", 
+        "section_naf": "A"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "3176349.00", 
+        "nombre": "2217", 
+        "nombre_siren": "933", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "12611010.00", 
+        "nombre": "6794", 
+        "nombre_siren": "1483", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Martinique", 
+    "montant": "97580028.16", 
+    "nombre": "50696", 
+    "nombre_siren": "12536", 
+    "reg": "02"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "45314998.17", 
+        "nombre": "21804", 
+        "nombre_siren": "3660"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "17516701.02", 
+        "nombre": "7107", 
+        "nombre_siren": "1231"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "12702217.38", 
+        "nombre": "4876", 
+        "nombre_siren": "888"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "1666153.23", 
+        "nombre": "753", 
+        "nombre_siren": "142"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "4940293.77", 
+        "nombre": "2103", 
+        "nombre_siren": "371"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "11920063.56", 
+        "nombre": "5028", 
+        "nombre_siren": "944"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "5557203.00", 
+        "nombre": "2018", 
+        "nombre_siren": "405"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "2026708.00", 
+        "nombre": "663", 
+        "nombre_siren": "141"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "6615787.00", 
+        "nombre": "3314", 
+        "nombre_siren": "552"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "1341763.69", 
+        "nombre": "311", 
+        "nombre_siren": "68"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "14153754.00", 
+        "nombre": "6162", 
+        "nombre_siren": "1069", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
+        "montant": "8998436.00", 
+        "nombre": "5160", 
+        "nombre_siren": "807", 
+        "section_naf": "A"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "11245202.84", 
+        "nombre": "5136", 
+        "nombre_siren": "958", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "10911747.74", 
+        "nombre": "3963", 
+        "nombre_siren": "567", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "6115506.40", 
+        "nombre": "2458", 
+        "nombre_siren": "387", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "4684624.84", 
+        "nombre": "2186", 
+        "nombre_siren": "394", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "4818662.00", 
+        "nombre": "2165", 
+        "nombre_siren": "419", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "4323876.60", 
+        "nombre": "1733", 
+        "nombre_siren": "287", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "3199364.00", 
+        "nombre": "1610", 
+        "nombre_siren": "279", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "2298532.87", 
+        "nombre": "908", 
+        "nombre_siren": "134", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "6497333.51", 
+        "nombre": "3095", 
+        "nombre_siren": "633", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Guyane", 
+    "montant": "77247040.80", 
+    "nombre": "34576", 
+    "nombre_siren": "5924", 
+    "reg": "03"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "90127699.16", 
+        "nombre": "62078", 
+        "nombre_siren": "17295"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "40494102.09", 
+        "nombre": "18459", 
+        "nombre_siren": "5936"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "11969391.00", 
+        "nombre": "5295", 
+        "nombre_siren": "1555"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "4219013.75", 
+        "nombre": "1767", 
+        "nombre_siren": "536"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "11330691.00", 
+        "nombre": "6429", 
+        "nombre_siren": "1887"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "27545756.16", 
+        "nombre": "14964", 
+        "nombre_siren": "4944"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "10184907.21", 
+        "nombre": "4787", 
+        "nombre_siren": "1841"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "5535311.88", 
+        "nombre": "1748", 
+        "nombre_siren": "695"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "10121882.00", 
+        "nombre": "7134", 
+        "nombre_siren": "2060"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "7422813.00", 
+        "nombre": "703", 
+        "nombre_siren": "221"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "26240377.00", 
+        "nombre": "17288", 
+        "nombre_siren": "5105", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "26849960.25", 
+        "nombre": "12903", 
+        "nombre_siren": "2431", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "12653492.00", 
+        "nombre": "8440", 
+        "nombre_siren": "3216", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
+        "montant": "9233945.00", 
+        "nombre": "6579", 
+        "nombre_siren": "1750", 
+        "section_naf": "A"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "8138308.55", 
+        "nombre": "6133", 
+        "nombre_siren": "1966", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "9881610.00", 
+        "nombre": "5805", 
+        "nombre_siren": "1790", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "7866309.00", 
+        "nombre": "5565", 
+        "nombre_siren": "2464", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "7945364.00", 
+        "nombre": "5237", 
+        "nombre_siren": "1632", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "9982802.00", 
+        "nombre": "5019", 
+        "nombre_siren": "873", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "6387864.20", 
+        "nombre": "4735", 
+        "nombre_siren": "1235", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "22767263.00", 
+        "nombre": "10808", 
+        "nombre_siren": "3011", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "La R\u00e9union", 
+    "montant": "147947295.00", 
+    "nombre": "88512", 
+    "nombre_siren": "25428", 
+    "reg": "04"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "94961727.00", 
+        "nombre": "39206", 
+        "nombre_siren": "5395"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "9888183.23", 
+        "nombre": "3733", 
+        "nombre_siren": "668"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1272594.00", 
+        "nombre": "500", 
+        "nombre_siren": "90"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "907495.00", 
+        "nombre": "363", 
+        "nombre_siren": "59"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "3394455.00", 
+        "nombre": "1209", 
+        "nombre_siren": "238"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "2322982.00", 
+        "nombre": "848", 
+        "nombre_siren": "136"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "852181.00", 
+        "nombre": "302", 
+        "nombre_siren": "63"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "207365.00", 
+        "nombre": "82", 
+        "nombre_siren": "22"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "236132.00", 
+        "nombre": "65", 
+        "nombre_siren": "11"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "48619065.84", 
+        "nombre": "20105", 
+        "nombre_siren": "2780", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
+        "montant": "18230523.00", 
+        "nombre": "8009", 
+        "nombre_siren": "1083", 
+        "section_naf": "A"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "11225949.00", 
+        "nombre": "4456", 
+        "nombre_siren": "676", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "10701975.00", 
+        "nombre": "3995", 
+        "nombre_siren": "519", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "5951465.05", 
+        "nombre": "2189", 
+        "nombre_siren": "310", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "3333489.00", 
+        "nombre": "1351", 
+        "nombre_siren": "202", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "2125892.00", 
+        "nombre": "803", 
+        "nombre_siren": "122", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "1531833.00", 
+        "nombre": "685", 
+        "nombre_siren": "111", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "1486783.00", 
+        "nombre": "679", 
+        "nombre_siren": "128", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "1241126.00", 
+        "nombre": "502", 
+        "nombre_siren": "73", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "2703068.34", 
+        "nombre": "1112", 
+        "nombre_siren": "218", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Mayotte", 
+    "montant": "107151169.23", 
+    "nombre": "43886", 
+    "nombre_siren": "6214", 
+    "reg": "06"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1779977622.45", 
+        "nombre": "449128", 
+        "nombre_siren": "102714"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "1758589193.27", 
+        "nombre": "1021047", 
+        "nombre_siren": "217372"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "1614986399.20", 
+        "nombre": "415035", 
+        "nombre_siren": "87686"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "171379420.97", 
+        "nombre": "31242", 
+        "nombre_siren": "7713"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "293981842.28", 
+        "nombre": "110455", 
+        "nombre_siren": "24326"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "946129680.24", 
+        "nombre": "301256", 
+        "nombre_siren": "69807"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "683480321.84", 
+        "nombre": "145983", 
+        "nombre_siren": "33561"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "404194674.87", 
+        "nombre": "59601", 
+        "nombre_siren": "13364"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "185474223.94", 
+        "nombre": "101628", 
+        "nombre_siren": "22498"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "715748052.38", 
+        "nombre": "36383", 
+        "nombre_siren": "9436"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "925506655.16", 
+        "nombre": "427405", 
+        "nombre_siren": "60012", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "584310303.03", 
+        "nombre": "269086", 
+        "nombre_siren": "67738", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1477303477.19", 
+        "nombre": "241655", 
+        "nombre_siren": "36965", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "564287252.45", 
+        "nombre": "214622", 
+        "nombre_siren": "56359", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "434565786.63", 
+        "nombre": "165012", 
+        "nombre_siren": "28240", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "227645805.58", 
+        "nombre": "111542", 
+        "nombre_siren": "28369", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "155079103.21", 
+        "nombre": "90221", 
+        "nombre_siren": "31784", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "320844975.22", 
+        "nombre": "87871", 
+        "nombre_siren": "17297", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Information et communication", 
+        "montant": "220528133.33", 
+        "nombre": "83383", 
+        "nombre_siren": "19473", 
+        "section_naf": "J"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "123836871.73", 
+        "nombre": "75008", 
+        "nombre_siren": "16202", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "315403118.36", 
+        "nombre": "170750", 
+        "nombre_siren": "56145", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "\u00cele-de-France", 
+    "montant": "5349311481.89", 
+    "nombre": "1936555", 
+    "nombre_siren": "417277", 
+    "reg": "11"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "215712587.52", 
+        "nombre": "56292", 
+        "nombre_siren": "14687"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "206352894.09", 
+        "nombre": "120578", 
+        "nombre_siren": "33142"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "89998412.95", 
+        "nombre": "23294", 
+        "nombre_siren": "5848"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "29183468.25", 
+        "nombre": "8031", 
+        "nombre_siren": "2169"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "40690259.00", 
+        "nombre": "14748", 
+        "nombre_siren": "3741"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "144556694.61", 
+        "nombre": "43537", 
+        "nombre_siren": "11540"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "75814996.75", 
+        "nombre": "16704", 
+        "nombre_siren": "4572"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "30835944.26", 
+        "nombre": "4999", 
+        "nombre_siren": "1373"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "25998638.00", 
+        "nombre": "14422", 
+        "nombre_siren": "3929"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "43162971.00", 
+        "nombre": "2701", 
+        "nombre_siren": "782"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "197943076.28", 
+        "nombre": "41623", 
+        "nombre_siren": "6483", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "72229425.33", 
+        "nombre": "32558", 
+        "nombre_siren": "9724", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "42532494.00", 
+        "nombre": "23558", 
+        "nombre_siren": "6578", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "28607326.26", 
+        "nombre": "18467", 
+        "nombre_siren": "7671", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "45468681.91", 
+        "nombre": "16896", 
+        "nombre_siren": "2997", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "38773465.00", 
+        "nombre": "15846", 
+        "nombre_siren": "4377", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "13749030.00", 
+        "nombre": "10489", 
+        "nombre_siren": "4511", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "17511027.00", 
+        "nombre": "9874", 
+        "nombre_siren": "2270", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "13925005.03", 
+        "nombre": "8446", 
+        "nombre_siren": "2621", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "20668089.00", 
+        "nombre": "8403", 
+        "nombre_siren": "2269", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "52673503.00", 
+        "nombre": "24547", 
+        "nombre_siren": "6775", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Centre-Val de Loire", 
+    "montant": "544081122.81", 
+    "nombre": "210707", 
+    "nombre_siren": "56154", 
+    "reg": "24"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "262331988.95", 
+        "nombre": "66518", 
+        "nombre_siren": "17277"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "235045411.48", 
+        "nombre": "138632", 
+        "nombre_siren": "37571"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "106981497.53", 
+        "nombre": "25502", 
+        "nombre_siren": "6354"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "33550205.69", 
+        "nombre": "9094", 
+        "nombre_siren": "2544"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "51980662.82", 
+        "nombre": "18902", 
+        "nombre_siren": "4771"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "178722444.01", 
+        "nombre": "51806", 
+        "nombre_siren": "13423"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "86414585.82", 
+        "nombre": "18496", 
+        "nombre_siren": "4878"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "37145520.82", 
+        "nombre": "5877", 
+        "nombre_siren": "1569"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "33286860.05", 
+        "nombre": "18257", 
+        "nombre_siren": "5002"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "55544660.44", 
+        "nombre": "3405", 
+        "nombre_siren": "976"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "252046604.47", 
+        "nombre": "52418", 
+        "nombre_siren": "8074", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "92650303.00", 
+        "nombre": "41126", 
+        "nombre_siren": "12064", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "48470806.00", 
+        "nombre": "26641", 
+        "nombre_siren": "7255", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "29518411.00", 
+        "nombre": "19338", 
+        "nombre_siren": "7980", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "48374771.33", 
+        "nombre": "18886", 
+        "nombre_siren": "3172", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "43228687.39", 
+        "nombre": "17030", 
+        "nombre_siren": "4783", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "20653831.00", 
+        "nombre": "12838", 
+        "nombre_siren": "2736", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "16391259.00", 
+        "nombre": "12366", 
+        "nombre_siren": "5269", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "16762139.77", 
+        "nombre": "9866", 
+        "nombre_siren": "3186", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "21383361.00", 
+        "nombre": "8406", 
+        "nombre_siren": "2253", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "52054405.69", 
+        "nombre": "24089", 
+        "nombre_siren": "7452", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Bourgogne-Franche-Comt\u00e9", 
+    "montant": "641534579.65", 
+    "nombre": "243004", 
+    "nombre_siren": "64098", 
+    "reg": "27"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "288264647.19", 
+        "nombre": "70420", 
+        "nombre_siren": "18062"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "271162792.70", 
+        "nombre": "154617", 
+        "nombre_siren": "42099"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "129156791.00", 
+        "nombre": "29008", 
+        "nombre_siren": "6976"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "37191706.00", 
+        "nombre": "9462", 
+        "nombre_siren": "2386"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "61326800.23", 
+        "nombre": "21378", 
+        "nombre_siren": "5187"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "196912551.60", 
+        "nombre": "57273", 
+        "nombre_siren": "14975"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "102914616.72", 
+        "nombre": "21802", 
+        "nombre_siren": "5719"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "48351514.67", 
+        "nombre": "7483", 
+        "nombre_siren": "1987"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "29794898.00", 
+        "nombre": "16638", 
+        "nombre_siren": "4593"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "70506639.81", 
+        "nombre": "4086", 
+        "nombre_siren": "1143"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "293411661.37", 
+        "nombre": "57493", 
+        "nombre_siren": "9229", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "100380845.00", 
+        "nombre": "45060", 
+        "nombre_siren": "13192", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "56274940.35", 
+        "nombre": "31475", 
+        "nombre_siren": "8654", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "55922564.07", 
+        "nombre": "21221", 
+        "nombre_siren": "5799", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "57067359.59", 
+        "nombre": "20497", 
+        "nombre_siren": "3628", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "31205256.00", 
+        "nombre": "19866", 
+        "nombre_siren": "8362", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "16326753.00", 
+        "nombre": "12445", 
+        "nombre_siren": "5403", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "20105046.00", 
+        "nombre": "12025", 
+        "nombre_siren": "2669", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "25619773.00", 
+        "nombre": "9988", 
+        "nombre_siren": "2565", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "15760690.00", 
+        "nombre": "9227", 
+        "nombre_siren": "2969", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "57303755.51", 
+        "nombre": "27388", 
+        "nombre_siren": "7575", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Normandie", 
+    "montant": "729378643.89", 
+    "nombre": "266685", 
+    "nombre_siren": "69896", 
+    "reg": "28"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "417728339.54", 
+        "nombre": "252016", 
+        "nombre_siren": "67135"
+      }, 
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "411791906.85", 
+        "nombre": "106425", 
+        "nombre_siren": "27371"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "234839285.42", 
+        "nombre": "58878", 
+        "nombre_siren": "14020"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "50439645.05", 
+        "nombre": "12436", 
+        "nombre_siren": "3204"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "74660055.18", 
+        "nombre": "29476", 
+        "nombre_siren": "7383"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "284957645.93", 
+        "nombre": "87815", 
+        "nombre_siren": "22514"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "157446943.44", 
+        "nombre": "34408", 
+        "nombre_siren": "8894"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "68410319.11", 
+        "nombre": "11667", 
+        "nombre_siren": "3126"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "47507678.65", 
+        "nombre": "26614", 
+        "nombre_siren": "7152"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "118568355.13", 
+        "nombre": "6737", 
+        "nombre_siren": "1950"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "419275783.57", 
+        "nombre": "84249", 
+        "nombre_siren": "13235", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "153914655.00", 
+        "nombre": "72609", 
+        "nombre_siren": "20645", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "84473094.06", 
+        "nombre": "50591", 
+        "nombre_siren": "13893", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "85714185.92", 
+        "nombre": "35998", 
+        "nombre_siren": "9769", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "50940067.00", 
+        "nombre": "32971", 
+        "nombre_siren": "12941", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "85306395.01", 
+        "nombre": "31339", 
+        "nombre_siren": "5157", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "56198786.78", 
+        "nombre": "28406", 
+        "nombre_siren": "5154", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "34752597.00", 
+        "nombre": "25529", 
+        "nombre_siren": "11357", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "29776609.82", 
+        "nombre": "17719", 
+        "nombre_siren": "4057", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "40957819.08", 
+        "nombre": "15998", 
+        "nombre_siren": "4178", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "79489551.62", 
+        "nombre": "39657", 
+        "nombre_siren": "12105", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Hauts-de-France", 
+    "montant": "1120799544.86", 
+    "nombre": "435066", 
+    "nombre_siren": "112284", 
+    "reg": "32"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "518534076.68", 
+        "nombre": "131078", 
+        "nombre_siren": "34200"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "462822955.67", 
+        "nombre": "259642", 
+        "nombre_siren": "70732"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "265637714.56", 
+        "nombre": "63662", 
+        "nombre_siren": "16191"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "131018787.00", 
+        "nombre": "26754", 
+        "nombre_siren": "8923"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "98859596.89", 
+        "nombre": "34937", 
+        "nombre_siren": "9275"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "362213675.18", 
+        "nombre": "104845", 
+        "nombre_siren": "28364"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "199185758.68", 
+        "nombre": "42567", 
+        "nombre_siren": "11451"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "97017651.02", 
+        "nombre": "15324", 
+        "nombre_siren": "4009"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "88383297.00", 
+        "nombre": "38197", 
+        "nombre_siren": "11244"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "147954590.76", 
+        "nombre": "8657", 
+        "nombre_siren": "2358"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "487809508.20", 
+        "nombre": "90109", 
+        "nombre_siren": "13832", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "180542154.43", 
+        "nombre": "77130", 
+        "nombre_siren": "22278", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "97504082.53", 
+        "nombre": "54170", 
+        "nombre_siren": "14668", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "62567175.00", 
+        "nombre": "40441", 
+        "nombre_siren": "15756", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "85980310.59", 
+        "nombre": "37169", 
+        "nombre_siren": "10393", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
+        "montant": "150418563.00", 
+        "nombre": "32627", 
+        "nombre_siren": "12488", 
+        "section_naf": "A"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "83000118.13", 
+        "nombre": "31985", 
+        "nombre_siren": "5319", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "34508314.00", 
+        "nombre": "25338", 
+        "nombre_siren": "11094", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "35928958.00", 
+        "nombre": "21032", 
+        "nombre_siren": "4675", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "39132468.25", 
+        "nombre": "18015", 
+        "nombre_siren": "5626", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "125310274.78", 
+        "nombre": "57385", 
+        "nombre_siren": "14623", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Grand Est", 
+    "montant": "1382701926.91", 
+    "nombre": "485401", 
+    "nombre_siren": "130529", 
+    "reg": "44"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "399253341.82", 
+        "nombre": "99976", 
+        "nombre_siren": "26784"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "306538570.00", 
+        "nombre": "183452", 
+        "nombre_siren": "51789"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "128578814.63", 
+        "nombre": "28013", 
+        "nombre_siren": "6975"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "46208337.00", 
+        "nombre": "12089", 
+        "nombre_siren": "3229"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "75926386.81", 
+        "nombre": "25946", 
+        "nombre_siren": "6412"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "223136254.50", 
+        "nombre": "63179", 
+        "nombre_siren": "16896"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "122039753.83", 
+        "nombre": "25581", 
+        "nombre_siren": "6964"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "52016184.31", 
+        "nombre": "8073", 
+        "nombre_siren": "2347"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "32325459.00", 
+        "nombre": "18085", 
+        "nombre_siren": "5163"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "84127851.72", 
+        "nombre": "4631", 
+        "nombre_siren": "1417"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "319658494.68", 
+        "nombre": "61203", 
+        "nombre_siren": "9766", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "112005623.00", 
+        "nombre": "48211", 
+        "nombre_siren": "14293", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "67436068.00", 
+        "nombre": "36293", 
+        "nombre_siren": "10201", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "85464437.55", 
+        "nombre": "32442", 
+        "nombre_siren": "9099", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "73530278.22", 
+        "nombre": "27651", 
+        "nombre_siren": "5020", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "29312109.00", 
+        "nombre": "22333", 
+        "nombre_siren": "9579", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "34261744.00", 
+        "nombre": "22249", 
+        "nombre_siren": "10066", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "27058649.00", 
+        "nombre": "15414", 
+        "nombre_siren": "3559", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "20799196.00", 
+        "nombre": "12400", 
+        "nombre_siren": "4026", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "28182675.00", 
+        "nombre": "12175", 
+        "nombre_siren": "2445", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "88548659.00", 
+        "nombre": "38245", 
+        "nombre_siren": "11479", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Pays de la Loire", 
+    "montant": "886257933.45", 
+    "nombre": "328616", 
+    "nombre_siren": "89358", 
+    "reg": "52"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "395585210.09", 
+        "nombre": "93635", 
+        "nombre_siren": "23904"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "297423654.84", 
+        "nombre": "167985", 
+        "nombre_siren": "47649"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "104751970.42", 
+        "nombre": "21043", 
+        "nombre_siren": "5340"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "50298833.30", 
+        "nombre": "12068", 
+        "nombre_siren": "2930"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "85290968.30", 
+        "nombre": "26962", 
+        "nombre_siren": "6434"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "239358767.13", 
+        "nombre": "64499", 
+        "nombre_siren": "16314"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "120420376.23", 
+        "nombre": "24188", 
+        "nombre_siren": "6369"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "53654904.45", 
+        "nombre": "7910", 
+        "nombre_siren": "2159"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "36955428.00", 
+        "nombre": "20021", 
+        "nombre_siren": "5559"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "76028909.63", 
+        "nombre": "4281", 
+        "nombre_siren": "1273"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "373441774.48", 
+        "nombre": "70831", 
+        "nombre_siren": "11160", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "103296576.00", 
+        "nombre": "43477", 
+        "nombre_siren": "13033", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "56079920.78", 
+        "nombre": "29893", 
+        "nombre_siren": "8464", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "68252399.30", 
+        "nombre": "25532", 
+        "nombre_siren": "7308", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "60717118.57", 
+        "nombre": "23052", 
+        "nombre_siren": "4277", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "27068986.00", 
+        "nombre": "20103", 
+        "nombre_siren": "8853", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "29944368.00", 
+        "nombre": "19801", 
+        "nombre_siren": "9018", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "24283332.00", 
+        "nombre": "13888", 
+        "nombre_siren": "3104", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "22104566.00", 
+        "nombre": "13240", 
+        "nombre_siren": "4121", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "27117571.52", 
+        "nombre": "10130", 
+        "nombre_siren": "2894", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "60337089.00", 
+        "nombre": "28786", 
+        "nombre_siren": "8235", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Bretagne", 
+    "montant": "852643701.65", 
+    "nombre": "298733", 
+    "nombre_siren": "80321", 
+    "reg": "53"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "696166290.05", 
+        "nombre": "174812", 
+        "nombre_siren": "45593"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "667212818.96", 
+        "nombre": "410754", 
+        "nombre_siren": "113902"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "302842925.51", 
+        "nombre": "72187", 
+        "nombre_siren": "17759"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "99383110.77", 
+        "nombre": "26438", 
+        "nombre_siren": "7589"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "178478569.36", 
+        "nombre": "60432", 
+        "nombre_siren": "14768"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "427717015.03", 
+        "nombre": "127358", 
+        "nombre_siren": "34447"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "214594993.80", 
+        "nombre": "46394", 
+        "nombre_siren": "12700"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "102818453.39", 
+        "nombre": "16257", 
+        "nombre_siren": "4460"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "78844305.00", 
+        "nombre": "44144", 
+        "nombre_siren": "12845"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "163415241.48", 
+        "nombre": "9165", 
+        "nombre_siren": "2626"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "620560368.35", 
+        "nombre": "124543", 
+        "nombre_siren": "19917", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "248130582.30", 
+        "nombre": "110283", 
+        "nombre_siren": "31540", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "122242325.71", 
+        "nombre": "71050", 
+        "nombre_siren": "19813", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "145704499.61", 
+        "nombre": "60155", 
+        "nombre_siren": "16787", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "87685658.00", 
+        "nombre": "56928", 
+        "nombre_siren": "23766", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "127312258.11", 
+        "nombre": "50020", 
+        "nombre_siren": "8781", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "53593873.00", 
+        "nombre": "40509", 
+        "nombre_siren": "17069", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "58692507.00", 
+        "nombre": "36304", 
+        "nombre_siren": "7674", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "70569771.00", 
+        "nombre": "29965", 
+        "nombre_siren": "7986", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "46935595.50", 
+        "nombre": "28072", 
+        "nombre_siren": "8671", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "192875819.71", 
+        "nombre": "84361", 
+        "nombre_siren": "24129", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Nouvelle-Aquitaine", 
+    "montant": "1774303258.29", 
+    "nombre": "692190", 
+    "nombre_siren": "185697", 
+    "reg": "75"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "758410415.14", 
+        "nombre": "197146", 
+        "nombre_siren": "49027"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "743291960.57", 
+        "nombre": "472814", 
+        "nombre_siren": "125464"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "431793687.15", 
+        "nombre": "112807", 
+        "nombre_siren": "26438"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "90245350.23", 
+        "nombre": "27472", 
+        "nombre_siren": "7203"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "219204599.56", 
+        "nombre": "74409", 
+        "nombre_siren": "17088"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "502787493.86", 
+        "nombre": "152933", 
+        "nombre_siren": "38701"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "242862958.32", 
+        "nombre": "52569", 
+        "nombre_siren": "13639"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "106827390.76", 
+        "nombre": "17167", 
+        "nombre_siren": "4510"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "94614911.00", 
+        "nombre": "55694", 
+        "nombre_siren": "15223"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "159032229.25", 
+        "nombre": "9211", 
+        "nombre_siren": "2640"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "718810187.63", 
+        "nombre": "149808", 
+        "nombre_siren": "23007", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "287606122.95", 
+        "nombre": "131036", 
+        "nombre_siren": "35080", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "120476237.07", 
+        "nombre": "79180", 
+        "nombre_siren": "29489", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "122721275.37", 
+        "nombre": "74691", 
+        "nombre_siren": "20060", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "176702585.77", 
+        "nombre": "72408", 
+        "nombre_siren": "19287", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "150709334.26", 
+        "nombre": "59894", 
+        "nombre_siren": "10054", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "70893577.59", 
+        "nombre": "45959", 
+        "nombre_siren": "9748", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "60047681.00", 
+        "nombre": "45213", 
+        "nombre_siren": "19269", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "78725320.52", 
+        "nombre": "33433", 
+        "nombre_siren": "8812", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "53254833.39", 
+        "nombre": "31452", 
+        "nombre_siren": "9368", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "195471199.54", 
+        "nombre": "97631", 
+        "nombre_siren": "25513", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Occitanie", 
+    "montant": "2035418355.09", 
+    "nombre": "820705", 
+    "nombre_siren": "209195", 
+    "reg": "76"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "1047558231.83", 
+        "nombre": "250282", 
+        "nombre_siren": "62989"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "1018320247.43", 
+        "nombre": "596756", 
+        "nombre_siren": "153936"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "594746877.67", 
+        "nombre": "133722", 
+        "nombre_siren": "32223"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "120103314.45", 
+        "nombre": "30590", 
+        "nombre_siren": "8098"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "211238238.69", 
+        "nombre": "75891", 
+        "nombre_siren": "18746"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "647629790.31", 
+        "nombre": "185582", 
+        "nombre_siren": "46851"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "360950239.71", 
+        "nombre": "72766", 
+        "nombre_siren": "18372"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "184755374.71", 
+        "nombre": "25910", 
+        "nombre_siren": "6426"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "156646218.00", 
+        "nombre": "81128", 
+        "nombre_siren": "20565"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "312237798.82", 
+        "nombre": "15887", 
+        "nombre_siren": "4408"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "1001604673.26", 
+        "nombre": "186480", 
+        "nombre_siren": "28914", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "367597144.57", 
+        "nombre": "140408", 
+        "nombre_siren": "39288", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "171919821.98", 
+        "nombre": "95421", 
+        "nombre_siren": "19235", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "227119742.01", 
+        "nombre": "90113", 
+        "nombre_siren": "24580", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "162242698.87", 
+        "nombre": "88862", 
+        "nombre_siren": "23922", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "131694650.40", 
+        "nombre": "83259", 
+        "nombre_siren": "31859", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "197975211.70", 
+        "nombre": "76066", 
+        "nombre_siren": "13102", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "76497283.60", 
+        "nombre": "56718", 
+        "nombre_siren": "23615", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "123646744.90", 
+        "nombre": "53557", 
+        "nombre_siren": "9807", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "116707497.00", 
+        "nombre": "42861", 
+        "nombre_siren": "11063", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "222838046.09", 
+        "nombre": "113709", 
+        "nombre_siren": "34088", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Auvergne-Rh\u00f4ne-Alpes", 
+    "montant": "2799843514.38", 
+    "nombre": "1027454", 
+    "nombre_siren": "258803", 
+    "reg": "84"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "837040907.75", 
+        "nombre": "208140", 
+        "nombre_siren": "49008"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "783106308.09", 
+        "nombre": "482563", 
+        "nombre_siren": "119709"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "596083016.29", 
+        "nombre": "150278", 
+        "nombre_siren": "33144"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "90526239.67", 
+        "nombre": "22175", 
+        "nombre_siren": "5353"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "212541354.43", 
+        "nombre": "73165", 
+        "nombre_siren": "16617"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "571077782.35", 
+        "nombre": "170137", 
+        "nombre_siren": "40426"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "282559800.09", 
+        "nombre": "58088", 
+        "nombre_siren": "13825"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "135652599.02", 
+        "nombre": "19362", 
+        "nombre_siren": "4586"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "93985296.22", 
+        "nombre": "53084", 
+        "nombre_siren": "13510"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "221532676.00", 
+        "nombre": "11487", 
+        "nombre_siren": "3038"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "803905618.56", 
+        "nombre": "153158", 
+        "nombre_siren": "22954", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "340739822.24", 
+        "nombre": "145985", 
+        "nombre_siren": "36941", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "189570096.31", 
+        "nombre": "78938", 
+        "nombre_siren": "20665", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "132002309.41", 
+        "nombre": "75963", 
+        "nombre_siren": "19652", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "114891359.00", 
+        "nombre": "72853", 
+        "nombre_siren": "25859", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "150913292.95", 
+        "nombre": "57029", 
+        "nombre_siren": "9382", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Transports et entreposage", 
+        "montant": "131924370.18", 
+        "nombre": "56206", 
+        "nombre_siren": "9110", 
+        "section_naf": "H"
+      }, 
+      {
+        "libelle_section_naf": "Enseignement", 
+        "montant": "84098991.19", 
+        "nombre": "50513", 
+        "nombre_siren": "10130", 
+        "section_naf": "P"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "118160160.89", 
+        "nombre": "44101", 
+        "nombre_siren": "10669", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
+        "montant": "55563299.00", 
+        "nombre": "41812", 
+        "nombre_siren": "17328", 
+        "section_naf": "Q"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "194356220.07", 
+        "nombre": "94745", 
+        "nombre_siren": "25773", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Provence-Alpes-C\u00f4te d'Azur", 
+    "montant": "2316125539.80", 
+    "nombre": "871303", 
+    "nombre_siren": "207933", 
+    "reg": "93"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "54", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
+        "montant": "93967690.44", 
+        "nombre": "18954", 
+        "nombre_siren": "4180"
+      }, 
+      {
+        "code_cat_juridique": "10", 
+        "libelle_cat_juridique": "Entrepreneur individuel", 
+        "montant": "72323321.37", 
+        "nombre": "37994", 
+        "nombre_siren": "9396"
+      }, 
+      {
+        "code_cat_juridique": "57", 
+        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
+        "montant": "56157763.27", 
+        "nombre": "12462", 
+        "nombre_siren": "2809"
+      }, 
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "6307795.93", 
+        "nombre": "2068", 
+        "nombre_siren": "489"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "00", 
+        "libelle_classe_effectif": "0 salari\u00e9", 
+        "montant": "25889858.16", 
+        "nombre": "7585", 
+        "nombre_siren": "1507"
+      }, 
+      {
+        "classe_effectif": "01", 
+        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
+        "montant": "61438616.61", 
+        "nombre": "17098", 
+        "nombre_siren": "3793"
+      }, 
+      {
+        "classe_effectif": "02", 
+        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
+        "montant": "38881665.02", 
+        "nombre": "7700", 
+        "nombre_siren": "1742"
+      }, 
+      {
+        "classe_effectif": "03", 
+        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
+        "montant": "17617462.00", 
+        "nombre": "2462", 
+        "nombre_siren": "595"
+      }, 
+      {
+        "classe_effectif": "NN", 
+        "libelle_classe_effectif": "Etablissement non employeur", 
+        "montant": "8355017.00", 
+        "nombre": "4762", 
+        "nombre_siren": "1228"
+      }, 
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "24255811.00", 
+        "nombre": "1271", 
+        "nombre_siren": "356"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "H\u00e9bergement et restauration", 
+        "montant": "94898390.57", 
+        "nombre": "17844", 
+        "nombre_siren": "2757", 
+        "section_naf": "I"
+      }, 
+      {
+        "libelle_section_naf": "Commerce", 
+        "montant": "30427044.00", 
+        "nombre": "10478", 
+        "nombre_siren": "2582", 
+        "section_naf": "G"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
+        "montant": "27476760.67", 
+        "nombre": "7704", 
+        "nombre_siren": "1810", 
+        "section_naf": "M"
+      }, 
+      {
+        "libelle_section_naf": "Construction", 
+        "montant": "10964599.00", 
+        "nombre": "6895", 
+        "nombre_siren": "2435", 
+        "section_naf": "F"
+      }, 
+      {
+        "libelle_section_naf": "Autres activit\u00e9s de services", 
+        "montant": "8742169.93", 
+        "nombre": "4951", 
+        "nombre_siren": "1273", 
+        "section_naf": "S"
+      }, 
+      {
+        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
+        "montant": "7821169.00", 
+        "nombre": "4202", 
+        "nombre_siren": "1117", 
+        "section_naf": "A"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
+        "montant": "10310313.00", 
+        "nombre": "3991", 
+        "nombre_siren": "917", 
+        "section_naf": "N"
+      }, 
+      {
+        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
+        "montant": "6440773.00", 
+        "nombre": "3466", 
+        "nombre_siren": "896", 
+        "section_naf": "C"
+      }, 
+      {
+        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
+        "montant": "10330734.84", 
+        "nombre": "3275", 
+        "nombre_siren": "538", 
+        "section_naf": "R"
+      }, 
+      {
+        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
+        "montant": "7486147.00", 
+        "nombre": "2962", 
+        "nombre_siren": "683", 
+        "section_naf": "L"
+      }, 
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "15950425.00", 
+        "nombre": "7272", 
+        "nombre_siren": "1993", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "Corse", 
+    "montant": "230848526.01", 
+    "nombre": "73040", 
+    "nombre_siren": "16961", 
+    "reg": "94"
+  }, 
+  {
+    "kpi_categorie_juridique": [
+      {
+        "code_cat_juridique": "Autres", 
+        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
+        "montant": "0", 
+        "nombre": "0", 
+        "nombre_siren": "0"
+      }
+    ], 
+    "kpi_classe_effectif": [
+      {
+        "classe_effectif": "Autres", 
+        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
+        "montant": "0", 
+        "nombre": "0", 
+        "nombre_siren": "0"
+      }
+    ], 
+    "kpi_top_10_naf": [
+      {
+        "libelle_section_naf": "Autres sections NAF", 
+        "montant": "0", 
+        "nombre": "0", 
+        "nombre_siren": "0", 
+        "section_naf": "Autres"
+      }
+    ], 
+    "libelle": "None", 
+    "montant": "232166521.40", 
+    "nombre": "133471", 
+    "nombre_siren": "51218", 
+    "reg": "None"
+  }
+]
