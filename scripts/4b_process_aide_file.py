@@ -202,7 +202,7 @@ for index, row in resultna.iterrows():
                     row['etatadministratifetablissement'] = mydict['entreprise']['etat_administratif']['value']
     except requests.exceptions.ConnectionError:
         print("Error : "+row['siren'])
-    except e:
+    except:
         print("Error : "+row['siren'])
     mydf.append(row)
 
