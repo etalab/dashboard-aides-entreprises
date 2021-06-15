@@ -184,64 +184,79 @@ export const configAppTexts = {
                   textClass: 'text-left mx-4 pt-4',
                   textContent: {
                     fr: `
-                      L’État et les Régions ont mis en place un fonds de solidarité pour
-                      aider les petites entreprises les plus touchées par la crise.
-                      Les intercommunalités et les grandes entreprises pourront contribuer
-                      au financement du fonds. Les compagnies d’assurance ont déjà annoncé
-                      une contribution de 400 millions d’euros.
-                      <br><br>
-                      Sont concernés par cette aide pouvant aller jusqu’à 1 500 €,
-                      les TPE, indépendants, micro-entrepreneurs et professions
-                      libérales qui ont 10 salariés au plus, qui font moins d’1 million
-                      d’euros de chiffre d’affaires ainsi qu’un bénéfice annuel
-                      imposable inférieur à 60 000 € et qui :
-                      <br><br>
+                      L’État et les Régions ont mis en place un fonds de solidarité pour aider les petites entreprises les plus touchées par la crise. Sont concernés par cette aide :
+                      <br /><br />
                       <ul>
                         <li>
-                          subissent une interdiction d’accueil du public selon l’article
-                          8 du décret du 23 mars 2020 même s’il y a une activité résiduelle
-                          telle que la vente à emporter, la livraison et les retraits de commandes, « room service »
+                          <u>les entreprises visées par une mesure d'interdiction d'accueil du public</u> durant tout le mois au cours duquel l’aide est demandée ou sur une partie dudit mois et ayant perdu 20% de chiffre d’affaires (pour le calcul du pourcentage de perte, le montant des ventes à distance et ventes à emporter est à intégrer) sans condition de nombre de salariés :
+                          <br /><br />
+                          <ul>
+                            <li>pour les entreprises fermées sur la totalité du mois : l’aide correspond au montant de la perte de chiffre d’affaires enregistrée, dans la limite de 10 000 € ou à 20% du chiffre d'affaires de référence dans la limite de 200 000 € ;</li>
+                            <br />
+                            <li>pour les entreprises fermées sur une partie du mois, l’aide correspond :
+                              <br />
+                              <ul>
+                                <li>au montant de la perte de chiffre d’affaires enregistrée, dans la limite de 1 500 € si cette perte est comprise entre 20% et 50% de leur chiffre d’affaires de référence ;</li>
+                                <li>au montant de la perte de chiffre d’affaires enregistrée, dans la limite de 10 000 € ou à 20% du chiffre d'affaires de référence dans la limite de 200 000 € si cette perte est supérieure à 50%.</li>
+                              </ul>
+                            </li>
+                          </ul>
                         </li>
-                        <br>
-                        OU
-                        <br><br>
+                        <br />
                         <li>
-                          Pour l’aide versée au titre du mois de mars :
-                          qui connaissent une perte de chiffre d'affaires d’au moins 50 % au mois de mars 2020
-                          par rapport au mois de mars 2019 ;
+                          <u>les entreprises appartenant aux secteurs S1</u>, inscrits à l’annexe 1 du décret n°2020-370 du 30 mars 2020, et ayant perdu plus de 50 % de leur chiffre d’affaires.
+                          <br /><br />
+                          <ul>
+                            <li>
+                              Elles reçoivent une aide compensant leur perte de chiffre d'affaires plafonnée à 10 000 € ou à 15% du CA (ce taux pouvant être porté à 20% en cas de perte supérieure à 70 % de CA), dans la limite de 200 000 €.
+                            </li>
+                          </ul>
                         </li>
+                        <br />
                         <li>
-                          Pour l’aide versée au titre du mois d’avril :
-                          qui connaissent une perte de chiffre d'affaires d’au moins 50 % au mois d’avril 2020
-                          par rapport au mois d’avril 2019 ou au chiffre d’affaires mensuel moyen sur 2019.
+                          les entreprises qui ont perdu 50% de leur chiffre d’affaires sans condition de nombre de salariés : 
+                          <br /><br />
+                          <ul>
+                            <li>
+                              <u>appartenant au secteur S1 bis</u> inscrits à l’annexe 2 du décret n°2020-370 du 30 mars 2020, qui ont perdu plus de 80 % de leur chiffre d’affaires pendant la première ou seconde période de confinement ou 10% de CA annuel entre 2019 et 2020 ;
+                            </li>
+                            <br />
+                            <li>
+                              <u>domiciliés dans une commune dites « stations de ski »</u> mentionnée à l’annexe 3 du décret n°2020-370 du 30 mars 2020 qui exercent leur activité principale dans le commerce de détail, à l’exception des automobiles et motocycles, ou la location de biens immobiliers résidentiels ;
+                            </li>
+                            <br />
+                            <li>
+                              <u>exerçant leur activité principale dans le commerce de détail avec au moins un de leurs magasins de vente situé dans un centre commercial</u> comportant un ou plusieurs bâtiments dont la surface commerciale utile est supérieure ou égale à dix mille mètres carrés, faisant l’objet d’une interdiction d’accueil du public ;
+                            </li>
+                            <br />
+                            <li>
+                              <u>exerçant leur activité principale dans le commerce de détail ou dans la réparation et maintenance navale et étant domiciliées dans certains territoires</u> ultramarins : la Réunion, la Guadeloupe, la Martinique, Saint-Martin, Saint-Barthélemy et la Polynésie française. Sont toutefois exclues les entreprises exerçant une activité commerciale dans les secteurs de l’automobile et des motocycles. 
+                            </li>
+                            <br /><br />              
+                            Ces entreprises perçoivent une subvention égale à :
+                            <br />
+                            <ul>
+                              <li>
+                                80 % de leur perte de chiffre d’affaires dans la limite de 10 000 € ou à 15 % du chiffre d'affaires de référence dans la limite de 200 000 €, si leur pourcentage de perte est supérieur ou égal à 50 % et inférieur à 70 % ;
+                              </li>
+                              <li>
+                                80 % de leur perte de chiffre d’affaires dans la limite de 10 000 € ou à 20 % du chiffre d'affaires de référence dans la limite de 200 000 €, si leur pourcentage de perte est supérieur ou égal à 70 % ; 
+                              </li>
+                              <li>
+                                100 % de leur perte si celle-ci est inférieure à 1 500 €.
+                              </li>
+                            </ul>
+                          </ul>
+                        </li>
+                        <br /><br />
+                        <li>
+                          <u>Les entreprises  appartenant aux autres secteurs, ayant moins de 50 salariés, et réalisant une perte de CA de 50 %</u>  reçoivent une aide compensant leur perte pouvant aller jusqu'à 1 500€.
                         </li>
                       </ul>
-                      <br>
-                      Par ailleurs, Bruno Le Maire, ministre de l’Économie et des Finances,
-                      a annoncé mercredi 15 avril 2020 que les agriculteurs membres d’un
-                      groupement agricole d’exploitation en commun (GAEC),
-                      les artistes-auteurs, et les entreprises en redressement judiciaire
-                      ou en procédure de sauvegarde pourront également bénéficier
-                      du fonds de solidarité.
-                      <br><br>
-                      Pour les situations les plus difficiles,
-                      un soutien complémentaire d'un montant de 2000 à 5 000 €
-                      pourra être octroyé aux entreprises qui :
-                      <br><br>
-                      <ul>
-                        <li>ont bénéficié du premier volet du fonds (les 1 500 € ou moins)</li>
-                        <li>emploient, au 1er mars 2020, au moins un salarié en contrat à durée indéterminée ou déterminée</li>
-                        <li>se trouvent dans l'impossibilité de régler leurs dettes exigibles dans les trente jours et le montant de leurs charges fixes, y compris les loyers commerciaux ou professionnels, dues au titre des mois de mars et avril 2020</li>
-                        <li>ont vu leur demande d'un prêt de trésorerie faite depuis le 1er mars 2020, auprès d'une banque dont elles étaient clientes à cette date, refusée ou restée sans réponse passé un délai de dix jours.</li>
-                      </ul>
-                      <br>
-                      Cette cartographie présente les montants attribués dans le cadre du fonds de solidarité
-                      projetés au niveau départemental et régional
-                      avec une ventilation par secteur d'activité, structure juridique et
-                      tranche d'effectifs (effectifs pour les entreprises affiliées au régime général).
-                      Les données concernent uniquement les entreprises affiliées au régime général
-                      <br><br>
-                      Les données sont mises à jour quotidiennement.
+                      <br /><br />
+                      Ce dispositif du fonds de solidarité sera prolongé au fur et à mesure du retour à la normal. En juin, juillet et août 2021, l’aide versée évoluera pour compenser de manière décroissante les pertes de chiffre d’affaires, respectivement à hauteur de 40 %, 30 % puis 20 %, cela afin d’accompagner la reprise d’activité. Un rendez-vous est également prévu à la fin du mois d’août avec les professionnels, afin de faire le point sur l’état des différents secteurs d’activité et d’adapter, le cas échéant, les dispositifs. A ce stade de l’épidémie, le Gouvernement évalue en permanence les mesures afin que celles-ci soient à même de répondre aux besoins des entreprises, dans le respect du principe d’égalité et en évitant tout frein à la reprise.
+                      <br /><br />
+                      Cette cartographie présente les montants attribués dans le cadre du fonds de solidarité projetés au niveau départemental et régional avec une ventilation par secteur d'activité, structure juridique et tranche d'effectifs (effectifs pour les entreprises affiliées au régime général). Les données concernent uniquement les entreprises affiliées au régime général 
                     `
                   },
                   fromUrl: {
