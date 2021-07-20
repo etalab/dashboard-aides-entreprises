@@ -254,6 +254,28 @@ export const configAppTexts = {
                         </li>
                       </ul>
                       <br /><br />
+                      L’extinction progressive du fonds de solidarité au cours des mois de juin et juillet est mise en œuvre par le  décret n° 2021-840 du 29 juin 2021 afin d’accompagner les entreprises jusqu’au retour à la normal. Sont concernées :
+                      <ul>
+                        <li><u>Les entreprises continuant à subir une interdiction d’accueil du public sans interruption</u> et ayant subi une perte de chiffre d'affaires (CA) d'au moins 20 % ; celles-ci bénéficieront d’une subvention mensuelle égale à 20 % du CA de référence, dans la limite de 200 000 euros ;
+                        </li>
+                        <li>
+                        <u>Les entreprises appartenant aux secteurs « S1 », « S1 bis », et « commerce de détail ou réparation navale dans certains territoires ultramarins »</u> et ayant perdu plus de 10% de leur chiffre d’affaire.
+                          <br />
+                          <ul>
+                            <li>
+                              Elles reçoivent une aide compensant leur perte de chiffre d'affaires au titre du mois de juin à hauteur de 40% de la perte du chiffre d’affaire dans la limite de 20% du CA de référence et 200 000 euros ; 
+                            </li>
+                            <li>
+                              Elles reçoivent une aide compensant leur perte de chiffre d'affaires au titre du mois de juillet à hauteur de 30% de la perte du chiffre d’affaire dans la limite de 20% du CA de référence et 200 000 euros.
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                        <u>Les entreprises dites « autres » de moins de 50 salariés, ayant perdu 50 % de CA et domiciliées dans un territoire faisant l’objet de mesures de confinement pendant au moins 10 jours au cours de la période mensuelle considérée</u> (sur le fondement de l’article 4-2 du décret du 1er juin 2021) ; elle reçoivent une aide compensant la perte de chiffre d’affaires dans la limite de 1 500 €. 
+                        </li>
+                      </ul>
+                      Un rendez-vous est prévu à la fin du mois d’août avec les professionnels, afin de faire le point sur l’état des différents secteurs d’activité et d’adapter, le cas échéant, les dispositifs. A ce stade de la pandémie, le Gouvernement évalue en permanence les mesures afin que celles-ci soient à même de répondre aux besoins des entreprises, dans le respect du principe d’égalité et en évitant tout frein à la reprise.
+                      <br /><br />
                       Ce dispositif du fonds de solidarité sera prolongé au fur et à mesure du retour à la normal. En juin, juillet et août 2021, l’aide versée évoluera pour compenser de manière décroissante les pertes de chiffre d’affaires, respectivement à hauteur de 40 %, 30 % puis 20 %, cela afin d’accompagner la reprise d’activité. Un rendez-vous est également prévu à la fin du mois d’août avec les professionnels, afin de faire le point sur l’état des différents secteurs d’activité et d’adapter, le cas échéant, les dispositifs. A ce stade de l’épidémie, le Gouvernement évalue en permanence les mesures afin que celles-ci soient à même de répondre aux besoins des entreprises, dans le respect du principe d’égalité et en évitant tout frein à la reprise.
                       <br /><br />
                       Cette cartographie présente les montants attribués dans le cadre du fonds de solidarité projetés au niveau départemental et régional avec une ventilation par secteur d'activité, structure juridique et tranche d'effectifs (effectifs pour les entreprises affiliées au régime général). Les données concernent uniquement les entreprises affiliées au régime général 
