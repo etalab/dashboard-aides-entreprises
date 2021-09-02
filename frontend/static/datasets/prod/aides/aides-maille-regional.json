@@ -1,2909 +1,632 @@
-[
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "101180333.53", 
-        "nombre": "63507", 
-        "nombre_siren": "12270"
-      }, 
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "55238502.31", 
-        "nombre": "15884", 
-        "nombre_siren": "3297"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "38919939.67", 
-        "nombre": "14554", 
-        "nombre_siren": "2822"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "4774822.85", 
-        "nombre": "1882", 
-        "nombre_siren": "422"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "8329514.28", 
-        "nombre": "3788", 
-        "nombre_siren": "781"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "31485454.75", 
-        "nombre": "12570", 
-        "nombre_siren": "2778"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "15331383.78", 
-        "nombre": "4343", 
-        "nombre_siren": "1036"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "8611811.40", 
-        "nombre": "1552", 
-        "nombre_siren": "386"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "22271554.00", 
-        "nombre": "13752", 
-        "nombre_siren": "2636"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "15379347.00", 
-        "nombre": "756", 
-        "nombre_siren": "168"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "45250892.53", 
-        "nombre": "16583", 
-        "nombre_siren": "2092", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
-        "montant": "23746632.95", 
-        "nombre": "15173", 
-        "nombre_siren": "2590", 
-        "section_naf": "A"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "29848745.17", 
-        "nombre": "14909", 
-        "nombre_siren": "3236", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "24012950.04", 
-        "nombre": "8511", 
-        "nombre_siren": "1398", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "11186814.71", 
-        "nombre": "7151", 
-        "nombre_siren": "2170", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "10360080.50", 
-        "nombre": "5366", 
-        "nombre_siren": "1265", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "10342281.95", 
-        "nombre": "5322", 
-        "nombre_siren": "1203", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "7038021.85", 
-        "nombre": "4735", 
-        "nombre_siren": "1135", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "10861388.00", 
-        "nombre": "4637", 
-        "nombre_siren": "736", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "10661381.94", 
-        "nombre": "3848", 
-        "nombre_siren": "491", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "17040786.72", 
-        "nombre": "9798", 
-        "nombre_siren": "2555", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Guadeloupe", 
-    "montant": "200349976.36", 
-    "nombre": "96033", 
-    "nombre_siren": "18842", 
-    "reg": "01"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "54683938.00", 
-        "nombre": "34522", 
-        "nombre_siren": "7103"
-      }, 
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "52561640.81", 
-        "nombre": "15101", 
-        "nombre_siren": "3214"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "29934946.35", 
-        "nombre": "10516", 
-        "nombre_siren": "2096"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "4413983.00", 
-        "nombre": "1240", 
-        "nombre_siren": "293"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "8159479.00", 
-        "nombre": "3272", 
-        "nombre_siren": "688"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "28980039.34", 
-        "nombre": "10178", 
-        "nombre_siren": "2229"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "15084928.60", 
-        "nombre": "3743", 
-        "nombre_siren": "953"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "6887402.00", 
-        "nombre": "1431", 
-        "nombre_siren": "374"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "10951898.00", 
-        "nombre": "6984", 
-        "nombre_siren": "1419"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "12657290.00", 
-        "nombre": "850", 
-        "nombre_siren": "210"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "26350384.00", 
-        "nombre": "11070", 
-        "nombre_siren": "2224", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "31498716.34", 
-        "nombre": "8690", 
-        "nombre_siren": "1267", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "13909749.60", 
-        "nombre": "5387", 
-        "nombre_siren": "943", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "9005874.00", 
-        "nombre": "5175", 
-        "nombre_siren": "1062", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "10079690.00", 
-        "nombre": "4706", 
-        "nombre_siren": "1111", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "7213395.00", 
-        "nombre": "4397", 
-        "nombre_siren": "1381", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "9517671.22", 
-        "nombre": "4076", 
-        "nombre_siren": "715", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
-        "montant": "5336856.00", 
-        "nombre": "3832", 
-        "nombre_siren": "777", 
-        "section_naf": "A"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "7175667.00", 
-        "nombre": "3626", 
-        "nombre_siren": "831", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "7737028.00", 
-        "nombre": "2846", 
-        "nombre_siren": "377", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "14062852.00", 
-        "nombre": "7825", 
-        "nombre_siren": "2066", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Martinique", 
-    "montant": "141887883.16", 
-    "nombre": "61630", 
-    "nombre_siren": "12733", 
-    "reg": "02"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "53188738.17", 
-        "nombre": "26409", 
-        "nombre_siren": "3755"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "21790885.02", 
-        "nombre": "8448", 
-        "nombre_siren": "1269"
-      }, 
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "17211440.38", 
-        "nombre": "5711", 
-        "nombre_siren": "902"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "2446953.23", 
-        "nombre": "825", 
-        "nombre_siren": "147"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "5840497.77", 
-        "nombre": "2434", 
-        "nombre_siren": "373"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "14776888.56", 
-        "nombre": "5882", 
-        "nombre_siren": "951"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "7109663.00", 
-        "nombre": "2317", 
-        "nombre_siren": "410"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "3249086.00", 
-        "nombre": "809", 
-        "nombre_siren": "147"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "7630576.00", 
-        "nombre": "3966", 
-        "nombre_siren": "556"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "3683669.69", 
-        "nombre": "408", 
-        "nombre_siren": "73"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "16115362.00", 
-        "nombre": "7238", 
-        "nombre_siren": "1094", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
-        "montant": "10953737.00", 
-        "nombre": "6630", 
-        "nombre_siren": "821", 
-        "section_naf": "A"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "12982031.84", 
-        "nombre": "6068", 
-        "nombre_siren": "987", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "15036126.74", 
-        "nombre": "4874", 
-        "nombre_siren": "581", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "8032386.40", 
-        "nombre": "2961", 
-        "nombre_siren": "395", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "6048654.00", 
-        "nombre": "2597", 
-        "nombre_siren": "440", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "5509894.84", 
-        "nombre": "2543", 
-        "nombre_siren": "403", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "5708436.60", 
-        "nombre": "2015", 
-        "nombre_siren": "292", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "3653024.00", 
-        "nombre": "1884", 
-        "nombre_siren": "291", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "3032818.87", 
-        "nombre": "1102", 
-        "nombre_siren": "136", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "7612515.51", 
-        "nombre": "3517", 
-        "nombre_siren": "647", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Guyane", 
-    "montant": "94684987.80", 
-    "nombre": "41429", 
-    "nombre_siren": "6076", 
-    "reg": "03"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "110552442.29", 
-        "nombre": "73191", 
-        "nombre_siren": "17469"
-      }, 
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "75525954.09", 
-        "nombre": "22879", 
-        "nombre_siren": "6134"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "26173783.00", 
-        "nombre": "6705", 
-        "nombre_siren": "1641"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "17366524.75", 
-        "nombre": "2077", 
-        "nombre_siren": "551"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "15723509.91", 
-        "nombre": "7756", 
-        "nombre_siren": "1903"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "39053384.38", 
-        "nombre": "17456", 
-        "nombre_siren": "4976"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "18676418.21", 
-        "nombre": "5837", 
-        "nombre_siren": "1888"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "13633708.88", 
-        "nombre": "2388", 
-        "nombre_siren": "738"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "12210423.00", 
-        "nombre": "8336", 
-        "nombre_siren": "2082"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "37287637.00", 
-        "nombre": "1317", 
-        "nombre_siren": "319"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "37360011.00", 
-        "nombre": "20829", 
-        "nombre_siren": "5200", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "52005055.47", 
-        "nombre": "17170", 
-        "nombre_siren": "2565", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "13974336.91", 
-        "nombre": "9092", 
-        "nombre_siren": "3236", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
-        "montant": "11034759.00", 
-        "nombre": "7691", 
-        "nombre_siren": "1791", 
-        "section_naf": "A"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "15110198.00", 
-        "nombre": "7004", 
-        "nombre_siren": "1844", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "9242657.55", 
-        "nombre": "6852", 
-        "nombre_siren": "1981", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "16908562.00", 
-        "nombre": "6661", 
-        "nombre_siren": "914", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "11363826.00", 
-        "nombre": "6203", 
-        "nombre_siren": "1653", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "8127452.00", 
-        "nombre": "5750", 
-        "nombre_siren": "2469", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "7812816.20", 
-        "nombre": "5548", 
-        "nombre_siren": "1247", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "47848589.00", 
-        "nombre": "12967", 
-        "nombre_siren": "3049", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "La R\u00e9union", 
-    "montant": "230788263.13", 
-    "nombre": "105767", 
-    "nombre_siren": "25899", 
-    "reg": "04"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "102136301.00", 
-        "nombre": "43795", 
-        "nombre_siren": "5415"
-      }, 
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "12374750.23", 
-        "nombre": "4189", 
-        "nombre_siren": "681"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "1527315.00", 
-        "nombre": "559", 
-        "nombre_siren": "94"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "952096.00", 
-        "nombre": "389", 
-        "nombre_siren": "60"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "4470140.00", 
-        "nombre": "1347", 
-        "nombre_siren": "241"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "2639799.00", 
-        "nombre": "944", 
-        "nombre_siren": "137"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "1004105.00", 
-        "nombre": "331", 
-        "nombre_siren": "63"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "315935.00", 
-        "nombre": "95", 
-        "nombre_siren": "23"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "368385.00", 
-        "nombre": "76", 
-        "nombre_siren": "13"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "52038108.84", 
-        "nombre": "22229", 
-        "nombre_siren": "2788", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
-        "montant": "19861377.00", 
-        "nombre": "9111", 
-        "nombre_siren": "1090", 
-        "section_naf": "A"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "11924996.00", 
-        "nombre": "4910", 
-        "nombre_siren": "681", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "12033119.00", 
-        "nombre": "4599", 
-        "nombre_siren": "521", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "7101639.05", 
-        "nombre": "2458", 
-        "nombre_siren": "319", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "3691526.00", 
-        "nombre": "1471", 
-        "nombre_siren": "202", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "2734100.00", 
-        "nombre": "934", 
-        "nombre_siren": "122", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "1690066.00", 
-        "nombre": "773", 
-        "nombre_siren": "112", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "1639056.00", 
-        "nombre": "761", 
-        "nombre_siren": "129", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "1372385.00", 
-        "nombre": "553", 
-        "nombre_siren": "75", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "3025259.34", 
-        "nombre": "1217", 
-        "nombre_siren": "220", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Mayotte", 
-    "montant": "117111632.23", 
-    "nombre": "49016", 
-    "nombre_siren": "6251", 
-    "reg": "06"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "3190345922.20", 
-        "nombre": "556254", 
-        "nombre_siren": "90309"
-      }, 
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "3149639837.57", 
-        "nombre": "602456", 
-        "nombre_siren": "104703"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "2264370993.27", 
-        "nombre": "1276852", 
-        "nombre_siren": "220145"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "445794001.97", 
-        "nombre": "45596", 
-        "nombre_siren": "8174"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "460880203.28", 
-        "nombre": "145136", 
-        "nombre_siren": "24721"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "1525765106.24", 
-        "nombre": "394319", 
-        "nombre_siren": "70789"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "1207707216.84", 
-        "nombre": "198106", 
-        "nombre_siren": "34195"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "812965358.99", 
-        "nombre": "86259", 
-        "nombre_siren": "13764"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "262958141.94", 
-        "nombre": "129952", 
-        "nombre_siren": "22762"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "1986471793.38", 
-        "nombre": "61757", 
-        "nombre_siren": "10220"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "1270366222.16", 
-        "nombre": "545095", 
-        "nombre_siren": "60773", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "957782557.03", 
-        "nombre": "346152", 
-        "nombre_siren": "69430", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "2682501127.31", 
-        "nombre": "339572", 
-        "nombre_siren": "37517", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "1126830533.45", 
-        "nombre": "282613", 
-        "nombre_siren": "57792", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "773771685.63", 
-        "nombre": "221757", 
-        "nombre_siren": "28946", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "329872057.58", 
-        "nombre": "139501", 
-        "nombre_siren": "28808", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "680481384.22", 
-        "nombre": "117037", 
-        "nombre_siren": "17661", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Information et communication", 
-        "montant": "405983479.33", 
-        "nombre": "109483", 
-        "nombre_siren": "20141", 
-        "section_naf": "J"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "190691005.21", 
-        "nombre": "101561", 
-        "nombre_siren": "32134", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "168015301.73", 
-        "nombre": "94365", 
-        "nombre_siren": "16418", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "488234884.36", 
-        "nombre": "204124", 
-        "nombre_siren": "56906", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "\u00cele-de-France", 
-    "montant": "9074530238.01", 
-    "nombre": "2501260", 
-    "nombre_siren": "425067", 
-    "reg": "11"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "354665193.52", 
-        "nombre": "73581", 
-        "nombre_siren": "14898"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "274741196.09", 
-        "nombre": "148385", 
-        "nombre_siren": "33491"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "163912146.95", 
-        "nombre": "30776", 
-        "nombre_siren": "5991"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "56945867.25", 
-        "nombre": "11589", 
-        "nombre_siren": "2327"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "61813921.00", 
-        "nombre": "18905", 
-        "nombre_siren": "3778"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "223698356.61", 
-        "nombre": "55854", 
-        "nombre_siren": "11689"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "128055178.75", 
-        "nombre": "22416", 
-        "nombre_siren": "4648"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "56366733.26", 
-        "nombre": "7001", 
-        "nombre_siren": "1428"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "36144548.00", 
-        "nombre": "17876", 
-        "nombre_siren": "3964"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "105309811.00", 
-        "nombre": "4532", 
-        "nombre_siren": "847"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "329396428.28", 
-        "nombre": "58376", 
-        "nombre_siren": "6566", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "119021988.33", 
-        "nombre": "41487", 
-        "nombre_siren": "9891", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "54453815.00", 
-        "nombre": "27855", 
-        "nombre_siren": "6637", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "83411203.91", 
-        "nombre": "23337", 
-        "nombre_siren": "3092", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "60646026.00", 
-        "nombre": "20309", 
-        "nombre_siren": "4481", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "32436978.26", 
-        "nombre": "20275", 
-        "nombre_siren": "7731", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "23190777.00", 
-        "nombre": "12393", 
-        "nombre_siren": "2297", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "14708277.00", 
-        "nombre": "11174", 
-        "nombre_siren": "4527", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "33692018.00", 
-        "nombre": "10467", 
-        "nombre_siren": "2293", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "21885368.03", 
-        "nombre": "10433", 
-        "nombre_siren": "2667", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "80255284.00", 
-        "nombre": "30737", 
-        "nombre_siren": "6959", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Centre-Val de Loire", 
-    "montant": "853098163.81", 
-    "nombre": "266843", 
-    "nombre_siren": "57007", 
-    "reg": "24"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "438640259.28", 
-        "nombre": "88092", 
-        "nombre_siren": "17536"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "316803429.48", 
-        "nombre": "172806", 
-        "nombre_siren": "38019"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "188629088.53", 
-        "nombre": "34208", 
-        "nombre_siren": "6505"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "69905079.04", 
-        "nombre": "13014", 
-        "nombre_siren": "2740"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "79665142.82", 
-        "nombre": "24300", 
-        "nombre_siren": "4829"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "279676102.57", 
-        "nombre": "66963", 
-        "nombre_siren": "13570"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "146561662.69", 
-        "nombre": "25073", 
-        "nombre_siren": "4981"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "69626946.03", 
-        "nombre": "8481", 
-        "nombre_siren": "1628"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "47548546.05", 
-        "nombre": "23023", 
-        "nombre_siren": "5058"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "126620737.48", 
-        "nombre": "5678", 
-        "nombre_siren": "1044"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "422155719.47", 
-        "nombre": "73897", 
-        "nombre_siren": "8137", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "154006870.00", 
-        "nombre": "53287", 
-        "nombre_siren": "12291", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "62632550.00", 
-        "nombre": "31518", 
-        "nombre_siren": "7345", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "82628411.10", 
-        "nombre": "25989", 
-        "nombre_siren": "3248", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "70921002.39", 
-        "nombre": "22002", 
-        "nombre_siren": "4892", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "33805401.00", 
-        "nombre": "21396", 
-        "nombre_siren": "8049", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "27343073.00", 
-        "nombre": "16344", 
-        "nombre_siren": "2773", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "17433701.00", 
-        "nombre": "13147", 
-        "nombre_siren": "5281", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "25119451.77", 
-        "nombre": "12224", 
-        "nombre_siren": "3237", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "35417962.00", 
-        "nombre": "10752", 
-        "nombre_siren": "2280", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "86139190.60", 
-        "nombre": "30822", 
-        "nombre_siren": "7740", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Bourgogne-Franche-Comt\u00e9", 
-    "montant": "1017603332.33", 
-    "nombre": "311378", 
-    "nombre_siren": "65137", 
-    "reg": "27"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "485163208.84", 
-        "nombre": "93919", 
-        "nombre_siren": "18285"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "370750196.70", 
-        "nombre": "193384", 
-        "nombre_siren": "42592"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "235177453.14", 
-        "nombre": "39457", 
-        "nombre_siren": "7156"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "67444753.00", 
-        "nombre": "13230", 
-        "nombre_siren": "2467"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "93345736.23", 
-        "nombre": "27546", 
-        "nombre_siren": "5220"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "309166249.25", 
-        "nombre": "74285", 
-        "nombre_siren": "15090"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "171867731.16", 
-        "nombre": "29464", 
-        "nombre_siren": "5777"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "89026994.37", 
-        "nombre": "10696", 
-        "nombre_siren": "2020"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "42129455.00", 
-        "nombre": "20896", 
-        "nombre_siren": "4629"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "158399217.81", 
-        "nombre": "6920", 
-        "nombre_siren": "1222"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "493123564.81", 
-        "nombre": "81139", 
-        "nombre_siren": "9331", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "178128794.00", 
-        "nombre": "59569", 
-        "nombre_siren": "13455", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "73654648.35", 
-        "nombre": "38057", 
-        "nombre_siren": "8744", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "100221478.24", 
-        "nombre": "28226", 
-        "nombre_siren": "3704", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "89695621.77", 
-        "nombre": "27555", 
-        "nombre_siren": "5917", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "35200451.00", 
-        "nombre": "21813", 
-        "nombre_siren": "8420", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "26543922.00", 
-        "nombre": "15001", 
-        "nombre_siren": "2703", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "17365237.00", 
-        "nombre": "13274", 
-        "nombre_siren": "5419", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "41785350.00", 
-        "nombre": "12752", 
-        "nombre_siren": "2606", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "24052416.00", 
-        "nombre": "11594", 
-        "nombre_siren": "3012", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "82336758.51", 
-        "nombre": "34186", 
-        "nombre_siren": "7716", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Normandie", 
-    "montant": "1162108241.68", 
-    "nombre": "343166", 
-    "nombre_siren": "70862", 
-    "reg": "28"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "703580639.85", 
-        "nombre": "141884", 
-        "nombre_siren": "27809"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "561506121.54", 
-        "nombre": "315015", 
-        "nombre_siren": "67873"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "442933006.42", 
-        "nombre": "79688", 
-        "nombre_siren": "14399"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "95775771.05", 
-        "nombre": "17910", 
-        "nombre_siren": "3370"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "113103291.18", 
-        "nombre": "37888", 
-        "nombre_siren": "7444"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "448063231.93", 
-        "nombre": "114366", 
-        "nombre_siren": "22710"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "268551974.44", 
-        "nombre": "46830", 
-        "nombre_siren": "9043"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "128576432.11", 
-        "nombre": "16743", 
-        "nombre_siren": "3205"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "66809275.65", 
-        "nombre": "33589", 
-        "nombre_siren": "7206"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "288659612.13", 
-        "nombre": "11433", 
-        "nombre_siren": "2105"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "713671277.57", 
-        "nombre": "119661", 
-        "nombre_siren": "13409", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "282046016.00", 
-        "nombre": "96594", 
-        "nombre_siren": "21111", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "113249204.06", 
-        "nombre": "61828", 
-        "nombre_siren": "14049", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "139371623.92", 
-        "nombre": "46532", 
-        "nombre_siren": "9964", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "153548016.01", 
-        "nombre": "42934", 
-        "nombre_siren": "5280", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "58879431.00", 
-        "nombre": "36676", 
-        "nombre_siren": "13026", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "78336518.78", 
-        "nombre": "36215", 
-        "nombre_siren": "5280", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "37254806.00", 
-        "nombre": "26921", 
-        "nombre_siren": "11390", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "38526127.82", 
-        "nombre": "21680", 
-        "nombre_siren": "4104", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "71533864.08", 
-        "nombre": "20475", 
-        "nombre_siren": "4247", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "123379021.62", 
-        "nombre": "50292", 
-        "nombre_siren": "12370", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Hauts-de-France", 
-    "montant": "1809795906.86", 
-    "nombre": "559808", 
-    "nombre_siren": "113997", 
-    "reg": "32"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "877651822.76", 
-        "nombre": "173636", 
-        "nombre_siren": "34663"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "631505029.32", 
-        "nombre": "325528", 
-        "nombre_siren": "71604"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "492737249.66", 
-        "nombre": "85602", 
-        "nombre_siren": "16534"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "259831541.12", 
-        "nombre": "41216", 
-        "nombre_siren": "9308"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "154195965.83", 
-        "nombre": "45832", 
-        "nombre_siren": "9398"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "581263014.25", 
-        "nombre": "137867", 
-        "nombre_siren": "28689"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "341105615.39", 
-        "nombre": "58137", 
-        "nombre_siren": "11626"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "181076147.97", 
-        "nombre": "22113", 
-        "nombre_siren": "4087"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "130729482.65", 
-        "nombre": "50239", 
-        "nombre_siren": "11432"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "355804933.39", 
-        "nombre": "14730", 
-        "nombre_siren": "2521"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "838537418.20", 
-        "nombre": "129280", 
-        "nombre_siren": "13984", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "310051089.43", 
-        "nombre": "99672", 
-        "nombre_siren": "22653", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "129085597.53", 
-        "nombre": "65255", 
-        "nombre_siren": "14837", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
-        "montant": "261469261.65", 
-        "nombre": "50271", 
-        "nombre_siren": "12961", 
-        "section_naf": "A"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "135066061.53", 
-        "nombre": "47701", 
-        "nombre_siren": "10581", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "71931703.79", 
-        "nombre": "44962", 
-        "nombre_siren": "15880", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "150909869.13", 
-        "nombre": "44078", 
-        "nombre_siren": "5416", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "36772543.00", 
-        "nombre": "26865", 
-        "nombre_siren": "11148", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "48884360.00", 
-        "nombre": "26654", 
-        "nombre_siren": "4738", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "75652107.25", 
-        "nombre": "22761", 
-        "nombre_siren": "5761", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "208033701.35", 
-        "nombre": "72746", 
-        "nombre_siren": "14873", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Grand Est", 
-    "montant": "2266393712.86", 
-    "nombre": "630245", 
-    "nombre_siren": "132581", 
-    "reg": "44"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "674455956.82", 
-        "nombre": "132297", 
-        "nombre_siren": "27135"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "407862890.00", 
-        "nombre": "226798", 
-        "nombre_siren": "52373"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "248593178.63", 
-        "nombre": "38426", 
-        "nombre_siren": "7180"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "87009566.00", 
-        "nombre": "17358", 
-        "nombre_siren": "3423"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "118777051.81", 
-        "nombre": "33618", 
-        "nombre_siren": "6482"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "353467618.50", 
-        "nombre": "81944", 
-        "nombre_siren": "17085"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "207271165.83", 
-        "nombre": "34756", 
-        "nombre_siren": "7058"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "101799679.31", 
-        "nombre": "11721", 
-        "nombre_siren": "2410"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "44622204.00", 
-        "nombre": "22321", 
-        "nombre_siren": "5220"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "198463739.72", 
-        "nombre": "8135", 
-        "nombre_siren": "1522"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "543273219.68", 
-        "nombre": "86995", 
-        "nombre_siren": "9875", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "198641103.00", 
-        "nombre": "62712", 
-        "nombre_siren": "14524", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "86266196.00", 
-        "nombre": "42930", 
-        "nombre_siren": "10321", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "138921847.55", 
-        "nombre": "42308", 
-        "nombre_siren": "9310", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "131901017.22", 
-        "nombre": "38410", 
-        "nombre_siren": "5186", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "38231206.00", 
-        "nombre": "24093", 
-        "nombre_siren": "10125", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "31435937.00", 
-        "nombre": "23815", 
-        "nombre_siren": "9605", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "37581489.00", 
-        "nombre": "19482", 
-        "nombre_siren": "3596", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "33000701.00", 
-        "nombre": "15502", 
-        "nombre_siren": "4111", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "40195080.00", 
-        "nombre": "15320", 
-        "nombre_siren": "2492", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "144152665.00", 
-        "nombre": "48398", 
-        "nombre_siren": "11717", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Pays de la Loire", 
-    "montant": "1423600461.45", 
-    "nombre": "419965", 
-    "nombre_siren": "90670", 
-    "reg": "52"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "672480659.83", 
-        "nombre": "124843", 
-        "nombre_siren": "24232"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "404758526.84", 
-        "nombre": "208278", 
-        "nombre_siren": "48114"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "195106605.62", 
-        "nombre": "28836", 
-        "nombre_siren": "5491"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "93117574.30", 
-        "nombre": "17222", 
-        "nombre_siren": "3094"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "133552282.30", 
-        "nombre": "35284", 
-        "nombre_siren": "6480"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "376287385.74", 
-        "nombre": "84187", 
-        "nombre_siren": "16438"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "203383155.56", 
-        "nombre": "33196", 
-        "nombre_siren": "6476"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "102676161.45", 
-        "nombre": "11547", 
-        "nombre_siren": "2233"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "51461943.00", 
-        "nombre": "24940", 
-        "nombre_siren": "5601"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "178445645.63", 
-        "nombre": "7347", 
-        "nombre_siren": "1372"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "630046516.93", 
-        "nombre": "99983", 
-        "nombre_siren": "11268", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "183893710.00", 
-        "nombre": "57367", 
-        "nombre_siren": "13270", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "72076201.78", 
-        "nombre": "35192", 
-        "nombre_siren": "8569", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "113798459.79", 
-        "nombre": "33267", 
-        "nombre_siren": "7458", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "107165771.57", 
-        "nombre": "31942", 
-        "nombre_siren": "4409", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "33163838.00", 
-        "nombre": "21362", 
-        "nombre_siren": "9067", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "28999846.00", 
-        "nombre": "21361", 
-        "nombre_siren": "8867", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "31969364.00", 
-        "nombre": "17467", 
-        "nombre_siren": "3141", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "32146383.00", 
-        "nombre": "16602", 
-        "nombre_siren": "4193", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "47964162.52", 
-        "nombre": "12856", 
-        "nombre_siren": "2941", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "88795186.00", 
-        "nombre": "35778", 
-        "nombre_siren": "8393", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Bretagne", 
-    "montant": "1370019439.59", 
-    "nombre": "383177", 
-    "nombre_siren": "81412", 
-    "reg": "53"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "1173131174.05", 
-        "nombre": "231739", 
-        "nombre_siren": "46248"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "889718592.96", 
-        "nombre": "508907", 
-        "nombre_siren": "115266"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "541169927.51", 
-        "nombre": "97849", 
-        "nombre_siren": "18235"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "216189697.56", 
-        "nombre": "39001", 
-        "nombre_siren": "8201"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "280784493.36", 
-        "nombre": "79354", 
-        "nombre_siren": "14944"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "681088066.03", 
-        "nombre": "165764", 
-        "nombre_siren": "34922"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "368176702.80", 
-        "nombre": "63082", 
-        "nombre_siren": "12953"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "192553987.39", 
-        "nombre": "23308", 
-        "nombre_siren": "4566"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "115496574.00", 
-        "nombre": "56172", 
-        "nombre_siren": "13112"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "380499838.27", 
-        "nombre": "15392", 
-        "nombre_siren": "2816"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1049920298.35", 
-        "nombre": "175069", 
-        "nombre_siren": "20161", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "421234124.30", 
-        "nombre": "143547", 
-        "nombre_siren": "32062", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "156248034.71", 
-        "nombre": "84500", 
-        "nombre_siren": "20030", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "229988252.62", 
-        "nombre": "77657", 
-        "nombre_siren": "17141", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "223686511.11", 
-        "nombre": "68752", 
-        "nombre_siren": "9017", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "99359300.00", 
-        "nombre": "62416", 
-        "nombre_siren": "23915", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "80818675.00", 
-        "nombre": "46541", 
-        "nombre_siren": "7757", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "57766527.00", 
-        "nombre": "43218", 
-        "nombre_siren": "17109", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "112980804.00", 
-        "nombre": "37682", 
-        "nombre_siren": "8093", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
-        "montant": "139053982.00", 
-        "nombre": "35222", 
-        "nombre_siren": "9205", 
-        "section_naf": "A"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "257840995.99", 
-        "nombre": "110890", 
-        "nombre_siren": "24772", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Nouvelle-Aquitaine", 
-    "montant": "2828897505.08", 
-    "nombre": "885494", 
-    "nombre_siren": "188769", 
-    "reg": "75"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "1254104156.02", 
-        "nombre": "260225", 
-        "nombre_siren": "49715"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "985011628.57", 
-        "nombre": "588777", 
-        "nombre_siren": "127023"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "735712646.42", 
-        "nombre": "151233", 
-        "nombre_siren": "27021"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "225991553.46", 
-        "nombre": "38818", 
-        "nombre_siren": "7603"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "338396618.56", 
-        "nombre": "97904", 
-        "nombre_siren": "17248"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "785281580.86", 
-        "nombre": "198278", 
-        "nombre_siren": "39136"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "409467391.05", 
-        "nombre": "70910", 
-        "nombre_siren": "13834"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "193495851.84", 
-        "nombre": "24232", 
-        "nombre_siren": "4620"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "131500473.00", 
-        "nombre": "69856", 
-        "nombre_siren": "15432"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "401878223.16", 
-        "nombre": "15416", 
-        "nombre_siren": "2822"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1197547312.63", 
-        "nombre": "208828", 
-        "nombre_siren": "23271", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "466221229.95", 
-        "nombre": "170690", 
-        "nombre_siren": "35667", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "285921392.26", 
-        "nombre": "93539", 
-        "nombre_siren": "19695", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "162948685.37", 
-        "nombre": "90061", 
-        "nombre_siren": "20286", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "138926363.15", 
-        "nombre": "88756", 
-        "nombre_siren": "29717", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "252181729.41", 
-        "nombre": "82273", 
-        "nombre_siren": "10277", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "100240961.59", 
-        "nombre": "59464", 
-        "nombre_siren": "9855", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "65151931.00", 
-        "nombre": "48426", 
-        "nombre_siren": "19339", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "131528148.71", 
-        "nombre": "42520", 
-        "nombre_siren": "8950", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "78174410.39", 
-        "nombre": "39318", 
-        "nombre_siren": "9509", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "333655360.14", 
-        "nombre": "125645", 
-        "nombre_siren": "26381", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Occitanie", 
-    "montant": "3212497524.60", 
-    "nombre": "1049520", 
-    "nombre_siren": "212386", 
-    "reg": "76"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "1784429833.17", 
-        "nombre": "336030", 
-        "nombre_siren": "64088"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "1423876159.43", 
-        "nombre": "755020", 
-        "nombre_siren": "155861"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "1214291606.49", 
-        "nombre": "181376", 
-        "nombre_siren": "33091"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "635734586.23", 
-        "nombre": "43885", 
-        "nombre_siren": "8612"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "323647184.39", 
-        "nombre": "98536", 
-        "nombre_siren": "18949"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "1031217082.53", 
-        "nombre": "243676", 
-        "nombre_siren": "47408"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "616643728.85", 
-        "nombre": "100028", 
-        "nombre_siren": "18667"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "348682093.65", 
-        "nombre": "37760", 
-        "nombre_siren": "6621"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "255821447.32", 
-        "nombre": "108412", 
-        "nombre_siren": "20898"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "1230051949.22", 
-        "nombre": "27100", 
-        "nombre_siren": "4780"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1708332971.93", 
-        "nombre": "264503", 
-        "nombre_siren": "29268", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "654022456.57", 
-        "nombre": "184111", 
-        "nombre_siren": "40015", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "289834347.98", 
-        "nombre": "131684", 
-        "nombre_siren": "19547", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "386424277.96", 
-        "nombre": "116404", 
-        "nombre_siren": "25181", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "225510129.87", 
-        "nombre": "107323", 
-        "nombre_siren": "24248", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "347372352.15", 
-        "nombre": "104326", 
-        "nombre_siren": "13436", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "158478028.21", 
-        "nombre": "94167", 
-        "nombre_siren": "32185", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "653166002.67", 
-        "nombre": "67811", 
-        "nombre_siren": "10030", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "83129051.60", 
-        "nombre": "60504", 
-        "nombre_siren": "23687", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "208765620.00", 
-        "nombre": "55315", 
-        "nombre_siren": "11258", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "362407086.38", 
-        "nombre": "146264", 
-        "nombre_siren": "35041", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Auvergne-Rh\u00f4ne-Alpes", 
-    "montant": "5077442325.32", 
-    "nombre": "1332412", 
-    "nombre_siren": "263152", 
-    "reg": "84"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "1407741574.54", 
-        "nombre": "277156", 
-        "nombre_siren": "49719"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "1076101597.59", 
-        "nombre": "201173", 
-        "nombre_siren": "33886"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "1040460259.09", 
-        "nombre": "604944", 
-        "nombre_siren": "121131"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "212419807.62", 
-        "nombre": "31411", 
-        "nombre_siren": "5640"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "327143373.14", 
-        "nombre": "95467", 
-        "nombre_siren": "16791"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "896030410.35", 
-        "nombre": "222113", 
-        "nombre_siren": "40860"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "476081660.92", 
-        "nombre": "78879", 
-        "nombre_siren": "14033"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "253431034.62", 
-        "nombre": "27807", 
-        "nombre_siren": "4714"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "133170696.22", 
-        "nombre": "67441", 
-        "nombre_siren": "13673"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "588120078.90", 
-        "nombre": "19173", 
-        "nombre_siren": "3250"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "1344020055.56", 
-        "nombre": "212784", 
-        "nombre_siren": "23221", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "590093843.24", 
-        "nombre": "193068", 
-        "nombre_siren": "37614", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "305318974.91", 
-        "nombre": "101433", 
-        "nombre_siren": "21119", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "177858392.41", 
-        "nombre": "93888", 
-        "nombre_siren": "19861", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "134831945.00", 
-        "nombre": "82571", 
-        "nombre_siren": "26080", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "259396833.77", 
-        "nombre": "77766", 
-        "nombre_siren": "9584", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Transports et entreposage", 
-        "montant": "251407048.50", 
-        "nombre": "72960", 
-        "nombre_siren": "9329", 
-        "section_naf": "H"
-      }, 
-      {
-        "libelle_section_naf": "Enseignement", 
-        "montant": "122310126.19", 
-        "nombre": "65744", 
-        "nombre_siren": "10243", 
-        "section_naf": "P"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "200252799.89", 
-        "nombre": "56650", 
-        "nombre_siren": "10824", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Sant\u00e9 humaine et action sociale", 
-        "montant": "59959212.00", 
-        "nombre": "44797", 
-        "nombre_siren": "17369", 
-        "section_naf": "Q"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "300431978.37", 
-        "nombre": "121166", 
-        "nombre_siren": "26432", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Provence-Alpes-C\u00f4te d'Azur", 
-    "montant": "3745881209.84", 
-    "nombre": "1122827", 
-    "nombre_siren": "211068", 
-    "reg": "93"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "54", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 \u00e0 responsabilit\u00e9 limit\u00e9e (SARL)", 
-        "montant": "167053520.44", 
-        "nombre": "26819", 
-        "nombre_siren": "4260"
-      }, 
-      {
-        "code_cat_juridique": "10", 
-        "libelle_cat_juridique": "Entrepreneur individuel", 
-        "montant": "104133710.37", 
-        "nombre": "48757", 
-        "nombre_siren": "9524"
-      }, 
-      {
-        "code_cat_juridique": "57", 
-        "libelle_cat_juridique": "Soci\u00e9t\u00e9 par actions simplifi\u00e9e", 
-        "montant": "102460238.27", 
-        "nombre": "17635", 
-        "nombre_siren": "2896"
-      }, 
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "11344981.93", 
-        "nombre": "2885", 
-        "nombre_siren": "512"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "00", 
-        "libelle_classe_effectif": "0 salari\u00e9", 
-        "montant": "42827369.16", 
-        "nombre": "10487", 
-        "nombre_siren": "1533"
-      }, 
-      {
-        "classe_effectif": "01", 
-        "libelle_classe_effectif": "1 ou 2 salari\u00e9s", 
-        "montant": "100199990.61", 
-        "nombre": "23252", 
-        "nombre_siren": "3847"
-      }, 
-      {
-        "classe_effectif": "02", 
-        "libelle_classe_effectif": "3 \u00e0 5 salari\u00e9s", 
-        "montant": "66267454.02", 
-        "nombre": "10812", 
-        "nombre_siren": "1770"
-      }, 
-      {
-        "classe_effectif": "03", 
-        "libelle_classe_effectif": "6 \u00e0 9 salari\u00e9s", 
-        "montant": "31342896.00", 
-        "nombre": "3559", 
-        "nombre_siren": "601"
-      }, 
-      {
-        "classe_effectif": "NN", 
-        "libelle_classe_effectif": "Etablissement non employeur", 
-        "montant": "12244378.00", 
-        "nombre": "6270", 
-        "nombre_siren": "1240"
-      }, 
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "56351604.34", 
-        "nombre": "2129", 
-        "nombre_siren": "384"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "H\u00e9bergement et restauration", 
-        "montant": "162826786.57", 
-        "nombre": "25549", 
-        "nombre_siren": "2809", 
-        "section_naf": "I"
-      }, 
-      {
-        "libelle_section_naf": "Commerce", 
-        "montant": "59053290.00", 
-        "nombre": "14614", 
-        "nombre_siren": "2639", 
-        "section_naf": "G"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s sp\u00e9cialis\u00e9es, scientifiques et techniques", 
-        "montant": "46970222.67", 
-        "nombre": "10599", 
-        "nombre_siren": "1845", 
-        "section_naf": "M"
-      }, 
-      {
-        "libelle_section_naf": "Construction", 
-        "montant": "13350707.00", 
-        "nombre": "7993", 
-        "nombre_siren": "2465", 
-        "section_naf": "F"
-      }, 
-      {
-        "libelle_section_naf": "Autres activit\u00e9s de services", 
-        "montant": "12450313.93", 
-        "nombre": "6220", 
-        "nombre_siren": "1285", 
-        "section_naf": "S"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s de services administratifs et de soutien", 
-        "montant": "18574747.00", 
-        "nombre": "5273", 
-        "nombre_siren": "942", 
-        "section_naf": "N"
-      }, 
-      {
-        "libelle_section_naf": "Agriculture, sylviculture et p\u00eache", 
-        "montant": "10772169.00", 
-        "nombre": "5231", 
-        "nombre_siren": "1139", 
-        "section_naf": "A"
-      }, 
-      {
-        "libelle_section_naf": "Arts, spectacles et activit\u00e9s r\u00e9cr\u00e9atives", 
-        "montant": "17425290.84", 
-        "nombre": "4618", 
-        "nombre_siren": "554", 
-        "section_naf": "R"
-      }, 
-      {
-        "libelle_section_naf": "Industrie manufacturi\u00e8re", 
-        "montant": "9393399.00", 
-        "nombre": "4420", 
-        "nombre_siren": "911", 
-        "section_naf": "C"
-      }, 
-      {
-        "libelle_section_naf": "Activit\u00e9s immobili\u00e8res", 
-        "montant": "12437892.00", 
-        "nombre": "4099", 
-        "nombre_siren": "707", 
-        "section_naf": "L"
-      }, 
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "23877648.34", 
-        "nombre": "9044", 
-        "nombre_siren": "2028", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "Corse", 
-    "montant": "387132466.35", 
-    "nombre": "97660", 
-    "nombre_siren": "17277", 
-    "reg": "94"
-  }, 
-  {
-    "kpi_categorie_juridique": [
-      {
-        "code_cat_juridique": "Autres", 
-        "libelle_cat_juridique": "Autres Cat\u00e9gories Juridiques", 
-        "montant": "0", 
-        "nombre": "0", 
-        "nombre_siren": "0"
-      }
-    ], 
-    "kpi_classe_effectif": [
-      {
-        "classe_effectif": "Autres", 
-        "libelle_classe_effectif": "Autres Classes d'Effectifs", 
-        "montant": "0", 
-        "nombre": "0", 
-        "nombre_siren": "0"
-      }
-    ], 
-    "kpi_top_10_naf": [
-      {
-        "libelle_section_naf": "Autres sections NAF", 
-        "montant": "0", 
-        "nombre": "0", 
-        "nombre_siren": "0", 
-        "section_naf": "Autres"
-      }
-    ], 
-    "libelle": "None", 
-    "montant": "441092451.39", 
-    "nombre": "185800", 
-    "nombre_siren": "54829", 
-    "reg": "None"
-  }
-]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>sqlalchemy.exc.OperationalError: (psycopg2.errors.DiskFull) could not write to file &quot;base/pgsql_tmp/pgsql_tmp11883.0&quot;: No space left on device
+
+[SQL: SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;]
+(Background on this error at: http://sqlalche.me/e/e3q8) // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css"
+        type="text/css">
+    <!-- We need to make sure this has a favicon so that the debugger does
+         not by accident trigger a request to /favicon.ico which might
+         change the application state. -->
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=jquery.js"></script>
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script type="text/javascript">
+      var TRACEBACK = 140574703040384,
+          CONSOLE_MODE = false,
+          EVALEX = true,
+          EVALEX_TRUSTED = false,
+          SECRET = "kyCzY4q2LU5pCwN414tp";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>sqlalchemy.exc.OperationalError</h1>
+<div class="detail">
+  <p class="errormsg">sqlalchemy.exc.OperationalError: (psycopg2.errors.DiskFull) could not write to file &quot;base/pgsql_tmp/pgsql_tmp11883.0&quot;: No space left on device
+
+[SQL: SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;]
+(Background on this error at: http://sqlalche.me/e/e3q8)</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  
+  <ul><li><div class="frame" id="frame-140574703040720">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1248</em>,
+      in <code class="function">_execute_context</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                        </span>if fn(cursor, statement, parameters, context):</pre>
+<pre class="line before"><span class="ws">                            </span>evt_handled = True</pre>
+<pre class="line before"><span class="ws">                            </span>break</pre>
+<pre class="line before"><span class="ws">                </span>if not evt_handled:</pre>
+<pre class="line before"><span class="ws">                    </span>self.dialect.do_execute(</pre>
+<pre class="line current"><span class="ws">                        </span>cursor, statement, parameters, context</pre>
+<pre class="line after"><span class="ws">                    </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>if self._has_events or self.engine._has_events:</pre>
+<pre class="line after"><span class="ws">                </span>self.dispatch.after_cursor_execute(</pre>
+<pre class="line after"><span class="ws">                    </span>self,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703042120">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py"</cite>,
+      line <em class="line">588</em>,
+      in <code class="function">do_execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def do_executemany(self, cursor, statement, parameters, context=None):</pre>
+<pre class="line before"><span class="ws">        </span>cursor.executemany(statement, parameters)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def do_execute(self, cursor, statement, parameters, context=None):</pre>
+<pre class="line current"><span class="ws">        </span>cursor.execute(statement, parameters)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def do_execute_no_params(self, cursor, statement, context=None):</pre>
+<pre class="line after"><span class="ws">        </span>cursor.execute(statement)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def is_disconnect(self, e, connection, cursor):</pre></div>
+</div>
+
+<li><div class="exc-divider">The above exception was the direct cause of the following exception:</div>
+<li><div class="frame" id="frame-140574703040328">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">2463</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def __call__(self, environ, start_response):</pre>
+<pre class="line before"><span class="ws">        </span>&quot;&quot;&quot;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app` which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to applying middleware.&quot;&quot;&quot;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def __repr__(self):</pre>
+<pre class="line after"><span class="ws">        </span>return &quot;&lt;%s %r&gt;&quot; % (self.__class__.__name__, self.name)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703040776">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">2449</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703040832">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask_cors/extension.py"</cite>,
+      line <em class="line">161</em>,
+      in <code class="function">wrapped_function</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span># Wrap exception handlers with cross_origin</pre>
+<pre class="line before"><span class="ws">        </span># These error handlers will still respect the behavior of the route</pre>
+<pre class="line before"><span class="ws">        </span>if options.get('intercept_exceptions', True):</pre>
+<pre class="line before"><span class="ws">            </span>def _after_request_decorator(f):</pre>
+<pre class="line before"><span class="ws">                </span>def wrapped_function(*args, **kwargs):</pre>
+<pre class="line current"><span class="ws">                    </span>return cors_after_request(app.make_response(f(*args, **kwargs)))</pre>
+<pre class="line after"><span class="ws">                </span>return wrapped_function</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>if hasattr(app, 'handle_exception'):</pre>
+<pre class="line after"><span class="ws">                </span>app.handle_exception = _after_request_decorator(</pre>
+<pre class="line after"><span class="ws">                    </span>app.handle_exception)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703040496">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1866</em>,
+      in <code class="function">handle_exception</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span># if we want to repropagate the exception, we can attempt to</pre>
+<pre class="line before"><span class="ws">            </span># raise it with the whole traceback in case we can do that</pre>
+<pre class="line before"><span class="ws">            </span># (the function was actually called from the except part)</pre>
+<pre class="line before"><span class="ws">            </span># otherwise, we just raise the error again</pre>
+<pre class="line before"><span class="ws">            </span>if exc_value is e:</pre>
+<pre class="line current"><span class="ws">                </span>reraise(exc_type, exc_value, tb)</pre>
+<pre class="line after"><span class="ws">            </span>else:</pre>
+<pre class="line after"><span class="ws">                </span>raise e</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>self.log_exception((exc_type, exc_value, tb))</pre>
+<pre class="line after"><span class="ws">        </span>server_error = InternalServerError()</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703040944">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/_compat.py"</cite>,
+      line <em class="line">39</em>,
+      in <code class="function">reraise</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>import collections.abc as collections_abc</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def reraise(tp, value, tb=None):</pre>
+<pre class="line before"><span class="ws">        </span>if value.__traceback__ is not tb:</pre>
+<pre class="line before"><span class="ws">            </span>raise value.with_traceback(tb)</pre>
+<pre class="line current"><span class="ws">        </span>raise value</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>implements_to_string = _identity</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>else:</pre>
+<pre class="line after"><span class="ws">    </span>iterkeys = lambda d: d.iterkeys()</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703040888">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">2446</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041056">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1951</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>request_started.send(self)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(self, rv, from_error_handler=False):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Given the return value from a view function this finalizes</pre>
+<pre class="line after"><span class="ws">        </span>the request by converting it into a response and invoking the</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041112">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask_cors/extension.py"</cite>,
+      line <em class="line">161</em>,
+      in <code class="function">wrapped_function</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span># Wrap exception handlers with cross_origin</pre>
+<pre class="line before"><span class="ws">        </span># These error handlers will still respect the behavior of the route</pre>
+<pre class="line before"><span class="ws">        </span>if options.get('intercept_exceptions', True):</pre>
+<pre class="line before"><span class="ws">            </span>def _after_request_decorator(f):</pre>
+<pre class="line before"><span class="ws">                </span>def wrapped_function(*args, **kwargs):</pre>
+<pre class="line current"><span class="ws">                    </span>return cors_after_request(app.make_response(f(*args, **kwargs)))</pre>
+<pre class="line after"><span class="ws">                </span>return wrapped_function</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>if hasattr(app, 'handle_exception'):</pre>
+<pre class="line after"><span class="ws">                </span>app.handle_exception = _after_request_decorator(</pre>
+<pre class="line after"><span class="ws">                    </span>app.handle_exception)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703040552">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1820</em>,
+      in <code class="function">handle_user_exception</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>return self.handle_http_exception(e)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>handler = self._find_error_handler(e)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>if handler is None:</pre>
+<pre class="line current"><span class="ws">            </span>reraise(exc_type, exc_value, tb)</pre>
+<pre class="line after"><span class="ws">        </span>return handler(e)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def handle_exception(self, e):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Handle an exception that did not have an error handler</pre>
+<pre class="line after"><span class="ws">        </span>associated with it, or that was raised from an error handler.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041224">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/_compat.py"</cite>,
+      line <em class="line">39</em>,
+      in <code class="function">reraise</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>import collections.abc as collections_abc</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def reraise(tp, value, tb=None):</pre>
+<pre class="line before"><span class="ws">        </span>if value.__traceback__ is not tb:</pre>
+<pre class="line before"><span class="ws">            </span>raise value.with_traceback(tb)</pre>
+<pre class="line current"><span class="ws">        </span>raise value</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>implements_to_string = _identity</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>else:</pre>
+<pre class="line after"><span class="ws">    </span>iterkeys = lambda d: d.iterkeys()</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041168">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1949</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>self.try_trigger_before_first_request_functions()</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(self, rv, from_error_handler=False):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041336">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1935</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>getattr(rule, &quot;provide_automatic_options&quot;, False)</pre>
+<pre class="line before"><span class="ws">            </span>and req.method == &quot;OPTIONS&quot;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line current"><span class="ws">        </span>return self.view_functions[rule.endpoint](**req.view_args)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041392">
+  <h4>File <cite class="filename">"/srv/dashboard/dashboard-aides-entreprises/backend/app.py"</cite>,
+      line <em class="line">267</em>,
+      in <code class="function">getStatAideRegionalSectionAPE</code></h4>
+  <div class="source "><pre class="line before"><span class="ws"></span>@app.route('/stat/aide/reg', methods=['GET'])</pre>
+<pre class="line before"><span class="ws"></span>def getStatAideRegionalSectionAPE():</pre>
+<pre class="line before"><span class="ws">    </span># GET a specific data by id</pre>
+<pre class="line before"><span class="ws">    </span>if request.method == 'GET':</pre>
+<pre class="line before"><span class="ws">        </span>my_query = &quot;SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;&quot;</pre>
+<pre class="line current"><span class="ws">        </span>data = db.session.execute(my_query).fetchall()</pre>
+<pre class="line after"><span class="ws">        </span>app.logger.info(data)</pre>
+<pre class="line after"><span class="ws">        </span>dataJson = []</pre>
+<pre class="line after"><span class="ws">        </span>for i in range(len(data)):</pre>
+<pre class="line after"><span class="ws">            </span>dataDict = {}</pre>
+<pre class="line after"><span class="ws">            </span>dataDict['reg'] = str(data[i][0])</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041000">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py"</cite>,
+      line <em class="line">162</em>,
+      in <code class="function">do</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span>&quot;&quot;&quot;Old name for backwards compatibility.&quot;&quot;&quot;</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span>def instrument(name):</pre>
+<pre class="line before"><span class="ws">    </span>def do(self, *args, **kwargs):</pre>
+<pre class="line current"><span class="ws">        </span>return getattr(self.registry(), name)(*args, **kwargs)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>return do</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>for meth in Session.public_methods:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041448">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py"</cite>,
+      line <em class="line">1278</em>,
+      in <code class="function">execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>if bind is None:</pre>
+<pre class="line before"><span class="ws">            </span>bind = self.get_bind(mapper, clause=clause, **kw)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>return self._connection_for_bind(bind, close_with_result=True).execute(</pre>
+<pre class="line current"><span class="ws">            </span>clause, params or {}</pre>
+<pre class="line after"><span class="ws">        </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def scalar(self, clause, params=None, mapper=None, bind=None, **kw):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Like :meth:`~.Session.execute` but return a scalar result.&quot;&quot;&quot;</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041504">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">984</em>,
+      in <code class="function">execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>except AttributeError as err:</pre>
+<pre class="line before"><span class="ws">            </span>util.raise_(</pre>
+<pre class="line before"><span class="ws">                </span>exc.ObjectNotExecutableError(object_), replace_context=err</pre>
+<pre class="line before"><span class="ws">            </span>)</pre>
+<pre class="line before"><span class="ws">        </span>else:</pre>
+<pre class="line current"><span class="ws">            </span>return meth(self, multiparams, params)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def _execute_function(self, func, multiparams, params):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Execute a sql.FunctionElement object.&quot;&quot;&quot;</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>return self._execute_clauseelement(func.select(), multiparams, params)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041616">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py"</cite>,
+      line <em class="line">293</em>,
+      in <code class="function">_execute_on_connection</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span># self</pre>
+<pre class="line before"><span class="ws">            </span>return self</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def _execute_on_connection(self, connection, multiparams, params):</pre>
+<pre class="line before"><span class="ws">        </span>if self.supports_execution:</pre>
+<pre class="line current"><span class="ws">            </span>return connection._execute_clauseelement(self, multiparams, params)</pre>
+<pre class="line after"><span class="ws">        </span>else:</pre>
+<pre class="line after"><span class="ws">            </span>raise exc.ObjectNotExecutableError(self)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def unique_params(self, *optionaldict, **kwargs):</pre>
+<pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Return a copy with :func:`bindparam()` elements replaced.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041560">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1103</em>,
+      in <code class="function">_execute_clauseelement</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>dialect,</pre>
+<pre class="line before"><span class="ws">            </span>dialect.execution_ctx_cls._init_compiled,</pre>
+<pre class="line before"><span class="ws">            </span>compiled_sql,</pre>
+<pre class="line before"><span class="ws">            </span>distilled_params,</pre>
+<pre class="line before"><span class="ws">            </span>compiled_sql,</pre>
+<pre class="line current"><span class="ws">            </span>distilled_params,</pre>
+<pre class="line after"><span class="ws">        </span>)</pre>
+<pre class="line after"><span class="ws">        </span>if self._has_events or self.engine._has_events:</pre>
+<pre class="line after"><span class="ws">            </span>self.dispatch.after_execute(self, elem, multiparams, params, ret)</pre>
+<pre class="line after"><span class="ws">        </span>return ret</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041728">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1288</em>,
+      in <code class="function">_execute_context</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                    </span># rows to fetch.</pre>
+<pre class="line before"><span class="ws">                    </span>result._autoclose_connection = True</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>except BaseException as e:</pre>
+<pre class="line before"><span class="ws">            </span>self._handle_dbapi_exception(</pre>
+<pre class="line current"><span class="ws">                </span>e, statement, parameters, cursor, context</pre>
+<pre class="line after"><span class="ws">            </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>return result</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def _cursor_execute(self, cursor, statement, parameters, context=None):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041784">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1482</em>,
+      in <code class="function">_handle_dbapi_exception</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">            </span>if newraise:</pre>
+<pre class="line before"><span class="ws">                </span>util.raise_(newraise, with_traceback=exc_info[2], from_=e)</pre>
+<pre class="line before"><span class="ws">            </span>elif should_wrap:</pre>
+<pre class="line before"><span class="ws">                </span>util.raise_(</pre>
+<pre class="line current"><span class="ws">                    </span>sqlalchemy_exception, with_traceback=exc_info[2], from_=e</pre>
+<pre class="line after"><span class="ws">                </span>)</pre>
+<pre class="line after"><span class="ws">            </span>else:</pre>
+<pre class="line after"><span class="ws">                </span>util.raise_(exc_info[1], with_traceback=exc_info[2])</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041840">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py"</cite>,
+      line <em class="line">178</em>,
+      in <code class="function">raise_</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span># intermediary exception does not change, but we can't figure</pre>
+<pre class="line before"><span class="ws">            </span># that out.</pre>
+<pre class="line before"><span class="ws">            </span>exception.__cause__ = replace_context</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line current"><span class="ws">            </span>raise exception</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre>
+<pre class="line after"><span class="ws">            </span># credit to</pre>
+<pre class="line after"><span class="ws">            </span># https://cosmicpercolator.com/2016/01/13/exception-leaks-in-python-2-and-3/</pre>
+<pre class="line after"><span class="ws">            </span># as the __traceback__ object creates a cycle</pre>
+<pre class="line after"><span class="ws">            </span>del exception, replace_context, from_, with_traceback</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041672">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1248</em>,
+      in <code class="function">_execute_context</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                        </span>if fn(cursor, statement, parameters, context):</pre>
+<pre class="line before"><span class="ws">                            </span>evt_handled = True</pre>
+<pre class="line before"><span class="ws">                            </span>break</pre>
+<pre class="line before"><span class="ws">                </span>if not evt_handled:</pre>
+<pre class="line before"><span class="ws">                    </span>self.dialect.do_execute(</pre>
+<pre class="line current"><span class="ws">                        </span>cursor, statement, parameters, context</pre>
+<pre class="line after"><span class="ws">                    </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>if self._has_events or self.engine._has_events:</pre>
+<pre class="line after"><span class="ws">                </span>self.dispatch.after_cursor_execute(</pre>
+<pre class="line after"><span class="ws">                    </span>self,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140574703041952">
+  <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py"</cite>,
+      line <em class="line">588</em>,
+      in <code class="function">do_execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def do_executemany(self, cursor, statement, parameters, context=None):</pre>
+<pre class="line before"><span class="ws">        </span>cursor.executemany(statement, parameters)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def do_execute(self, cursor, statement, parameters, context=None):</pre>
+<pre class="line current"><span class="ws">        </span>cursor.execute(statement, parameters)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def do_execute_no_params(self, cursor, statement, context=None):</pre>
+<pre class="line after"><span class="ws">        </span>cursor.execute(statement)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def is_disconnect(self, e, connection, cursor):</pre></div>
+</div>
+</ul>
+  <blockquote>sqlalchemy.exc.OperationalError: (psycopg2.errors.DiskFull) could not write to file &quot;base/pgsql_tmp/pgsql_tmp11883.0&quot;: No space left on device
+
+[SQL: SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;]
+(Background on this error at: http://sqlalche.me/e/e3q8)</blockquote>
+</div>
+
+<div class="plain">
+  <form action="/?__debugger__=yes&amp;cmd=paste" method="post">
+    <p>
+      <input type="hidden" name="language" value="pytb">
+      This is the Copy/Paste friendly version of the traceback.  <span
+      class="pastemessage">You can also paste this traceback into
+      a <a href="https://gist.github.com/">gist</a>:
+      <input type="submit" value="create paste"></span>
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py&quot;, line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py&quot;, line 588, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.DiskFull: could not write to file &quot;base/pgsql_tmp/pgsql_tmp11883.0&quot;: No space left on device
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py&quot;, line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py&quot;, line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask_cors/extension.py&quot;, line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py&quot;, line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/_compat.py&quot;, line 39, in reraise
+    raise value
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py&quot;, line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py&quot;, line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask_cors/extension.py&quot;, line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py&quot;, line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/_compat.py&quot;, line 39, in reraise
+    raise value
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py&quot;, line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py&quot;, line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File &quot;/srv/dashboard/dashboard-aides-entreprises/backend/app.py&quot;, line 267, in getStatAideRegionalSectionAPE
+    data = db.session.execute(my_query).fetchall()
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py&quot;, line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py&quot;, line 1278, in execute
+    clause, params or {}
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py&quot;, line 984, in execute
+    return meth(self, multiparams, params)
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py&quot;, line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py&quot;, line 1103, in _execute_clauseelement
+    distilled_params,
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py&quot;, line 1288, in _execute_context
+    e, statement, parameters, cursor, context
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py&quot;, line 1482, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py&quot;, line 178, in raise_
+    raise exception
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py&quot;, line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py&quot;, line 588, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (psycopg2.errors.DiskFull) could not write to file &quot;base/pgsql_tmp/pgsql_tmp11883.0&quot;: No space left on device
+
+[SQL: SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;]
+(Background on this error at: http://sqlalche.me/e/e3q8)</textarea>
+  </form>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.DiskFull: could not write to file "base/pgsql_tmp/pgsql_tmp11883.0": No space left on device
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py", line 2463, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py", line 2449, in wsgi_app
+    response = self.handle_exception(e)
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py", line 1866, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/srv/dashboard/dashboard-aides-entreprises/backend/app.py", line 267, in getStatAideRegionalSectionAPE
+    data = db.session.execute(my_query).fetchall()
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1278, in execute
+    clause, params or {}
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 984, in execute
+    return meth(self, multiparams, params)
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1103, in _execute_clauseelement
+    distilled_params,
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1288, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1482, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (psycopg2.errors.DiskFull) could not write to file "base/pgsql_tmp/pgsql_tmp11883.0": No space left on device
+
+[SQL: SELECT A.reg, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, R.libelle FROM aide AS A LEFT JOIN region AS R ON A.reg = R.reg GROUP BY A.reg, R.libelle;]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+
+-->
