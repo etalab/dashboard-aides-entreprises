@@ -2,11 +2,9 @@
   "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <title>sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
-	This probably means the server terminated abnormally
-	before or while processing the request.
+    <title>sqlalchemy.exc.OperationalError: (psycopg2.errors.DiskFull) could not write to file &quot;base/pgsql_tmp/pgsql_tmp11883.2&quot;: No space left on device
 
-[SQL: SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;]
+[SQL: SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, SUM(TotalUniqueSiren) AS SectionTotalUniqueSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;]
 (Background on this error at: http://sqlalche.me/e/e3q8) // Werkzeug Debugger</title>
     <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css"
         type="text/css">
@@ -18,7 +16,7 @@
     <script src="?__debugger__=yes&amp;cmd=resource&amp;f=jquery.js"></script>
     <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
     <script type="text/javascript">
-      var TRACEBACK = 140574707391568,
+      var TRACEBACK = 140574694827008,
           CONSOLE_MODE = false,
           EVALEX = true,
           EVALEX_TRUSTED = false,
@@ -29,17 +27,15 @@
     <div class="debugger">
 <h1>sqlalchemy.exc.OperationalError</h1>
 <div class="detail">
-  <p class="errormsg">sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
-	This probably means the server terminated abnormally
-	before or while processing the request.
+  <p class="errormsg">sqlalchemy.exc.OperationalError: (psycopg2.errors.DiskFull) could not write to file &quot;base/pgsql_tmp/pgsql_tmp11883.2&quot;: No space left on device
 
-[SQL: SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;]
+[SQL: SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, SUM(TotalUniqueSiren) AS SectionTotalUniqueSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;]
 (Background on this error at: http://sqlalche.me/e/e3q8)</p>
 </div>
 <h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
 <div class="traceback">
   
-  <ul><li><div class="frame" id="frame-140574707391512">
+  <ul><li><div class="frame" id="frame-140574695168768">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
       line <em class="line">1248</em>,
       in <code class="function">_execute_context</code></h4>
@@ -56,7 +52,7 @@
 <pre class="line after"><span class="ws">                    </span>self,</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707389888">
+<li><div class="frame" id="frame-140574695166976">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py"</cite>,
       line <em class="line">588</em>,
       in <code class="function">do_execute</code></h4>
@@ -74,7 +70,7 @@
 </div>
 
 <li><div class="exc-divider">The above exception was the direct cause of the following exception:</div>
-<li><div class="frame" id="frame-140574707388880">
+<li><div class="frame" id="frame-140574694827288">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
       line <em class="line">2463</em>,
       in <code class="function">__call__</code></h4>
@@ -89,7 +85,7 @@
 <pre class="line after"><span class="ws">        </span>return &quot;&lt;%s %r&gt;&quot; % (self.__class__.__name__, self.name)</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707390560">
+<li><div class="frame" id="frame-140574694827680">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
       line <em class="line">2449</em>,
       in <code class="function">wsgi_app</code></h4>
@@ -106,7 +102,7 @@
 <pre class="line after"><span class="ws">        </span>finally:</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707390168">
+<li><div class="frame" id="frame-140574694827736">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask_cors/extension.py"</cite>,
       line <em class="line">161</em>,
       in <code class="function">wrapped_function</code></h4>
@@ -123,7 +119,7 @@
 <pre class="line after"><span class="ws">                    </span>app.handle_exception)</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707390616">
+<li><div class="frame" id="frame-140574694827344">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1866</em>,
       in <code class="function">handle_exception</code></h4>
@@ -140,7 +136,7 @@
 <pre class="line after"><span class="ws">        </span>server_error = InternalServerError()</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707388824">
+<li><div class="frame" id="frame-140574694827848">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/_compat.py"</cite>,
       line <em class="line">39</em>,
       in <code class="function">reraise</code></h4>
@@ -157,7 +153,7 @@
 <pre class="line after"><span class="ws">    </span>iterkeys = lambda d: d.iterkeys()</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707391344">
+<li><div class="frame" id="frame-140574694827792">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
       line <em class="line">2446</em>,
       in <code class="function">wsgi_app</code></h4>
@@ -174,7 +170,7 @@
 <pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707389272">
+<li><div class="frame" id="frame-140574694827960">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1951</em>,
       in <code class="function">full_dispatch_request</code></h4>
@@ -191,7 +187,7 @@
 <pre class="line after"><span class="ws">        </span>the request by converting it into a response and invoking the</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707390000">
+<li><div class="frame" id="frame-140574703039096">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask_cors/extension.py"</cite>,
       line <em class="line">161</em>,
       in <code class="function">wrapped_function</code></h4>
@@ -208,7 +204,7 @@
 <pre class="line after"><span class="ws">                    </span>app.handle_exception)</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707392184">
+<li><div class="frame" id="frame-140574707397520">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1820</em>,
       in <code class="function">handle_user_exception</code></h4>
@@ -225,7 +221,7 @@
 <pre class="line after"><span class="ws">        </span>associated with it, or that was raised from an error handler.</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707392408">
+<li><div class="frame" id="frame-140574707388712">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/_compat.py"</cite>,
       line <em class="line">39</em>,
       in <code class="function">reraise</code></h4>
@@ -242,7 +238,7 @@
 <pre class="line after"><span class="ws">    </span>iterkeys = lambda d: d.iterkeys()</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707389160">
+<li><div class="frame" id="frame-140574707399984">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1949</em>,
       in <code class="function">full_dispatch_request</code></h4>
@@ -259,7 +255,7 @@
 <pre class="line after"><span class="ws">    </span>def finalize_request(self, rv, from_error_handler=False):</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707390840">
+<li><div class="frame" id="frame-140574707396680">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1935</em>,
       in <code class="function">dispatch_request</code></h4>
@@ -276,24 +272,24 @@
 <pre class="line after"><span class="ws">        </span>error handling.</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707392240">
+<li><div class="frame" id="frame-140574699448080">
   <h4>File <cite class="filename">"/srv/dashboard/dashboard-aides-entreprises/backend/app.py"</cite>,
-      line <em class="line">172</em>,
+      line <em class="line">173</em>,
       in <code class="function">getStatAideNationalSectionAPE</code></h4>
-  <div class="source "><pre class="line before"><span class="ws"></span> </pre>
-<pre class="line before"><span class="ws">        </span>my_query_3 = &quot;SELECT * FROM (SELECT A.classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif C ON A.classe_effectif = C.denomination WHERE A.classe_effectif IS NOT NULL GROUP BY A.classe_effectif, C.libelle) tbl WHERE totalsiren &gt; 2 ORDER BY classe_effectif;&quot;</pre>
+  <div class="source "><pre class="line before"><span class="ws">        </span>my_query_3 = &quot;SELECT * FROM (SELECT A.classe_effectif, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN classeeffectif C ON A.classe_effectif = C.denomination WHERE A.classe_effectif IS NOT NULL GROUP BY A.classe_effectif, C.libelle) tbl WHERE totalsiren &gt; 2 ORDER BY classe_effectif;&quot;</pre>
 <pre class="line before"><span class="ws"></span> </pre>
 <pre class="line before"><span class="ws">        </span>my_query_4 = &quot;SELECT * FROM (SELECT SUBSTR(A.categoriejuridiqueunitelegale,1,2) AS code_categorie_juridique, SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, C.libelle FROM aide AS A LEFT JOIN categoriejuridique C ON SUBSTR(A.categoriejuridiqueunitelegale,1,2) = C.code WHERE A.categoriejuridiqueunitelegale IS NOT NULL GROUP BY SUBSTR(A.categoriejuridiqueunitelegale,1,2), C.libelle) tbl WHERE totalsiren &gt; 2 ORDER BY totalmontant DESC;&quot;</pre>
 <pre class="line before"><span class="ws"></span> </pre>
-<pre class="line current"><span class="ws">        </span>data = db.session.execute(my_query).fetchall()</pre>
-<pre class="line after"><span class="ws">        </span>data2 = db.session.execute(my_query_2).fetchall()</pre>
+<pre class="line before"><span class="ws">        </span>data = db.session.execute(my_query).fetchall()</pre>
+<pre class="line current"><span class="ws">        </span>data2 = db.session.execute(my_query_2).fetchall()</pre>
 <pre class="line after"><span class="ws">        </span>data3 = db.session.execute(my_query_3).fetchall()</pre>
 <pre class="line after"><span class="ws">        </span>data4 = db.session.execute(my_query_4).fetchall()</pre>
 <pre class="line after"><span class="ws">        </span>app.logger.info(data)</pre>
-<pre class="line after"><span class="ws">        </span>dataJson = []</pre></div>
+<pre class="line after"><span class="ws">        </span>dataJson = []</pre>
+<pre class="line after"><span class="ws">        </span>for i in range(len(data)):</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707390448">
+<li><div class="frame" id="frame-140574699449144">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py"</cite>,
       line <em class="line">162</em>,
       in <code class="function">do</code></h4>
@@ -310,7 +306,7 @@
 <pre class="line after"><span class="ws"></span>for meth in Session.public_methods:</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707391680">
+<li><div class="frame" id="frame-140574707398192">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py"</cite>,
       line <em class="line">1278</em>,
       in <code class="function">execute</code></h4>
@@ -327,7 +323,7 @@
 <pre class="line after"><span class="ws"></span> </pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707389328">
+<li><div class="frame" id="frame-140574707398584">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
       line <em class="line">984</em>,
       in <code class="function">execute</code></h4>
@@ -344,7 +340,7 @@
 <pre class="line after"><span class="ws">        </span>return self._execute_clauseelement(func.select(), multiparams, params)</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707390896">
+<li><div class="frame" id="frame-140574695168880">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py"</cite>,
       line <em class="line">293</em>,
       in <code class="function">_execute_on_connection</code></h4>
@@ -361,7 +357,7 @@
 <pre class="line after"><span class="ws">        </span>&quot;&quot;&quot;Return a copy with :func:`bindparam()` elements replaced.</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707390336">
+<li><div class="frame" id="frame-140574695167088">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
       line <em class="line">1103</em>,
       in <code class="function">_execute_clauseelement</code></h4>
@@ -378,7 +374,7 @@
 <pre class="line after"><span class="ws"></span> </pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707391176">
+<li><div class="frame" id="frame-140574695168208">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
       line <em class="line">1288</em>,
       in <code class="function">_execute_context</code></h4>
@@ -395,7 +391,7 @@
 <pre class="line after"><span class="ws">    </span>def _cursor_execute(self, cursor, statement, parameters, context=None):</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707389664">
+<li><div class="frame" id="frame-140574695169048">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
       line <em class="line">1482</em>,
       in <code class="function">_handle_dbapi_exception</code></h4>
@@ -412,7 +408,7 @@
 <pre class="line after"><span class="ws">        </span>finally:</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707391456">
+<li><div class="frame" id="frame-140574695168936">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py"</cite>,
       line <em class="line">178</em>,
       in <code class="function">raise_</code></h4>
@@ -429,7 +425,7 @@
 <pre class="line after"><span class="ws">            </span>del exception, replace_context, from_, with_traceback</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707392072">
+<li><div class="frame" id="frame-140574695167256">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py"</cite>,
       line <em class="line">1248</em>,
       in <code class="function">_execute_context</code></h4>
@@ -446,7 +442,7 @@
 <pre class="line after"><span class="ws">                    </span>self,</pre></div>
 </div>
 
-<li><div class="frame" id="frame-140574707389104">
+<li><div class="frame" id="frame-140574695168824">
   <h4>File <cite class="filename">"/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py"</cite>,
       line <em class="line">588</em>,
       in <code class="function">do_execute</code></h4>
@@ -463,11 +459,9 @@
 <pre class="line after"><span class="ws">    </span>def is_disconnect(self, e, connection, cursor):</pre></div>
 </div>
 </ul>
-  <blockquote>sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
-	This probably means the server terminated abnormally
-	before or while processing the request.
+  <blockquote>sqlalchemy.exc.OperationalError: (psycopg2.errors.DiskFull) could not write to file &quot;base/pgsql_tmp/pgsql_tmp11883.2&quot;: No space left on device
 
-[SQL: SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;]
+[SQL: SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, SUM(TotalUniqueSiren) AS SectionTotalUniqueSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;]
 (Background on this error at: http://sqlalche.me/e/e3q8)</blockquote>
 </div>
 
@@ -485,9 +479,7 @@
     cursor, statement, parameters, context
   File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py&quot;, line 588, in do_execute
     cursor.execute(statement, parameters)
-psycopg2.OperationalError: server closed the connection unexpectedly
-	This probably means the server terminated abnormally
-	before or while processing the request.
+psycopg2.errors.DiskFull: could not write to file &quot;base/pgsql_tmp/pgsql_tmp11883.2&quot;: No space left on device
 
 The above exception was the direct cause of the following exception:
 
@@ -516,8 +508,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py&quot;, line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File &quot;/srv/dashboard/dashboard-aides-entreprises/backend/app.py&quot;, line 172, in getStatAideNationalSectionAPE
-    data = db.session.execute(my_query).fetchall()
+  File &quot;/srv/dashboard/dashboard-aides-entreprises/backend/app.py&quot;, line 173, in getStatAideNationalSectionAPE
+    data2 = db.session.execute(my_query_2).fetchall()
   File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py&quot;, line 162, in do
     return getattr(self.registry(), name)(*args, **kwargs)
   File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py&quot;, line 1278, in execute
@@ -538,11 +530,9 @@ Traceback (most recent call last):
     cursor, statement, parameters, context
   File &quot;/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py&quot;, line 588, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
-	This probably means the server terminated abnormally
-	before or while processing the request.
+sqlalchemy.exc.OperationalError: (psycopg2.errors.DiskFull) could not write to file &quot;base/pgsql_tmp/pgsql_tmp11883.2&quot;: No space left on device
 
-[SQL: SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;]
+[SQL: SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, SUM(TotalUniqueSiren) AS SectionTotalUniqueSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;]
 (Background on this error at: http://sqlalche.me/e/e3q8)</textarea>
   </form>
 </div>
@@ -583,9 +573,7 @@ Traceback (most recent call last):
     cursor, statement, parameters, context
   File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
     cursor.execute(statement, parameters)
-psycopg2.OperationalError: server closed the connection unexpectedly
-	This probably means the server terminated abnormally
-	before or while processing the request.
+psycopg2.errors.DiskFull: could not write to file "base/pgsql_tmp/pgsql_tmp11883.2": No space left on device
 
 The above exception was the direct cause of the following exception:
 
@@ -614,8 +602,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/srv/dashboard/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/srv/dashboard/dashboard-aides-entreprises/backend/app.py", line 172, in getStatAideNationalSectionAPE
-    data = db.session.execute(my_query).fetchall()
+  File "/srv/dashboard/dashboard-aides-entreprises/backend/app.py", line 173, in getStatAideNationalSectionAPE
+    data2 = db.session.execute(my_query_2).fetchall()
   File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
     return getattr(self.registry(), name)(*args, **kwargs)
   File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1278, in execute
@@ -636,11 +624,9 @@ Traceback (most recent call last):
     cursor, statement, parameters, context
   File "/srv/dashboard/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 588, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
-	This probably means the server terminated abnormally
-	before or while processing the request.
+sqlalchemy.exc.OperationalError: (psycopg2.errors.DiskFull) could not write to file "base/pgsql_tmp/pgsql_tmp11883.2": No space left on device
 
-[SQL: SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren FROM aide A;]
+[SQL: SELECT code_section, SUM(TotalMontant) AS SectionTotalMontant, SUM(TotalSiren) AS SectionTotalSiren, SUM(TotalUniqueSiren) AS SectionTotalUniqueSiren, libelle_section FROM (SELECT SUM(A.montant) AS TotalMontant, COUNT(A.siren) AS TotalSiren, COUNT(DISTINCT A.siren) AS TotalUniqueSiren, N.code_section, N.libelle_section FROM aide AS A LEFT JOIN (select distinct libelle_division, code_division, code_section, libelle_section from naf) AS N ON SUBSTR(A.activiteprincipaleetablissement,1,2) = N.code_division GROUP BY SUBSTR(A.activiteprincipaleetablissement,1,2), N.libelle_section, N.code_section ORDER BY TotalSiren DESC) AS divquery GROUP BY code_section, libelle_section ORDER BY SectionTotalSiren DESC;]
 (Background on this error at: http://sqlalche.me/e/e3q8)
 
 -->
