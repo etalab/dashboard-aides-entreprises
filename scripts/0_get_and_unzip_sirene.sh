@@ -1,11 +1,11 @@
 # mkdir folders
-mkdir ../data
-mkdir ../data/0-brut
-mkdir ../data/1-enrich 
-mkdir ../data/extracts
-mkdir ../data/simu-effectifs
-mkdir ../data/simu-aides
-mkdir ../data/stats-global
+# mkdir ../data
+# mkdir ../data/0-brut
+# mkdir ../data/1-enrich 
+# mkdir ../data/extracts
+# mkdir ../data/simu-effectifs
+# mkdir ../data/simu-aides
+# mkdir ../data/stats-global
 
 for d in `seq -w 1 19` 2A 2B `seq 21 74` `seq 76 95` 98 ""; do
   wget https://files.data.gouv.fr/geo-sirene/last/dep/geo_siret_$d.csv.gz
