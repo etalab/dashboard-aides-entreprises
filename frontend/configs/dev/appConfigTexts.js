@@ -515,6 +515,9 @@ export const configAppTexts = {
                   textClass: 'text-left mx-4 pt-4',
                   textContent: {
                     fr: `
+                      <b>INFO : A compter du 26 août 2021, les données ne seront plus mises à jour
+                      sur ce tableau de bord pour ce dispositif d'aide.</b>
+                      <br /><br />
                       Le Gouvernement a annoncé le report des principales
                       échéances fiscales des professionnels afin de tenir
                       compte de leurs difficultés liées à la crise sanitaire du coronavirus.
