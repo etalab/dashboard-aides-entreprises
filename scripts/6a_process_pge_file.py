@@ -34,7 +34,6 @@ for sheet in sheet_names:
             i = i +1
             naf.append(row)
         newdfnaf = pd.DataFrame(naf)
-        
         newdfnaf
         
         totalnb = 0
@@ -56,22 +55,21 @@ for sheet in sheet_names:
                 totalm = totalm + row['montant']
             arr.append(row)
         newdfnaf = pd.DataFrame(arr)
-        
         newdfnaf
         
+        if(newdfnaf[newdfnaf['code_section'] == 'Z'].shape[0] > 0):
+            if(newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['montant'] != newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['montant']):
+                newdfnaf.loc[newdfnaf['code_section'] == 'Z', "montant"] = 0
+            if(newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['nombre'] != newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['nombre']):
+                newdfnaf.loc[newdfnaf['code_section'] == 'Z', "nombre"] = 0
+
+            newdfnaf.loc[newdfnaf['code_section'] == 'Z', "montant"] = newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['montant'] + newdfnaf[newdfnaf['code_section'] == 'X'].iloc[0]['montant'] - totalm
+            
+            
+            newdfnaf.loc[newdfnaf['code_section'] == 'Z', "nombre"] = newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['nombre'] + newdfnaf[newdfnaf['code_section'] == 'X'].iloc[0]['nombre'] - totalnb
+            
+            newdfnaf = newdfnaf[:-1]
         
-        if(newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['montant'] != newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['montant']):
-            newdfnaf.loc[newdfnaf['code_section'] == 'Z', "montant"] = 0
-        if(newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['nombre'] != newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['nombre']):
-            newdfnaf.loc[newdfnaf['code_section'] == 'Z', "nombre"] = 0
-        
-        newdfnaf.loc[newdfnaf['code_section'] == 'Z', "montant"] = newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['montant'] + newdfnaf[newdfnaf['code_section'] == 'X'].iloc[0]['montant'] - totalm
-        
-        
-        newdfnaf.loc[newdfnaf['code_section'] == 'Z', "nombre"] = newdfnaf[newdfnaf['code_section'] == 'Z'].iloc[0]['nombre'] + newdfnaf[newdfnaf['code_section'] == 'X'].iloc[0]['nombre'] - totalnb
-        
-        newdfnaf = newdfnaf[:-1]
-       
         
         newdfnaf = newdfnaf[newdfnaf['nombre'].notna()]
         newdfnaf = newdfnaf.drop(columns={'section_naf'})
